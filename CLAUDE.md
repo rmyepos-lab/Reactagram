@@ -37,7 +37,7 @@ Hookd is an Android app that teaches React in about 10 minutes a day with Instag
 - **Splash screen:** the Android 12+ SplashScreen API (`androidx.core:core-splashscreen`). No custom JavaScript splash screen.
 - **Remote config and admin:** Supabase, called with plain `fetch` (no Supabase package). Only the project URL and the anon key are in the app. Never put the `service_role` key, the Lemon Squeezy API key or any other secret in the app or in the `app_config` table.
 - **Pro:** not live yet: the Pro card says "Coming soon" until the admin switches `proActivationEnabled` on. Later: a license key bought outside the app and outside Google Play. The app only activates and re-validates the key through the payment provider's license API (the provider isn't chosen yet: ask before writing this part). No Google Play Billing, no checkout and no purchase flow inside the app.
-- **Build:** the GitHub Actions workflow `.github/workflows/android.yml` builds a test APK (release variant signed with the debug key, so it runs without a computer). Requirements: Node 22.13+, JDK 17, Android SDK.
+- **Build:** `.github/workflows/android.yml`. A push only runs the code checks. APKs are built by hand (Run workflow): `dev-apk` (debug, loads JavaScript from Metro) or `test-apk` (standalone, debug key). Never start a build unless I ask. The production AAB and Play release are not set up yet: ask before adding them. Requirements: Node 22.13+, JDK 17, Android SDK.
 
 ## 3. Rules that prevent mistakes
 

@@ -15,9 +15,29 @@ Learn React in about 10 minutes a day with Instagram-style reels. Android app, b
 | `npm start` | Start Metro |
 | `npm run android` | Run on a phone or emulator (needs the Android SDK) |
 
-## Get an APK without a computer setup
+## Builds
 
-Every push runs the **Android APK** workflow in GitHub Actions. Open the run and download `hookd-test-apk`.
+A push only runs the quick code checks. No APK is built automatically.
+
+To build one: GitHub > Actions > **Android** > Run workflow, then pick:
+
+| Choice | What you get |
+|---|---|
+| `dev-apk` | Debug app that loads the JavaScript from your computer. For daily testing. |
+| `test-apk` | Standalone app with the JavaScript inside, signed with the debug key. |
+
+## Test on your phone without a slow local build
+
+Your computer never has to compile Android. It only serves the JavaScript.
+
+1. Once: build `dev-apk` on GitHub, download it and install it on your phone.
+2. On your computer: `npm install`, then `npm start`.
+3. Connect the phone:
+   - USB: run `adb reverse tcp:8081 tcp:8081`, then open the app.
+   - Wi-Fi (same network): open the app, shake the phone, Settings > Debug server host, enter `YOUR-COMPUTER-IP:8081`, then reload.
+4. Edit code. The app updates in about a second (Fast Refresh).
+
+Build a new `dev-apk` only when `android/` or a native package changes. Changes in `src/` and `content/` never need one.
 
 ## Settings to fill in
 

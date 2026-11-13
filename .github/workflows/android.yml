@@ -1,15 +1,42 @@
-name: Android APK
+name: Android
 
+# A push only runs the quick code checks. Nothing native is built automatically:
+# APK builds are started by hand (Actions > Android > Run workflow).
 on:
   push:
     branches: [main, 'claude/**']
   workflow_dispatch:
+    inputs:
+      build:
+        description: What to build
+        type: choice
+        default: dev-apk
+        options:
+          - dev-apk # debug app that loads JavaScript from Metro on your computer
+          - test-apk # standalone app with JavaScript inside, signed with the debug key
 
 permissions:
   contents: read
 
 jobs:
-  build:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # Content index, reel checker, TypeScript, ESLint and tests.
+      - run: npm run check
+      # Catches code the app bundler cannot pack, without a native build.
+      - run: npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output "$RUNNER_TEMP/index.android.bundle"
+
+  apk:
+    if: github.event_name == 'workflow_dispatch'
+    needs: check
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
@@ -27,9 +54,7 @@ jobs:
           cache: gradle
 
       - run: npm ci
-
-      # Content index, reel checker, TypeScript, ESLint and tests.
-      - run: npm run check
+      - run: npm run content
 
       # Keys come from repository secrets. Without them the app shows sample ads and
       # uses its built-in settings (no remote config, no admin screen).
@@ -40,14 +65,18 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
 
-      # A test build that runs without a computer: JavaScript is bundled inside the APK
-      # and it is signed with the debug key. It is not a Play Store release.
-      - name: Build APK
+      - name: Build dev APK
+        if: inputs.build == 'dev-apk'
+        working-directory: android
+        run: ./gradlew assembleDebug --no-daemon -PreactNativeArchitectures=arm64-v8a,armeabi-v7a
+
+      - name: Build test APK
+        if: inputs.build == 'test-apk'
         working-directory: android
         run: ./gradlew assembleRelease --no-daemon -PreactNativeArchitectures=arm64-v8a,armeabi-v7a
 
       - uses: actions/upload-artifact@v4
         with:
-          name: hookd-test-apk
-          path: android/app/build/outputs/apk/release/*.apk
+          name: hookd-${{ inputs.build }}
+          path: android/app/build/outputs/apk/*/*.apk
           if-no-files-found: error
