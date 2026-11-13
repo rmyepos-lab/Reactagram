@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Splash icon: white rounded tile with the Hookd hook. The visible area is the middle 2/3. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="288dp" android:height="288dp"
+    android:viewportWidth="288" android:viewportHeight="288">
+    <path android:fillColor="#FFFFFF"
+        android:pathData="M104,64h80a40,40 0,0 1,40 40v80a40,40 0,0 1,-40 40h-80a40,40 0,0 1,-40 -40v-80a40,40 0,0 1,40 -40z" />
+    <group android:translateX="96.6" android:translateY="103.2" android:scaleX="4" android:scaleY="4">
+        <path android:pathData="M11.3,3.6a1.7,1.7 0,1 0,3.4 0a1.7,1.7 0,1 0,-3.4 0" android:strokeColor="#087EA4" android:strokeWidth="2.2" />
+        <path android:pathData="M13,5.3V14a4.5,4.5 0,0 1,-9 0v-1.5l2.2,1.6" android:strokeColor="#087EA4" android:strokeWidth="2.6" android:strokeLineCap="round" android:strokeLineJoin="round" />
+        <path android:pathData="M16,12.2 21,15l-5,2.8z" android:fillColor="#F2A23A" />
+    </group>
+</vector>

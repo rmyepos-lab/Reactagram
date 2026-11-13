@@ -1,6 +1,6 @@
 # Hookd: instructions for Claude (coding)
 
-Save this file as `CLAUDE.md` at the root of the repository. Claude Code reads it automatically at the start of every session. You can also paste it at the top of a chat.
+Claude Code reads this file at the start of every session.
 
 ## 1. What we are building
 
@@ -8,8 +8,8 @@ Hookd is an Android app that teaches React in about 10 minutes a day with Instag
 - Tabs: Home, Explore, Learn, Quiz, Profile.
 - **Learn reels:** an endless vertical feed of narrated lessons.
 - **Quiz reels:** one question per screen, the answers, an Explanation section, then a Next button.
-- **Content:** JSON files in `content/reels/learn` and `content/reels/quiz`, checked by the zod schema in `lib/schema.ts`. The content is generated offline by a scheduled Claude Code session, never by the app at runtime.
-- **Approved design:** https://claude.ai/artifact/Kq59JCQgRGRnQPM1VsRdDW (boards 0 to 7). Match it.
+- **Content:** JSON files in `content/reels/learn` and `content/reels/quiz`, checked by the zod schema in `src/features/content/schema.ts`. The content is generated offline by a scheduled Claude Code session, never by the app at runtime.
+- **Approved design:** https://claude.ai/artifact/Kq59JCQgRGRnQPM1VsRdDW (boards 0 to 8). Match it.
 
 ## 2. Fixed stack. Do not change it without asking me.
 
@@ -35,8 +35,8 @@ Hookd is an Android app that teaches React in about 10 minutes a day with Instag
 - **Ads:** `react-native-applovin-max` 9.6.0, native ads only.
   - **Never use AdMob** (`react-native-google-mobile-ads`).
 - **Splash screen:** the Android 12+ SplashScreen API (`androidx.core:core-splashscreen`). No custom JavaScript splash screen.
-- **Pro:** a Lemon Squeezy license key, checked with the Lemon Squeezy License API (activate / validate). No Google Play Billing and no checkout inside the app.
-- **Build:** a GitHub Actions workflow builds the debug APK. Requirements: Node 22.13+, JDK 17, Android SDK.
+- **Pro:** a license key bought outside the app and outside Google Play. The app only activates and re-validates the key through the payment provider's license API (the provider isn't chosen yet: ask before writing this part). No Google Play Billing, no checkout and no purchase flow inside the app.
+- **Build:** the GitHub Actions workflow `.github/workflows/android.yml` builds a test APK (release variant signed with the debug key, so it runs without a computer). Requirements: Node 22.13+, JDK 17, Android SDK.
 
 ## 3. Rules that prevent mistakes
 
@@ -52,12 +52,12 @@ Hookd is an Android app that teaches React in about 10 minutes a day with Instag
    - Before writing code, list the files you'll touch.
 5. **Read before you edit.** Open the current file, and match its existing patterns and names.
 6. **Check your work before saying it's done.**
-   - Run `npx tsc --noEmit` and `npx eslint .`, the tests, and `npm run validate` (reel checker) when content changes.
+   - Run `npm run check`. It rebuilds the content index, then runs the reel checker, TypeScript, ESLint and the tests.
    - Paste failures exactly as they appear. Never say something passes if you didn't run it.
 7. **Native setup.**
    - Any change to `android/` (Gradle, `AndroidManifest.xml`, `MainApplication`) must follow the library's install guide for React Native 0.87.
    - Include the exact lines you added.
-8. **Keep secrets out of the repo.** API keys and the AppLovin SDK key never go in the repo; they come from build config or CI secrets. Never print secrets.
+8. **Keep secrets out of the repo.** The AppLovin SDK key and ad unit id come from CI secrets through `scripts/write-env.ts`. The committed `src/config/env.ts` has no keys. Never print secrets.
 9. **When unsure, ask.** If the design, the behavior or a rule isn't clear, ask one short question instead of picking for me.
 10. **Be honest about status.** Say clearly what is unfinished, stubbed or untested.
 
@@ -65,12 +65,18 @@ Hookd is an Android app that teaches React in about 10 minutes a day with Instag
 
 - **Ads, Learn feed:** 1 native "Sponsored" reel every 7 reels.
   - It sits inside the stream: full screen, muted, skipped with one swipe.
-  - The ••• menu offers Hide this ad, Why am I seeing this, and Remove all ads with Pro.
+  - The ••• menu offers Hide this ad, Why am I seeing this, and "Have a Pro key? Activate it". It never promotes buying Pro.
 - **Ads, Home feed:** 1 sponsored post every 6 posts.
 - **Ads, Quiz feed (Smart Skip):** an ad slot comes after every 6 quizzes, and it's skipped when at least 5 of those 6 were answered correctly.
 - **Never show:** interstitials, app-open ads, rewarded ads, banners over lessons, or ads next to quiz answers.
 - **Free plan:** Learn and Quiz reels never end. There's no daily limit.
 - **Pro:** removes every ad. The Pro status is cached on the phone and re-validated from time to time.
+- **Never promote buying Pro inside the app** (Google Play payments policy):
+  - No price, "Buy", "Upgrade", "Get Pro" button, purchase link or text explaining how to buy, anywhere in the app or the Play listing.
+  - The Profile Pro card only says "Have a Hookd Pro key? Activate it here." with the key field and Activate button.
+  - The ad options sheet offers Hide this ad, Why am I seeing this, and "Have a Pro key? Activate it" (opens Profile).
+  - **Help & guide** opens the help website. That site must never link to the sales site.
+  - **Contact us** is neutral: topics Help, Feedback, Problem, Other; email, message, WhatsApp. No mention of Pro or buying.
 - **Reviews:** a wrong quiz answer comes back after 1, 3 and 7 days.
 - **Accessibility:**
   - Touch targets are at least 48dp.
@@ -100,7 +106,32 @@ Hookd is an Android app that teaches React in about 10 minutes a day with Instag
 - Bottom navigation: 80dp tall, with labels and a 64×32 pill behind the active tab.
 - Pressable buttons: a 4dp darker bottom edge, 900-weight uppercase label.
 
-## 6. How to answer
+## 6. Project map and code conventions
+
+```
+content/reels/{learn,quiz}/*.json   lesson and quiz content
+scripts/                            reel checker, content index, env writer
+src/App.tsx                         providers and navigation container
+src/theme/                          tokens.ts (colors, radii, fonts), motion.ts (springs, durations)
+src/config/                         app.ts (name, links), env.ts (ad keys, written by CI)
+src/lib/                            createStore, useEndlessFeed, date and format helpers
+src/components/ui/                  AppText, Icon, PressableScale, LedgeButton, Chip, BottomSheet...
+src/components/reels/               ReelPager, LearnReelCard, QuizReelCard, CodeBlock...
+src/features/<name>/                content, progress, ads, pro, narration, settings
+src/navigation/                     RootNavigator, TabBar, types
+src/screens/                        one file per screen
+__tests__/                          tests for pure logic
+```
+
+- **Reuse first.** Before writing a component, look in `src/components/ui`. Text is always `AppText`, tappable things are `PressableScale`, `IconButton` or `LedgeButton`.
+- **No raw values.** Colors, radii and fonts come from `src/theme/tokens.ts`. Animation settings come from `src/theme/motion.ts`.
+- **Animation:** use Reanimated (`useSharedValue`, `withSpring`, `withTiming`, `entering` animations). Animate only `transform` and `opacity` where possible.
+- **Logic stays pure.** Rules live in `features/*/logic.ts` or `policy.ts` as plain functions with tests. Components only call them.
+- **State:** use `createStore` from `src/lib/createStore.ts`. Don't add a state library.
+- **Imports:** screens import from a feature's `index.ts`, not from its inner files.
+- **Not built yet:** Pro key activation (`src/features/pro/licenseService.ts` is a stub until the payment provider is chosen) and the ad consent flow.
+
+## 7. How to answer
 
 1. Plan: the files and steps, in a few lines.
 2. The code changes.

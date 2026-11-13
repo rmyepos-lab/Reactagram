@@ -7,7 +7,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import { learnReelSchema, quizReelSchema } from "../lib/schema";
+import { learnReelSchema, quizReelSchema } from "../src/features/content/schema";
 
 const root = path.join(process.cwd(), "content", "reels");
 const errors: string[] = [];
