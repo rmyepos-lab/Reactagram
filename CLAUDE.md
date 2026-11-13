@@ -35,7 +35,8 @@ Hookd is an Android app that teaches React in about 10 minutes a day with Instag
 - **Ads:** `react-native-applovin-max` 9.6.0, native ads only.
   - **Never use AdMob** (`react-native-google-mobile-ads`).
 - **Splash screen:** the Android 12+ SplashScreen API (`androidx.core:core-splashscreen`). No custom JavaScript splash screen.
-- **Pro:** a license key bought outside the app and outside Google Play. The app only activates and re-validates the key through the payment provider's license API (the provider isn't chosen yet: ask before writing this part). No Google Play Billing, no checkout and no purchase flow inside the app.
+- **Remote config and admin:** Supabase, called with plain `fetch` (no Supabase package). Only the project URL and the anon key are in the app. Never put the `service_role` key, the Lemon Squeezy API key or any other secret in the app or in the `app_config` table.
+- **Pro:** not live yet: the Pro card says "Coming soon" until the admin switches `proActivationEnabled` on. Later: a license key bought outside the app and outside Google Play. The app only activates and re-validates the key through the payment provider's license API (the provider isn't chosen yet: ask before writing this part). No Google Play Billing, no checkout and no purchase flow inside the app.
 - **Build:** the GitHub Actions workflow `.github/workflows/android.yml` builds a test APK (release variant signed with the debug key, so it runs without a computer). Requirements: Node 22.13+, JDK 17, Android SDK.
 
 ## 3. Rules that prevent mistakes
@@ -57,7 +58,7 @@ Hookd is an Android app that teaches React in about 10 minutes a day with Instag
 7. **Native setup.**
    - Any change to `android/` (Gradle, `AndroidManifest.xml`, `MainApplication`) must follow the library's install guide for React Native 0.87.
    - Include the exact lines you added.
-8. **Keep secrets out of the repo.** The AppLovin SDK key and ad unit id come from CI secrets through `scripts/write-env.ts`. The committed `src/config/env.ts` has no keys. Never print secrets.
+8. **Keep secrets out of the repo.** The AppLovin SDK key, ad unit id, Supabase URL and Supabase anon key come from CI secrets through `scripts/write-env.ts`. The committed `src/config/env.ts` has no keys. Never print secrets.
 9. **When unsure, ask.** If the design, the behavior or a rule isn't clear, ask one short question instead of picking for me.
 10. **Be honest about status.** Say clearly what is unfinished, stubbed or untested.
 
@@ -71,10 +72,11 @@ Hookd is an Android app that teaches React in about 10 minutes a day with Instag
 - **Never show:** interstitials, app-open ads, rewarded ads, banners over lessons, or ads next to quiz answers.
 - **Free plan:** Learn and Quiz reels never end. There's no daily limit.
 - **Pro:** removes every ad. The Pro status is cached on the phone and re-validated from time to time.
+- **Admin:** tapping the version line in Profile 7 times opens a hidden Admin screen (only when Supabase is set up). After signing in, the admin can switch ads on or off and edit public settings for all users. The database rules in `supabase/setup.sql` decide who may save; the app is never trusted. Ad frequency rules are fixed in code, not remote.
 - **Never promote buying Pro inside the app** (Google Play payments policy):
   - No price, "Buy", "Upgrade", "Get Pro" button, purchase link or text explaining how to buy, anywhere in the app or the Play listing.
-  - The Profile Pro card only says "Have a Hookd Pro key? Activate it here." with the key field and Activate button.
-  - The ad options sheet offers Hide this ad, Why am I seeing this, and "Have a Pro key? Activate it" (opens Profile).
+  - The Profile Pro card says "Coming soon" while activation is off. When it's on, it only says "Have a Hookd Pro key? Activate it here." with the key field and Activate button.
+  - The ad options sheet offers Hide this ad, Why am I seeing this, and, only while activation is on, "Have a Pro key? Activate it" (opens Profile).
   - **Help & guide** opens the help website. That site must never link to the sales site.
   - **Contact us** is neutral: topics Help, Feedback, Problem, Other; email, message, WhatsApp. No mention of Pro or buying.
 - **Reviews:** a wrong quiz answer comes back after 1, 3 and 7 days.
@@ -117,7 +119,8 @@ src/config/                         app.ts (name, links), env.ts (ad keys, writt
 src/lib/                            createStore, useEndlessFeed, date and format helpers
 src/components/ui/                  AppText, Icon, PressableScale, LedgeButton, Chip, BottomSheet...
 src/components/reels/               ReelPager, LearnReelCard, QuizReelCard, CodeBlock...
-src/features/<name>/                content, progress, ads, pro, narration, settings
+src/features/<name>/                content, progress, ads, pro, remoteConfig, narration, settings
+supabase/setup.sql                  config table and admin rules, run once in Supabase
 src/navigation/                     RootNavigator, TabBar, types
 src/screens/                        one file per screen
 __tests__/                          tests for pure logic
@@ -129,6 +132,7 @@ __tests__/                          tests for pure logic
 - **Logic stays pure.** Rules live in `features/*/logic.ts` or `policy.ts` as plain functions with tests. Components only call them.
 - **State:** use `createStore` from `src/lib/createStore.ts`. Don't add a state library.
 - **Imports:** screens import from a feature's `index.ts`, not from its inner files.
+- **Remote settings:** to add one, add it to `configSchema`, `DEFAULT_CONFIG` and `CONFIG_FIELDS` in `src/features/remoteConfig/schema.ts` and to `supabase/setup.sql`. Read it with `useRemoteConfig('key')`.
 - **Not built yet:** Pro key activation (`src/features/pro/licenseService.ts` is a stub until the payment provider is chosen) and the ad consent flow.
 
 ## 7. How to answer

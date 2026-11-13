@@ -2,9 +2,10 @@ import React, { createContext, useCallback, useContext, useEffect, useMemo, useS
 import AppLovinMAX from 'react-native-applovin-max';
 import { env } from '../../config/env';
 import { useIsPro } from '../pro';
+import { useRemoteConfig } from '../remoteConfig';
 
 type AdsContextValue = {
-  /** Should feeds contain ad slots at all? False for Pro users and when no SDK key is set. */
+  /** Should feeds contain ad slots at all? False for Pro users, when the admin turned ads off, and when no SDK key is set. */
   enabled: boolean;
   /** True once the AppLovin SDK is ready to load real ads. */
   sdkReady: boolean;
@@ -20,11 +21,12 @@ const hasKey = env.applovinSdkKey.length > 0 && env.nativeAdUnitId.length > 0;
 
 export function AdsProvider({ children }: { children: React.ReactNode }) {
   const isPro = useIsPro();
+  const allowed = useRemoteConfig('adsEnabled') && !isPro;
   const [sdkReady, setSdkReady] = useState(false);
   const [removed, setRemoved] = useState<ReadonlySet<string>>(new Set());
 
   useEffect(() => {
-    if (!hasKey || isPro) {
+    if (!hasKey || !allowed) {
       return;
     }
     let cancelled = false;
@@ -39,7 +41,7 @@ export function AdsProvider({ children }: { children: React.ReactNode }) {
     return () => {
       cancelled = true;
     };
-  }, [isPro]);
+  }, [allowed]);
 
   const remove = useCallback((feed: string, slotId: string) => {
     setRemoved(prev => new Set(prev).add(`${feed}:${slotId}`));
@@ -48,13 +50,13 @@ export function AdsProvider({ children }: { children: React.ReactNode }) {
   const value = useMemo<AdsContextValue>(() => {
     const placeholder = env.adPlaceholders && !hasKey;
     return {
-      enabled: !isPro && (placeholder || (hasKey && sdkReady)),
+      enabled: allowed && (placeholder || (hasKey && sdkReady)),
       sdkReady,
       placeholder,
       isRemoved: (feed, slotId) => removed.has(`${feed}:${slotId}`),
       remove,
     };
-  }, [isPro, sdkReady, removed, remove]);
+  }, [allowed, sdkReady, removed, remove]);
 
   return <AdsContext.Provider value={value}>{children}</AdsContext.Provider>;
 }

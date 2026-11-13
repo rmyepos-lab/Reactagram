@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Linking, ScrollView, StyleSheet, View } from 'react-native';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { AppText, Chip, IconButton, LedgeButton, PressableScale, Screen, TextField } from '../components/ui';
-import { APP_NAME, CONTACT_EMAIL, CONTACT_REPLY_TIME, CONTACT_WHATSAPP } from '../config/app';
+import { APP_NAME, CONTACT_REPLY_TIME } from '../config/app';
+import { useRemoteConfig } from '../features/remoteConfig';
 import type { RootScreenProps } from '../navigation/types';
 import { colors, radii } from '../theme';
 
@@ -15,6 +16,7 @@ const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
  * Sending opens the phone's email app with the message filled in.
  */
 export function ContactScreen({ navigation }: RootScreenProps<'Contact'>) {
+  const { contactEmail, contactWhatsapp } = useRemoteConfig();
   const [topic, setTopic] = useState<Topic>('Help');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -31,7 +33,7 @@ export function ContactScreen({ navigation }: RootScreenProps<'Contact'>) {
     if (next.email || next.message) {
       return;
     }
-    if (!CONTACT_EMAIL) {
+    if (!contactEmail) {
       setNotice("Contact isn't set up yet. Please try again later.");
       return;
     }
@@ -40,10 +42,10 @@ export function ContactScreen({ navigation }: RootScreenProps<'Contact'>) {
       `${message.trim()}\n\nFrom: ${name.trim() || 'No name'}\nReply to: ${email.trim()}`,
     );
     try {
-      await Linking.openURL(`mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`);
+      await Linking.openURL(`mailto:${contactEmail}?subject=${subject}&body=${body}`);
       setNotice('Your email app opened with the message. Press send there to finish.');
     } catch {
-      setNotice(`No email app found. Write to ${CONTACT_EMAIL}.`);
+      setNotice(`No email app found. Write to ${contactEmail}.`);
     }
   };
 
@@ -102,9 +104,9 @@ export function ContactScreen({ navigation }: RootScreenProps<'Contact'>) {
           </Animated.View>
         ) : null}
 
-        {CONTACT_WHATSAPP ? (
+        {contactWhatsapp ? (
           <PressableScale
-            onPress={() => Linking.openURL(`https://wa.me/${CONTACT_WHATSAPP}`).catch(() => undefined)}
+            onPress={() => Linking.openURL(`https://wa.me/${contactWhatsapp}`).catch(() => undefined)}
             accessibilityRole="link"
             accessibilityLabel="Message us on WhatsApp"
             style={styles.whatsapp}

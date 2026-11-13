@@ -3,6 +3,7 @@ import Animated, { FadeInDown } from 'react-native-reanimated';
 import { StyleSheet } from 'react-native';
 import { AppText, BottomSheet, ListRow } from '../../components/ui';
 import { APP_NAME } from '../../config/app';
+import { useRemoteConfig } from '../remoteConfig';
 import { colors, radii } from '../../theme';
 
 type Props = {
@@ -14,10 +15,11 @@ type Props = {
 };
 
 /**
- * The ••• menu of a sponsored item. Play policy: it may point to key activation,
- * but it must never mention prices or how to buy.
+ * The ••• menu of a sponsored item. Play policy: it may point to key activation (only
+ * while activation is switched on), but it must never mention prices or how to buy.
  */
 export function AdOptionsSheet({ visible, onClose, onHide, onActivateKey }: Props) {
+  const canActivate = useRemoteConfig('proActivationEnabled');
   const [showWhy, setShowWhy] = useState(false);
 
   useEffect(() => {
@@ -41,7 +43,9 @@ export function AdOptionsSheet({ visible, onClose, onHide, onActivateKey }: Prop
           </AppText>
         </Animated.View>
       ) : null}
-      <ListRow icon="key" label="Have a Pro key? Activate it" onPress={onActivateKey} />
+      {canActivate ? (
+        <ListRow icon="key" label="Have a Pro key? Activate it" onPress={onActivateKey} />
+      ) : null}
     </BottomSheet>
   );
 }

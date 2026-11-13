@@ -1,20 +1,43 @@
-import React, { useMemo, useState } from 'react';
-import { Linking, ScrollView, StyleSheet, View } from 'react-native';
+import React, { useMemo, useRef, useState } from 'react';
+import { Linking, Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import Animated, { FadeInDown, ZoomIn } from 'react-native-reanimated';
 import { AppText, Icon, LedgeButton, ListRow, ProgressBar, Screen, TextField } from '../components/ui';
-import { APP_NAME, HELP_URL } from '../config/app';
+import { APP_NAME, APP_VERSION } from '../config/app';
 import { learnReels, quizReels, topics } from '../features/content';
 import { LICENSE_MESSAGES, pro, useIsPro } from '../features/pro';
 import { quizAccuracy, useProgress } from '../features/progress';
+import { remoteConfig, useRemoteConfig } from '../features/remoteConfig';
 import type { TabScreenProps } from '../navigation/types';
 import { colors, radii } from '../theme';
 
 const ALL = [...learnReels, ...quizReels];
+/** Taps on the version line that open the hidden admin screen. */
+const ADMIN_TAPS = 7;
+const ADMIN_TAP_WINDOW_MS = 4000;
 
 export function ProfileScreen({ navigation }: TabScreenProps<'Profile'>) {
   const p = useProgress();
   const accuracy = quizAccuracy(p);
   const reviews = Object.keys(p.review).length;
+  const helpUrl = useRemoteConfig('helpUrl');
+  const taps = useRef({ count: 0, first: 0 });
+
+  const onVersionPress = () => {
+    if (!remoteConfig.isConfigured) {
+      return;
+    }
+    const now = Date.now();
+    const t = taps.current;
+    if (now - t.first > ADMIN_TAP_WINDOW_MS) {
+      t.count = 0;
+      t.first = now;
+    }
+    t.count += 1;
+    if (t.count >= ADMIN_TAPS) {
+      t.count = 0;
+      navigation.navigate('Admin');
+    }
+  };
 
   const byTopic = useMemo(
     () =>
@@ -93,17 +116,23 @@ export function ProfileScreen({ navigation }: TabScreenProps<'Profile'>) {
         <ProCard />
 
         <View style={styles.rows}>
-          {HELP_URL ? (
+          {helpUrl ? (
             <ListRow
               icon="help"
               label="Help & guide"
               trailing="docs"
               hint="Opens the help website"
-              onPress={() => Linking.openURL(HELP_URL).catch(() => undefined)}
+              onPress={() => Linking.openURL(helpUrl).catch(() => undefined)}
             />
           ) : null}
           <ListRow icon="mail" label="Contact us" onPress={() => navigation.navigate('Contact')} />
         </View>
+
+        <Pressable onPress={onVersionPress} style={styles.version}>
+          <AppText weight="bold" size={12.5} color={colors.textMuted}>
+            {APP_NAME} {APP_VERSION}
+          </AppText>
+        </Pressable>
       </ScrollView>
     </Screen>
   );
@@ -123,11 +152,13 @@ function Stat({ value, label, bg, fg }: { value: string; label: string; bg: stri
 }
 
 /**
- * Pro key activation. Play policy: this card must never show a price, a buy button,
+ * Pro card. Until the admin switches key activation on it only says "Coming soon".
+ * Play policy: this card must never show a price, a buy button,
  * a purchase link or text that explains how to buy.
  */
 function ProCard() {
   const isPro = useIsPro();
+  const canActivate = useRemoteConfig('proActivationEnabled');
   const [key, setKey] = useState('');
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -154,6 +185,13 @@ function ProCard() {
             Pro is active. Ads are off.
           </AppText>
         </Animated.View>
+      ) : !canActivate ? (
+        <View style={styles.proActive}>
+          <Icon name="clock" size={20} color={colors.onProContainer} />
+          <AppText weight="extrabold" size={14.5} color={colors.onProContainer}>
+            Coming soon
+          </AppText>
+        </View>
       ) : (
         <>
           <AppText weight="bold" size={13.5} color={colors.onProContainer}>
@@ -221,4 +259,5 @@ const styles = StyleSheet.create({
   pro: { padding: 16, gap: 10, borderRadius: radii.xxl, backgroundColor: colors.proTint },
   proActive: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   rows: { gap: 8 },
+  version: { minHeight: 48, alignItems: 'center', justifyContent: 'center' },
 });

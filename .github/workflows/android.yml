@@ -31,11 +31,14 @@ jobs:
       # Content index, reel checker, TypeScript, ESLint and tests.
       - run: npm run check
 
-      # Real ad keys come from repository secrets. Without them the app shows sample ads.
+      # Keys come from repository secrets. Without them the app shows sample ads and
+      # uses its built-in settings (no remote config, no admin screen).
       - run: npx tsx scripts/write-env.ts
         env:
           APPLOVIN_SDK_KEY: ${{ secrets.APPLOVIN_SDK_KEY }}
           APPLOVIN_NATIVE_AD_UNIT_ID: ${{ secrets.APPLOVIN_NATIVE_AD_UNIT_ID }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
 
       # A test build that runs without a computer: JavaScript is bundled inside the APK
       # and it is signed with the debug key. It is not a Play Store release.

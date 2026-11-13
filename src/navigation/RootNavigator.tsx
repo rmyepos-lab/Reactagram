@@ -1,6 +1,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { AdminScreen } from '../screens/AdminScreen';
 import { ContactScreen } from '../screens/ContactScreen';
 import { ExploreScreen } from '../screens/ExploreScreen';
 import { HomeScreen } from '../screens/HomeScreen';
@@ -38,6 +39,7 @@ export function RootNavigator() {
     >
       <Stack.Screen name="Tabs" component={Tabs} />
       <Stack.Screen name="Contact" component={ContactScreen} options={{ animation: 'slide_from_right' }} />
+      <Stack.Screen name="Admin" component={AdminScreen} options={{ animation: 'slide_from_bottom' }} />
     </Stack.Navigator>
   );
 }

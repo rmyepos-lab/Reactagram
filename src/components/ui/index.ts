@@ -10,3 +10,4 @@ export { ProgressBar } from './ProgressBar';
 export { Skeleton } from './Skeleton';
 export { Screen } from './Screen';
 export { TextField } from './TextField';
+export { ToggleRow } from './ToggleRow';

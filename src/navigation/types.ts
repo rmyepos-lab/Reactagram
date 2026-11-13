@@ -14,6 +14,8 @@ export type TabParamList = {
 export type RootStackParamList = {
   Tabs: NavigatorScreenParams<TabParamList> | undefined;
   Contact: undefined;
+  /** Hidden: opened by tapping the version line in Profile seven times. */
+  Admin: undefined;
 };
 
 export type TabScreenProps<T extends keyof TabParamList> = CompositeScreenProps<
