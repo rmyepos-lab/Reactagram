@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-key-reset",
+  "topic": "State",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "key"
+  ],
+  "sourceUrl": "https://react.dev/learn/preserving-and-resetting-state",
+  "question": "userId changes from 1 to 2. What happens to Profile's state?",
+  "code": "<Profile key={userId} userId={userId} />",
+  "options": [
+    "It's kept",
+    "It's reset: a new Profile is mounted",
+    "React throws an error"
+  ],
+  "answer": 1,
+  "say": "The user ID changes from one to two. What happens to the profile component's state?",
+  "explanation": "A different key tells React it's a different component, so the old one unmounts and a fresh one mounts.",
+  "explainSay": "It resets. A new key means a brand-new component with fresh state."
+}

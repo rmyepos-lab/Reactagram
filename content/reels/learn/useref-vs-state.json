@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "useref-vs-state",
+  "topic": "useRef",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "useRef",
+    "state"
+  ],
+  "sourceUrl": "https://react.dev/learn/referencing-values-with-refs",
+  "title": "useRef: memory without re-renders",
+  "slides": [
+    {
+      "type": "title",
+      "text": "useRef = a secret pocket 👖",
+      "say": "Use ref is like a secret pocket for your component."
+    },
+    {
+      "type": "code",
+      "code": "const intervalRef = useRef(null);\n\nfunction start() {\n  intervalRef.current = setInterval(tick, 1000);\n}\nfunction stop() {\n  clearInterval(intervalRef.current);\n}",
+      "highlight": [
+        1,
+        4,
+        7
+      ],
+      "text": "Store values that survive renders.",
+      "say": "It stores a value that survives re-renders, like an interval ID. You read and write it through dot current."
+    },
+    {
+      "type": "text",
+      "text": "Changing ref.current does NOT re-render.",
+      "say": "The key difference: changing ref dot current does not trigger a re-render. Changing state does."
+    },
+    {
+      "type": "text",
+      "text": "Shown on screen → state. Not shown → ref.",
+      "say": "Simple rule: if it's shown on screen, use state. If it's not, a ref is usually right."
+    }
+  ]
+}

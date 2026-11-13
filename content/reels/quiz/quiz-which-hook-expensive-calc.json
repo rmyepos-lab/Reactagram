@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-which-hook-expensive-calc",
+  "topic": "Performance",
+  "format": "which-hook",
+  "level": "intermediate",
+  "tags": [
+    "useMemo",
+    "performance"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useMemo",
+  "question": "Skip re-filtering a 10,000-item list unless it changes. Which Hook?",
+  "options": [
+    "useCallback",
+    "useMemo",
+    "useRef",
+    "useLayoutEffect"
+  ],
+  "answer": 1,
+  "say": "You want to skip re-filtering a huge list unless the list changes. Which hook?",
+  "explanation": "useMemo caches the result of a calculation between renders until its dependencies change.",
+  "explainSay": "Use memo. It caches the calculated result until its dependencies change."
+}

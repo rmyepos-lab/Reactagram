@@ -1,0 +1,40 @@
+{
+  "kind": "learn",
+  "id": "state-is-a-snapshot",
+  "topic": "State",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "state",
+    "snapshot",
+    "rendering"
+  ],
+  "sourceUrl": "https://react.dev/learn/state-as-a-snapshot",
+  "title": "State is a snapshot 📸",
+  "slides": [
+    {
+      "type": "title",
+      "text": "State is a snapshot 📸",
+      "say": "Here's the idea that makes React state click: state is a snapshot."
+    },
+    {
+      "type": "code",
+      "code": "function handleClick() {\n  setCount(count + 5);\n  alert(count); // still 0!\n}",
+      "highlight": [
+        3
+      ],
+      "text": "Setting state doesn't change the variable now.",
+      "say": "Setting state doesn't change the variable you already have. It asks React for a new render. So the alert still shows zero."
+    },
+    {
+      "type": "text",
+      "text": "Each render has its own props, state, and event handlers.",
+      "say": "Every render is like a photo. It has its own props, its own state, and its own event handlers frozen inside it."
+    },
+    {
+      "type": "text",
+      "text": "Need the new value? Compute it first: const next = count + 5",
+      "say": "Need the new value right away? Compute it in a variable first, then use it and set it."
+    }
+  ]
+}

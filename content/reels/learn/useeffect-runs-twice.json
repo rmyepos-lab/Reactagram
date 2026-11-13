@@ -1,0 +1,40 @@
+{
+  "kind": "learn",
+  "id": "useeffect-runs-twice",
+  "topic": "useEffect",
+  "format": "pitfall",
+  "level": "beginner",
+  "tags": [
+    "useEffect",
+    "strict-mode",
+    "cleanup"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#how-to-handle-the-effect-firing-twice-in-development",
+  "title": "Why does my effect run twice?",
+  "slides": [
+    {
+      "type": "title",
+      "text": "My effect runs twice?! 🔁",
+      "say": "Your effect runs twice in development. It's not a bug, it's a test."
+    },
+    {
+      "type": "text",
+      "text": "In dev, Strict Mode mounts → unmounts → mounts again.",
+      "say": "In development, strict mode mounts your component, unmounts it, then mounts it again, on purpose."
+    },
+    {
+      "type": "code",
+      "code": "useEffect(() => {\n  const conn = createConnection(roomId);\n  conn.connect();\n  return () => conn.disconnect();\n}, [roomId]);",
+      "highlight": [
+        4
+      ],
+      "text": "The fix: return a cleanup function.",
+      "say": "It checks that your effect cleans up after itself. Return a cleanup function that undoes what the setup did."
+    },
+    {
+      "type": "text",
+      "text": "Production runs it once. Don't fight it, fix the cleanup.",
+      "say": "In production it only runs once. So don't try to block it. Write a proper cleanup instead."
+    }
+  ]
+}

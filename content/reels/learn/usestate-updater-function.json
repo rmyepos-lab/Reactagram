@@ -1,0 +1,48 @@
+{
+  "kind": "learn",
+  "id": "usestate-updater-function",
+  "topic": "useState",
+  "format": "special-use",
+  "level": "beginner",
+  "tags": [
+    "useState",
+    "state",
+    "batching"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useState",
+  "title": "setCount(c => c + 1): the updater trick",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Why +3 only adds 1 🤯",
+      "say": "You call set count three times, but the counter only goes up by one. Why?"
+    },
+    {
+      "type": "code",
+      "code": "function handleClick() {\n  setCount(count + 1); // 0 + 1\n  setCount(count + 1); // 0 + 1\n  setCount(count + 1); // 0 + 1\n}",
+      "highlight": [
+        2,
+        3,
+        4
+      ],
+      "text": "count is 0 in this whole render.",
+      "say": "Inside this click handler, count is zero the whole time. So each call says: set count to one."
+    },
+    {
+      "type": "code",
+      "code": "function handleClick() {\n  setCount(c => c + 1); // 0 → 1\n  setCount(c => c + 1); // 1 → 2\n  setCount(c => c + 1); // 2 → 3\n}",
+      "highlight": [
+        2,
+        3,
+        4
+      ],
+      "text": "Pass an updater function instead.",
+      "say": "Pass an updater function instead. React queues them, and each one receives the latest pending state. Now you get three."
+    },
+    {
+      "type": "text",
+      "text": "Rule of thumb: next state depends on previous state → use an updater.",
+      "say": "Rule of thumb: when the next state depends on the previous one, use an updater function."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-alert-after-set",
+  "topic": "State",
+  "format": "output",
+  "level": "beginner",
+  "tags": [
+    "state",
+    "snapshot"
+  ],
+  "sourceUrl": "https://react.dev/learn/state-as-a-snapshot",
+  "question": "count is 0. What does the alert show?",
+  "code": "function handleClick() {\n  setCount(count + 5);\n  alert(count);\n}",
+  "options": [
+    "5",
+    "0",
+    "undefined"
+  ],
+  "answer": 1,
+  "say": "Count is zero. After setting it plus five, what does the alert show?",
+  "explanation": "State is a snapshot. setCount schedules a re-render; the count variable in this render stays 0.",
+  "explainSay": "Zero. Setting state schedules a new render, but this render's count is still zero."
+}
