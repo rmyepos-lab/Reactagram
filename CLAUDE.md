@@ -132,7 +132,8 @@ __tests__/                          tests for pure logic
 - **Logic stays pure.** Rules live in `features/*/logic.ts` or `policy.ts` as plain functions with tests. Components only call them.
 - **State:** use `createStore` from `src/lib/createStore.ts`. Don't add a state library.
 - **Imports:** screens import from a feature's `index.ts`, not from its inner files.
-- **Remote settings:** to add one, add it to `configSchema`, `DEFAULT_CONFIG` and `CONFIG_FIELDS` in `src/features/remoteConfig/schema.ts` and to `supabase/setup.sql`. Read it with `useRemoteConfig('key')`.
+- **Remote settings:** to add one, add it to the `RemoteConfig` type, `DEFAULT_CONFIG` and `CONFIG_FIELDS` in `src/features/remoteConfig/schema.ts` and to `supabase/setup.sql`. Read it with `useRemoteConfig('key')`.
+- **zod is for scripts only.** Don't import it at runtime in `src/` (type-only imports are fine): the app's Babel preset can't bundle it.
 - **Not built yet:** Pro key activation (`src/features/pro/licenseService.ts` is a stub until the payment provider is chosen) and the ad consent flow.
 
 ## 7. How to answer
