@@ -6,7 +6,13 @@ A local build takes many minutes and gives a differently signed app.
 
 ## 1. Build the APK (GitHub Actions)
 
-Only when the owner asks for a build.
+Who starts a build:
+
+- `dev-apk`: Claude starts it without asking, as soon as a change needs a new APK (see the list below), and says so.
+- `test-apk` and the production build: only when the owner asks.
+
+The terminal commands need the GitHub tool, signed in once: `gh auth login`.
+Downloaded APKs go in `bundle/`, which git ignores.
 
 1. Push the branch.
 2. GitHub > Actions > **Android** > **Run workflow**, pick the branch and what to build:

@@ -56,6 +56,10 @@ yarn-error.log
 # Bundle artifact
 *.jsbundle
 
+# APKs downloaded from GitHub Actions
+/bundle/
+*.apk
+
 # Ruby / CocoaPods
 **/Pods/
 /vendor/bundle/
