@@ -3,7 +3,7 @@
  * shows a friendly message. None of these values are secrets.
  */
 export const APP_NAME = 'Hookd';
-export const APP_TAGLINE = 'React in 10 minutes a day';
+export const APP_TAGLINE = 'React in 15 minutes a day';
 export const APP_VERSION = '1.0';
 export const DAILY_GOAL_MINUTES = 10;
 

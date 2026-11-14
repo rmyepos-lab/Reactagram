@@ -1,5 +1,9 @@
 import Speech from '@mhpdev/react-native-speech';
+import { AudioContext, decodeAudioData } from 'react-native-audio-api';
+import type { AudioBuffer, AudioBufferSourceNode } from 'react-native-audio-api';
+import { env } from '../../config/env';
 import { speakingSeconds } from '../../lib/format';
+import { narrationUrl } from './logic';
 
 type Cancel = () => void;
 type SpeechEvent = { id: string };
@@ -10,14 +14,41 @@ type Subscribe = (handler: (event: SpeechEvent) => void) => { remove: () => void
 const onFinish = Speech.onFinish as Subscribe;
 const onError = Speech.onError as Subscribe;
 
+/** How many downloaded lines stay in memory, so replaying a slide doesn't download again. */
+const KEPT_LINES = 6;
+const loaded = new Map<string, Promise<AudioBuffer>>();
+let context: AudioContext | null = null;
+
+/** Downloads and decodes one recorded line. Failed downloads are forgotten so they can retry. */
+function load(url: string): Promise<AudioBuffer> {
+  const known = loaded.get(url);
+  if (known) {
+    return known;
+  }
+  const loading = decodeAudioData(url);
+  loaded.set(url, loading);
+  loading.catch(() => loaded.delete(url));
+  if (loaded.size > KEPT_LINES) {
+    const oldest = loaded.keys().next().value;
+    if (oldest !== undefined) {
+      loaded.delete(oldest);
+    }
+  }
+  return loading;
+}
+
 /**
- * Speaks one line with the phone's own text-to-speech and calls `onDone` when it ends.
- * If the phone has no voice, or `silent` is true, it waits for the time the line would
- * take instead, so reels keep their pace. Returns a function that cancels everything.
+ * Speaks one line and calls `onDone` when it ends. It plays the recorded voice from the
+ * server; if that file can't be loaded (or Supabase isn't set up) it uses the phone's own
+ * text-to-speech. If the phone has no voice either, or `silent` is true, it waits for the
+ * time the line would take instead, so reels keep their pace. Returns a function that
+ * cancels everything.
  */
 export function narrate(text: string, onDone: () => void, silent = false): Cancel {
   let finished = false;
   let speechId: string | null = null;
+  let usedPhoneVoice = false;
+  let player: AudioBufferSourceNode | null = null;
   let timer: ReturnType<typeof setTimeout> | null = null;
   const subs: { remove: () => void }[] = [];
 
@@ -27,6 +58,10 @@ export function narrate(text: string, onDone: () => void, silent = false): Cance
     if (timer) {
       clearTimeout(timer);
       timer = null;
+    }
+    if (player) {
+      player.onEnded = null;
+      player = null;
     }
   };
   const done = () => {
@@ -41,9 +76,8 @@ export function narrate(text: string, onDone: () => void, silent = false): Cance
     timer = setTimeout(done, speakingSeconds(text) * 1000);
   };
 
-  if (silent) {
-    waitInstead();
-  } else {
+  const speakWithPhone = () => {
+    usedPhoneVoice = true;
     const endIfMine = (e: SpeechEvent) => {
       if (e.id === speechId) {
         done();
@@ -61,6 +95,44 @@ export function narrate(text: string, onDone: () => void, silent = false): Cance
           waitInstead();
         }
       });
+  };
+
+  const playRecording = (url: string) => {
+    load(url)
+      .then(async buffer => {
+        if (finished) {
+          return;
+        }
+        context ??= new AudioContext();
+        if (context.state === 'suspended') {
+          await context.resume();
+        }
+        if (finished) {
+          return;
+        }
+        const source = context.createBufferSource();
+        source.buffer = buffer;
+        source.connect(context.destination);
+        source.onEnded = done;
+        source.start();
+        player = source;
+      })
+      .catch(() => {
+        if (!finished) {
+          speakWithPhone();
+        }
+      });
+  };
+
+  if (silent) {
+    waitInstead();
+  } else {
+    const url = narrationUrl(env.supabaseUrl, text);
+    if (url) {
+      playRecording(url);
+    } else {
+      speakWithPhone();
+    }
   }
 
   return () => {
@@ -68,8 +140,16 @@ export function narrate(text: string, onDone: () => void, silent = false): Cance
       return;
     }
     finished = true;
+    const playing = player;
     cleanup();
-    if (!silent) {
+    if (playing) {
+      try {
+        playing.stop();
+      } catch {
+        // Already stopped: nothing to do.
+      }
+    }
+    if (usedPhoneVoice) {
       Speech.stop().catch(() => undefined);
     }
   };

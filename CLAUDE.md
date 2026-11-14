@@ -27,7 +27,7 @@ Hookd is an Android app that teaches React in about 10 minutes a day with Instag
 - **Animation and gestures:**
   - `react-native-reanimated` 4.7.1 with `react-native-worklets` 0.13.1
   - `react-native-gesture-handler` 3.5.0
-- **Voice-over:** `@mhpdev/react-native-speech` 1.4.4. It uses the phone's own text-to-speech, so it's free and works offline.
+- **Voice-over:** recorded MP3s, one per narration line, made offline with Kokoro (`npm run narration`) and stored in the public Supabase bucket `narration`. The app plays them with `react-native-audio-api` 0.13.6 (FFmpeg left out: `disableAudioapiFFmpeg=true`). `@mhpdev/react-native-speech` 1.4.4 (the phone's own text-to-speech) is the fallback when a file can't be loaded.
 - **Graphics:** `react-native-svg` 15.16.1
 - **Storage:** `@react-native-async-storage/async-storage` 3.1.1
 - **Code coloring:** `sugar-high` 2.6.4

@@ -61,3 +61,9 @@ on conflict (key) do nothing;
 -- After creating your admin user (Authentication > Users > Add user), make it an admin.
 -- Replace the email, then run this line on its own:
 -- insert into public.admins (user_id) select id from auth.users where email = 'you@example.com';
+
+-- Narration: a public bucket for the recorded voice files (made by `npm run narration`).
+-- Everyone can download them. Nobody can upload from the app: uploads use the service_role
+-- key, which lives only on the computer that records the files.
+insert into storage.buckets (id, name, public) values ('narration', 'narration', true)
+on conflict (id) do nothing;
