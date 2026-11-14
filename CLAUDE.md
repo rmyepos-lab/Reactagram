@@ -148,6 +148,10 @@ Keep explanations short and plain.
 ## 8. Waiting and token use
 
 - **Say when you wait.** Before anything that takes more than a few seconds (install, checks, a CI run, a download), tell me what you are waiting for and about how long. If it takes longer than you said, tell me again.
+- **GitHub Actions builds:**
+  - **Don't watch in a busy session.** After starting a build, give me the run link and stop. If I want it watched, tell me to run `/clear` first or to open a new session only for the build.
+  - **Check rarely.** One check after the usual build time (about 13 minutes for an APK), not continuous watching or polling. If it's still running, tell me and wait for me to ask again.
+  - **Read little of the log.** On a failure, read only the failing step and the last 30 lines of its log (`gh run view <id> --log-failed | tail -30`). Never read the whole log.
 - **Give me buttons when you stop.** When you stop and need an action from me (apply, next, choose), show clickable options with the question tool, each with a short description of what clicking it does (for example "Apply: make this change now"). Don't make me type the word.
 - **Suggest commands.** If you notice a task we repeat that would be easier as a slash command in `.claude/commands/`, tell me in one line. Don't create it until I say yes.
 - **Read little.** Find the place with a search first, then read only those lines. Don't read a file twice in one session, and don't read files the task doesn't name or need.
