@@ -37,7 +37,7 @@ Hookd is an Android app that teaches React in about 10 minutes a day with Instag
 - **Splash screen:** the Android 12+ SplashScreen API (`androidx.core:core-splashscreen`). No custom JavaScript splash screen.
 - **Remote config and admin:** Supabase, called with plain `fetch` (no Supabase package). Only the project URL and the anon key are in the app. Never put the `service_role` key, the Lemon Squeezy API key or any other secret in the app or in the `app_config` table.
 - **Pro:** not live yet: the Pro card says "Coming soon" until the admin switches `proActivationEnabled` on. Later: a license key bought outside the app and outside Google Play. The app only activates and re-validates the key through the payment provider's license API (the provider isn't chosen yet: ask before writing this part). No Google Play Billing, no checkout and no purchase flow inside the app.
-- **Build:** `.github/workflows/android.yml`. A push only runs the code checks. APKs are built by hand (Run workflow): `dev-apk` (debug, loads JavaScript from Metro) or `test-apk` (standalone, debug key). Never start a build unless I ask. The production AAB and Play release are not set up yet: ask before adding them. Requirements: Node 22.13+, JDK 17, Android SDK.
+- **Build:** `.github/workflows/android.yml`. A push only runs the code checks. APKs are built by hand (Run workflow): `dev-apk` (debug, loads JavaScript from Metro) or `test-apk` (standalone, debug key). Never start a build unless I ask. **APKs are built only in GitHub Actions, never on the computer** (no `npm run android`, `react-native run-android` or `./gradlew assemble...`). To run the app, use the installed dev app with Metro: see `BUILD.md`. The production AAB and Play release are not set up yet: ask before adding them. Requirements: Node 22.13+, JDK 17, Android SDK.
 
 ## 3. Rules that prevent mistakes
 
@@ -144,3 +144,17 @@ __tests__/                          tests for pure logic
 4. What's left or untested.
 
 Keep explanations short and plain.
+
+## 8. Waiting and token use
+
+- **Say when you wait.** Before anything that takes more than a few seconds (install, checks, a CI run, a download), tell me what you are waiting for and about how long. If it takes longer than you said, tell me again.
+- **Give me buttons when you stop.** When you stop and need an action from me (apply, next, choose), show clickable options with the question tool, each with a short description of what clicking it does (for example "Apply: make this change now"). Don't make me type the word.
+- **Suggest commands.** If you notice a task we repeat that would be easier as a slash command in `.claude/commands/`, tell me in one line. Don't create it until I say yes.
+- **Read little.** Find the place with a search first, then read only those lines. Don't read a file twice in one session, and don't read files the task doesn't name or need.
+- **Don't explore.** No tour of the project "to understand it". Section 6 is the map.
+- **Keep command output short.** Pipe long output through `tail` or `grep`. Never print a whole build log, lockfile or `node_modules` file.
+- **No helper agents** unless I ask for one.
+- **Run `npm run check` once**, at the end of the task, not after every edit.
+- **Don't repeat.** No recap of what I can already see, no code pasted back after an edit, no list of options you won't use.
+- **Ask early.** One short question costs less than a long investigation.
+- **No extra files.** No plan, notes or summary documents unless I ask.
