@@ -69,7 +69,9 @@ function installKokoro() {
 }
 
 async function upload(files: string[]) {
-  const url = (process.env.SUPABASE_URL ?? '').trim().replace(/\/+$/, '');
+  // Only the site part is kept, so a pasted ".../rest/v1/" still works.
+  const given = (process.env.SUPABASE_URL ?? '').trim();
+  const url = URL.canParse(given) ? new URL(given).origin : '';
   const key = (process.env.SUPABASE_SERVICE_ROLE_KEY ?? '').trim();
   if (!url || !key) {
     console.log(
@@ -77,6 +79,11 @@ async function upload(files: string[]) {
         `Upload the folder .narration/out/${NARRATION_VOICE} into the "${NARRATION_BUCKET}" bucket by hand, keeping the folder name.`,
     );
     return;
+  }
+  if (key.startsWith('sb_publishable_')) {
+    throw new Error(
+      'SUPABASE_SERVICE_ROLE_KEY holds the publishable key, which may not upload. Use the secret key (sb_secret_…).',
+    );
   }
   let sent = 0;
   for (const file of files) {
@@ -89,6 +96,7 @@ async function upload(files: string[]) {
     const res = await fetch(address, {
       method: 'POST',
       headers: {
+        // Both headers carry the same key, the way Supabase's own client sends it.
         Authorization: `Bearer ${key}`,
         apikey: key,
         'Content-Type': 'audio/mpeg',

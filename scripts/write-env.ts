@@ -10,7 +10,9 @@ const read = (name: string) => (process.env[name] ?? '').trim();
 
 const sdkKey = read('APPLOVIN_SDK_KEY');
 const adUnit = read('APPLOVIN_NATIVE_AD_UNIT_ID');
-const supabaseUrl = read('SUPABASE_URL').replace(/\/+$/, '');
+// Only the site part is kept, so a pasted ".../rest/v1/" still works.
+const givenUrl = read('SUPABASE_URL');
+const supabaseUrl = URL.canParse(givenUrl) ? new URL(givenUrl).origin : '';
 const supabaseAnonKey = read('SUPABASE_ANON_KEY');
 
 const hasAds = sdkKey.length > 0 && adUnit.length > 0;
