@@ -151,6 +151,7 @@ Keep explanations short and plain.
 - **GitHub Actions builds:**
   - **Don't watch in a busy session.** After starting a build, give me the run link and stop. If I want it watched, tell me to run `/clear` first or to open a new session only for the build.
   - **Check rarely.** One check after the usual build time (about 13 minutes for an APK), not continuous watching or polling. If it's still running, tell me and wait for me to ask again.
+  - **Fetch a green dev-apk.** When a check shows the `dev-apk` run is green, download the APK into `bundle/` (`gh run download <id> -n hookd-dev-apk -D bundle`) and install it with `adb install -r` if `adb devices` lists the phone as `device`. If the phone isn't connected, say so and leave the APK in `bundle/`. Don't do this for a `test-apk` unless I ask.
   - **Read little of the log.** On a failure, read only the failing step and the last 30 lines of its log (`gh run view <id> --log-failed | tail -30`). Never read the whole log.
 - **Give me buttons when you stop.** When you stop and need an action from me (apply, next, choose), show clickable options with the question tool, each with a short description of what clicking it does (for example "Apply: make this change now"). Don't make me type the word.
 - **Suggest commands.** If you notice a task we repeat that would be easier as a slash command in `.claude/commands/`, tell me in one line. Don't create it until I say yes.

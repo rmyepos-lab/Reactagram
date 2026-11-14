@@ -11,6 +11,10 @@ Who starts a build:
 - `dev-apk`: Claude starts it without asking, as soon as a change needs a new APK (see the list below), and says so.
 - `test-apk` and the production build: only when the owner asks.
 
+After a `dev-apk` build: when Claude checks the run and it is green, Claude downloads the APK
+into `bundle/` and installs it on the phone with `adb install -r`, if `adb devices` lists the
+phone as `device`. If the phone is not connected, Claude says so and leaves the APK in `bundle/`.
+
 The terminal commands need the GitHub tool, signed in once: `gh auth login`.
 Downloaded APKs go in `bundle/`, which git ignores.
 
