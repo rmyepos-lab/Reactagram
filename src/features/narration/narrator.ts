@@ -1,5 +1,5 @@
 import Speech from '@mhpdev/react-native-speech';
-import { AudioContext, decodeAudioData } from 'react-native-audio-api';
+import { AudioContext } from 'react-native-audio-api';
 import type { AudioBuffer, AudioBufferSourceNode } from 'react-native-audio-api';
 import { env } from '../../config/env';
 import { speakingSeconds } from '../../lib/format';
@@ -25,7 +25,10 @@ function load(url: string): Promise<AudioBuffer> {
   if (known) {
     return known;
   }
-  const loading = decodeAudioData(url);
+  // Decoding through the context converts the file to the phone's playback rate. Decoded
+  // on its own, a 24 kHz recording would play about twice too fast.
+  context ??= new AudioContext();
+  const loading = context.decodeAudioData(url);
   loaded.set(url, loading);
   loading.catch(() => loaded.delete(url));
   if (loaded.size > KEPT_LINES) {
