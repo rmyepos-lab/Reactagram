@@ -1,7 +1,8 @@
 {
   "kind": "quiz",
   "id": "quiz-updater-three-sets",
-  "topic": "useState",
+  "topic": "State",
+  "concept": "updater-function",
   "format": "output",
   "level": "beginner",
   "tags": [

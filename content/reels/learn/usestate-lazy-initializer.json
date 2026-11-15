@@ -1,7 +1,8 @@
 {
   "kind": "learn",
   "id": "usestate-lazy-initializer",
-  "topic": "useState",
+  "topic": "State",
+  "concept": "lazy-initial-state",
   "format": "special-use",
   "level": "intermediate",
   "tags": [

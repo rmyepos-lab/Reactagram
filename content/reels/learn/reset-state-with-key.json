@@ -1,7 +1,8 @@
 {
   "kind": "learn",
   "id": "reset-state-with-key",
-  "topic": "State",
+  "topic": "State Structure & Sharing",
+  "concept": "reset-state-with-key",
   "format": "special-use",
   "level": "intermediate",
   "tags": [

@@ -2,6 +2,7 @@
   "kind": "quiz",
   "id": "quiz-custom-hook-name",
   "topic": "Custom Hooks",
+  "concept": "custom-hook-naming",
   "format": "which-hook",
   "level": "beginner",
   "tags": [

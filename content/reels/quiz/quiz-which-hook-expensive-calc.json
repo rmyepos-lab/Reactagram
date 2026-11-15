@@ -2,6 +2,7 @@
   "kind": "quiz",
   "id": "quiz-which-hook-expensive-calc",
   "topic": "Performance",
+  "concept": "usememo",
   "format": "which-hook",
   "level": "intermediate",
   "tags": [

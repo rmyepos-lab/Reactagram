@@ -1,7 +1,8 @@
 {
   "kind": "quiz",
   "id": "quiz-key-reset",
-  "topic": "State",
+  "topic": "State Structure & Sharing",
+  "concept": "reset-state-with-key",
   "format": "output",
   "level": "intermediate",
   "tags": [

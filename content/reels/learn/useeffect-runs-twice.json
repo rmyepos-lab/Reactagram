@@ -1,7 +1,8 @@
 {
   "kind": "learn",
   "id": "useeffect-runs-twice",
-  "topic": "useEffect",
+  "topic": "Side Effects",
+  "concept": "effects-run-twice-dev",
   "format": "pitfall",
   "level": "beginner",
   "tags": [

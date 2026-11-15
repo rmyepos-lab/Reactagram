@@ -2,6 +2,7 @@
   "kind": "learn",
   "id": "usememo-vs-usecallback",
   "topic": "Performance",
+  "concept": "usememo-vs-usecallback",
   "format": "compare",
   "level": "intermediate",
   "tags": [

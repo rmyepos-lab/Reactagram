@@ -1,7 +1,8 @@
 {
   "kind": "learn",
   "id": "useref-vs-state",
-  "topic": "useRef",
+  "topic": "Refs",
+  "concept": "ref-vs-state",
   "format": "concept",
   "level": "beginner",
   "tags": [

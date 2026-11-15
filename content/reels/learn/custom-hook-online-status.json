@@ -2,6 +2,7 @@
   "kind": "learn",
   "id": "custom-hook-online-status",
   "topic": "Custom Hooks",
+  "concept": "extract-custom-hook",
   "format": "pattern",
   "level": "intermediate",
   "tags": [

@@ -2,6 +2,7 @@
   "kind": "quiz",
   "id": "quiz-alert-after-set",
   "topic": "State",
+  "concept": "state-snapshot",
   "format": "output",
   "level": "beginner",
   "tags": [

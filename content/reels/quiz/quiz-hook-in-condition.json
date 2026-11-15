@@ -2,6 +2,7 @@
   "kind": "quiz",
   "id": "quiz-hook-in-condition",
   "topic": "Hooks",
+  "concept": "rules-of-hooks",
   "format": "true-false",
   "level": "beginner",
   "tags": [

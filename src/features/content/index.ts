@@ -1,19 +1,12 @@
 import { learnJson, quizJson } from './reels.generated';
-import type { LearnReel, QuizReel } from './schema';
+import type { Curriculum, LearnReel, QuizReel } from './schema';
+import curriculumJson from '../../../content/curriculum.json';
 
 export type { LearnReel, LearnSlide, QuizReel, Reel } from './schema';
 
 const LEVEL = { beginner: 0, intermediate: 1, advanced: 2 } as const;
-/** Curriculum order: easiest level first, then this topic order. */
-const TOPIC_ORDER = [
-  'Hooks',
-  'State',
-  'useState',
-  'useRef',
-  'useEffect',
-  'Custom Hooks',
-  'Performance',
-];
+/** Curriculum order: easiest level first, then the topic order of content/curriculum.json. */
+const TOPIC_ORDER = (curriculumJson as Curriculum).topics.map(t => t.name);
 const topicRank = (topic: string) => {
   const i = TOPIC_ORDER.indexOf(topic);
   return i === -1 ? TOPIC_ORDER.length : i;

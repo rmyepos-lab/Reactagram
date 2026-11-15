@@ -1,7 +1,8 @@
 {
   "kind": "learn",
   "id": "usestate-updater-function",
-  "topic": "useState",
+  "topic": "State",
+  "concept": "updater-function",
   "format": "special-use",
   "level": "beginner",
   "tags": [

@@ -1,7 +1,8 @@
 {
   "kind": "quiz",
   "id": "quiz-which-hook-timer-id",
-  "topic": "useRef",
+  "topic": "Refs",
+  "concept": "ref-vs-state",
   "format": "which-hook",
   "level": "beginner",
   "tags": [

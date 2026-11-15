@@ -1,7 +1,8 @@
 {
   "kind": "quiz",
   "id": "quiz-batching-three-sets",
-  "topic": "useState",
+  "topic": "State",
+  "concept": "state-snapshot",
   "format": "output",
   "level": "beginner",
   "tags": [

@@ -1,7 +1,8 @@
 {
   "kind": "quiz",
   "id": "quiz-lazy-init-why",
-  "topic": "useState",
+  "topic": "State",
+  "concept": "lazy-initial-state",
   "format": "fill-blank",
   "level": "intermediate",
   "tags": [

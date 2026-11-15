@@ -13,10 +13,43 @@ export const learnSlideSchema = z.object({
   say,
 });
 
+const slug = z.string().regex(/^[a-z0-9-]+$/);
+const level = z.enum(["beginner", "intermediate", "advanced"]);
+
+/**
+ * content/curriculum.json: every concept the app should teach, grouped by topic.
+ * Each reel points at one concept, so `npm run coverage` can list what is still missing.
+ */
+export const curriculumSchema = z.object({
+  topics: z
+    .array(
+      z.object({
+        name: z.string().min(2),
+        track: z.enum(["core", "internals"]),
+        concepts: z
+          .array(
+            z.object({
+              id: slug,
+              title: z.string().min(3).max(90),
+              level,
+              source: z.url(),
+              /** Concept ids a learner should have seen first. */
+              requires: z.array(slug).optional(),
+            }),
+          )
+          .min(1),
+      }),
+    )
+    .min(1),
+});
+
 const base = {
-  id: z.string().regex(/^[a-z0-9-]+$/),
+  id: slug,
+  /** Must equal a topic name in content/curriculum.json. */
   topic: z.string().min(2),
-  level: z.enum(["beginner", "intermediate", "advanced"]),
+  /** Id of the curriculum concept this reel teaches or tests. */
+  concept: slug,
+  level,
   tags: z.array(z.string()).min(1),
   sourceUrl: z.url(),
 };
@@ -68,7 +101,8 @@ export const quizReelSchema = z
 
 export const reelSchema = z.union([learnReelSchema, quizReelSchema]);
 
-export type LearnSlide = z.infer<typeof learnSlideSchema>;
+export type Curriculum = z.infer<typeof curriculumSchema>;
+export type LearnSlide =z.infer<typeof learnSlideSchema>;
 export type LearnReel = z.infer<typeof learnReelSchema>;
 export type QuizReel = z.infer<typeof quizReelSchema>;
 export type Reel = LearnReel | QuizReel;

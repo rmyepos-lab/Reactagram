@@ -2,6 +2,7 @@
   "kind": "learn",
   "id": "state-is-a-snapshot",
   "topic": "State",
+  "concept": "state-snapshot",
   "format": "concept",
   "level": "beginner",
   "tags": [
