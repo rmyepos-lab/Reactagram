@@ -8,7 +8,10 @@ Hookd is an Android app that teaches React in about 10 minutes a day with Instag
 - Tabs: Home, Explore, Learn, Quiz, Profile.
 - **Learn reels:** an endless vertical feed of narrated lessons.
 - **Quiz reels:** one question per screen, the answers, an Explanation section, then a Next button.
-- **Content:** JSON files in `content/reels/learn` and `content/reels/quiz`, checked by the zod schema in `src/features/content/schema.ts`. The content is generated offline by a scheduled Claude Code session, never by the app at runtime.
+- **A quiz** is a set of at most 20 questions, never the same one twice. Before it starts, the learner picks the difficulty and the concepts (topics). An unfinished quiz can be continued later. It ends on a results screen. These screens are not in the design boards: they follow the existing style.
+- **Content:** JSON files in `content/reels/learn` and `content/reels/quiz`, checked by the zod schema in `src/features/content/schema.ts`. The content is generated offline by a scheduled Claude Code session (`/new-reels`), never by the app at runtime.
+  - `content/curriculum.json` lists every concept to teach, by topic. Each reel points at one concept. `npm run coverage` lists the gaps.
+  - One Learn reel per concept and at most 3 Quiz reels per concept. Repetition must stay low: no near-duplicate reels.
 - **Approved design:** https://claude.ai/artifact/Kq59JCQgRGRnQPM1VsRdDW (boards 0 to 8). Match it.
 
 ## 2. Fixed stack. Do not change it without asking me.
@@ -68,9 +71,9 @@ Hookd is an Android app that teaches React in about 10 minutes a day with Instag
   - It sits inside the stream: full screen, muted, skipped with one swipe.
   - The ••• menu offers Hide this ad, Why am I seeing this, and "Have a Pro key? Activate it". It never promotes buying Pro.
 - **Ads, Home feed:** 1 sponsored post every 6 posts.
-- **Ads, Quiz feed (Smart Skip):** an ad slot comes after every 6 quizzes, and it's skipped when at least 5 of those 6 were answered correctly.
+- **Ads, Quiz (Smart Skip):** inside a quiz, an ad slot comes after every 6 questions, and it's skipped when at least 5 of those 6 were answered correctly. No ad between the last question and the results.
 - **Never show:** interstitials, app-open ads, rewarded ads, banners over lessons, or ads next to quiz answers.
-- **Free plan:** Learn and Quiz reels never end. There's no daily limit.
+- **Free plan:** Learn reels never end, and the learner can start as many quizzes as they like. There's no daily limit.
 - **Pro:** removes every ad. The Pro status is cached on the phone and re-validated from time to time.
 - **Admin:** tapping the version line in Profile 7 times opens a hidden Admin screen (only when Supabase is set up). After signing in, the admin can switch ads on or off and edit public settings for all users. The database rules in `supabase/setup.sql` decide who may save; the app is never trusted. Ad frequency rules are fixed in code, not remote.
 - **Never promote buying Pro inside the app** (Google Play payments policy):
@@ -112,14 +115,16 @@ Hookd is an Android app that teaches React in about 10 minutes a day with Instag
 
 ```
 content/reels/{learn,quiz}/*.json   lesson and quiz content
-scripts/                            reel checker, content index, env writer
+content/curriculum.json             every concept to teach, by topic
+scripts/                            reel checker, coverage report, content index, env writer
 src/App.tsx                         providers and navigation container
 src/theme/                          tokens.ts (colors, radii, fonts), motion.ts (springs, durations)
 src/config/                         app.ts (name, links), env.ts (ad keys, written by CI)
 src/lib/                            createStore, useEndlessFeed, date and format helpers
 src/components/ui/                  AppText, Icon, PressableScale, LedgeButton, Chip, BottomSheet...
 src/components/reels/               ReelPager, LearnReelCard, QuizReelCard, CodeBlock...
-src/features/<name>/                content, progress, ads, pro, remoteConfig, narration, settings
+src/components/quiz/                QuizSetup, QuizResults
+src/features/<name>/                content, progress, quizSession, ads, pro, remoteConfig, narration, settings
 supabase/setup.sql                  config table and admin rules, run once in Supabase
 src/navigation/                     RootNavigator, TabBar, types
 src/screens/                        one file per screen

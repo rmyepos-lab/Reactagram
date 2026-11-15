@@ -24,6 +24,15 @@ export const topics: readonly string[] = [
   ...new Set([...learnReels, ...quizReels].map(r => r.topic)),
 ].sort((a, b) => topicRank(a) - topicRank(b));
 
+const conceptTitles = new Map(
+  (curriculumJson as Curriculum).topics.flatMap(t => t.concepts.map(c => [c.id, c.title] as const)),
+);
+/** The readable name of a curriculum concept. */
+export const conceptTitle = (concept: string): string => conceptTitles.get(concept) ?? concept;
+/** The lesson that teaches a concept, if it has been written. */
+export const lessonForConcept = (concept: string): LearnReel | undefined =>
+  learnReels.find(r => r.concept === concept);
+
 /** First code snippet of a learn reel, for previews. */
 export function previewCode(reel: LearnReel): { code: string; highlight?: number[] } | null {
   const slide = reel.slides.find(s => s.code);

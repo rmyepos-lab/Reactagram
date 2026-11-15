@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import type { QuizReel } from '../../features/content';
 import { narrate } from '../../features/narration';
 import { progress } from '../../features/progress';
+import { playSound } from '../../features/sound';
 import { colors, radii, reel as palette, springs } from '../../theme';
 import { AppText, Chip, Icon, LedgeButton } from '../ui';
 import { AnswerOption, type AnswerState } from './AnswerOption';
@@ -13,8 +14,12 @@ type Props = {
   quiz: QuizReel;
   active: boolean;
   muted: boolean;
-  onAnswered: (correct: boolean) => void;
+  /** The option already picked, when the card comes back on screen after scrolling away. */
+  initialPicked?: number;
+  onAnswered: (correct: boolean, picked: number) => void;
   onNext: () => void;
+  /** Button text after answering. The last question of a quiz says "See results". */
+  nextLabel?: string;
 };
 
 const LETTERS = ['A', 'B', 'C', 'D'];
@@ -31,10 +36,14 @@ export const QuizReelCard = React.memo(function QuizReelCardBase({
   quiz,
   active,
   muted,
+  initialPicked,
   onAnswered,
   onNext,
+  nextLabel = 'Next question',
 }: Props) {
-  const [picked, setPicked] = useState<number | null>(null);
+  const [picked, setPicked] = useState<number | null>(initialPicked ?? null);
+  /** Lines already read aloud: coming back to the card or the tab doesn't repeat them. */
+  const spoken = useRef(new Set<string>(initialPicked == null ? [] : [quiz.say, quiz.explainSay]));
   const answered = picked !== null;
   const correct = picked === quiz.answer;
 
@@ -43,7 +52,12 @@ export const QuizReelCard = React.memo(function QuizReelCardBase({
     if (!active || muted) {
       return;
     }
-    return narrate(answered ? quiz.explainSay : quiz.say, () => undefined);
+    const line = answered ? quiz.explainSay : quiz.say;
+    if (spoken.current.has(line)) {
+      return;
+    }
+    spoken.current.add(line);
+    return narrate(line, () => undefined);
   }, [active, muted, answered, quiz]);
 
   const pick = (i: number) => {
@@ -52,8 +66,11 @@ export const QuizReelCard = React.memo(function QuizReelCardBase({
     }
     setPicked(i);
     const isRight = i === quiz.answer;
+    if (!muted) {
+      playSound(isRight ? 'correct' : 'wrong');
+    }
     progress.answer(quiz.id, isRight);
-    onAnswered(isRight);
+    onAnswered(isRight, i);
   };
 
   const stateOf = (i: number): AnswerState => {
@@ -125,7 +142,7 @@ export const QuizReelCard = React.memo(function QuizReelCardBase({
       {answered ? (
         <Animated.View entering={FadeInDown.delay(120)} style={styles.next}>
           <LedgeButton
-            label="Next question"
+            label={nextLabel}
             tone="ink"
             height={54}
             onPress={onNext}
