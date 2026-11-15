@@ -1,0 +1,47 @@
+{
+  "kind": "learn",
+  "id": "effect-cleanup",
+  "topic": "Side Effects",
+  "concept": "effect-cleanup",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "useEffect",
+    "cleanup"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#step-3-add-cleanup-if-needed",
+  "title": "Cleanup: when exactly does it run?",
+  "slides": [
+    {
+      "type": "title",
+      "text": "The function your Effect returns 🧹",
+      "say": "Your effect can return a function. React calls it cleanup. But when does it run?"
+    },
+    {
+      "type": "code",
+      "code": "useEffect(() => {\n  const c = createConnection(roomId);\n  c.connect();\n  return () => {\n    c.disconnect();\n  };\n}, [roomId]);",
+      "highlight": [
+        4,
+        5,
+        6
+      ],
+      "text": "Setup connects. Cleanup disconnects.",
+      "say": "The setup connects to the room. The returned function, the cleanup, disconnects from it."
+    },
+    {
+      "type": "text",
+      "text": "React calls cleanup before the Effect runs again, and one last time on unmount.",
+      "say": "React calls your cleanup each time before the effect runs again, and one final time when the component is removed."
+    },
+    {
+      "type": "text",
+      "text": "roomId: general → travel\n1. connect general\n2. disconnect general\n3. connect travel",
+      "say": "So if the room changes from general to travel, React first disconnects from general, using the old value, then connects to travel."
+    },
+    {
+      "type": "title",
+      "text": "Cleanup undoes what setup did ↩️",
+      "say": "Rule of thumb: whatever setup starts, cleanup should stop or undo."
+    }
+  ]
+}

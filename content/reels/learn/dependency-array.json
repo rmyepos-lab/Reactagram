@@ -1,0 +1,55 @@
+{
+  "kind": "learn",
+  "id": "dependency-array",
+  "topic": "Side Effects",
+  "concept": "dependency-array",
+  "format": "compare",
+  "level": "beginner",
+  "tags": [
+    "useEffect",
+    "dependencies"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#step-2-specify-the-effect-dependencies",
+  "title": "The dependency array: none, [] or [a, b]",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Three ways to write useEffect 🧩",
+      "say": "The second argument of use effect changes everything. There are three ways to write it."
+    },
+    {
+      "type": "code",
+      "code": "useEffect(() => {\n  // after EVERY render\n});",
+      "text": "No array: runs after every render.",
+      "say": "With no dependency array, the effect runs after every single render."
+    },
+    {
+      "type": "code",
+      "code": "useEffect(() => {\n  // only on mount\n}, []);",
+      "highlight": [
+        3
+      ],
+      "text": "Empty array: runs only when the component appears.",
+      "say": "With an empty array, it runs only on mount, when the component appears."
+    },
+    {
+      "type": "code",
+      "code": "useEffect(() => {\n  // on mount + when a or b change\n}, [a, b]);",
+      "highlight": [
+        3
+      ],
+      "text": "[a, b]: on mount, then again if a or b changed.",
+      "say": "With a and b in the array, it runs on mount, and again only if a or b changed since the last render."
+    },
+    {
+      "type": "text",
+      "text": "React skips the Effect only if ALL dependencies are the same as last render.",
+      "say": "React skips re-running the effect only when every dependency has exactly the same value as during the previous render."
+    },
+    {
+      "type": "title",
+      "text": "None = always. [] = once. [a, b] = on change.",
+      "say": "No array means always. Empty array means once. A list means whenever something in it changes."
+    }
+  ]
+}

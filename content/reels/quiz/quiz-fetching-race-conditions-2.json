@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-fetching-race-conditions-2",
+  "topic": "Side Effects",
+  "concept": "fetching-race-conditions",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "fetching",
+    "cleanup"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#fetching-data",
+  "question": "🐛 Late responses overwrite newer ones. What's the fix?",
+  "code": "useEffect(() => {\n  fetchBio(person).then(result => {\n    setBio(result);\n  });\n}, [person]);",
+  "options": [
+    "Remove person from the dependency array",
+    "Make the Effect callback async",
+    "Set ignore = true in cleanup and skip setBio if ignore"
+  ],
+  "answer": 2,
+  "explanation": "Each render's Effect gets its own ignore flag. When person changes, cleanup sets it to true, so the stale response is skipped.",
+  "explainSay": "Add an ignore flag. Cleanup sets it to true when the person changes, so the stale response is skipped.",
+  "say": "Late responses overwrite newer ones. What's the fix?"
+}

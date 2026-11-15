@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-what-is-an-effect-2",
+  "topic": "Side Effects",
+  "concept": "what-is-an-effect",
+  "format": "which-hook",
+  "level": "beginner",
+  "tags": [
+    "effects",
+    "events"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#what-are-effects-and-how-are-they-different-from-events",
+  "question": "Which of these is a job for an Effect?",
+  "options": [
+    "Calculating fullName from first and last name",
+    "Sending a form when Submit is clicked",
+    "Formatting a price for display",
+    "Connecting to a chat server while the room is shown"
+  ],
+  "answer": 3,
+  "explanation": "Only the chat connection syncs with an external system because the component is shown. Calculations happen during render; the submit belongs in its event handler.",
+  "explainSay": "Connecting to the chat server. It syncs with an external system while the component is shown. Calculations belong in render, and the submit belongs in its event handler.",
+  "say": "Which of these is a job for an Effect?"
+}

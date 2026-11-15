@@ -2,7 +2,7 @@
   "kind": "quiz",
   "id": "quiz-effect-no-deps-bug",
   "topic": "Side Effects",
-  "concept": "dependency-array",
+  "concept": "effect-infinite-loop",
   "format": "bug-hunt",
   "level": "intermediate",
   "tags": [

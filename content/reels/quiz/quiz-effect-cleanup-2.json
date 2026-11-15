@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-effect-cleanup-2",
+  "topic": "Side Effects",
+  "concept": "effect-cleanup",
+  "format": "true-false",
+  "level": "beginner",
+  "tags": [
+    "useEffect",
+    "cleanup"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#step-3-add-cleanup-if-needed",
+  "question": "True or false: React runs an Effect's cleanup only when the component unmounts.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "explanation": "False. React calls cleanup each time before the Effect runs again, and one final time when the component unmounts.",
+  "explainSay": "False. Cleanup runs before every re-run of the effect, and one final time when the component unmounts.",
+  "say": "True or false: React runs an Effect's cleanup only when the component unmounts."
+}

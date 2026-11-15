@@ -1,0 +1,52 @@
+{
+  "kind": "learn",
+  "id": "what-is-an-effect",
+  "topic": "Side Effects",
+  "concept": "what-is-an-effect",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "effects",
+    "events",
+    "basics"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#what-are-effects-and-how-are-they-different-from-events",
+  "title": "Effects vs event handlers: who does what?",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Not render. Not a click. Then what? 🤔",
+      "say": "Some code isn't about drawing the screen, and no click caused it. So where does it go? Let's find out."
+    },
+    {
+      "type": "text",
+      "text": "Rendering calculates the UI. Event handlers run when the user does something.",
+      "say": "Rendering code only calculates what to show. Event handlers run when the user does something, like clicking a button."
+    },
+    {
+      "type": "text",
+      "text": "Effects run because the component was shown, not because of a click.",
+      "say": "Effects are the third kind. They run because the component appeared on screen, no matter which interaction led there."
+    },
+    {
+      "type": "code",
+      "code": "function ChatRoom({ roomId }) {\n  // Effect: stay connected while shown\n  useEffect(() => {\n    const c = createConnection(roomId);\n    c.connect();\n    return () => c.disconnect();\n  }, [roomId]);\n\n  // Event: runs only on click\n  function handleSend() {\n    sendMessage(message);\n  }\n}",
+      "highlight": [
+        3,
+        10
+      ],
+      "text": "Connecting = Effect. Sending = event.",
+      "say": "Staying connected to the chat should happen whenever the room is shown, so it is an effect. Sending a message happens because of one click, so it lives in the event handler."
+    },
+    {
+      "type": "text",
+      "text": "Effects are for syncing with an external system: a server, a timer, a browser API.",
+      "say": "Use effects to step outside React and sync with an external system. If there's no external system, you probably don't need one."
+    },
+    {
+      "type": "title",
+      "text": "Shown → Effect. Clicked → handler. ✅",
+      "say": "So remember: caused by being shown, use an effect. Caused by a click, use an event handler."
+    }
+  ]
+}

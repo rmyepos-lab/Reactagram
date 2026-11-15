@@ -1,0 +1,57 @@
+{
+  "kind": "learn",
+  "id": "fetching-race-conditions",
+  "topic": "Side Effects",
+  "concept": "fetching-race-conditions",
+  "format": "pitfall",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "fetching",
+    "race-condition"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#fetching-data",
+  "title": "Fetching in an Effect: the race condition",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Your fetch can show the wrong person 😱",
+      "say": "Fetching data in an effect looks simple. But it can show the wrong data. Here is how."
+    },
+    {
+      "type": "code",
+      "code": "useEffect(() => {\n  fetchBio(person).then(result => {\n    setBio(result);\n  });\n}, [person]);",
+      "highlight": [
+        3
+      ],
+      "text": "Looks fine… until responses arrive out of order.",
+      "say": "This effect fetches a bio whenever the person changes. It looks fine."
+    },
+    {
+      "type": "text",
+      "text": "Pick Bob, then Taylor. Taylor's answer comes first, Bob's arrives last and wins.",
+      "say": "But pick Bob, then quickly Taylor. If Taylor's response arrives first and Bob's arrives last, Bob's bio overwrites Taylor's. Wrong person!"
+    },
+    {
+      "type": "code",
+      "code": "useEffect(() => {\n  let ignore = false;\n  fetchBio(person).then(result => {\n    if (!ignore) {\n      setBio(result);\n    }\n  });\n  return () => {\n    ignore = true;\n  };\n}, [person]);",
+      "highlight": [
+        2,
+        4,
+        9
+      ],
+      "text": "Cleanup marks old requests as stale.",
+      "say": "The fix: an ignore flag. When person changes, the cleanup sets ignore to true, so the old response is simply ignored."
+    },
+    {
+      "type": "text",
+      "text": "You can't undo a request. Each render's Effect has its own ignore variable.",
+      "say": "You can't undo a network request. But each render's effect has its own ignore variable, so a stale response can't affect your app."
+    },
+    {
+      "type": "title",
+      "text": "Fetch in an Effect? Ignore stale answers. 🛡️",
+      "say": "Fetching in an effect? Always add cleanup that ignores stale responses."
+    }
+  ]
+}
