@@ -8,7 +8,7 @@ import Animated, {
   useSharedValue,
   withTiming,
 } from 'react-native-reanimated';
-import type { LearnReel } from '../../features/content';
+import { diagramState, slideLines, type LearnReel } from '../../features/content';
 import { narrate } from '../../features/narration';
 import { progress } from '../../features/progress';
 import { capitalize, clock, speakingSeconds } from '../../lib/format';
@@ -16,6 +16,7 @@ import { colors, durations, easings, radii, reel as palette, springs } from '../
 import { AppText, Chip, Icon } from '../ui';
 import { ActionRail } from './ActionRail';
 import { CodeBlock } from './CodeBlock';
+import { Diagram } from './Diagram';
 import { VoiceWave } from './VoiceWave';
 
 type Props = {
@@ -37,14 +38,27 @@ export const LearnReelCard = React.memo(function LearnReelCardBase({
   topInset,
 }: Props) {
   const [index, setIndex] = useState(0);
+  /** Which narration line of the slide is playing: 0 is `say`, then one per diagram step. */
+  const [part, setPart] = useState(0);
   const [paused, setPaused] = useState(false);
   const [finished, setFinished] = useState(false);
   const slide = reel.slides[index];
+  const lines = useMemo(() => slideLines(slide), [slide]);
+  const line = lines[part] ?? slide.say;
+  const lastLine = part >= lines.length - 1;
   const last = index === reel.slides.length - 1;
   const playing = active && !paused && !finished;
+  const diagram = useMemo(
+    () => (slide.visual ? diagramState(slide.visual, slide.steps, part) : null),
+    [slide, part],
+  );
 
   const duration = useMemo(
-    () => reel.slides.reduce((sum, s) => sum + speakingSeconds(s.say), 0),
+    () =>
+      reel.slides.reduce(
+        (sum, s) => sum + slideLines(s).reduce((t, l) => t + speakingSeconds(l), 0),
+        0,
+      ),
     [reel],
   );
 
@@ -52,6 +66,7 @@ export const LearnReelCard = React.memo(function LearnReelCardBase({
   useEffect(() => {
     if (!active) {
       setIndex(0);
+      setPart(0);
       setPaused(false);
       setFinished(false);
     }
@@ -63,13 +78,19 @@ export const LearnReelCard = React.memo(function LearnReelCardBase({
     }
     let gap: ReturnType<typeof setTimeout> | null = null;
     const cancel = narrate(
-      slide.say,
+      line,
       () => {
-        if (last) {
+        if (!lastLine) {
+          // The next diagram step follows straight on, like one sentence after another.
+          setPart(p => p + 1);
+        } else if (last) {
           progress.markSeen(reel.id);
           setFinished(true);
         } else {
-          gap = setTimeout(() => setIndex(i => i + 1), SLIDE_GAP_MS);
+          gap = setTimeout(() => {
+            setPart(0);
+            setIndex(i => i + 1);
+          }, SLIDE_GAP_MS);
         }
       },
       muted,
@@ -80,18 +101,19 @@ export const LearnReelCard = React.memo(function LearnReelCardBase({
         clearTimeout(gap);
       }
     };
-  }, [playing, slide, last, muted, reel.id]);
+  }, [playing, line, lastLine, last, muted, reel.id]);
 
   const scrub = useSharedValue(0);
   useEffect(() => {
-    const target = finished ? 1 : index / reel.slides.length;
+    const target = finished ? 1 : (index + part / lines.length) / reel.slides.length;
     scrub.value = withTiming(target, { duration: durations.base, easing: easings.standard });
-  }, [index, finished, reel.slides.length, scrub]);
+  }, [index, part, lines.length, finished, reel.slides.length, scrub]);
   const scrubStyle = useAnimatedStyle(() => ({ width: `${scrub.value * 100}%` }));
 
   const onTap = () => {
     if (finished) {
       setIndex(0);
+      setPart(0);
       setFinished(false);
     } else {
       setPaused(p => !p);
@@ -127,6 +149,9 @@ export const LearnReelCard = React.memo(function LearnReelCardBase({
           {slide.code ? (
             <CodeBlock code={slide.code} highlight={slide.highlight} />
           ) : null}
+          {slide.visual && diagram ? (
+            <Diagram diagram={slide.visual} visible={diagram.visible} focus={diagram.focus} />
+          ) : null}
           {slide.text && slide.type !== 'title' ? (
             <View style={styles.tip}>
               <Icon name="bulb" size={22} color={colors.onTip} />
@@ -141,7 +166,7 @@ export const LearnReelCard = React.memo(function LearnReelCardBase({
       <View style={styles.voice}>
         <VoiceWave playing={playing && !muted} />
         <AppText weight="semibold" size={14} leading={1.45} color={palette.textSoft} style={styles.flex}>
-          {slide.say}
+          {line}
         </AppText>
       </View>
 

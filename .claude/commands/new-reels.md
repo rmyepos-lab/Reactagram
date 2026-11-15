@@ -38,6 +38,11 @@ Facts come only from the concept's `source` page, which you opened in this run, 
   - `code` up to 900 chars, at most about 14 lines of 40 characters each (phone width).
   - `highlight` is a list of 1-based line numbers.
   - Each slide has a `say` line of up to 320 chars.
+  - `visual`: a diagram, when a picture explains better than code. At most one per reel. Use it for structure (which component renders which, where state lives, how props flow) or order (render → commit → effect → cleanup). Skip it when code says it better.
+    - Tree: `"visual": { "kind": "tree", "nodes": [{ "id": "app", "label": "App" }, { "id": "list", "label": "List", "parent": "app", "note": "items" }] }`. The first node is the root; every other node names a parent listed before it. At most 10 nodes, 4 leaves, 4 rows. `label` max 18 chars (a component name), `note` max 24 (a prop or state).
+    - Timeline: `"visual": { "kind": "timeline", "events": [{ "id": "render", "label": "Render", "note": "count is 0" }] }`. 2–6 events in time order. `label` max 28, `note` max 40.
+    - `steps` (optional, 1–4): `[{ "say": "...", "show": ["list"], "focus": "list" }]`. The slide's `say` plays first, showing every item no step names. Each step then plays its own line, adds its `show` items, and highlights `focus`. Each item is shown by one step at most, a tree node never appears before its parent, and `focus` must be on screen. Write the lines so they talk about what just appeared.
+    - Optional `text` is a caption shown under the diagram.
 - **Shape:**
   - Start with a hook, then one idea per slide, then real code, then a one-line takeaway.
   - Each reel shows something no other reel shows: a different usage, technique or pitfall.

@@ -25,6 +25,44 @@
       "say": "When you switch contacts, React sees the same component in the same place, so it keeps the old draft message."
     },
     {
+      "type": "visual",
+      "text": "Same component in the same spot = same state.",
+      "visual": {
+        "kind": "tree",
+        "nodes": [
+          {
+            "id": "messenger",
+            "label": "Messenger"
+          },
+          {
+            "id": "list",
+            "label": "ContactList",
+            "parent": "messenger"
+          },
+          {
+            "id": "chat",
+            "label": "Chat",
+            "parent": "messenger",
+            "note": "draft: \"Hello\""
+          }
+        ]
+      },
+      "say": "Here is the tree. Messenger renders a contact list and a chat.",
+      "steps": [
+        {
+          "say": "The chat keeps the draft message in its own state.",
+          "show": [
+            "chat"
+          ],
+          "focus": "chat"
+        },
+        {
+          "say": "Switching contacts only changes its props. Same component, same spot, so React keeps the draft.",
+          "focus": "chat"
+        }
+      ]
+    },
+    {
       "type": "code",
       "code": "<Chat key={to.id} contact={to} />",
       "highlight": [

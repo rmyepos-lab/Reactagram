@@ -2,7 +2,9 @@ import { learnJson, quizJson } from './reels.generated';
 import type { Curriculum, LearnReel, QuizReel } from './schema';
 import curriculumJson from '../../../content/curriculum.json';
 
-export type { LearnReel, LearnSlide, QuizReel, Reel } from './schema';
+export type { Diagram, DiagramStep, LearnReel, LearnSlide, QuizReel, Reel } from './schema';
+export { diagramState, layoutTree, slideLines } from './diagram';
+export type { PlacedNode } from './diagram';
 
 const LEVEL = { beginner: 0, intermediate: 1, advanced: 2 } as const;
 /** Curriculum order: easiest level first, then the topic order of content/curriculum.json. */

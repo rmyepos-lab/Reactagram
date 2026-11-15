@@ -44,6 +44,9 @@ function lines(): string[] {
       add(reel.explainSay);
       for (const slide of reel.slides ?? []) {
         add(slide.say);
+        for (const step of slide.steps ?? []) {
+          add(step.say);
+        }
       }
     }
   }

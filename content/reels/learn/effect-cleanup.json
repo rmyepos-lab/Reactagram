@@ -34,9 +34,69 @@
       "say": "React calls your cleanup each time before the effect runs again, and one final time when the component is removed."
     },
     {
-      "type": "text",
-      "text": "roomId: general → travel\n1. connect general\n2. disconnect general\n3. connect travel",
-      "say": "So if the room changes from general to travel, React first disconnects from general, using the old value, then connects to travel."
+      "type": "visual",
+      "text": "Old cleanup first, then the new setup.",
+      "visual": {
+        "kind": "timeline",
+        "events": [
+          {
+            "id": "mount",
+            "label": "Mount",
+            "note": "connect to general"
+          },
+          {
+            "id": "change",
+            "label": "roomId → travel",
+            "note": "the Effect must re-sync"
+          },
+          {
+            "id": "cleanup",
+            "label": "Old cleanup runs",
+            "note": "disconnect from general"
+          },
+          {
+            "id": "setup",
+            "label": "New setup runs",
+            "note": "connect to travel"
+          },
+          {
+            "id": "unmount",
+            "label": "Unmount",
+            "note": "cleanup: disconnect from travel"
+          }
+        ]
+      },
+      "say": "Let us follow one chat room. On mount, the effect connects to general.",
+      "steps": [
+        {
+          "say": "Then the room changes from general to travel.",
+          "show": [
+            "change"
+          ],
+          "focus": "change"
+        },
+        {
+          "say": "First, React runs the old cleanup. It disconnects from general, using the old value.",
+          "show": [
+            "cleanup"
+          ],
+          "focus": "cleanup"
+        },
+        {
+          "say": "Then the new setup runs and connects to travel.",
+          "show": [
+            "setup"
+          ],
+          "focus": "setup"
+        },
+        {
+          "say": "And when the component is removed, the cleanup runs one last time.",
+          "show": [
+            "unmount"
+          ],
+          "focus": "unmount"
+        }
+      ]
     },
     {
       "type": "title",
