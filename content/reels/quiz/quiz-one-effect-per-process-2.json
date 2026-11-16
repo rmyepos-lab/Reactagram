@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-one-effect-per-process-2",
+  "topic": "Side Effects",
+  "concept": "one-effect-per-process",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "structure",
+    "analytics"
+  ],
+  "sourceUrl": "https://react.dev/learn/lifecycle-of-reactive-effects#each-effect-represents-a-separate-synchronization-process",
+  "question": "True or false: you should split Effects whenever the code would look cleaner.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: you should split Effects whenever the code would look cleaner.",
+  "explanation": "False. Split only separate processes. Splitting one cohesive process makes code harder to maintain.",
+  "explainSay": "False. Split by process, not by looks."
+}

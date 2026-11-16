@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-updater-to-remove-dependency-1",
+  "topic": "Side Effects",
+  "concept": "updater-to-remove-dependency",
+  "format": "fill-blank",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "updater",
+    "dependencies"
+  ],
+  "sourceUrl": "https://react.dev/learn/removing-effect-dependencies#are-you-reading-some-state-to-calculate-the-next-state",
+  "question": "Fill the blank so the Effect doesn't depend on count:",
+  "code": "useEffect(() => {\n  const id = setInterval(() => {\n    setCount(___);\n  }, 1000);\n  return () => clearInterval(id);\n}, []);",
+  "options": [
+    "count + 1",
+    "c => c + 1",
+    "count++"
+  ],
+  "answer": 1,
+  "say": "Fill the blank so the Effect does not depend on count.",
+  "explanation": "An updater reads the latest value from React, so the Effect never reads count and needs no count dependency.",
+  "explainSay": "An updater, c goes to c plus one. The Effect no longer reads count."
+}

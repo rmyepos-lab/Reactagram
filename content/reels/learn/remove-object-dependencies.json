@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "remove-object-dependencies",
+  "topic": "Side Effects",
+  "concept": "remove-object-dependencies",
+  "format": "pitfall",
+  "level": "advanced",
+  "tags": [
+    "useEffect",
+    "dependencies",
+    "objects"
+  ],
+  "sourceUrl": "https://react.dev/learn/removing-effect-dependencies#does-some-reactive-value-change-unintentionally",
+  "title": "Objects in deps re-run the Effect every render",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Reconnecting on every keystroke ⌨️",
+      "say": "You type in a message box, and the chat reconnects on every key. The culprit is an object dependency."
+    },
+    {
+      "type": "code",
+      "code": "const options = { serverUrl, roomId };\nuseEffect(() => {\n  const c = createConnection(options);\n  c.connect();\n  return () => c.disconnect();\n}, [options]);",
+      "highlight": [
+        1,
+        6
+      ],
+      "say": "Options is created fresh on every render. Typing re-renders, so it is a new object each time."
+    },
+    {
+      "type": "text",
+      "text": "Same contents, different object: Object.is says \"changed\".",
+      "say": "Even with the same contents, two separate objects are different to Object dot is. So the Effect re-syncs every render."
+    },
+    {
+      "type": "code",
+      "code": "useEffect(() => {\n  const options = { serverUrl, roomId };\n  const c = createConnection(options);\n  c.connect();\n  return () => c.disconnect();\n}, [roomId]);",
+      "highlight": [
+        2,
+        6
+      ],
+      "say": "Fix: create the object inside the Effect. Now the only dependency is room id, a string, which only changes when it really changes."
+    }
+  ]
+}

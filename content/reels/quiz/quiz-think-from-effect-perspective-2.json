@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-think-from-effect-perspective-2",
+  "topic": "Side Effects",
+  "concept": "think-from-effect-perspective",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "mental-model",
+    "synchronization"
+  ],
+  "sourceUrl": "https://react.dev/learn/lifecycle-of-reactive-effects#thinking-from-the-effects-perspective",
+  "question": "From the Effect's perspective, what are its only two jobs?",
+  "options": [
+    "Mount and unmount",
+    "Start syncing and stop syncing",
+    "Render and commit"
+  ],
+  "answer": 1,
+  "say": "From the Effect’s perspective, what are its only two jobs?",
+  "explanation": "An Effect can only start synchronizing something and later stop. Mounting and updating are the component's lifecycle.",
+  "explainSay": "Start syncing, and stop syncing."
+}

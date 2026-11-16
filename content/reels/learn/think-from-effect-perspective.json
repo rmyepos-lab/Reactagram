@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "think-from-effect-perspective",
+  "topic": "Side Effects",
+  "concept": "think-from-effect-perspective",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "mental-model",
+    "synchronization"
+  ],
+  "sourceUrl": "https://react.dev/learn/lifecycle-of-reactive-effects#thinking-from-the-effects-perspective",
+  "title": "Think start and stop, not mount and unmount",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Forget mount and unmount 🧠",
+      "say": "Thinking of Effects as callbacks like after mount or before unmount gets complicated fast."
+    },
+    {
+      "type": "code",
+      "code": "useEffect(() => {\n  // connected to roomId...\n  const c = createConnection(roomId);\n  c.connect();\n  return () => {\n    // ...until disconnected\n    c.disconnect();\n  };\n}, [roomId]);",
+      "highlight": [
+        2,
+        6
+      ],
+      "say": "From the Effect’s point of view, there is just one story: connected to a room, until disconnected."
+    },
+    {
+      "type": "text",
+      "text": "general (until stop) → travel (until stop) → music (until stop). Non-overlapping periods.",
+      "say": "Over time that is just a series of non overlapping periods: general, then travel, then music. Each one starts and stops."
+    },
+    {
+      "type": "text",
+      "text": "Describe how to start and how to stop. React handles when.",
+      "say": "So focus on one start and stop cycle. Describe how to start and stop, and your Effect works no matter how often React runs it."
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "one-effect-per-process",
+  "topic": "Side Effects",
+  "concept": "one-effect-per-process",
+  "format": "pattern",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "structure",
+    "analytics"
+  ],
+  "sourceUrl": "https://react.dev/learn/lifecycle-of-reactive-effects#each-effect-represents-a-separate-synchronization-process",
+  "title": "One Effect per synchronization process",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Don’t pile into one Effect 🧺",
+      "say": "You already have an Effect that depends on room id. It is tempting to drop your analytics call in there too."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 two jobs, one Effect\nuseEffect(() => {\n  logVisit(roomId);\n  const c = createConnection(serverUrl, roomId);\n  c.connect();\n  return () => c.disconnect();\n}, [roomId]);",
+      "highlight": [
+        3
+      ],
+      "say": "Later you add a dependency that must reconnect. Now every reconnect also logs another visit for the same room. Not what you meant."
+    },
+    {
+      "type": "code",
+      "code": "useEffect(() => {\n  logVisit(roomId);\n}, [roomId]);\n\nuseEffect(() => {\n  const c = createConnection(serverUrl, roomId);\n  // ...\n}, [roomId]);",
+      "highlight": [
+        1,
+        5
+      ],
+      "say": "Split them into two Effects. Logging a visit and connecting are separate processes."
+    },
+    {
+      "type": "text",
+      "text": "Test: delete one Effect. Does the other still work? Then they’re separate.",
+      "say": "A good test: if deleting one Effect does not break the other, they sync different things. Decide by process, not by what looks cleaner."
+    }
+  ]
+}

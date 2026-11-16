@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-one-effect-per-process-1",
+  "topic": "Side Effects",
+  "concept": "one-effect-per-process",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "structure",
+    "analytics"
+  ],
+  "sourceUrl": "https://react.dev/learn/lifecycle-of-reactive-effects#each-effect-represents-a-separate-synchronization-process",
+  "question": "Adding a theme dependency to this Effect logs extra visits. Fix?",
+  "code": "useEffect(() => {\n  logVisit(roomId);\n  const c = connect(roomId, theme);\n  return () => c.disconnect();\n}, [roomId, theme]);",
+  "options": [
+    "Remove theme from the dependencies",
+    "Move logVisit into its own Effect",
+    "Call logVisit in the cleanup"
+  ],
+  "answer": 1,
+  "say": "Adding a theme dependency to this Effect logs extra visits. What is the fix?",
+  "explanation": "Logging and connecting are separate processes. Give logVisit its own Effect with only [roomId].",
+  "explainSay": "Move log visit into its own Effect. They are separate processes."
+}

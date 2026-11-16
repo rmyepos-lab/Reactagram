@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-updater-to-remove-dependency-2",
+  "topic": "Side Effects",
+  "concept": "updater-to-remove-dependency",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "updater",
+    "dependencies"
+  ],
+  "sourceUrl": "https://react.dev/learn/removing-effect-dependencies#are-you-reading-some-state-to-calculate-the-next-state",
+  "question": "With setMessages([...messages, msg]) and messages in the deps, what happens on each new message?",
+  "options": [
+    "Nothing special",
+    "The chat reconnects",
+    "React throws an error"
+  ],
+  "answer": 1,
+  "say": "With set messages spreading messages, and messages in the dependencies, what happens on each new message?",
+  "explanation": "messages changes, so the Effect re-synchronizes: it disconnects and reconnects on every message.",
+  "explainSay": "The chat reconnects every time, because messages changed."
+}

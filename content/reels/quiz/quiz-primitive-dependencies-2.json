@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-primitive-dependencies-2",
+  "topic": "Side Effects",
+  "concept": "primitive-dependencies",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "useEffect",
+    "dependencies",
+    "props"
+  ],
+  "sourceUrl": "https://react.dev/learn/removing-effect-dependencies#read-primitive-values-from-objects",
+  "question": "True or false: with [roomId, serverUrl] as deps, a re-created options object with the same values won't reconnect.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: with room id and server URL as dependencies, a re-created options object with the same values will not reconnect.",
+  "explanation": "True. Strings compare by content, so equal values mean the Effect is skipped.",
+  "explainSay": "True. Strings with the same content compare as equal."
+}

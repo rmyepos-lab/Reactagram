@@ -1,0 +1,40 @@
+{
+  "kind": "learn",
+  "id": "mutable-values-not-deps",
+  "topic": "Side Effects",
+  "concept": "mutable-values-not-deps",
+  "format": "pitfall",
+  "level": "advanced",
+  "tags": [
+    "useEffect",
+    "dependencies",
+    "refs"
+  ],
+  "sourceUrl": "https://react.dev/learn/lifecycle-of-reactive-effects#can-global-or-mutable-values-be-dependencies",
+  "title": "ref.current and globals can't be dependencies",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Mutable values aren’t reactive 🫥",
+      "say": "Can you put location dot pathname, or ref dot current, in the dependency list? No."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 neither re-runs the Effect\nuseEffect(() => {\n  // ...\n}, [location.pathname, ref.current]);",
+      "highlight": [
+        4
+      ],
+      "say": "These can change at any time outside React. Changing them does not trigger a re-render, so React never gets a chance to compare them."
+    },
+    {
+      "type": "text",
+      "text": "Reading mutable data while rendering also breaks render purity.",
+      "say": "And reading mutable data during rendering, which is when dependencies are computed, breaks the purity of rendering."
+    },
+    {
+      "type": "text",
+      "text": "External mutable value? Subscribe with useSyncExternalStore. The ref object itself is fine as a dep.",
+      "say": "To read an external mutable value, subscribe with use sync external store. Note the ref object itself can be a dependency. Its current property cannot."
+    }
+  ]
+}
