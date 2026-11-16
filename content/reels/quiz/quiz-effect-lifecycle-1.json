@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-effect-lifecycle-1",
+  "topic": "Side Effects",
+  "concept": "effect-lifecycle",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "lifecycle",
+    "synchronization"
+  ],
+  "sourceUrl": "https://react.dev/learn/lifecycle-of-reactive-effects#the-lifecycle-of-an-effect",
+  "question": "True or false: an Effect can start and stop syncing several times while its component stays mounted.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: an Effect can start and stop syncing several times while its component stays mounted.",
+  "explanation": "True. Whenever its dependencies change, React stops the old sync with cleanup and starts a new one.",
+  "explainSay": "True. Each dependency change stops the old sync and starts a new one."
+}

@@ -1,0 +1,86 @@
+{
+  "kind": "learn",
+  "id": "effect-lifecycle",
+  "topic": "Side Effects",
+  "concept": "effect-lifecycle",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "lifecycle",
+    "synchronization"
+  ],
+  "sourceUrl": "https://react.dev/learn/lifecycle-of-reactive-effects#the-lifecycle-of-an-effect",
+  "title": "An Effect starts and stops, again and again",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Effects don’t mount 🔁",
+      "say": "Components mount, update and unmount. Effects do not. An Effect can only start synchronizing, and later stop."
+    },
+    {
+      "type": "visual",
+      "say": "Follow one chat room Effect while the component stays on screen.",
+      "visual": {
+        "kind": "timeline",
+        "events": [
+          {
+            "id": "g",
+            "label": "Start: general",
+            "note": "component mounts"
+          },
+          {
+            "id": "t",
+            "label": "Stop general, start travel",
+            "note": "roomId changed"
+          },
+          {
+            "id": "m",
+            "label": "Stop travel, start music",
+            "note": "roomId changed again"
+          },
+          {
+            "id": "end",
+            "label": "Stop music",
+            "note": "component unmounts"
+          }
+        ]
+      },
+      "steps": [
+        {
+          "say": "It starts by connecting to the general room.",
+          "show": [
+            "g"
+          ],
+          "focus": "g"
+        },
+        {
+          "say": "The user picks travel. The Effect stops, disconnecting general, then starts again with travel.",
+          "show": [
+            "t"
+          ],
+          "focus": "t"
+        },
+        {
+          "say": "Same thing for music. Still the same mounted component.",
+          "show": [
+            "m"
+          ],
+          "focus": "m"
+        },
+        {
+          "say": "Only when the screen closes does it stop for the last time.",
+          "show": [
+            "end"
+          ],
+          "focus": "end"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "Body = how to start. Cleanup = how to stop. React calls them as often as needed.",
+      "say": "The Effect body says how to start. The cleanup says how to stop. React calls them in order, as many times as the data requires."
+    }
+  ]
+}

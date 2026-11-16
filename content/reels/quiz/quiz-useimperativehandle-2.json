@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-useimperativehandle-2",
+  "topic": "Refs",
+  "concept": "useimperativehandle",
+  "format": "bug-hunt",
+  "level": "advanced",
+  "tags": [
+    "refs",
+    "useImperativeHandle"
+  ],
+  "sourceUrl": "https://react.dev/learn/manipulating-the-dom-with-refs#exposing-a-subset-of-the-api-with-an-imperative-handle",
+  "question": "A Modal exposes { open, close } through useImperativeHandle. What do the docs suggest instead?",
+  "options": [
+    "Expose the whole DOM node",
+    "Take an isOpen prop",
+    "Store the modal in context"
+  ],
+  "answer": 1,
+  "say": "A Modal exposes open and close methods through use imperative handle. What do the docs suggest instead?",
+  "explanation": "If you can express it as a prop, do not use a ref. <Modal isOpen={isOpen} /> is better than an { open, close } handle.",
+  "explainSay": "An is open prop. If something can be a prop, it should not be a ref."
+}

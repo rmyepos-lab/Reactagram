@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-effect-infinite-loop-1",
+  "topic": "Side Effects",
+  "concept": "effect-infinite-loop",
+  "format": "true-false",
+  "level": "beginner",
+  "tags": [
+    "useEffect",
+    "state",
+    "infinite-loop"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#step-1-declare-an-effect",
+  "question": "True or false: an Effect that sets state with [] as dependencies loops forever.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: an Effect that sets state, with an empty dependency array, loops forever.",
+  "explanation": "False. With [] it runs only after mount (plus the dev re-run). A loop needs the re-render to change the Effect's dependencies.",
+  "explainSay": "False. With an empty array it does not re-run on each render, so there is no loop."
+}

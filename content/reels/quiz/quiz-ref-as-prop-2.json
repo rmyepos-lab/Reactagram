@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-ref-as-prop-2",
+  "topic": "Props",
+  "concept": "ref-as-prop",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "refs",
+    "props",
+    "react-19"
+  ],
+  "sourceUrl": "https://react.dev/blog/2024/12/05/react-19#ref-as-a-prop",
+  "question": "True or false: new function components in React 19 still need forwardRef to receive a ref.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: new function components in React nineteen still need forward ref to receive a ref.",
+  "explanation": "False. ref is a prop for function components now. forwardRef is planned for deprecation.",
+  "explainSay": "False. Ref is just a prop now, and forward ref will be deprecated."
+}
