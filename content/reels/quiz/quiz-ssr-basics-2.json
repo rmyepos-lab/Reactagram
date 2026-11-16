@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-ssr-basics-2",
+  "topic": "Server Rendering",
+  "concept": "ssr-basics",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "ssr",
+    "server-rendering"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/server",
+  "question": "True or false: each component that should be server rendered must import react-dom/server.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false? Each component that should be server rendered must import react dom server.",
+  "explanation": "The react-dom/server APIs are called once, at the top level of the app on the server, often by a framework. Most components never import them.",
+  "explainSay": "False. The server APIs are called once, at the top level, often by a framework. Most components never import them."
+}

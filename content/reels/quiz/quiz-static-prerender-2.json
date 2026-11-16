@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-static-prerender-2",
+  "topic": "Server Rendering",
+  "concept": "static-prerender",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "ssr",
+    "ssg",
+    "streaming"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/static/prerender",
+  "question": "True or false: prerender starts sending HTML right away and streams in each boundary as it loads.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false? Pre render starts sending HTML right away, and streams in each boundary as it loads.",
+  "explanation": "prerender waits for the whole app, including every Suspense boundary, before it resolves. To stream content as it loads, use a streaming SSR API like renderToReadableStream.",
+  "explainSay": "False. Pre render waits for everything first. For streaming, use a streaming server render API."
+}

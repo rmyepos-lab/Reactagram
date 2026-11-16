@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-streaming-ssr-1",
+  "topic": "Server Rendering",
+  "concept": "streaming-ssr",
+  "format": "fill-blank",
+  "level": "advanced",
+  "tags": [
+    "ssr",
+    "server-rendering",
+    "hydration"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/server/renderToPipeableStream#rendering-a-react-tree-as-html-to-a-nodejs-stream",
+  "question": "App renders the whole <html> document. What goes in the blank?",
+  "code": "// bootstrap script\nhydrateRoot(____, <App />);",
+  "options": [
+    "document.getElementById(\"root\")",
+    "document.body",
+    "document"
+  ],
+  "answer": 2,
+  "say": "App renders the whole html document. What goes in the blank?",
+  "explanation": "When the root component returns the entire document, the bootstrap script hydrates the whole document: hydrateRoot(document, <App />).",
+  "explainSay": "Document. When App renders the whole page, you hydrate the entire document."
+}

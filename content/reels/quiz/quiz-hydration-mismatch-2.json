@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-hydration-mismatch-2",
+  "topic": "Server Rendering",
+  "concept": "hydration-mismatch",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "ssr",
+    "hydration",
+    "useeffect"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/client/hydrateRoot#handling-different-client-and-server-content",
+  "question": "The server HTML shows \"Server\". What does the FIRST client render show during hydration?",
+  "code": "const [isClient, setIsClient] =\n  useState(false);\nuseEffect(() => setIsClient(true), []);\nreturn <h1>{isClient ? \"Client\" : \"Server\"}</h1>;",
+  "options": [
+    "\"Server\", then \"Client\" after the Effect",
+    "\"Client\" right away",
+    "Nothing until the Effect runs"
+  ],
+  "answer": 0,
+  "say": "The server HTML shows Server. What does the first client render show during hydration?",
+  "explanation": "isClient starts as false, so the first client render matches the server and hydration succeeds. The Effect then sets it to true and React renders \"Client\".",
+  "explainSay": "Server first, so it matches the HTML. Then the effect runs and it shows Client."
+}

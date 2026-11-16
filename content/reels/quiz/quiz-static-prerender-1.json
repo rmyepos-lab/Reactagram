@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-static-prerender-1",
+  "topic": "Server Rendering",
+  "concept": "static-prerender",
+  "format": "which-hook",
+  "level": "advanced",
+  "tags": [
+    "ssr",
+    "ssg"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/static/prerender",
+  "question": "At build time, you want static HTML that includes data loaded with Suspense. Which API fits?",
+  "options": [
+    "renderToString",
+    "prerender",
+    "hydrateRoot"
+  ],
+  "answer": 1,
+  "say": "At build time, you want static HTML that includes data loaded with Suspense. Which API fits?",
+  "explanation": "prerender waits for all Suspense boundaries before resolving, so the data is in the HTML. renderToString doesn't wait: it outputs fallbacks. hydrateRoot runs on the client.",
+  "explainSay": "Pre render. It waits for all Suspense data before it resolves."
+}

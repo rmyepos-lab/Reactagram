@@ -1,0 +1,90 @@
+{
+  "kind": "learn",
+  "id": "streaming-with-suspense",
+  "topic": "Server Rendering",
+  "concept": "streaming-with-suspense",
+  "format": "pattern",
+  "level": "advanced",
+  "tags": [
+    "ssr",
+    "streaming",
+    "suspense"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/server/renderToPipeableStream#streaming-more-content-as-it-loads",
+  "title": "Suspense boundaries stream in as data loads",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Don't let slow data block the whole page 🐢",
+      "say": "Imagine a profile page where the posts take a while to load. You don't want the whole page to wait."
+    },
+    {
+      "type": "code",
+      "code": "function ProfilePage() {\n  return (\n    <ProfileLayout>\n      <ProfileCover />\n      <Suspense\n        fallback={<PostsGlimmer />}>\n        <Posts />\n      </Suspense>\n    </ProfileLayout>\n  );\n}",
+      "highlight": [
+        5,
+        6,
+        7
+      ],
+      "say": "Wrap Posts in a Suspense boundary. This tells React to start streaming the HTML before Posts has its data."
+    },
+    {
+      "type": "visual",
+      "text": "Content is revealed before any script loads.",
+      "visual": {
+        "kind": "timeline",
+        "events": [
+          {
+            "id": "first",
+            "label": "First HTML chunk",
+            "note": "layout, cover and PostsGlimmer"
+          },
+          {
+            "id": "data",
+            "label": "Posts data is ready",
+            "note": "on the server"
+          },
+          {
+            "id": "more",
+            "label": "More HTML + inline script",
+            "note": "the Posts HTML"
+          },
+          {
+            "id": "swap",
+            "label": "Glimmer replaced by Posts",
+            "note": "before React loads"
+          }
+        ]
+      },
+      "say": "React first sends the layout, the cover, and the glimmer fallback.",
+      "steps": [
+        {
+          "say": "Later, the posts finish loading on the server.",
+          "show": [
+            "data"
+          ],
+          "focus": "data"
+        },
+        {
+          "say": "React sends the rest of the HTML, plus a small inline script tag.",
+          "show": [
+            "more"
+          ],
+          "focus": "more"
+        },
+        {
+          "say": "That script swaps the glimmer for the posts. This happens even before React itself has loaded in the browser.",
+          "show": [
+            "swap"
+          ],
+          "focus": "swap"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "Only Suspense-enabled data, like a Promise read with use, suspends. Data fetched in an Effect or event handler isn't detected.",
+      "say": "One catch: only Suspense enabled data, like a promise read with use, can suspend. Data fetched in an effect or an event handler isn't detected."
+    }
+  ]
+}

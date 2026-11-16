@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "static-prerender",
+  "topic": "Server Rendering",
+  "concept": "static-prerender",
+  "format": "compare",
+  "level": "advanced",
+  "tags": [
+    "ssr",
+    "ssg",
+    "server-rendering"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/static/prerender",
+  "title": "Static prerendering vs rendering per request",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Build the HTML once, ahead of time 🏗️",
+      "say": "Not every page needs to render on each request. Some can be generated once, ahead of time. That's static site generation."
+    },
+    {
+      "type": "code",
+      "code": "import { prerender }\n  from \"react-dom/static\";\n\nconst { prelude } = await prerender(\n  <App />,\n  { bootstrapScripts: [\"/main.js\"] }\n);\n// prelude: a stream of static HTML",
+      "highlight": [
+        4
+      ],
+      "say": "Pre render, from react dom static, renders your app to static HTML. You get a prelude stream back. On the client, you still hydrate it."
+    },
+    {
+      "type": "text",
+      "text": "prerender waits for ALL Suspense boundaries to resolve. Data loaded with Suspense ends up in the HTML.",
+      "say": "The key difference: pre render waits for every Suspense boundary to resolve. So data loaded with Suspense ends up inside the HTML."
+    },
+    {
+      "type": "text",
+      "text": "Streaming SSR shows content as it loads, per request. prerender doesn't stream: it's for generating pages ahead of time.",
+      "say": "Streaming server rendering reveals content as it loads, on every request. Pre render doesn't stream. It's made for generating pages ahead of time."
+    },
+    {
+      "type": "text",
+      "text": "Web Streams: prerender. Node.js: prerenderToNodeStream.",
+      "say": "With web streams, use pre render. On Node, use pre render to node stream."
+    }
+  ]
+}

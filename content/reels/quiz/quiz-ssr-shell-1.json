@@ -1,0 +1,26 @@
+{
+  "kind": "quiz",
+  "id": "quiz-ssr-shell-1",
+  "topic": "Server Rendering",
+  "concept": "ssr-shell",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "ssr",
+    "streaming",
+    "suspense"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/server/renderToPipeableStream#specifying-what-goes-into-the-shell",
+  "question": "Sidebar and Feed both suspend. What is in the shell?",
+  "code": "<Layout>\n  <Header />\n  <Suspense fallback={<Spinner />}>\n    <Sidebar />\n  </Suspense>\n  <Suspense fallback={<Glimmer />}>\n    <Feed />\n  </Suspense>\n</Layout>",
+  "options": [
+    "Only <Spinner />",
+    "Layout and Header, with Spinner and Glimmer",
+    "Layout, Header, Sidebar and Feed",
+    "Only Layout and Header"
+  ],
+  "answer": 1,
+  "say": "Sidebar and Feed both suspend. What is in the shell?",
+  "explanation": "The shell is everything outside Suspense boundaries: Layout and Header. Where a boundary's content suspends, its fallback shows, so the user first sees Spinner and Glimmer in place.",
+  "explainSay": "Layout and Header, with the two fallbacks in place. The shell is everything outside the Suspense boundaries."
+}

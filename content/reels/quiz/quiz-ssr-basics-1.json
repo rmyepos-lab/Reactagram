@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-ssr-basics-1",
+  "topic": "Server Rendering",
+  "concept": "ssr-basics",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "ssr",
+    "server-rendering"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/server",
+  "question": "The server HTML has arrived, but the JavaScript hasn't loaded yet. What does the user get?",
+  "options": [
+    "A blank page until the JavaScript loads",
+    "Visible content, but buttons don't respond yet",
+    "A fully interactive page",
+    "An error, because React isn't running"
+  ],
+  "answer": 1,
+  "say": "The server HTML has arrived, but the JavaScript hasn't loaded yet. What does the user get?",
+  "explanation": "The server HTML is a snapshot: the user can see it right away. It becomes interactive only after the JavaScript loads and hydrateRoot attaches React.",
+  "explainSay": "They see the content right away, but it only becomes interactive after the JavaScript loads and hydrate root runs."
+}

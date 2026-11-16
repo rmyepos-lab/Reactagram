@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-streaming-with-suspense-2",
+  "topic": "Server Rendering",
+  "concept": "streaming-with-suspense",
+  "format": "bug-hunt",
+  "level": "advanced",
+  "tags": [
+    "ssr",
+    "streaming",
+    "suspense"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/server/renderToPipeableStream#streaming-more-content-as-it-loads",
+  "question": "The server HTML never includes the posts, only the empty list. Why?",
+  "code": "function Posts() {\n  const [posts, setPosts] = useState([]);\n  useEffect(() => {\n    fetchPosts().then(setPosts);\n  }, []);\n  return <List items={posts} />;\n}",
+  "options": [
+    "Effects don't run on the server, and Suspense can't detect them",
+    "The Suspense fallback is missing a key",
+    "setPosts must be called during render"
+  ],
+  "answer": 0,
+  "say": "The server HTML never includes the posts, only the empty list. Why?",
+  "explanation": "Suspense doesn't detect data fetched inside an Effect, and Effects don't run during server rendering. Read the data from a Suspense-enabled source, like use with a Promise.",
+  "explainSay": "The fetch is in an effect. Effects don't run on the server, and Suspense can't detect them. Use a Suspense enabled source instead."
+}
