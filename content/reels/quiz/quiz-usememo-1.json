@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-usememo-1",
+  "topic": "Performance",
+  "concept": "usememo",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "useMemo",
+    "performance",
+    "caching"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useMemo#skipping-expensive-recalculations",
+  "question": "True or false: useMemo makes the first render faster.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: use memo makes the first render faster.",
+  "explanation": "False. useMemo still runs the calculation on the first render. It only skips unnecessary work on updates.",
+  "explainSay": "False. It only helps skip work on later renders."
+}

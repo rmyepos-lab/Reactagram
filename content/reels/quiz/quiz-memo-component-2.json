@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-memo-component-2",
+  "topic": "Performance",
+  "concept": "memo-component",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "memo",
+    "performance",
+    "re-rendering"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/memo#skipping-re-rendering-when-props-are-unchanged",
+  "question": "True or false: a memo component never re-renders unless its props change.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: a memo component never re-renders unless its props change.",
+  "explanation": "False. It still re-renders when its own state changes or when a context it uses changes.",
+  "explainSay": "False. Its own state and context changes still re-render it."
+}

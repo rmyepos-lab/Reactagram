@@ -1,0 +1,40 @@
+{
+  "kind": "learn",
+  "id": "memo-component",
+  "topic": "Performance",
+  "concept": "memo-component",
+  "format": "special-use",
+  "level": "intermediate",
+  "tags": [
+    "memo",
+    "performance",
+    "re-rendering"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/memo#skipping-re-rendering-when-props-are-unchanged",
+  "title": "memo: skip re-renders with the same props",
+  "slides": [
+    {
+      "type": "title",
+      "text": "memo a component 🧊",
+      "say": "Normally a component re-renders whenever its parent does. Memo changes that."
+    },
+    {
+      "type": "code",
+      "code": "import { memo } from \"react\";\n\nconst Greeting = memo(function Greeting({ name }) {\n  return <h3>Hello, {name}!</h3>;\n});",
+      "highlight": [
+        3
+      ],
+      "say": "Wrap it in memo. When the parent re-renders, React skips Greeting if its props are the same as last time."
+    },
+    {
+      "type": "text",
+      "text": "It still re-renders when its own state or a context it reads changes.",
+      "say": "Memo only looks at props. Greeting still re-renders if its own state changes, or a context it uses changes."
+    },
+    {
+      "type": "text",
+      "text": "Performance only. If code breaks without memo, fix the real bug first.",
+      "say": "Treat memo as a performance optimization only. If your code does not work without it, fix the underlying problem first."
+    }
+  ]
+}

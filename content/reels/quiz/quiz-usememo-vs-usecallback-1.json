@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-usememo-vs-usecallback-1",
+  "topic": "Performance",
+  "concept": "usememo-vs-usecallback",
+  "format": "fill-blank",
+  "level": "intermediate",
+  "tags": [
+    "useMemo",
+    "useCallback"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useCallback#how-is-usecallback-related-to-usememo",
+  "question": "Fill the blank so this caches the same thing as useCallback(fn, [a]):",
+  "code": "const cached = useMemo(___, [a]);",
+  "options": [
+    "fn",
+    "() => fn",
+    "fn()"
+  ],
+  "answer": 1,
+  "say": "Fill the blank so this use memo caches the same thing as use callback of fn with a.",
+  "explanation": "useCallback(fn, deps) equals useMemo(() => fn, deps): useMemo caches what the function returns, here fn itself.",
+  "explainSay": "An arrow that returns fn. Use memo caches the return value, which is fn."
+}

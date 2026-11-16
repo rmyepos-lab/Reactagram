@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-memo-breaks-with-new-objects-1",
+  "topic": "Performance",
+  "concept": "memo-breaks-with-new-objects",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "memo",
+    "useMemo",
+    "useCallback"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/memo#minimizing-props-changes",
+  "question": "List is wrapped in memo but re-renders every time. Why?",
+  "code": "<List items={todos} onClick={() => select(id)} />",
+  "options": [
+    "todos is an array",
+    "The inline arrow is a new function each render",
+    "memo only works with classes"
+  ],
+  "answer": 1,
+  "say": "List is wrapped in memo but re-renders every time. Why?",
+  "explanation": "The inline arrow is a new function every render, so the onClick prop always differs. Wrap it in useCallback.",
+  "explainSay": "The inline arrow function is new every render."
+}

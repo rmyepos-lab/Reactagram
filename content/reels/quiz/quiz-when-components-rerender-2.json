@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-when-components-rerender-2",
+  "topic": "Performance",
+  "concept": "when-components-rerender",
+  "format": "true-false",
+  "level": "beginner",
+  "tags": [
+    "rendering",
+    "performance",
+    "state"
+  ],
+  "sourceUrl": "https://react.dev/learn/render-and-commit#step-1-trigger-a-render",
+  "question": "True or false: a re-render always rewrites every DOM node of that component.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: a re-render always rewrites every DOM node of that component.",
+  "explanation": "False. Rendering is React calling your components. React only touches the DOM where the output changed.",
+  "explainSay": "False. React only updates the DOM where something changed."
+}

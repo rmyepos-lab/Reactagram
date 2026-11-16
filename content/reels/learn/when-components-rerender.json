@@ -1,0 +1,71 @@
+{
+  "kind": "learn",
+  "id": "when-components-rerender",
+  "topic": "Performance",
+  "concept": "when-components-rerender",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "rendering",
+    "performance",
+    "state"
+  ],
+  "sourceUrl": "https://react.dev/learn/render-and-commit#step-1-trigger-a-render",
+  "title": "When does a component re-render?",
+  "slides": [
+    {
+      "type": "title",
+      "text": "What makes React render? 🔄",
+      "say": "There are only two reasons a component renders."
+    },
+    {
+      "type": "text",
+      "text": "1. The initial render. 2. Its state, or an ancestor’s state, was updated.",
+      "say": "One: it is the initial render. Two: its own state, or the state of one of its ancestors, was updated."
+    },
+    {
+      "type": "visual",
+      "say": "Rendering means React calling your components. Say Page updates its state.",
+      "visual": {
+        "kind": "tree",
+        "nodes": [
+          {
+            "id": "app",
+            "label": "App"
+          },
+          {
+            "id": "page",
+            "label": "Page",
+            "parent": "app",
+            "note": "setState here"
+          },
+          {
+            "id": "list",
+            "label": "List",
+            "parent": "page"
+          },
+          {
+            "id": "item",
+            "label": "Item",
+            "parent": "list"
+          }
+        ]
+      },
+      "steps": [
+        {
+          "say": "React calls Page, then every component it returns, recursively: List, then Item. App is not re-rendered.",
+          "show": [
+            "list",
+            "item"
+          ],
+          "focus": "item"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "By default, a re-render re-renders all children. Rendering ≠ changing the DOM.",
+      "say": "So by default, children re-render with their parent. But re-rendering is just a calculation. React only changes the DOM where the output differs."
+    }
+  ]
+}

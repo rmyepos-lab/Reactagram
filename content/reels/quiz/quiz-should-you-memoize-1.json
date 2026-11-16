@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-should-you-memoize-1",
+  "topic": "Performance",
+  "concept": "should-you-memoize",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "performance",
+    "memo",
+    "best-practices"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/memo#should-you-add-memo-everywhere",
+  "question": "True or false: memo is only valuable if a component re-renders often with the same props and is expensive.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: memo is only valuable if a component re-renders often with the same props and is expensive to render.",
+  "explanation": "True. Without perceptible lag, memo is unnecessary. It is also useless if props are always different.",
+  "explainSay": "True. Otherwise it brings no benefit."
+}

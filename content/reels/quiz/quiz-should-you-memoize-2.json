@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-should-you-memoize-2",
+  "topic": "Performance",
+  "concept": "should-you-memoize",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "performance",
+    "memo",
+    "best-practices"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/memo#should-you-add-memo-everywhere",
+  "question": "Which app type benefits most from memoization?",
+  "options": [
+    "A docs site where clicks swap whole pages",
+    "A drawing editor where you drag shapes",
+    "A static landing page"
+  ],
+  "answer": 1,
+  "say": "Which kind of app benefits most from memoization?",
+  "explanation": "Granular interactions, like moving shapes, re-render often with mostly the same props, so memoization helps.",
+  "explainSay": "The drawing editor, with lots of small, frequent updates."
+}

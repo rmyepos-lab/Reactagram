@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-memo-component-1",
+  "topic": "Performance",
+  "concept": "memo-component",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "memo",
+    "performance",
+    "re-rendering"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/memo#skipping-re-rendering-when-props-are-unchanged",
+  "question": "The parent changes address (not passed to Greeting). Does memo(Greeting) re-render?",
+  "code": "<Greeting name={name} />",
+  "options": [
+    "Yes",
+    "No",
+    "Only in production"
+  ],
+  "answer": 1,
+  "say": "The parent changes address, which is not passed to Greeting. Does the memo Greeting re-render?",
+  "explanation": "Its only prop, name, is unchanged, so memo lets React skip re-rendering Greeting.",
+  "explainSay": "No. Its props did not change."
+}
