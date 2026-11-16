@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-children-as-props-optimization-2",
+  "topic": "Performance",
+  "concept": "children-as-props-optimization",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "performance",
+    "children",
+    "composition"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/memo#should-you-add-memo-everywhere",
+  "question": "True or false: accepting JSX as children can make some memo calls unnecessary.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: accepting JSX as children can make some memo calls unnecessary.",
+  "explanation": "True. It is one of the principles the docs list for making memoization unnecessary.",
+  "explainSay": "True. It avoids re-renders without memo."
+}

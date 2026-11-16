@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-react-compiler-2",
+  "topic": "Performance",
+  "concept": "react-compiler",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "react-compiler",
+    "memoization",
+    "build"
+  ],
+  "sourceUrl": "https://react.dev/learn/react-compiler/introduction",
+  "question": "For existing code with useMemo calls, what do the docs recommend when adopting the compiler?",
+  "options": [
+    "Delete all useMemo calls at once",
+    "Leave them, or test carefully before removing",
+    "Wrap them in memo too"
+  ],
+  "answer": 1,
+  "say": "For existing code with use memo calls, what do the docs recommend when adopting the compiler?",
+  "explanation": "Removing existing memoization can change compilation output, so leave it in place or test carefully before removing.",
+  "explainSay": "Leave them in place, or test carefully before removing."
+}

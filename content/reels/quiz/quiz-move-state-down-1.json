@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-move-state-down-1",
+  "topic": "Performance",
+  "concept": "move-state-down",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "performance",
+    "state",
+    "architecture"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/memo#should-you-add-memo-everywhere",
+  "question": "Typing in a search box re-renders the whole app. Simplest fix?",
+  "code": "function App() {\n  const [query, setQuery] = useState(\"\");\n  return (\n    <>\n      <SearchBox value={query} onChange={setQuery} />\n      <HugeDashboard />\n    </>\n  );\n}",
+  "options": [
+    "Wrap App in memo",
+    "Move query state into SearchBox",
+    "Store query in a ref"
+  ],
+  "answer": 1,
+  "say": "Typing in a search box re-renders the whole app. What is the simplest fix?",
+  "explanation": "Only SearchBox uses query. Keeping the state local means typing re-renders SearchBox, not the dashboard.",
+  "explainSay": "Move the query state into SearchBox, where it is used."
+}

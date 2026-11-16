@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "react-compiler",
+  "topic": "Performance",
+  "concept": "react-compiler",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "react-compiler",
+    "memoization",
+    "build"
+  ],
+  "sourceUrl": "https://react.dev/learn/react-compiler/introduction",
+  "title": "React Compiler: automatic memoization",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Let the compiler memoize 🤖",
+      "say": "React Compiler is a build time tool that memoizes your components and values automatically."
+    },
+    {
+      "type": "code",
+      "code": "// no memo, useMemo or useCallback\nfunction ExpensiveComponent({ data, onClick }) {\n  const processed = expensiveProcessing(data);\n  return processed.map(item => (\n    <Item key={item.id}\n      onClick={() => onClick(item)} />\n  ));\n}",
+      "highlight": [
+        3,
+        6
+      ],
+      "say": "You write plain code. The compiler skips cascading re-renders and caches expensive calculations, even with that inline arrow."
+    },
+    {
+      "type": "text",
+      "text": "It understands the Rules of React. Works with Babel, Vite, Metro, Rsbuild.",
+      "say": "It works with plain JavaScript and understands the Rules of React, so you do not rewrite code. It plugs into Babel, Vite, Metro and Rsbuild."
+    },
+    {
+      "type": "text",
+      "text": "New code: rely on it. useMemo/useCallback remain escape hatches.",
+      "say": "For new code, rely on the compiler, and use use memo or use callback only when you need precise control, like a stable Effect dependency."
+    }
+  ]
+}

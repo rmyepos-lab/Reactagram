@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "memoize-context-value",
+  "topic": "Context",
+  "concept": "memoize-context-value",
+  "format": "pattern",
+  "level": "advanced",
+  "tags": [
+    "context",
+    "useMemo",
+    "useCallback"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useContext#optimizing-re-renders-when-passing-objects-and-functions",
+  "title": "Memoize the context value object",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Stop needless context updates 🛑",
+      "say": "Passing an object with a function through context? Every render of the provider re-renders all readers."
+    },
+    {
+      "type": "code",
+      "code": "<AuthContext value={{ currentUser, login }}>\n  <Page />\n</AuthContext>",
+      "highlight": [
+        1
+      ],
+      "say": "This object, and the login function inside, are new on every render of MyApp. So every useContext reader re-renders, even if the user did not change."
+    },
+    {
+      "type": "code",
+      "code": "const login = useCallback(response => {\n  storeCredentials(response.credentials);\n  setCurrentUser(response.user);\n}, []);\nconst value = useMemo(\n  () => ({ currentUser, login }),\n  [currentUser, login]\n);",
+      "highlight": [
+        1,
+        5
+      ],
+      "say": "Wrap the function in use callback and the object in use memo. Now readers re-render only when current user changes."
+    },
+    {
+      "type": "text",
+      "text": "Small apps rarely need it. It’s a performance optimization.",
+      "say": "In smaller apps this is not a problem. It is a performance optimization."
+    }
+  ]
+}

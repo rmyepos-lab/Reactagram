@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-children-as-props-optimization-1",
+  "topic": "Performance",
+  "concept": "children-as-props-optimization",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "performance",
+    "children",
+    "composition"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/memo#should-you-add-memo-everywhere",
+  "question": "Layout updates its own state. Does <Feed /> re-render?",
+  "code": "function Layout({ children }) {\n  const [dark, setDark] = useState(false);\n  return <main className={dark ? \"d\" : \"\"}>{children}</main>;\n}\n\n<Layout><Feed /></Layout>",
+  "options": [
+    "Yes, children always re-render",
+    "No, children came from the parent unchanged",
+    "Only if Feed is memo"
+  ],
+  "answer": 1,
+  "say": "Layout updates its own state. Does Feed re-render?",
+  "explanation": "Feed was created by Layout's parent and passed as children. When Layout updates its own state, React knows children don't need to re-render.",
+  "explainSay": "No. The children came from the parent and did not change."
+}

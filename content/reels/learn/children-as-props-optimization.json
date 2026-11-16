@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "children-as-props-optimization",
+  "topic": "Performance",
+  "concept": "children-as-props-optimization",
+  "format": "pattern",
+  "level": "intermediate",
+  "tags": [
+    "performance",
+    "children",
+    "composition"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/memo#should-you-add-memo-everywhere",
+  "title": "Pass JSX as children to skip re-renders",
+  "slides": [
+    {
+      "type": "title",
+      "text": "The children trick 🎁",
+      "say": "A wrapper with its own state re-renders its children. Unless the children come in as JSX."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 wrapper renders the slow child itself\nfunction Panel() {\n  const [open, setOpen] = useState(true);\n  return <div>{open && <SlowList />}</div>;\n}",
+      "highlight": [
+        4
+      ],
+      "say": "Here Panel creates SlowList itself. Every toggle of Panel’s state re-renders SlowList."
+    },
+    {
+      "type": "code",
+      "code": "function Panel({ children }) {\n  const [open, setOpen] = useState(true);\n  return <div>{open && children}</div>;\n}\n\n<Panel><SlowList /></Panel>",
+      "highlight": [
+        1,
+        6
+      ],
+      "say": "Now the parent creates SlowList and passes it as children. When Panel updates its own state, React knows the children did not change, so they do not re-render."
+    },
+    {
+      "type": "text",
+      "text": "Visual wrapper? Accept children.",
+      "say": "Rule of thumb: when a component visually wraps others, let it accept JSX as children."
+    }
+  ]
+}
