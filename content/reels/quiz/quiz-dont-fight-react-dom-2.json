@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-dont-fight-react-dom-2",
+  "topic": "Refs",
+  "concept": "dont-fight-react-dom",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "refs",
+    "dom",
+    "best-practices"
+  ],
+  "sourceUrl": "https://react.dev/learn/manipulating-the-dom-with-refs#best-practices-for-dom-manipulation-with-refs",
+  "question": "Which DOM change can conflict with React?",
+  "options": [
+    "Scrolling a list into view",
+    "Removing a node React rendered from state",
+    "Adding children to a div that is always empty in JSX"
+  ],
+  "answer": 1,
+  "say": "Which of these DOM changes can conflict with React?",
+  "explanation": "Removing a node React manages can crash later updates. Scrolling is safe, and an always-empty div is never touched by React.",
+  "explainSay": "Removing a node React rendered. React still thinks it owns it, which can crash."
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-useref-basics-1",
+  "topic": "Refs",
+  "concept": "useref-basics",
+  "format": "output",
+  "level": "beginner",
+  "tags": [
+    "refs",
+    "useRef",
+    "basics"
+  ],
+  "sourceUrl": "https://react.dev/learn/referencing-values-with-refs#adding-a-ref-to-your-component",
+  "question": "What does the log show?",
+  "code": "const ref = useRef(0);\nfunction handleClick() {\n  ref.current = 5;\n  console.log(ref.current);\n}",
+  "options": [
+    "0",
+    "5",
+    "undefined"
+  ],
+  "answer": 1,
+  "say": "What does the log show after setting ref dot current to five?",
+  "explanation": "A ref is a regular JavaScript object, so changing current is immediate. Unlike state, it is not a snapshot.",
+  "explainSay": "Five. Ref changes are immediate, because a ref is a plain object."
+}

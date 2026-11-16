@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-ref-callback-cleanup-2",
+  "topic": "Refs",
+  "concept": "ref-callback-cleanup",
+  "format": "bug-hunt",
+  "level": "advanced",
+  "tags": [
+    "refs",
+    "ref-callback",
+    "react-19"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/components/common#ref-callback",
+  "question": "Why does TypeScript reject this in React 19?",
+  "code": "<div ref={el => (box = el)} />",
+  "options": [
+    "The arrow implicitly returns el, not a cleanup",
+    "box must be a useRef",
+    "ref callbacks cannot assign variables"
+  ],
+  "answer": 0,
+  "say": "Why does TypeScript reject this ref callback in React nineteen?",
+  "explanation": "The parentheses make the arrow return el. Ref callbacks may only return a cleanup function, so use a block body: el => { box = el; }.",
+  "explainSay": "It implicitly returns the element. Ref callbacks may only return a cleanup, so use curly braces."
+}

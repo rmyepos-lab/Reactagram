@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-flushsync-with-refs-2",
+  "topic": "Refs",
+  "concept": "flushsync-with-refs",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "refs",
+    "flushSync",
+    "dom"
+  ],
+  "sourceUrl": "https://react.dev/learn/manipulating-the-dom-with-refs#flushing-state-updates-synchronously-with-flush-sync",
+  "question": "Without flushSync, which item does this scroll to after adding one?",
+  "code": "setTodos([...todos, newTodo]);\nlistRef.current.lastChild.scrollIntoView();",
+  "options": [
+    "The new todo",
+    "The todo before the new one",
+    "The first todo"
+  ],
+  "answer": 1,
+  "say": "Without flush sync, which item does this scroll to after adding one?",
+  "explanation": "setTodos is queued, so the DOM still ends with the previous todo when scrollIntoView runs. It lags by one.",
+  "explainSay": "The one before the new todo. The DOM has not updated yet, so it lags by one."
+}

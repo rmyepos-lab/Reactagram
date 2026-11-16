@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-refs-to-dom-1",
+  "topic": "Refs",
+  "concept": "refs-to-dom",
+  "format": "fill-blank",
+  "level": "beginner",
+  "tags": [
+    "refs",
+    "dom",
+    "focus"
+  ],
+  "sourceUrl": "https://react.dev/learn/manipulating-the-dom-with-refs#getting-a-ref-to-the-node",
+  "question": "Fill the blank so React puts the <input> node into inputRef.current:",
+  "code": "<input ___={inputRef} />",
+  "options": [
+    "ref",
+    "key",
+    "node"
+  ],
+  "answer": 0,
+  "say": "Fill the blank so React puts the input node into input ref dot current.",
+  "explanation": "Passing the ref object as the ref attribute tells React to put the DOM node into inputRef.current.",
+  "explainSay": "Ref. Passing the ref attribute makes React store the node in current."
+}

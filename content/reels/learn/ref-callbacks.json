@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "ref-callbacks",
+  "topic": "Refs",
+  "concept": "ref-callbacks",
+  "format": "pattern",
+  "level": "advanced",
+  "tags": [
+    "refs",
+    "ref-callback",
+    "lists"
+  ],
+  "sourceUrl": "https://react.dev/learn/manipulating-the-dom-with-refs#how-to-manage-a-list-of-refs-using-a-ref-callback",
+  "title": "Ref callbacks for a list of nodes",
+  "slides": [
+    {
+      "type": "title",
+      "text": "A ref for every item? 📋",
+      "say": "You need a ref to each item in a list, but you do not know how many items there will be."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 Hook inside map\nitems.map(item => {\n  const ref = useRef(null);\n  return <li ref={ref} />;\n})",
+      "highlight": [
+        3
+      ],
+      "say": "You cannot call use ref inside map. Hooks must be called at the top level."
+    },
+    {
+      "type": "code",
+      "code": "const itemsRef = useRef(new Map());\n\n<li\n  key={cat.id}\n  ref={node => {\n    itemsRef.current.set(cat.id, node);\n    return () => {\n      itemsRef.current.delete(cat.id);\n    };\n  }}\n/>",
+      "highlight": [
+        5,
+        6,
+        7
+      ],
+      "say": "Instead, pass a function to the ref attribute. React calls it with the DOM node, and calls the returned cleanup when it is time to clear it. Keep the nodes in a Map."
+    },
+    {
+      "type": "text",
+      "text": "One ref holding a Map: look up any node by ID later.",
+      "say": "Now one ref holds a Map of nodes, and you can look up any of them by its ID later."
+    }
+  ]
+}

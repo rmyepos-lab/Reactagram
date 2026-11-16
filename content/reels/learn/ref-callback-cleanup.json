@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "ref-callback-cleanup",
+  "topic": "Refs",
+  "concept": "ref-callback-cleanup",
+  "format": "special-use",
+  "level": "advanced",
+  "tags": [
+    "refs",
+    "ref-callback",
+    "react-19"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/components/common#ref-callback",
+  "title": "React 19: ref callbacks return a cleanup",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Ref callback cleanup 🧹",
+      "say": "React nineteen lets a ref callback return a cleanup function."
+    },
+    {
+      "type": "code",
+      "code": "<input\n  ref={node => {\n    // attached\n    return () => {\n      // detached: clean up\n    };\n  }}\n/>",
+      "highlight": [
+        4
+      ],
+      "say": "When the node is removed, React calls the cleanup. Before, React called your callback again with null instead."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 implicit return\n<div ref={c => (instance = c)} />\n\n// ✅ block body\n<div ref={c => { instance = c; }} />",
+      "highlight": [
+        2,
+        5
+      ],
+      "say": "Careful with implicit returns. This arrow returns the node, which TypeScript now rejects, since it is not a cleanup. Use curly braces."
+    },
+    {
+      "type": "text",
+      "text": "New callback each render? React cleans up the old one, then calls the new one.",
+      "say": "Also note: an inline callback is a new function every render. React runs the old cleanup, then calls the new callback with the node."
+    }
+  ]
+}

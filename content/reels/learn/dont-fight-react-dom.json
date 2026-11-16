@@ -1,0 +1,43 @@
+{
+  "kind": "learn",
+  "id": "dont-fight-react-dom",
+  "topic": "Refs",
+  "concept": "dont-fight-react-dom",
+  "format": "pitfall",
+  "level": "intermediate",
+  "tags": [
+    "refs",
+    "dom",
+    "best-practices"
+  ],
+  "sourceUrl": "https://react.dev/learn/manipulating-the-dom-with-refs#best-practices-for-dom-manipulation-with-refs",
+  "title": "Don't change DOM nodes React manages",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Hands off React’s DOM ✋",
+      "say": "Refs give you DOM nodes. Focusing and scrolling them is safe. Changing them is risky."
+    },
+    {
+      "type": "code",
+      "code": "// toggles with state\n{show && <p ref={ref}>Hello</p>}\n\n// 🔴 removes it behind React’s back\nref.current.remove();",
+      "highlight": [
+        5
+      ],
+      "say": "Here a paragraph is shown with state. Remove it with the DOM API, then toggle the state again, and the app crashes. React no longer knows how to manage that DOM."
+    },
+    {
+      "type": "text",
+      "text": "Modifying, adding or removing children of React-managed nodes → glitches or crashes.",
+      "say": "Modifying, adding children to, or removing elements that React manages can cause inconsistent results or crashes."
+    },
+    {
+      "type": "code",
+      "code": "// ✅ React never touches its children\n<div ref={mapRef} />",
+      "highlight": [
+        2
+      ],
+      "say": "You can safely change parts React has no reason to update, like the children of a div that is always empty in your JSX."
+    }
+  ]
+}

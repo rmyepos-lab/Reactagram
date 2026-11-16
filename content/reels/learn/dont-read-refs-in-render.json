@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "dont-read-refs-in-render",
+  "topic": "Refs",
+  "concept": "dont-read-refs-in-render",
+  "format": "pitfall",
+  "level": "intermediate",
+  "tags": [
+    "refs",
+    "rendering",
+    "best-practices"
+  ],
+  "sourceUrl": "https://react.dev/learn/referencing-values-with-refs#best-practices-for-refs",
+  "title": "Don't read ref.current during render",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Keep refs out of render 🙈",
+      "say": "A rule for refs: do not read or write ref dot current while rendering."
+    },
+    {
+      "type": "code",
+      "code": "function Counter() {\n  const count = useRef(0);\n  // 🔴 read during render\n  return <p>{count.current}</p>;\n}",
+      "highlight": [
+        4
+      ],
+      "say": "React does not know when ref dot current changes. So even reading it while rendering makes your component unpredictable."
+    },
+    {
+      "type": "text",
+      "text": "Needed to render? It should be state. Refs belong in event handlers and Effects.",
+      "say": "If the value is needed for rendering, use state instead. Read and write refs in event handlers and Effects."
+    },
+    {
+      "type": "code",
+      "code": "// ✅ the one exception\nif (!ref.current) {\n  ref.current = new VideoPlayer();\n}",
+      "highlight": [
+        2,
+        3
+      ],
+      "say": "The only exception: setting a ref once on the first render, like this. It runs only when the ref is still empty."
+    }
+  ]
+}

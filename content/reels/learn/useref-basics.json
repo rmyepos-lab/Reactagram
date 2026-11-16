@@ -1,0 +1,50 @@
+{
+  "kind": "learn",
+  "id": "useref-basics",
+  "topic": "Refs",
+  "concept": "useref-basics",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "refs",
+    "useRef",
+    "basics"
+  ],
+  "sourceUrl": "https://react.dev/learn/referencing-values-with-refs#adding-a-ref-to-your-component",
+  "title": "useRef: an object with .current",
+  "slides": [
+    {
+      "type": "title",
+      "text": "What useRef returns 📦",
+      "say": "Use ref gives you a plain JavaScript object. Let us look inside."
+    },
+    {
+      "type": "code",
+      "code": "const ref = useRef(0);\n\n// ref is just:\n// { current: 0 }",
+      "highlight": [
+        1,
+        4
+      ],
+      "say": "Pass the initial value as the only argument. You get back an object with a single property: current."
+    },
+    {
+      "type": "code",
+      "code": "function handleClick() {\n  ref.current = ref.current + 1;\n  console.log(ref.current); // new value\n}",
+      "highlight": [
+        2,
+        3
+      ],
+      "say": "Current is mutable. You read it and write it directly, and the change is immediate. No setter, no snapshot."
+    },
+    {
+      "type": "text",
+      "text": "Same object every render. Think: state without a setter.",
+      "say": "React returns the same object on every render. You can picture it as a state variable whose setter you never use."
+    },
+    {
+      "type": "text",
+      "text": "Use for: timeout IDs, DOM nodes, values not needed for JSX.",
+      "say": "Use refs for timeout IDs, DOM elements, and other values that are not needed to calculate the JSX."
+    }
+  ]
+}

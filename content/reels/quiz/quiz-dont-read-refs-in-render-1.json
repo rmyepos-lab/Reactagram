@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-dont-read-refs-in-render-1",
+  "topic": "Refs",
+  "concept": "dont-read-refs-in-render",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "refs",
+    "rendering",
+    "best-practices"
+  ],
+  "sourceUrl": "https://react.dev/learn/referencing-values-with-refs#best-practices-for-refs",
+  "question": "Clicking updates the ref, but the screen never changes. Fix?",
+  "code": "const clicks = useRef(0);\nreturn (\n  <button onClick={() => clicks.current++}>\n    {clicks.current}\n  </button>\n);",
+  "options": [
+    "Use state for clicks",
+    "Use clicks.current += 1 instead",
+    "Wrap it in useMemo"
+  ],
+  "answer": 0,
+  "say": "Clicking updates the ref, but the screen never changes. What is the fix?",
+  "explanation": "The value is shown on screen, so it is needed for rendering. Use state. Refs should not be read during render.",
+  "explainSay": "Use state. The value is shown on screen, and refs should not be read during render."
+}

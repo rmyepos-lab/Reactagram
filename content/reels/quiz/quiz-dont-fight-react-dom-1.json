@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-dont-fight-react-dom-1",
+  "topic": "Refs",
+  "concept": "dont-fight-react-dom",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "refs",
+    "dom",
+    "best-practices"
+  ],
+  "sourceUrl": "https://react.dev/learn/manipulating-the-dom-with-refs#best-practices-for-dom-manipulation-with-refs",
+  "question": "True or false: calling ref.current.focus() on a React-managed input is safe.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: calling focus on a React managed input through a ref is safe.",
+  "explanation": "True. Non-destructive actions like focusing and scrolling are fine. Modifying the DOM structure is what conflicts with React.",
+  "explainSay": "True. Focus and scroll are non destructive, so they are safe."
+}
