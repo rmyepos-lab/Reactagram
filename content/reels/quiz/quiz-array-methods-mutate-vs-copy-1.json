@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-array-methods-mutate-vs-copy-1",
+  "topic": "State",
+  "concept": "array-methods-mutate-vs-copy",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "arrays",
+    "methods"
+  ],
+  "sourceUrl": "https://react.dev/learn/updating-arrays-in-state#making-other-changes-to-an-array",
+  "question": "Which of these does NOT mutate the original array?",
+  "options": [
+    "arr.splice(1, 1)",
+    "arr.sort()",
+    "arr.slice(1)",
+    "arr.reverse()"
+  ],
+  "answer": 2,
+  "say": "Which of these does not mutate the original array?",
+  "explanation": "slice returns a copy of part of the array. splice, sort and reverse all change the original array.",
+  "explainSay": "Slice. It returns a copy. Splice, sort and reverse all change the original."
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-storing-functions-in-state-1",
+  "topic": "State",
+  "concept": "storing-functions-in-state",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "state",
+    "functions",
+    "useState"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useState#im-trying-to-set-state-to-a-function-but-it-gets-called-instead",
+  "question": "What does mode hold after the first render?",
+  "code": "function getMode() {\n  return \"dark\";\n}\nconst [mode, setMode] = useState(getMode);",
+  "options": [
+    "The getMode function",
+    "The string \"dark\"",
+    "undefined"
+  ],
+  "answer": 1,
+  "say": "What does mode hold after the first render?",
+  "explanation": "A function passed to useState is treated as an initializer. React calls it and stores its return value, \"dark\".",
+  "explainSay": "The string dark. React calls the function as an initializer and stores what it returns."
+}

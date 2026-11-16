@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "same-value-bailout",
+  "topic": "State",
+  "concept": "same-value-bailout",
+  "format": "pitfall",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "Object.is",
+    "rendering"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useState#ive-updated-the-state-but-the-screen-doesnt-update",
+  "title": "Same value? React skips the re-render",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Same value, no re-render ⏭️",
+      "say": "If you set state to the value it already has, React skips re-rendering. That is an optimization, and a trap."
+    },
+    {
+      "type": "text",
+      "text": "React compares old and new with Object.is. Equal? It skips the component and its children.",
+      "say": "React compares the next value with the current one using Object dot is. If they are the same, it skips re-rendering the component and its children."
+    },
+    {
+      "type": "code",
+      "code": "obj.x = 10;  // 🚩 mutates\nsetObj(obj); // 🚩 same object: ignored\n\nsetObj({ ...obj, x: 10 }); // ✅ new",
+      "highlight": [
+        2,
+        4
+      ],
+      "say": "Here is the trap. You mutate an object and pass the same object back. It is equal to the old one, so React ignores the update."
+    },
+    {
+      "type": "text",
+      "text": "Screen not updating? Check if you passed the same object or array.",
+      "say": "Takeaway: if the screen does not update, check whether you passed back the same object or array."
+    }
+  ]
+}

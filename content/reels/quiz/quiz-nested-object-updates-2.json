@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-nested-object-updates-2",
+  "topic": "State",
+  "concept": "nested-object-updates",
+  "format": "fill-blank",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "objects",
+    "nested"
+  ],
+  "sourceUrl": "https://react.dev/learn/updating-objects-in-state#updating-a-nested-object",
+  "question": "Fill the blank to change only user.address.zip:",
+  "code": "setUser({\n  ...user,\n  address: { ___, zip: \"10001\" },\n});",
+  "options": [
+    "...user",
+    "...user.address",
+    "address"
+  ],
+  "answer": 1,
+  "say": "Fill the blank to change only the zip inside user dot address.",
+  "explanation": "The new address must copy the old address fields with ...user.address, then override zip.",
+  "explainSay": "Dot dot dot user dot address. Copy the old address, then override the zip."
+}

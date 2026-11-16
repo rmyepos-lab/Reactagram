@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "storing-functions-in-state",
+  "topic": "State",
+  "concept": "storing-functions-in-state",
+  "format": "special-use",
+  "level": "advanced",
+  "tags": [
+    "state",
+    "functions",
+    "useState"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useState#im-trying-to-set-state-to-a-function-but-it-gets-called-instead",
+  "title": "Storing a function in state",
+  "slides": [
+    {
+      "type": "title",
+      "text": "State that holds a function 🧰",
+      "say": "You want to keep a function in state. You pass it to use state, and React calls it instead. Why?"
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 React calls these\nconst [fn, setFn] = useState(someFunction);\nsetFn(otherFunction);",
+      "highlight": [
+        2,
+        3
+      ],
+      "say": "React treats a function passed to use state as an initializer, and a function passed to the setter as an updater. It calls them and stores the result."
+    },
+    {
+      "type": "code",
+      "code": "// ✅ React stores these\nconst [fn, setFn] = useState(\n  () => someFunction\n);\nsetFn(() => otherFunction);",
+      "highlight": [
+        3,
+        5
+      ],
+      "say": "To store the function itself, put an arrow in front of it, in both places. React calls the arrow, which returns your function."
+    },
+    {
+      "type": "text",
+      "text": "Function in state? Wrap it: () => fn.",
+      "say": "Takeaway: to store a function in state, wrap it in an arrow that returns it."
+    }
+  ]
+}

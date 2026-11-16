@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "updating-objects",
+  "topic": "State",
+  "concept": "updating-objects",
+  "format": "pattern",
+  "level": "beginner",
+  "tags": [
+    "state",
+    "objects",
+    "spread"
+  ],
+  "sourceUrl": "https://react.dev/learn/updating-objects-in-state#copying-objects-with-the-spread-syntax",
+  "title": "Update objects in state with spread",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Objects in state are read-only 📄",
+      "say": "An object in state is read-only. You do not change it. You replace it with a new one."
+    },
+    {
+      "type": "code",
+      "code": "function handleFirstName(e) {\n  // 🔴 mutates state, input is stuck\n  person.firstName = e.target.value;\n}",
+      "highlight": [
+        3
+      ],
+      "say": "This handler writes straight into the person object. React does not know anything changed, so the input looks stuck."
+    },
+    {
+      "type": "code",
+      "code": "function handleFirstName(e) {\n  setPerson({\n    ...person, // copy the old fields\n    firstName: e.target.value,\n  });\n}",
+      "highlight": [
+        3,
+        4
+      ],
+      "say": "Instead, make a new object. Spread copies every old field, then you override just the one that changed, and pass it to the setter."
+    },
+    {
+      "type": "text",
+      "text": "Spread is shallow: it copies one level deep.",
+      "say": "One thing to remember: spread only copies one level deep. Nested objects need more work."
+    }
+  ]
+}

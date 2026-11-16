@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "nested-object-updates",
+  "topic": "State",
+  "concept": "nested-object-updates",
+  "format": "pattern",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "objects",
+    "nested"
+  ],
+  "sourceUrl": "https://react.dev/learn/updating-objects-in-state#updating-a-nested-object",
+  "title": "Updating a nested object in state",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Nested? Copy every level 🪆",
+      "say": "Your state has an object inside an object. You want to change one deep field."
+    },
+    {
+      "type": "code",
+      "code": "const [person, setPerson] = useState({\n  name: \"Niki\",\n  artwork: {\n    title: \"Blue Nana\",\n    city: \"Hamburg\",\n  },\n});",
+      "highlight": [
+        3,
+        5
+      ],
+      "say": "We want to change the city inside artwork. Mutating person dot artwork dot city is off limits."
+    },
+    {
+      "type": "code",
+      "code": "setPerson({\n  ...person,\n  artwork: {\n    ...person.artwork,\n    city: \"New Delhi\",\n  },\n});",
+      "highlight": [
+        2,
+        4
+      ],
+      "say": "So copy each level. Spread person, replace artwork with a copy of the old artwork, and set the new city."
+    },
+    {
+      "type": "text",
+      "text": "Spread is shallow, so each level you change needs its own copy.",
+      "say": "Spread is shallow. Every level on the way to the change needs its own copy. Wordy, but it works."
+    }
+  ]
+}
