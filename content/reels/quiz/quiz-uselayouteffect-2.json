@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-uselayouteffect-2",
+  "topic": "Side Effects",
+  "concept": "uselayouteffect",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "useLayoutEffect",
+    "layout",
+    "measure"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useLayoutEffect#measuring-layout-before-the-browser-repaints-the-screen",
+  "question": "Tooltip starts with height 0 and measures in useLayoutEffect. What does the user see?",
+  "options": [
+    "The tooltip jump from wrong to right place",
+    "Only the final, correct position",
+    "Nothing until the next click"
+  ],
+  "answer": 1,
+  "say": "The tooltip starts with height zero and measures in use layout effect. What does the user see?",
+  "explanation": "Both renders and the measurement happen before the browser repaints, so only the final position appears.",
+  "explainSay": "Only the final position. Everything happens before paint."
+}

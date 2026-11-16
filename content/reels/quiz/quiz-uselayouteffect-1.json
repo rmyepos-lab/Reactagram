@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-uselayouteffect-1",
+  "topic": "Side Effects",
+  "concept": "uselayouteffect",
+  "format": "which-hook",
+  "level": "advanced",
+  "tags": [
+    "useLayoutEffect",
+    "layout",
+    "measure"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useLayoutEffect#measuring-layout-before-the-browser-repaints-the-screen",
+  "question": "You must measure an element and re-position it before the user sees anything. Which Hook?",
+  "options": [
+    "useEffect",
+    "useLayoutEffect",
+    "useInsertionEffect"
+  ],
+  "answer": 1,
+  "say": "You must measure an element and reposition it before the user sees anything. Which Hook?",
+  "explanation": "useLayoutEffect runs before the browser repaints, so the re-render with the measured value happens before paint.",
+  "explainSay": "Use layout effect. It runs before the browser paints."
+}

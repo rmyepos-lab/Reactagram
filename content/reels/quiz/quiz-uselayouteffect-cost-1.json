@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-uselayouteffect-cost-1",
+  "topic": "Side Effects",
+  "concept": "uselayouteffect-cost",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "useLayoutEffect",
+    "performance",
+    "ssr"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useLayoutEffect#caveats",
+  "question": "True or false: heavy work in useLayoutEffect can make your app feel slow.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: heavy work in use layout effect can make your app feel slow.",
+  "explanation": "True. Its code and the state updates it schedules block the browser from repainting.",
+  "explainSay": "True. It blocks the paint until it finishes."
+}

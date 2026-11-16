@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-subscribe-outside-component-1",
+  "topic": "Side Effects",
+  "concept": "subscribe-outside-component",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "useSyncExternalStore",
+    "subscriptions",
+    "performance"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useSyncExternalStore#my-subscribe-function-gets-called-after-every-re-render",
+  "question": "subscribe is declared inside the component. What happens on each re-render?",
+  "options": [
+    "Nothing",
+    "React resubscribes to the store",
+    "getSnapshot is skipped"
+  ],
+  "answer": 1,
+  "say": "Subscribe is declared inside the component. What happens on each re-render?",
+  "explanation": "A different subscribe function each render makes React re-subscribe. Declare it outside to avoid that.",
+  "explainSay": "React resubscribes every time."
+}

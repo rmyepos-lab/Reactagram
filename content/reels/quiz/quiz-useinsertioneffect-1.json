@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-useinsertioneffect-1",
+  "topic": "Side Effects",
+  "concept": "useinsertioneffect",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "useInsertionEffect",
+    "css-in-js",
+    "libraries"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useInsertionEffect",
+  "question": "True or false: useInsertionEffect is a good default for app code that touches the DOM.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: use insertion effect is a good default for app code that touches the DOM.",
+  "explanation": "False. It is for CSS-in-JS library authors. App code should use useEffect or useLayoutEffect.",
+  "explainSay": "False. It is meant for CSS in JS libraries."
+}

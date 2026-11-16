@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-usesyncexternalstore-1",
+  "topic": "Side Effects",
+  "concept": "usesyncexternalstore",
+  "format": "fill-blank",
+  "level": "advanced",
+  "tags": [
+    "useSyncExternalStore",
+    "subscriptions",
+    "browser-api"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useSyncExternalStore#subscribing-to-a-browser-api",
+  "question": "Fill the blanks to read navigator.onLine:",
+  "code": "const isOnline = useSyncExternalStore(\n  ___, ___\n);",
+  "options": [
+    "getSnapshot, subscribe",
+    "subscribe, getSnapshot",
+    "callback, navigator"
+  ],
+  "answer": 1,
+  "say": "Fill the blanks to read navigator dot on line.",
+  "explanation": "The order is useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot?).",
+  "explainSay": "Subscribe first, then get snapshot."
+}

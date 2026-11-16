@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-useinsertioneffect-2",
+  "topic": "Side Effects",
+  "concept": "useinsertioneffect",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "useInsertionEffect",
+    "css-in-js",
+    "libraries"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useInsertionEffect",
+  "question": "When does useInsertionEffect run compared to layout Effects?",
+  "options": [
+    "Before any layout Effects",
+    "After all layout Effects",
+    "After paint"
+  ],
+  "answer": 0,
+  "say": "When does use insertion effect run compared to layout Effects?",
+  "explanation": "It runs before any layout Effects fire, so injected styles exist when layout Effects measure.",
+  "explainSay": "Before any layout Effects."
+}

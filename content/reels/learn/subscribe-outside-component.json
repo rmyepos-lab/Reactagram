@@ -1,0 +1,43 @@
+{
+  "kind": "learn",
+  "id": "subscribe-outside-component",
+  "topic": "Side Effects",
+  "concept": "subscribe-outside-component",
+  "format": "pitfall",
+  "level": "advanced",
+  "tags": [
+    "useSyncExternalStore",
+    "subscriptions",
+    "performance"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useSyncExternalStore#my-subscribe-function-gets-called-after-every-re-render",
+  "title": "Define subscribe outside the component",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Resubscribing every render 🔁",
+      "say": "Your subscribe function gets called after every re-render. Look where it is declared."
+    },
+    {
+      "type": "code",
+      "code": "function ChatIndicator() {\n  // 🚩 new function each render\n  function subscribe(cb) { /* ... */ }\n  const isOnline =\n    useSyncExternalStore(subscribe, getSnapshot);\n}",
+      "highlight": [
+        3
+      ],
+      "say": "Declared inside the component, it is a different function every render. React resubscribes whenever subscribe changes."
+    },
+    {
+      "type": "code",
+      "code": "// ✅ same function every render\nfunction subscribe(cb) { /* ... */ }\n\nfunction ChatIndicator() {\n  const isOnline =\n    useSyncExternalStore(subscribe, getSnapshot);\n}",
+      "highlight": [
+        2
+      ],
+      "say": "Move it outside the component. Now it is always the same function."
+    },
+    {
+      "type": "text",
+      "text": "Needs a prop like userId? Wrap it in useCallback with [userId].",
+      "say": "If it needs a prop, like user id, wrap it in use callback, so it only changes when user id changes."
+    }
+  ]
+}

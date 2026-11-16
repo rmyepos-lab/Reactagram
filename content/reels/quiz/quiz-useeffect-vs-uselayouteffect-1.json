@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-useeffect-vs-uselayouteffect-1",
+  "topic": "Side Effects",
+  "concept": "useeffect-vs-uselayouteffect",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "useEffect",
+    "useLayoutEffect",
+    "timing"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useLayoutEffect#uselayouteffect-blocks-the-browser-from-repainting",
+  "question": "True or false: useLayoutEffect runs before the browser repaints the screen.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: use layout effect runs before the browser repaints the screen.",
+  "explanation": "True. It runs after React commits to the DOM and before the browser repaints, blocking paint until done.",
+  "explainSay": "True. It runs before paint, and the paint waits for it."
+}

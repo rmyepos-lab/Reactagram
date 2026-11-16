@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-useeffect-vs-uselayouteffect-2",
+  "topic": "Side Effects",
+  "concept": "useeffect-vs-uselayouteffect",
+  "format": "which-hook",
+  "level": "advanced",
+  "tags": [
+    "useEffect",
+    "useLayoutEffect",
+    "timing"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useLayoutEffect#uselayouteffect-blocks-the-browser-from-repainting",
+  "question": "You connect to a chat server. Which Hook fits?",
+  "options": [
+    "useLayoutEffect",
+    "useEffect"
+  ],
+  "answer": 1,
+  "say": "You connect to a chat server. Which Hook fits?",
+  "explanation": "Connecting has nothing to do with layout. useEffect does not block paint, so prefer it.",
+  "explainSay": "Use effect. There is no layout to measure, so do not block paint."
+}

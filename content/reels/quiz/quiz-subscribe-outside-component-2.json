@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-subscribe-outside-component-2",
+  "topic": "Side Effects",
+  "concept": "subscribe-outside-component",
+  "format": "which-hook",
+  "level": "advanced",
+  "tags": [
+    "useSyncExternalStore",
+    "subscriptions",
+    "performance"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useSyncExternalStore#my-subscribe-function-gets-called-after-every-re-render",
+  "question": "subscribe depends on a userId prop. How do you keep it stable between renders?",
+  "options": [
+    "useCallback(..., [userId])",
+    "useRef",
+    "useEffect"
+  ],
+  "answer": 0,
+  "say": "Subscribe depends on a user id prop. How do you keep it stable between renders?",
+  "explanation": "useCallback returns the same function until userId changes, so React only resubscribes then.",
+  "explainSay": "Use callback, with user id as the dependency."
+}

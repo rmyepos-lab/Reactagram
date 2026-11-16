@@ -1,0 +1,37 @@
+{
+  "kind": "learn",
+  "id": "useeffect-vs-uselayouteffect",
+  "topic": "Side Effects",
+  "concept": "useeffect-vs-uselayouteffect",
+  "format": "compare",
+  "level": "advanced",
+  "tags": [
+    "useEffect",
+    "useLayoutEffect",
+    "timing"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useLayoutEffect#uselayouteffect-blocks-the-browser-from-repainting",
+  "title": "useEffect vs useLayoutEffect timing",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Same API, different timing ⏱️",
+      "say": "Use effect and use layout effect take the same arguments. The difference is when they run."
+    },
+    {
+      "type": "text",
+      "text": "useLayoutEffect: after the DOM update, BEFORE paint. It blocks the paint.",
+      "say": "Use layout effect runs after the DOM updates and before the browser repaints. The paint waits for it."
+    },
+    {
+      "type": "text",
+      "text": "useEffect: usually AFTER paint. Doesn’t block the browser.",
+      "say": "Use effect usually runs after the screen is painted, so it does not block the browser."
+    },
+    {
+      "type": "text",
+      "text": "Visual glitch you must hide? Layout effect. Everything else? useEffect.",
+      "say": "If you must read layout and fix it before anyone sees it, use layout effect. For everything else, use effect."
+    }
+  ]
+}
