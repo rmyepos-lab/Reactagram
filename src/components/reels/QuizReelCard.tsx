@@ -57,7 +57,7 @@ export const QuizReelCard = React.memo(function QuizReelCardBase({
       return;
     }
     spoken.current.add(line);
-    return narrate(line, () => undefined);
+    return narrate(line, () => undefined, false, quiz.id);
   }, [active, muted, answered, quiz]);
 
   const pick = (i: number) => {

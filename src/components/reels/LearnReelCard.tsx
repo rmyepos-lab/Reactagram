@@ -94,6 +94,7 @@ export const LearnReelCard = React.memo(function LearnReelCardBase({
         }
       },
       muted,
+      reel.id,
     );
     return () => {
       cancel();

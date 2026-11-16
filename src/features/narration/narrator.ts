@@ -3,7 +3,11 @@ import { AudioContext } from 'react-native-audio-api';
 import type { AudioBuffer, AudioBufferSourceNode } from 'react-native-audio-api';
 import { env } from '../../config/env';
 import { speakingSeconds } from '../../lib/format';
-import { narrationUrl } from './logic';
+import narrationJson from '../../../content/narration.json';
+import { narrationUrl, reelLine } from './logic';
+import type { NarrationIndex } from './logic';
+
+const narrationIndex = narrationJson as NarrationIndex;
 
 type Cancel = () => void;
 type SpeechEvent = { id: string };
@@ -14,8 +18,9 @@ type Subscribe = (handler: (event: SpeechEvent) => void) => { remove: () => void
 const onFinish = Speech.onFinish as Subscribe;
 const onError = Speech.onError as Subscribe;
 
-/** How many downloaded lines stay in memory, so replaying a slide doesn't download again. */
-const KEPT_LINES = 6;
+/** How many downloaded files (reels or lines) stay in memory, so replaying doesn't download again. */
+// A decoded reel takes about 10 MB of memory, so only a few are kept.
+const KEPT_LINES = 3;
 const loaded = new Map<string, Promise<AudioBuffer>>();
 let context: AudioContext | null = null;
 
@@ -41,13 +46,14 @@ function load(url: string): Promise<AudioBuffer> {
 }
 
 /**
- * Speaks one line and calls `onDone` when it ends. It plays the recorded voice from the
- * server; if that file can't be loaded (or Supabase isn't set up) it uses the phone's own
- * text-to-speech. If the phone has no voice either, or `silent` is true, it waits for the
+ * Speaks one line and calls `onDone` when it ends. With `reelId`, it plays the line's part of
+ * that reel's recording (one MP3 per reel, see content/narration.json). Otherwise, or when the
+ * reel isn't recorded, it plays the line's own recording when Supabase is set up. If no file
+ * can be loaded it uses the phone's own text-to-speech. If the phone has no voice either, or `silent` is true, it waits for the
  * time the line would take instead, so reels keep their pace. Returns a function that
  * cancels everything.
  */
-export function narrate(text: string, onDone: () => void, silent = false): Cancel {
+export function narrate(text: string, onDone: () => void, silent = false, reelId?: string): Cancel {
   let finished = false;
   let speechId: string | null = null;
   let usedPhoneVoice = false;
@@ -100,7 +106,8 @@ export function narrate(text: string, onDone: () => void, silent = false): Cance
       });
   };
 
-  const playRecording = (url: string) => {
+  // `part` plays only that stretch of the file (seconds), for a line inside a reel's recording.
+  const playRecording = (url: string, part?: { offset: number; duration: number }) => {
     load(url)
       .then(async buffer => {
         if (finished) {
@@ -117,7 +124,13 @@ export function narrate(text: string, onDone: () => void, silent = false): Cance
         source.buffer = buffer;
         source.connect(context.destination);
         source.onEnded = done;
-        source.start();
+        if (part) {
+          // The library ends the part at `when + duration` on the context's clock, so `when`
+          // has to be the current time: with 0 the part would already be over.
+          source.start(context.currentTime, part.offset, part.duration);
+        } else {
+          source.start();
+        }
         player = source;
       })
       .catch(() => {
@@ -130,8 +143,11 @@ export function narrate(text: string, onDone: () => void, silent = false): Cance
   if (silent) {
     waitInstead();
   } else {
+    const inReel = reelId ? reelLine(narrationIndex, reelId, text) : null;
     const url = narrationUrl(env.supabaseUrl, text);
-    if (url) {
+    if (inReel) {
+      playRecording(inReel.url, inReel);
+    } else if (url) {
       playRecording(url);
     } else {
       speakWithPhone();
