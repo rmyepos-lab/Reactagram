@@ -334,6 +334,30 @@
         { "id": "hydration", "title": "Hydration: attaching React to server HTML", "level": "advanced", "source": "https://react.dev/reference/react-dom/client/hydrateRoot", "requires": ["trigger-render-commit"] },
         { "id": "event-delegation", "title": "Event delegation at the root", "level": "advanced", "source": "https://react.dev/blog/2020/08/10/react-v17-rc", "requires": ["event-propagation"] }
       ]
+    },
+    {
+      "name": "Server Rendering",
+      "track": "core",
+      "concepts": [
+        { "id": "ssr-basics", "title": "Server rendering: HTML first, then hydrate", "level": "intermediate", "source": "https://react.dev/reference/react-dom/server", "requires": ["hydration"] },
+        { "id": "render-to-string", "title": "renderToString and why it can't stream", "level": "advanced", "source": "https://react.dev/reference/react-dom/server/renderToString", "requires": ["ssr-basics"] },
+        { "id": "streaming-ssr", "title": "renderToPipeableStream streams HTML", "level": "advanced", "source": "https://react.dev/reference/react-dom/server/renderToPipeableStream#rendering-a-react-tree-as-html-to-a-nodejs-stream", "requires": ["render-to-string"] },
+        { "id": "streaming-with-suspense", "title": "Suspense boundaries stream in as data loads", "level": "advanced", "source": "https://react.dev/reference/react-dom/server/renderToPipeableStream#streaming-more-content-as-it-loads", "requires": ["streaming-ssr", "suspense-fallback"] },
+        { "id": "ssr-shell", "title": "The shell: what shows before anything streams", "level": "advanced", "source": "https://react.dev/reference/react-dom/server/renderToPipeableStream#specifying-what-goes-into-the-shell", "requires": ["streaming-with-suspense"] },
+        { "id": "hydration-mismatch", "title": "Hydration mismatches and how to fix them", "level": "advanced", "source": "https://react.dev/reference/react-dom/client/hydrateRoot#handling-different-client-and-server-content", "requires": ["hydration"] },
+        { "id": "static-prerender", "title": "Static prerendering vs rendering per request", "level": "advanced", "source": "https://react.dev/reference/react-dom/static/prerender", "requires": ["ssr-basics"] },
+        { "id": "ssr-frameworks", "title": "Frameworks handle server rendering for you", "level": "intermediate", "source": "https://react.dev/learn/creating-a-react-app", "requires": ["ssr-basics"] }
+      ]
+    },
+    {
+      "name": "React Compiler",
+      "track": "core",
+      "concepts": [
+        { "id": "compiler-and-manual-memo", "title": "With the compiler, do you still need useMemo and memo?", "level": "intermediate", "source": "https://react.dev/learn/react-compiler/introduction#what-should-i-do-about-usememo-usecallback-and-reactmemo", "requires": ["react-compiler"] },
+        { "id": "compiler-needs-rules", "title": "The compiler relies on the Rules of React", "level": "advanced", "source": "https://react.dev/learn/react-compiler/introduction#is-it-safe-to-use", "requires": ["react-compiler", "rules-of-react-purity"] },
+        { "id": "compiler-directives", "title": "\"use memo\" and \"use no memo\" directives", "level": "advanced", "source": "https://react.dev/reference/react-compiler/directives", "requires": ["react-compiler"] },
+        { "id": "compiler-incremental-adoption", "title": "Adopting the compiler step by step", "level": "advanced", "source": "https://react.dev/learn/react-compiler/incremental-adoption", "requires": ["react-compiler"] }
+      ]
     }
   ]
 }
