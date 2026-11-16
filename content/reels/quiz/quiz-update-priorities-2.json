@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-update-priorities-2",
+  "topic": "How React Works",
+  "concept": "update-priorities",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "internals",
+    "transitions",
+    "priority"
+  ],
+  "sourceUrl": "https://react.dev/blog/2022/03/29/react-v18#new-feature-transitions",
+  "question": "True or false: if a transition is interrupted, React finishes the stale render anyway.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: if a transition is interrupted, React finishes the stale render anyway.",
+  "explanation": "False. React throws out unfinished stale rendering work and renders only the latest update.",
+  "explainSay": "False. Stale work is thrown away."
+}

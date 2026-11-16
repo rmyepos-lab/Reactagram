@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-hydration-1",
+  "topic": "How React Works",
+  "concept": "hydration",
+  "format": "bug-hunt",
+  "level": "advanced",
+  "tags": [
+    "internals",
+    "ssr",
+    "hydration"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/client/hydrateRoot",
+  "question": "This causes a hydration mismatch. Why?",
+  "code": "function Theme() {\n  const dark = window.matchMedia(\n    \"(prefers-color-scheme: dark)\").matches;\n  return <p>{dark ? \"Dark\" : \"Light\"}</p>;\n}",
+  "options": [
+    "Browser-only API in render gives different output than the server",
+    "matchMedia is async",
+    "The <p> needs a key"
+  ],
+  "answer": 0,
+  "say": "This causes a hydration mismatch. Why?",
+  "explanation": "Browser-only APIs in render make the client output differ from the server HTML. Read them in an Effect instead.",
+  "explainSay": "It uses a browser only API in render, so client and server output differ."
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-render-bailout-1",
+  "topic": "How React Works",
+  "concept": "render-bailout",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "internals",
+    "performance",
+    "memo"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/memo#skipping-re-rendering-when-props-are-unchanged",
+  "question": "Which update lets React skip re-rendering the subtree?",
+  "options": [
+    "setItems([...items])",
+    "setCount(count) when count is already 3",
+    "setUser({ ...user })"
+  ],
+  "answer": 1,
+  "say": "Which update lets React skip re-rendering the subtree?",
+  "explanation": "Only an identical value (by Object.is) lets React bail out. New arrays or objects always count as changes.",
+  "explainSay": "Setting count to the same value it already has."
+}

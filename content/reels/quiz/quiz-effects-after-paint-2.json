@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-effects-after-paint-2",
+  "topic": "How React Works",
+  "concept": "effects-after-paint",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "internals",
+    "effects",
+    "commit"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useLayoutEffect",
+  "question": "True or false: Effects run during the render phase.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: Effects run during the render phase.",
+  "explanation": "False. Effects run after React commits to the DOM, never while rendering.",
+  "explainSay": "False. They run after the commit."
+}

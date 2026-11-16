@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-render-bailout-2",
+  "topic": "How React Works",
+  "concept": "render-bailout",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "internals",
+    "performance",
+    "memo"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/memo#skipping-re-rendering-when-props-are-unchanged",
+  "question": "True or false: a context change can re-render a component even if its memo parent bailed out.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: a context change can re-render a component even if its memo parent bailed out.",
+  "explanation": "True. Skipping re-renders with memo does not prevent children from receiving fresh context values.",
+  "explainSay": "True. Context updates still reach readers."
+}

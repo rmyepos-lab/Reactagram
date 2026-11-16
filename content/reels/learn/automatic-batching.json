@@ -1,0 +1,42 @@
+{
+  "kind": "learn",
+  "id": "automatic-batching",
+  "topic": "How React Works",
+  "concept": "automatic-batching",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "internals",
+    "batching",
+    "react-18"
+  ],
+  "sourceUrl": "https://react.dev/blog/2022/03/29/react-v18#new-feature-automatic-batching",
+  "title": "Automatic batching of state updates",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Many updates, one render 📦",
+      "say": "Batching means React groups several state updates into a single re-render."
+    },
+    {
+      "type": "code",
+      "code": "setTimeout(() => {\n  setCount(c => c + 1);\n  setFlag(f => !f);\n  // React 18+: one re-render\n}, 1000);",
+      "highlight": [
+        2,
+        3,
+        4
+      ],
+      "say": "Before React eighteen, only updates in React event handlers were batched. This timeout caused two renders."
+    },
+    {
+      "type": "text",
+      "text": "Since React 18: timeouts, promises, native events — all batched automatically.",
+      "say": "Since React eighteen, updates inside timeouts, promises, native event handlers, or any other event are batched automatically."
+    },
+    {
+      "type": "text",
+      "text": "Need the DOM updated right now? flushSync opts out.",
+      "say": "In the rare case you need the screen updated immediately, flush sync lets you opt out."
+    }
+  ]
+}

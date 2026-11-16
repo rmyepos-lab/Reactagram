@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-effects-after-paint-1",
+  "topic": "How React Works",
+  "concept": "effects-after-paint",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "internals",
+    "effects",
+    "commit"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useLayoutEffect",
+  "question": "For an update not caused by a click, which runs FIRST?",
+  "options": [
+    "useEffect",
+    "useLayoutEffect",
+    "Browser paint"
+  ],
+  "answer": 1,
+  "say": "For an update not caused by a click, which runs first?",
+  "explanation": "useLayoutEffect runs after the DOM update and before paint. useEffect usually runs after paint.",
+  "explainSay": "Use layout effect. It runs before the paint."
+}

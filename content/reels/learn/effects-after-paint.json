@@ -1,0 +1,86 @@
+{
+  "kind": "learn",
+  "id": "effects-after-paint",
+  "topic": "How React Works",
+  "concept": "effects-after-paint",
+  "format": "concept",
+  "level": "advanced",
+  "tags": [
+    "internals",
+    "effects",
+    "commit"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useLayoutEffect",
+  "title": "Where Effects run in the commit cycle",
+  "slides": [
+    {
+      "type": "title",
+      "text": "The full update timeline ⏱️",
+      "say": "Where exactly do Effects fit into an update? Let us walk the whole cycle."
+    },
+    {
+      "type": "visual",
+      "say": "A typical update, not caused by a click.",
+      "visual": {
+        "kind": "timeline",
+        "events": [
+          {
+            "id": "render",
+            "label": "Render",
+            "note": "React calls components"
+          },
+          {
+            "id": "commit",
+            "label": "Commit",
+            "note": "DOM is updated"
+          },
+          {
+            "id": "layout",
+            "label": "useLayoutEffect",
+            "note": "old cleanup, then setup"
+          },
+          {
+            "id": "paint",
+            "label": "Browser paints",
+            "note": "user sees the update"
+          },
+          {
+            "id": "effect",
+            "label": "useEffect",
+            "note": "usually after paint"
+          }
+        ]
+      },
+      "steps": [
+        {
+          "say": "React renders, then commits the changes to the DOM.",
+          "show": [
+            "render",
+            "commit"
+          ],
+          "focus": "commit"
+        },
+        {
+          "say": "Layout effects run right after the DOM update, before paint. The paint waits for them.",
+          "show": [
+            "layout"
+          ],
+          "focus": "layout"
+        },
+        {
+          "say": "The browser paints. Then regular Effects run, usually after the paint.",
+          "show": [
+            "paint",
+            "effect"
+          ],
+          "focus": "effect"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "Each re-run: cleanup with old values, then setup with new. After a click, useEffect may run before paint.",
+      "say": "Each time an Effect re-runs, its cleanup runs with the old values first. And after an interaction like a click, use effect may run before paint."
+    }
+  ]
+}

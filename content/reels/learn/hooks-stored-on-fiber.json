@@ -1,0 +1,75 @@
+{
+  "kind": "learn",
+  "id": "hooks-stored-on-fiber",
+  "topic": "How React Works",
+  "concept": "hooks-stored-on-fiber",
+  "format": "concept",
+  "level": "advanced",
+  "tags": [
+    "internals",
+    "hooks",
+    "fiber"
+  ],
+  "sourceUrl": "https://react.dev/learn/state-a-components-memory#how-does-react-know-which-state-to-return",
+  "title": "Where Hook state actually lives",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Your state isn’t in your function 🗄️",
+      "say": "Your component function runs from scratch every render. So where does use state keep its value?"
+    },
+    {
+      "type": "text",
+      "text": "React holds the state, not your component. It keeps a list of Hook data for each component.",
+      "say": "The state is held inside React. For every component on screen, React keeps a list of its Hook data."
+    },
+    {
+      "type": "visual",
+      "say": "Simplified: each component’s fiber carries its Hooks, in call order.",
+      "visual": {
+        "kind": "tree",
+        "nodes": [
+          {
+            "id": "fiber",
+            "label": "Form fiber",
+            "note": "one per component"
+          },
+          {
+            "id": "h1",
+            "label": "Hook 1",
+            "parent": "fiber",
+            "note": "useState: name"
+          },
+          {
+            "id": "h2",
+            "label": "Hook 2",
+            "parent": "fiber",
+            "note": "useState: age"
+          },
+          {
+            "id": "h3",
+            "label": "Hook 3",
+            "parent": "fiber",
+            "note": "useEffect"
+          }
+        ]
+      },
+      "steps": [
+        {
+          "say": "On each render, the first Hook call reads slot one, the second reads slot two, and so on.",
+          "show": [
+            "h1",
+            "h2",
+            "h3"
+          ],
+          "focus": "h2"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "That’s why order must never change, and why state is tied to a position in the tree.",
+      "say": "That is why Hooks must be called in the same order every render, and why state belongs to a component’s position in the tree. This picture is simplified."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-automatic-batching-2",
+  "topic": "How React Works",
+  "concept": "automatic-batching",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "internals",
+    "batching",
+    "react-18"
+  ],
+  "sourceUrl": "https://react.dev/blog/2022/03/29/react-v18#new-feature-automatic-batching",
+  "question": "True or false: before React 18, updates inside setTimeout were batched.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: before React eighteen, updates inside set timeout were batched.",
+  "explanation": "False. Only updates in React event handlers were batched. React 18 added automatic batching everywhere.",
+  "explainSay": "False. Only React event handlers were batched back then."
+}
