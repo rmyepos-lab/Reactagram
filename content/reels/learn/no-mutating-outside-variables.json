@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "no-mutating-outside-variables",
+  "topic": "Purity",
+  "concept": "no-mutating-outside-variables",
+  "format": "pitfall",
+  "level": "intermediate",
+  "tags": [
+    "purity",
+    "mutation",
+    "strict-mode"
+  ],
+  "sourceUrl": "https://react.dev/learn/keeping-components-pure#side-effects-unintended-consequences",
+  "title": "Don't change outside variables in render",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Guest #2, #4, #6?! 🍵",
+      "say": "Here is a component that breaks purity. Watch what it prints."
+    },
+    {
+      "type": "code",
+      "code": "let guest = 0;\n\nfunction Cup() {\n  // 🔴 changes an outside variable\n  guest = guest + 1;\n  return <h2>Cup for guest #{guest}</h2>;\n}",
+      "highlight": [
+        5
+      ],
+      "say": "Cup changes guest, a variable created outside it. Rendering it again gives different JSX each time."
+    },
+    {
+      "type": "text",
+      "text": "Strict Mode calls components twice in development, so three Cups show #2, #4, #6.",
+      "say": "In development, Strict Mode calls each component twice to catch this. Three cups print guest two, four, and six."
+    },
+    {
+      "type": "code",
+      "code": "function Cup({ guest }) {\n  return <h2>Cup for guest #{guest}</h2>;\n}\n\n<Cup guest={1} />\n<Cup guest={2} />",
+      "highlight": [
+        1,
+        5
+      ],
+      "say": "The fix: pass guest as a prop. Now Cup only depends on its input, so calling it twice changes nothing."
+    }
+  ]
+}

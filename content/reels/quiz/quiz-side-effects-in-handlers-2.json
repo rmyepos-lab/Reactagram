@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-side-effects-in-handlers-2",
+  "topic": "Purity",
+  "concept": "side-effects-in-handlers",
+  "format": "which-hook",
+  "level": "beginner",
+  "tags": [
+    "purity",
+    "side-effects",
+    "events"
+  ],
+  "sourceUrl": "https://react.dev/learn/keeping-components-pure#where-you-_can_-cause-side-effects",
+  "question": "A side effect has no fitting event handler. What is the last-resort place for it?",
+  "options": [
+    "The component body during render",
+    "useEffect",
+    "useMemo"
+  ],
+  "answer": 1,
+  "say": "A side effect has no fitting event handler. What is the last resort place for it?",
+  "explanation": "useEffect runs code after rendering, when side effects are allowed. Render must stay pure, and useMemo is for calculations.",
+  "explainSay": "Use effect. It runs after rendering. But try event handlers first."
+}

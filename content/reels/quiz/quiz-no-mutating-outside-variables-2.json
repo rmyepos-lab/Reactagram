@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-no-mutating-outside-variables-2",
+  "topic": "Purity",
+  "concept": "no-mutating-outside-variables",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "purity",
+    "mutation",
+    "strict-mode"
+  ],
+  "sourceUrl": "https://react.dev/learn/keeping-components-pure#side-effects-unintended-consequences",
+  "question": "True or false: Strict Mode calls components twice in production too.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: Strict Mode calls your components twice in production too.",
+  "explanation": "False. Strict Mode only does this in development. It has no effect in production.",
+  "explainSay": "False. The double call happens only in development. Production is not affected."
+}

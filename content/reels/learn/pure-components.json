@@ -1,0 +1,40 @@
+{
+  "kind": "learn",
+  "id": "pure-components",
+  "topic": "Purity",
+  "concept": "pure-components",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "purity",
+    "rendering"
+  ],
+  "sourceUrl": "https://react.dev/learn/keeping-components-pure#purity-components-as-formulas",
+  "title": "Components are pure, like math formulas",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Components are formulas 🧮",
+      "say": "Think of y equals two x. If x is two, y is four. Always. React components should work the same way."
+    },
+    {
+      "type": "text",
+      "text": "A pure function minds its own business, and same inputs give the same output.",
+      "say": "A pure function does two things. It minds its own business, changing nothing that existed before. And the same inputs always give the same output."
+    },
+    {
+      "type": "code",
+      "code": "function Recipe({ drinkers }) {\n  return (\n    <ol>\n      <li>Boil {drinkers} cups.</li>\n      <li>Add {0.5 * drinkers} spoons.</li>\n    </ol>\n  );\n}",
+      "highlight": [
+        4,
+        5
+      ],
+      "say": "This recipe only calculates from its props. Two drinkers? Always the same JSX."
+    },
+    {
+      "type": "text",
+      "text": "Props, state and context are inputs. Read them, never change them.",
+      "say": "While rendering, you can read three inputs: props, state, and context. Treat them as read only."
+    }
+  ]
+}

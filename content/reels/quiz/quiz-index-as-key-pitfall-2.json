@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-index-as-key-pitfall-2",
+  "topic": "Rendering Lists & Conditions",
+  "concept": "index-as-key-pitfall",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "lists",
+    "keys",
+    "index"
+  ],
+  "sourceUrl": "https://react.dev/learn/rendering-lists#why-does-react-need-keys",
+  "question": "Each row has an input. After deleting the first row, typed text shows up on the wrong rows. Likely cause?",
+  "code": "rows.map((row, i) =>\n  <Row key={i} row={row} />\n)",
+  "options": [
+    "Rows need a ref",
+    "key={i} shifts when a row is removed",
+    "map runs twice in Strict Mode"
+  ],
+  "answer": 1,
+  "say": "Each row has an input. After deleting the first row, typed text appears on the wrong rows. What is the likely cause?",
+  "explanation": "After a delete, every index shifts, so React matches the old state to the wrong rows. Use a stable id like key={row.id}.",
+  "explainSay": "The index key. After a delete, every index shifts, so the state sticks to the wrong rows. Use a stable id."
+}

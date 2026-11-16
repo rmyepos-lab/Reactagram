@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "side-effects-in-handlers",
+  "topic": "Purity",
+  "concept": "side-effects-in-handlers",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "purity",
+    "side-effects",
+    "events"
+  ],
+  "sourceUrl": "https://react.dev/learn/keeping-components-pure#where-you-_can_-cause-side-effects",
+  "title": "Where side effects go: event handlers",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Side effects need a home 🏠",
+      "say": "Updating the screen, starting an animation, changing data. These are side effects. So where do they go?"
+    },
+    {
+      "type": "code",
+      "code": "function Like() {\n  function handleClick() {\n    // ✅ runs on click, not in render\n    sendLike();\n  }\n  return <button onClick={handleClick}>♥</button>;\n}",
+      "highlight": [
+        2,
+        4
+      ],
+      "say": "They usually belong in event handlers. Handlers are defined inside your component, but they do not run during rendering. So they do not need to be pure."
+    },
+    {
+      "type": "text",
+      "text": "No fitting handler? useEffect runs it after render. But that is your last resort.",
+      "say": "No fitting event handler? You can use use effect, which runs after rendering. But the docs call that a last resort."
+    },
+    {
+      "type": "text",
+      "text": "First try to express your logic with rendering alone.",
+      "say": "Takeaway: try rendering alone first, then event handlers, and only then an effect."
+    }
+  ]
+}

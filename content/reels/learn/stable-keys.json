@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "stable-keys",
+  "topic": "Rendering Lists & Conditions",
+  "concept": "stable-keys",
+  "format": "pattern",
+  "level": "intermediate",
+  "tags": [
+    "lists",
+    "keys",
+    "ids"
+  ],
+  "sourceUrl": "https://react.dev/learn/rendering-lists#where-to-get-your-key",
+  "title": "Where to get stable keys",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Good keys come from data 🔑",
+      "say": "So where should keys come from? From your data, created once, never during render."
+    },
+    {
+      "type": "text",
+      "text": "Database data? Use its IDs. They are unique by nature.",
+      "say": "Data from a database already has IDs. They are unique by nature, so use them."
+    },
+    {
+      "type": "code",
+      "code": "function addNote(text) {\n  const note = {\n    id: crypto.randomUUID(),\n    text,\n  };\n  setNotes([...notes, note]);\n}",
+      "highlight": [
+        3
+      ],
+      "say": "Data made in your app, like notes? Give each item an ID when you create it, with a counter or crypto random UUID, and save it with the item."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 new key every render\n<Note key={Math.random()} />",
+      "highlight": [
+        2
+      ],
+      "text": "Keys must not change. Never generate them while rendering.",
+      "say": "Never generate keys while rendering. A random key never matches the last render, so React recreates every item. It is slow and loses user input."
+    }
+  ]
+}

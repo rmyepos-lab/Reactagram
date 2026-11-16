@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-local-mutation-ok-1",
+  "topic": "Purity",
+  "concept": "local-mutation-ok",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "purity",
+    "mutation"
+  ],
+  "sourceUrl": "https://react.dev/learn/keeping-components-pure#local-mutation-your-components-little-secret",
+  "question": "Which version is impure?",
+  "code": "// A\nfunction List() {\n  const items = [];\n  items.push(<li key=\"a\">A</li>);\n  return items;\n}\n// B\nconst items = [];\nfunction List() {\n  items.push(<li key=\"a\">A</li>);\n  return items;\n}",
+  "options": [
+    "A",
+    "B",
+    "Both",
+    "Neither"
+  ],
+  "answer": 1,
+  "say": "Two versions of List push into an array. Which one is impure?",
+  "explanation": "B pushes into an array created before rendering, so it changes preexisting data. A only changes an array it just created.",
+  "explainSay": "B. It pushes into an array that existed before render. A only changes its own fresh array."
+}

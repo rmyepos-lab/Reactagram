@@ -1,0 +1,40 @@
+{
+  "kind": "learn",
+  "id": "local-mutation-ok",
+  "topic": "Purity",
+  "concept": "local-mutation-ok",
+  "format": "special-use",
+  "level": "intermediate",
+  "tags": [
+    "purity",
+    "mutation"
+  ],
+  "sourceUrl": "https://react.dev/learn/keeping-components-pure#local-mutation-your-components-little-secret",
+  "title": "Local mutation: your component's secret",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Some mutation is fine 🤫",
+      "say": "Purity bans changing things that existed before render. But changing what you just created? Totally fine."
+    },
+    {
+      "type": "code",
+      "code": "function TeaGathering() {\n  const cups = [];\n  for (let i = 1; i <= 12; i++) {\n    cups.push(<Cup key={i} guest={i} />);\n  }\n  return cups;\n}",
+      "highlight": [
+        2,
+        4
+      ],
+      "say": "This creates a new array during render, then pushes twelve cups into it. That is a mutation, but a local one."
+    },
+    {
+      "type": "text",
+      "text": "No code outside TeaGathering ever sees the array change. That is \"local mutation\".",
+      "say": "No code outside this component can ever see it happen. React calls it local mutation, your component’s little secret."
+    },
+    {
+      "type": "text",
+      "text": "Same push on an array made outside the component? A huge problem.",
+      "say": "But if the array were created outside the component, the exact same push would be a huge problem."
+    }
+  ]
+}

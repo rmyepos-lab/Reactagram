@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "index-as-key-pitfall",
+  "topic": "Rendering Lists & Conditions",
+  "concept": "index-as-key-pitfall",
+  "format": "pitfall",
+  "level": "intermediate",
+  "tags": [
+    "lists",
+    "keys",
+    "index"
+  ],
+  "sourceUrl": "https://react.dev/learn/rendering-lists#why-does-react-need-keys",
+  "title": "Why the array index is a bad key",
+  "slides": [
+    {
+      "type": "title",
+      "text": "key={index}? Careful ⚠️",
+      "say": "Using the array index as a key is tempting. It often leads to subtle and confusing bugs."
+    },
+    {
+      "type": "code",
+      "code": "todos.map((todo, index) =>\n  <Todo key={index} todo={todo} />\n)",
+      "highlight": [
+        2
+      ],
+      "say": "This silences the warning. In fact, if you give no key at all, React uses the index anyway."
+    },
+    {
+      "type": "text",
+      "text": "Insert, delete or reorder an item, and the indexes move. Key 0 is now a different item.",
+      "say": "But when an item is inserted, deleted, or the list is reordered, the indexes shift. Key zero now points at a different item, so React can mix up their state."
+    },
+    {
+      "type": "code",
+      "code": "todos.map(todo =>\n  <Todo key={todo.id} todo={todo} />\n)",
+      "highlight": [
+        2
+      ],
+      "text": "Use a stable ID from the data.",
+      "say": "The fix: use a stable ID that belongs to the data itself. It stays with the item wherever it moves."
+    }
+  ]
+}
