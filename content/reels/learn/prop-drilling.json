@@ -1,0 +1,81 @@
+{
+  "kind": "learn",
+  "id": "prop-drilling",
+  "topic": "Context",
+  "concept": "prop-drilling",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "context",
+    "props",
+    "prop-drilling"
+  ],
+  "sourceUrl": "https://react.dev/learn/passing-data-deeply-with-context#the-problem-with-passing-props",
+  "title": "The prop drilling problem",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Drilling props down 🕳️",
+      "say": "Props are great for passing data. Until you have to pass the same prop through layer after layer."
+    },
+    {
+      "type": "visual",
+      "say": "Lift state high enough, and the nearest common parent can be far from the components that need it.",
+      "visual": {
+        "kind": "tree",
+        "nodes": [
+          {
+            "id": "app",
+            "label": "App",
+            "note": "user"
+          },
+          {
+            "id": "layout",
+            "label": "Layout",
+            "parent": "app",
+            "note": "user (unused)"
+          },
+          {
+            "id": "sidebar",
+            "label": "Sidebar",
+            "parent": "layout",
+            "note": "user (unused)"
+          },
+          {
+            "id": "avatar",
+            "label": "Avatar",
+            "parent": "sidebar",
+            "note": "user ✅"
+          }
+        ]
+      },
+      "steps": [
+        {
+          "say": "Layout and Sidebar do not use user. They only pass it along.",
+          "show": [
+            "layout",
+            "sidebar"
+          ],
+          "focus": "sidebar"
+        },
+        {
+          "say": "Only Avatar actually needs it. That chain of pass-through props is called prop drilling.",
+          "show": [
+            "avatar"
+          ],
+          "focus": "avatar"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "Verbose and inconvenient, especially when many components need the same data.",
+      "say": "It gets verbose and inconvenient, especially when many components need the same data."
+    },
+    {
+      "type": "text",
+      "text": "Context lets a parent \"teleport\" data to the whole tree below it.",
+      "say": "Context is React’s way to teleport data to any component below, no matter how deep, without passing props."
+    }
+  ]
+}

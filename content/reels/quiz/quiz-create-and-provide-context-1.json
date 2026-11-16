@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-create-and-provide-context-1",
+  "topic": "Context",
+  "concept": "create-and-provide-context",
+  "format": "fill-blank",
+  "level": "intermediate",
+  "tags": [
+    "context",
+    "createContext",
+    "provider"
+  ],
+  "sourceUrl": "https://react.dev/learn/passing-data-deeply-with-context#step-1-create-the-context",
+  "question": "Fill the blank to provide \"dark\" to everything inside:",
+  "code": "<ThemeContext ___=\"dark\">\n  <Page />\n</ThemeContext>",
+  "options": [
+    "theme",
+    "value",
+    "default"
+  ],
+  "answer": 1,
+  "say": "Fill the blank to provide dark to everything inside.",
+  "explanation": "A provider reads the value prop. Using another name, like theme, is the same as passing value={undefined}.",
+  "explainSay": "Value. The provider only reads the value prop."
+}

@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "context-default-value",
+  "topic": "Context",
+  "concept": "context-default-value",
+  "format": "pitfall",
+  "level": "intermediate",
+  "tags": [
+    "context",
+    "default-value",
+    "pitfall"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useContext#specifying-a-fallback-default-value",
+  "title": "When the context default value is used",
+  "slides": [
+    {
+      "type": "title",
+      "text": "The default is a last resort 🛟",
+      "say": "The default value you pass to create context is a last resort fallback. Here is exactly when it applies."
+    },
+    {
+      "type": "code",
+      "code": "const ThemeContext = createContext(\"light\");\n\n// no provider above at all\n<Button /> // reads \"light\"",
+      "highlight": [
+        1,
+        4
+      ],
+      "say": "Only if there is no matching provider above at all does use context return the default. It is static and never changes."
+    },
+    {
+      "type": "code",
+      "code": "// 🚩 no value prop\n<ThemeContext>\n  <Button /> // undefined!\n</ThemeContext>\n\n// 🚩 wrong prop name\n<ThemeContext theme={t}>",
+      "highlight": [
+        2,
+        7
+      ],
+      "say": "The trap: a provider without a value prop counts as value undefined. So Button gets undefined, not light. Same if you misname the prop."
+    },
+    {
+      "type": "text",
+      "text": "Want it to change? Pair the provider with state.",
+      "say": "And because the default never changes, put state in a provider when you need the value to update."
+    }
+  ]
+}

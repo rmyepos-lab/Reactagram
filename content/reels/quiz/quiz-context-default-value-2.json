@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-context-default-value-2",
+  "topic": "Context",
+  "concept": "context-default-value",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "context",
+    "default-value",
+    "pitfall"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useContext#specifying-a-fallback-default-value",
+  "question": "True or false: you can update the context default value later to change what readers see.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: you can update the context default value later to change what readers see.",
+  "explanation": "False. The default value is static and never changes. To update context, pass state as the provider's value.",
+  "explainSay": "False. The default never changes. Use state in a provider instead."
+}

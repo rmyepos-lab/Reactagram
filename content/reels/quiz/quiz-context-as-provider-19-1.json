@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-context-as-provider-19-1",
+  "topic": "Context",
+  "concept": "context-as-provider-19",
+  "format": "fill-blank",
+  "level": "intermediate",
+  "tags": [
+    "context",
+    "react-19",
+    "provider"
+  ],
+  "sourceUrl": "https://react.dev/blog/2024/12/05/react-19#context-as-a-provider",
+  "question": "In React 19, fill the blank to provide the current user:",
+  "code": "<___ value={user}>\n  <App />\n</___>",
+  "options": [
+    "AuthContext",
+    "AuthContext.Consumer",
+    "useContext"
+  ],
+  "answer": 0,
+  "say": "In React nineteen, fill the blank to provide the current user.",
+  "explanation": "In React 19 you render <AuthContext value={...}> directly. <AuthContext.Provider> is the older way.",
+  "explainSay": "AuthContext itself. In React nineteen the context is the provider."
+}

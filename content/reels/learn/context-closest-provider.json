@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "context-closest-provider",
+  "topic": "Context",
+  "concept": "context-closest-provider",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "context",
+    "provider",
+    "nesting"
+  ],
+  "sourceUrl": "https://react.dev/learn/passing-data-deeply-with-context#using-and-providing-context-from-the-same-component",
+  "title": "The closest provider wins",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Closest one wins 🎯",
+      "say": "Several providers of the same context above you? Use context reads the closest one."
+    },
+    {
+      "type": "code",
+      "code": "function Section({ children }) {\n  const level = useContext(LevelContext);\n  return (\n    <LevelContext value={level + 1}>\n      {children}\n    </LevelContext>\n  );\n}",
+      "highlight": [
+        2,
+        4
+      ],
+      "say": "This Section reads the level from the section above, then provides level plus one below. Nest sections, and headings get smaller automatically."
+    },
+    {
+      "type": "text",
+      "text": "useContext ignores providers in its own component. It looks only above.",
+      "say": "Notice: use context is not affected by the provider this same component returns. It always searches upwards."
+    },
+    {
+      "type": "text",
+      "text": "Like CSS inheritance: override by wrapping a part of the tree. Different contexts never override each other.",
+      "say": "It works like CSS inheritance. A nested provider overrides the value for its part of the tree. And different contexts never override each other."
+    }
+  ]
+}

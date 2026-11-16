@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-prop-drilling-2",
+  "topic": "Context",
+  "concept": "prop-drilling",
+  "format": "output",
+  "level": "beginner",
+  "tags": [
+    "context",
+    "props",
+    "prop-drilling"
+  ],
+  "sourceUrl": "https://react.dev/learn/passing-data-deeply-with-context#the-problem-with-passing-props",
+  "question": "Which React feature lets a parent make data available to any depth without passing props?",
+  "options": [
+    "Context",
+    "Refs",
+    "Keys"
+  ],
+  "answer": 0,
+  "say": "Which React feature lets a parent make data available at any depth without passing props?",
+  "explanation": "Context lets a parent provide data to the entire tree below it, no matter how deep.",
+  "explainSay": "Context. It provides data to the whole tree below, at any depth."
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-context-closest-provider-1",
+  "topic": "Context",
+  "concept": "context-closest-provider",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "context",
+    "provider",
+    "nesting"
+  ],
+  "sourceUrl": "https://react.dev/learn/passing-data-deeply-with-context#using-and-providing-context-from-the-same-component",
+  "question": "What theme does Button read?",
+  "code": "<ThemeContext value=\"dark\">\n  <Panel>\n    <ThemeContext value=\"light\">\n      <Button />\n    </ThemeContext>\n  </Panel>\n</ThemeContext>",
+  "options": [
+    "\"dark\"",
+    "\"light\"",
+    "The default value"
+  ],
+  "answer": 1,
+  "say": "What theme does Button read?",
+  "explanation": "useContext returns the value of the closest provider above the component. The inner \"light\" provider is closest.",
+  "explainSay": "Light. The closest provider above Button wins."
+}

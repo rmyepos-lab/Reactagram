@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-prop-drilling-1",
+  "topic": "Context",
+  "concept": "prop-drilling",
+  "format": "true-false",
+  "level": "beginner",
+  "tags": [
+    "context",
+    "props",
+    "prop-drilling"
+  ],
+  "sourceUrl": "https://react.dev/learn/passing-data-deeply-with-context#the-problem-with-passing-props",
+  "question": "True or false: prop drilling means passing a prop through components that don't use it.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: prop drilling means passing a prop through components that do not use it.",
+  "explanation": "True. When the common ancestor is far away, intermediate components just pass the prop along. That is prop drilling.",
+  "explainSay": "True. Middle components only pass the prop along so it reaches the one that needs it."
+}

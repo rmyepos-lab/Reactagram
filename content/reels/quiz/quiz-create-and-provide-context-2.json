@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-create-and-provide-context-2",
+  "topic": "Context",
+  "concept": "create-and-provide-context",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "context",
+    "createContext",
+    "provider"
+  ],
+  "sourceUrl": "https://react.dev/learn/passing-data-deeply-with-context#step-1-create-the-context",
+  "question": "What is the single argument to createContext?",
+  "code": "const ThemeContext = createContext(\"light\");",
+  "options": [
+    "The provider component",
+    "The default value",
+    "The initial state setter"
+  ],
+  "answer": 1,
+  "say": "What is the single argument to create context?",
+  "explanation": "createContext(defaultValue) takes only the default value, used when there is no provider above.",
+  "explainSay": "The default value. It is used when there is no provider above."
+}
