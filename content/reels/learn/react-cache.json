@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "react-cache",
+  "topic": "Server Components",
+  "concept": "react-cache",
+  "format": "special-use",
+  "level": "advanced",
+  "tags": [
+    "cache",
+    "rsc",
+    "memoization"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/cache",
+  "title": "cache: share work within a server request",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Compute once per request 🗃️",
+      "say": "Cache lets Server Components share the result of a fetch or computation."
+    },
+    {
+      "type": "code",
+      "code": "import { cache } from \"react\";\n\nconst getMetrics = cache(calculateMetrics);\n\nfunction Chart({ data }) {\n  const report = getMetrics(data);\n}",
+      "highlight": [
+        3,
+        6
+      ],
+      "say": "Call cache outside any component. The first call with some data runs calculate metrics. Later calls with the same data get the cached result."
+    },
+    {
+      "type": "text",
+      "text": "Cache is reset for every server request. Errors are cached too.",
+      "say": "React invalidates the cache for each server request. And if the function throws, that error is cached too."
+    },
+    {
+      "type": "text",
+      "text": "Each cache() call makes a separate cache. Server Components only.",
+      "say": "Every call to cache creates a new function with its own cache, so share one memoized function. And cache is for Server Components only."
+    }
+  ]
+}

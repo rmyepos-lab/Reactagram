@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "commit-minimal-changes",
+  "topic": "How React Works",
+  "concept": "commit-minimal-changes",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "commit",
+    "dom",
+    "internals"
+  ],
+  "sourceUrl": "https://react.dev/learn/render-and-commit#step-3-react-commits-changes-to-the-dom",
+  "title": "React only touches DOM nodes that changed",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Minimal DOM changes ✂️",
+      "say": "After rendering, React commits. But it does not rebuild the page."
+    },
+    {
+      "type": "code",
+      "code": "function Clock({ time }) {\n  return (\n    <>\n      <h1>{time}</h1>\n      <input />\n    </>\n  );\n}",
+      "highlight": [
+        4,
+        5
+      ],
+      "say": "This clock re-renders every second with a new time. Type into the input, and your text stays."
+    },
+    {
+      "type": "text",
+      "text": "React updates only the <h1> text. The <input> is in the same place, so React leaves it — and its value — alone.",
+      "say": "React only updates the h1’s text. The input appears in the same place as last time, so React does not touch it, or its value."
+    },
+    {
+      "type": "text",
+      "text": "Initial render: appendChild all nodes. Re-render: minimal operations.",
+      "say": "On the first render, React appends all the nodes it created. On re-renders, it applies only the minimal operations needed."
+    }
+  ]
+}

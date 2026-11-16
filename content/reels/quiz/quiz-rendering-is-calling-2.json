@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-rendering-is-calling-2",
+  "topic": "How React Works",
+  "concept": "rendering-is-calling",
+  "format": "output",
+  "level": "beginner",
+  "tags": [
+    "rendering",
+    "components",
+    "internals"
+  ],
+  "sourceUrl": "https://react.dev/learn/render-and-commit#step-2-react-renders-your-components",
+  "question": "Gallery renders three <Image />s. On Gallery's first render, how many times is Image called?",
+  "options": [
+    "1",
+    "3",
+    "0"
+  ],
+  "answer": 1,
+  "say": "Gallery renders three Image components. On Gallery’s first render, how many times is Image called?",
+  "explanation": "Rendering is recursive: React calls Image once for each <Image /> that Gallery returns.",
+  "explainSay": "Three. Once per Image element."
+}

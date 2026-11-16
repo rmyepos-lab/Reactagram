@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-commit-minimal-changes-2",
+  "topic": "How React Works",
+  "concept": "commit-minimal-changes",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "commit",
+    "dom",
+    "internals"
+  ],
+  "sourceUrl": "https://react.dev/learn/render-and-commit#step-3-react-commits-changes-to-the-dom",
+  "question": "True or false: if a render produces the same result as last time, React doesn't touch the DOM.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: if a render produces the same result as last time, React does not touch the DOM.",
+  "explanation": "True. React only changes the DOM nodes if there's a difference between renders.",
+  "explainSay": "True. Same result, no DOM changes."
+}

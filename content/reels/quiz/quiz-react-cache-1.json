@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-react-cache-1",
+  "topic": "Server Components",
+  "concept": "react-cache",
+  "format": "bug-hunt",
+  "level": "advanced",
+  "tags": [
+    "cache",
+    "rsc",
+    "memoization"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/cache",
+  "question": "Two components each call cache(getUser) themselves. Why don't they share results?",
+  "options": [
+    "Each cache() call creates a separate cache",
+    "cache only works in Client Components",
+    "getUser must be async"
+  ],
+  "answer": 0,
+  "say": "Two components each call cache of get user themselves. Why do they not share results?",
+  "explanation": "Every call to cache returns a new memoized function with its own cache. Create it once at module level and share it.",
+  "explainSay": "Each cache call creates its own separate cache."
+}

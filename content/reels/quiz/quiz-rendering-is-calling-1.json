@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-rendering-is-calling-1",
+  "topic": "How React Works",
+  "concept": "rendering-is-calling",
+  "format": "true-false",
+  "level": "beginner",
+  "tags": [
+    "rendering",
+    "components",
+    "internals"
+  ],
+  "sourceUrl": "https://react.dev/learn/render-and-commit#step-2-react-renders-your-components",
+  "question": "True or false: rendering a component means React calls its function.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: rendering a component means React calls its function.",
+  "explanation": "True. \"Rendering\" is React calling your components to figure out what to display.",
+  "explainSay": "True. Rendering is React calling your component."
+}
