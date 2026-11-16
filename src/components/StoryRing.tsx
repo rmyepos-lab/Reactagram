@@ -1,34 +1,41 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { colors, fonts } from '../theme';
+import { colors } from '../theme';
+import { TopicArt, topicColors } from './TopicArt';
 import { AppText, PressableScale } from './ui';
 
 type Props = {
   label: string;
-  /** Short text inside the circle. */
-  short: string;
+  /** Width of the whole item; the circle is sized from it. */
+  width: number;
   /** A colored ring means there is something new to watch. */
   fresh: boolean;
   onPress: () => void;
 };
 
-/** Instagram-style story circle for a topic. */
-export function StoryRing({ label, short, fresh, onPress }: Props) {
+/** Instagram-style story circle for a topic, with the topic's illustration inside. */
+export function StoryRing({ label, width, fresh, onPress }: Props) {
+  const ring = Math.min(width - 8, 72);
+  const tint = topicColors(label);
   return (
     <PressableScale
       onPress={onPress}
       pressedScale={0.92}
       accessibilityLabel={`${label} reels${fresh ? ', new lessons' : ''}`}
-      style={styles.story}
+      style={[styles.story, { width }]}
     >
-      <View style={[styles.ring, { backgroundColor: fresh ? colors.primary : colors.border }]}>
-        <View style={styles.inner}>
-          <AppText style={styles.short} color={colors.onPrimaryContainer} numberOfLines={1}>
-            {short}
-          </AppText>
+      <View
+        style={[
+          styles.ring,
+          { width: ring, height: ring, borderRadius: ring / 2 },
+          { backgroundColor: fresh ? tint.accent : colors.border },
+        ]}
+      >
+        <View style={[styles.inner, { borderRadius: ring / 2, backgroundColor: tint.fill }]}>
+          <TopicArt topic={label} size={Math.round(ring * 0.46)} color={tint.ink} accent={tint.accent} />
         </View>
       </View>
-      <AppText weight="bold" size={12} color={colors.textVariant} numberOfLines={1}>
+      <AppText weight="bold" size={12} color={colors.textVariant} numberOfLines={2} style={styles.label}>
         {label}
       </AppText>
     </PressableScale>
@@ -36,16 +43,14 @@ export function StoryRing({ label, short, fresh, onPress }: Props) {
 }
 
 const styles = StyleSheet.create({
-  story: { width: 72, alignItems: 'center', gap: 6 },
-  ring: { width: 64, height: 64, borderRadius: 32, padding: 3 },
+  story: { alignItems: 'center', gap: 6 },
+  ring: { padding: 3 },
   inner: {
     flex: 1,
-    borderRadius: 29,
     borderWidth: 3,
     borderColor: colors.surface,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: colors.primaryContainer,
   },
-  short: { fontFamily: fonts.monoBold, fontSize: 13 },
+  label: { textAlign: 'center', lineHeight: 15 },
 });

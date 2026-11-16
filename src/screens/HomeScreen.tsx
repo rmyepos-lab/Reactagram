@@ -1,10 +1,12 @@
-import React, { useMemo } from 'react';
-import { FlatList, ScrollView, StyleSheet, View } from 'react-native';
+import React, { useMemo, useState } from 'react';
+import { FlatList, ScrollView, StyleSheet, View, useWindowDimensions } from 'react-native';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { Logo } from '../components/Logo';
 import { PostCard } from '../components/PostCard';
 import { StoryRing } from '../components/StoryRing';
-import { AppText, Icon, LedgeButton, ProgressBar, Screen } from '../components/ui';
+import { TopicArt, topicColors } from '../components/TopicArt';
+import { Mascot } from '../components/Mascot';
+import { AppText, Chip, Icon, ProgressBar, Screen } from '../components/ui';
 import { APP_NAME, DAILY_GOAL_MINUTES } from '../config/app';
 import { AD_RULES, SponsoredPost, interleaveAds, useAdSheet, useAds, type FeedItem } from '../features/ads';
 import { learnReels, quizReels, topics, type LearnReel, type QuizReel } from '../features/content';
@@ -14,6 +16,7 @@ import type { TabScreenProps } from '../navigation/types';
 import { colors, radii } from '../theme';
 
 const FEED = 'home';
+const STORY_GAP = 8;
 type Post = LearnReel | QuizReel;
 
 /** Two lessons, then one quiz, and so on. */
@@ -30,20 +33,31 @@ const POSTS: { key: string; item: Post }[] = (() => {
   return out.map(item => ({ key: item.id, item }));
 })();
 
-const shortOf = (topic: string) => (topic.length <= 5 ? topic : topic.replace(/^use/, '').slice(0, 5));
+/** The fox's line under the goal bar. */
+const cheer = (minutes: number) =>
+  minutes >= DAILY_GOAL_MINUTES
+    ? 'Goal done. Nice commit today!'
+    : minutes > 0
+      ? 'Keep going, almost compiled!'
+      : "Let's ship some React today.";
 
 export function HomeScreen({ navigation }: TabScreenProps<'Home'>) {
   const p = useProgress();
   const ads = useAds();
   const adSheet = useAdSheet(FEED);
 
-  const minutes = p.lastActiveDay === dayKey() ? Math.floor(p.secondsToday / 60) : 0;
-  const nextReel = learnReels.find(r => !p.seen.includes(r.id)) ?? learnReels[0];
+  const { width } = useWindowDimensions();
+  // Exactly 4 circles fit: screen minus the list padding (2 x 16) and 3 gaps.
+  const storyWidth = Math.floor((width - 32 - 3 * STORY_GAP) / 4);
 
-  const feed = useMemo(
-    () => interleaveAds(POSTS, AD_RULES.homeEvery, ads.enabled, (_, id) => !ads.isRemoved(FEED, id)),
-    [ads],
-  );
+  const minutes = p.lastActiveDay === dayKey() ? Math.floor(p.secondsToday / 60) : 0;
+
+  const [filter, setFilter] = useState<string | null>(null);
+
+  const feed = useMemo(() => {
+    const posts = filter ? POSTS.filter(post => post.item.topic === filter) : POSTS;
+    return interleaveAds(posts, AD_RULES.homeEvery, ads.enabled, (_, id) => !ads.isRemoved(FEED, id));
+  }, [ads, filter]);
 
   const open = (post: Post) =>
     navigation.navigate(post.kind === 'learn' ? 'Learn' : 'Quiz', { startId: post.id });
@@ -51,37 +65,85 @@ export function HomeScreen({ navigation }: TabScreenProps<'Home'>) {
   const header = (
     <View style={styles.top}>
       <Animated.View entering={FadeInDown.duration(320)} style={styles.goal}>
-        <View style={styles.goalHead}>
-          <AppText accessibilityRole="header" weight="black" size={18}>
-            Today's goal
-          </AppText>
-          <AppText weight="extrabold" size={14} color={colors.onPrimaryContainer}>
-            {Math.min(minutes, DAILY_GOAL_MINUTES)} of {DAILY_GOAL_MINUTES} min
+        <Mascot size={80} />
+        <View style={styles.goalBody}>
+          <View style={styles.goalHead}>
+            <AppText accessibilityRole="header" weight="black" size={18}>
+              Today's goal
+            </AppText>
+            <AppText weight="extrabold" size={14} color={colors.onPrimaryContainer}>
+              {Math.min(minutes, DAILY_GOAL_MINUTES)} of {DAILY_GOAL_MINUTES} min
+            </AppText>
+          </View>
+          <ProgressBar
+            value={minutes / DAILY_GOAL_MINUTES}
+            height={14}
+            track={colors.primaryTrack}
+            label="Today's goal"
+          />
+          <AppText weight="bold" size={14} color={colors.textVariant}>
+            {cheer(minutes)}
           </AppText>
         </View>
-        <ProgressBar
-          value={minutes / DAILY_GOAL_MINUTES}
-          height={14}
-          track={colors.primaryTrack}
-          label="Today's goal"
-        />
-        <LedgeButton
-          label={`Continue: ${nextReel.topic}`}
-          onPress={() => navigation.navigate('Learn', { startId: nextReel.id })}
-        />
       </Animated.View>
 
-      <Animated.View entering={FadeInDown.delay(80).duration(320)}>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.stories}>
+      <Animated.View entering={FadeInDown.delay(80).duration(320)} style={styles.section}>
+        <View style={styles.sectionHead}>
+          <AppText accessibilityRole="header" weight="black" size={18}>
+            Topics
+          </AppText>
+          <AppText weight="bold" size={13} color={colors.textMuted}>
+            {topics.length} topics
+          </AppText>
+        </View>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          snapToInterval={storyWidth + STORY_GAP}
+          decelerationRate="fast"
+          contentContainerStyle={styles.stories}
+        >
           {topics.map(topic => (
             <StoryRing
               key={topic}
               label={topic}
-              short={shortOf(topic)}
+              width={storyWidth}
               fresh={learnReels.some(r => r.topic === topic && !p.seen.includes(r.id))}
               onPress={() => navigation.navigate('Learn', { topic })}
             />
           ))}
+        </ScrollView>
+      </Animated.View>
+
+      <Animated.View entering={FadeInDown.delay(160).duration(320)} style={styles.section}>
+        <AppText accessibilityRole="header" weight="black" size={18}>
+          Your feed
+        </AppText>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.filters}>
+          <Chip label="All" size="md" selected={filter === null} onPress={() => setFilter(null)} />
+          {topics.map(topic => {
+            const tint = topicColors(topic);
+            const on = filter === topic;
+            return (
+              <Chip
+                key={topic}
+                label={topic}
+                size="md"
+                background={tint.fill}
+                color={tint.ink}
+                selected={on}
+                onPress={() => setFilter(on ? null : topic)}
+                leading={
+                  <TopicArt
+                    topic={topic}
+                    size={16}
+                    color={on ? colors.surface : tint.ink}
+                    accent={on ? colors.surface : tint.accent}
+                  />
+                }
+              />
+            );
+          })}
         </ScrollView>
       </Animated.View>
     </View>
@@ -156,7 +218,11 @@ const styles = StyleSheet.create({
   },
   list: { paddingHorizontal: 16, paddingTop: 8, paddingBottom: 24, gap: 14 },
   top: { gap: 14 },
-  goal: { padding: 16, gap: 12, borderRadius: radii.xxl, backgroundColor: colors.primaryTint },
+  goal: { flexDirection: 'row', alignItems: 'center', padding: 16, gap: 12, borderRadius: radii.xxl, backgroundColor: colors.primaryTint },
+  goalBody: { flex: 1, gap: 10 },
   goalHead: { flexDirection: 'row', alignItems: 'baseline', justifyContent: 'space-between' },
-  stories: { gap: 8, paddingRight: 16 },
+  section: { gap: 10 },
+  sectionHead: { flexDirection: 'row', alignItems: 'baseline', justifyContent: 'space-between' },
+  stories: { gap: STORY_GAP },
+  filters: { gap: 8 },
 });

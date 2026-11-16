@@ -32,6 +32,9 @@ const PATHS = {
   key: 'M15 9a4 4 0 1 0-3.9 5H12l1.5 1.500H15V17h1.500v1.500H19V16l-4.3-4.300A4 4 0 0 0 15 9zM10 9h.01',
   play: 'M8 5.500v13l11-6.500z',
   pause: 'M8 5v14M16 5v14',
+  trophy: 'M8 4h8v6a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 14v3M9 21v-1a3 3 0 0 1 6 0v1M7 21h10',
+  thumbsUp: 'M7 11v9H4v-9zM7 11l4-7c1.2 0 2 .9 2 2v3h5.5a2 2 0 0 1 2 2.3l-1.2 7A2 2 0 0 1 17.3 20H7',
+  retry: 'M4 12a8 8 0 1 0 2.3-5.7L4 8.5M4 3.5v5h5',
 } as const;
 
 export type IconName = keyof typeof PATHS;

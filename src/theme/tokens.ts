@@ -65,6 +65,18 @@ export const reel = {
   },
 } as const;
 
+/** One color set per topic circle: soft fill, dark drawing, strong accent and ring. */
+export const topicPalette = [
+  { fill: '#CDEBF5', ink: '#00374A', accent: '#087EA4' }, // blue
+  { fill: '#E9DDFF', ink: '#3A2668', accent: '#6B4FA0' }, // purple
+  { fill: '#FFE3D1', ink: '#8A3410', accent: '#C2541B' }, // orange
+  { fill: '#D8EFD5', ink: '#0F3D12', accent: '#2F7D32' }, // green
+  { fill: '#FADCE8', ink: '#5C1233', accent: '#B4386B' }, // pink
+  { fill: '#F6E7C1', ink: '#3D2E00', accent: '#9A6A00' }, // yellow
+  { fill: '#CFF0EA', ink: '#003D35', accent: '#0F7F70' }, // teal
+  { fill: '#FCE4E2', ink: '#5C0F0A', accent: '#B3261E' }, // red
+] as const;
+
 export const radii = { sm: 12, md: 16, lg: 20, xl: 24, xxl: 28, full: 999 } as const;
 export const space = { xs: 4, sm: 8, md: 12, lg: 16, xl: 24 } as const;
 
