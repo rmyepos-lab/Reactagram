@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-useformstatus-1",
+  "topic": "Actions & Forms",
+  "concept": "useformstatus",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "useFormStatus",
+    "forms",
+    "react-dom"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/hooks/useFormStatus#useformstatus-will-not-return-status-information-for-a-form-rendered-in-the-same-component",
+  "question": "Why is pending always false here?",
+  "code": "function Signup() {\n  const { pending } = useFormStatus();\n  return (\n    <form action={signup}>\n      <button disabled={pending}>Go</button>\n    </form>\n  );\n}",
+  "options": [
+    "The form is in the same component as the Hook",
+    "signup must be async",
+    "pending only works with onSubmit"
+  ],
+  "answer": 0,
+  "say": "Why is pending always false here?",
+  "explanation": "useFormStatus only reads a parent form, not one rendered in the same component. Move the button into a child component.",
+  "explainSay": "The form is rendered in the same component. Move the button into a child."
+}

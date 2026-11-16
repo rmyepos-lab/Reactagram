@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-useid-1",
+  "topic": "Actions & Forms",
+  "concept": "useid",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "useId",
+    "accessibility",
+    "aria"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useId#generating-unique-ids-for-accessibility-attributes",
+  "question": "What is wrong here?",
+  "code": "items.map(item => {\n  const id = useId();\n  return <li key={id}>{item.text}</li>;\n})",
+  "options": [
+    "useId is called in a loop and used as a list key",
+    "useId needs an argument",
+    "li can't take an id"
+  ],
+  "answer": 0,
+  "say": "What is wrong with this code?",
+  "explanation": "Hooks can't be called in loops, and useId should not generate list keys. Keys should come from your data.",
+  "explainSay": "Use id is called in a loop, and used as a key. Keys must come from data."
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-useformstatus-2",
+  "topic": "Actions & Forms",
+  "concept": "useformstatus",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "useFormStatus",
+    "forms",
+    "react-dom"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/hooks/useFormStatus#useformstatus-will-not-return-status-information-for-a-form-rendered-in-the-same-component",
+  "question": "Which package exports useFormStatus?",
+  "options": [
+    "react",
+    "react-dom",
+    "react-router"
+  ],
+  "answer": 1,
+  "say": "Which package exports use form status?",
+  "explanation": "useFormStatus is a React DOM Hook: import { useFormStatus } from \"react-dom\".",
+  "explainSay": "React dom."
+}

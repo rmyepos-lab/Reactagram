@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-form-action-prop-2",
+  "topic": "Actions & Forms",
+  "concept": "form-action-prop",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "forms",
+    "actions",
+    "react-dom"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/components/form#handle-form-submission-with-an-action-prop",
+  "question": "formData.get(\"email\") returns null. What is wrong?",
+  "code": "<form action={save}>\n  <input type=\"email\" />\n  <button>Save</button>\n</form>",
+  "options": [
+    "The input has no name attribute",
+    "action needs preventDefault",
+    "email inputs are not supported"
+  ],
+  "answer": 0,
+  "say": "Form data dot get email returns null. What is wrong?",
+  "explanation": "FormData only includes inputs with a name. Add name=\"email\" to the input.",
+  "explainSay": "The input has no name, so it is not in the FormData."
+}

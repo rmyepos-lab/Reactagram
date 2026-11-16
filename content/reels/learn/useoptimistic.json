@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "useoptimistic",
+  "topic": "Actions & Forms",
+  "concept": "useoptimistic",
+  "format": "special-use",
+  "level": "advanced",
+  "tags": [
+    "useOptimistic",
+    "actions",
+    "ux"
+  ],
+  "sourceUrl": "https://react.dev/blog/2024/12/05/react-19#new-hook-optimistic-updates",
+  "title": "useOptimistic: show the result before the server",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Feels instant ⚡",
+      "say": "Use optimistic shows the expected result right away, while the request is still running."
+    },
+    {
+      "type": "code",
+      "code": "const [optimisticName, setOptimisticName] =\n  useOptimistic(currentName);\n\nconst submitAction = async formData => {\n  const newName = formData.get(\"name\");\n  setOptimisticName(newName);\n  const updated = await updateName(newName);\n  onUpdateName(updated);\n};",
+      "highlight": [
+        1,
+        6
+      ],
+      "say": "Pass the real value. Inside the Action, set the optimistic value, then await the server."
+    },
+    {
+      "type": "code",
+      "code": "<p>Your name is: {optimisticName}</p>",
+      "highlight": [
+        1
+      ],
+      "say": "Render the optimistic name. It shows the new name immediately."
+    },
+    {
+      "type": "text",
+      "text": "When the update finishes or fails, React switches back to the real value.",
+      "say": "When the update finishes or errors, React automatically switches back to the real current name."
+    }
+  ]
+}

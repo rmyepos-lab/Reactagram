@@ -1,0 +1,46 @@
+{
+  "kind": "learn",
+  "id": "useactionstate",
+  "topic": "Actions & Forms",
+  "concept": "useactionstate",
+  "format": "special-use",
+  "level": "advanced",
+  "tags": [
+    "useActionState",
+    "actions",
+    "forms"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useActionState",
+  "title": "useActionState: state from an Action's result",
+  "slides": [
+    {
+      "type": "title",
+      "text": "State from your Action 📬",
+      "say": "Use action state gives you state that is updated with the result of an Action."
+    },
+    {
+      "type": "code",
+      "code": "const [error, submitAction, isPending] =\n  useActionState(async (prev, formData) => {\n    const error = await updateName(\n      formData.get(\"name\"));\n    if (error) return error;\n    return null;\n  }, null);",
+      "highlight": [
+        1,
+        2
+      ],
+      "say": "Pass a reducer action and an initial state. You get back the current state, a dispatch action to call, and is pending."
+    },
+    {
+      "type": "code",
+      "code": "<form action={submitAction}>\n  <input name=\"name\" />\n  <button disabled={isPending}>Update</button>\n  {error && <p>{error}</p>}\n</form>",
+      "highlight": [
+        1,
+        3,
+        4
+      ],
+      "say": "Give the dispatch action to the form. Whatever your function returns becomes the new state, here the error."
+    },
+    {
+      "type": "text",
+      "text": "It gets the previous state first. Multiple calls run in order.",
+      "say": "Your function receives the previous state first, then the payload. Multiple calls are queued and run in order, each getting the last result."
+    }
+  ]
+}

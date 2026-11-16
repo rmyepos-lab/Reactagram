@@ -1,0 +1,42 @@
+{
+  "kind": "learn",
+  "id": "form-action-prop",
+  "topic": "Actions & Forms",
+  "concept": "form-action-prop",
+  "format": "special-use",
+  "level": "intermediate",
+  "tags": [
+    "forms",
+    "actions",
+    "react-dom"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/components/form#handle-form-submission-with-an-action-prop",
+  "title": "<form action={fn}>: submit with a function",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Pass a function to action 📝",
+      "say": "In React nineteen, a form’s action prop can be a function."
+    },
+    {
+      "type": "code",
+      "code": "function Search() {\n  function search(formData) {\n    const query = formData.get(\"query\");\n    alert(`You searched for ${query}`);\n  }\n  return (\n    <form action={search}>\n      <input name=\"query\" />\n      <button type=\"submit\">Search</button>\n    </form>\n  );\n}",
+      "highlight": [
+        2,
+        3,
+        7
+      ],
+      "say": "React calls it with a FormData object holding every input with a name. No value and on change pairs, no on submit, no prevent default."
+    },
+    {
+      "type": "text",
+      "text": "React runs it in a Transition, exposes pending via useFormStatus, sends errors to an Error Boundary.",
+      "say": "React runs the function in a Transition, makes the pending state available to children, and sends errors to the nearest Error Boundary."
+    },
+    {
+      "type": "text",
+      "text": "On success, uncontrolled fields are reset.",
+      "say": "And when it succeeds, React resets the form’s uncontrolled fields."
+    }
+  ]
+}

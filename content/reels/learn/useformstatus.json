@@ -1,0 +1,43 @@
+{
+  "kind": "learn",
+  "id": "useformstatus",
+  "topic": "Actions & Forms",
+  "concept": "useformstatus",
+  "format": "pitfall",
+  "level": "intermediate",
+  "tags": [
+    "useFormStatus",
+    "forms",
+    "react-dom"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/hooks/useFormStatus#useformstatus-will-not-return-status-information-for-a-form-rendered-in-the-same-component",
+  "title": "useFormStatus reads the PARENT form",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Is my form submitting? 📤",
+      "say": "Use form status, from react dom, tells a component about the form it sits inside."
+    },
+    {
+      "type": "code",
+      "code": "import { useFormStatus } from \"react-dom\";\n\nfunction Submit() {\n  const { pending } = useFormStatus();\n  return <button disabled={pending}>Send</button>;\n}",
+      "highlight": [
+        4
+      ],
+      "say": "Pending is true while the parent form is submitting an Action. It reads the form as if it were a context provider."
+    },
+    {
+      "type": "code",
+      "code": "function Form() {\n  // 🚩 pending is never true\n  const { pending } = useFormStatus();\n  return <form action={submit}>...</form>;\n}",
+      "highlight": [
+        3
+      ],
+      "say": "The trap: it does not track a form rendered in the same component. Here pending never becomes true."
+    },
+    {
+      "type": "text",
+      "text": "Call it in a component rendered INSIDE the <form>.",
+      "say": "Fix: call it from a component rendered inside the form, like a Submit button component."
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-form-action-prop-1",
+  "topic": "Actions & Forms",
+  "concept": "form-action-prop",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "forms",
+    "actions",
+    "react-dom"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/components/form#handle-form-submission-with-an-action-prop",
+  "question": "What does React pass to the function in <form action={fn}>?",
+  "options": [
+    "The submit event",
+    "A FormData object",
+    "The form's ref"
+  ],
+  "answer": 1,
+  "say": "What does React pass to the function in a form’s action prop?",
+  "explanation": "React calls the action with a FormData containing the values of every input that has a name.",
+  "explainSay": "A FormData object with the named inputs."
+}
