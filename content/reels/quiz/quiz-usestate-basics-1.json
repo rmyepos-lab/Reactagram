@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-usestate-basics-1",
+  "topic": "State",
+  "concept": "usestate-basics",
+  "format": "fill-blank",
+  "level": "beginner",
+  "tags": [
+    "state",
+    "useState",
+    "hooks"
+  ],
+  "sourceUrl": "https://react.dev/learn/state-a-components-memory#adding-a-state-variable",
+  "question": "Fill the blank to declare a name state, starting at \"Taylor\":",
+  "code": "const ___ = useState(\"Taylor\");",
+  "options": [
+    "{ name, setName }",
+    "[name, setName]",
+    "name, setName"
+  ],
+  "answer": 1,
+  "say": "Fill the blank to declare a name state variable that starts as Taylor.",
+  "explanation": "useState returns an array of exactly two items, so you use array destructuring: [name, setName].",
+  "explainSay": "Square brackets, name and set name. Use state returns an array of two items."
+}

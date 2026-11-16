@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-lazy-initial-state-1",
+  "topic": "State",
+  "concept": "lazy-initial-state",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "useState",
+    "strict-mode"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useState#caveats",
+  "question": "True or false: in Strict Mode, React calls your initializer function twice in development.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: in Strict Mode, React calls your initializer function twice in development.",
+  "explanation": "True. It helps find impure initializers. One result is ignored, and this does not happen in production.",
+  "explainSay": "True. It is a development check for impure code. One result is thrown away, and production is not affected."
+}

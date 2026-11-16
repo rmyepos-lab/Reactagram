@@ -1,0 +1,46 @@
+{
+  "kind": "learn",
+  "id": "why-local-variables-fail",
+  "topic": "State",
+  "concept": "why-local-variables-fail",
+  "format": "pitfall",
+  "level": "beginner",
+  "tags": [
+    "state",
+    "variables",
+    "rendering"
+  ],
+  "sourceUrl": "https://react.dev/learn/state-a-components-memory#when-a-regular-variable-isnt-enough",
+  "title": "Why a local variable can't be state",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Click… and nothing happens 🫠",
+      "say": "Here is a gallery with a Next button. Clicking it does nothing. Why?"
+    },
+    {
+      "type": "code",
+      "code": "function Gallery() {\n  let index = 0;\n  function handleClick() {\n    index = index + 1;\n  }\n  return (\n    <button onClick={handleClick}>\n      Next ({index})\n    </button>\n  );\n}",
+      "highlight": [
+        2,
+        4
+      ],
+      "say": "The click handler updates a local variable called index. But the screen never changes."
+    },
+    {
+      "type": "text",
+      "text": "1. Local variables don’t survive renders: each render starts from scratch.",
+      "say": "Problem one. Local variables do not persist. When React renders again, it starts from scratch, so index is zero again."
+    },
+    {
+      "type": "text",
+      "text": "2. Changing a local variable doesn’t trigger a render.",
+      "say": "Problem two. Changing a local variable does not tell React to render again. It has no idea anything changed."
+    },
+    {
+      "type": "text",
+      "text": "You need to retain data AND trigger a render. That is what state does.",
+      "say": "So you need two things: keep the data between renders, and trigger a new render. That is exactly what state gives you."
+    }
+  ]
+}

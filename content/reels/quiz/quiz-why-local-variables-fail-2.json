@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-why-local-variables-fail-2",
+  "topic": "State",
+  "concept": "why-local-variables-fail",
+  "format": "true-false",
+  "level": "beginner",
+  "tags": [
+    "state",
+    "variables",
+    "rendering"
+  ],
+  "sourceUrl": "https://react.dev/learn/state-a-components-memory#when-a-regular-variable-isnt-enough",
+  "question": "True or false: if something else re-renders the component, a local variable keeps its last value.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: if something else re-renders the component, a local variable keeps its last value.",
+  "explanation": "False. React renders the component from scratch, so local variables are created again with their starting values.",
+  "explainSay": "False. Each render starts from scratch, so local variables reset."
+}

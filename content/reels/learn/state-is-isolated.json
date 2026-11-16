@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "state-is-isolated",
+  "topic": "State",
+  "concept": "state-is-isolated",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "state",
+    "components",
+    "isolation"
+  ],
+  "sourceUrl": "https://react.dev/learn/state-a-components-memory#state-is-isolated-and-private",
+  "title": "Each component copy has its own state",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Two copies, two states 👯",
+      "say": "Render the same component twice. Does it share state? No."
+    },
+    {
+      "type": "code",
+      "code": "function Page() {\n  return (\n    <>\n      <Gallery />\n      <Gallery />\n    </>\n  );\n}",
+      "highlight": [
+        4,
+        5
+      ],
+      "say": "Each Gallery here has completely isolated state. Click next in one, and the other does not move."
+    },
+    {
+      "type": "text",
+      "text": "State belongs to a place on the screen, not to the function or the module.",
+      "say": "That is the difference from a variable at the top of your module. State is local to a specific place on the screen."
+    },
+    {
+      "type": "text",
+      "text": "State is private: Page can’t read or change Gallery’s state. To sync them, lift state to the parent.",
+      "say": "And it is private. The parent cannot read or change it. To keep two copies in sync, move the state up to their closest shared parent."
+    }
+  ]
+}

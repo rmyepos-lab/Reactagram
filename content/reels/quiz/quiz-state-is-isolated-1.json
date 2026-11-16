@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-state-is-isolated-1",
+  "topic": "State",
+  "concept": "state-is-isolated",
+  "format": "output",
+  "level": "beginner",
+  "tags": [
+    "state",
+    "components",
+    "isolation"
+  ],
+  "sourceUrl": "https://react.dev/learn/state-a-components-memory#state-is-isolated-and-private",
+  "question": "You click the first Counter twice. What do the two Counters show?",
+  "code": "function Counter() {\n  const [n, setN] = useState(0);\n  return <button onClick={() => setN(n + 1)}>{n}</button>;\n}\n// <Counter /> <Counter />",
+  "options": [
+    "2 and 2",
+    "2 and 0",
+    "1 and 1"
+  ],
+  "answer": 1,
+  "say": "You click the first counter twice. What do the two counters show?",
+  "explanation": "Each rendered copy of a component has its own isolated state. Clicking one does not affect the other.",
+  "explainSay": "Two and zero. Each copy has its own state."
+}

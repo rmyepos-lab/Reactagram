@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-state-is-isolated-2",
+  "topic": "State",
+  "concept": "state-is-isolated",
+  "format": "true-false",
+  "level": "beginner",
+  "tags": [
+    "state",
+    "components",
+    "isolation"
+  ],
+  "sourceUrl": "https://react.dev/learn/state-a-components-memory#state-is-isolated-and-private",
+  "question": "True or false: a parent can change a child's state directly, like it changes props.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: a parent can change a child’s state directly, the way it passes props.",
+  "explanation": "False. Unlike props, state is fully private to the component that declares it. To share it, lift it up to the parent.",
+  "explainSay": "False. State is private to its component. To share it, move it up to the parent."
+}

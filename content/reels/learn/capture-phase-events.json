@@ -1,0 +1,82 @@
+{
+  "kind": "learn",
+  "id": "capture-phase-events",
+  "topic": "Events",
+  "concept": "capture-phase-events",
+  "format": "special-use",
+  "level": "advanced",
+  "tags": [
+    "events",
+    "capture",
+    "propagation"
+  ],
+  "sourceUrl": "https://react.dev/learn/responding-to-events#capture-phase-events",
+  "title": "onClickCapture: catch clicks on the way down",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Catch every click 🎣",
+      "say": "Want to log every click for analytics, even clicks whose propagation was stopped? Use a capture event."
+    },
+    {
+      "type": "code",
+      "code": "<div onClickCapture={() => log()}>\n  <button onClick={e =>\n    e.stopPropagation()} />\n  <button onClick={e =>\n    e.stopPropagation()} />\n</div>",
+      "highlight": [
+        1
+      ],
+      "say": "Add Capture to the end of the event name. This handler runs first, even though both buttons stop propagation."
+    },
+    {
+      "type": "visual",
+      "say": "Every event goes through three phases.",
+      "visual": {
+        "kind": "timeline",
+        "events": [
+          {
+            "id": "down",
+            "label": "Travels down",
+            "note": "all onClickCapture handlers run"
+          },
+          {
+            "id": "target",
+            "label": "Clicked element",
+            "note": "its onClick runs"
+          },
+          {
+            "id": "up",
+            "label": "Bubbles up",
+            "note": "parent onClick handlers run"
+          }
+        ]
+      },
+      "steps": [
+        {
+          "say": "First it travels down the tree, calling every on click capture handler.",
+          "show": [
+            "down"
+          ],
+          "focus": "down"
+        },
+        {
+          "say": "Then the clicked element runs its own onClick.",
+          "show": [
+            "target"
+          ],
+          "focus": "target"
+        },
+        {
+          "say": "Finally it travels back up, calling parent onClick handlers, unless propagation was stopped.",
+          "show": [
+            "up"
+          ],
+          "focus": "up"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "Great for routers and analytics. Rare in app code.",
+      "say": "Capture events are useful for routers or analytics. You probably will not need them in app code."
+    }
+  ]
+}
