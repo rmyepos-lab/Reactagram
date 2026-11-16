@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-conditional-and-zero-pitfall-2",
+  "topic": "Rendering Lists & Conditions",
+  "concept": "conditional-and-zero-pitfall",
+  "format": "bug-hunt",
+  "level": "beginner",
+  "tags": [
+    "conditional-rendering",
+    "logical-and",
+    "pitfall"
+  ],
+  "sourceUrl": "https://react.dev/learn/conditional-rendering#logical-and-operator-",
+  "question": "Which line safely shows the badge only when count is above zero?",
+  "options": [
+    "{count && <Badge />}",
+    "{count > 0 && <Badge />}",
+    "{count.length && <Badge />}"
+  ],
+  "answer": 1,
+  "say": "Which line safely shows the badge only when count is above zero?",
+  "explanation": "count > 0 is a boolean, so false renders nothing. A bare number on the left of && can render 0.",
+  "explainSay": "Count greater than zero. It is a real boolean, so false renders nothing."
+}

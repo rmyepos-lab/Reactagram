@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-rendering-with-map-2",
+  "topic": "Rendering Lists & Conditions",
+  "concept": "rendering-with-map",
+  "format": "output",
+  "level": "beginner",
+  "tags": [
+    "lists",
+    "map",
+    "arrow-functions"
+  ],
+  "sourceUrl": "https://react.dev/learn/rendering-lists#rendering-data-from-arrays",
+  "question": "What does this render?",
+  "code": "const nums = [1, 2, 3];\nreturn (\n  <ul>\n    {nums.map(n => <li key={n}>{n * 2}</li>)}\n  </ul>\n);",
+  "options": [
+    "1, 2, 3",
+    "2, 4, 6",
+    "An empty list"
+  ],
+  "answer": 1,
+  "say": "Each number is doubled inside map. What does this list show?",
+  "explanation": "The arrow without braces returns its JSX implicitly. Each n becomes an item showing n * 2.",
+  "explainSay": "Two, four, six. Each item shows the number times two."
+}

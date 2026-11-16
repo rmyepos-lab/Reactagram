@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-conditional-ternary-2",
+  "topic": "Rendering Lists & Conditions",
+  "concept": "conditional-ternary",
+  "format": "true-false",
+  "level": "beginner",
+  "tags": [
+    "conditional-rendering",
+    "ternary"
+  ],
+  "sourceUrl": "https://react.dev/learn/conditional-rendering#conditional-ternary-operator--",
+  "question": "True or false: using ? : instead of if creates different <li> \"instances\" that keep separate state.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: using the ternary instead of if creates different list item instances that keep separate state.",
+  "explanation": "False. JSX elements hold no state and are not DOM nodes. They are blueprints, so both versions are equivalent.",
+  "explainSay": "False. JSX elements are just blueprints with no state, so both versions are the same."
+}

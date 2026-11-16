@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "conditional-ternary",
+  "topic": "Rendering Lists & Conditions",
+  "concept": "conditional-ternary",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "conditional-rendering",
+    "ternary"
+  ],
+  "sourceUrl": "https://react.dev/learn/conditional-rendering#conditional-ternary-operator--",
+  "title": "The ternary operator inside JSX",
+  "slides": [
+    {
+      "type": "title",
+      "text": "cond ? this : that ❓",
+      "say": "When only a small part changes, put the condition right inside your JSX with the ternary operator."
+    },
+    {
+      "type": "code",
+      "code": "return (\n  <li>\n    {isPacked ? name + \" ✅\" : name}\n  </li>\n);",
+      "highlight": [
+        3
+      ],
+      "text": "If true (?) show this, otherwise (:) that.",
+      "say": "Read it as: if isPacked is true, then show the name with a check. Otherwise, show just the name."
+    },
+    {
+      "type": "code",
+      "code": "{isPacked ? (\n  <del>{name + \" ✅\"}</del>\n) : (\n  name\n)}",
+      "highlight": [
+        1,
+        3
+      ],
+      "say": "Need bigger markup in a branch? Add parentheses and new lines so you can nest more JSX."
+    },
+    {
+      "type": "text",
+      "text": "JSX elements are blueprints, not instances. if and ? : give the same result.",
+      "say": "Is it different from two returns with if? No. JSX elements are lightweight blueprints, not instances, so both versions are equivalent."
+    }
+  ]
+}

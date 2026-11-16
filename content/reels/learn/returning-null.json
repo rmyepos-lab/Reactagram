@@ -1,0 +1,35 @@
+{
+  "kind": "learn",
+  "id": "returning-null",
+  "topic": "Rendering Lists & Conditions",
+  "concept": "returning-null",
+  "format": "special-use",
+  "level": "beginner",
+  "tags": [
+    "conditional-rendering",
+    "null"
+  ],
+  "sourceUrl": "https://react.dev/learn/conditional-rendering#conditionally-returning-nothing-with-null",
+  "title": "Return null to render nothing",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Render nothing at all 🫥",
+      "say": "Sometimes a component should show nothing. Return null."
+    },
+    {
+      "type": "code",
+      "code": "function Item({ name, isPacked }) {\n  if (isPacked) {\n    return null;\n  }\n  return <li>{name}</li>;\n}",
+      "highlight": [
+        3
+      ],
+      "say": "If the item is packed, return null. React renders nothing for it. Otherwise it returns the list item."
+    },
+    {
+      "type": "code",
+      "code": "{!isPacked && <Item name={name} />}",
+      "text": "Often clearer: let the parent decide.",
+      "say": "But returning null is not that common. It can surprise someone reading the parent. Often you include or skip the component in the parent instead."
+    }
+  ]
+}
