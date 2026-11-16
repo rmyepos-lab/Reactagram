@@ -1,0 +1,37 @@
+{
+  "kind": "learn",
+  "id": "fetching-alternatives",
+  "topic": "Side Effects",
+  "concept": "fetching-alternatives",
+  "format": "compare",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "fetching",
+    "frameworks"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#what-are-good-alternatives-to-data-fetching-in-effects",
+  "title": "Better options than fetching in Effects",
+  "slides": [
+    {
+      "type": "title",
+      "text": "fetch in useEffect? 🤷",
+      "say": "Fetching in an Effect works. But it is very manual, with real downsides."
+    },
+    {
+      "type": "text",
+      "text": "No server data (Effects don’t run on the server) • network waterfalls • no preload or cache • lots of boilerplate.",
+      "say": "Effects do not run on the server, so the first HTML has no data. Parents and children fetch one after another, a waterfall. Nothing is cached. And there is boilerplate to avoid race conditions."
+    },
+    {
+      "type": "text",
+      "text": "Using a framework? Use its built-in data fetching.",
+      "say": "If you use a framework, use its built in data fetching. It avoids these pitfalls."
+    },
+    {
+      "type": "text",
+      "text": "Otherwise: a client-side cache like TanStack Query, useSWR or React Router.",
+      "say": "Otherwise, use or build a client side cache, like TanStack Query, use SWR, or React Router. Fetching in Effects is still fine if neither fits."
+    }
+  ]
+}

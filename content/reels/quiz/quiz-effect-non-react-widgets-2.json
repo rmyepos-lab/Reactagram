@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-effect-non-react-widgets-2",
+  "topic": "Side Effects",
+  "concept": "effect-non-react-widgets",
+  "format": "fill-blank",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "widgets",
+    "cleanup"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#controlling-non-react-widgets",
+  "question": "showModal() throws if called twice. Fill the cleanup:",
+  "code": "useEffect(() => {\n  const d = dialogRef.current;\n  d.showModal();\n  return () => ___;\n}, []);",
+  "options": [
+    "d.showModal()",
+    "d.close()",
+    "null"
+  ],
+  "answer": 1,
+  "say": "Show modal throws if called twice. Fill in the cleanup.",
+  "explanation": "Closing the dialog undoes the setup, so dev runs showModal → close → showModal without errors.",
+  "explainSay": "d dot close. It undoes show modal."
+}

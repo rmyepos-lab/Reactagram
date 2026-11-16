@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-effect-non-react-widgets-1",
+  "topic": "Side Effects",
+  "concept": "effect-non-react-widgets",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "widgets",
+    "cleanup"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#controlling-non-react-widgets",
+  "question": "True or false: an Effect that calls map.setZoomLevel(zoomLevel) needs a cleanup.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: an Effect that calls map dot set zoom level needs a cleanup.",
+  "explanation": "False. Setting the same zoom twice does nothing, so the dev double call has no visible effect.",
+  "explainSay": "False. Setting the same zoom twice is harmless."
+}

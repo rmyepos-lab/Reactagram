@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-effect-event-listeners-2",
+  "topic": "Side Effects",
+  "concept": "effect-event-listeners",
+  "format": "output",
+  "level": "beginner",
+  "tags": [
+    "useEffect",
+    "events",
+    "cleanup"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#subscribing-to-events",
+  "question": "Dev, Strict Mode, with cleanup. How many scroll listeners are active after mount?",
+  "code": "useEffect(() => {\n  window.addEventListener(\"scroll\", h);\n  return () => window.removeEventListener(\"scroll\", h);\n}, []);",
+  "options": [
+    "0",
+    "1",
+    "2"
+  ],
+  "answer": 1,
+  "say": "In development with Strict Mode, with this cleanup, how many scroll listeners are active after mount?",
+  "explanation": "React adds, removes, then adds again. Only one subscription is active, same as production.",
+  "explainSay": "One. Add, remove, add again leaves exactly one."
+}

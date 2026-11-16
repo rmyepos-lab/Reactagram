@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-fetching-alternatives-1",
+  "topic": "Side Effects",
+  "concept": "fetching-alternatives",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "fetching",
+    "frameworks"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#what-are-good-alternatives-to-data-fetching-in-effects",
+  "question": "Why does a fetch in an Effect leave server-rendered HTML without data?",
+  "options": [
+    "Effects don't run on the server",
+    "fetch is blocked during SSR",
+    "useState resets on the server"
+  ],
+  "answer": 0,
+  "say": "Why does a fetch in an Effect leave the server rendered HTML without data?",
+  "explanation": "Effects only run on the client, so the initial HTML can only show a loading state.",
+  "explainSay": "Effects do not run on the server, so the first HTML only has a loading state."
+}

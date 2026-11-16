@@ -1,0 +1,43 @@
+{
+  "kind": "learn",
+  "id": "dont-skip-dev-double-with-ref",
+  "topic": "Side Effects",
+  "concept": "dont-skip-dev-double-with-ref",
+  "format": "pitfall",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "strict-mode",
+    "refs"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#dont-use-refs-to-prevent-effects-from-firing",
+  "title": "Don't use a ref to stop the double run",
+  "slides": [
+    {
+      "type": "title",
+      "text": "The ref \"fix\" that isn’t 🚩",
+      "say": "Your Effect runs twice in development, so you add a ref to make it run once. It hides the bug instead of fixing it."
+    },
+    {
+      "type": "code",
+      "code": "const connRef = useRef(null);\nuseEffect(() => {\n  // 🚩 doesn’t fix the bug\n  if (!connRef.current) {\n    connRef.current = createConnection();\n    connRef.current.connect();\n  }\n}, []);",
+      "highlight": [
+        4
+      ],
+      "say": "Now you only see connecting once. But there is still no cleanup. Navigate away and back, and connections pile up, just like before."
+    },
+    {
+      "type": "text",
+      "text": "The right question: not \"how to run once\", but \"how to work after remounting\".",
+      "say": "The right question is not how to run an Effect once. It is how to make it work after remounting."
+    },
+    {
+      "type": "code",
+      "code": "useEffect(() => {\n  const conn = createConnection();\n  conn.connect();\n  return () => conn.disconnect();\n}, []);",
+      "highlight": [
+        4
+      ],
+      "say": "The fix is a cleanup that undoes the setup. Then setup, cleanup, setup looks the same to the user as running once."
+    }
+  ]
+}
