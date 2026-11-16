@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-what-error-boundaries-miss-1",
+  "topic": "Errors & Escape Hatches",
+  "concept": "what-error-boundaries-miss",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "error-boundary",
+    "errors",
+    "events"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary",
+  "question": "A click handler inside an Error Boundary throws. Does the boundary show its fallback?",
+  "code": "<ErrorBoundary fallback={<p>Oops</p>}>\n  <button onClick={() => {\n    throw new Error(\"x\");\n  }}>Go</button>\n</ErrorBoundary>",
+  "options": [
+    "Yes",
+    "No"
+  ],
+  "answer": 1,
+  "say": "A click handler inside an Error Boundary throws. Does the boundary show its fallback?",
+  "explanation": "Error Boundaries do not catch errors in event handlers. Use try/catch in the handler.",
+  "explainSay": "No. Event handler errors are not caught by boundaries."
+}

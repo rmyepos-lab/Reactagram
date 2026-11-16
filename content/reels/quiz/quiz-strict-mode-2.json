@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-strict-mode-2",
+  "topic": "Errors & Escape Hatches",
+  "concept": "strict-mode",
+  "format": "output",
+  "level": "beginner",
+  "tags": [
+    "StrictMode",
+    "development",
+    "debugging"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/StrictMode",
+  "question": "Which bug is Strict Mode's extra Effect run designed to catch?",
+  "options": [
+    "Missing Effect cleanup",
+    "Slow network",
+    "Wrong CSS"
+  ],
+  "answer": 0,
+  "say": "Which bug is Strict Mode’s extra Effect run designed to catch?",
+  "explanation": "Re-running Effects an extra time exposes bugs caused by missing Effect cleanup.",
+  "explainSay": "Missing Effect cleanup."
+}

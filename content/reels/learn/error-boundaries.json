@@ -1,0 +1,40 @@
+{
+  "kind": "learn",
+  "id": "error-boundaries",
+  "topic": "Errors & Escape Hatches",
+  "concept": "error-boundaries",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "error-boundary",
+    "errors",
+    "fallback"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary",
+  "title": "Error Boundaries catch render errors",
+  "slides": [
+    {
+      "type": "title",
+      "text": "One crash, whole app gone? 💥",
+      "say": "By default, if your app throws an error during rendering, React removes its UI from the screen. Error Boundaries prevent that."
+    },
+    {
+      "type": "code",
+      "code": "<ErrorBoundary fallback={<p>Something went wrong</p>}>\n  <Profile />\n</ErrorBoundary>",
+      "highlight": [
+        1
+      ],
+      "say": "Wrap part of your tree. If Profile or any child throws while rendering, the boundary shows the fallback instead of that part."
+    },
+    {
+      "type": "text",
+      "text": "Built as a class with static getDerivedStateFromError (+ optional componentDidCatch to log).",
+      "say": "An Error Boundary is a class component with get derived state from error. Optionally add component did catch to log the error."
+    },
+    {
+      "type": "text",
+      "text": "No function-component version yet. Libraries like react-error-boundary help. Don’t wrap every avatar.",
+      "say": "There is no function component version yet, but you can use a library like react error boundary. Place boundaries where an error message makes sense, not around every avatar."
+    }
+  ]
+}

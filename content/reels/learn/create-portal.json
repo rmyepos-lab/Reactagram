@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "create-portal",
+  "topic": "Errors & Escape Hatches",
+  "concept": "create-portal",
+  "format": "special-use",
+  "level": "intermediate",
+  "tags": [
+    "createPortal",
+    "dom",
+    "modals"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/createPortal#rendering-a-modal-dialog-with-a-portal",
+  "title": "createPortal: render somewhere else",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Escape the container 🚪",
+      "say": "A modal inside a box with overflow hidden gets clipped. A portal renders it somewhere else in the DOM."
+    },
+    {
+      "type": "code",
+      "code": "import { createPortal } from \"react-dom\";\n\n<div style={{ overflow: \"hidden\" }}>\n  {createPortal(\n    <Modal />,\n    document.body\n  )}\n</div>",
+      "highlight": [
+        4,
+        6
+      ],
+      "say": "Call create portal with some JSX and a DOM node, like document dot body. The modal’s DOM lands there, outside the clipping box."
+    },
+    {
+      "type": "text",
+      "text": "Only the DOM placement changes. In React, it’s still a child: it reads parent context.",
+      "say": "A portal only changes where the DOM node goes. In every other way, it is still a child of the component that renders it, and can read its context."
+    },
+    {
+      "type": "text",
+      "text": "The target DOM node must already exist.",
+      "say": "The target DOM node must already exist when you create the portal."
+    }
+  ]
+}

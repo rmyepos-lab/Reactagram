@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "strict-mode",
+  "topic": "Errors & Escape Hatches",
+  "concept": "strict-mode",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "StrictMode",
+    "development",
+    "debugging"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/StrictMode",
+  "title": "<StrictMode>: what it checks",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Strict Mode finds bugs early 🔬",
+      "say": "Strict Mode turns on extra checks in development for everything inside it."
+    },
+    {
+      "type": "code",
+      "code": "root.render(\n  <StrictMode>\n    <App />\n  </StrictMode>\n);",
+      "highlight": [
+        2,
+        4
+      ],
+      "say": "Wrap your root component. The docs recommend it for the whole app, especially new ones."
+    },
+    {
+      "type": "text",
+      "text": "Extra render • extra Effect setup+cleanup • extra ref callback run • deprecated API warnings.",
+      "say": "Components render one extra time, Effects and ref callbacks run setup and cleanup one extra time, and deprecated APIs are flagged."
+    },
+    {
+      "type": "text",
+      "text": "Development only. No opting out inside the tree.",
+      "say": "All of this is development only, so production is not slowed down. And there is no way to opt a part out inside a Strict Mode tree."
+    }
+  ]
+}

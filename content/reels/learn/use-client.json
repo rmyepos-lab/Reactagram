@@ -1,0 +1,40 @@
+{
+  "kind": "learn",
+  "id": "use-client",
+  "topic": "Server Components",
+  "concept": "use-client",
+  "format": "special-use",
+  "level": "advanced",
+  "tags": [
+    "use-client",
+    "rsc",
+    "boundary"
+  ],
+  "sourceUrl": "https://react.dev/reference/rsc/use-client",
+  "title": "'use client' marks the client boundary",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Draw the client line ✏️",
+      "say": "In a Server Components app, everything is server rendered by default. Use client marks what runs on the client."
+    },
+    {
+      "type": "code",
+      "code": "'use client';\n\nimport { useState } from \"react\";\n\nexport default function Counter() {\n  const [n, setN] = useState(0);\n  // ...\n}",
+      "highlight": [
+        1
+      ],
+      "say": "Put use client at the very top of the file, above any imports. Then this component can use state."
+    },
+    {
+      "type": "text",
+      "text": "The module AND everything it imports become client code.",
+      "say": "It marks the module and all its transitive dependencies as client code. It creates a boundary in the module dependency tree."
+    },
+    {
+      "type": "text",
+      "text": "Single or double quotes, not backticks. No effect if imported from client code already.",
+      "say": "Write it with single or double quotes, not backticks. When imported from another client module, the directive has no extra effect."
+    }
+  ]
+}

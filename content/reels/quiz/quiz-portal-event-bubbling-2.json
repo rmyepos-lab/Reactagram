@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-portal-event-bubbling-2",
+  "topic": "Errors & Escape Hatches",
+  "concept": "portal-event-bubbling",
+  "format": "bug-hunt",
+  "level": "advanced",
+  "tags": [
+    "createPortal",
+    "events",
+    "propagation"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/createPortal#caveats",
+  "question": "Clicks in a portal modal trigger the parent's onClick. One fix?",
+  "options": [
+    "Call e.stopPropagation() inside the portal",
+    "Render the portal into a different DOM node",
+    "Add a key to the portal"
+  ],
+  "answer": 0,
+  "say": "Clicks in a portal modal trigger the parent’s onClick. What is one fix?",
+  "explanation": "Stop propagation inside the portal, or move the portal up in the React tree. The DOM target doesn't matter.",
+  "explainSay": "Stop propagation inside the portal."
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-portal-event-bubbling-1",
+  "topic": "Errors & Escape Hatches",
+  "concept": "portal-event-bubbling",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "createPortal",
+    "events",
+    "propagation"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/createPortal#caveats",
+  "question": "You click the button. Is \"div\" logged?",
+  "code": "<div onClick={() => log(\"div\")}>\n  {createPortal(<button>Hi</button>, document.body)}\n</div>",
+  "options": [
+    "Yes",
+    "No"
+  ],
+  "answer": 0,
+  "say": "You click the button. Is div logged?",
+  "explanation": "Portal events bubble through the React tree. The div is the button's React parent, so its onClick fires.",
+  "explainSay": "Yes. Events follow the React tree."
+}

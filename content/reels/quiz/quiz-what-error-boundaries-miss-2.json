@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-what-error-boundaries-miss-2",
+  "topic": "Errors & Escape Hatches",
+  "concept": "what-error-boundaries-miss",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "error-boundary",
+    "errors",
+    "events"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary",
+  "question": "Which error WILL an Error Boundary catch?",
+  "options": [
+    "An error in a setTimeout callback",
+    "An error thrown while a child renders",
+    "An error in the boundary's own render"
+  ],
+  "answer": 1,
+  "say": "Which of these errors will an Error Boundary catch?",
+  "explanation": "Boundaries catch rendering errors in their children, not async callbacks or their own errors.",
+  "explainSay": "An error thrown while a child renders."
+}

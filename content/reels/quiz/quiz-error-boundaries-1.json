@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-error-boundaries-1",
+  "topic": "Errors & Escape Hatches",
+  "concept": "error-boundaries",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "error-boundary",
+    "errors",
+    "fallback"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary",
+  "question": "Profile throws during render. What does the user see?",
+  "code": "<Header />\n<ErrorBoundary fallback={<p>Oops</p>}>\n  <Profile />\n</ErrorBoundary>",
+  "options": [
+    "A blank page",
+    "Header plus \"Oops\"",
+    "Header plus the broken Profile"
+  ],
+  "answer": 1,
+  "say": "Profile throws during render. What does the user see?",
+  "explanation": "The Error Boundary catches the error and shows its fallback in place of Profile. The rest of the UI stays.",
+  "explainSay": "The header, plus Oops in place of the Profile."
+}

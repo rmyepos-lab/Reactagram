@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "server-components",
+  "topic": "Server Components",
+  "concept": "server-components",
+  "format": "concept",
+  "level": "advanced",
+  "tags": [
+    "server-components",
+    "rsc",
+    "async"
+  ],
+  "sourceUrl": "https://react.dev/reference/rsc/server-components",
+  "title": "Server Components render ahead of time",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Components that never ship 🖥️",
+      "say": "Server Components render ahead of time, before bundling, in an environment separate from your client app."
+    },
+    {
+      "type": "code",
+      "code": "async function Page({ page }) {\n  const content = await file.readFile(\n    `${page}.md`);\n  return <div>{sanitizeHtml(marked(content))}</div>;\n}",
+      "highlight": [
+        1,
+        2
+      ],
+      "say": "They can be async and await in render. This one reads a file. It can run once at build time, or per request on a server."
+    },
+    {
+      "type": "text",
+      "text": "The client only gets the output, not the component or its heavy libraries.",
+      "say": "The browser never downloads this component or its markdown libraries. It only receives the rendered output."
+    },
+    {
+      "type": "text",
+      "text": "No useState here. And there is no \"use server\" for them.",
+      "say": "They cannot use interactive APIs like use state. And note: there is no directive for Server Components. Use server is for Server Functions."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-strict-mode-1",
+  "topic": "Errors & Escape Hatches",
+  "concept": "strict-mode",
+  "format": "true-false",
+  "level": "beginner",
+  "tags": [
+    "StrictMode",
+    "development",
+    "debugging"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/StrictMode",
+  "question": "True or false: Strict Mode double-renders components in production too.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: Strict Mode double renders components in production too.",
+  "explanation": "False. Strict Mode checks only run in development.",
+  "explainSay": "False. Development only."
+}
