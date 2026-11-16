@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-no-effect-user-events-2",
+  "topic": "Side Effects",
+  "concept": "no-effect-user-events",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "events",
+    "bugs"
+  ],
+  "sourceUrl": "https://react.dev/learn/you-might-not-need-an-effect#sharing-logic-between-event-handlers",
+  "question": "True or false: two handlers sharing logic is a good reason to move that logic into an Effect.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: two handlers sharing logic is a good reason to move that logic into an Effect.",
+  "explanation": "False. Extract a shared function and call it from both handlers. Effects are for code caused by display.",
+  "explainSay": "False. Extract a shared function and call it from both handlers."
+}

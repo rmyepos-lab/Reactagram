@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "app-init-once",
+  "topic": "Side Effects",
+  "concept": "app-init-once",
+  "format": "pattern",
+  "level": "advanced",
+  "tags": [
+    "useEffect",
+    "initialization",
+    "strict-mode"
+  ],
+  "sourceUrl": "https://react.dev/learn/you-might-not-need-an-effect#initializing-the-application",
+  "title": "Run app initialization only once",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Once per app load 🚀",
+      "say": "Some logic should run once when the app loads, like checking an auth token."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 runs twice in development\nfunction App() {\n  useEffect(() => {\n    checkAuthToken();\n  }, []);\n}",
+      "highlight": [
+        4
+      ],
+      "say": "In an Effect, it runs twice in development. If check auth token was not built for that, it might invalidate the token."
+    },
+    {
+      "type": "code",
+      "code": "let didInit = false;\n\nfunction App() {\n  useEffect(() => {\n    if (!didInit) {\n      didInit = true;\n      checkAuthToken();\n    }\n  }, []);\n}",
+      "highlight": [
+        1,
+        5,
+        6
+      ],
+      "say": "Track it with a top level variable. Now it runs once per app load, not once per mount."
+    },
+    {
+      "type": "text",
+      "text": "Or run it at module level, before render. Keep that to App.js or the entry point.",
+      "say": "You can also run it at the top of the module, before the app renders. Do not overuse that: keep it in the root module or entry point."
+    }
+  ]
+}

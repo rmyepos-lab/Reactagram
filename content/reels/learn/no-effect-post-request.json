@@ -1,0 +1,43 @@
+{
+  "kind": "learn",
+  "id": "no-effect-post-request",
+  "topic": "Side Effects",
+  "concept": "no-effect-post-request",
+  "format": "compare",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "events",
+    "fetch"
+  ],
+  "sourceUrl": "https://react.dev/learn/you-might-not-need-an-effect#sending-a-post-request",
+  "title": "POST on submit, analytics on display",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Which request goes where? 📨",
+      "say": "A form sends two POST requests: an analytics visit, and a register request on submit. Where does each belong?"
+    },
+    {
+      "type": "code",
+      "code": "// ✅ caused by the form being shown\nuseEffect(() => {\n  post(\"/analytics/event\", { name: \"visit_form\" });\n}, []);",
+      "highlight": [
+        3
+      ],
+      "say": "The analytics event is sent because the form was displayed. That stays in an Effect."
+    },
+    {
+      "type": "code",
+      "code": "function handleSubmit(e) {\n  e.preventDefault();\n  // ✅ caused by the click\n  post(\"/api/register\", { firstName });\n}",
+      "highlight": [
+        4
+      ],
+      "say": "Registering happens because the user pressed submit, at one moment. Put it in the event handler, not in an Effect watching some state."
+    },
+    {
+      "type": "text",
+      "text": "Ask: caused by an interaction? Handler. Caused by being seen? Effect.",
+      "say": "The question: is it caused by a particular interaction? Event handler. Is it caused by the user seeing the component? Effect."
+    }
+  ]
+}

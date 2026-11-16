@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-app-init-once-1",
+  "topic": "Side Effects",
+  "concept": "app-init-once",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "useEffect",
+    "initialization",
+    "strict-mode"
+  ],
+  "sourceUrl": "https://react.dev/learn/you-might-not-need-an-effect#initializing-the-application",
+  "question": "Development, Strict Mode. How many times does checkAuthToken run?",
+  "code": "let didInit = false;\nfunction App() {\n  useEffect(() => {\n    if (!didInit) {\n      didInit = true;\n      checkAuthToken();\n    }\n  }, []);\n}",
+  "options": [
+    "0",
+    "1",
+    "2"
+  ],
+  "answer": 1,
+  "say": "In development with Strict Mode, how many times does check auth token run?",
+  "explanation": "The Effect runs twice in dev, but didInit is a module-level variable, so the second run skips the call.",
+  "explainSay": "Once. The top level flag makes the second run skip it."
+}

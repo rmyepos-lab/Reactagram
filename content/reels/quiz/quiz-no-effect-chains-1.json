@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-no-effect-chains-1",
+  "topic": "Side Effects",
+  "concept": "no-effect-chains",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "useEffect",
+    "state",
+    "performance"
+  ],
+  "sourceUrl": "https://react.dev/learn/you-might-not-need-an-effect#chains-of-computations",
+  "question": "True or false: a chain of Effects that set state causes extra re-renders between each step.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: a chain of Effects that set state causes extra re-renders between each step.",
+  "explanation": "True. The component and its children re-render between each set call in the chain.",
+  "explainSay": "True. Every step in the chain means another render."
+}

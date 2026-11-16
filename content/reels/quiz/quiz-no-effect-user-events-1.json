@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-no-effect-user-events-1",
+  "topic": "Side Effects",
+  "concept": "no-effect-user-events",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "events",
+    "bugs"
+  ],
+  "sourceUrl": "https://react.dev/learn/you-might-not-need-an-effect#sharing-logic-between-event-handlers",
+  "question": "The \"Added to cart\" toast shows again on every page refresh. Fix?",
+  "code": "useEffect(() => {\n  if (product.isInCart) {\n    showToast(\"Added to cart\");\n  }\n}, [product]);",
+  "options": [
+    "Add [] as dependencies",
+    "Call showToast in the click handler instead",
+    "Use useLayoutEffect"
+  ],
+  "answer": 1,
+  "say": "The added to cart toast shows again on every page refresh. What is the fix?",
+  "explanation": "The toast should appear because the user clicked, not because the page showed. Move it into the event handler.",
+  "explainSay": "Call it in the click handler. It is caused by the click, not by the page being shown."
+}

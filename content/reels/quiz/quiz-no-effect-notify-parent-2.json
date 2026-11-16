@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-no-effect-notify-parent-2",
+  "topic": "Side Effects",
+  "concept": "no-effect-notify-parent",
+  "format": "fill-blank",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "events",
+    "props"
+  ],
+  "sourceUrl": "https://react.dev/learn/you-might-not-need-an-effect#notifying-parent-components-about-state-changes",
+  "question": "Fill the blank to notify the parent in the same event:",
+  "code": "function handleClick() {\n  const next = !isOn;\n  setIsOn(next);\n  ___;\n}",
+  "options": [
+    "useEffect(() => onChange(next))",
+    "onChange(next)",
+    "onChange(isOn)"
+  ],
+  "answer": 1,
+  "say": "Fill the blank to notify the parent in the same event.",
+  "explanation": "Call onChange(next) right in the handler. isOn is still the old snapshot, and Hooks can't be called in handlers.",
+  "explainSay": "On change with next. Is on is still the old snapshot."
+}

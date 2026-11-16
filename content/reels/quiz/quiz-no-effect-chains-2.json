@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-no-effect-chains-2",
+  "topic": "Side Effects",
+  "concept": "no-effect-chains",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "useEffect",
+    "state",
+    "performance"
+  ],
+  "sourceUrl": "https://react.dev/learn/you-might-not-need-an-effect#chains-of-computations",
+  "question": "When IS a chain of Effects appropriate, per the docs?",
+  "options": [
+    "Whenever state depends on other state",
+    "Dropdowns whose options load from the network based on the previous one",
+    "Never, in any case"
+  ],
+  "answer": 1,
+  "say": "According to the docs, when is a chain of Effects appropriate?",
+  "explanation": "When you can't calculate the next state in the handler, like cascading dropdowns that each fetch options. Then you are syncing with the network.",
+  "explainSay": "Cascading dropdowns that load options from the network. Then you are syncing with an external system."
+}
