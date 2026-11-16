@@ -83,3 +83,4 @@ yarn-error.log
 
 # Kokoro install and recorded narration files (uploaded to Supabase, not committed)
 .narration/
+README.md
