@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-effect-event-not-to-skip-deps-2",
+  "topic": "Side Effects",
+  "concept": "effect-event-not-to-skip-deps",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "useEffectEvent",
+    "dependencies",
+    "bugs"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useEffectEvent#pitfall-skip-dependencies",
+  "question": "True or false: useEffectEvent is a safe way to drop dependencies you think are unnecessary.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: use effect event is a safe way to drop dependencies you think are unnecessary.",
+  "explanation": "False. It hides bugs. Only use it for logic that genuinely should not re-trigger the Effect.",
+  "explainSay": "False. It hides bugs."
+}

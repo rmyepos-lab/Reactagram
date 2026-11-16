@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "remove-function-dependencies",
+  "topic": "Side Effects",
+  "concept": "remove-function-dependencies",
+  "format": "pitfall",
+  "level": "advanced",
+  "tags": [
+    "useEffect",
+    "dependencies",
+    "functions"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useEffect#removing-unnecessary-function-dependencies",
+  "title": "Functions in deps re-run the Effect",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Function dependency trap 🪤",
+      "say": "A helper function declared in your component and used in an Effect makes the Effect re-run on every render."
+    },
+    {
+      "type": "code",
+      "code": "function createOptions() {\n  return { serverUrl, roomId };\n}\nuseEffect(() => {\n  const c = createConnection(createOptions());\n  // ...\n}, [createOptions]);",
+      "highlight": [
+        1,
+        7
+      ],
+      "say": "Each render creates a new create options function. Functions are compared by identity, so the dependency always looks changed."
+    },
+    {
+      "type": "code",
+      "code": "useEffect(() => {\n  function createOptions() {\n    return { serverUrl, roomId };\n  }\n  const c = createConnection(createOptions());\n  // ...\n}, [roomId]);",
+      "highlight": [
+        2,
+        7
+      ],
+      "say": "Declare the function inside the Effect instead. Now the Effect only depends on room id."
+    },
+    {
+      "type": "text",
+      "text": "Static helper with no props or state? Move it outside the component.",
+      "say": "If the function uses no props or state at all, move it outside the component."
+    }
+  ]
+}

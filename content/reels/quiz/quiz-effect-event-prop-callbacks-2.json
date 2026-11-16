@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-effect-event-prop-callbacks-2",
+  "topic": "Side Effects",
+  "concept": "effect-event-prop-callbacks",
+  "format": "fill-blank",
+  "level": "advanced",
+  "tags": [
+    "useEffectEvent",
+    "props",
+    "callbacks"
+  ],
+  "sourceUrl": "https://react.dev/learn/removing-effect-dependencies#wrapping-an-event-handler-from-the-props",
+  "question": "Fill the blank so the Effect calls the latest onReceive without depending on it:",
+  "code": "const onMsg = ___(m => onReceive(m));\nuseEffect(() => {\n  conn.on(\"message\", m => onMsg(m));\n}, [roomId]);",
+  "options": [
+    "useCallback",
+    "useEffectEvent",
+    "useRef"
+  ],
+  "answer": 1,
+  "say": "Fill the blank so the Effect calls the latest on receive without depending on it.",
+  "explanation": "useEffectEvent wraps the call: it reads the latest prop and is left out of the dependencies.",
+  "explainSay": "Use effect event."
+}

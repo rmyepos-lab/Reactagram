@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-event-vs-effect-choice-2",
+  "topic": "Side Effects",
+  "concept": "event-vs-effect-choice",
+  "format": "which-hook",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "events",
+    "reactivity"
+  ],
+  "sourceUrl": "https://react.dev/learn/separating-events-from-effects#reactive-values-and-reactive-logic",
+  "question": "The chat must stay connected to the selected room, even with no clicks. Where does that go?",
+  "options": [
+    "An event handler",
+    "An Effect",
+    "The render body"
+  ],
+  "answer": 1,
+  "say": "The chat must stay connected to the selected room, even if the user never clicks. Where does that code go?",
+  "explanation": "Connecting is caused by the component being shown, and must keep up with roomId. That is reactive logic: an Effect.",
+  "explainSay": "An Effect. It must stay in sync with the room, no click required."
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-useeffectevent-1",
+  "topic": "Side Effects",
+  "concept": "useeffectevent",
+  "format": "fill-blank",
+  "level": "advanced",
+  "tags": [
+    "useEffectEvent",
+    "useEffect",
+    "dependencies"
+  ],
+  "sourceUrl": "https://react.dev/learn/separating-events-from-effects#declaring-an-effect-event",
+  "question": "Fill the dependencies after extracting onConnected with useEffectEvent:",
+  "code": "useEffect(() => {\n  const c = connect(roomId);\n  c.on(\"connected\", () => onConnected());\n  return () => c.disconnect();\n}, ___);",
+  "options": [
+    "[roomId]",
+    "[roomId, onConnected]",
+    "[roomId, theme]"
+  ],
+  "answer": 0,
+  "say": "After extracting on connected with use effect event, what are the dependencies?",
+  "explanation": "Effect Events are not reactive and must be omitted from dependencies. theme is no longer read by the Effect.",
+  "explainSay": "Just room id. Effect Events are left out, and theme is no longer read directly."
+}

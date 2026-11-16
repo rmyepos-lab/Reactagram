@@ -1,0 +1,39 @@
+{
+  "kind": "learn",
+  "id": "effect-event-limitations",
+  "topic": "Side Effects",
+  "concept": "effect-event-limitations",
+  "format": "pitfall",
+  "level": "advanced",
+  "tags": [
+    "useEffectEvent",
+    "rules"
+  ],
+  "sourceUrl": "https://react.dev/learn/separating-events-from-effects#limitations-of-effect-events",
+  "title": "Effect Events: only call them inside Effects",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Effect Events have rules 📏",
+      "say": "Effect Events are very limited on purpose."
+    },
+    {
+      "type": "text",
+      "text": "Only call them from inside Effects (or other Effect Events). Never during render.",
+      "say": "Only call them from inside Effects, or other Effect Events. Never during rendering."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 passing it to another Hook\nconst onTick = useEffectEvent(() => {\n  setCount(count + 1);\n});\nuseTimer(onTick, 1000);",
+      "highlight": [
+        5
+      ],
+      "say": "Never pass them to other components or Hooks. Declare each Effect Event right next to the Effect that uses it."
+    },
+    {
+      "type": "text",
+      "text": "Their identity changes every render on purpose. So never list them as dependencies.",
+      "say": "Their identity intentionally changes on every render. That is one more reason to keep them out of dependency arrays."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-effect-event-not-to-skip-deps-1",
+  "topic": "Side Effects",
+  "concept": "effect-event-not-to-skip-deps",
+  "format": "bug-hunt",
+  "level": "advanced",
+  "tags": [
+    "useEffectEvent",
+    "dependencies",
+    "bugs"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useEffectEvent#pitfall-skip-dependencies",
+  "question": "Visits to new pages are not logged. Why?",
+  "code": "const onVisit = useEffectEvent(() => {\n  log(pageUrl);\n});\nuseEffect(() => {\n  onVisit();\n}, []);",
+  "options": [
+    "pageUrl should re-run the Effect but was hidden",
+    "log must be async",
+    "onVisit must be in the deps"
+  ],
+  "answer": 0,
+  "say": "Visits to new pages are not logged. Why?",
+  "explanation": "pageUrl should cause a re-run, but the Effect Event hides it and [] never re-runs. Keep pageUrl as a real dependency.",
+  "explainSay": "Page url was hidden from the dependencies, so the Effect never re-runs."
+}

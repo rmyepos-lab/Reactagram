@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-effect-event-limitations-2",
+  "topic": "Side Effects",
+  "concept": "effect-event-limitations",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "useEffectEvent",
+    "rules"
+  ],
+  "sourceUrl": "https://react.dev/learn/separating-events-from-effects#limitations-of-effect-events",
+  "question": "True or false: a function from useEffectEvent keeps the same identity on every render.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: a function from use effect event keeps the same identity on every render.",
+  "explanation": "False. Effect Event functions intentionally get a new identity every render.",
+  "explainSay": "False. It changes on every render, on purpose."
+}

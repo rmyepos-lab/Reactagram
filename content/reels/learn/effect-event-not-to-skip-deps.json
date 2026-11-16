@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "effect-event-not-to-skip-deps",
+  "topic": "Side Effects",
+  "concept": "effect-event-not-to-skip-deps",
+  "format": "pitfall",
+  "level": "advanced",
+  "tags": [
+    "useEffectEvent",
+    "dependencies",
+    "bugs"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useEffectEvent#pitfall-skip-dependencies",
+  "title": "Don't use Effect Events to hide dependencies",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Hiding a dependency 🙈",
+      "say": "use effect event can feel like a way to silence the dependency list. It is not."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 hides pageUrl\nconst logVisit = useEffectEvent(() => {\n  log(pageUrl);\n});\nuseEffect(() => {\n  logVisit();\n}, []);",
+      "highlight": [
+        3,
+        7
+      ],
+      "say": "Here page url changes should log a new visit. Hiding it in an Effect Event means you miss those logs."
+    },
+    {
+      "type": "code",
+      "code": "useEffect(() => {\n  log(pageUrl);\n}, [pageUrl]);",
+      "highlight": [
+        3
+      ],
+      "say": "If a value should re-run the Effect, keep it as a dependency."
+    },
+    {
+      "type": "text",
+      "text": "Effect Events are only for logic that is truly an event fired from an Effect.",
+      "say": "Use Effect Events only for logic that genuinely should not re-trigger the Effect."
+    }
+  ]
+}

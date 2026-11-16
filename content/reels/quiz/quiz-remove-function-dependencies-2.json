@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-remove-function-dependencies-2",
+  "topic": "Side Effects",
+  "concept": "remove-function-dependencies",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "useEffect",
+    "dependencies",
+    "functions"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useEffect#removing-unnecessary-function-dependencies",
+  "question": "Best fix for a helper that reads roomId and is only used by the Effect?",
+  "options": [
+    "Move it inside the Effect",
+    "Move it outside the component",
+    "Remove it from deps with eslint-disable"
+  ],
+  "answer": 0,
+  "say": "What is the best fix for a helper that reads room id and is only used by the Effect?",
+  "explanation": "It reads a reactive value, so it cannot move outside. Inside the Effect, only roomId remains a dependency.",
+  "explainSay": "Move it inside the Effect. Then only room id is a dependency."
+}
