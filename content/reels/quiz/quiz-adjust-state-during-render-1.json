@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-adjust-state-during-render-1",
+  "topic": "Side Effects",
+  "concept": "adjust-state-during-render",
+  "format": "bug-hunt",
+  "level": "advanced",
+  "tags": [
+    "state",
+    "rendering",
+    "useEffect"
+  ],
+  "sourceUrl": "https://react.dev/learn/you-might-not-need-an-effect#adjusting-some-state-when-a-prop-changes",
+  "question": "What prevents an infinite loop in this pattern?",
+  "code": "const [prev, setPrev] = useState(items);\nif (items !== prev) {\n  setPrev(items);\n  setSelection(null);\n}",
+  "options": [
+    "The items !== prev condition",
+    "Calling setPrev before setSelection",
+    "Nothing: it always loops"
+  ],
+  "answer": 0,
+  "say": "What prevents an infinite loop in this pattern?",
+  "explanation": "After setPrev(items), the next render has items === prev, so the block is skipped. Without the condition it would loop.",
+  "explainSay": "The condition. On the retry, items equals prev, so the block is skipped."
+}

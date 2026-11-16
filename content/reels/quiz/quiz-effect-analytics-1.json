@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-effect-analytics-1",
+  "topic": "Side Effects",
+  "concept": "effect-analytics",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "analytics",
+    "strict-mode"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#sending-analytics",
+  "question": "True or false: the docs recommend adding a ref so logVisit runs only once in development.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: the docs recommend adding a ref so log visit runs only once in development.",
+  "explanation": "False. Keep the code as is. The double log is dev-only and invisible to users. Production logs once.",
+  "explainSay": "False. Keep it as is. Production only logs once."
+}

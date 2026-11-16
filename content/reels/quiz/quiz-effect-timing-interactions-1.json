@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-effect-timing-interactions-1",
+  "topic": "Side Effects",
+  "concept": "effect-timing-interactions",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "useEffect",
+    "timing",
+    "paint"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useEffect#caveats",
+  "question": "True or false: an Effect caused by a click may run before the browser paints.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: an Effect caused by a click may run before the browser paints.",
+  "explanation": "True. For interactions, React may run the Effect before paint so the event system can observe its result.",
+  "explainSay": "True. After an interaction, React may run it before paint."
+}

@@ -1,0 +1,47 @@
+{
+  "kind": "learn",
+  "id": "adjust-state-during-render",
+  "topic": "Side Effects",
+  "concept": "adjust-state-during-render",
+  "format": "special-use",
+  "level": "advanced",
+  "tags": [
+    "state",
+    "rendering",
+    "useEffect"
+  ],
+  "sourceUrl": "https://react.dev/learn/you-might-not-need-an-effect#adjusting-some-state-when-a-prop-changes",
+  "title": "Adjusting some state when a prop changes",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Reset part of the state 🎚️",
+      "say": "When the items prop changes, you want to clear only the selection, not all the state."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 stale render first\nuseEffect(() => {\n  setSelection(null);\n}, [items]);",
+      "highlight": [
+        3
+      ],
+      "say": "In an Effect, the list and its children first render with the stale selection, then everything renders again."
+    },
+    {
+      "type": "code",
+      "code": "const [prevItems, setPrevItems] =\n  useState(items);\nif (items !== prevItems) {\n  setPrevItems(items);\n  setSelection(null);\n}",
+      "highlight": [
+        3,
+        5
+      ],
+      "say": "Better: store the previous items, and adjust state during render. React re-renders right away, before the children render the stale value. The condition prevents a loop."
+    },
+    {
+      "type": "code",
+      "code": "// ✅ best: nothing to adjust\nconst selection = items.find(\n  i => i.id === selectedId\n) ?? null;",
+      "highlight": [
+        2
+      ],
+      "say": "Best of all: store the selected ID and calculate the selection. Most components should not need adjusting at all."
+    }
+  ]
+}

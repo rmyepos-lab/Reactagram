@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-effects-client-only-2",
+  "topic": "Side Effects",
+  "concept": "effects-client-only",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "ssr",
+    "server"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useEffect#caveats",
+  "question": "Reading window.innerWidth crashes during server rendering. Where is it safe to read?",
+  "options": [
+    "At the top of the component body",
+    "Inside a useEffect",
+    "In useState(window.innerWidth)"
+  ],
+  "answer": 1,
+  "say": "Reading window dot inner width crashes during server rendering. Where is it safe to read it?",
+  "explanation": "Effects only run on the client, so browser APIs like window are available there. Render code also runs on the server.",
+  "explainSay": "Inside an Effect. Effects only run in the browser."
+}

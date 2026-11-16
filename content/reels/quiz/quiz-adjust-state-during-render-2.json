@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-adjust-state-during-render-2",
+  "topic": "Side Effects",
+  "concept": "adjust-state-during-render",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "state",
+    "rendering",
+    "useEffect"
+  ],
+  "sourceUrl": "https://react.dev/learn/you-might-not-need-an-effect#adjusting-some-state-when-a-prop-changes",
+  "question": "True or false: during render, you may set another component's state with this pattern.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: during render, you may set another component’s state with this pattern.",
+  "explanation": "False. React only lets you update the same component's state during render. Updating another component errors.",
+  "explainSay": "False. Only the same component’s state can be set during render."
+}

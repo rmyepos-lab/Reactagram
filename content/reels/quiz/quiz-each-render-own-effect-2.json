@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-each-render-own-effect-2",
+  "topic": "Side Effects",
+  "concept": "each-render-own-effect",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "useEffect",
+    "rendering",
+    "snapshot"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#each-render-has-its-own-effects",
+  "question": "True or false: the cleanup that runs uses the values from the render whose Effect it belongs to.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: the cleanup that runs uses the values from the render whose Effect it belongs to.",
+  "explanation": "True. Each Effect closes over its own render's values, so the general cleanup disconnects from \"general\".",
+  "explainSay": "True. Each cleanup sees the values from its own render."
+}

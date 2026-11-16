@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "effects-client-only",
+  "topic": "Side Effects",
+  "concept": "effects-client-only",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "ssr",
+    "server"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useEffect#caveats",
+  "title": "Effects run only in the browser",
+  "slides": [
+    {
+      "type": "title",
+      "text": "No Effects on the server 🖥️",
+      "say": "With server rendering, React renders your components to HTML on the server. But it skips every Effect there."
+    },
+    {
+      "type": "code",
+      "code": "function Clock() {\n  const [now, setNow] = useState(null);\n  useEffect(() => {\n    setNow(new Date());\n  }, []);\n  return <p>{now ? now.toString() : \"…\"}</p>;\n}",
+      "highlight": [
+        3,
+        6
+      ],
+      "say": "On the server, this Effect never runs, so the HTML shows the placeholder. In the browser, the Effect runs and fills in the time."
+    },
+    {
+      "type": "text",
+      "text": "Browser-only APIs like window and localStorage are safe inside Effects.",
+      "say": "That makes Effects a safe place for browser only APIs, like window or local storage."
+    },
+    {
+      "type": "text",
+      "text": "Downside: data fetched in an Effect is never in the server HTML.",
+      "say": "It is also why data fetched in an Effect never appears in the server HTML. The first paint only shows a loading state."
+    }
+  ]
+}

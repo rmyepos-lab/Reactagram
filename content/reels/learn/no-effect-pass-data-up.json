@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "no-effect-pass-data-up",
+  "topic": "Side Effects",
+  "concept": "no-effect-pass-data-up",
+  "format": "pitfall",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "data-flow",
+    "props"
+  ],
+  "sourceUrl": "https://react.dev/learn/you-might-not-need-an-effect#passing-data-to-the-parent",
+  "title": "Don't pass fetched data up from a child Effect",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Data flowing up? 🔼",
+      "say": "A child fetches data, then hands it to the parent from an Effect. It works, but it breaks React’s data flow."
+    },
+    {
+      "type": "code",
+      "code": "function Child({ onFetched }) {\n  const data = useSomeAPI();\n  // 🔴 passing data up\n  useEffect(() => {\n    if (data) onFetched(data);\n  }, [onFetched, data]);\n}",
+      "highlight": [
+        5
+      ],
+      "say": "When children update their parent’s state from Effects, it is very hard to trace where wrong data came from."
+    },
+    {
+      "type": "code",
+      "code": "function Parent() {\n  const data = useSomeAPI();\n  // ✅ pass it down\n  return <Child data={data} />;\n}",
+      "highlight": [
+        2,
+        4
+      ],
+      "say": "Both need the data, so let the parent fetch it and pass it down. Data flows from parent to child."
+    },
+    {
+      "type": "text",
+      "text": "Down is predictable: follow the props up to find the source.",
+      "say": "When data flows down, you can always trace a bug by walking up the component chain."
+    }
+  ]
+}

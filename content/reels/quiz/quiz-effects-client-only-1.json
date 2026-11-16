@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-effects-client-only-1",
+  "topic": "Side Effects",
+  "concept": "effects-client-only",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "ssr",
+    "server"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useEffect#caveats",
+  "question": "With server rendering, what does the server HTML show for <Clock />?",
+  "code": "const [now, setNow] = useState(null);\nuseEffect(() => setNow(new Date()), []);\nreturn <p>{now ? \"time\" : \"loading\"}</p>;",
+  "options": [
+    "time",
+    "loading",
+    "Nothing"
+  ],
+  "answer": 1,
+  "say": "With server rendering, what does the server HTML show for this Clock?",
+  "explanation": "The Effect does not run during server rendering, so now stays null and the HTML shows \"loading\".",
+  "explainSay": "Loading. The Effect never runs on the server, so now stays null."
+}

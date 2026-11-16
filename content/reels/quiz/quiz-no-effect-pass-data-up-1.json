@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-no-effect-pass-data-up-1",
+  "topic": "Side Effects",
+  "concept": "no-effect-pass-data-up",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "data-flow",
+    "props"
+  ],
+  "sourceUrl": "https://react.dev/learn/you-might-not-need-an-effect#passing-data-to-the-parent",
+  "question": "Parent and Child both need the user data. Best structure?",
+  "options": [
+    "Child fetches and calls onFetched in an Effect",
+    "Parent fetches and passes data to Child",
+    "Both fetch it separately"
+  ],
+  "answer": 1,
+  "say": "Parent and Child both need the user data. What is the best structure?",
+  "explanation": "Let the parent fetch and pass data down. Passing data up from a child Effect makes the data flow hard to trace.",
+  "explainSay": "The parent fetches and passes it down to the child."
+}
