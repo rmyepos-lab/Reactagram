@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-reset-state-with-key-1",
+  "topic": "State Structure & Sharing",
+  "concept": "reset-state-with-key",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "key",
+    "reset"
+  ],
+  "sourceUrl": "https://react.dev/learn/preserving-and-resetting-state#option-2-resetting-state-with-a-key",
+  "question": "Taylor's score is 3. You switch to Sarah. What score does Sarah's Counter show?",
+  "code": "{isPlayerA ? (\n  <Counter key=\"Taylor\" person=\"Taylor\" />\n) : (\n  <Counter key=\"Sarah\" person=\"Sarah\" />\n)}",
+  "options": [
+    "3",
+    "0",
+    "undefined"
+  ],
+  "answer": 1,
+  "say": "Taylor’s score is three. You switch to Sarah. What score does Sarah’s counter show?",
+  "explanation": "Different keys make React treat them as different components, even at the same position. Sarah's Counter starts fresh at 0.",
+  "explainSay": "Zero. A different key makes it a different component, so its state starts fresh."
+}

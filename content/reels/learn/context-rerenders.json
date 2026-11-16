@@ -1,0 +1,40 @@
+{
+  "kind": "learn",
+  "id": "context-rerenders",
+  "topic": "Context",
+  "concept": "context-rerenders",
+  "format": "concept",
+  "level": "advanced",
+  "tags": [
+    "context",
+    "re-rendering",
+    "performance"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useContext#caveats",
+  "title": "Context changes re-render every reader",
+  "slides": [
+    {
+      "type": "title",
+      "text": "New value → every reader re-renders 📣",
+      "say": "When a provider gets a different value, React re-renders every component that reads that context below it."
+    },
+    {
+      "type": "text",
+      "text": "React compares the old and new value with Object.is.",
+      "say": "React decides whether the value changed by comparing the old and new value with Object dot is."
+    },
+    {
+      "type": "code",
+      "code": "function MyApp() {\n  // new object on every render\n  return (\n    <AuthContext value={{ user, login }}>\n      <Page />\n    </AuthContext>\n  );\n}",
+      "highlight": [
+        4
+      ],
+      "say": "Watch out with objects. This value is a brand new object every time MyApp renders. So every reader re-renders, even if user did not change."
+    },
+    {
+      "type": "text",
+      "text": "memo can’t block it: readers still get fresh context.",
+      "say": "And wrapping children in memo does not stop it. Components that read the context still receive the fresh value."
+    }
+  ]
+}

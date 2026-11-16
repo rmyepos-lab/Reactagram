@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-context-rerenders-1",
+  "topic": "Context",
+  "concept": "context-rerenders",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "context",
+    "re-rendering",
+    "performance"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useContext#caveats",
+  "question": "True or false: wrapping a component in memo stops it from re-rendering when a context it reads changes.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: wrapping a component in memo stops it from re-rendering when a context it reads changes.",
+  "explanation": "False. Skipping re-renders with memo does not prevent children from receiving fresh context values.",
+  "explainSay": "False. Memo does not block fresh context values."
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-what-is-a-hook-1",
+  "topic": "Hooks",
+  "concept": "what-is-a-hook",
+  "format": "which-hook",
+  "level": "beginner",
+  "tags": [
+    "hooks",
+    "basics"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/hooks",
+  "question": "Which built-in Hook connects a component to an external system?",
+  "options": [
+    "useContext",
+    "useEffect",
+    "useRef"
+  ],
+  "answer": 1,
+  "say": "Which built-in Hook connects a component to an external system?",
+  "explanation": "useEffect connects a component to an external system. useContext reads context, useRef holds a value.",
+  "explainSay": "Use effect. It connects your component to an external system."
+}

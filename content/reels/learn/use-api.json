@@ -1,0 +1,43 @@
+{
+  "kind": "learn",
+  "id": "use-api",
+  "topic": "Hooks",
+  "concept": "use-api",
+  "format": "special-use",
+  "level": "advanced",
+  "tags": [
+    "use",
+    "context",
+    "promises"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/use",
+  "title": "use: read context or a promise, even in an if",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Meet use 🎁",
+      "say": "React has an API called just use. It reads the value of a context or a promise."
+    },
+    {
+      "type": "code",
+      "code": "function HorizontalRule({ show }) {\n  if (show) {\n    const theme = use(ThemeContext);\n    return <hr className={theme} />;\n  }\n  return false;\n}",
+      "highlight": [
+        3
+      ],
+      "say": "Unlike use context, use can be called inside conditions and loops. Here it only reads the theme when show is true."
+    },
+    {
+      "type": "code",
+      "code": "function Message({ messagePromise }) {\n  const content = use(messagePromise);\n  return <p>{content}</p>;\n}",
+      "highlight": [
+        2
+      ],
+      "say": "Pass it a promise, and the component suspends until the promise resolves. Then you get the value."
+    },
+    {
+      "type": "text",
+      "text": "Despite its name, use is not a Hook. Still: only in components or Hooks, never in try/catch.",
+      "say": "Despite its name, use is not a Hook. But it must still be called inside a component or a Hook, and not inside a try catch block."
+    }
+  ]
+}

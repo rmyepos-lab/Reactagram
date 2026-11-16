@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-use-api-2",
+  "topic": "Hooks",
+  "concept": "use-api",
+  "format": "bug-hunt",
+  "level": "advanced",
+  "tags": [
+    "use",
+    "context",
+    "promises"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/use",
+  "question": "What is wrong here?",
+  "code": "function Message({ promise }) {\n  try {\n    const text = use(promise);\n    return <p>{text}</p>;\n  } catch {\n    return <p>Error</p>;\n  }\n}",
+  "options": [
+    "use cannot be called in a try/catch block",
+    "use needs a context, not a promise",
+    "Nothing is wrong"
+  ],
+  "answer": 0,
+  "say": "What is wrong with this code?",
+  "explanation": "use cannot be called inside try-catch. Wrap the component in an Error Boundary to show a fallback on errors.",
+  "explainSay": "Use cannot be called inside try catch. Use an Error Boundary for errors instead."
+}

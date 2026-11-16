@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-hooks-call-order-2",
+  "topic": "Hooks",
+  "concept": "hooks-call-order",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "hooks",
+    "internals",
+    "useState"
+  ],
+  "sourceUrl": "https://react.dev/learn/state-a-components-memory#how-does-react-know-which-state-to-return",
+  "question": "Before each render, where does React set its internal Hook index?",
+  "options": [
+    "0",
+    "The last index used",
+    "The number of Hooks"
+  ],
+  "answer": 0,
+  "say": "Before each render, where does React set its internal Hook index?",
+  "explanation": "Simplified: React keeps an array of state pairs and an index set to 0 before rendering. Each Hook call takes the next pair.",
+  "explainSay": "Zero. Each Hook call then takes the next pair in order."
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-context-rerenders-2",
+  "topic": "Context",
+  "concept": "context-rerenders",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "context",
+    "re-rendering",
+    "performance"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useContext#caveats",
+  "question": "Parent re-renders, but theme stays \"dark\". Do readers of ThemeContext re-render because of context?",
+  "code": "<ThemeContext value=\"dark\">\n  <Page />\n</ThemeContext>",
+  "options": [
+    "Yes, always",
+    "No: \"dark\" is the same value",
+    "Only if they use memo"
+  ],
+  "answer": 1,
+  "say": "The parent re-renders, but the theme stays dark. Do readers re-render because of context?",
+  "explanation": "Object.is(\"dark\", \"dark\") is true, so the context value did not change. A new object literal each render would count as changed.",
+  "explainSay": "No. The same string means no change. A new object every render would be a change, though."
+}

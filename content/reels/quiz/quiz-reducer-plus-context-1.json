@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-reducer-plus-context-1",
+  "topic": "Context",
+  "concept": "reducer-plus-context",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "context",
+    "reducers",
+    "architecture"
+  ],
+  "sourceUrl": "https://react.dev/learn/scaling-up-with-reducer-and-context#combining-a-reducer-with-context",
+  "question": "Where does the tasks state live in the reducer + context pattern?",
+  "options": [
+    "In each component that reads it",
+    "In the top-level component, via useReducer",
+    "Inside the context object"
+  ],
+  "answer": 1,
+  "say": "In the reducer plus context pattern, where does the tasks state actually live?",
+  "explanation": "State still lives in the top component, managed with useReducer. Context only makes tasks and dispatch available below.",
+  "explainSay": "In the top component, with use reducer. Context just makes it reachable below."
+}

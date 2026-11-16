@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-hooks-call-order-1",
+  "topic": "Hooks",
+  "concept": "hooks-call-order",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "hooks",
+    "internals",
+    "useState"
+  ],
+  "sourceUrl": "https://react.dev/learn/state-a-components-memory#how-does-react-know-which-state-to-return",
+  "question": "True or false: React matches each useState call to its state by the variable name.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: React matches each use state call to its state by the variable name.",
+  "explanation": "False. useState gets no identifier. React relies on the call order, using the next state pair on each call.",
+  "explainSay": "False. React uses the order of the calls, not names."
+}

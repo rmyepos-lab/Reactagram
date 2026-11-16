@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-rules-of-hooks-1",
+  "topic": "Hooks",
+  "concept": "rules-of-hooks",
+  "format": "bug-hunt",
+  "level": "beginner",
+  "tags": [
+    "hooks",
+    "rules"
+  ],
+  "sourceUrl": "https://react.dev/reference/rules/rules-of-hooks",
+  "question": "Which line breaks the Rules of Hooks?",
+  "code": "function Form() {\n  const [a, setA] = useState(\"\");\n  function handleClick() {\n    const [b, setB] = useState(\"\");\n  }\n  return <button onClick={handleClick} />;\n}",
+  "options": [
+    "Line 2",
+    "Line 4",
+    "Line 6"
+  ],
+  "answer": 1,
+  "say": "Which line breaks the Rules of Hooks?",
+  "explanation": "Line 4 calls useState inside an event handler. Hooks only run at the top level of a component or custom Hook, while rendering.",
+  "explainSay": "Line four. It calls a Hook inside an event handler. Hooks belong at the top level."
+}
