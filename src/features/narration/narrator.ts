@@ -7,7 +7,8 @@ import narrationJson from '../../../content/narration.json';
 import { narrationUrl, reelLine } from './logic';
 import type { NarrationIndex } from './logic';
 
-const narrationIndex = narrationJson as NarrationIndex;
+// JSON arrays load as number[], not the [offset, duration] pair the index type uses.
+const narrationIndex = narrationJson as unknown as NarrationIndex;
 
 type Cancel = () => void;
 type SpeechEvent = { id: string };
