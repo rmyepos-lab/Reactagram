@@ -1,4 +1,5077 @@
 {
-  "voice": "af_heart",
-  "reels": {}
+ "voice": "af_heart",
+ "reels": {
+  "action-objects": {
+   "file": "af_heart/action-objects-157e5ebe88.mp3",
+   "lines": {
+    "873b0765bd3fc08f": [
+     0,
+     4821
+    ],
+    "5bb1c4378f57e3bc": [
+     5171,
+     13321
+    ],
+    "3f5aca06f2f733eb": [
+     13671,
+     19601
+    ],
+    "ace13181d4f5f5db": [
+     19951,
+     29487
+    ]
+   }
+  },
+  "activity-component": {
+   "file": "af_heart/activity-component-6dd679bc47.mp3",
+   "lines": {
+    "8c0329bc8f7dd9b4": [
+     0,
+     5675
+    ],
+    "13d237a02c32428b": [
+     6025,
+     11230
+    ],
+    "1b191e9f9c5d408f": [
+     11580,
+     20241
+    ],
+    "2df504d1d81b68c8": [
+     20591,
+     27397
+    ]
+   }
+  },
+  "adjust-state-during-render": {
+   "file": "af_heart/adjust-state-during-render-687b0ca48c.mp3",
+   "lines": {
+    "44cb0a3245881af6": [
+     0,
+     4565
+    ],
+    "56b65a41c71967bc": [
+     4915,
+     10825
+    ],
+    "6fd54bae6f398364": [
+     11175,
+     21223
+    ],
+    "1946374401238540": [
+     21573,
+     28485
+    ]
+   }
+  },
+  "app-init-once": {
+   "file": "af_heart/app-init-once-cf72252a19.mp3",
+   "lines": {
+    "068a88b183218892": [
+     0,
+     4096
+    ],
+    "e3df3af8f1ca28fe": [
+     4446,
+     11806
+    ],
+    "dc99096ad341cbf0": [
+     12156,
+     17361
+    ],
+    "a928376588ebf454": [
+     17711,
+     25882
+    ]
+   }
+  },
+  "array-methods-mutate-vs-copy": {
+   "file": "af_heart/array-methods-mutate-vs-copy-57f6ccfe58.mp3",
+   "lines": {
+    "8e812a95790f7892": [
+     0,
+     4715
+    ],
+    "5ce393162f117405": [
+     5065,
+     12062
+    ],
+    "acc97cb091bdf7ce": [
+     12412,
+     16935
+    ],
+    "20a4dbe157c7574a": [
+     17285,
+     22981
+    ]
+   }
+  },
+  "automatic-batching": {
+   "file": "af_heart/automatic-batching-69910c3506.mp3",
+   "lines": {
+    "09bca891818b2f97": [
+     0,
+     4459
+    ],
+    "53a9e7a1416c853e": [
+     4809,
+     11251
+    ],
+    "8f6cb133cbde5217": [
+     11601,
+     19452
+    ],
+    "963fd63983bd2fa4": [
+     19802,
+     24410
+    ]
+   }
+  },
+  "avoid-contradictory-state": {
+   "file": "af_heart/avoid-contradictory-state-9d0071995b.mp3",
+   "lines": {
+    "a661170e79efdc37": [
+     0,
+     3179
+    ],
+    "3e586931fb405f66": [
+     3529,
+     9907
+    ],
+    "fd6c906243109566": [
+     10257,
+     20263
+    ],
+    "e2bea647c340551e": [
+     20613,
+     27034
+    ]
+   }
+  },
+  "avoid-duplicate-state": {
+   "file": "af_heart/avoid-duplicate-state-f811d82bfb.mp3",
+   "lines": {
+    "275696af6c22dc41": [
+     0,
+     3243
+    ],
+    "c82dea6aed8d91f9": [
+     3593,
+     12126
+    ],
+    "206ead2215bb9058": [
+     12476,
+     18812
+    ],
+    "52d094da9dfc5375": [
+     19162,
+     23834
+    ]
+   }
+  },
+  "avoid-redundant-state": {
+   "file": "af_heart/avoid-redundant-state-faf0f323f8.mp3",
+   "lines": {
+    "42c71ef36b63d645": [
+     0,
+     4949
+    ],
+    "c6f8b2b289a82a80": [
+     5299,
+     11721
+    ],
+    "e6661afc5c6efc93": [
+     12071,
+     18940
+    ],
+    "7f5681de46847cc2": [
+     19290,
+     22533
+    ]
+   }
+  },
+  "capture-phase-events": {
+   "file": "af_heart/capture-phase-events-4fc24a58e3.mp3",
+   "lines": {
+    "30af3c8af0bcdc6f": [
+     0,
+     5995
+    ],
+    "5b80b66c91ba0330": [
+     6345,
+     12851
+    ],
+    "c38f60fd51481a1d": [
+     13201,
+     15207
+    ],
+    "20381cd55b190cc9": [
+     15557,
+     19589
+    ],
+    "3afb896996330558": [
+     19939,
+     22456
+    ],
+    "f59aa29fcfeed7e7": [
+     22806,
+     28545
+    ],
+    "58836d4904cf8440": [
+     28895,
+     34655
+    ]
+   }
+  },
+  "children-as-props-optimization": {
+   "file": "af_heart/children-as-props-optimization-9b39e4c92f.mp3",
+   "lines": {
+    "27c8a1cd4a96f9db": [
+     0,
+     5739
+    ],
+    "58d6b2853ce9e8e9": [
+     6089,
+     11422
+    ],
+    "26c3e03181f6111c": [
+     11772,
+     21543
+    ],
+    "7ab903a6a09e0830": [
+     21893,
+     27546
+    ]
+   }
+  },
+  "children-prop": {
+   "file": "af_heart/children-prop-cba4f1ff78.mp3",
+   "lines": {
+    "d93a8480e52d41e3": [
+     0,
+     4864
+    ],
+    "2d9c381a0d233c44": [
+     5214,
+     9225
+    ],
+    "c4563d6ecd5c3ee9": [
+     9575,
+     14844
+    ],
+    "4a27369b3be86790": [
+     15194,
+     22405
+    ]
+   }
+  },
+  "commit-minimal-changes": {
+   "file": "af_heart/commit-minimal-changes-9758b6bbfa.mp3",
+   "lines": {
+    "be1bd3d584bf821a": [
+     0,
+     3904
+    ],
+    "7d8b42b0305d983a": [
+     4254,
+     9630
+    ],
+    "63587d1c84e3bf27": [
+     9980,
+     18599
+    ],
+    "fc4e136e128aac4a": [
+     18949,
+     26693
+    ]
+   }
+  },
+  "compiler-and-manual-memo": {
+   "file": "af_heart/compiler-and-manual-memo-cd7cd035f1.mp3",
+   "lines": {
+    "d94b01ee9db0624e": [
+     0,
+     7232
+    ],
+    "8460eeaf93fe8f12": [
+     7582,
+     16030
+    ],
+    "7812fedfdea88fcf": [
+     16380,
+     26407
+    ],
+    "ac004daf742283ba": [
+     26757,
+     38298
+    ],
+    "db850832ad7c2584": [
+     38648,
+     46051
+    ]
+   }
+  },
+  "compiler-directives": {
+   "file": "af_heart/compiler-directives-e3097afe13.mp3",
+   "lines": {
+    "8a687d2f7af404eb": [
+     0,
+     5739
+    ],
+    "4b127d93940541a6": [
+     6089,
+     14601
+    ],
+    "04b0a908d8858881": [
+     14951,
+     22673
+    ],
+    "d865fb5d210406c5": [
+     23023,
+     31578
+    ],
+    "a37338ef9c59e871": [
+     31928,
+     38648
+    ]
+   }
+  },
+  "compiler-incremental-adoption": {
+   "file": "af_heart/compiler-incremental-adoption-8e4bdb2037.mp3",
+   "lines": {
+    "577923b43037d880": [
+     0,
+     6357
+    ],
+    "3e1c6432af874e1d": [
+     6707,
+     14238
+    ],
+    "34177b52a9d325e5": [
+     14588,
+     20647
+    ],
+    "be30541ef61aa68b": [
+     20997,
+     33967
+    ],
+    "8c4032f87a3b5ba0": [
+     34317,
+     41485
+    ]
+   }
+  },
+  "compiler-needs-rules": {
+   "file": "af_heart/compiler-needs-rules-e29c781a08.mp3",
+   "lines": {
+    "af7ce1b98b0637ac": [
+     0,
+     5867
+    ],
+    "61dcbbdc4a157162": [
+     6217,
+     15987
+    ],
+    "6d5e8e6a5819712e": [
+     16337,
+     23996
+    ],
+    "9b8803b039ea70f9": [
+     24346,
+     36293
+    ],
+    "fe37304d1dba6fab": [
+     36643,
+     46136
+    ]
+   }
+  },
+  "component-names-capitalized": {
+   "file": "af_heart/component-names-capitalized-6bc1b30832.mp3",
+   "lines": {
+    "ccd21672187b8e7b": [
+     0,
+     4395
+    ],
+    "67e3c014bbbd55fc": [
+     4745,
+     14579
+    ],
+    "c7877957a10f8ed8": [
+     14929,
+     23655
+    ],
+    "e10faa2898c717d2": [
+     24005,
+     27610
+    ]
+   }
+  },
+  "conditional-and-zero-pitfall": {
+   "file": "af_heart/conditional-and-zero-pitfall-122adb5df3.mp3",
+   "lines": {
+    "f9d6c4b3883655f6": [
+     0,
+     5291
+    ],
+    "b2face2d6c9e9e95": [
+     5641,
+     11358
+    ],
+    "0e9c7cff67e487d3": [
+     11708,
+     18471
+    ],
+    "6d1e41ee1b15f14b": [
+     18821,
+     23215
+    ]
+   }
+  },
+  "conditional-if": {
+   "file": "af_heart/conditional-if-17c0d1b013.mp3",
+   "lines": {
+    "b6b47ef36dc0a85b": [
+     0,
+     5504
+    ],
+    "9bd26bddd8c27711": [
+     5854,
+     11465
+    ],
+    "447c4a5a01258c40": [
+     11815,
+     19857
+    ],
+    "94269cb7581754f3": [
+     20207,
+     25903
+    ]
+   }
+  },
+  "conditional-ternary": {
+   "file": "af_heart/conditional-ternary-97f500e488.mp3",
+   "lines": {
+    "a9adf920b4768f91": [
+     0,
+     6101
+    ],
+    "14b2a910804f4922": [
+     6451,
+     11998
+    ],
+    "9ab3b8e640c9a8c9": [
+     12348,
+     18215
+    ],
+    "0aa6a82c27d610c2": [
+     18565,
+     27077
+    ]
+   }
+  },
+  "context-as-provider-19": {
+   "file": "af_heart/context-as-provider-19-9afbbc4272.mp3",
+   "lines": {
+    "030f757165236114": [
+     0,
+     2731
+    ],
+    "507209c42f2ebe26": [
+     3081,
+     6131
+    ],
+    "51f53a4e8692390f": [
+     6481,
+     11089
+    ],
+    "e63354754ba1eee7": [
+     11439,
+     19162
+    ]
+   }
+  },
+  "context-before-you-use-it": {
+   "file": "af_heart/context-before-you-use-it-82157c008f.mp3",
+   "lines": {
+    "6490d6308013c270": [
+     0,
+     6400
+    ],
+    "39fbe3e769f04834": [
+     6750,
+     15241
+    ],
+    "9b1d26bec2302d55": [
+     15591,
+     25233
+    ],
+    "ca262a0023dfe4bd": [
+     25583,
+     32879
+    ]
+   }
+  },
+  "context-closest-provider": {
+   "file": "af_heart/context-closest-provider-72c58fd3b0.mp3",
+   "lines": {
+    "067d44ee49c61aac": [
+     0,
+     5077
+    ],
+    "eef998a858278066": [
+     5427,
+     14131
+    ],
+    "5ce6bd024802ed62": [
+     14481,
+     21436
+    ],
+    "67d55b861caacc81": [
+     21786,
+     30917
+    ]
+   }
+  },
+  "context-default-value": {
+   "file": "af_heart/context-default-value-428c082235.mp3",
+   "lines": {
+    "60246c6f682b550e": [
+     0,
+     6528
+    ],
+    "92f42b1c8bbcf6e5": [
+     6878,
+     14451
+    ],
+    "5669ab9c5224aed1": [
+     14801,
+     23740
+    ],
+    "1e6f82ccc3f4896d": [
+     24090,
+     29509
+    ]
+   }
+  },
+  "context-rerenders": {
+   "file": "af_heart/context-rerenders-546d9457b5.mp3",
+   "lines": {
+    "eb47e0797f2680b3": [
+     0,
+     6059
+    ],
+    "d860bcae8d43a38a": [
+     6409,
+     12233
+    ],
+    "bb126673f4930146": [
+     12583,
+     21671
+    ],
+    "f490d2918f802b4d": [
+     22021,
+     28655
+    ]
+   }
+  },
+  "controlled-inputs": {
+   "file": "af_heart/controlled-inputs-752cb4bac0.mp3",
+   "lines": {
+    "5a34fce57c1144a6": [
+     0,
+     5077
+    ],
+    "df880f32aeeae1fa": [
+     5427,
+     10334
+    ],
+    "0103319130b29a62": [
+     10684,
+     18535
+    ],
+    "eacd489bef7d6ebb": [
+     18885,
+     23535
+    ]
+   }
+  },
+  "controlled-vs-uncontrolled": {
+   "file": "af_heart/controlled-vs-uncontrolled-9892843995.mp3",
+   "lines": {
+    "3fe326845cca1fa3": [
+     0,
+     6016
+    ],
+    "027a6d0ef316358d": [
+     6366,
+     15134
+    ],
+    "8c6fc734bf1e468d": [
+     15484,
+     24913
+    ],
+    "22119c58d10fd192": [
+     25263,
+     30938
+    ]
+   }
+  },
+  "create-and-provide-context": {
+   "file": "af_heart/create-and-provide-context-9b517cfe88.mp3",
+   "lines": {
+    "47e58381d2836618": [
+     0,
+     4821
+    ],
+    "42c244d89d6e3994": [
+     5171,
+     12126
+    ],
+    "162fb2cd03d8c193": [
+     12476,
+     21031
+    ],
+    "f50be6405be21439": [
+     21381,
+     23770
+    ]
+   }
+  },
+  "create-portal": {
+   "file": "af_heart/create-portal-c51252044c.mp3",
+   "lines": {
+    "e41cc52bf80e84c2": [
+     0,
+     6165
+    ],
+    "f0233e348f5a4a62": [
+     6515,
+     15731
+    ],
+    "28bf2fca5e7c3f0c": [
+     16081,
+     25404
+    ],
+    "55035f215c490e35": [
+     25754,
+     29850
+    ]
+   }
+  },
+  "custom-hook-naming": {
+   "file": "af_heart/custom-hook-naming-ff627916ba.mp3",
+   "lines": {
+    "5ec0fd7e4d2d5175": [
+     0,
+     5056
+    ],
+    "1b5ab63d124650ec": [
+     5406,
+     14067
+    ],
+    "fc5fe32b5ff6fb07": [
+     14417,
+     20924
+    ],
+    "d7194568c7ea0590": [
+     21274,
+     26031
+    ]
+   }
+  },
+  "custom-hook-when": {
+   "file": "af_heart/custom-hook-when-d946e59765.mp3",
+   "lines": {
+    "a1d35654db570eed": [
+     0,
+     7189
+    ],
+    "6a89bdafba862c0f": [
+     7539,
+     14451
+    ],
+    "0f4a4b8107bed147": [
+     14801,
+     23313
+    ],
+    "8d6d2a4178616d31": [
+     23663,
+     33093
+    ]
+   }
+  },
+  "custom-hooks-share-logic-not-state": {
+   "file": "af_heart/custom-hooks-share-logic-not-state-78d676b50a.mp3",
+   "lines": {
+    "238bf6778e5e1437": [
+     0,
+     3861
+    ],
+    "f2305620f30cc6ca": [
+     4211,
+     7049
+    ],
+    "07a30df94f3962e0": [
+     7399,
+     15100
+    ],
+    "84f0c5d5eab524e1": [
+     15450,
+     21701
+    ]
+   }
+  },
+  "declarative-ui-states": {
+   "file": "af_heart/declarative-ui-states-a140023462.mp3",
+   "lines": {
+    "b6e45255f0609e7f": [
+     0,
+     8725
+    ],
+    "34a0467c852dde48": [
+     9075,
+     18377
+    ],
+    "578ef7458476da61": [
+     18727,
+     25575
+    ],
+    "c815b7d9bb1deffe": [
+     25925,
+     32474
+    ],
+    "dba0e74b2f147fe7": [
+     32824,
+     42381
+    ]
+   }
+  },
+  "default-prop-values": {
+   "file": "af_heart/default-prop-values-6281388f62.mp3",
+   "lines": {
+    "4f863f17505c4308": [
+     0,
+     3520
+    ],
+    "83895950e3a39358": [
+     3870,
+     10995
+    ],
+    "f80c300d181ead6b": [
+     11345,
+     20305
+    ],
+    "256d568d189d0dfb": [
+     20655,
+     25797
+    ]
+   }
+  },
+  "deferred-vs-debounce": {
+   "file": "af_heart/deferred-vs-debounce-a8ff1c2d1e.mp3",
+   "lines": {
+    "8f2d538634fa6efc": [
+     0,
+     7744
+    ],
+    "c4af3467f5bb7cab": [
+     8094,
+     17694
+    ],
+    "99e657d8f20bee87": [
+     18044,
+     26535
+    ],
+    "50225886f68edcc3": [
+     26885,
+     34053
+    ]
+   }
+  },
+  "dependency-array": {
+   "file": "af_heart/dependency-array-bceb9a82fa.mp3",
+   "lines": {
+    "84bcaa8dee572a0a": [
+     0,
+     4608
+    ],
+    "3f75e96e6ff33379": [
+     4958,
+     8286
+    ],
+    "63eecaf5529dcd62": [
+     8636,
+     12540
+    ],
+    "737fcdc00e065f69": [
+     12890,
+     18181
+    ],
+    "90bf7fc0a8c86b57": [
+     18531,
+     24931
+    ]
+   }
+  },
+  "deps-compared-with-object-is": {
+   "file": "af_heart/deps-compared-with-object-is-d6e813a9b1.mp3",
+   "lines": {
+    "dea04484f679c9ec": [
+     0,
+     5504
+    ],
+    "63643dd0e543a29b": [
+     5854,
+     12809
+    ],
+    "574bd0e666aa6391": [
+     13159,
+     22609
+    ],
+    "149879fb5716622a": [
+     22959,
+     26351
+    ]
+   }
+  },
+  "destructuring-props": {
+   "file": "af_heart/destructuring-props-63ac206df8.mp3",
+   "lines": {
+    "ee1478e8610ac475": [
+     0,
+     5333
+    ],
+    "00f25acf68a263d5": [
+     5683,
+     12083
+    ],
+    "d39e1b354af9f8d9": [
+     12433,
+     18983
+    ],
+    "4998417e7a35af56": [
+     19333,
+     23322
+    ]
+   }
+  },
+  "different-type-resets-state": {
+   "file": "af_heart/different-type-resets-state-950596584a.mp3",
+   "lines": {
+    "f8c19fad601f9ab0": [
+     0,
+     4971
+    ],
+    "4510011094d8a428": [
+     5321,
+     11529
+    ],
+    "ed50a5ce3ad941ec": [
+     11879,
+     20028
+    ],
+    "61029e15cbe80948": [
+     20378,
+     26821
+    ]
+   }
+  },
+  "diffing-element-types": {
+   "file": "af_heart/diffing-element-types-784dbed68c.mp3",
+   "lines": {
+    "16920861067827a3": [
+     0,
+     4565
+    ],
+    "e6eced89891b6560": [
+     4915,
+     12595
+    ],
+    "b959fa3e50cde637": [
+     12945,
+     20241
+    ],
+    "cc4f219ff380118e": [
+     20591,
+     27930
+    ]
+   }
+  },
+  "diffing-keys": {
+   "file": "af_heart/diffing-keys-171f44e279.mp3",
+   "lines": {
+    "89aa6db5972caa8c": [
+     0,
+     3392
+    ],
+    "08eaaf2d4b4a115d": [
+     3742,
+     10547
+    ],
+    "207e6285dc93ed47": [
+     10897,
+     20177
+    ],
+    "45564ce928c9fd21": [
+     20527,
+     28975
+    ]
+   }
+  },
+  "dispatch-snapshot": {
+   "file": "af_heart/dispatch-snapshot-a541d4429f.mp3",
+   "lines": {
+    "58e761583af18cbf": [
+     0,
+     4352
+    ],
+    "3008d82b4edf3c9a": [
+     4702,
+     10099
+    ],
+    "00312442df22a1f8": [
+     10449,
+     16743
+    ],
+    "5cea92a35bb7c93c": [
+     17093,
+     21679
+    ]
+   }
+  },
+  "dont-fight-react-dom": {
+   "file": "af_heart/dont-fight-react-dom-fc69d8f4d5.mp3",
+   "lines": {
+    "4d8cdb028755c1d1": [
+     0,
+     5696
+    ],
+    "01f98e577eccb6a0": [
+     6046,
+     17033
+    ],
+    "13de9fc1fe12b09d": [
+     17383,
+     25105
+    ],
+    "d74c5c3f4f38631f": [
+     25455,
+     33114
+    ]
+   }
+  },
+  "dont-mirror-props": {
+   "file": "af_heart/dont-mirror-props-e4d248037d.mp3",
+   "lines": {
+    "9ff7beea554b6d26": [
+     0,
+     3691
+    ],
+    "09633baac1a7c6fd": [
+     4041,
+     10910
+    ],
+    "9ffd88be6a629f38": [
+     11260,
+     16721
+    ],
+    "7d2b2f613ac6e6d7": [
+     17071,
+     24815
+    ]
+   }
+  },
+  "dont-read-refs-in-render": {
+   "file": "af_heart/dont-read-refs-in-render-b6a5bf583c.mp3",
+   "lines": {
+    "b5ad5e05158ae2e7": [
+     0,
+     4331
+    ],
+    "e4adcdfcb69a8021": [
+     4681,
+     11827
+    ],
+    "7e828643e9490db4": [
+     12177,
+     18641
+    ],
+    "d2a7cbf9fa969039": [
+     18991,
+     25690
+    ]
+   }
+  },
+  "dont-skip-dev-double-with-ref": {
+   "file": "af_heart/dont-skip-dev-double-with-ref-eb7298e161.mp3",
+   "lines": {
+    "8141d81bdc39b036": [
+     0,
+     6677
+    ],
+    "da223ba4a104cf4a": [
+     7027,
+     14899
+    ],
+    "40a6933a5a91ca4d": [
+     15249,
+     20689
+    ],
+    "4b109fd6afb262e4": [
+     21039,
+     28037
+    ]
+   }
+  },
+  "dont-suppress-linter": {
+   "file": "af_heart/dont-suppress-linter-fc1f178f46.mp3",
+   "lines": {
+    "0dfc54679224f3d0": [
+     0,
+     4971
+    ],
+    "5508771f1437cef6": [
+     5321,
+     10889
+    ],
+    "b21f5974bad78f0c": [
+     11239,
+     19260
+    ],
+    "648cdc6028a010a9": [
+     19610,
+     26799
+    ]
+   }
+  },
+  "each-render-own-effect": {
+   "file": "af_heart/each-render-own-effect-7a58c7a723.mp3",
+   "lines": {
+    "d4b8f0eedccfea4c": [
+     0,
+     6037
+    ],
+    "7ef39f44a6b85c87": [
+     6387,
+     12659
+    ],
+    "4ef40e668118e860": [
+     13009,
+     20476
+    ],
+    "aa264547c7a9be0b": [
+     20826,
+     29402
+    ]
+   }
+  },
+  "effect-analytics": {
+   "file": "af_heart/effect-analytics-34da39bdf2.mp3",
+   "lines": {
+    "1a1f4f6defbd95b2": [
+     0,
+     4864
+    ],
+    "9656de8ab0c60e33": [
+     5214,
+     11785
+    ],
+    "538e388bac0c0049": [
+     12135,
+     21393
+    ],
+    "f6e938f8f1eeb15c": [
+     21743,
+     28634
+    ]
+   }
+  },
+  "effect-animations": {
+   "file": "af_heart/effect-animations-dfce224054.mp3",
+   "lines": {
+    "9ce0e4ce8f3beb29": [
+     0,
+     3584
+    ],
+    "5abfe15d1eb093af": [
+     3934,
+     8947
+    ],
+    "df6244b5a8403ce9": [
+     9297,
+     15399
+    ],
+    "33b07b30bd377be3": [
+     15749,
+     20933
+    ]
+   }
+  },
+  "effect-cleanup": {
+   "file": "af_heart/effect-cleanup-0a177ecd74.mp3",
+   "lines": {
+    "df9e31d7d354925f": [
+     0,
+     4437
+    ],
+    "bb4953268eb06d97": [
+     4787,
+     10355
+    ],
+    "3dc81c4ab6e6d106": [
+     10705,
+     12476
+    ],
+    "e347399a874546c8": [
+     12826,
+     15279
+    ],
+    "ae2f43b1c09b8c65": [
+     15629,
+     21709
+    ],
+    "651b52eac983374f": [
+     22059,
+     25579
+    ],
+    "c858913eca385cc8": [
+     25929,
+     31519
+    ]
+   }
+  },
+  "effect-event-latest-values": {
+   "file": "af_heart/effect-event-latest-values-7784da9f2a.mp3",
+   "lines": {
+    "12b8eecf2413d7f9": [
+     0,
+     4565
+    ],
+    "8355aea2dbb9d270": [
+     4915,
+     11593
+    ],
+    "96f2d7ddafe98bd7": [
+     11943,
+     19388
+    ],
+    "8d7b7a781979c5e7": [
+     19738,
+     28655
+    ]
+   }
+  },
+  "effect-event-limitations": {
+   "file": "af_heart/effect-event-limitations-ffbb66895b.mp3",
+   "lines": {
+    "c9483a87c19ac435": [
+     0,
+     2517
+    ],
+    "8dd81cc7dccdca22": [
+     2867,
+     7838
+    ],
+    "ad97510063da7925": [
+     8188,
+     14972
+    ],
+    "2c8af53291390037": [
+     15322,
+     22639
+    ]
+   }
+  },
+  "effect-event-listeners": {
+   "file": "af_heart/effect-event-listeners-2156d55e25.mp3",
+   "lines": {
+    "9ef12d0e208cf603": [
+     0,
+     4203
+    ],
+    "131d0cb0904402a4": [
+     4553,
+     8499
+    ],
+    "99b982f37e1ef671": [
+     8849,
+     16337
+    ],
+    "d1e675f81c27f41c": [
+     16687,
+     20997
+    ]
+   }
+  },
+  "effect-event-not-to-skip-deps": {
+   "file": "af_heart/effect-event-not-to-skip-deps-4f5da864f6.mp3",
+   "lines": {
+    "1303f910a2515bd8": [
+     0,
+     4928
+    ],
+    "1ffffffe13ecd8ea": [
+     5278,
+     11977
+    ],
+    "a4c4421eaafc2390": [
+     12327,
+     15868
+    ],
+    "3b88ddbe7ad744d0": [
+     16218,
+     21039
+    ]
+   }
+  },
+  "effect-event-prop-callbacks": {
+   "file": "af_heart/effect-event-prop-callbacks-b6258e8e6f.mp3",
+   "lines": {
+    "58d60ba00e33eb60": [
+     0,
+     4800
+    ],
+    "e7adb1c643e2f34d": [
+     5150,
+     10185
+    ],
+    "e1fee239f4ba309e": [
+     10535,
+     16380
+    ],
+    "479dccb57d3fe12e": [
+     16730,
+     23599
+    ]
+   }
+  },
+  "effect-infinite-loop": {
+   "file": "af_heart/effect-infinite-loop-123475b201.mp3",
+   "lines": {
+    "5fe194d9af639598": [
+     0,
+     5717
+    ],
+    "e48734294b91a456": [
+     6067,
+     13299
+    ],
+    "852e66c4577620b0": [
+     13649,
+     21116
+    ],
+    "e99e69f89f067b6d": [
+     21466,
+     30959
+    ]
+   }
+  },
+  "effect-lifecycle": {
+   "file": "af_heart/effect-lifecycle-e3b6b95371.mp3",
+   "lines": {
+    "8174dc48ea51b7ef": [
+     0,
+     7168
+    ],
+    "7e773abc00e9f882": [
+     7518,
+     11145
+    ],
+    "6c7c628589362d9a": [
+     11495,
+     13820
+    ],
+    "78ba06fccdf50fbd": [
+     14170,
+     19695
+    ],
+    "2d2f6079235bbc57": [
+     20045,
+     23523
+    ],
+    "32721059a8edf34e": [
+     23873,
+     27073
+    ],
+    "ef510e3119bc3b30": [
+     27423,
+     35273
+    ]
+   }
+  },
+  "effect-non-react-widgets": {
+   "file": "af_heart/effect-non-react-widgets-83e988014d.mp3",
+   "lines": {
+    "4fc2bf089391f5c3": [
+     0,
+     6443
+    ],
+    "cf55b2f73d584807": [
+     6793,
+     14195
+    ],
+    "193e288e5de3e23a": [
+     14545,
+     20775
+    ],
+    "0430c6a3dc9729f9": [
+     21125,
+     25925
+    ]
+   }
+  },
+  "effect-timing-interactions": {
+   "file": "af_heart/effect-timing-interactions-2e8ae1a605.mp3",
+   "lines": {
+    "07db0545cbda3fed": [
+     0,
+     3968
+    ],
+    "b876a9fea66f0a4c": [
+     4318,
+     11187
+    ],
+    "664cc129fc6bf9f5": [
+     11537,
+     19431
+    ],
+    "b79455c77e7437df": [
+     19781,
+     27994
+    ]
+   }
+  },
+  "effects-after-paint": {
+   "file": "af_heart/effects-after-paint-bcf20590c7.mp3",
+   "lines": {
+    "f7453f53966fb799": [
+     0,
+     4096
+    ],
+    "88c74aa53e3ea07f": [
+     4446,
+     6835
+    ],
+    "496d7810ba0e5519": [
+     7185,
+     10492
+    ],
+    "4ecf668a5c90ece4": [
+     10842,
+     16303
+    ],
+    "1f0e24db23031464": [
+     16653,
+     20963
+    ],
+    "3aa2a40ab314d940": [
+     21313,
+     30422
+    ]
+   }
+  },
+  "effects-client-only": {
+   "file": "af_heart/effects-client-only-383a2b6307.mp3",
+   "lines": {
+    "5cd4481760d90656": [
+     0,
+     6741
+    ],
+    "7689f93f5bf3787d": [
+     7091,
+     15411
+    ],
+    "3a0966f7a4b44fd4": [
+     15761,
+     21436
+    ],
+    "f59b61e392f4e784": [
+     21786,
+     29509
+    ]
+   }
+  },
+  "effects-run-twice-dev": {
+   "file": "af_heart/effects-run-twice-dev-3373e178c4.mp3",
+   "lines": {
+    "074eca299a656d0a": [
+     0,
+     5483
+    ],
+    "385e106cee72e026": [
+     5833,
+     11742
+    ],
+    "e514dba58903a2c1": [
+     12092,
+     18300
+    ],
+    "c7babf612ad9bc6d": [
+     18650,
+     26159
+    ],
+    "22b0211f3f61b95d": [
+     26509,
+     32931
+    ]
+   }
+  },
+  "error-boundaries": {
+   "file": "af_heart/error-boundaries-ed25d53c08.mp3",
+   "lines": {
+    "316bbabebb6474c5": [
+     0,
+     7573
+    ],
+    "1229c334f6abc304": [
+     7923,
+     15027
+    ],
+    "e31b4df3dca6969d": [
+     15377,
+     23015
+    ],
+    "cfe1929b0435ec5a": [
+     23365,
+     33754
+    ]
+   }
+  },
+  "event-delegation": {
+   "file": "af_heart/event-delegation-c43e57e4c2.mp3",
+   "lines": {
+    "49f3757858b8860f": [
+     0,
+     4416
+    ],
+    "8724b0cd20d03035": [
+     4766,
+     13171
+    ],
+    "111094c1d1e377e3": [
+     13521,
+     21713
+    ],
+    "a1d12d37bff5becc": [
+     22063,
+     30447
+    ]
+   }
+  },
+  "event-handlers": {
+   "file": "af_heart/event-handlers-3e8d09e360.mp3",
+   "lines": {
+    "fe4dd86d8fb3c9fc": [
+     0,
+     5419
+    ],
+    "df3d3d5e86f348e0": [
+     5769,
+     12531
+    ],
+    "1673b72bec9e2dd7": [
+     12881,
+     18449
+    ],
+    "7fd80e874fee881d": [
+     18799,
+     24154
+    ]
+   }
+  },
+  "event-propagation": {
+   "file": "af_heart/event-propagation-f216ff7042.mp3",
+   "lines": {
+    "3def52729b2bdd69": [
+     0,
+     4544
+    ],
+    "86724f721297cfba": [
+     4894,
+     10142
+    ],
+    "c4b7eb9f4783dc5a": [
+     10492,
+     18172
+    ],
+    "5786222c5c9b16e8": [
+     18522,
+     25114
+    ]
+   }
+  },
+  "event-vs-effect-choice": {
+   "file": "af_heart/event-vs-effect-choice-04e5ebb37e.mp3",
+   "lines": {
+    "1c39c4bd4089906f": [
+     0,
+     7765
+    ],
+    "14c2d7aa5b5993dc": [
+     8115,
+     17267
+    ],
+    "1f4c1fc32ea73f5f": [
+     17617,
+     24167
+    ],
+    "868e6ae3107b8d3d": [
+     24517,
+     32005
+    ]
+   }
+  },
+  "extract-custom-hook": {
+   "file": "af_heart/extract-custom-hook-0beb6ff5f6.mp3",
+   "lines": {
+    "ebfec7f9d28a16d1": [
+     0,
+     6272
+    ],
+    "63d7bb7b851e1a67": [
+     6622,
+     12766
+    ],
+    "0669af098f1534e4": [
+     13116,
+     18727
+    ],
+    "ffd3b09af9c052a7": [
+     19077,
+     24197
+    ]
+   }
+  },
+  "fetching-alternatives": {
+   "file": "af_heart/fetching-alternatives-0ad29594b5.mp3",
+   "lines": {
+    "1feb9576ef7e4c75": [
+     0,
+     4416
+    ],
+    "24bae2fcbde606b3": [
+     4766,
+     17566
+    ],
+    "9d88da41abb68268": [
+     17916,
+     22972
+    ],
+    "a8d8350103cd4678": [
+     23322,
+     33306
+    ]
+   }
+  },
+  "fetching-race-conditions": {
+   "file": "af_heart/fetching-race-conditions-730cdb6733.mp3",
+   "lines": {
+    "5c7f5a71896c1797": [
+     0,
+     7019
+    ],
+    "73486e0e254d4db5": [
+     7369,
+     11230
+    ],
+    "56fc342d65907442": [
+     11580,
+     19772
+    ],
+    "6a037a2d873a2791": [
+     20122,
+     27055
+    ],
+    "b4ea1f76b4fc2731": [
+     27405,
+     34232
+    ]
+   }
+  },
+  "fiber": {
+   "file": "af_heart/fiber-a48d22daf0.mp3",
+   "lines": {
+    "4f4ba6378290c005": [
+     0,
+     7061
+    ],
+    "6ab7e700e554aa0d": [
+     7411,
+     17950
+    ],
+    "802a377e18e2a485": [
+     18300,
+     27409
+    ],
+    "3476ec60530a289e": [
+     27759,
+     36911
+    ]
+   }
+  },
+  "filtering-lists": {
+   "file": "af_heart/filtering-lists-bc584a9731.mp3",
+   "lines": {
+    "ed1b178a996b8d71": [
+     0,
+     3861
+    ],
+    "f5b7a3d38280f81c": [
+     4211,
+     9075
+    ],
+    "50e786cf5931161e": [
+     9425,
+     12604
+    ],
+    "07618aad0ef67d9f": [
+     12954,
+     18799
+    ]
+   }
+  },
+  "flatten-nested-state": {
+   "file": "af_heart/flatten-nested-state-2f79a6d849.mp3",
+   "lines": {
+    "f1fcaf539d52ff98": [
+     0,
+     6677
+    ],
+    "11d12da76c6314cd": [
+     7027,
+     14217
+    ],
+    "909c6a27ca740823": [
+     14567,
+     22439
+    ],
+    "8d11f0953c2a4e0e": [
+     22789,
+     29381
+    ]
+   }
+  },
+  "flushsync-with-refs": {
+   "file": "af_heart/flushsync-with-refs-431aa2048c.mp3",
+   "lines": {
+    "d5bb2864821bec59": [
+     0,
+     5248
+    ],
+    "a24602fb07a83679": [
+     5598,
+     12894
+    ],
+    "a1e6df3e4571c75b": [
+     13244,
+     21692
+    ],
+    "fb68ef4a19679db8": [
+     22042,
+     27290
+    ]
+   }
+  },
+  "form-action-prop": {
+   "file": "af_heart/form-action-prop-7a705a54df.mp3",
+   "lines": {
+    "d7db8a62eb384814": [
+     0,
+     3435
+    ],
+    "024ce730d527848a": [
+     3785,
+     12617
+    ],
+    "e33f0f415b813794": [
+     12967,
+     20796
+    ],
+    "917f9093606fea94": [
+     21146,
+     25007
+    ]
+   }
+  },
+  "fragments": {
+   "file": "af_heart/fragments-5a64554a19.mp3",
+   "lines": {
+    "94ce0e29dee66075": [
+     0,
+     3669
+    ],
+    "15a043e16c2854d9": [
+     4019,
+     8883
+    ],
+    "2c8d61a037a6a792": [
+     9233,
+     15420
+    ],
+    "74941fdfdcbb1c0e": [
+     15770,
+     20741
+    ]
+   }
+  },
+  "getsnapshot-cached": {
+   "file": "af_heart/getsnapshot-cached-fc48dbb058.mp3",
+   "lines": {
+    "405544bb73db744b": [
+     0,
+     5312
+    ],
+    "f3cfd526acec964e": [
+     5662,
+     13406
+    ],
+    "3f6c37d55bb24d69": [
+     13756,
+     16956
+    ],
+    "3b82a92c2eae62cb": [
+     17306,
+     25114
+    ]
+   }
+  },
+  "handlers-as-props": {
+   "file": "af_heart/handlers-as-props-fca8a509ef.mp3",
+   "lines": {
+    "a84e86f7d920f827": [
+     0,
+     6016
+    ],
+    "65bcebbf6af0b4cd": [
+     6366,
+     10313
+    ],
+    "65ca92282d1613b2": [
+     10663,
+     16401
+    ],
+    "ba027f97a2521eeb": [
+     16751,
+     24325
+    ]
+   }
+  },
+  "hooks-call-order": {
+   "file": "af_heart/hooks-call-order-0858e8e232.mp3",
+   "lines": {
+    "2f0771130cfb4bbc": [
+     0,
+     4885
+    ],
+    "c999cfa033d48157": [
+     5235,
+     11550
+    ],
+    "c5f13476d700b777": [
+     11900,
+     23441
+    ],
+    "a424a7434f1644f9": [
+     23791,
+     32431
+    ]
+   }
+  },
+  "hooks-stored-on-fiber": {
+   "file": "af_heart/hooks-stored-on-fiber-44ac0b1059.mp3",
+   "lines": {
+    "3e8e7d2974eb4091": [
+     0,
+     5461
+    ],
+    "a25d434b1b8d1303": [
+     5811,
+     11870
+    ],
+    "ef73654bb723cef7": [
+     12220,
+     16273
+    ],
+    "669493cf3b2234ea": [
+     16623,
+     22063
+    ],
+    "7a9a5e60ae6e53d5": [
+     22413,
+     31629
+    ]
+   }
+  },
+  "hydration": {
+   "file": "af_heart/hydration-705b256aa6.mp3",
+   "lines": {
+    "c5af23ae19eb2207": [
+     0,
+     8661
+    ],
+    "1e357c4744c9a29b": [
+     9011,
+     16926
+    ],
+    "ea52f3e06a402f76": [
+     17276,
+     23740
+    ],
+    "c9b62cf1100ad85d": [
+     24090,
+     32261
+    ]
+   }
+  },
+  "hydration-mismatch": {
+   "file": "af_heart/hydration-mismatch-daf21f79f7.mp3",
+   "lines": {
+    "b303cf5817085afc": [
+     0,
+     7061
+    ],
+    "e77db78751237aa8": [
+     7411,
+     14686
+    ],
+    "107833ae22be3b86": [
+     15036,
+     22609
+    ],
+    "c94f854de7569aaf": [
+     22959,
+     29253
+    ],
+    "2ad5e6f97be45d57": [
+     29603,
+     38221
+    ],
+    "ae0dfdcb12e3d22e": [
+     38571,
+     45462
+    ]
+   }
+  },
+  "import-export-components": {
+   "file": "af_heart/import-export-components-c15352fa1d.mp3",
+   "lines": {
+    "c18b12620adf278a": [
+     0,
+     5077
+    ],
+    "cc3c9bcf0e31edce": [
+     5427,
+     10889
+    ],
+    "014ec59505e26437": [
+     11239,
+     17959
+    ],
+    "92dbbdb54b528a03": [
+     18309,
+     25242
+    ],
+    "52f439b5c7d6fbb1": [
+     25592,
+     33229
+    ]
+   }
+  },
+  "index-as-key-pitfall": {
+   "file": "af_heart/index-as-key-pitfall-764504183f.mp3",
+   "lines": {
+    "10d6c6dfe55739b2": [
+     0,
+     5568
+    ],
+    "34968995b2fe57fd": [
+     5918,
+     12019
+    ],
+    "aab237c09ac79200": [
+     12369,
+     22311
+    ],
+    "1a2a88c9d0852c22": [
+     22661,
+     29125
+    ]
+   }
+  },
+  "interruptible-rendering": {
+   "file": "af_heart/interruptible-rendering-7471652cd9.mp3",
+   "lines": {
+    "b768ff4742e0ed76": [
+     0,
+     5973
+    ],
+    "df17f716320edc62": [
+     6323,
+     14259
+    ],
+    "57264f3d4e7350a0": [
+     14609,
+     22076
+    ],
+    "b7c881b879776a0f": [
+     22426,
+     31130
+    ]
+   }
+  },
+  "ispending": {
+   "file": "af_heart/ispending-9d26c0d3e5.mp3",
+   "lines": {
+    "b9c3e742a723596b": [
+     0,
+     5589
+    ],
+    "077285144aa22139": [
+     5939,
+     13534
+    ],
+    "c894c7ac92678d24": [
+     13884,
+     21713
+    ]
+   }
+  },
+  "jsx-camelcase-attributes": {
+   "file": "af_heart/jsx-camelcase-attributes-74ff3fa2e1.mp3",
+   "lines": {
+    "9cbd232e95852970": [
+     0,
+     4757
+    ],
+    "58a4085f18ef79fd": [
+     5107,
+     14217
+    ],
+    "058a349b959b6413": [
+     14567,
+     19751
+    ],
+    "06dadaca4994b4b7": [
+     20101,
+     27034
+    ]
+   }
+  },
+  "jsx-close-all-tags": {
+   "file": "af_heart/jsx-close-all-tags-5dff4e8f8f.mp3",
+   "lines": {
+    "a7177fa0328768de": [
+     0,
+     3755
+    ],
+    "79ef6d4c8fabe9e2": [
+     4105,
+     9907
+    ],
+    "288244017518d952": [
+     10257,
+     17020
+    ],
+    "9bca9e7bea61492d": [
+     17370,
+     22533
+    ]
+   }
+  },
+  "jsx-curly-braces": {
+   "file": "af_heart/jsx-curly-braces-8faa3d9fe6.mp3",
+   "lines": {
+    "beb492ebc36d3e87": [
+     0,
+     3819
+    ],
+    "97fe1d54bac6c87b": [
+     4169,
+     11571
+    ],
+    "8984d537b6f09a02": [
+     11921,
+     19772
+    ],
+    "5e3f5903166bb566": [
+     20122,
+     30362
+    ],
+    "fe94f5ad32e5a70a": [
+     30712,
+     35043
+    ]
+   }
+  },
+  "jsx-double-curlies": {
+   "file": "af_heart/jsx-double-curlies-283e10a119.mp3",
+   "lines": {
+    "7ba4b3c48dc0612e": [
+     0,
+     4395
+    ],
+    "0becefb6d108ea33": [
+     4745,
+     12467
+    ],
+    "07dfc3531a72ee48": [
+     12817,
+     17169
+    ],
+    "f106140731151411": [
+     17519,
+     24026
+    ]
+   }
+  },
+  "jsx-is-javascript": {
+   "file": "af_heart/jsx-is-javascript-2868ef238e.mp3",
+   "lines": {
+    "5b9657f96a78f7a9": [
+     0,
+     5312
+    ],
+    "2642502c48af91c5": [
+     5662,
+     11337
+    ],
+    "b313a713cf33aac2": [
+     11687,
+     20604
+    ],
+    "9a88e20f3c8acbfd": [
+     20954,
+     31151
+    ]
+   }
+  },
+  "jsx-single-root": {
+   "file": "af_heart/jsx-single-root-812cfbcdd9.mp3",
+   "lines": {
+    "dfcc945d5d959773": [
+     0,
+     4501
+    ],
+    "8b966b07c3d75c28": [
+     4851,
+     9438
+    ],
+    "d404d7ab3927f3e1": [
+     9788,
+     17596
+    ],
+    "516137366f66a707": [
+     17946,
+     25477
+    ]
+   }
+  },
+  "keyed-fragments": {
+   "file": "af_heart/keyed-fragments-baa100e00a.mp3",
+   "lines": {
+    "5904ca54fcad1bf4": [
+     0,
+     4331
+    ],
+    "f298d1ffb7fdf57f": [
+     4681,
+     8926
+    ],
+    "734ebfc2f37ba648": [
+     9276,
+     13265
+    ],
+    "8a4841bec67b28e0": [
+     13615,
+     19290
+    ]
+   }
+  },
+  "lazy-code-splitting": {
+   "file": "af_heart/lazy-code-splitting-069559bfa9.mp3",
+   "lines": {
+    "94582f6a41ecee09": [
+     0,
+     4800
+    ],
+    "06aef4b7a1ca8ee1": [
+     5150,
+     12446
+    ],
+    "8abcc5ba20f18186": [
+     12796,
+     19601
+    ],
+    "459a748677e6dc35": [
+     19951,
+     27354
+    ]
+   }
+  },
+  "lazy-initial-state": {
+   "file": "af_heart/lazy-initial-state-c89a2b26cc.mp3",
+   "lines": {
+    "1dbeb1fed8bb18e0": [
+     0,
+     4949
+    ],
+    "d8f1f83d38a2c8ca": [
+     5299,
+     13875
+    ],
+    "2fafbd07d71799b7": [
+     14225,
+     20497
+    ],
+    "b7ef90948006acf4": [
+     20847,
+     27183
+    ],
+    "e01d731b0f8ba6d4": [
+     27533,
+     33507
+    ]
+   }
+  },
+  "lifting-state-up": {
+   "file": "af_heart/lifting-state-up-880281f1f6.mp3",
+   "lines": {
+    "9c6e72e72886f265": [
+     0,
+     6592
+    ],
+    "808dc32b52a0a305": [
+     6942,
+     9459
+    ],
+    "6689a8baac49acc9": [
+     9809,
+     14673
+    ],
+    "ed0b62f696081d45": [
+     15023,
+     23194
+    ],
+    "e13f5a7bcabc9bed": [
+     23544,
+     30200
+    ]
+   }
+  },
+  "list-keys": {
+   "file": "af_heart/list-keys-b80cdad9f7.mp3",
+   "lines": {
+    "3be2d564de28ccab": [
+     0,
+     6272
+    ],
+    "2a1cc8791ed5572b": [
+     6622,
+     14814
+    ],
+    "a7537ab22df5ccae": [
+     15164,
+     22759
+    ],
+    "e50c34ab7c64cf42": [
+     23109,
+     32026
+    ]
+   }
+  },
+  "local-mutation-ok": {
+   "file": "af_heart/local-mutation-ok-b3b84788c8.mp3",
+   "lines": {
+    "b087eee7a735f3ef": [
+     0,
+     6421
+    ],
+    "5258f5542e936750": [
+     6771,
+     13321
+    ],
+    "24002a12c1c31df0": [
+     13671,
+     20903
+    ],
+    "e7e6f0ecba8e190a": [
+     21253,
+     26671
+    ]
+   }
+  },
+  "make-value-non-reactive": {
+   "file": "af_heart/make-value-non-reactive-37c7528811.mp3",
+   "lines": {
+    "0ed7a279a28962ab": [
+     0,
+     6507
+    ],
+    "3f5df21824edaa84": [
+     6857,
+     15134
+    ],
+    "bbdedc3187dfabce": [
+     15484,
+     21479
+    ],
+    "8277bb4c04e86323": [
+     21829,
+     25242
+    ]
+   }
+  },
+  "memo-breaks-with-new-objects": {
+   "file": "af_heart/memo-breaks-with-new-objects-39ce5dceea.mp3",
+   "lines": {
+    "0476650f1fbd4ea5": [
+     0,
+     4992
+    ],
+    "96e1eb5cac843a44": [
+     5342,
+     12745
+    ],
+    "a16d5eed7523ec24": [
+     13095,
+     20796
+    ],
+    "e0c02723d3ec6efb": [
+     21146,
+     25989
+    ]
+   }
+  },
+  "memo-component": {
+   "file": "af_heart/memo-component-17d0c5a540.mp3",
+   "lines": {
+    "387cbcb2dcbbb1f9": [
+     0,
+     4800
+    ],
+    "36246f80b6ac2655": [
+     5150,
+     11315
+    ],
+    "b005fb467936f80f": [
+     11665,
+     18855
+    ],
+    "e321d37d14839180": [
+     19205,
+     26671
+    ]
+   }
+  },
+  "memoize-context-value": {
+   "file": "af_heart/memoize-context-value-bb64d8e303.mp3",
+   "lines": {
+    "bfa9059a8fade917": [
+     0,
+     6101
+    ],
+    "c1b6b7ae4a71e485": [
+     6451,
+     16051
+    ],
+    "2aeab18a029d9a47": [
+     16401,
+     23591
+    ],
+    "d60340be1c53281d": [
+     23941,
+     28421
+    ]
+   }
+  },
+  "module-dependency-tree": {
+   "file": "af_heart/module-dependency-tree-0779f8ddd9.mp3",
+   "lines": {
+    "9aa566eeba50d866": [
+     0,
+     3968
+    ],
+    "660953717904d787": [
+     4318,
+     10334
+    ],
+    "230c8d0a69e34c37": [
+     10684,
+     21777
+    ],
+    "05df4b7a1d377a33": [
+     22127,
+     30767
+    ]
+   }
+  },
+  "move-state-down": {
+   "file": "af_heart/move-state-down-df9fcb072b.mp3",
+   "lines": {
+    "5d69f3cc660849f2": [
+     0,
+     2859
+    ],
+    "c8d0b2edfb2793ea": [
+     3209,
+     8585
+    ],
+    "f3ecb5d3527a6496": [
+     8935,
+     14375
+    ],
+    "010078a985a284df": [
+     14725,
+     22170
+    ]
+   }
+  },
+  "mutable-values-not-deps": {
+   "file": "af_heart/mutable-values-not-deps-ba24ea00f5.mp3",
+   "lines": {
+    "33eb26956e6463a4": [
+     0,
+     5525
+    ],
+    "b55abce5aec1842a": [
+     5875,
+     13875
+    ],
+    "9fad8a0c1f8aeec1": [
+     14225,
+     20711
+    ],
+    "d60bf2b89a924d60": [
+     21061,
+     30938
+    ]
+   }
+  },
+  "nested-object-updates": {
+   "file": "af_heart/nested-object-updates-ed39483f86.mp3",
+   "lines": {
+    "d4fde00a6113b6b4": [
+     0,
+     4544
+    ],
+    "23c32f92a26c1da7": [
+     4894,
+     10995
+    ],
+    "36118c2bd155b646": [
+     11345,
+     17959
+    ],
+    "cfe4bfe61d9f070a": [
+     18309,
+     24261
+    ]
+   }
+  },
+  "nested-suspense": {
+   "file": "af_heart/nested-suspense-29035c8735.mp3",
+   "lines": {
+    "55f916559338ac04": [
+     0,
+     5376
+    ],
+    "fde1a59c9a23e5a3": [
+     5726,
+     10099
+    ],
+    "8de3c9e1aaf174ee": [
+     10449,
+     12049
+    ],
+    "05e202cab6665595": [
+     12399,
+     18501
+    ]
+   }
+  },
+  "no-effect-chains": {
+   "file": "af_heart/no-effect-chains-77d80d0340.mp3",
+   "lines": {
+    "3a73e80b495c1a17": [
+     0,
+     5163
+    ],
+    "69446ddc53ac72ff": [
+     5513,
+     13513
+    ],
+    "289e16fdb86d2cbc": [
+     13863,
+     20668
+    ],
+    "3b3eceb8dfdd1148": [
+     21018,
+     28677
+    ]
+   }
+  },
+  "no-effect-derived-data": {
+   "file": "af_heart/no-effect-derived-data-7a237e72cf.mp3",
+   "lines": {
+    "2bca11258c81f490": [
+     0,
+     4992
+    ],
+    "f220eaf750d68181": [
+     5342,
+     13769
+    ],
+    "4f148e35e5161d65": [
+     14119,
+     17895
+    ],
+    "46493dfd739f6140": [
+     18245,
+     25605
+    ]
+   }
+  },
+  "no-effect-expensive-calc": {
+   "file": "af_heart/no-effect-expensive-calc-bdb344dde2.mp3",
+   "lines": {
+    "3ec5c76409bc0d09": [
+     0,
+     5376
+    ],
+    "46f3f0501213ada8": [
+     5726,
+     14921
+    ],
+    "eca7ef55cb1fda34": [
+     15271,
+     21564
+    ],
+    "6fa6dd029a64a84c": [
+     21914,
+     28933
+    ]
+   }
+  },
+  "no-effect-notify-parent": {
+   "file": "af_heart/no-effect-notify-parent-f2b058bfb8.mp3",
+   "lines": {
+    "a8ae131a614625d6": [
+     0,
+     7168
+    ],
+    "e45324344cbae152": [
+     7518,
+     14025
+    ],
+    "44c9659f24d945fc": [
+     14375,
+     20583
+    ],
+    "45b5bd71c2180cc7": [
+     20933,
+     25946
+    ]
+   }
+  },
+  "no-effect-pass-data-up": {
+   "file": "af_heart/no-effect-pass-data-up-8b955c9433.mp3",
+   "lines": {
+    "e65b17ecbd745e58": [
+     0,
+     6677
+    ],
+    "b6ebf2174e94dbcb": [
+     7027,
+     12745
+    ],
+    "2ee9cecd7553e545": [
+     13095,
+     19068
+    ],
+    "d9b6c2c2741d5088": [
+     19418,
+     23983
+    ]
+   }
+  },
+  "no-effect-post-request": {
+   "file": "af_heart/no-effect-post-request-71f41086ea.mp3",
+   "lines": {
+    "405bd5fe6a1a9883": [
+     0,
+     6933
+    ],
+    "74b200d199725bfc": [
+     7283,
+     12361
+    ],
+    "5010d513ab1b266f": [
+     12711,
+     20668
+    ],
+    "25ca26e9fdcf8c3c": [
+     21018,
+     28933
+    ]
+   }
+  },
+  "no-effect-reset-on-prop": {
+   "file": "af_heart/no-effect-reset-on-prop-b313695595.mp3",
+   "lines": {
+    "f70ffdb4dbdb75d6": [
+     0,
+     4672
+    ],
+    "0954a1151a607139": [
+     5022,
+     13043
+    ],
+    "3e58da46bf1bc2df": [
+     13393,
+     22759
+    ],
+    "98beb3cc3366f94f": [
+     23109,
+     29402
+    ]
+   }
+  },
+  "no-effect-user-events": {
+   "file": "af_heart/no-effect-user-events-ddf3f492c5.mp3",
+   "lines": {
+    "afaf6bcbfda5e577": [
+     0,
+     7829
+    ],
+    "5174d61c909f4291": [
+     8179,
+     16073
+    ],
+    "4bae1faf293f8128": [
+     16423,
+     23505
+    ],
+    "2f4d0f89bba8085f": [
+     23855,
+     29679
+    ]
+   }
+  },
+  "no-mutating-outside-variables": {
+   "file": "af_heart/no-mutating-outside-variables-dfdc9787c7.mp3",
+   "lines": {
+    "f471753e82a228ac": [
+     0,
+     3264
+    ],
+    "dc075619fa930f7f": [
+     3614,
+     10270
+    ],
+    "e8294edf49067141": [
+     10620,
+     17404
+    ],
+    "bdc1f8186f1bfec1": [
+     17754,
+     24239
+    ]
+   }
+  },
+  "no-nested-component-definitions": {
+   "file": "af_heart/no-nested-component-definitions-d24574f95f.mp3",
+   "lines": {
+    "bd255197bbf70ebc": [
+     0,
+     5397
+    ],
+    "7b67f8615f1916fe": [
+     5747,
+     11657
+    ],
+    "99d6a18904fb2c7e": [
+     12007,
+     22439
+    ],
+    "8ab5e83cd70c1fa8": [
+     22789,
+     29573
+    ],
+    "df6a49a84353f6ff": [
+     29923,
+     34595
+    ]
+   }
+  },
+  "one-effect-per-process": {
+   "file": "af_heart/one-effect-per-process-dd56eb28c1.mp3",
+   "lines": {
+    "2ea0b459a103f34f": [
+     0,
+     5888
+    ],
+    "87fe145a66200f6b": [
+     6238,
+     14430
+    ],
+    "b8c35117a25d3d1b": [
+     14780,
+     19580
+    ],
+    "22c74929ca97dd8d": [
+     19930,
+     28058
+    ]
+   }
+  },
+  "pass-dont-call-handler": {
+   "file": "af_heart/pass-dont-call-handler-263d4762d1.mp3",
+   "lines": {
+    "606679dc6c8e675f": [
+     0,
+     4693
+    ],
+    "3f06babe74645f93": [
+     5043,
+     12553
+    ],
+    "bf0164f0b5e05a1f": [
+     12903,
+     19345
+    ],
+    "97e7baa74db5afb0": [
+     19695,
+     23621
+    ]
+   }
+  },
+  "passing-props": {
+   "file": "af_heart/passing-props-396170e624.mp3",
+   "lines": {
+    "3c049ae335030289": [
+     0,
+     6165
+    ],
+    "c5f59c4959a43f05": [
+     6515,
+     12147
+    ],
+    "707ce0663cc93eb3": [
+     12497,
+     18769
+    ],
+    "973f0b2999326178": [
+     19119,
+     25349
+    ],
+    "a457dbc1ae2bf90a": [
+     25699,
+     33101
+    ]
+   }
+  },
+  "passing-reactive-values-to-hooks": {
+   "file": "af_heart/passing-reactive-values-to-hooks-6d3603e0c7.mp3",
+   "lines": {
+    "6cb24cd3366c0f2b": [
+     0,
+     7424
+    ],
+    "84f9d4b50981e2c7": [
+     7774,
+     12745
+    ],
+    "12887fddf0a42344": [
+     13095,
+     20689
+    ],
+    "76dc9ee214a9de20": [
+     21039,
+     27055
+    ]
+   }
+  },
+  "portal-event-bubbling": {
+   "file": "af_heart/portal-event-bubbling-4819f5a963.mp3",
+   "lines": {
+    "a59c4dcf4871404f": [
+     0,
+     6357
+    ],
+    "d996737d2003d4f0": [
+     6707,
+     12339
+    ],
+    "a03f9192e443261a": [
+     12689,
+     17276
+    ],
+    "e50198c168574021": [
+     17626,
+     23855
+    ]
+   }
+  },
+  "preserve-removed-state": {
+   "file": "af_heart/preserve-removed-state-6f2bc05570.mp3",
+   "lines": {
+    "0da0b71c88387eda": [
+     0,
+     5483
+    ],
+    "57d9a8b316e3ab7b": [
+     5833,
+     15219
+    ],
+    "ae25a33e3c007aa2": [
+     15569,
+     23228
+    ],
+    "d6a6748813769985": [
+     23578,
+     30127
+    ]
+   }
+  },
+  "prevent-default": {
+   "file": "af_heart/prevent-default-973de9582b.mp3",
+   "lines": {
+    "0a436e6ed33e1897": [
+     0,
+     5227
+    ],
+    "970325290923da8c": [
+     5577,
+     12041
+    ],
+    "33812f7bfcc4f2a9": [
+     12391,
+     20689
+    ],
+    "42d333585c6af63d": [
+     21039,
+     25775
+    ]
+   }
+  },
+  "primitive-dependencies": {
+   "file": "af_heart/primitive-dependencies-eefd8505e2.mp3",
+   "lines": {
+    "cd8bd1265c157dff": [
+     0,
+     4459
+    ],
+    "61202b8e2df840f1": [
+     4809,
+     12147
+    ],
+    "73cd585d8249832e": [
+     12497,
+     18108
+    ],
+    "f04ebbc8cac31d72": [
+     18458,
+     25029
+    ]
+   }
+  },
+  "profiler": {
+   "file": "af_heart/profiler-46e6a4887c.mp3",
+   "lines": {
+    "2db56e097deb750f": [
+     0,
+     4224
+    ],
+    "4c6696ccdca1ef33": [
+     4574,
+     8478
+    ],
+    "cf247da918f65abe": [
+     8828,
+     18897
+    ],
+    "1d7e1427b7491206": [
+     19247,
+     23834
+    ]
+   }
+  },
+  "prop-drilling": {
+   "file": "af_heart/prop-drilling-449defc547.mp3",
+   "lines": {
+    "7b810ac42091aae5": [
+     0,
+     5440
+    ],
+    "2d0ae4cb9cc16c58": [
+     5790,
+     10953
+    ],
+    "250970fec3686c8a": [
+     11303,
+     14993
+    ],
+    "8c062f235c6efcd3": [
+     15343,
+     20271
+    ],
+    "a24c2c495c01eb7f": [
+     20621,
+     25741
+    ],
+    "59141065699c14c6": [
+     26091,
+     32854
+    ]
+   }
+  },
+  "props-are-read-only": {
+   "file": "af_heart/props-are-read-only-f12102b4ed.mp3",
+   "lines": {
+    "d90964ee19441aba": [
+     0,
+     4629
+    ],
+    "d00fa472cc1ecbf3": [
+     4979,
+     12467
+    ],
+    "1db88fbff5a5a2ee": [
+     12817,
+     16401
+    ],
+    "62b536e2c7bae846": [
+     16751,
+     24261
+    ]
+   }
+  },
+  "props-state-immutable": {
+   "file": "af_heart/props-state-immutable-71819bf8ab.mp3",
+   "lines": {
+    "62e366f4ed8f0121": [
+     0,
+     6272
+    ],
+    "2c9bffcce05fa7f3": [
+     6622,
+     13833
+    ],
+    "a18ac9498da1aea5": [
+     14183,
+     22652
+    ],
+    "2cb225bbb5736c1c": [
+     23002,
+     29039
+    ]
+   }
+  },
+  "pure-components": {
+   "file": "af_heart/pure-components-8980c1beda.mp3",
+   "lines": {
+    "bd1c00cf2c2783f7": [
+     0,
+     6869
+    ],
+    "eb44ae1342605378": [
+     7219,
+     16222
+    ],
+    "fdd0119f403cbb04": [
+     16572,
+     22161
+    ],
+    "a05d1865bb48f47d": [
+     22511,
+     28037
+    ]
+   }
+  },
+  "quiz-action-objects-1": {
+   "file": "af_heart/quiz-action-objects-1-d6836a3ab9.mp3",
+   "lines": {
+    "0c1ddacd0e4c2619": [
+     0,
+     4523
+    ],
+    "681a1e9de24c9ae4": [
+     4873,
+     9438
+    ]
+   }
+  },
+  "quiz-action-objects-2": {
+   "file": "af_heart/quiz-action-objects-2-bb87c83bb3.mp3",
+   "lines": {
+    "a61c028f87fcf410": [
+     0,
+     5461
+    ],
+    "27ff49d70c4cf12d": [
+     5811,
+     10163
+    ]
+   }
+  },
+  "quiz-activity-component-1": {
+   "file": "af_heart/quiz-activity-component-1-cb45b994cf.mp3",
+   "lines": {
+    "f7f112891ad9c662": [
+     0,
+     6592
+    ],
+    "ddcf2ce72d717dfd": [
+     6942,
+     10121
+    ]
+   }
+  },
+  "quiz-activity-component-2": {
+   "file": "af_heart/quiz-activity-component-2-146cb6c14e.mp3",
+   "lines": {
+    "f04d9b17076bc44f": [
+     0,
+     3989
+    ],
+    "34989d471083bdb1": [
+     4339,
+     6537
+    ]
+   }
+  },
+  "quiz-adjust-state-during-render-1": {
+   "file": "af_heart/quiz-adjust-state-during-render-1-7299923d34.mp3",
+   "lines": {
+    "34e5721119528003": [
+     0,
+     2240
+    ],
+    "10f50c5ccc9131cb": [
+     2590,
+     6921
+    ]
+   }
+  },
+  "quiz-adjust-state-during-render-2": {
+   "file": "af_heart/quiz-adjust-state-during-render-2-65502bf2b3.mp3",
+   "lines": {
+    "560901d0ab1beaa0": [
+     0,
+     5035
+    ],
+    "31d1caebd609fb83": [
+     5385,
+     9246
+    ]
+   }
+  },
+  "quiz-app-init-once-1": {
+   "file": "af_heart/quiz-app-init-once-1-741a157481.mp3",
+   "lines": {
+    "4bcea048ff365ff9": [
+     0,
+     4245
+    ],
+    "84ac8ecf457f3c70": [
+     4595,
+     7753
+    ]
+   }
+  },
+  "quiz-app-init-once-2": {
+   "file": "af_heart/quiz-app-init-once-2-7008020392.mp3",
+   "lines": {
+    "63bf09e3e4504b72": [
+     0,
+     5547
+    ],
+    "ca8b30930e5c0c10": [
+     5897,
+     10334
+    ]
+   }
+  },
+  "quiz-array-methods-mutate-vs-copy-1": {
+   "file": "af_heart/quiz-array-methods-mutate-vs-copy-1-544c68b95c.mp3",
+   "lines": {
+    "8d2724958ae6bea4": [
+     0,
+     2752
+    ],
+    "eb028dd42557e89a": [
+     3102,
+     8222
+    ]
+   }
+  },
+  "quiz-array-methods-mutate-vs-copy-2": {
+   "file": "af_heart/quiz-array-methods-mutate-vs-copy-2-d6084868b4.mp3",
+   "lines": {
+    "e8f4b2d718d61d59": [
+     0,
+     2027
+    ],
+    "7189814a0141e323": [
+     2377,
+     7113
+    ]
+   }
+  },
+  "quiz-automatic-batching-1": {
+   "file": "af_heart/quiz-automatic-batching-1-fce6198b0b.mp3",
+   "lines": {
+    "34f069c358f86953": [
+     0,
+     3115
+    ],
+    "5c8f630ec4cf95f4": [
+     3465,
+     5193
+    ]
+   }
+  },
+  "quiz-automatic-batching-2": {
+   "file": "af_heart/quiz-automatic-batching-2-6995032b09.mp3",
+   "lines": {
+    "75ca907996023ea2": [
+     0,
+     4992
+    ],
+    "f744334878f2b4cd": [
+     5342,
+     8563
+    ]
+   }
+  },
+  "quiz-avoid-contradictory-state-1": {
+   "file": "af_heart/quiz-avoid-contradictory-state-1-c27a32cdaa.mp3",
+   "lines": {
+    "5d45249350d8f682": [
+     0,
+     2496
+    ],
+    "487eff19aad721f7": [
+     2846,
+     8798
+    ]
+   }
+  },
+  "quiz-avoid-contradictory-state-2": {
+   "file": "af_heart/quiz-avoid-contradictory-state-2-bc841e353a.mp3",
+   "lines": {
+    "e22c9088c5de0a90": [
+     0,
+     5696
+    ],
+    "41099b863a93aaff": [
+     6046,
+     10505
+    ]
+   }
+  },
+  "quiz-avoid-duplicate-state-1": {
+   "file": "af_heart/quiz-avoid-duplicate-state-1-ac08b4f24b.mp3",
+   "lines": {
+    "ef30ced2126e7a1c": [
+     0,
+     4288
+    ],
+    "e8feb2cd3234e1d3": [
+     4638,
+     10483
+    ]
+   }
+  },
+  "quiz-avoid-duplicate-state-2": {
+   "file": "af_heart/quiz-avoid-duplicate-state-2-7f916bf5c4.mp3",
+   "lines": {
+    "923337c2837a2772": [
+     0,
+     2944
+    ],
+    "8fcf614833797f71": [
+     3294,
+     5897
+    ]
+   }
+  },
+  "quiz-avoid-redundant-state-1": {
+   "file": "af_heart/quiz-avoid-redundant-state-1-dd83b5f7fd.mp3",
+   "lines": {
+    "391c4aa4a3577bea": [
+     0,
+     2368
+    ],
+    "7e7de96833f03a7e": [
+     2718,
+     7539
+    ]
+   }
+  },
+  "quiz-avoid-redundant-state-2": {
+   "file": "af_heart/quiz-avoid-redundant-state-2-3f792f1bb8.mp3",
+   "lines": {
+    "2dff9e0022281d50": [
+     0,
+     6763
+    ],
+    "a1429ff721f12c62": [
+     7113,
+     10355
+    ]
+   }
+  },
+  "quiz-capture-phase-events-1": {
+   "file": "af_heart/quiz-capture-phase-events-1-96aec1af93.mp3",
+   "lines": {
+    "af8e9327445b05ef": [
+     0,
+     3115
+    ],
+    "9e5d3f5ac6c50f92": [
+     3465,
+     10377
+    ]
+   }
+  },
+  "quiz-capture-phase-events-2": {
+   "file": "af_heart/quiz-capture-phase-events-2-421fc0d029.mp3",
+   "lines": {
+    "e035e832cf5a2a33": [
+     0,
+     6144
+    ],
+    "51a8e5960cd9981d": [
+     6494,
+     11550
+    ]
+   }
+  },
+  "quiz-children-as-props-optimization-1": {
+   "file": "af_heart/quiz-children-as-props-optimization-1-d7dddde26a.mp3",
+   "lines": {
+    "410ee4f5e6fc4ef5": [
+     0,
+     3093
+    ],
+    "5645b96bc19a9c9c": [
+     3443,
+     6537
+    ]
+   }
+  },
+  "quiz-children-as-props-optimization-2": {
+   "file": "af_heart/quiz-children-as-props-optimization-2-8ac0c5d3b5.mp3",
+   "lines": {
+    "545440c863a889a2": [
+     0,
+     5952
+    ],
+    "391376d49a76664e": [
+     6302,
+     8670
+    ]
+   }
+  },
+  "quiz-children-prop-1": {
+   "file": "af_heart/quiz-children-prop-1-e455c19201.mp3",
+   "lines": {
+    "7782baa46ed0db8e": [
+     0,
+     3371
+    ],
+    "fe8fd6fb4638b564": [
+     3721,
+     6878
+    ]
+   }
+  },
+  "quiz-children-prop-2": {
+   "file": "af_heart/quiz-children-prop-2-67ace64f19.mp3",
+   "lines": {
+    "461102d013d7770f": [
+     0,
+     3648
+    ],
+    "6dfec1ffd8d18aff": [
+     3998,
+     9310
+    ]
+   }
+  },
+  "quiz-commit-minimal-changes-1": {
+   "file": "af_heart/quiz-commit-minimal-changes-1-41095b0c9d.mp3",
+   "lines": {
+    "7c32a364ae1d9772": [
+     0,
+     4821
+    ],
+    "4613c2f2f50e223d": [
+     5171,
+     8137
+    ]
+   }
+  },
+  "quiz-commit-minimal-changes-2": {
+   "file": "af_heart/quiz-commit-minimal-changes-2-ef3367956e.mp3",
+   "lines": {
+    "4d91890e522651ea": [
+     0,
+     6635
+    ],
+    "ad34164df614a607": [
+     6985,
+     9758
+    ]
+   }
+  },
+  "quiz-compiler-and-manual-memo-1": {
+   "file": "af_heart/quiz-compiler-and-manual-memo-1-7fd38cb7d0.mp3",
+   "lines": {
+    "7f50014c243665f7": [
+     0,
+     5696
+    ],
+    "135cbe9522698bc0": [
+     6046,
+     10654
+    ]
+   }
+  },
+  "quiz-compiler-and-manual-memo-2": {
+   "file": "af_heart/quiz-compiler-and-manual-memo-2-3c87e60387.mp3",
+   "lines": {
+    "6a13c24675aa0514": [
+     0,
+     8107
+    ],
+    "e344c7f744918eb1": [
+     8457,
+     13107
+    ]
+   }
+  },
+  "quiz-compiler-directives-1": {
+   "file": "af_heart/quiz-compiler-directives-1-0bb57b64a0.mp3",
+   "lines": {
+    "2e4ce282ea107ce9": [
+     0,
+     3861
+    ],
+    "dc74cc804b06e05f": [
+     4211,
+     8627
+    ]
+   }
+  },
+  "quiz-compiler-directives-2": {
+   "file": "af_heart/quiz-compiler-directives-2-24ec5794b6.mp3",
+   "lines": {
+    "1fad9be5e315e673": [
+     0,
+     3925
+    ],
+    "e67c381d48e16dba": [
+     4275,
+     9075
+    ]
+   }
+  },
+  "quiz-compiler-directives-3": {
+   "file": "af_heart/quiz-compiler-directives-3-96165674ec.mp3",
+   "lines": {
+    "09184d08bd6e3be2": [
+     0,
+     4757
+    ],
+    "9ba471a5681026fe": [
+     5107,
+     9694
+    ]
+   }
+  },
+  "quiz-compiler-incremental-adoption-1": {
+   "file": "af_heart/quiz-compiler-incremental-adoption-1-f4b7f93d9e.mp3",
+   "lines": {
+    "a3b09573fc668af0": [
+     0,
+     5163
+    ],
+    "816dd6ee053a88cf": [
+     5513,
+     10953
+    ]
+   }
+  },
+  "quiz-compiler-incremental-adoption-2": {
+   "file": "af_heart/quiz-compiler-incremental-adoption-2-2e8b3be51e.mp3",
+   "lines": {
+    "3842b8aec6c69dd4": [
+     0,
+     2880
+    ],
+    "35495c4f95c9bffc": [
+     3230,
+     7625
+    ]
+   }
+  },
+  "quiz-compiler-needs-rules-1": {
+   "file": "af_heart/quiz-compiler-needs-rules-1-1fcc5e0d2c.mp3",
+   "lines": {
+    "e3dd16330487bbf5": [
+     0,
+     5995
+    ],
+    "a3ad24d4c8753c6a": [
+     6345,
+     10121
+    ]
+   }
+  },
+  "quiz-compiler-needs-rules-2": {
+   "file": "af_heart/quiz-compiler-needs-rules-2-635cd0b83d.mp3",
+   "lines": {
+    "e77bd41552857f08": [
+     0,
+     6443
+    ],
+    "3bcc025d25f458e2": [
+     6793,
+     13854
+    ]
+   }
+  },
+  "quiz-component-names-capitalized-1": {
+   "file": "af_heart/quiz-component-names-capitalized-1-9ec2f40952.mp3",
+   "lines": {
+    "711536edd96afe7c": [
+     0,
+     2197
+    ],
+    "592fc86b509a1484": [
+     2547,
+     8777
+    ]
+   }
+  },
+  "quiz-component-names-capitalized-2": {
+   "file": "af_heart/quiz-component-names-capitalized-2-f58e9a9c68.mp3",
+   "lines": {
+    "cf7cf3641d7cb747": [
+     0,
+     4096
+    ],
+    "f004ad53d8a83870": [
+     4446,
+     11571
+    ]
+   }
+  },
+  "quiz-conditional-and-zero-pitfall-1": {
+   "file": "af_heart/quiz-conditional-and-zero-pitfall-1-2dee97eec7.mp3",
+   "lines": {
+    "cecc9f73380c4983": [
+     0,
+     2688
+    ],
+    "7085f3e672c558bd": [
+     3038,
+     7667
+    ]
+   }
+  },
+  "quiz-conditional-and-zero-pitfall-2": {
+   "file": "af_heart/quiz-conditional-and-zero-pitfall-2-d10ef3b723.mp3",
+   "lines": {
+    "99d8c159b4dd8cd1": [
+     0,
+     3904
+    ],
+    "029a232b7b20d2a7": [
+     4254,
+     8563
+    ]
+   }
+  },
+  "quiz-conditional-if-1": {
+   "file": "af_heart/quiz-conditional-if-1-54a671dc57.mp3",
+   "lines": {
+    "fd71ace42fb408bc": [
+     0,
+     3477
+    ],
+    "2737866f40a56f14": [
+     3827,
+     8158
+    ]
+   }
+  },
+  "quiz-conditional-if-2": {
+   "file": "af_heart/quiz-conditional-if-2-5249b07143.mp3",
+   "lines": {
+    "554f71ff8128d5c3": [
+     0,
+     4864
+    ],
+    "13919b10bb37df4f": [
+     5214,
+     9630
+    ]
+   }
+  },
+  "quiz-conditional-ternary-1": {
+   "file": "af_heart/quiz-conditional-ternary-1-404a2ec4af.mp3",
+   "lines": {
+    "18844314cf0579fa": [
+     0,
+     3136
+    ],
+    "30462c85212279e5": [
+     3486,
+     8990
+    ]
+   }
+  },
+  "quiz-conditional-ternary-2": {
+   "file": "af_heart/quiz-conditional-ternary-2-d91b67d7ae.mp3",
+   "lines": {
+    "9ff44fbee633fbce": [
+     0,
+     6805
+    ],
+    "8b0a13acbae2af3c": [
+     7155,
+     12659
+    ]
+   }
+  },
+  "quiz-context-as-provider-19-1": {
+   "file": "af_heart/quiz-context-as-provider-19-1-85c30f737b.mp3",
+   "lines": {
+    "ceb6d09856c27fe2": [
+     0,
+     3371
+    ],
+    "14109af88d811885": [
+     3721,
+     8243
+    ]
+   }
+  },
+  "quiz-context-as-provider-19-2": {
+   "file": "af_heart/quiz-context-as-provider-19-2-b7b2e82c3d.mp3",
+   "lines": {
+    "2e2830fc40755777": [
+     0,
+     4971
+    ],
+    "64d06a427cbc3780": [
+     5321,
+     9225
+    ]
+   }
+  },
+  "quiz-context-before-you-use-it-1": {
+   "file": "af_heart/quiz-context-before-you-use-it-1-cfd84aa96a.mp3",
+   "lines": {
+    "ca381675581956a7": [
+     0,
+     6827
+    ],
+    "caf6c407f2b5f5ab": [
+     7177,
+     11721
+    ]
+   }
+  },
+  "quiz-context-before-you-use-it-2": {
+   "file": "af_heart/quiz-context-before-you-use-it-2-668f096d7a.mp3",
+   "lines": {
+    "e22cbf1aa760eb94": [
+     0,
+     4971
+    ],
+    "88344d3029805ddf": [
+     5321,
+     9907
+    ]
+   }
+  },
+  "quiz-context-closest-provider-1": {
+   "file": "af_heart/quiz-context-closest-provider-1-538a85d82c.mp3",
+   "lines": {
+    "24176f29062afe46": [
+     0,
+     1515
+    ],
+    "d3b3c7c6fa65d0bb": [
+     1865,
+     4595
+    ]
+   }
+  },
+  "quiz-context-closest-provider-2": {
+   "file": "af_heart/quiz-context-closest-provider-2-f8412787ad.mp3",
+   "lines": {
+    "16637ebb9b14558b": [
+     0,
+     5077
+    ],
+    "feec62bd440f9a1a": [
+     5427,
+     10633
+    ]
+   }
+  },
+  "quiz-context-default-value-1": {
+   "file": "af_heart/quiz-context-default-value-1-1a637039ab.mp3",
+   "lines": {
+    "ded9cac3308e4a81": [
+     0,
+     4331
+    ],
+    "b9e7fbf2113d81a1": [
+     4681,
+     8521
+    ]
+   }
+  },
+  "quiz-context-default-value-2": {
+   "file": "af_heart/quiz-context-default-value-2-761d345251.mp3",
+   "lines": {
+    "fe7caf653caac722": [
+     0,
+     5525
+    ],
+    "b3b82a35b19acf80": [
+     5875,
+     10142
+    ]
+   }
+  },
+  "quiz-context-rerenders-1": {
+   "file": "af_heart/quiz-context-rerenders-1-8598d858b1.mp3",
+   "lines": {
+    "a96ae27fcd3f15f6": [
+     0,
+     6827
+    ],
+    "f26690311bae643e": [
+     7177,
+     10099
+    ]
+   }
+  },
+  "quiz-context-rerenders-2": {
+   "file": "af_heart/quiz-context-rerenders-2-ddb9973b1e.mp3",
+   "lines": {
+    "774d48189321504e": [
+     0,
+     5291
+    ],
+    "04fce36c4812f09b": [
+     5641,
+     10931
+    ]
+   }
+  },
+  "quiz-controlled-inputs-1": {
+   "file": "af_heart/quiz-controlled-inputs-1-d3d6b7a5a7.mp3",
+   "lines": {
+    "e49a476088382e0a": [
+     0,
+     2475
+    ],
+    "332a9860dbca404b": [
+     2825,
+     5022
+    ]
+   }
+  },
+  "quiz-controlled-inputs-2": {
+   "file": "af_heart/quiz-controlled-inputs-2-940a099f43.mp3",
+   "lines": {
+    "e55ca0050ef5d68e": [
+     0,
+     3456
+    ],
+    "a8aef2efc25c94e2": [
+     3806,
+     4873
+    ]
+   }
+  },
+  "quiz-controlled-vs-uncontrolled-1": {
+   "file": "af_heart/quiz-controlled-vs-uncontrolled-1-b6847034ac.mp3",
+   "lines": {
+    "16924c045641a37d": [
+     0,
+     1856
+    ],
+    "1c7827d12d12174e": [
+     2206,
+     6089
+    ]
+   }
+  },
+  "quiz-controlled-vs-uncontrolled-2": {
+   "file": "af_heart/quiz-controlled-vs-uncontrolled-2-0426ab039e.mp3",
+   "lines": {
+    "84fc865f61f134a1": [
+     0,
+     5120
+    ],
+    "2940e5b98e52cad4": [
+     5470,
+     10270
+    ]
+   }
+  },
+  "quiz-create-and-provide-context-1": {
+   "file": "af_heart/quiz-create-and-provide-context-1-8b05e0dfe6.mp3",
+   "lines": {
+    "3da12d7580def941": [
+     0,
+     2880
+    ],
+    "31f16add13e1c029": [
+     3230,
+     6003
+    ]
+   }
+  },
+  "quiz-create-and-provide-context-2": {
+   "file": "af_heart/quiz-create-and-provide-context-2-032e44e3bb.mp3",
+   "lines": {
+    "97fd06494f7d46bc": [
+     0,
+     2581
+    ],
+    "968f5d2498b51d16": [
+     2931,
+     6622
+    ]
+   }
+  },
+  "quiz-create-portal-1": {
+   "file": "af_heart/quiz-create-portal-1-02c83f467b.mp3",
+   "lines": {
+    "7241191a39db01e5": [
+     0,
+     5995
+    ],
+    "4a529e6f8d2aae76": [
+     6345,
+     8841
+    ]
+   }
+  },
+  "quiz-create-portal-2": {
+   "file": "af_heart/quiz-create-portal-2-66c1bd64a8.mp3",
+   "lines": {
+    "23cb673ec9c05c83": [
+     0,
+     3499
+    ],
+    "cf253265e98a005c": [
+     3849,
+     6729
+    ]
+   }
+  },
+  "quiz-custom-hook-naming-1": {
+   "file": "af_heart/quiz-custom-hook-naming-1-1e5a076a6f.mp3",
+   "lines": {
+    "83c320a7feff72af": [
+     0,
+     2816
+    ],
+    "dc4bef5a29332f84": [
+     3166,
+     6345
+    ]
+   }
+  },
+  "quiz-custom-hook-when-1": {
+   "file": "af_heart/quiz-custom-hook-when-1-19f2eaabb5.mp3",
+   "lines": {
+    "5e4befa91c67ff42": [
+     0,
+     2965
+    ],
+    "81f2917530053d1b": [
+     3315,
+     6366
+    ]
+   }
+  },
+  "quiz-custom-hook-when-2": {
+   "file": "af_heart/quiz-custom-hook-when-2-0583aa1df6.mp3",
+   "lines": {
+    "f34570593cf30343": [
+     0,
+     4629
+    ],
+    "b8c21ffc66f626c8": [
+     4979,
+     6942
+    ]
+   }
+  },
+  "quiz-custom-hooks-share-logic-not-state-1": {
+   "file": "af_heart/quiz-custom-hooks-share-logic-not-state-1-45e50ec9e4.mp3",
+   "lines": {
+    "a3d86070cbff8fea": [
+     0,
+     3435
+    ],
+    "9120f0f4ee0be59d": [
+     3785,
+     6814
+    ]
+   }
+  },
+  "quiz-custom-hooks-share-logic-not-state-2": {
+   "file": "af_heart/quiz-custom-hooks-share-logic-not-state-2-e4188578ab.mp3",
+   "lines": {
+    "bfb87ac1deee9c7c": [
+     0,
+     6400
+    ],
+    "44a1feba4cd9b342": [
+     6750,
+     12041
+    ]
+   }
+  },
+  "quiz-declarative-ui-states-1": {
+   "file": "af_heart/quiz-declarative-ui-states-1-5c52a829f8.mp3",
+   "lines": {
+    "4578a120e112e88e": [
+     0,
+     5995
+    ],
+    "3736595cd46add9d": [
+     6345,
+     13555
+    ]
+   }
+  },
+  "quiz-declarative-ui-states-2": {
+   "file": "af_heart/quiz-declarative-ui-states-2-08e7c454f0.mp3",
+   "lines": {
+    "40393d24fbe7e001": [
+     0,
+     3221
+    ],
+    "2257c7ac9109fa9a": [
+     3571,
+     7582
+    ]
+   }
+  },
+  "quiz-default-prop-values-1": {
+   "file": "af_heart/quiz-default-prop-values-1-39f1eaa755.mp3",
+   "lines": {
+    "f8179a76a3bd481f": [
+     0,
+     5696
+    ],
+    "eac1da76df7bfbe2": [
+     6046,
+     10483
+    ]
+   }
+  },
+  "quiz-default-prop-values-2": {
+   "file": "af_heart/quiz-default-prop-values-2-603de039eb.mp3",
+   "lines": {
+    "f95bfba630f8fa3d": [
+     0,
+     4843
+    ],
+    "0c566b630b8e8198": [
+     5193,
+     10483
+    ]
+   }
+  },
+  "quiz-deferred-vs-debounce-1": {
+   "file": "af_heart/quiz-deferred-vs-debounce-1-7eb59880c4.mp3",
+   "lines": {
+    "5fa67eb1f698ca67": [
+     0,
+     4885
+    ],
+    "2e8e32422f1cbf24": [
+     5235,
+     8329
+    ]
+   }
+  },
+  "quiz-deferred-vs-debounce-2": {
+   "file": "af_heart/quiz-deferred-vs-debounce-2-2bbfd2c558.mp3",
+   "lines": {
+    "1c49b73ed19cb7ae": [
+     0,
+     3797
+    ],
+    "05c4266ec202504d": [
+     4147,
+     7774
+    ]
+   }
+  },
+  "quiz-dependency-array-1": {
+   "file": "af_heart/quiz-dependency-array-1-a5f1ad5dec.mp3",
+   "lines": {
+    "7bc8bcf7025a31e0": [
+     0,
+     7019
+    ],
+    "2e17b2dd1eef4255": [
+     7369,
+     10867
+    ]
+   }
+  },
+  "quiz-dependency-array-2": {
+   "file": "af_heart/quiz-dependency-array-2-dae114018a.mp3",
+   "lines": {
+    "04e1b3452339ec53": [
+     0,
+     4800
+    ],
+    "eaf38417fa2584a8": [
+     5150,
+     9715
+    ]
+   }
+  },
+  "quiz-deps-compared-with-object-is-1": {
+   "file": "af_heart/quiz-deps-compared-with-object-is-1-5328b2cbf5.mp3",
+   "lines": {
+    "9033214e21c134d6": [
+     0,
+     6848
+    ],
+    "dec55723da4579f5": [
+     7198,
+     11763
+    ]
+   }
+  },
+  "quiz-deps-compared-with-object-is-2": {
+   "file": "af_heart/quiz-deps-compared-with-object-is-2-c7a9e05b98.mp3",
+   "lines": {
+    "5e18e0979ef95cad": [
+     0,
+     4224
+    ],
+    "8d73957a05e30567": [
+     4574,
+     5833
+    ]
+   }
+  },
+  "quiz-destructuring-props-1": {
+   "file": "af_heart/quiz-destructuring-props-1-a541af49ff.mp3",
+   "lines": {
+    "eb6e7fcd559a803f": [
+     0,
+     3243
+    ],
+    "826cce0a24b472d5": [
+     3593,
+     9801
+    ]
+   }
+  },
+  "quiz-destructuring-props-2": {
+   "file": "af_heart/quiz-destructuring-props-2-aff6db7fea.mp3",
+   "lines": {
+    "e1cb6856f8c0b7f5": [
+     0,
+     3627
+    ],
+    "09e56d36730221b4": [
+     3977,
+     7795
+    ]
+   }
+  },
+  "quiz-different-type-resets-state-1": {
+   "file": "af_heart/quiz-different-type-resets-state-1-ed8ff12294.mp3",
+   "lines": {
+    "a2705dfe2ef6f97a": [
+     0,
+     3584
+    ],
+    "f26ffe9a1ec650de": [
+     3934,
+     9203
+    ]
+   }
+  },
+  "quiz-different-type-resets-state-2": {
+   "file": "af_heart/quiz-different-type-resets-state-2-df36dbd4f3.mp3",
+   "lines": {
+    "9f43bd9872174ec2": [
+     0,
+     6251
+    ],
+    "db6ae6b3b9860ebf": [
+     6601,
+     11422
+    ]
+   }
+  },
+  "quiz-diffing-element-types-1": {
+   "file": "af_heart/quiz-diffing-element-types-1-566b700d3b.mp3",
+   "lines": {
+    "3a9413422a0b5994": [
+     0,
+     5867
+    ],
+    "1afd08c15bc54be3": [
+     6217,
+     8649
+    ]
+   }
+  },
+  "quiz-diffing-element-types-2": {
+   "file": "af_heart/quiz-diffing-element-types-2-15d54217ea.mp3",
+   "lines": {
+    "7335312737fa81ba": [
+     0,
+     5803
+    ],
+    "7ac88ff5dd4d48bf": [
+     6153,
+     7198
+    ]
+   }
+  },
+  "quiz-diffing-keys-1": {
+   "file": "af_heart/quiz-diffing-keys-1-1a34b2f427.mp3",
+   "lines": {
+    "26a3067baea8e6aa": [
+     0,
+     4437
+    ],
+    "b10394ad2170df4f": [
+     4787,
+     8371
+    ]
+   }
+  },
+  "quiz-diffing-keys-2": {
+   "file": "af_heart/quiz-diffing-keys-2-17fb8a5fdb.mp3",
+   "lines": {
+    "2d88ed93ed981e9c": [
+     0,
+     4800
+    ],
+    "3b7f65ceae2a2566": [
+     5150,
+     7369
+    ]
+   }
+  },
+  "quiz-dispatch-snapshot-1": {
+   "file": "af_heart/quiz-dispatch-snapshot-1-f25ecbb643.mp3",
+   "lines": {
+    "448253a1af7dddbf": [
+     0,
+     3456
+    ],
+    "08d1bf8a834ee97c": [
+     3806,
+     7006
+    ]
+   }
+  },
+  "quiz-dispatch-snapshot-2": {
+   "file": "af_heart/quiz-dispatch-snapshot-2-4e11618bb5.mp3",
+   "lines": {
+    "07d516d01e250098": [
+     0,
+     3243
+    ],
+    "96404cbea4926125": [
+     3593,
+     8009
+    ]
+   }
+  },
+  "quiz-dont-fight-react-dom-1": {
+   "file": "af_heart/quiz-dont-fight-react-dom-1-db64359b6c.mp3",
+   "lines": {
+    "fc1e695e6679ef94": [
+     0,
+     5035
+    ],
+    "c1dea45a94ebc050": [
+     5385,
+     9011
+    ]
+   }
+  },
+  "quiz-dont-fight-react-dom-2": {
+   "file": "af_heart/quiz-dont-fight-react-dom-2-3fa72de612.mp3",
+   "lines": {
+    "072fb71874e4e466": [
+     0,
+     3371
+    ],
+    "30b25793ae319a33": [
+     3721,
+     8521
+    ]
+   }
+  },
+  "quiz-dont-mirror-props-1": {
+   "file": "af_heart/quiz-dont-mirror-props-1-45ce500f5c.mp3",
+   "lines": {
+    "2c3a833c4ec066f8": [
+     0,
+     3989
+    ],
+    "543a62722e1346db": [
+     4339,
+     8307
+    ]
+   }
+  },
+  "quiz-dont-mirror-props-2": {
+   "file": "af_heart/quiz-dont-mirror-props-2-6a0464696e.mp3",
+   "lines": {
+    "684899f877ce6861": [
+     0,
+     5995
+    ],
+    "71dc0bdd5b2fd883": [
+     6345,
+     10974
+    ]
+   }
+  },
+  "quiz-dont-read-refs-in-render-1": {
+   "file": "af_heart/quiz-dont-read-refs-in-render-1-0e3221f51e.mp3",
+   "lines": {
+    "c6b4c8e2087300e2": [
+     0,
+     4224
+    ],
+    "45f60c3572c512e9": [
+     4574,
+     9161
+    ]
+   }
+  },
+  "quiz-dont-read-refs-in-render-2": {
+   "file": "af_heart/quiz-dont-read-refs-in-render-2-a098f54d0a.mp3",
+   "lines": {
+    "e5a8ecb0b5835974": [
+     0,
+     5909
+    ],
+    "d814b46875060f8f": [
+     6259,
+     9971
+    ]
+   }
+  },
+  "quiz-dont-skip-dev-double-with-ref-1": {
+   "file": "af_heart/quiz-dont-skip-dev-double-with-ref-1-f3250dc666.mp3",
+   "lines": {
+    "4accbc87a4043e87": [
+     0,
+     3733
+    ],
+    "7539fbbbf60f1f35": [
+     4083,
+     8137
+    ]
+   }
+  },
+  "quiz-dont-skip-dev-double-with-ref-2": {
+   "file": "af_heart/quiz-dont-skip-dev-double-with-ref-2-236286fe27.mp3",
+   "lines": {
+    "d1817b74667ac060": [
+     0,
+     6144
+    ],
+    "1293fd54c30c398a": [
+     6494,
+     9587
+    ]
+   }
+  },
+  "quiz-dont-suppress-linter-1": {
+   "file": "af_heart/quiz-dont-suppress-linter-1-2e8f826f27.mp3",
+   "lines": {
+    "188adbf54b27f230": [
+     0,
+     5483
+    ],
+    "bb66440139be1f48": [
+     5833,
+     9545
+    ]
+   }
+  },
+  "quiz-dont-suppress-linter-2": {
+   "file": "af_heart/quiz-dont-suppress-linter-2-f05d82a269.mp3",
+   "lines": {
+    "43caff3bbe90d540": [
+     0,
+     4053
+    ],
+    "7d8a554f47dc6fa1": [
+     4403,
+     8563
+    ]
+   }
+  },
+  "quiz-each-render-own-effect-1": {
+   "file": "af_heart/quiz-each-render-own-effect-1-490d76f82c.mp3",
+   "lines": {
+    "26c018378a170587": [
+     0,
+     5397
+    ],
+    "cf54af9756d69687": [
+     5747,
+     9267
+    ]
+   }
+  },
+  "quiz-each-render-own-effect-2": {
+   "file": "af_heart/quiz-each-render-own-effect-2-cbdfb8f9e4.mp3",
+   "lines": {
+    "13faa09a671152b0": [
+     0,
+     5995
+    ],
+    "d7fb929f91bf71a5": [
+     6345,
+     9395
+    ]
+   }
+  },
+  "quiz-effect-analytics-1": {
+   "file": "af_heart/quiz-effect-analytics-1-b88c94ba5e.mp3",
+   "lines": {
+    "db8f6210baae85cf": [
+     0,
+     6251
+    ],
+    "3826d7ca5b2f1548": [
+     6601,
+     9779
+    ]
+   }
+  },
+  "quiz-effect-analytics-2": {
+   "file": "af_heart/quiz-effect-analytics-2-8e6b7e4c05.mp3",
+   "lines": {
+    "8efcbece700c94e9": [
+     0,
+     3584
+    ],
+    "72e39c41a6c71a04": [
+     3934,
+     6814
+    ]
+   }
+  },
+  "quiz-effect-animations-1": {
+   "file": "af_heart/quiz-effect-animations-1-124e769744.mp3",
+   "lines": {
+    "38adf65fc3e901ac": [
+     0,
+     2581
+    ],
+    "bd4a098e36486ddf": [
+     2931,
+     5769
+    ]
+   }
+  },
+  "quiz-effect-animations-2": {
+   "file": "af_heart/quiz-effect-animations-2-9f1b12e384.mp3",
+   "lines": {
+    "cd5f017da3aae931": [
+     0,
+     4203
+    ],
+    "6f34cc725f7eabe6": [
+     4553,
+     7326
+    ]
+   }
+  },
+  "quiz-effect-cleanup-1": {
+   "file": "af_heart/quiz-effect-cleanup-1-9a1cb9093f.mp3",
+   "lines": {
+    "0e91c41950c117a4": [
+     0,
+     4757
+    ],
+    "d7a0878fbd54ab04": [
+     5107,
+     10035
+    ]
+   }
+  },
+  "quiz-effect-cleanup-2": {
+   "file": "af_heart/quiz-effect-cleanup-2-4557eb2b78.mp3",
+   "lines": {
+    "ed12245f78a1cf7a": [
+     0,
+     6549
+    ],
+    "abda38e051e67fd5": [
+     6899,
+     11187
+    ]
+   }
+  },
+  "quiz-effect-event-latest-values-1": {
+   "file": "af_heart/quiz-effect-event-latest-values-1-96f86818f1.mp3",
+   "lines": {
+    "8ca3a866e55b99aa": [
+     0,
+     5547
+    ],
+    "f46a0316a180aff7": [
+     5897,
+     8926
+    ]
+   }
+  },
+  "quiz-effect-event-latest-values-2": {
+   "file": "af_heart/quiz-effect-event-latest-values-2-c0c95bd5b7.mp3",
+   "lines": {
+    "a1fa99dd1aced600": [
+     0,
+     4544
+    ],
+    "a6a5d93401877346": [
+     4894,
+     9566
+    ]
+   }
+  },
+  "quiz-effect-event-limitations-1": {
+   "file": "af_heart/quiz-effect-event-limitations-1-81a8c31b1e.mp3",
+   "lines": {
+    "170edbbf052989ef": [
+     0,
+     2965
+    ],
+    "713ade18cb62ca29": [
+     3315,
+     7689
+    ]
+   }
+  },
+  "quiz-effect-event-limitations-2": {
+   "file": "af_heart/quiz-effect-event-limitations-2-9e636b4c4a.mp3",
+   "lines": {
+    "c18c980c94b289fd": [
+     0,
+     5952
+    ],
+    "e2ec88f65eafd2dd": [
+     6302,
+     9182
+    ]
+   }
+  },
+  "quiz-effect-event-listeners-1": {
+   "file": "af_heart/quiz-effect-event-listeners-1-73e3a7182b.mp3",
+   "lines": {
+    "99e278e126cba236": [
+     0,
+     1579
+    ],
+    "9afa2d191abf1ede": [
+     1929,
+     5769
+    ]
+   }
+  },
+  "quiz-effect-event-listeners-2": {
+   "file": "af_heart/quiz-effect-event-listeners-2-b7ba41412a.mp3",
+   "lines": {
+    "b63b24d81dd53d1c": [
+     0,
+     5696
+    ],
+    "53fc37f30756e3c7": [
+     6046,
+     8990
+    ]
+   }
+  },
+  "quiz-effect-event-not-to-skip-deps-1": {
+   "file": "af_heart/quiz-effect-event-not-to-skip-deps-1-77fc2c1944.mp3",
+   "lines": {
+    "3d965be54326570e": [
+     0,
+     2667
+    ],
+    "d3810b30e30a5fcc": [
+     3017,
+     7603
+    ]
+   }
+  },
+  "quiz-effect-event-not-to-skip-deps-2": {
+   "file": "af_heart/quiz-effect-event-not-to-skip-deps-2-a5294982eb.mp3",
+   "lines": {
+    "37a4f5f0e270ad67": [
+     0,
+     6677
+    ],
+    "354d82a90b57ae2d": [
+     7027,
+     8521
+    ]
+   }
+  },
+  "quiz-effect-event-prop-callbacks-1": {
+   "file": "af_heart/quiz-effect-event-prop-callbacks-1-f180ec9cee.mp3",
+   "lines": {
+    "c0cded3096d30d3b": [
+     0,
+     7104
+    ],
+    "d34ea9aa2802ffd9": [
+     7454,
+     11763
+    ]
+   }
+  },
+  "quiz-effect-event-prop-callbacks-2": {
+   "file": "af_heart/quiz-effect-event-prop-callbacks-2-ad3a20dd3f.mp3",
+   "lines": {
+    "b3148fc477b5d9c1": [
+     0,
+     4480
+    ],
+    "a562ef5d53ad3210": [
+     4830,
+     6046
+    ]
+   }
+  },
+  "quiz-effect-infinite-loop-1": {
+   "file": "af_heart/quiz-effect-infinite-loop-1-225fd0aa8c.mp3",
+   "lines": {
+    "ac0463c01aa242d0": [
+     0,
+     5504
+    ],
+    "79cfef6e8536573e": [
+     5854,
+     10377
+    ]
+   }
+  },
+  "quiz-effect-lifecycle-1": {
+   "file": "af_heart/quiz-effect-lifecycle-1-dff86a984c.mp3",
+   "lines": {
+    "490787a09aad90cc": [
+     0,
+     6293
+    ],
+    "06e84481f30e66c3": [
+     6643,
+     10739
+    ]
+   }
+  },
+  "quiz-effect-lifecycle-2": {
+   "file": "af_heart/quiz-effect-lifecycle-2-0ac8d08489.mp3",
+   "lines": {
+    "77caaa847a8f982f": [
+     0,
+     7467
+    ],
+    "1fdf900840e5009b": [
+     7817,
+     12126
+    ]
+   }
+  },
+  "quiz-effect-non-react-widgets-1": {
+   "file": "af_heart/quiz-effect-non-react-widgets-1-c07ecb3801.mp3",
+   "lines": {
+    "bd764917fb0299a7": [
+     0,
+     4949
+    ],
+    "6b8010904b802325": [
+     5299,
+     7987
+    ]
+   }
+  },
+  "quiz-effect-non-react-widgets-2": {
+   "file": "af_heart/quiz-effect-non-react-widgets-2-363c9d1e6c.mp3",
+   "lines": {
+    "3ba1bec136c1627b": [
+     0,
+     3179
+    ],
+    "c4fb4aadbd589256": [
+     3529,
+     5918
+    ]
+   }
+  },
+  "quiz-effect-timing-interactions-1": {
+   "file": "af_heart/quiz-effect-timing-interactions-1-e4350ccc1a.mp3",
+   "lines": {
+    "46c6c22016ed353b": [
+     0,
+     4715
+    ],
+    "89190bad1f22ce5d": [
+     5065,
+     8499
+    ]
+   }
+  },
+  "quiz-effect-timing-interactions-2": {
+   "file": "af_heart/quiz-effect-timing-interactions-2-582870b68f.mp3",
+   "lines": {
+    "eb605ecee0a89751": [
+     0,
+     4267
+    ],
+    "b931dc3136926a42": [
+     4617,
+     7923
+    ]
+   }
+  },
+  "quiz-effects-after-paint-1": {
+   "file": "af_heart/quiz-effects-after-paint-1-d86144bffb.mp3",
+   "lines": {
+    "dec3c2ee902270f7": [
+     0,
+     2901
+    ],
+    "f2efee27f105e298": [
+     3251,
+     6067
+    ]
+   }
+  },
+  "quiz-effects-after-paint-2": {
+   "file": "af_heart/quiz-effects-after-paint-2-fa2a865fab.mp3",
+   "lines": {
+    "76c917b15f1266e2": [
+     0,
+     3221
+    ],
+    "59b94e5858fa2d4c": [
+     3571,
+     5385
+    ]
+   }
+  },
+  "quiz-effects-client-only-1": {
+   "file": "af_heart/quiz-effects-client-only-1-7fe0458869.mp3",
+   "lines": {
+    "d5522ff78e84426e": [
+     0,
+     4096
+    ],
+    "894a0fa5b1b8d599": [
+     4446,
+     8286
+    ]
+   }
+  },
+  "quiz-effects-client-only-2": {
+   "file": "af_heart/quiz-effects-client-only-2-7ea0d0c30b.mp3",
+   "lines": {
+    "03774966538311dd": [
+     0,
+     5163
+    ],
+    "849f80e69d4a811e": [
+     5513,
+     8713
+    ]
+   }
+  },
+  "quiz-effects-run-twice-dev-1": {
+   "file": "af_heart/quiz-effects-run-twice-dev-1-32c7b4237c.mp3",
+   "lines": {
+    "1a6027a71dde2930": [
+     0,
+     3904
+    ],
+    "46eff6bfb4e32066": [
+     4254,
+     8542
+    ]
+   }
+  },
+  "quiz-error-boundaries-1": {
+   "file": "af_heart/quiz-error-boundaries-1-06d5b1403d.mp3",
+   "lines": {
+    "dce2f9ddc2e7905b": [
+     0,
+     3072
+    ],
+    "5919abdcd6adfb80": [
+     3422,
+     5875
+    ]
+   }
+  },
+  "quiz-error-boundaries-2": {
+   "file": "af_heart/quiz-error-boundaries-2-2da3d0288f.mp3",
+   "lines": {
+    "a9cab3d73e435aeb": [
+     0,
+     4800
+    ],
+    "38db66b356e72cc3": [
+     5150,
+     8158
+    ]
+   }
+  },
+  "quiz-event-delegation-1": {
+   "file": "af_heart/quiz-event-delegation-1-624708dc6e.mp3",
+   "lines": {
+    "f9f8d4fc9549dbe8": [
+     0,
+     4011
+    ],
+    "18a42dbc8806bf2f": [
+     4361,
+     5598
+    ]
+   }
+  },
+  "quiz-event-delegation-2": {
+   "file": "af_heart/quiz-event-delegation-2-357d0162c7.mp3",
+   "lines": {
+    "7f08173023757541": [
+     0,
+     6997
+    ],
+    "91234403bc0f2b05": [
+     7347,
+     10547
+    ]
+   }
+  },
+  "quiz-event-handlers-1": {
+   "file": "af_heart/quiz-event-handlers-1-1ef971d23d.mp3",
+   "lines": {
+    "baef4ab39b817d8f": [
+     0,
+     2923
+    ],
+    "11ebce4a4c25dbf2": [
+     3273,
+     6750
+    ]
+   }
+  },
+  "quiz-event-handlers-2": {
+   "file": "af_heart/quiz-event-handlers-2-2992c02714.mp3",
+   "lines": {
+    "32cdf69218dba368": [
+     0,
+     6101
+    ],
+    "2fc14e42120c7b8d": [
+     6451,
+     10505
+    ]
+   }
+  },
+  "quiz-event-propagation-1": {
+   "file": "af_heart/quiz-event-propagation-1-54b8f28e76.mp3",
+   "lines": {
+    "597b4b2585b4fbe4": [
+     0,
+     3157
+    ],
+    "44a84a64c4b216d0": [
+     3507,
+     7646
+    ]
+   }
+  },
+  "quiz-event-propagation-2": {
+   "file": "af_heart/quiz-event-propagation-2-3d2f29ae2b.mp3",
+   "lines": {
+    "470ae499c19b545a": [
+     0,
+     2987
+    ],
+    "85e992ddfb0768fe": [
+     3337,
+     7497
+    ]
+   }
+  },
+  "quiz-event-vs-effect-choice-1": {
+   "file": "af_heart/quiz-event-vs-effect-choice-1-c7f03fdb6b.mp3",
+   "lines": {
+    "39a7cf82d7817447": [
+     0,
+     5291
+    ],
+    "4e21e5ffc1e96de7": [
+     5641,
+     8670
+    ]
+   }
+  },
+  "quiz-event-vs-effect-choice-2": {
+   "file": "af_heart/quiz-event-vs-effect-choice-2-fd24193aaa.mp3",
+   "lines": {
+    "0a7d53731e8a0484": [
+     0,
+     6080
+    ],
+    "67c03a0b88d5297c": [
+     6430,
+     10206
+    ]
+   }
+  },
+  "quiz-extract-custom-hook-1": {
+   "file": "af_heart/quiz-extract-custom-hook-1-4984f192bb.mp3",
+   "lines": {
+    "e35c4abab5f56692": [
+     0,
+     3200
+    ],
+    "917aaf6eeae080c1": [
+     3550,
+     7795
+    ]
+   }
+  },
+  "quiz-extract-custom-hook-2": {
+   "file": "af_heart/quiz-extract-custom-hook-2-e7ddd3eaf3.mp3",
+   "lines": {
+    "77a46b17357a06fd": [
+     0,
+     4651
+    ],
+    "ad7f029c1f0eb790": [
+     5001,
+     7326
+    ]
+   }
+  },
+  "quiz-fetching-alternatives-1": {
+   "file": "af_heart/quiz-fetching-alternatives-1-1ca5970176.mp3",
+   "lines": {
+    "847213465326a18c": [
+     0,
+     4459
+    ],
+    "c333bbacdb264487": [
+     4809,
+     9737
+    ]
+   }
+  },
+  "quiz-fetching-alternatives-2": {
+   "file": "af_heart/quiz-fetching-alternatives-2-14bbccb313.mp3",
+   "lines": {
+    "48274573480fcfe9": [
+     0,
+     6464
+    ],
+    "3c49c384d393063e": [
+     6814,
+     10377
+    ]
+   }
+  },
+  "quiz-fetching-race-conditions-1": {
+   "file": "af_heart/quiz-fetching-race-conditions-1-3de80dd414.mp3",
+   "lines": {
+    "9ff58b10f8b480e0": [
+     0,
+     4949
+    ],
+    "091ccf353edb1ead": [
+     5299,
+     11785
+    ]
+   }
+  },
+  "quiz-fetching-race-conditions-2": {
+   "file": "af_heart/quiz-fetching-race-conditions-2-72ab3f6965.mp3",
+   "lines": {
+    "b366f691300c069b": [
+     0,
+     3435
+    ],
+    "3d3b7de4ee1c1670": [
+     3785,
+     8627
+    ]
+   }
+  },
+  "quiz-fiber-1": {
+   "file": "af_heart/quiz-fiber-1-b001601289.mp3",
+   "lines": {
+    "c75a403184b42965": [
+     0,
+     1749
+    ],
+    "c2cae821db878076": [
+     2099,
+     3465
+    ]
+   }
+  },
+  "quiz-fiber-2": {
+   "file": "af_heart/quiz-fiber-2-629e125f8c.mp3",
+   "lines": {
+    "dbdf519a6c0dd343": [
+     0,
+     5547
+    ],
+    "217c04d5ab3b0276": [
+     5897,
+     8499
+    ]
+   }
+  },
+  "quiz-filtering-lists-1": {
+   "file": "af_heart/quiz-filtering-lists-1-7040fd2ce9.mp3",
+   "lines": {
+    "d49e6f4c1e8cb174": [
+     0,
+     5120
+    ],
+    "6752c4482cfbf53c": [
+     5470,
+     9267
+    ]
+   }
+  },
+  "quiz-filtering-lists-2": {
+   "file": "af_heart/quiz-filtering-lists-2-d45c3d3a8e.mp3",
+   "lines": {
+    "e5b90c9199fec540": [
+     0,
+     3093
+    ],
+    "4c1ea0b4aee7936c": [
+     3443,
+     8286
+    ]
+   }
+  },
+  "quiz-flatten-nested-state-1": {
+   "file": "af_heart/quiz-flatten-nested-state-1-8f87a37599.mp3",
+   "lines": {
+    "c4bd4c8229402149": [
+     0,
+     6229
+    ],
+    "fb9a0930cd91004e": [
+     6579,
+     11337
+    ]
+   }
+  },
+  "quiz-flatten-nested-state-2": {
+   "file": "af_heart/quiz-flatten-nested-state-2-1adc9e3ba9.mp3",
+   "lines": {
+    "6f533d221b32921a": [
+     0,
+     3712
+    ],
+    "61c2d668c32a147a": [
+     4062,
+     9097
+    ]
+   }
+  },
+  "quiz-flushsync-with-refs-1": {
+   "file": "af_heart/quiz-flushsync-with-refs-1-dc28e58069.mp3",
+   "lines": {
+    "e57a13181f9401ca": [
+     0,
+     3925
+    ],
+    "dd66cee305ad7d12": [
+     4275,
+     8627
+    ]
+   }
+  },
+  "quiz-flushsync-with-refs-2": {
+   "file": "af_heart/quiz-flushsync-with-refs-2-1761d4ed09.mp3",
+   "lines": {
+    "46aec0b59f21f716": [
+     0,
+     3904
+    ],
+    "25280b3e1d565019": [
+     4254,
+     9225
+    ]
+   }
+  },
+  "quiz-form-action-prop-1": {
+   "file": "af_heart/quiz-form-action-prop-1-cad8e8c672.mp3",
+   "lines": {
+    "a7de6dd9adbf8bdd": [
+     0,
+     3328
+    ],
+    "bf36d172472bcdb5": [
+     3678,
+     6153
+    ]
+   }
+  },
+  "quiz-form-action-prop-2": {
+   "file": "af_heart/quiz-form-action-prop-2-7d064009b6.mp3",
+   "lines": {
+    "be3c3098badaa7b6": [
+     0,
+     3264
+    ],
+    "768eed297f716253": [
+     3614,
+     6729
+    ]
+   }
+  },
+  "quiz-fragments-1": {
+   "file": "af_heart/quiz-fragments-1-17f332488a.mp3",
+   "lines": {
+    "8b7d262511d837f8": [
+     0,
+     3093
+    ],
+    "9bc33f258f179198": [
+     3443,
+     7774
+    ]
+   }
+  },
+  "quiz-fragments-2": {
+   "file": "af_heart/quiz-fragments-2-551aea700a.mp3",
+   "lines": {
+    "2eb2a1f1f5236b14": [
+     0,
+     4480
+    ],
+    "2b80c642fddd71ea": [
+     4830,
+     8009
+    ]
+   }
+  },
+  "quiz-getsnapshot-cached-1": {
+   "file": "af_heart/quiz-getsnapshot-cached-1-0f8c41c5bd.mp3",
+   "lines": {
+    "b8f1d91e9e83e344": [
+     0,
+     2496
+    ],
+    "3dfe70d04bf260cf": [
+     2846,
+     7219
+    ]
+   }
+  },
+  "quiz-getsnapshot-cached-2": {
+   "file": "af_heart/quiz-getsnapshot-cached-2-dfdca4a356.mp3",
+   "lines": {
+    "077aa7c0f50857d7": [
+     0,
+     5568
+    ],
+    "8781e73cfa6c32f5": [
+     5918,
+     8009
+    ]
+   }
+  },
+  "quiz-handlers-as-props-1": {
+   "file": "af_heart/quiz-handlers-as-props-1-7652eefb40.mp3",
+   "lines": {
+    "e33848b1b8929c8e": [
+     0,
+     5568
+    ],
+    "1354f0924555d6bf": [
+     5918,
+     11934
+    ]
+   }
+  },
+  "quiz-handlers-as-props-2": {
+   "file": "af_heart/quiz-handlers-as-props-2-e97752cdd0.mp3",
+   "lines": {
+    "8c779c4549680bf0": [
+     0,
+     2112
+    ],
+    "518de76f318e0d6e": [
+     2462,
+     6771
+    ]
+   }
+  },
+  "quiz-hooks-call-order-1": {
+   "file": "af_heart/quiz-hooks-call-order-1-f32605b9bd.mp3",
+   "lines": {
+    "7ff91a701a4f965b": [
+     0,
+     5461
+    ],
+    "dda76abb1e72d366": [
+     5811,
+     9054
+    ]
+   }
+  },
+  "quiz-hooks-call-order-2": {
+   "file": "af_heart/quiz-hooks-call-order-2-970d6cf27e.mp3",
+   "lines": {
+    "f2c56fa62d061dbc": [
+     0,
+     3584
+    ],
+    "b2735de94c3ef61c": [
+     3934,
+     7134
+    ]
+   }
+  },
+  "quiz-hooks-stored-on-fiber-1": {
+   "file": "af_heart/quiz-hooks-stored-on-fiber-1-24db55569b.mp3",
+   "lines": {
+    "efa93bae0e8113d6": [
+     0,
+     5547
+    ],
+    "f264bc9fd49264a0": [
+     5897,
+     8947
+    ]
+   }
+  },
+  "quiz-hooks-stored-on-fiber-2": {
+   "file": "af_heart/quiz-hooks-stored-on-fiber-2-0d2333a00d.mp3",
+   "lines": {
+    "a1368be86a20cfe1": [
+     0,
+     3520
+    ],
+    "482156ac7db0852c": [
+     3870,
+     4915
+    ]
+   }
+  },
+  "quiz-hydration-1": {
+   "file": "af_heart/quiz-hydration-1-50b4f473bc.mp3",
+   "lines": {
+    "261788e48a9456fe": [
+     0,
+     2453
+    ],
+    "cdba27fcea05348f": [
+     2803,
+     7923
+    ]
+   }
+  },
+  "quiz-hydration-2": {
+   "file": "af_heart/quiz-hydration-2-369a393c02.mp3",
+   "lines": {
+    "596994d95bb5fd5e": [
+     0,
+     5035
+    ],
+    "8fd9c0a5d8866970": [
+     5385,
+     9075
+    ]
+   }
+  },
+  "quiz-hydration-mismatch-1": {
+   "file": "af_heart/quiz-hydration-mismatch-1-2d1a5ccbf6.mp3",
+   "lines": {
+    "494878a8d1962f33": [
+     0,
+     4651
+    ],
+    "48a118c3e91b3b59": [
+     5001,
+     9758
+    ]
+   }
+  },
+  "quiz-hydration-mismatch-2": {
+   "file": "af_heart/quiz-hydration-mismatch-2-d3b5ad6ea7.mp3",
+   "lines": {
+    "a3613ba905d98ab4": [
+     0,
+     5504
+    ],
+    "babf77d573f3ad1c": [
+     5854,
+     10953
+    ]
+   }
+  },
+  "quiz-hydration-mismatch-3": {
+   "file": "af_heart/quiz-hydration-mismatch-3-761c8395e9.mp3",
+   "lines": {
+    "f17774bf9a355ae4": [
+     0,
+     5824
+    ],
+    "380347352133278d": [
+     6174,
+     10142
+    ]
+   }
+  },
+  "quiz-import-export-components-1": {
+   "file": "af_heart/quiz-import-export-components-1-481e31275d.mp3",
+   "lines": {
+    "b442db9b58183d7a": [
+     0,
+     4736
+    ],
+    "74cbecec64c95e20": [
+     5086,
+     11038
+    ]
+   }
+  }
+ }
 }
