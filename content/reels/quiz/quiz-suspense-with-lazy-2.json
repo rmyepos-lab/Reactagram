@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-suspense-with-lazy-2",
+  "topic": "Suspense & Data",
+  "concept": "suspense-with-lazy",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "Suspense",
+    "lazy",
+    "code-splitting"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/lazy#suspense-for-code-splitting",
+  "question": "The lazy module fails to load. What handles the error?",
+  "options": [
+    "The Suspense fallback",
+    "The nearest Error Boundary",
+    "Nothing: it silently retries"
+  ],
+  "answer": 1,
+  "say": "The lazy module fails to load. What handles the error?",
+  "explanation": "If the Promise rejects, React throws the rejection reason for the nearest Error Boundary.",
+  "explainSay": "The nearest Error Boundary."
+}

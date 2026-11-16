@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-suspense-and-transitions-1",
+  "topic": "Suspense & Data",
+  "concept": "suspense-and-transitions",
+  "format": "which-hook",
+  "level": "advanced",
+  "tags": [
+    "Suspense",
+    "useTransition",
+    "navigation"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/Suspense#preventing-already-revealed-content-from-hiding",
+  "question": "Navigating replaces the visible page with a big spinner. What prevents that?",
+  "options": [
+    "Wrap setPage in startTransition",
+    "Add more fallback props",
+    "useLayoutEffect"
+  ],
+  "answer": 0,
+  "say": "Navigating replaces the visible page with a big spinner. What prevents that?",
+  "explanation": "If the update is a Transition, React keeps showing already revealed content instead of the fallback.",
+  "explainSay": "Wrap the navigation in start transition."
+}

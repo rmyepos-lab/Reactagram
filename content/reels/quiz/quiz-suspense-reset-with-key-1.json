@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-suspense-reset-with-key-1",
+  "topic": "Suspense & Data",
+  "concept": "suspense-reset-with-key",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "Suspense",
+    "key",
+    "navigation"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/Suspense#resetting-suspense-boundaries-on-navigation",
+  "question": "Without a key, you navigate from Alice to Bob in a Transition. What shows while Bob loads?",
+  "options": [
+    "The fallback",
+    "Alice's bio stays visible",
+    "An empty page"
+  ],
+  "answer": 1,
+  "say": "Without a key, you navigate from Alice to Bob in a Transition. What shows while Bob loads?",
+  "explanation": "During a Transition React avoids hiding revealed content, so Alice's bio stays until Bob is ready.",
+  "explainSay": "Alice’s bio stays visible."
+}

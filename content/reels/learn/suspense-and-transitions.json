@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "suspense-and-transitions",
+  "topic": "Suspense & Data",
+  "concept": "suspense-and-transitions",
+  "format": "pattern",
+  "level": "advanced",
+  "tags": [
+    "Suspense",
+    "useTransition",
+    "navigation"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/Suspense#preventing-already-revealed-content-from-hiding",
+  "title": "Transitions keep old content instead of a fallback",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Don’t flash the spinner 🙈",
+      "say": "You navigate to a new page that suspends. The whole page is replaced by a big spinner. Jarring."
+    },
+    {
+      "type": "code",
+      "code": "function navigate(url) {\n  startTransition(() => {\n    setPage(url);\n  });\n}",
+      "highlight": [
+        2,
+        3
+      ],
+      "say": "Wrap the navigation in start transition. It tells React the update is not urgent."
+    },
+    {
+      "type": "text",
+      "text": "React keeps showing the already-revealed content until the new page is ready.",
+      "say": "Now React keeps the previous page on screen instead of hiding already revealed content with a fallback."
+    },
+    {
+      "type": "text",
+      "text": "Only already-visible content is protected; new nested boundaries still show fallbacks.",
+      "say": "It only avoids hiding content that is already visible. New nested boundaries can still show their own fallbacks."
+    }
+  ]
+}

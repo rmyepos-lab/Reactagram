@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-suspense-with-lazy-1",
+  "topic": "Suspense & Data",
+  "concept": "suspense-with-lazy",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "Suspense",
+    "lazy",
+    "code-splitting"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/lazy#suspense-for-code-splitting",
+  "question": "When does React start downloading the code for a lazy component?",
+  "options": [
+    "When lazy() is called",
+    "The first time it is rendered",
+    "When the app starts"
+  ],
+  "answer": 1,
+  "say": "When does React start downloading the code for a lazy component?",
+  "explanation": "React does not call load until the first time you attempt to render the returned component.",
+  "explainSay": "The first time it renders."
+}

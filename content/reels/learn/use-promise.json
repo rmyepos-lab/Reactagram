@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "use-promise",
+  "topic": "Suspense & Data",
+  "concept": "use-promise",
+  "format": "pitfall",
+  "level": "advanced",
+  "tags": [
+    "use",
+    "Suspense",
+    "caching"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/use#caching-promises-for-client-components",
+  "title": "use(promise) needs a cached Promise",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Fallback on every render? 🔁",
+      "say": "You read a promise with use, and Suspense shows the fallback again on every re-render. The promise is not cached."
+    },
+    {
+      "type": "code",
+      "code": "function Albums() {\n  // 🔴 new Promise every render\n  const albums = use(fetch(\"/albums\")\n    .then(r => r.json()));\n}",
+      "highlight": [
+        3
+      ],
+      "say": "A new promise created during render is a different promise each time. So React suspends again and again."
+    },
+    {
+      "type": "code",
+      "code": "const cache = new Map();\nexport function fetchData(url) {\n  if (!cache.has(url)) {\n    cache.set(url, getData(url));\n  }\n  return cache.get(url);\n}",
+      "highlight": [
+        3,
+        6
+      ],
+      "say": "Cache it, so the same URL returns the same promise. On re-render, use reads the resolved value without suspending."
+    },
+    {
+      "type": "text",
+      "text": "Frameworks usually handle caching for you.",
+      "say": "Frameworks typically provide this caching. Without one, a simple module level cache works."
+    }
+  ]
+}

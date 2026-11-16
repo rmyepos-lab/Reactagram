@@ -1,0 +1,65 @@
+{
+  "kind": "learn",
+  "id": "nested-suspense",
+  "topic": "Suspense & Data",
+  "concept": "nested-suspense",
+  "format": "pattern",
+  "level": "intermediate",
+  "tags": [
+    "Suspense",
+    "loading",
+    "ux"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/Suspense#revealing-nested-content-as-it-loads",
+  "title": "Nested Suspense reveals content in steps",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Load in stages 🪜",
+      "say": "Nest Suspense boundaries to reveal content step by step, instead of waiting for everything."
+    },
+    {
+      "type": "code",
+      "code": "<Suspense fallback={<BigSpinner />}>\n  <Biography />\n  <Suspense fallback={<AlbumsGlimmer />}>\n    <Panel>\n      <Albums />\n    </Panel>\n  </Suspense>\n</Suspense>",
+      "highlight": [
+        1,
+        3
+      ],
+      "say": "Biography sits in the outer boundary. Albums has its own inner boundary."
+    },
+    {
+      "type": "visual",
+      "say": "Here is the loading sequence.",
+      "visual": {
+        "kind": "timeline",
+        "events": [
+          {
+            "id": "big",
+            "label": "BigSpinner",
+            "note": "Biography not loaded yet"
+          },
+          {
+            "id": "bio",
+            "label": "Biography shows",
+            "note": "Albums still loading"
+          },
+          {
+            "id": "glim",
+            "label": "AlbumsGlimmer",
+            "note": "in place of Panel + Albums"
+          },
+          {
+            "id": "albums",
+            "label": "Albums show",
+            "note": "everything is ready"
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "text": "Group what should appear together; split what can appear early.",
+      "say": "Put things that should appear together in one boundary, and give separate boundaries to parts that can appear earlier."
+    }
+  ]
+}

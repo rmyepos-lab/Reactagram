@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-nested-suspense-1",
+  "topic": "Suspense & Data",
+  "concept": "nested-suspense",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "Suspense",
+    "loading",
+    "ux"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/Suspense#revealing-nested-content-as-it-loads",
+  "question": "Biography is ready, Albums is still loading. What does the user see?",
+  "code": "<Suspense fallback={<BigSpinner />}>\n  <Biography />\n  <Suspense fallback={<Glimmer />}>\n    <Albums />\n  </Suspense>\n</Suspense>",
+  "options": [
+    "BigSpinner",
+    "Biography and Glimmer",
+    "Nothing yet"
+  ],
+  "answer": 1,
+  "say": "Biography is ready, but Albums is still loading. What does the user see?",
+  "explanation": "The outer boundary can reveal Biography. The inner boundary shows Glimmer in place of Albums.",
+  "explainSay": "Biography, with the Glimmer where Albums will go."
+}

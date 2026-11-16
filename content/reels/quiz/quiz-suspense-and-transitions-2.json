@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-suspense-and-transitions-2",
+  "topic": "Suspense & Data",
+  "concept": "suspense-and-transitions",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "Suspense",
+    "useTransition",
+    "navigation"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/Suspense#preventing-already-revealed-content-from-hiding",
+  "question": "True or false: a suspending update in a Transition shows the old content while waiting.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: a suspending update inside a Transition shows the old content while it waits.",
+  "explanation": "True. The fallback is shown again only if the update was not caused by startTransition or useDeferredValue.",
+  "explainSay": "True. The old content stays while the new content loads."
+}
