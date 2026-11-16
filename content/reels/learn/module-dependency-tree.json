@@ -1,0 +1,42 @@
+{
+  "kind": "learn",
+  "id": "module-dependency-tree",
+  "topic": "Components & JSX",
+  "concept": "module-dependency-tree",
+  "format": "compare",
+  "level": "intermediate",
+  "tags": [
+    "modules",
+    "bundler",
+    "dependency-tree"
+  ],
+  "sourceUrl": "https://react.dev/learn/understanding-your-ui-as-a-tree#the-module-dependency-tree",
+  "title": "Render tree vs module dependency tree",
+  "slides": [
+    {
+      "type": "title",
+      "text": "The other tree: imports 📦",
+      "say": "Your app has a second tree. Not who renders whom, but who imports whom."
+    },
+    {
+      "type": "text",
+      "text": "Each node is a module (a file). Each branch is an import statement.",
+      "say": "In the module dependency tree, every node is a module, and every branch is an import statement."
+    },
+    {
+      "type": "code",
+      "code": "// App.js\nimport Copyright from \"./Copyright\";\nimport Gallery from \"./Gallery\";\nimport { quotes } from \"./quotes\";\n\n<Gallery>\n  <Copyright />\n</Gallery>",
+      "highlight": [
+        4,
+        6,
+        7
+      ],
+      "say": "Two differences from the render tree. Plain data files like quotes show up too. And Copyright hangs under App here, because App imports it, even though Gallery renders it as a child."
+    },
+    {
+      "type": "text",
+      "text": "Bundlers use this tree to decide what code to ship. Big tree → big bundle → slower first paint.",
+      "say": "Bundlers use this tree to decide which code to ship. A large bundle is slow to download and run, so this tree helps you debug bundle size."
+    }
+  ]
+}

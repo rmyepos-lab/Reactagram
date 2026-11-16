@@ -1,0 +1,86 @@
+{
+  "kind": "learn",
+  "id": "ui-as-a-tree",
+  "topic": "Components & JSX",
+  "concept": "ui-as-a-tree",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "render-tree",
+    "components",
+    "structure"
+  ],
+  "sourceUrl": "https://react.dev/learn/understanding-your-ui-as-a-tree#the-render-tree",
+  "title": "Your UI is a render tree 🌳",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Your UI is a tree 🌳",
+      "say": "React models your app as a tree of components, called the render tree."
+    },
+    {
+      "type": "visual",
+      "say": "The root is your root component, here App. It is the first thing React renders.",
+      "visual": {
+        "kind": "tree",
+        "nodes": [
+          {
+            "id": "app",
+            "label": "App"
+          },
+          {
+            "id": "header",
+            "label": "Header",
+            "parent": "app"
+          },
+          {
+            "id": "feed",
+            "label": "Feed",
+            "parent": "app"
+          },
+          {
+            "id": "post",
+            "label": "Post",
+            "parent": "feed",
+            "note": "post"
+          },
+          {
+            "id": "like",
+            "label": "LikeButton",
+            "parent": "post",
+            "note": "liked"
+          }
+        ]
+      },
+      "steps": [
+        {
+          "say": "Each arrow points from a parent to a child it renders. App renders Header and Feed.",
+          "show": [
+            "header",
+            "feed"
+          ],
+          "focus": "feed"
+        },
+        {
+          "say": "Feed renders a Post, and Post renders a Like button. Like button has no children: it is a leaf.",
+          "show": [
+            "post",
+            "like"
+          ],
+          "focus": "like"
+        }
+      ],
+      "text": "Only components appear. No div or h1."
+    },
+    {
+      "type": "text",
+      "text": "Top-level components affect the speed of everything below. Leaf components often re-render a lot.",
+      "say": "Why care? Components near the top affect the rendering performance of everything below them. Leaves are often re-rendered frequently."
+    },
+    {
+      "type": "text",
+      "text": "With conditions, the tree can change from one render to the next.",
+      "say": "And with conditional rendering, the tree can look different from one render to the next."
+    }
+  ]
+}

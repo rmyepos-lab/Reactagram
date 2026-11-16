@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "fragments",
+  "topic": "Components & JSX",
+  "concept": "fragments",
+  "format": "special-use",
+  "level": "beginner",
+  "tags": [
+    "jsx",
+    "fragments"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/Fragment#returning-multiple-elements",
+  "title": "Fragments group without a wrapper",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Fragments: invisible wrappers 👻",
+      "say": "Need a group, but not an extra div in the page? Use a Fragment."
+    },
+    {
+      "type": "code",
+      "code": "function Post() {\n  return (\n    <>\n      <PostTitle />\n      <PostBody />\n    </>\n  );\n}",
+      "highlight": [
+        3,
+        6
+      ],
+      "say": "The empty tags group the title and the body into one element that you can return."
+    },
+    {
+      "type": "text",
+      "text": "In the DOM, it is as if they were never grouped: no extra node.",
+      "say": "In the browser, the Fragment leaves nothing behind. It is exactly as if the elements were not grouped at all."
+    },
+    {
+      "type": "code",
+      "code": "import { Fragment } from \"react\";\n\n<Fragment>\n  <PostTitle />\n  <PostBody />\n</Fragment>",
+      "highlight": [
+        3,
+        6
+      ],
+      "text": "<> </> is shorthand for <Fragment>.",
+      "say": "The empty tag is shorthand for the Fragment component, which you can import from react."
+    }
+  ]
+}

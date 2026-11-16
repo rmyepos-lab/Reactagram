@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-ui-as-a-tree-1",
+  "topic": "Components & JSX",
+  "concept": "ui-as-a-tree",
+  "format": "true-false",
+  "level": "beginner",
+  "tags": [
+    "render-tree",
+    "components",
+    "structure"
+  ],
+  "sourceUrl": "https://react.dev/learn/understanding-your-ui-as-a-tree#the-render-tree",
+  "question": "True or false: the render tree includes HTML tags like <div> and <h1>.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: the render tree includes HTML tags like div and h1.",
+  "explanation": "False. The render tree is made only of React components. Platform primitives like div are not part of it.",
+  "explainSay": "False. The render tree only contains React components, not HTML tags."
+}

@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-fragments-2",
+  "topic": "Components & JSX",
+  "concept": "fragments",
+  "format": "true-false",
+  "level": "beginner",
+  "tags": [
+    "jsx",
+    "fragments"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/Fragment#returning-multiple-elements",
+  "question": "True or false: <></> is shorthand for <Fragment></Fragment>.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: the empty tags are shorthand for the Fragment component.",
+  "explanation": "True. The empty JSX tag is shorthand for <Fragment>, imported from react, in most cases.",
+  "explainSay": "True. The empty tags are the short way to write a Fragment."
+}

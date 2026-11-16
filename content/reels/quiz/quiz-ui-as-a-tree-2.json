@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-ui-as-a-tree-2",
+  "topic": "Components & JSX",
+  "concept": "ui-as-a-tree",
+  "format": "output",
+  "level": "beginner",
+  "tags": [
+    "render-tree",
+    "components",
+    "structure"
+  ],
+  "sourceUrl": "https://react.dev/learn/understanding-your-ui-as-a-tree#the-render-tree",
+  "question": "App renders Nav and Page. Page renders Card. Which are leaf components?",
+  "options": [
+    "App only",
+    "Nav and Card",
+    "Page and Card",
+    "All four"
+  ],
+  "answer": 1,
+  "say": "App renders Nav and Page. Page renders Card. Which are the leaf components?",
+  "explanation": "Leaf components have no child components. Nav and Card render no components, so they are leaves. App is the root.",
+  "explainSay": "Nav and Card. Leaves are components with no child components. App is the root."
+}

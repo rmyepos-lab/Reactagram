@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-keyed-fragments-2",
+  "topic": "Components & JSX",
+  "concept": "keyed-fragments",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "fragments",
+    "keys",
+    "lists"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/Fragment#rendering-a-list-of-fragments",
+  "question": "True or false: <Fragment key={id}> adds a wrapper element to the DOM.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: a Fragment with a key adds a wrapper element to the page.",
+  "explanation": "False. Even with a key, a Fragment has no effect on the resulting DOM: its children render with no wrapper.",
+  "explainSay": "False. A keyed Fragment still leaves no wrapper in the page."
+}

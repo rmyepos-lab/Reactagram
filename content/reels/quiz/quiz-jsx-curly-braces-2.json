@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-jsx-curly-braces-2",
+  "topic": "Components & JSX",
+  "concept": "jsx-curly-braces",
+  "format": "bug-hunt",
+  "level": "beginner",
+  "tags": [
+    "jsx",
+    "curly-braces",
+    "expressions"
+  ],
+  "sourceUrl": "https://react.dev/learn/javascript-in-jsx-with-curly-braces#where-to-use-curly-braces",
+  "question": "Which use of curly braces does NOT work in JSX?",
+  "options": [
+    "<h1>{title}</h1>",
+    "<img alt={desc} />",
+    "<{tag}>Hello</{tag}>",
+    "<p>{2 + 2}</p>"
+  ],
+  "answer": 2,
+  "say": "Which use of curly braces does not work in JSX?",
+  "explanation": "Curlies work only as text inside a tag or as an attribute value after =. They cannot be used as a tag name.",
+  "explainSay": "Using curly braces as the tag name. They only work as text inside a tag, or as an attribute value after the equals sign."
+}

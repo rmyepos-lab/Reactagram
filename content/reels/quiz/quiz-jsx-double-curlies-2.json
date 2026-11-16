@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-jsx-double-curlies-2",
+  "topic": "Components & JSX",
+  "concept": "jsx-double-curlies",
+  "format": "true-false",
+  "level": "beginner",
+  "tags": [
+    "jsx",
+    "style",
+    "objects"
+  ],
+  "sourceUrl": "https://react.dev/learn/javascript-in-jsx-with-curly-braces#using-double-curlies-css-and-other-objects-in-jsx",
+  "question": "True or false: {{ and }} is a special JSX syntax for styles.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: double curly braces are a special JSX syntax just for styles.",
+  "explanation": "False. It is a normal JavaScript object inside the JSX curly braces. Any object prop can look like this.",
+  "explainSay": "False. It is just a JavaScript object tucked inside the usual JSX curly braces."
+}

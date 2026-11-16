@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-jsx-is-javascript-2",
+  "topic": "Components & JSX",
+  "concept": "jsx-is-javascript",
+  "format": "fill-blank",
+  "level": "intermediate",
+  "tags": [
+    "jsx",
+    "createElement",
+    "compiler"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/createElement#creating-an-element-without-jsx",
+  "question": "Fill the blank so this matches <p className=\"note\">Hi</p>:",
+  "code": "createElement(\"p\", ___, \"Hi\");",
+  "options": [
+    "\"note\"",
+    "{ className: \"note\" }",
+    "[\"className\", \"note\"]"
+  ],
+  "answer": 1,
+  "say": "Fill the blank so this create element call matches a p tag with className note and the text Hi.",
+  "explanation": "The second argument of createElement is the props object. The children come after it.",
+  "explainSay": "An object with className note. The second argument is the props object, and the children come after."
+}
