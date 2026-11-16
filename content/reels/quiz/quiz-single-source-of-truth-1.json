@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-single-source-of-truth-1",
+  "topic": "State Structure & Sharing",
+  "concept": "single-source-of-truth",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "architecture"
+  ],
+  "sourceUrl": "https://react.dev/learn/sharing-state-between-components#a-single-source-of-truth-for-each-state",
+  "question": "True or false: \"single source of truth\" means all app state lives in one component.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: single source of truth means all of the app’s state lives in one component.",
+  "explanation": "False. It means each unique piece of state has one specific owner. Different pieces can live in different components.",
+  "explainSay": "False. Each piece of state has one owner, but different pieces can live in different places."
+}

@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "different-type-resets-state",
+  "topic": "State Structure & Sharing",
+  "concept": "different-type-resets-state",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "position",
+    "reset"
+  ],
+  "sourceUrl": "https://react.dev/learn/preserving-and-resetting-state#different-components-at-the-same-position-reset-state",
+  "title": "Different type, same spot: state resets",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Swap the type, lose the state 🔄",
+      "say": "Render a different component at the same position, and React throws away the old state."
+    },
+    {
+      "type": "code",
+      "code": "{isPaused ? (\n  <p>See you later!</p>\n) : (\n  <Counter />\n)}",
+      "highlight": [
+        2,
+        4
+      ],
+      "say": "Switch from Counter to a p tag, and back. The counter is destroyed with its state, then created fresh."
+    },
+    {
+      "type": "code",
+      "code": "{isFancy ? (\n  <div><Counter /></div>\n) : (\n  <section><Counter /></section>\n)}",
+      "highlight": [
+        2,
+        4
+      ],
+      "say": "It even happens one level up. If the parent changes from div to section, the whole subtree below is destroyed, including Counter."
+    },
+    {
+      "type": "text",
+      "text": "Keep state across renders? Make the tree structure match.",
+      "say": "Rule of thumb: to keep state between re-renders, the structure of your tree must match from one render to the next."
+    }
+  ]
+}

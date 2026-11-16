@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-same-position-preserves-state-2",
+  "topic": "State Structure & Sharing",
+  "concept": "same-position-preserves-state",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "position",
+    "conditional-rendering"
+  ],
+  "sourceUrl": "https://react.dev/learn/preserving-and-resetting-state#same-component-at-the-same-position-preserves-state",
+  "question": "True or false: React tracks state by where your if statement is in the code.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: React tracks state by where your if statement is written in the code.",
+  "explanation": "False. React only sees the returned tree. It matches components by their position in that tree.",
+  "explainSay": "False. React only sees the tree you return, and matches by position."
+}

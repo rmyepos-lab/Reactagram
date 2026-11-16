@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-single-source-of-truth-2",
+  "topic": "State Structure & Sharing",
+  "concept": "single-source-of-truth",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "architecture"
+  ],
+  "sourceUrl": "https://react.dev/learn/sharing-state-between-components#a-single-source-of-truth-for-each-state",
+  "question": "Two inputs should always show the same text, but each keeps its own useState. Fix?",
+  "options": [
+    "Sync them with an Effect",
+    "Lift the text to the common parent and pass it down",
+    "Give both the same key"
+  ],
+  "answer": 1,
+  "say": "Two inputs should always show the same text, but each keeps its own use state. What is the fix?",
+  "explanation": "Duplicated state drifts apart. Give the text one owner: the common parent holds it and passes it and a change handler down.",
+  "explainSay": "Lift the text up to the common parent, and pass it down with a change handler."
+}

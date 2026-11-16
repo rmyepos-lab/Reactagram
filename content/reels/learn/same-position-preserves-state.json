@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "same-position-preserves-state",
+  "topic": "State Structure & Sharing",
+  "concept": "same-position-preserves-state",
+  "format": "pitfall",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "position",
+    "conditional-rendering"
+  ],
+  "sourceUrl": "https://react.dev/learn/preserving-and-resetting-state#same-component-at-the-same-position-preserves-state",
+  "title": "Same component, same spot: state stays",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Why didn’t it reset? 🤨",
+      "say": "You switch between two Counter tags, expecting a fresh counter. The score stays. Why?"
+    },
+    {
+      "type": "code",
+      "code": "return (\n  <div>\n    {isFancy ? (\n      <Counter isFancy={true} />\n    ) : (\n      <Counter isFancy={false} />\n    )}\n  </div>\n);",
+      "highlight": [
+        4,
+        6
+      ],
+      "say": "Both branches render a Counter as the first child of the div. Same component, same position."
+    },
+    {
+      "type": "text",
+      "text": "React doesn’t see your if or ?: . It only sees the tree you return.",
+      "say": "React does not know where you put the conditions. It only sees the tree you return. To React, both are the first child of the first child of the root."
+    },
+    {
+      "type": "text",
+      "text": "Same type + same position = same component. Props change, state stays.",
+      "say": "So it is the same counter. The props change, but the state is preserved."
+    }
+  ]
+}

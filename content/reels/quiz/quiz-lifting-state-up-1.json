@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-lifting-state-up-1",
+  "topic": "State Structure & Sharing",
+  "concept": "lifting-state-up",
+  "format": "output",
+  "level": "beginner",
+  "tags": [
+    "state",
+    "lifting-state",
+    "props"
+  ],
+  "sourceUrl": "https://react.dev/learn/sharing-state-between-components#lifting-state-up-by-example",
+  "question": "Two sibling components must show the same value. Where should its state live?",
+  "options": [
+    "In both children, kept in sync",
+    "In their closest common parent",
+    "In a global variable"
+  ],
+  "answer": 1,
+  "say": "Two sibling components must show the same value. Where should its state live?",
+  "explanation": "Lift the state to their closest common parent, pass it down as props, and pass handlers so children can change it.",
+  "explainSay": "In their closest common parent. Pass it down as props, with handlers to change it."
+}
