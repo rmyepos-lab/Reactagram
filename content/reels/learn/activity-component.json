@@ -1,0 +1,40 @@
+{
+  "kind": "learn",
+  "id": "activity-component",
+  "topic": "Concurrent Rendering",
+  "concept": "activity-component",
+  "format": "special-use",
+  "level": "advanced",
+  "tags": [
+    "Activity",
+    "state",
+    "hidden"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/Activity#restoring-the-state-of-hidden-components",
+  "title": "<Activity>: hide UI but keep its state",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Hide, don’t destroy 💤",
+      "say": "Hiding a component with a condition destroys its state. Activity hides it and keeps the state."
+    },
+    {
+      "type": "code",
+      "code": "<Activity mode={isShowingSidebar ? \"visible\" : \"hidden\"}>\n  <Sidebar />\n</Activity>",
+      "highlight": [
+        1
+      ],
+      "say": "Pass mode visible or hidden. When hidden, React hides the children with display none."
+    },
+    {
+      "type": "text",
+      "text": "Hidden: Effects are cleaned up. Visible again: state restored, Effects re-created.",
+      "say": "While hidden, React destroys their Effects, cleaning up subscriptions. When visible again, the previous state comes back and Effects are re-created."
+    },
+    {
+      "type": "text",
+      "text": "Hidden children still re-render on new props, at lower priority.",
+      "say": "Hidden children still re-render when props change, just at a lower priority. Think of it as background activity."
+    }
+  ]
+}

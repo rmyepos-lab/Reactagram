@@ -1,0 +1,40 @@
+{
+  "kind": "learn",
+  "id": "transitions-not-for-inputs",
+  "topic": "Concurrent Rendering",
+  "concept": "transitions-not-for-inputs",
+  "format": "pitfall",
+  "level": "intermediate",
+  "tags": [
+    "useTransition",
+    "inputs",
+    "controlled"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useTransition#updating-an-input-in-a-transition-doesnt-work",
+  "title": "Text inputs can't be Transitions",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Laggy input? Not like this ⌨️",
+      "say": "You try to speed up a search box by putting its state in a Transition. It does not work."
+    },
+    {
+      "type": "code",
+      "code": "function handleChange(e) {\n  // ❌ controlled input state\n  startTransition(() => {\n    setText(e.target.value);\n  });\n}\n<input value={text} onChange={handleChange} />",
+      "highlight": [
+        3,
+        4
+      ],
+      "say": "Transitions are non-blocking, but an input must update synchronously in response to typing."
+    },
+    {
+      "type": "code",
+      "code": "const [text, setText] = useState(\"\");\nconst deferredText = useDeferredValue(text);\n\n<input value={text} onChange={...} />\n<Results query={deferredText} />",
+      "highlight": [
+        2,
+        5
+      ],
+      "say": "Option one: two state variables, one synchronous for the input and one updated in a Transition. Option two: one state plus use deferred value for the slow part."
+    }
+  ]
+}

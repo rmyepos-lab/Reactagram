@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-usetransition-2",
+  "topic": "Concurrent Rendering",
+  "concept": "usetransition",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "useTransition",
+    "concurrent",
+    "performance"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useTransition#perform-non-blocking-updates-with-actions",
+  "question": "True or false: a Transition update can be interrupted by a more urgent update, like typing.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: a Transition update can be interrupted by a more urgent update, like typing.",
+  "explanation": "True. React handles the urgent update first, then restarts the Transition's rendering work.",
+  "explainSay": "True. React handles the typing first, then restarts the transition."
+}

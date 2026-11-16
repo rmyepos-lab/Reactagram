@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-activity-component-2",
+  "topic": "Concurrent Rendering",
+  "concept": "activity-component",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "Activity",
+    "state",
+    "hidden"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/Activity#restoring-the-state-of-hidden-components",
+  "question": "True or false: Effects inside a hidden Activity keep running.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: Effects inside a hidden Activity keep running.",
+  "explanation": "False. When hidden, React destroys the children's Effects and re-creates them when visible again.",
+  "explainSay": "False. Effects are cleaned up while hidden."
+}

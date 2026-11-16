@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-deferred-vs-debounce-2",
+  "topic": "Concurrent Rendering",
+  "concept": "deferred-vs-debounce",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "useDeferredValue",
+    "debounce",
+    "performance"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useDeferredValue#how-is-deferring-a-value-different-from-debouncing-and-throttling",
+  "question": "You want to send fewer search requests to the server. What fits best?",
+  "options": [
+    "useDeferredValue alone",
+    "Debouncing the request",
+    "useLayoutEffect"
+  ],
+  "answer": 1,
+  "say": "You want to send fewer search requests to the server. What fits best?",
+  "explanation": "useDeferredValue defers rendering, not requests. Debouncing is still useful for work outside rendering, like network calls.",
+  "explainSay": "Debouncing. Use deferred value does not reduce requests."
+}

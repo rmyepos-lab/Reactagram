@@ -1,0 +1,42 @@
+{
+  "kind": "learn",
+  "id": "usetransition",
+  "topic": "Concurrent Rendering",
+  "concept": "usetransition",
+  "format": "special-use",
+  "level": "intermediate",
+  "tags": [
+    "useTransition",
+    "concurrent",
+    "performance"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useTransition#perform-non-blocking-updates-with-actions",
+  "title": "useTransition: updates that don’t block",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Keep the UI responsive ⚡",
+      "say": "You click a tab that is slow to render, then change your mind. With use transition, the second click is handled right away."
+    },
+    {
+      "type": "code",
+      "code": "const [isPending, startTransition] =\n  useTransition();\n\nfunction selectTab(next) {\n  startTransition(() => {\n    setTab(next);\n  });\n}",
+      "highlight": [
+        1,
+        5,
+        6
+      ],
+      "say": "Use transition returns is pending and start transition. State updates inside start transition are marked as Transitions."
+    },
+    {
+      "type": "text",
+      "text": "Transitions are non-blocking and can be interrupted by other updates.",
+      "say": "Transition updates run in the background without blocking the page. If another update comes in, like typing, React handles it first, then restarts the transition work."
+    },
+    {
+      "type": "text",
+      "text": "The function you pass is called an Action.",
+      "say": "The function you pass to start transition is called an Action."
+    }
+  ]
+}

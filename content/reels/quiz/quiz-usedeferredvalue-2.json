@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-usedeferredvalue-2",
+  "topic": "Concurrent Rendering",
+  "concept": "usedeferredvalue",
+  "format": "fill-blank",
+  "level": "intermediate",
+  "tags": [
+    "useDeferredValue",
+    "concurrent",
+    "suspense"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useDeferredValue#showing-stale-content-while-fresh-content-is-loading",
+  "question": "Fill the blank to dim stale results:",
+  "code": "const isStale = query ___ deferredQuery;",
+  "options": [
+    "===",
+    "!==",
+    "="
+  ],
+  "answer": 1,
+  "say": "Fill the blank to dim the stale results.",
+  "explanation": "While query and deferredQuery differ, the list shows stale content, so you can lower its opacity.",
+  "explainSay": "Not equal. When they differ, the list is stale."
+}

@@ -1,0 +1,36 @@
+{
+  "kind": "learn",
+  "id": "ispending",
+  "topic": "Concurrent Rendering",
+  "concept": "ispending",
+  "format": "pattern",
+  "level": "intermediate",
+  "tags": [
+    "useTransition",
+    "isPending",
+    "feedback"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useTransition#displaying-a-pending-visual-state",
+  "title": "isPending: show a Transition is running",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Show it’s working ⏳",
+      "say": "During a Transition, the old screen stays visible. Give the user a hint that something is happening."
+    },
+    {
+      "type": "code",
+      "code": "function TabButton({ action, children }) {\n  const [isPending, startTransition] =\n    useTransition();\n  if (isPending) {\n    return <b className=\"pending\">{children}</b>;\n  }\n  // ...\n}",
+      "highlight": [
+        4,
+        5
+      ],
+      "say": "Use the is pending flag. Here the tab button switches to a pending style right away, while the slow tab renders in the background."
+    },
+    {
+      "type": "text",
+      "text": "isPending becomes true at the first startTransition, and stays true until the final state is shown.",
+      "say": "Is pending turns true at the first start transition call, and stays true until all Actions finish and the final state is on screen."
+    }
+  ]
+}

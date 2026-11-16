@@ -1,0 +1,37 @@
+{
+  "kind": "learn",
+  "id": "deferred-vs-debounce",
+  "topic": "Concurrent Rendering",
+  "concept": "deferred-vs-debounce",
+  "format": "compare",
+  "level": "advanced",
+  "tags": [
+    "useDeferredValue",
+    "debounce",
+    "performance"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useDeferredValue#how-is-deferring-a-value-different-from-debouncing-and-throttling",
+  "title": "useDeferredValue vs debouncing",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Defer or debounce? ⚖️",
+      "say": "Debouncing waits for the user to stop typing. Throttling updates at most once in a while. Use deferred value works differently."
+    },
+    {
+      "type": "text",
+      "text": "No fixed delay: on a fast device it updates almost instantly; on a slow one it lags just enough.",
+      "say": "It needs no fixed delay. On a fast laptop, the deferred render happens almost immediately. On a slow phone, it lags in proportion to the device."
+    },
+    {
+      "type": "text",
+      "text": "Interruptible: a new keystroke abandons the background render. Debounce still blocks later.",
+      "say": "And it is interruptible. A new keystroke abandons the background render. Debouncing only postpones the moment the render blocks typing."
+    },
+    {
+      "type": "text",
+      "text": "Fewer network requests? Debounce still helps. You can combine them.",
+      "say": "Debouncing is still useful for work outside rendering, like firing fewer network requests. You can use both together."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-transitions-not-for-inputs-1",
+  "topic": "Concurrent Rendering",
+  "concept": "transitions-not-for-inputs",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "useTransition",
+    "inputs",
+    "controlled"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useTransition#updating-an-input-in-a-transition-doesnt-work",
+  "question": "True or false: you can wrap a controlled input's setText in startTransition.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: you can wrap a controlled input’s set text in start transition.",
+  "explanation": "False. Input updates must be synchronous. Use a second state or useDeferredValue for the slow part.",
+  "explainSay": "False. The input itself must update synchronously."
+}

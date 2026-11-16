@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-transitions-not-for-inputs-2",
+  "topic": "Concurrent Rendering",
+  "concept": "transitions-not-for-inputs",
+  "format": "which-hook",
+  "level": "intermediate",
+  "tags": [
+    "useTransition",
+    "inputs",
+    "controlled"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useTransition#updating-an-input-in-a-transition-doesnt-work",
+  "question": "One state for a search input, but the results list is slow. Which Hook lets the list lag behind?",
+  "options": [
+    "useDeferredValue",
+    "useTransition on the input",
+    "useLayoutEffect"
+  ],
+  "answer": 0,
+  "say": "You have one state for a search input, but the results list is slow. Which Hook lets the list lag behind?",
+  "explanation": "useDeferredValue gives a value that lags behind and catches up with non-blocking re-renders.",
+  "explainSay": "Use deferred value."
+}
