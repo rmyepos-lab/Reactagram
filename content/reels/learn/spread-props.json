@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "spread-props",
+  "topic": "Props",
+  "concept": "spread-props",
+  "format": "pattern",
+  "level": "intermediate",
+  "tags": [
+    "props",
+    "spread"
+  ],
+  "sourceUrl": "https://react.dev/learn/passing-props-to-a-component#forwarding-props-with-the-jsx-spread-syntax",
+  "title": "Forward all props with spread",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Forward props with ... 📨",
+      "say": "Some components just pass all their props down to a child. Spread syntax makes that short."
+    },
+    {
+      "type": "code",
+      "code": "function Profile({ person, size,\n  isSepia, thickBorder }) {\n  return (\n    <Avatar person={person}\n      size={size} isSepia={isSepia}\n      thickBorder={thickBorder} />\n  );\n}",
+      "highlight": [
+        4,
+        5,
+        6
+      ],
+      "say": "This Profile lists every prop, only to hand each one to Avatar. Repetitive, but not wrong."
+    },
+    {
+      "type": "code",
+      "code": "function Profile(props) {\n  return (\n    <div className=\"card\">\n      <Avatar {...props} />\n    </div>\n  );\n}",
+      "highlight": [
+        4
+      ],
+      "say": "With spread, curly dot dot dot props forwards everything to Avatar, without naming each prop."
+    },
+    {
+      "type": "text",
+      "text": "Use it with restraint. Spreading everywhere? Split components and pass JSX as children.",
+      "say": "Use spread with restraint. If you spread in every other component, something is wrong. Often you should split components and pass children instead."
+    }
+  ]
+}

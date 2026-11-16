@@ -1,0 +1,40 @@
+{
+  "kind": "learn",
+  "id": "props-are-read-only",
+  "topic": "Props",
+  "concept": "props-are-read-only",
+  "format": "pitfall",
+  "level": "beginner",
+  "tags": [
+    "props",
+    "immutability",
+    "state"
+  ],
+  "sourceUrl": "https://react.dev/learn/passing-props-to-a-component#how-props-change-over-time",
+  "title": "Props are read-only: don't change them",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Don't change props 🔒",
+      "say": "Props can change over time. But a component must never change its own props."
+    },
+    {
+      "type": "text",
+      "text": "A parent can pass new props on every render, like a time that ticks each second.",
+      "say": "Props are not always static. A clock can get a new time prop every second. Props reflect the data at any point in time."
+    },
+    {
+      "type": "code",
+      "code": "function Clock({ color }) {\n  // 🔴 never do this\n  color = \"red\";\n}",
+      "highlight": [
+        3
+      ],
+      "say": "But props are immutable. Do not overwrite them inside the child."
+    },
+    {
+      "type": "text",
+      "text": "Need a change? The child asks the parent for new props, a new object. For user input, set state.",
+      "say": "To change, the child asks its parent to pass different props, a whole new object. To respond to the user, you set state."
+    }
+  ]
+}

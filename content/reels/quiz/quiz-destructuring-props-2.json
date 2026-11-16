@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-destructuring-props-2",
+  "topic": "Props",
+  "concept": "destructuring-props",
+  "format": "fill-blank",
+  "level": "beginner",
+  "tags": [
+    "props",
+    "destructuring"
+  ],
+  "sourceUrl": "https://react.dev/learn/passing-props-to-a-component#step-2-read-props-inside-the-child-component",
+  "question": "Fill the blank to read the title prop directly:",
+  "code": "function Card(___) {\n  return <h2>{title}</h2>;\n}",
+  "options": [
+    "title",
+    "{ title }",
+    "[title]"
+  ],
+  "answer": 1,
+  "say": "Fill the blank so the component can read the title prop directly.",
+  "explanation": "Destructuring with { title } pulls the title property out of the props object.",
+  "explainSay": "Curly title. Destructuring pulls title out of the props object."
+}

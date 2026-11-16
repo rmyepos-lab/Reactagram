@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "default-prop-values",
+  "topic": "Props",
+  "concept": "default-prop-values",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "props",
+    "defaults",
+    "destructuring"
+  ],
+  "sourceUrl": "https://react.dev/learn/passing-props-to-a-component#specifying-a-default-value-for-a-prop",
+  "title": "Default prop values (and when they fail)",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Default props 🛟",
+      "say": "Want a fallback when a prop is missing? Give it a default value."
+    },
+    {
+      "type": "code",
+      "code": "function Avatar({ person, size = 100 }) {\n  // ...\n}\n\n<Avatar person={lin} />  // size: 100",
+      "highlight": [
+        1
+      ],
+      "say": "Put equals and the default right after the name, inside the destructuring. No size passed? Size is one hundred."
+    },
+    {
+      "type": "code",
+      "code": "<Avatar size={undefined} /> // 100\n<Avatar size={null} />      // null\n<Avatar size={0} />         // 0",
+      "highlight": [
+        2,
+        3
+      ],
+      "text": "Only missing or undefined uses the default.",
+      "say": "Careful. The default kicks in only when the prop is missing or undefined. Null or zero are real values, so the default is not used."
+    },
+    {
+      "type": "text",
+      "text": "null and 0 are values. Only \"nothing\" triggers the default.",
+      "say": "Takeaway: null and zero count as values. Only nothing at all triggers the default."
+    }
+  ]
+}

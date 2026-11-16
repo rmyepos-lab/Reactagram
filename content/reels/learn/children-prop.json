@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "children-prop",
+  "topic": "Props",
+  "concept": "children-prop",
+  "format": "pattern",
+  "level": "beginner",
+  "tags": [
+    "props",
+    "children",
+    "composition"
+  ],
+  "sourceUrl": "https://react.dev/learn/passing-props-to-a-component#passing-jsx-as-children",
+  "title": "children: a hole the parent fills",
+  "slides": [
+    {
+      "type": "title",
+      "text": "The children prop 🧩",
+      "say": "You nest tags inside a div all the time. You can do the same with your own components."
+    },
+    {
+      "type": "code",
+      "code": "<Card>\n  <Avatar size={100} />\n</Card>",
+      "highlight": [
+        2
+      ],
+      "say": "Here Avatar is nested inside Card. So what does Card receive?"
+    },
+    {
+      "type": "code",
+      "code": "function Card({ children }) {\n  return (\n    <div className=\"card\">\n      {children}\n    </div>\n  );\n}",
+      "highlight": [
+        1,
+        4
+      ],
+      "say": "Whatever you nest arrives in a prop called children. Card renders it inside its wrapper div."
+    },
+    {
+      "type": "text",
+      "text": "A component with children has a hole any JSX can fill. Great for panels, grids, cards.",
+      "say": "Think of children as a hole the parent fills with any JSX. It is perfect for visual wrappers like panels and grids."
+    }
+  ]
+}

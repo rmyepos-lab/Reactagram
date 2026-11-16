@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-default-prop-values-1",
+  "topic": "Props",
+  "concept": "default-prop-values",
+  "format": "output",
+  "level": "beginner",
+  "tags": [
+    "props",
+    "defaults",
+    "destructuring"
+  ],
+  "sourceUrl": "https://react.dev/learn/passing-props-to-a-component#specifying-a-default-value-for-a-prop",
+  "question": "What size does Avatar get?",
+  "code": "function Avatar({ size = 100 }) {\n  return <img width={size} />;\n}\n\n<Avatar size={0} />",
+  "options": [
+    "100",
+    "0",
+    "undefined"
+  ],
+  "answer": 1,
+  "say": "Size defaults to one hundred. The parent passes size zero. What size does Avatar get?",
+  "explanation": "Zero is a real value. The default is only used when the prop is missing or undefined.",
+  "explainSay": "Zero. The default only applies when the prop is missing or undefined."
+}

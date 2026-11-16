@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "destructuring-props",
+  "topic": "Props",
+  "concept": "destructuring-props",
+  "format": "pitfall",
+  "level": "beginner",
+  "tags": [
+    "props",
+    "destructuring"
+  ],
+  "sourceUrl": "https://react.dev/learn/passing-props-to-a-component#step-2-read-props-inside-the-child-component",
+  "title": "Destructure props, and keep the curlies",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Destructure your props ✂️",
+      "say": "You rarely need the whole props object. So you destructure it, right in the function signature."
+    },
+    {
+      "type": "code",
+      "code": "function Avatar({ person, size }) {\n  return <img width={size} />;\n}\n\n// same as\nfunction Avatar(props) {\n  const { person, size } = props;\n}",
+      "highlight": [
+        1,
+        7
+      ],
+      "say": "Curly braces inside the parentheses pull out person and size. It is the same as reading them from props."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 missing the { }\nfunction Avatar(person, size) {\n  // ...\n}",
+      "highlight": [
+        2
+      ],
+      "text": "Don't miss the { } inside ( ).",
+      "say": "Watch out. Without the curly braces, person is the whole props object, and size is not a prop at all."
+    },
+    {
+      "type": "text",
+      "text": "function Avatar({ person, size }) — braces inside parentheses.",
+      "say": "Takeaway: curly braces inside the parentheses. Every time."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-children-prop-2",
+  "topic": "Props",
+  "concept": "children-prop",
+  "format": "output",
+  "level": "beginner",
+  "tags": [
+    "props",
+    "children",
+    "composition"
+  ],
+  "sourceUrl": "https://react.dev/learn/passing-props-to-a-component#passing-jsx-as-children",
+  "question": "What does Box render?",
+  "code": "function Box({ title }) {\n  return <div>{title}</div>;\n}\n\n<Box title=\"A\">\n  <p>B</p>\n</Box>",
+  "options": [
+    "<div>A</div>",
+    "<div>A<p>B</p></div>",
+    "<div><p>B</p></div>"
+  ],
+  "answer": 0,
+  "say": "Box gets a title and a nested paragraph. What does it render?",
+  "explanation": "The <p> goes into the children prop, but Box never renders children. It only shows title.",
+  "explainSay": "Just a div with A. The paragraph lands in children, but Box never renders children."
+}

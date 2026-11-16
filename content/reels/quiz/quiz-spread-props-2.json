@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-spread-props-2",
+  "topic": "Props",
+  "concept": "spread-props",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "props",
+    "spread"
+  ],
+  "sourceUrl": "https://react.dev/learn/passing-props-to-a-component#forwarding-props-with-the-jsx-spread-syntax",
+  "question": "True or false: the docs suggest using {...props} in most components.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: the docs suggest using prop spreading in most components.",
+  "explanation": "False. Use spread with restraint. Using it everywhere often means you should split components and pass children as JSX.",
+  "explainSay": "False. Spread with restraint. Using it everywhere is a sign to split components and pass children."
+}

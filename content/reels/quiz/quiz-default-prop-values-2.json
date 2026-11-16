@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-default-prop-values-2",
+  "topic": "Props",
+  "concept": "default-prop-values",
+  "format": "true-false",
+  "level": "beginner",
+  "tags": [
+    "props",
+    "defaults",
+    "destructuring"
+  ],
+  "sourceUrl": "https://react.dev/learn/passing-props-to-a-component#specifying-a-default-value-for-a-prop",
+  "question": "True or false: passing size={null} makes the default size = 100 apply.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: passing size null makes the default of one hundred apply.",
+  "explanation": "False. null is a value, so size stays null. Only a missing prop or undefined uses the default.",
+  "explainSay": "False. Null is a value. Only a missing prop or undefined falls back to the default."
+}

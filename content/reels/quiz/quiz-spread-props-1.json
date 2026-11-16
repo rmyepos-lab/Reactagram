@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-spread-props-1",
+  "topic": "Props",
+  "concept": "spread-props",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "props",
+    "spread"
+  ],
+  "sourceUrl": "https://react.dev/learn/passing-props-to-a-component#forwarding-props-with-the-jsx-spread-syntax",
+  "question": "Which props does Avatar receive?",
+  "code": "function Profile(props) {\n  return <Avatar {...props} />;\n}\n\n<Profile size={50} isSepia />",
+  "options": [
+    "None",
+    "Only size",
+    "size and isSepia"
+  ],
+  "answer": 2,
+  "say": "Profile spreads its props into Avatar. Which props does Avatar receive?",
+  "explanation": "Spread forwards every prop of Profile to Avatar, so it gets size={50} and isSepia={true}.",
+  "explainSay": "Both, size and isSepia. Spread forwards every prop."
+}
