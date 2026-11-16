@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-avoid-redundant-state-1",
+  "topic": "State Structure & Sharing",
+  "concept": "avoid-redundant-state",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "derived-values",
+    "structure"
+  ],
+  "sourceUrl": "https://react.dev/learn/choosing-the-state-structure#avoid-redundant-state",
+  "question": "Which state variable here is redundant?",
+  "code": "const [items, setItems] = useState([]);\nconst [count, setCount] = useState(0);\nconst [filter, setFilter] = useState(\"\");",
+  "options": [
+    "items",
+    "count, if it is just items.length",
+    "filter"
+  ],
+  "answer": 1,
+  "say": "Which of these state variables is redundant?",
+  "explanation": "If count is always items.length, compute it during render: const count = items.length. Storing it risks getting out of sync.",
+  "explainSay": "Count, if it is just the number of items. Compute it during render instead of storing it."
+}

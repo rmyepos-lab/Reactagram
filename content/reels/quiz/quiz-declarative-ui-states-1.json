@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-declarative-ui-states-1",
+  "topic": "State Structure & Sharing",
+  "concept": "declarative-ui-states",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "declarative",
+    "ui-states"
+  ],
+  "sourceUrl": "https://react.dev/learn/reacting-to-input-with-state#thinking-about-ui-declaratively",
+  "question": "True or false: in React, your event handler should directly show the spinner and disable the button.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: in React, your event handler should directly show the spinner and disable the button.",
+  "explanation": "False. That is imperative. In React the handler sets state, like status = \"submitting\", and the JSX declares what that state looks like.",
+  "explainSay": "False. The handler just sets state. Your JSX describes what each state looks like, and React updates the screen."
+}

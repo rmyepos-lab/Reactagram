@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-avoid-contradictory-state-2",
+  "topic": "State Structure & Sharing",
+  "concept": "avoid-contradictory-state",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "status",
+    "structure"
+  ],
+  "sourceUrl": "https://react.dev/learn/choosing-the-state-structure#avoid-contradictions-in-state",
+  "question": "True or false: const isSent = status === \"sent\" is a second state variable.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: const isSent equals status equals sent is a second state variable.",
+  "explanation": "False. It is a constant calculated during render from status, so it can never get out of sync.",
+  "explainSay": "False. It is just a constant computed from status, so it cannot get out of sync."
+}

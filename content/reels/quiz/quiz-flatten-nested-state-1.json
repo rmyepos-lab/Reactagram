@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-flatten-nested-state-1",
+  "topic": "State Structure & Sharing",
+  "concept": "flatten-nested-state",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "state",
+    "normalization",
+    "nested"
+  ],
+  "sourceUrl": "https://react.dev/learn/choosing-the-state-structure#avoid-deeply-nested-state",
+  "question": "True or false: with flat state, removing a place only updates its parent and the top-level table.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: with flat state, removing a place only updates its parent and the top level table.",
+  "explanation": "True. The parent gets a new childIds without that id, and the table gets the new parent. No deep copying.",
+  "explainSay": "True. Just the parent’s child IDs and the table. No deep chain of copies."
+}

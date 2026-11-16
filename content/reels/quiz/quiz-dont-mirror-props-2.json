@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-dont-mirror-props-2",
+  "topic": "State Structure & Sharing",
+  "concept": "dont-mirror-props",
+  "format": "fill-blank",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "props",
+    "pitfall"
+  ],
+  "sourceUrl": "https://react.dev/learn/choosing-the-state-structure#don-t-mirror-props-in-state",
+  "question": "This prop is copied into state on purpose; later changes are ignored. Best name?",
+  "code": "function Counter({ ___ }) {\n  const [n, setN] = useState(___);\n}",
+  "options": [
+    "count",
+    "initialCount",
+    "countState"
+  ],
+  "answer": 1,
+  "say": "This prop is copied into state on purpose, and later changes are ignored. What is the best name for it?",
+  "explanation": "By convention, start the prop with initial or default to show that its new values are ignored.",
+  "explainSay": "Initial count. The initial prefix tells readers that later values are ignored."
+}

@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "flatten-nested-state",
+  "topic": "State Structure & Sharing",
+  "concept": "flatten-nested-state",
+  "format": "pattern",
+  "level": "advanced",
+  "tags": [
+    "state",
+    "normalization",
+    "nested"
+  ],
+  "sourceUrl": "https://react.dev/learn/choosing-the-state-structure#avoid-deeply-nested-state",
+  "title": "Flatten deeply nested state",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Too nested? Flatten it 🗃️",
+      "say": "Planets hold continents, continents hold countries. Deleting one country means copying its whole parent chain."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 tree of objects\n{ title: \"Earth\", childPlaces: [\n  { title: \"Africa\", childPlaces: [\n    { title: \"Egypt\", ... },\n  ] },\n] }",
+      "highlight": [
+        2,
+        3
+      ],
+      "say": "Updating nested state means copying every object from the change all the way up. That code gets very verbose."
+    },
+    {
+      "type": "code",
+      "code": "// ✅ flat: a table by id\n{\n  1: { title: \"Earth\", childIds: [2] },\n  2: { title: \"Africa\", childIds: [3] },\n  3: { title: \"Egypt\", childIds: [] },\n}",
+      "highlight": [
+        3,
+        4
+      ],
+      "say": "Instead, give each place a list of child IDs, and store every place in one table keyed by ID. Like a database table."
+    },
+    {
+      "type": "text",
+      "text": "Remove a place: update its parent’s childIds and the table. Two levels only.",
+      "say": "Now removing a place touches only two levels: the parent’s child IDs, and the table that holds the parent."
+    }
+  ]
+}

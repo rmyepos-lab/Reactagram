@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "avoid-duplicate-state",
+  "topic": "State Structure & Sharing",
+  "concept": "avoid-duplicate-state",
+  "format": "pattern",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "duplication",
+    "ids"
+  ],
+  "sourceUrl": "https://react.dev/learn/choosing-the-state-structure#avoid-duplication-in-state",
+  "title": "Store the selected id, not the object",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Store the ID, not a copy 🆔",
+      "say": "A menu lets you pick a snack. Where do you keep the selection?"
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 duplicated\nconst [items, setItems] = useState(list);\nconst [selectedItem, setSelectedItem] =\n  useState(items[0]);",
+      "highlight": [
+        3,
+        4
+      ],
+      "say": "Storing the selected item duplicates an object that is already in items. Edit that item’s title, and the selection still shows the old one."
+    },
+    {
+      "type": "code",
+      "code": "const [items, setItems] = useState(list);\nconst [selectedId, setSelectedId] =\n  useState(0);\n\nconst selectedItem = items.find(i =>\n  i.id === selectedId\n);",
+      "highlight": [
+        2,
+        5
+      ],
+      "say": "Keep only the selected ID. Then find the item during render. Now edits show up everywhere at once."
+    },
+    {
+      "type": "text",
+      "text": "Only the id is essential. The rest is calculated.",
+      "say": "Takeaway: the ID is the essential part. Everything else can be calculated."
+    }
+  ]
+}
