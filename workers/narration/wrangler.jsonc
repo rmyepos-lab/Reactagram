@@ -1,0 +1,11 @@
+// Cloudflare Worker that serves narration MP3s from Workers KV. See index.js.
+{
+  "name": "hookd-narration",
+  "main": "index.js",
+  "compatibility_date": "2026-11-01",
+  "workers_dev": true,
+  "kv_namespaces": [
+    // Not a secret: only this account's Workers can use it.
+    { "binding": "NARRATION", "id": "fea782987620427fb33bde8db9417b01" }
+  ]
+}

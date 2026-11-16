@@ -12,6 +12,7 @@
     "content": "tsx scripts/build-content-index.ts",
     "env": "tsx scripts/write-env.ts",
     "narration": "tsx scripts/build-narration.ts",
+    "narration:reels": "tsx scripts/build-reel-narration.ts",
     "coverage": "tsx scripts/coverage.ts",
     "check": "npm run content && npm run validate && npm run typecheck && npm run lint && npm test"
   },

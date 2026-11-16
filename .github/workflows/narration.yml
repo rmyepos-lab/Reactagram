@@ -1,0 +1,48 @@
+# Records one narration MP3 per reel with Kokoro (scripts/build-reel-narration.ts) and uploads it
+# to the narration Worker (workers/narration, Cloudflare Workers KV). Started by hand only.
+# Reels already stored are skipped, so each run records the next `max` missing reels.
+# The full timings file is kept as a run artifact for 90 days.
+name: Narration
+
+on:
+  workflow_dispatch:
+    inputs:
+      max:
+        description: 'Record at most N missing reels'
+        default: '300'
+
+concurrency: narration
+
+jobs:
+  record:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      # Kokoro install and model files (about 700 MB), kept between runs.
+      - uses: actions/cache@v4
+        with:
+          path: |
+            .narration/venv
+            .narration/kokoro-v1.0.onnx
+            .narration/voices-v1.0.bin
+          key: kokoro-0.6.1-soundfile-0.14.0-py3.12-${{ runner.os }}
+      - name: Record and upload
+        run: npm run narration:reels -- --max "$MAX"
+        env:
+          MAX: ${{ inputs.max }}
+          NARRATION_UPLOAD_TOKEN: ${{ secrets.NARRATION_UPLOAD_TOKEN }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: narration-timings
+          path: .narration/reels/narration-timings.json
+          retention-days: 90
