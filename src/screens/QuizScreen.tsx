@@ -23,7 +23,7 @@ import {
   remainingIds,
   useQuizSession,
 } from '../features/quizSession';
-import { useMuted } from '../features/settings';
+import { settings, useMuted } from '../features/settings';
 import type { TabScreenProps } from '../navigation/types';
 import { colors, space } from '../theme';
 
@@ -182,6 +182,11 @@ function QuizPlayer({ quizzes, done = 0, total, lastLabel, onDone, onExit, onOpe
           {ads.enabled && items.length >= AD_RULES.quizBlock ? (
             <SmartSkipChip results={blockResults(activeBlock, results)} />
           ) : null}
+          <IconButton
+            icon={muted ? 'mute' : 'volume'}
+            label={muted ? 'Turn sound on' : 'Turn sound off'}
+            onPress={settings.toggleMuted}
+          />
           {onExit ? (
             <IconButton icon="close" label="Leave the quiz. Your progress is saved." onPress={onExit} />
           ) : null}
