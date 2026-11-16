@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-compiler-needs-rules-1",
+  "topic": "React Compiler",
+  "concept": "compiler-needs-rules",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "compiler",
+    "rules-of-react"
+  ],
+  "sourceUrl": "https://react.dev/learn/react-compiler/introduction#is-it-safe-to-use",
+  "question": "True or false: when the compiler finds code that might break the Rules of React, it fails the build.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false? When the compiler finds code that might break the rules of React, it fails the build.",
+  "explanation": "The compiler is designed to safely skip optimizing such code rather than risk changing behavior. Build errors are rare.",
+  "explainSay": "False. It safely skips optimizing that code instead of failing."
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-compiler-incremental-adoption-2",
+  "topic": "React Compiler",
+  "concept": "compiler-incremental-adoption",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "compiler",
+    "adoption"
+  ],
+  "sourceUrl": "https://react.dev/learn/react-compiler/incremental-adoption",
+  "question": "With this config, is src/legacy/Cart.tsx compiled?",
+  "code": "overrides: [{\n  test: \"./src/modern/**/*.{js,tsx}\",\n  plugins: [\"babel-plugin-react-compiler\"],\n}]",
+  "options": [
+    "No, only files under src/modern",
+    "Yes, overrides apply to every file",
+    "Only its hooks are compiled"
+  ],
+  "answer": 0,
+  "say": "With this config, is source legacy cart compiled?",
+  "explanation": "Babel overrides apply the plugin only to files matching test. Here that's src/modern, so the legacy folder isn't compiled until you expand the pattern.",
+  "explainSay": "No. The override only applies the compiler to files under source modern."
+}

@@ -1,0 +1,52 @@
+{
+  "kind": "learn",
+  "id": "compiler-incremental-adoption",
+  "topic": "React Compiler",
+  "concept": "compiler-incremental-adoption",
+  "format": "pattern",
+  "level": "advanced",
+  "tags": [
+    "compiler",
+    "adoption"
+  ],
+  "sourceUrl": "https://react.dev/learn/react-compiler/incremental-adoption",
+  "title": "Adopting the compiler step by step",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Don't flip the switch on everything at once 🪜",
+      "say": "In a big existing app, you can roll out React Compiler bit by bit. Start small to build confidence."
+    },
+    {
+      "type": "code",
+      "code": "// babel.config.js\nmodule.exports = {\n  overrides: [{\n    test: \"./src/modern/**/*.{js,tsx}\",\n    plugins: [\n      \"babel-plugin-react-compiler\",\n    ],\n  }],\n};",
+      "highlight": [
+        4
+      ],
+      "say": "Approach one: Babel overrides. Apply the compiler plugin to one directory, then expand to more folders over time."
+    },
+    {
+      "type": "code",
+      "code": "[\"babel-plugin-react-compiler\", {\n  compilationMode: \"annotation\",\n}]\n\nfunction Cart() {\n  \"use memo\"; // only this compiles\n}",
+      "highlight": [
+        2,
+        6
+      ],
+      "say": "Approach two: annotation mode. Only components and hooks that opt in with use memo get compiled."
+    },
+    {
+      "type": "code",
+      "code": "gating: {\n  source: \"ReactCompilerFeatureFlags\",\n  importSpecifierName:\n    \"isCompilerEnabled\",\n}",
+      "highlight": [
+        3,
+        4
+      ],
+      "say": "Approach three: runtime gating. The compiled code is wrapped in a check. If your flag function returns true, the optimized version runs. Otherwise, the original code runs. Great for A B tests."
+    },
+    {
+      "type": "text",
+      "text": "Hit a problem? Exclude that component with \"use no memo\", fix the Rules of React violations, then continue.",
+      "say": "If something breaks, exclude that component with use no memo for now, fix the rules of React issues, and keep going."
+    }
+  ]
+}

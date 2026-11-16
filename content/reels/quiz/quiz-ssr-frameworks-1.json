@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-ssr-frameworks-1",
+  "topic": "Server Rendering",
+  "concept": "ssr-frameworks",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "ssr",
+    "frameworks"
+  ],
+  "sourceUrl": "https://react.dev/learn/creating-a-react-app",
+  "question": "True or false: using a full-stack React framework means you must deploy your app to a server.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false? Using a full stack React framework means you must deploy your app to a server.",
+  "explanation": "The recommended frameworks support client rendering, single-page apps and static generation, which can be deployed to a CDN or static hosting without a server.",
+  "explainSay": "False. They also support client only and static apps that you can host without a server."
+}
