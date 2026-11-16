@@ -1,0 +1,42 @@
+{
+  "kind": "learn",
+  "concept": "what-is-an-effect",
+  "id": "what-is-an-effect",
+  "topic": "Side Effects",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "useEffect",
+    "basics",
+    "external-systems"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#what-are-effects-and-how-are-they-different-from-events",
+  "title": "What an Effect is: syncing with outside systems",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Render, click… or just show up? 🛰️",
+      "say": "Components have two kinds of logic you know: rendering code and event handlers. Effects are the third kind."
+    },
+    {
+      "type": "text",
+      "text": "Rendering code: turns props and state into JSX. Must be pure.",
+      "say": "Rendering code takes props and state and returns JSX. It must be pure: just calculate, never do things."
+    },
+    {
+      "type": "text",
+      "text": "Event handlers: do things because the user did something, like a click.",
+      "say": "Event handlers do things, like sending a message, because the user did something specific."
+    },
+    {
+      "type": "text",
+      "text": "Effects: do things because the component is on screen, like connecting to a chat server.",
+      "say": "Effects do things caused by rendering itself. The chat is visible, so connect to the server. No click needed."
+    },
+    {
+      "type": "text",
+      "text": "Effects run after the commit, to sync with the network, browser APIs or other libraries.",
+      "say": "Effects run after React updates the screen. Use them to sync with outside systems. No outside system? You might not need one."
+    }
+  ]
+}

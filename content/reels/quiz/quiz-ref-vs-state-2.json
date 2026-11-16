@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-ref-vs-state-2",
+  "topic": "Refs",
+  "concept": "ref-vs-state",
+  "format": "which-hook",
+  "level": "beginner",
+  "tags": [
+    "useRef",
+    "useState",
+    "timers"
+  ],
+  "sourceUrl": "https://react.dev/learn/referencing-values-with-refs#when-to-use-refs",
+  "question": "A stopwatch needs the interval ID so Stop can clear it. The ID is never shown. Where should it live?",
+  "options": [
+    "useState",
+    "useRef",
+    "A local variable in the component",
+    "useMemo"
+  ],
+  "answer": 1,
+  "say": "A stopwatch needs the interval I D so Stop can clear it. The I D is never shown. Where should it live?",
+  "explanation": "The ID isn’t used for rendering and must survive re-renders, so a ref fits. A local variable would be lost on the next render.",
+  "explainSay": "Use ref. The I D isn’t shown, and a ref keeps it between renders without re-rendering."
+}

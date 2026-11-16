@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-what-is-an-effect-2",
+  "topic": "Side Effects",
+  "concept": "what-is-an-effect",
+  "format": "true-false",
+  "level": "beginner",
+  "tags": [
+    "useEffect",
+    "commit"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#what-are-effects-and-how-are-they-different-from-events",
+  "question": "True or false: Effects run while React renders, before the screen is updated.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: Effects run while React renders, before the screen is updated.",
+  "explanation": "False. Effects run at the end of a commit, after the screen updates. Rendering itself must stay pure.",
+  "explainSay": "False. Effects run after the commit, once the screen has updated."
+}

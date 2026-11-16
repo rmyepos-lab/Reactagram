@@ -1,0 +1,26 @@
+{
+  "kind": "quiz",
+  "id": "quiz-state-snapshot-1",
+  "topic": "State",
+  "concept": "state-snapshot",
+  "format": "output",
+  "level": "beginner",
+  "tags": [
+    "useState",
+    "snapshot",
+    "setTimeout"
+  ],
+  "sourceUrl": "https://react.dev/learn/state-as-a-snapshot#state-over-time",
+  "question": "number is 0. You click once. What does the alert show after 3 seconds?",
+  "code": "<button onClick={() => {\n  setNumber(number + 5);\n  setTimeout(() => {\n    alert(number);\n  }, 3000);\n}}>+5</button>",
+  "options": [
+    "5",
+    "0",
+    "undefined",
+    "It depends on when React re-renders"
+  ],
+  "answer": 1,
+  "say": "Number is zero. You click once. What does the alert show after three seconds?",
+  "explanation": "The timer was scheduled with the snapshot of that render, where number is 0. The screen shows 5, but this alert still shows 0.",
+  "explainSay": "Zero. The timer uses the snapshot from the render where number was zero, even though the screen now shows five."
+}

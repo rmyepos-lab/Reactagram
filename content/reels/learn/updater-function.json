@@ -1,0 +1,48 @@
+{
+  "kind": "learn",
+  "concept": "updater-function",
+  "id": "updater-function",
+  "topic": "State",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "useState",
+    "updater",
+    "batching"
+  ],
+  "sourceUrl": "https://react.dev/learn/queueing-a-series-of-state-updates#updating-the-same-state-multiple-times-before-the-next-render",
+  "title": "Updater functions: build on the queued value",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Pass a function, not a value 🧮",
+      "say": "Want to update the same state several times in one click? Pass a function instead of a value."
+    },
+    {
+      "type": "code",
+      "code": "setNumber(n => n + 1);\nsetNumber(n => n + 1);\nsetNumber(n => n + 1);\n// next render: 3",
+      "highlight": [
+        1
+      ],
+      "say": "n arrow n plus one is an updater function. React queues each one, then runs them in order on the next render. Zero becomes one, two, three."
+    },
+    {
+      "type": "text",
+      "text": "React batches: it waits until the whole handler has run, then works through the queue.",
+      "say": "This works because React batches. It waits until your whole event handler finishes, then processes the queue."
+    },
+    {
+      "type": "code",
+      "code": "setNumber(number + 5); // replace with 5\nsetNumber(n => n + 1); // 5 + 1\n// next render: 6",
+      "highlight": [
+        2
+      ],
+      "say": "You can mix them. A plain value means replace with that value. The updater then builds on it. Five, plus one, gives six."
+    },
+    {
+      "type": "text",
+      "text": "Name the argument after the state: setEnabled(e => !e). Keep updaters pure.",
+      "say": "Name the argument after the state, like e for enabled. Updaters run during rendering, so keep them pure. Just return the result."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "kind": "learn",
+  "concept": "ref-vs-state",
+  "id": "ref-vs-state",
+  "topic": "Refs",
+  "format": "compare",
+  "level": "beginner",
+  "tags": [
+    "useRef",
+    "useState",
+    "rendering"
+  ],
+  "sourceUrl": "https://react.dev/learn/referencing-values-with-refs#differences-between-refs-and-state",
+  "title": "Refs vs state: who re-renders?",
+  "slides": [
+    {
+      "type": "title",
+      "text": "The counter that never counts 🔢",
+      "say": "This counter goes up every click. But the screen never shows it."
+    },
+    {
+      "type": "code",
+      "code": "const countRef = useRef(0);\n\nfunction handleClick() {\n  countRef.current =\n    countRef.current + 1;\n}\n\n<button onClick={handleClick}>\n  {countRef.current} clicks\n</button>",
+      "highlight": [
+        4,
+        5
+      ],
+      "say": "Changing ref dot current does not trigger a render. The value changes, but React never redraws the button."
+    },
+    {
+      "type": "text",
+      "text": "State: setting it re-renders, and each render gets a fixed snapshot. Ref: change .current any time, no re-render.",
+      "say": "State triggers a re-render, and each render sees a fixed snapshot. A ref is mutable, and changing it never re-renders."
+    },
+    {
+      "type": "code",
+      "code": "const intervalRef = useRef(null);\n\nfunction handleStop() {\n  clearInterval(\n    intervalRef.current\n  );\n}",
+      "highlight": [
+        1
+      ],
+      "say": "So use refs for things the screen doesn’t show, like an interval I D you need later to stop a timer."
+    },
+    {
+      "type": "text",
+      "text": "Shown on screen? State. Only needed by handlers? A ref.",
+      "say": "The rule: if the value is used for rendering, keep it in state. If only handlers need it, a ref is enough."
+    }
+  ]
+}

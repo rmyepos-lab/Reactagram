@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-dependency-array-1",
+  "topic": "Side Effects",
+  "concept": "dependency-array",
+  "format": "output",
+  "level": "beginner",
+  "tags": [
+    "useEffect",
+    "dependencies"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#step-2-specify-the-effect-dependencies",
+  "question": "Production build. The component mounts, then re-renders 4 times because of a parent. How many times is \"hi\" logged?",
+  "code": "useEffect(() => {\n  console.log('hi');\n}, []);",
+  "options": [
+    "5",
+    "4",
+    "1",
+    "0"
+  ],
+  "answer": 2,
+  "say": "Production build. The component mounts, then re-renders four times because of a parent. How many times is hi logged?",
+  "explanation": "An empty array means the Effect runs only on mount. Later re-renders skip it, so \"hi\" is logged once.",
+  "explainSay": "Once. An empty array means the Effect only runs on mount."
+}

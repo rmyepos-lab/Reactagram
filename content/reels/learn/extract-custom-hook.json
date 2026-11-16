@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "concept": "extract-custom-hook",
+  "id": "extract-custom-hook",
+  "topic": "Custom Hooks",
+  "format": "pattern",
+  "level": "intermediate",
+  "tags": [
+    "custom-hooks",
+    "refactoring",
+    "useEffect"
+  ],
+  "sourceUrl": "https://react.dev/learn/reusing-logic-with-custom-hooks#extracting-your-own-custom-hook-from-a-component",
+  "title": "Extract a custom Hook: useOnlineStatus",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Same Effect, copied twice ✂️",
+      "say": "A status bar and a save button both need to know if you’re online. Both copy the same state and Effect."
+    },
+    {
+      "type": "code",
+      "code": "function useOnlineStatus() {\n  const [isOnline, setIsOnline] =\n    useState(true);\n  useEffect(() => {\n    // listen to 'online' and 'offline',\n    // update isOnline, and remove\n    // the listeners in cleanup\n  }, []);\n  return isOnline;\n}",
+      "highlight": [
+        1,
+        7
+      ],
+      "say": "Move that code into a function whose name starts with use. At the end, return the value components need."
+    },
+    {
+      "type": "code",
+      "code": "function StatusBar() {\n  const isOnline = useOnlineStatus();\n  return (\n    <h1>{isOnline ? '✅' : '❌'}</h1>\n  );\n}",
+      "highlight": [
+        2
+      ],
+      "say": "Now each component is one line: use online status. No more event listeners in sight."
+    },
+    {
+      "type": "text",
+      "text": "The component says what it wants, not how to get it.",
+      "say": "The takeaway: after extracting, components describe what they want, not how it’s done."
+    }
+  ]
+}

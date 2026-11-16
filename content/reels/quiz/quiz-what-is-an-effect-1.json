@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-what-is-an-effect-1",
+  "topic": "Side Effects",
+  "concept": "what-is-an-effect",
+  "format": "which-hook",
+  "level": "beginner",
+  "tags": [
+    "useEffect",
+    "event-handlers"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#what-are-effects-and-how-are-they-different-from-events",
+  "question": "A chat room must stay connected to the server while it is on screen. Where does the connect code go?",
+  "options": [
+    "In the component body, during render",
+    "In the Send button’s click handler",
+    "In an Effect"
+  ],
+  "answer": 2,
+  "say": "A chat room must stay connected to the server while it is on screen. Where does the connect code go?",
+  "explanation": "Connecting isn’t caused by a click, and render code must stay pure. It’s caused by the component being shown, which is what Effects are for.",
+  "explainSay": "In an Effect. Connecting is caused by the chat being on screen, not by a click."
+}

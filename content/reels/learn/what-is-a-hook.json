@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "concept": "what-is-a-hook",
+  "id": "what-is-a-hook",
+  "topic": "Hooks",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "hooks",
+    "basics"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/hooks",
+  "title": "What a Hook is",
+  "slides": [
+    {
+      "type": "title",
+      "text": "use… means Hook 🪝",
+      "say": "Any function whose name starts with use is a Hook. Hooks let your components use React features."
+    },
+    {
+      "type": "code",
+      "code": "function Counter() {\n  const [count, setCount] =\n    useState(0);\n  const ref = useRef(null);\n  // ...\n}",
+      "highlight": [
+        3,
+        4
+      ],
+      "say": "Here the component asks for two features: state with use state, and a ref with use ref."
+    },
+    {
+      "type": "text",
+      "text": "State: useState, useReducer. Context: useContext. Ref: useRef. Effect: useEffect.",
+      "say": "Built-in Hooks come in groups. State Hooks remember data. Context reads from far away. Refs hold values that don’t render. Effects sync with outside systems."
+    },
+    {
+      "type": "text",
+      "text": "Performance: useMemo, useCallback, useTransition, useDeferredValue. Plus a few others.",
+      "say": "Performance Hooks skip work or keep the screen responsive. And there are a few more, like use I D."
+    },
+    {
+      "type": "text",
+      "text": "Combine built-in Hooks to build your own.",
+      "say": "The takeaway: a Hook is a function starting with use. Use the built-in ones, or combine them into your own."
+    }
+  ]
+}

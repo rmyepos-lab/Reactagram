@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-useeffect-basics-1",
+  "topic": "Side Effects",
+  "concept": "useeffect-basics",
+  "format": "output",
+  "level": "beginner",
+  "tags": [
+    "useEffect",
+    "render-order"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useEffect#reference",
+  "question": "Production build. The component mounts once. In what order do the logs appear?",
+  "code": "function Box() {\n  console.log('A');\n  useEffect(() => {\n    console.log('B');\n  });\n  console.log('C');\n  return <div />;\n}",
+  "options": [
+    "A, B, C",
+    "A, C, B",
+    "B, A, C",
+    "A, C (Effects need a dependency array)"
+  ],
+  "answer": 1,
+  "say": "Production build. The component mounts once. In what order do the logs appear?",
+  "explanation": "A and C run while rendering. The Effect’s setup runs later, after the commit, so B comes last. With no array it runs after every commit.",
+  "explainSay": "A, C, then B. Rendering logs first. The Effect runs after the commit."
+}

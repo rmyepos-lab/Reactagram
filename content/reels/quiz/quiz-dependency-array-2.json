@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-dependency-array-2",
+  "topic": "Side Effects",
+  "concept": "dependency-array",
+  "format": "fill-blank",
+  "level": "beginner",
+  "tags": [
+    "useEffect",
+    "dependencies"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#step-2-specify-the-effect-dependencies",
+  "question": "Fill the blank so the Effect runs on mount and again whenever roomId changes:",
+  "code": "useEffect(() => {\n  const c = createConnection(roomId);\n  c.connect();\n  return () => c.disconnect();\n}, ____);",
+  "options": [
+    "[]",
+    "[roomId]",
+    "nothing: leave the array out",
+    "[c]"
+  ],
+  "answer": 1,
+  "say": "Fill the blank so the Effect runs on mount and again whenever room I D changes.",
+  "explanation": "[roomId] runs it on mount and after any render where roomId changed. [] would keep the old room; no array would reconnect on every render.",
+  "explainSay": "Room I D in the array. Then it runs on mount, and again when the room changes."
+}

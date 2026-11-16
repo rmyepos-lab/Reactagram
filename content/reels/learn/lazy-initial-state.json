@@ -1,0 +1,48 @@
+{
+  "kind": "learn",
+  "concept": "lazy-initial-state",
+  "id": "lazy-initial-state",
+  "topic": "State",
+  "format": "pitfall",
+  "level": "intermediate",
+  "tags": [
+    "useState",
+    "initializer",
+    "performance"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useState#avoiding-recreating-the-initial-state",
+  "title": "Pass the initializer, don’t call it",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Two characters, every render ⏳",
+      "say": "Two little parentheses can make your component do expensive work on every single render."
+    },
+    {
+      "type": "code",
+      "code": "const [todos, setTodos] = useState(\n  createInitialTodos()\n);",
+      "highlight": [
+        2
+      ],
+      "say": "React only uses the initial state once. But this line still calls create initial todos on every render, and throws the result away."
+    },
+    {
+      "type": "code",
+      "code": "const [todos, setTodos] = useState(\n  createInitialTodos\n);",
+      "highlight": [
+        2
+      ],
+      "say": "Pass the function itself, without calling it. Now React calls it only when the component is first created."
+    },
+    {
+      "type": "text",
+      "text": "An initializer must be pure, take no arguments, and return the initial state.",
+      "say": "This is called an initializer function. It should be pure, take no arguments, and return the starting value."
+    },
+    {
+      "type": "text",
+      "text": "Big array or slow calculation? Pass the function, not its result.",
+      "say": "The takeaway: when the starting value is costly to build, give use state the function, not its result."
+    }
+  ]
+}

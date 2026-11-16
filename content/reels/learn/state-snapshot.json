@@ -1,0 +1,50 @@
+{
+  "kind": "learn",
+  "concept": "state-snapshot",
+  "id": "state-snapshot",
+  "topic": "State",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "useState",
+    "snapshot",
+    "rendering"
+  ],
+  "sourceUrl": "https://react.dev/learn/state-as-a-snapshot#rendering-takes-a-snapshot-in-time",
+  "title": "State is a snapshot for that render",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Click +3. You get 1. 📸",
+      "say": "This button calls set number three times. Click it, and the number only goes up by one. Why?"
+    },
+    {
+      "type": "code",
+      "code": "<button onClick={() => {\n  setNumber(number + 1);\n  setNumber(number + 1);\n  setNumber(number + 1);\n}}>+3</button>",
+      "highlight": [
+        2,
+        3,
+        4
+      ],
+      "say": "During this render, number is zero. So each line really says: set number to zero plus one. Three times, the same value."
+    },
+    {
+      "type": "text",
+      "text": "Setting state only changes it for the next render. Inside this render, number stays the same.",
+      "say": "Setting state does not change the variable you already have. It asks React for a new render, with the new value."
+    },
+    {
+      "type": "code",
+      "code": "setNumber(number + 5);\nsetTimeout(() => {\n  alert(number);\n}, 3000);",
+      "highlight": [
+        3
+      ],
+      "say": "Even later, inside a timer, the alert shows zero. The handler was created with the snapshot from that render."
+    },
+    {
+      "type": "text",
+      "text": "A state variable never changes within a render, even in async code.",
+      "say": "The takeaway: each render has its own state values, and its own event handlers that see them."
+    }
+  ]
+}

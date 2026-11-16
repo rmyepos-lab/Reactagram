@@ -1,0 +1,50 @@
+{
+  "kind": "learn",
+  "concept": "rules-of-hooks",
+  "id": "rules-of-hooks",
+  "topic": "Hooks",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "hooks",
+    "rules",
+    "lint"
+  ],
+  "sourceUrl": "https://react.dev/reference/rules/rules-of-hooks",
+  "title": "Rules of Hooks: where you may call them",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Two rules for every Hook 📏",
+      "say": "Hooks have two rules: call them at the top level, and only from React functions."
+    },
+    {
+      "type": "code",
+      "code": "function Counter() {\n  // ✅ top level\n  const [count, setCount] =\n    useState(0);\n}\n\nfunction useWidth() {\n  // ✅ top level of a custom Hook\n  const [w, setW] = useState(0);\n}",
+      "highlight": [
+        3,
+        9
+      ],
+      "say": "Good spots: the top level of a component, or the top level of a custom Hook, before any early return."
+    },
+    {
+      "type": "code",
+      "code": "function Bad({ cond }) {\n  if (cond) {\n    return;\n  }\n  // 🔴 after an early return\n  const theme =\n    useContext(ThemeContext);\n}",
+      "highlight": [
+        6,
+        7
+      ],
+      "say": "Bad: this Hook only runs when cond is false. Move it above the return."
+    },
+    {
+      "type": "text",
+      "text": "Never in: conditions, loops, event handlers, class components, try/catch, or functions passed to useMemo or useEffect.",
+      "say": "Also never inside conditions, loops, event handlers, class components, try and catch, or functions you pass to use memo or use effect."
+    },
+    {
+      "type": "text",
+      "text": "The eslint-plugin-react-hooks linter catches these for you.",
+      "say": "You don’t have to check by hand. The React Hooks lint plugin catches these mistakes."
+    }
+  ]
+}

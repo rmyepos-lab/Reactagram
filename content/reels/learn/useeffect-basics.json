@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "concept": "useeffect-basics",
+  "id": "useeffect-basics",
+  "topic": "Side Effects",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "useEffect",
+    "setup",
+    "cleanup"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useEffect#reference",
+  "title": "useEffect(setup, dependencies)",
+  "slides": [
+    {
+      "type": "title",
+      "text": "One Hook, two arguments 🧩",
+      "say": "Use effect takes two things: a setup function, and an optional list of dependencies."
+    },
+    {
+      "type": "code",
+      "code": "useEffect(() => {\n  const c = createConnection(roomId);\n  c.connect();\n  return () => c.disconnect();\n}, [roomId]);",
+      "highlight": [
+        4
+      ],
+      "say": "Setup connects. It can return a cleanup function that disconnects. The array lists the values the Effect uses."
+    },
+    {
+      "type": "text",
+      "text": "After a commit, React runs setup. If a dependency changed: cleanup with old values, then setup with new ones.",
+      "say": "React runs setup after the commit. When a dependency changes, it runs cleanup with the old values, then setup with the new ones."
+    },
+    {
+      "type": "text",
+      "text": "Not caused by a click? React usually lets the browser paint first.",
+      "say": "If no click or other interaction caused it, React usually lets the browser paint the screen first, then runs your Effect."
+    },
+    {
+      "type": "text",
+      "text": "Top level only. Returns nothing. Never runs on the server.",
+      "say": "Call it at the top level. It returns nothing. And Effects only run on the client, never during server rendering."
+    }
+  ]
+}

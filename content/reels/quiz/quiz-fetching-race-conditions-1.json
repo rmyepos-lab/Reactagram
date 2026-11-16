@@ -1,0 +1,26 @@
+{
+  "kind": "quiz",
+  "id": "quiz-fetching-race-conditions-1",
+  "topic": "Side Effects",
+  "concept": "fetching-race-conditions",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "fetching",
+    "race-conditions"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#fetching-data",
+  "question": "You switch from Alice to Bob quickly. Alice’s request is slower. What can go wrong?",
+  "code": "useEffect(() => {\n  fetchBio(person).then(result => {\n    setBio(result);\n  });\n}, [person]);",
+  "options": [
+    "Nothing: React cancels the old fetch",
+    "Bob’s page can end up showing Alice’s bio",
+    "The Effect runs in an infinite loop",
+    "Bob’s bio is fetched twice"
+  ],
+  "answer": 1,
+  "say": "You switch from Alice to Bob quickly. Alice’s request is slower. What can go wrong?",
+  "explanation": "Nothing stops the old request. If Alice’s answer arrives last, setBio shows her bio on Bob’s page. An ignore flag set in cleanup fixes it.",
+  "explainSay": "Bob’s page can show Alice’s bio. The late answer still sets state, unless cleanup tells it to ignore."
+}

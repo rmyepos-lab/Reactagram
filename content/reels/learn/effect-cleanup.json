@@ -1,0 +1,89 @@
+{
+  "kind": "learn",
+  "concept": "effect-cleanup",
+  "id": "effect-cleanup",
+  "topic": "Side Effects",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "useEffect",
+    "cleanup"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#step-3-add-cleanup-if-needed",
+  "title": "Cleanup: undo what setup did",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Connect, then disconnect 🔌",
+      "say": "If your Effect opens something, it should close it too. That’s the cleanup function."
+    },
+    {
+      "type": "code",
+      "code": "useEffect(() => {\n  const c = createConnection();\n  c.connect();\n  return () => {\n    c.disconnect();\n  };\n}, []);",
+      "highlight": [
+        4,
+        5,
+        6
+      ],
+      "say": "Return a function from the Effect. React calls it to undo the setup. Here, it disconnects."
+    },
+    {
+      "type": "visual",
+      "say": "Here is when React calls cleanup.",
+      "visual": {
+        "kind": "timeline",
+        "events": [
+          {
+            "id": "setup1",
+            "label": "Setup",
+            "note": "connect to room A"
+          },
+          {
+            "id": "cleanup1",
+            "label": "Cleanup",
+            "note": "room changed: disconnect A"
+          },
+          {
+            "id": "setup2",
+            "label": "Setup",
+            "note": "connect to room B"
+          },
+          {
+            "id": "cleanup2",
+            "label": "Cleanup",
+            "note": "component removed"
+          }
+        ]
+      },
+      "steps": [
+        {
+          "say": "First, setup runs and connects to room A.",
+          "show": [
+            "setup1"
+          ],
+          "focus": "setup1"
+        },
+        {
+          "say": "When a dependency changes, cleanup runs first with the old values, then setup runs with the new ones.",
+          "show": [
+            "cleanup1",
+            "setup2"
+          ],
+          "focus": "cleanup1"
+        },
+        {
+          "say": "And when the component is removed, cleanup runs one last time.",
+          "show": [
+            "cleanup2"
+          ],
+          "focus": "cleanup2"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "Before every re-run, and once on unmount: setup and cleanup always come in pairs.",
+      "say": "The takeaway: cleanup runs before the Effect runs again, and once when the component goes away."
+    }
+  ]
+}

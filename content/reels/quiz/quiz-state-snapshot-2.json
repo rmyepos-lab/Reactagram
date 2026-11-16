@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-state-snapshot-2",
+  "topic": "State",
+  "concept": "state-snapshot",
+  "format": "true-false",
+  "level": "beginner",
+  "tags": [
+    "useState",
+    "snapshot",
+    "rendering"
+  ],
+  "sourceUrl": "https://react.dev/learn/state-as-a-snapshot#setting-state-triggers-renders",
+  "question": "True or false: right after setCount(count + 1), the count variable in the same handler already holds the new value.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: right after set count, count plus one, the count variable in the same handler already holds the new value.",
+  "explanation": "False. Setting state requests a new render. The count variable in the current handler keeps the value from this render.",
+  "explainSay": "False. Setting state asks for a new render. The variable in this handler keeps its old value."
+}

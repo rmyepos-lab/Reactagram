@@ -1,0 +1,51 @@
+{
+  "kind": "learn",
+  "concept": "reset-state-with-key",
+  "id": "reset-state-with-key",
+  "topic": "State Structure & Sharing",
+  "format": "pattern",
+  "level": "intermediate",
+  "tags": [
+    "key",
+    "state",
+    "forms"
+  ],
+  "sourceUrl": "https://react.dev/learn/preserving-and-resetting-state#resetting-a-form-with-a-key",
+  "title": "Keys aren’t just for lists: reset a form",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Wrong person, same draft 😬",
+      "say": "You type a message to Alice, then tap Bob. Your draft is still there, ready to go to the wrong person."
+    },
+    {
+      "type": "code",
+      "code": "<Chat contact={to} />",
+      "highlight": [
+        1
+      ],
+      "say": "Chat is at the same place in the tree, so React keeps its state. Only the contact prop changed."
+    },
+    {
+      "type": "code",
+      "code": "<Chat key={to.id} contact={to} />",
+      "highlight": [
+        1
+      ],
+      "say": "Give it a key. A new recipient means a new key, so React recreates Chat from scratch, with all the state below it."
+    },
+    {
+      "type": "code",
+      "code": "const [version, setVersion] =\n  useState(0);\n\n<Form key={version} />\n<button onClick={() =>\n  setVersion(v => v + 1)\n}>Reset</button>",
+      "highlight": [
+        4
+      ],
+      "say": "Same trick for a reset button. Bump a version number and pass it as the key. The whole form starts fresh."
+    },
+    {
+      "type": "text",
+      "text": "Keys only need to be unique within the parent. A new key means fresh state.",
+      "say": "Keys only need to be unique inside their parent. Change the key, and you get fresh state."
+    }
+  ]
+}

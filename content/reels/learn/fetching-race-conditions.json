@@ -1,0 +1,47 @@
+{
+  "kind": "learn",
+  "concept": "fetching-race-conditions",
+  "id": "fetching-race-conditions",
+  "topic": "Side Effects",
+  "format": "pattern",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "fetching",
+    "race-conditions"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#fetching-data",
+  "title": "Fetching in an Effect: ignore stale answers",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Alice clicked, Bob shown… then Alice? 🏁",
+      "say": "You switch from Alice to Bob. Alice’s request was slow, so it arrives last, and the screen shows the wrong person."
+    },
+    {
+      "type": "text",
+      "text": "Responses can arrive in a different order than the requests were sent.",
+      "say": "That’s a race condition. Network answers can come back in any order."
+    },
+    {
+      "type": "code",
+      "code": "useEffect(() => {\n  let ignore = false;\n  async function load() {\n    const json =\n      await fetchTodos(userId);\n    if (!ignore) {\n      setTodos(json);\n    }\n  }\n  load();\n  return () => {\n    ignore = true;\n  };\n}, [userId]);",
+      "highlight": [
+        2,
+        6,
+        12
+      ],
+      "say": "Fix it with an ignore flag. It starts as false. Cleanup sets it to true. Only a request whose flag is still false may set state."
+    },
+    {
+      "type": "text",
+      "text": "When userId changes, the old Effect’s cleanup runs, so Alice’s late answer is ignored.",
+      "say": "When the user I D changes, cleanup runs for Alice’s Effect. Her answer can still arrive, but it gets ignored."
+    },
+    {
+      "type": "text",
+      "text": "Using a framework? Its built-in data fetching is usually better.",
+      "say": "One more tip: if you use a framework, its built-in data fetching is usually a better choice than fetching in Effects."
+    }
+  ]
+}

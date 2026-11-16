@@ -1,0 +1,51 @@
+{
+  "kind": "learn",
+  "concept": "usememo-vs-usecallback",
+  "id": "usememo-vs-usecallback",
+  "topic": "Performance",
+  "format": "compare",
+  "level": "intermediate",
+  "tags": [
+    "useMemo",
+    "useCallback",
+    "memoization"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useCallback#how-is-usecallback-related-to-usememo",
+  "title": "useMemo vs useCallback: result or function?",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Cache the result, or the recipe? 🧁",
+      "say": "Use memo and use callback look alike. The difference is what they keep."
+    },
+    {
+      "type": "code",
+      "code": "const requirements = useMemo(\n  () => computeRequirements(product),\n  [product]\n);",
+      "highlight": [
+        2
+      ],
+      "say": "Use memo calls your function and caches its result. Here, the requirements object stays the same until product changes."
+    },
+    {
+      "type": "code",
+      "code": "const handleSubmit = useCallback(\n  (details) => {\n    post('/buy', details);\n  },\n  [productId]\n);",
+      "highlight": [
+        2
+      ],
+      "say": "Use callback doesn’t call your function. It caches the function itself. The code only runs later, on submit."
+    },
+    {
+      "type": "code",
+      "code": "// simplified, inside React\nfunction useCallback(fn, deps) {\n  return useMemo(() => fn, deps);\n}",
+      "highlight": [
+        3
+      ],
+      "say": "In fact, use callback is like use memo returning a function. Same idea, one less wrapper."
+    },
+    {
+      "type": "text",
+      "text": "Need a computed value? useMemo. Need the same function? useCallback.",
+      "say": "Both help when you pass things to a memoized child. Value? Use memo. Function? Use callback."
+    }
+  ]
+}

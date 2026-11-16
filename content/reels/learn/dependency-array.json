@@ -1,0 +1,50 @@
+{
+  "kind": "learn",
+  "concept": "dependency-array",
+  "id": "dependency-array",
+  "topic": "Side Effects",
+  "format": "compare",
+  "level": "beginner",
+  "tags": [
+    "useEffect",
+    "dependencies"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#step-2-specify-the-effect-dependencies",
+  "title": "No array, [] or [a, b]: when Effects run",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Three ways to end an Effect 🎛️",
+      "say": "The last argument of use effect decides when it runs. There are three versions."
+    },
+    {
+      "type": "code",
+      "code": "useEffect(() => {\n  // after every render\n});",
+      "highlight": [
+        3
+      ],
+      "say": "No array at all: the Effect runs after every render."
+    },
+    {
+      "type": "code",
+      "code": "useEffect(() => {\n  // only on mount\n}, []);",
+      "highlight": [
+        3
+      ],
+      "say": "An empty array: it runs only on mount, when the component appears."
+    },
+    {
+      "type": "code",
+      "code": "useEffect(() => {\n  // on mount, and when\n  // a or b changed\n}, [a, b]);",
+      "highlight": [
+        4
+      ],
+      "say": "With values: it runs on mount, and again whenever a or b changed since the last render."
+    },
+    {
+      "type": "text",
+      "text": "You don’t pick dependencies. Every reactive value the Effect reads must be listed.",
+      "say": "One catch: you don’t choose the list. Every reactive value the Effect reads must be in it, and the linter checks."
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "kind": "learn",
+  "concept": "effects-run-twice-dev",
+  "id": "effects-run-twice-dev",
+  "topic": "Side Effects",
+  "format": "pitfall",
+  "level": "beginner",
+  "tags": [
+    "useEffect",
+    "strict-mode",
+    "development"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#how-to-handle-the-effect-firing-twice-in-development",
+  "title": "Why your Effect runs twice in development",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Connecting… Connecting… 🔁",
+      "say": "In development, your Effect’s log shows up twice. That’s not a bug in React. It’s on purpose."
+    },
+    {
+      "type": "text",
+      "text": "Strict Mode remounts every component once, right after the first mount. Development only.",
+      "say": "With Strict Mode, React mounts each component, removes it, and mounts it again. Only in development."
+    },
+    {
+      "type": "text",
+      "text": "With a good cleanup you see: connect, disconnect, connect.",
+      "say": "If your cleanup is right, you’ll see connect, disconnect, connect. One live connection at the end. No harm done."
+    },
+    {
+      "type": "text",
+      "text": "Without cleanup: two open connections. The remount exposed a real bug.",
+      "say": "Without cleanup, you end up with two connections. That would also happen when users move around your app. The remount just shows it early."
+    },
+    {
+      "type": "text",
+      "text": "Don’t ask “how do I run it once?” Ask “does it work after remounting?”",
+      "say": "So don’t try to make it run once. Make setup, cleanup, setup look the same to the user as a single setup."
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-useeffect-basics-2",
+  "topic": "Side Effects",
+  "concept": "useeffect-basics",
+  "format": "true-false",
+  "level": "beginner",
+  "tags": [
+    "useEffect",
+    "server-rendering"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useEffect#caveats",
+  "question": "True or false: during server rendering, React runs your Effects so the HTML includes their results.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: during server rendering, React runs your Effects so the H T M L includes their results.",
+  "explanation": "False. Effects only run on the client. They don’t run during server rendering.",
+  "explainSay": "False. Effects only run on the client, never during server rendering."
+}

@@ -1,0 +1,26 @@
+{
+  "kind": "quiz",
+  "id": "quiz-fetching-race-conditions-2",
+  "topic": "Side Effects",
+  "concept": "fetching-race-conditions",
+  "format": "fill-blank",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "fetching",
+    "cleanup"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useEffect#fetching-data-with-effects",
+  "question": "Fill the blank so a stale response never updates the bio:",
+  "code": "useEffect(() => {\n  let ignore = false;\n  fetchBio(person).then(result => {\n    if (!ignore) setBio(result);\n  });\n  return () => {\n    ____;\n  };\n}, [person]);",
+  "options": [
+    "ignore = false",
+    "setBio(null)",
+    "ignore = true",
+    "person = null"
+  ],
+  "answer": 2,
+  "say": "Fill the blank so a stale response never updates the bio.",
+  "explanation": "Cleanup runs when person changes or the component unmounts. Setting ignore = true makes that Effect’s late response skip setBio.",
+  "explainSay": "Ignore equals true. Cleanup marks the old request, so its late answer is skipped."
+}

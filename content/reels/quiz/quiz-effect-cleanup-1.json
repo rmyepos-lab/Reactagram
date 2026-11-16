@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-effect-cleanup-1",
+  "topic": "Side Effects",
+  "concept": "effect-cleanup",
+  "format": "output",
+  "level": "beginner",
+  "tags": [
+    "useEffect",
+    "cleanup"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#step-3-add-cleanup-if-needed",
+  "question": "Production build. roomId goes from \"a\" to \"b\". What is logged after the change?",
+  "code": "useEffect(() => {\n  console.log('connect ' + roomId);\n  return () => {\n    console.log('disconnect ' + roomId);\n  };\n}, [roomId]);",
+  "options": [
+    "connect b",
+    "disconnect b, connect b",
+    "connect b, disconnect a",
+    "disconnect a, connect b"
+  ],
+  "answer": 3,
+  "say": "Production build. Room I D goes from a to b. What is logged after the change?",
+  "explanation": "Before running again, React calls the previous cleanup, which still sees the old roomId \"a\". Then setup runs with \"b\".",
+  "explainSay": "Disconnect a, then connect b. The old cleanup runs first, with the old value."
+}
