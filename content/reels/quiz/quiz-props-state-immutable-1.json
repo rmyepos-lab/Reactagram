@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-props-state-immutable-1",
+  "topic": "Purity",
+  "concept": "props-state-immutable",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "purity",
+    "immutability",
+    "hooks"
+  ],
+  "sourceUrl": "https://react.dev/reference/rules/components-and-hooks-must-be-pure#props-and-state-are-immutable",
+  "question": "What is wrong with this custom Hook?",
+  "code": "function useLabel(user) {\n  user.label = user.name.toUpperCase();\n  return user;\n}",
+  "options": [
+    "It mutates its argument instead of copying it",
+    "Hooks cannot return objects",
+    "toUpperCase is not allowed in render"
+  ],
+  "answer": 0,
+  "say": "What is wrong with this custom Hook?",
+  "explanation": "Values passed to a Hook are immutable. Copy first, like { ...user, label }, so memoization and callers stay correct.",
+  "explainSay": "It mutates its argument. Values passed to a Hook are immutable, so make a copy first."
+}

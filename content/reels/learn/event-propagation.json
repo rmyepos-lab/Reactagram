@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "event-propagation",
+  "topic": "Events",
+  "concept": "event-propagation",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "events",
+    "propagation",
+    "bubbling"
+  ],
+  "sourceUrl": "https://react.dev/learn/responding-to-events#event-propagation",
+  "title": "Events bubble up, until you stop them",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Events bubble up 🫧",
+      "say": "Click a button inside a div that also has onClick. Which handler runs? Both."
+    },
+    {
+      "type": "code",
+      "code": "<div onClick={() => alert(\"toolbar\")}>\n  <button onClick={() => alert(\"play\")}>\n    Play\n  </button>\n</div>",
+      "highlight": [
+        1,
+        2
+      ],
+      "say": "The event starts where it happened, then travels up the tree. So you get play first, then toolbar."
+    },
+    {
+      "type": "code",
+      "code": "function Button({ onClick, children }) {\n  return (\n    <button onClick={e => {\n      e.stopPropagation();\n      onClick();\n    }}>{children}</button>\n  );\n}",
+      "highlight": [
+        4
+      ],
+      "say": "Handlers get an event object, usually called e. Call e dot stop propagation, and the parent handlers will not fire."
+    },
+    {
+      "type": "text",
+      "text": "Every event bubbles in React except onScroll.",
+      "say": "Good to know: every event propagates in React, except on scroll, which only works on the tag you attach it to."
+    }
+  ]
+}

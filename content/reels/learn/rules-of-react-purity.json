@@ -1,0 +1,43 @@
+{
+  "kind": "learn",
+  "id": "rules-of-react-purity",
+  "topic": "Purity",
+  "concept": "rules-of-react-purity",
+  "format": "pitfall",
+  "level": "advanced",
+  "tags": [
+    "purity",
+    "idempotent",
+    "rules-of-react"
+  ],
+  "sourceUrl": "https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent",
+  "title": "Idempotent: new Date() in render is a bug",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Idempotent components 🔁",
+      "say": "A Rule of React: components must be idempotent. Same props, state and context, same output, every time."
+    },
+    {
+      "type": "code",
+      "code": "function Clock() {\n  // 🔴 different result every call\n  const time = new Date();\n  return <span>{time.toLocaleString()}</span>;\n}",
+      "highlight": [
+        3
+      ],
+      "say": "New Date returns something different every time it is called. So this component is not idempotent. And the time just stays stuck at the moment it rendered."
+    },
+    {
+      "type": "text",
+      "text": "Same for Math.random(). Fine to use, just not during render.",
+      "say": "Math random is the same story. You can still use these functions. Just not during render."
+    },
+    {
+      "type": "code",
+      "code": "function Clock() {\n  const [time, setTime] = useState(\n    () => new Date()\n  );\n  useEffect(() => {\n    const id = setInterval(() => {\n      setTime(new Date()); // ✅\n    }, 1000);\n    return () => clearInterval(id);\n  }, []);\n  return <span>{time.toLocaleString()}</span>;\n}",
+      "highlight": [
+        7
+      ],
+      "say": "The docs move the changing value out of rendering. An Effect sets the new date every second, so render only reads state."
+    }
+  ]
+}

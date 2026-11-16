@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "pass-dont-call-handler",
+  "topic": "Events",
+  "concept": "pass-dont-call-handler",
+  "format": "pitfall",
+  "level": "beginner",
+  "tags": [
+    "events",
+    "onClick",
+    "pitfall"
+  ],
+  "sourceUrl": "https://react.dev/learn/responding-to-events#adding-event-handlers",
+  "title": "Pass the handler, don't call it",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Those () matter 😬",
+      "say": "One tiny pair of parentheses can make your click handler fire without any click."
+    },
+    {
+      "type": "code",
+      "code": "// ✅ passes the function\n<button onClick={handleClick}>\n\n// 🔴 calls it during render\n<button onClick={handleClick()}>",
+      "highlight": [
+        2,
+        5
+      ],
+      "say": "Without parentheses, you pass the function, and React calls it on click. With parentheses, it runs immediately, during rendering."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 alerts on every render\n<button onClick={alert(\"Hi\")}>\n\n// ✅ alerts on click\n<button onClick={() => alert(\"Hi\")}>",
+      "highlight": [
+        5
+      ],
+      "say": "Inline code has the same trap. Wrap it in an arrow function, so you create a function to be called later."
+    },
+    {
+      "type": "text",
+      "text": "onClick wants a function, not the result of calling one.",
+      "say": "Takeaway: onClick wants a function, not the result of calling one."
+    }
+  ]
+}

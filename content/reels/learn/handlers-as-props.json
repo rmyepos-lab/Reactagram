@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "handlers-as-props",
+  "topic": "Events",
+  "concept": "handlers-as-props",
+  "format": "pattern",
+  "level": "beginner",
+  "tags": [
+    "events",
+    "props",
+    "composition"
+  ],
+  "sourceUrl": "https://react.dev/learn/responding-to-events#passing-event-handlers-as-props",
+  "title": "Pass event handlers down as props",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Same button, different jobs 🎬",
+      "say": "One Button component, but one should play a movie and another should upload an image. Let the parent decide."
+    },
+    {
+      "type": "code",
+      "code": "function Button({ onClick, children }) {\n  return (\n    <button onClick={onClick}>\n      {children}\n    </button>\n  );\n}",
+      "highlight": [
+        1,
+        3
+      ],
+      "say": "Button takes an onClick prop and passes it straight to the browser button."
+    },
+    {
+      "type": "code",
+      "code": "<Button onClick={handlePlay}>\n  Play\n</Button>\n<Button onClick={() => alert(\"Uploading!\")}>\n  Upload\n</Button>",
+      "highlight": [
+        1,
+        4
+      ],
+      "say": "Each parent passes its own handler. The button holds the styling, the parent holds the behavior."
+    },
+    {
+      "type": "text",
+      "text": "Name your handler props on + Capital: onPlayMovie, onUploadImage.",
+      "say": "For your own components, you can name these props anything. By convention, start with on, then a capital letter, like on play movie."
+    }
+  ]
+}

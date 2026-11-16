@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-pass-dont-call-handler-1",
+  "topic": "Events",
+  "concept": "pass-dont-call-handler",
+  "format": "output",
+  "level": "beginner",
+  "tags": [
+    "events",
+    "onClick",
+    "pitfall"
+  ],
+  "sourceUrl": "https://react.dev/learn/responding-to-events#adding-event-handlers",
+  "question": "When does the alert appear?",
+  "code": "<button onClick={alert(\"Deleted!\")}>\n  Delete\n</button>",
+  "options": [
+    "Only when clicked",
+    "Every time the component renders",
+    "Never"
+  ],
+  "answer": 1,
+  "say": "When does this alert appear?",
+  "explanation": "Code inside JSX curly braces runs right away. alert(...) is called during render, not passed as a function.",
+  "explainSay": "Every time it renders. The alert is called right away instead of being passed as a function."
+}

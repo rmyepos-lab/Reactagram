@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "props-state-immutable",
+  "topic": "Purity",
+  "concept": "props-state-immutable",
+  "format": "pitfall",
+  "level": "intermediate",
+  "tags": [
+    "purity",
+    "immutability",
+    "hooks"
+  ],
+  "sourceUrl": "https://react.dev/reference/rules/components-and-hooks-must-be-pure#props-and-state-are-immutable",
+  "title": "Copy, never mutate: props, state, hook args",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Copy, don’t mutate 📋",
+      "say": "Props, state, and values you pass to Hooks are all immutable. Here is what that looks like in real code."
+    },
+    {
+      "type": "code",
+      "code": "function Post({ item }) {\n  // 🔴 mutates a prop object\n  item.url = new Url(item.url, base);\n  // ✅ make a copy instead\n  const url = new Url(item.url, base);\n}",
+      "highlight": [
+        3,
+        5
+      ],
+      "say": "Do not write into a prop object. That gives inconsistent output that is hard to debug. Make a new value instead."
+    },
+    {
+      "type": "code",
+      "code": "function useIconStyle(icon) {\n  // 🔴 icon.className = ...\n  const newIcon = { ...icon }; // ✅\n  newIcon.className = getStyle(icon);\n  return newIcon;\n}",
+      "highlight": [
+        3
+      ],
+      "say": "The same goes for arguments to a Hook. Copy them first. A Hook might memoize on its arguments, and mutating them would make that memo stale."
+    },
+    {
+      "type": "text",
+      "text": "State changes go through the setter. Prop changes come from the parent.",
+      "say": "Takeaway: for state, call the setter. For props, the parent passes new ones. Never change them in place."
+    }
+  ]
+}

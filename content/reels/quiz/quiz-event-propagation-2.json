@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-event-propagation-2",
+  "topic": "Events",
+  "concept": "event-propagation",
+  "format": "fill-blank",
+  "level": "intermediate",
+  "tags": [
+    "events",
+    "propagation",
+    "bubbling"
+  ],
+  "sourceUrl": "https://react.dev/learn/responding-to-events#event-propagation",
+  "question": "Fill the blank so the parent div's onClick does not run:",
+  "code": "<button onClick={e => {\n  e.___();\n  play();\n}}>",
+  "options": [
+    "preventDefault",
+    "stopPropagation",
+    "cancel"
+  ],
+  "answer": 1,
+  "say": "Fill the blank so the parent div’s onClick does not run.",
+  "explanation": "e.stopPropagation() stops the event from reaching handlers on the tags above. preventDefault is about browser defaults.",
+  "explainSay": "Stop propagation. It keeps the event from reaching the parent handlers."
+}

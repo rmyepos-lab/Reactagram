@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-event-handlers-2",
+  "topic": "Events",
+  "concept": "event-handlers",
+  "format": "true-false",
+  "level": "beginner",
+  "tags": [
+    "events",
+    "onClick"
+  ],
+  "sourceUrl": "https://react.dev/learn/responding-to-events#adding-event-handlers",
+  "question": "True or false: an event handler defined inside a component can read that component's props.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: an event handler defined inside a component can read that component’s props.",
+  "explanation": "True. Handlers are declared inside the component, so they have access to its props and state.",
+  "explainSay": "True. The handler lives inside the component, so it can read its props."
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-props-state-immutable-2",
+  "topic": "Purity",
+  "concept": "props-state-immutable",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "purity",
+    "immutability",
+    "hooks"
+  ],
+  "sourceUrl": "https://react.dev/reference/rules/components-and-hooks-must-be-pure#props-and-state-are-immutable",
+  "question": "count = count + 1 inside a click handler does not update the screen. What should you call?",
+  "options": [
+    "forceUpdate()",
+    "The setter from useState",
+    "useRef to store count"
+  ],
+  "answer": 1,
+  "say": "Count equals count plus one inside a click handler does not update the screen. What should you call instead?",
+  "explanation": "Changing a state variable directly does not re-render. The setter from useState tells React to queue a re-render.",
+  "explainSay": "The setter from use state. Changing the variable directly never tells React to re-render."
+}

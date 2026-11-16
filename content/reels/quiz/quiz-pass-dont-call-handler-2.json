@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-pass-dont-call-handler-2",
+  "topic": "Events",
+  "concept": "pass-dont-call-handler",
+  "format": "fill-blank",
+  "level": "beginner",
+  "tags": [
+    "events",
+    "onClick",
+    "pitfall"
+  ],
+  "sourceUrl": "https://react.dev/learn/responding-to-events#adding-event-handlers",
+  "question": "Fill the blank so remove(id) runs only on click:",
+  "code": "<button onClick={___}>\n  Remove\n</button>",
+  "options": [
+    "remove(id)",
+    "() => remove(id)",
+    "remove"
+  ],
+  "answer": 1,
+  "say": "Fill the blank so remove with this id runs only when the button is clicked.",
+  "explanation": "An arrow function creates a function for React to call later with the id. remove(id) runs during render, and remove alone gets the event, not the id.",
+  "explainSay": "An arrow function that calls remove with the id. It runs only on click."
+}

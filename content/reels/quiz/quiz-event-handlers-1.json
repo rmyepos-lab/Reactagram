@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-event-handlers-1",
+  "topic": "Events",
+  "concept": "event-handlers",
+  "format": "fill-blank",
+  "level": "beginner",
+  "tags": [
+    "events",
+    "onClick"
+  ],
+  "sourceUrl": "https://react.dev/learn/responding-to-events#adding-event-handlers",
+  "question": "Fill the blank so the alert shows on click:",
+  "code": "function Save() {\n  function handleClick() {\n    alert(\"Saved!\");\n  }\n  return <button ___>Save</button>;\n}",
+  "options": [
+    "onclick=\"handleClick\"",
+    "onClick={handleClick}",
+    "click={handleClick}"
+  ],
+  "answer": 1,
+  "say": "Fill the blank so the alert shows when the button is clicked.",
+  "explanation": "React event props are camelCase, like onClick, and take the function itself in curly braces.",
+  "explainSay": "onClick, camel case, with handle click in curly braces."
+}

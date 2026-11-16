@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-handlers-as-props-1",
+  "topic": "Events",
+  "concept": "handlers-as-props",
+  "format": "true-false",
+  "level": "beginner",
+  "tags": [
+    "events",
+    "props",
+    "composition"
+  ],
+  "sourceUrl": "https://react.dev/learn/responding-to-events#passing-event-handlers-as-props",
+  "question": "True or false: your own component can name its handler prop onSmash instead of onClick.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: your own component can name its handler prop onSmash instead of onClick.",
+  "explanation": "True. Only built-in tags like <button> need browser event names. Your own props can have any name, by convention on + Capital.",
+  "explainSay": "True. Your own components can name handler props anything. The convention is on plus a capital letter."
+}

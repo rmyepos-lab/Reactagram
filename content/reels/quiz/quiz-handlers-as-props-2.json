@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-handlers-as-props-2",
+  "topic": "Events",
+  "concept": "handlers-as-props",
+  "format": "bug-hunt",
+  "level": "beginner",
+  "tags": [
+    "events",
+    "props",
+    "composition"
+  ],
+  "sourceUrl": "https://react.dev/learn/responding-to-events#passing-event-handlers-as-props",
+  "question": "Clicking this Button does nothing. Why?",
+  "code": "function Button({ onClick, children }) {\n  return <button>{children}</button>;\n}\n\n<Button onClick={save}>Save</Button>",
+  "options": [
+    "save must be called as save()",
+    "Button never passes onClick to <button>",
+    "children breaks the click"
+  ],
+  "answer": 1,
+  "say": "Clicking this Button does nothing. Why?",
+  "explanation": "Button receives onClick but never hands it to the built-in <button>. Add onClick={onClick} to the <button>.",
+  "explainSay": "Button receives the onClick prop but never gives it to the real button element."
+}

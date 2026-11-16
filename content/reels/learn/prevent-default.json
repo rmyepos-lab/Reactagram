@@ -1,0 +1,40 @@
+{
+  "kind": "learn",
+  "id": "prevent-default",
+  "topic": "Events",
+  "concept": "prevent-default",
+  "format": "compare",
+  "level": "intermediate",
+  "tags": [
+    "events",
+    "forms",
+    "preventDefault"
+  ],
+  "sourceUrl": "https://react.dev/learn/responding-to-events#preventing-default-behavior",
+  "title": "preventDefault vs stopPropagation",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Why did my page reload? 🔄",
+      "say": "You submit a form and the whole page reloads. That is the browser’s default behavior."
+    },
+    {
+      "type": "code",
+      "code": "<form onSubmit={e => {\n  e.preventDefault();\n  alert(\"Submitting!\");\n}}>\n  <input />\n  <button>Send</button>\n</form>",
+      "highlight": [
+        2
+      ],
+      "say": "Call e dot prevent default on the event to stop the browser’s default action. Now there is no reload."
+    },
+    {
+      "type": "text",
+      "text": "preventDefault: stops the browser’s default action.\nstopPropagation: stops parent handlers.",
+      "say": "Do not confuse the two. Prevent default stops the browser’s built in behavior. Stop propagation stops handlers on the tags above."
+    },
+    {
+      "type": "text",
+      "text": "They are unrelated. Use one, the other, or both.",
+      "say": "They are unrelated, and both are useful. Use whichever one solves your problem."
+    }
+  ]
+}
