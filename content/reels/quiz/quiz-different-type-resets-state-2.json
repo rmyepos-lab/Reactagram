@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-different-type-resets-state-2",
+  "topic": "State Structure & Sharing",
+  "concept": "different-type-resets-state",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "position",
+    "reset"
+  ],
+  "sourceUrl": "https://react.dev/learn/preserving-and-resetting-state#different-components-at-the-same-position-reset-state",
+  "question": "True or false: replacing <Counter /> with <p> at the same spot, then switching back, keeps the count.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: replacing Counter with a p tag at the same spot, then switching back, keeps the count.",
+  "explanation": "False. A different type at the same position removes the Counter and destroys its state. Coming back creates a fresh one.",
+  "explainSay": "False. The counter was removed, so its state was destroyed. It comes back fresh."
+}

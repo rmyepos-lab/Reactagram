@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-uselayouteffect-cost-2",
+  "topic": "Side Effects",
+  "concept": "uselayouteffect-cost",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "useLayoutEffect",
+    "performance",
+    "ssr"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useLayoutEffect#caveats",
+  "question": "You set state inside useLayoutEffect. What happens to pending useEffect callbacks?",
+  "options": [
+    "They are skipped",
+    "React runs them immediately",
+    "They wait for the next click"
+  ],
+  "answer": 1,
+  "say": "You set state inside use layout effect. What happens to the pending use effect callbacks?",
+  "explanation": "If you trigger a state update inside useLayoutEffect, React executes all remaining Effects immediately, including useEffect.",
+  "explainSay": "React runs them all immediately."
+}

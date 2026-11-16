@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-useoptimistic-2",
+  "topic": "Actions & Forms",
+  "concept": "useoptimistic",
+  "format": "which-hook",
+  "level": "advanced",
+  "tags": [
+    "useOptimistic",
+    "actions",
+    "ux"
+  ],
+  "sourceUrl": "https://react.dev/blog/2024/12/05/react-19#new-hook-optimistic-updates",
+  "question": "A \"like\" should appear instantly while the request is pending. Which Hook?",
+  "options": [
+    "useOptimistic",
+    "useDeferredValue",
+    "useMemo"
+  ],
+  "answer": 0,
+  "say": "A like should appear instantly while the request is pending. Which Hook?",
+  "explanation": "useOptimistic shows the expected final state during an async request, then reverts if needed.",
+  "explainSay": "Use optimistic."
+}

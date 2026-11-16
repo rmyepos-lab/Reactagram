@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-no-effect-notify-parent-1",
+  "topic": "Side Effects",
+  "concept": "no-effect-notify-parent",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "events",
+    "props"
+  ],
+  "sourceUrl": "https://react.dev/learn/you-might-not-need-an-effect#notifying-parent-components-about-state-changes",
+  "question": "Why is calling onChange from this Effect worse than calling it in the handler?",
+  "code": "useEffect(() => {\n  onChange(value);\n}, [value, onChange]);",
+  "options": [
+    "It needs two render passes",
+    "onChange cannot be a dependency",
+    "Effects cannot call props"
+  ],
+  "answer": 0,
+  "say": "Why is calling on change from this Effect worse than calling it in the handler?",
+  "explanation": "The child renders and paints first, then the Effect makes the parent update, starting another pass. Update both in the handler for one pass.",
+  "explainSay": "It takes two render passes. Calling both in the handler takes one."
+}

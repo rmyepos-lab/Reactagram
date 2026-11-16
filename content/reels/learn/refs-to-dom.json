@@ -1,0 +1,42 @@
+{
+  "kind": "learn",
+  "id": "refs-to-dom",
+  "topic": "Refs",
+  "concept": "refs-to-dom",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "refs",
+    "dom",
+    "focus"
+  ],
+  "sourceUrl": "https://react.dev/learn/manipulating-the-dom-with-refs#getting-a-ref-to-the-node",
+  "title": "Get a DOM node with a ref",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Reach the real DOM node 🎯",
+      "say": "Sometimes you need the real DOM element, to focus an input or scroll to it. Refs do that."
+    },
+    {
+      "type": "code",
+      "code": "function Form() {\n  const inputRef = useRef(null);\n  function handleClick() {\n    inputRef.current.focus();\n  }\n  return (\n    <>\n      <input ref={inputRef} />\n      <button onClick={handleClick}>\n        Focus\n      </button>\n    </>\n  );\n}",
+      "highlight": [
+        2,
+        4,
+        8
+      ],
+      "say": "Create a ref with null. Pass it as the ref attribute. React puts the DOM node into ref dot current, and you can call browser APIs like focus."
+    },
+    {
+      "type": "text",
+      "text": "Starts as null. Set during commit. Back to null when removed.",
+      "say": "It starts as null. React fills it in when it creates the node, and sets it back to null when the node is removed."
+    },
+    {
+      "type": "text",
+      "text": "Best for focus, scroll and measuring.",
+      "say": "Use it for non destructive things: focusing, scrolling, and measuring."
+    }
+  ]
+}

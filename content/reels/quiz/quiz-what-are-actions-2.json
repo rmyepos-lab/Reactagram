@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-what-are-actions-2",
+  "topic": "Actions & Forms",
+  "concept": "what-are-actions",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "actions",
+    "react-19",
+    "transitions"
+  ],
+  "sourceUrl": "https://react.dev/blog/2024/12/05/react-19#actions",
+  "question": "During an async Action started with useTransition, what is isPending?",
+  "code": "startTransition(async () => {\n  await updateName(name);\n});",
+  "options": [
+    "false the whole time",
+    "true until the Action finishes",
+    "true only after it finishes"
+  ],
+  "answer": 1,
+  "say": "During an async Action started with use transition, what is is pending?",
+  "explanation": "The async transition sets isPending to true immediately and back to false after the work is done.",
+  "explainSay": "True, until the Action finishes."
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-activity-component-1",
+  "topic": "Concurrent Rendering",
+  "concept": "activity-component",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "Activity",
+    "state",
+    "hidden"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/Activity#restoring-the-state-of-hidden-components",
+  "question": "A Sidebar with an expanded section is hidden via <Activity mode=\"hidden\">, then shown. What happens to the section?",
+  "options": [
+    "It is collapsed again",
+    "It is still expanded",
+    "Sidebar crashes"
+  ],
+  "answer": 1,
+  "say": "A Sidebar with an expanded section is hidden using Activity, then shown again. What happens to the section?",
+  "explanation": "Activity keeps the state of hidden children and restores it when they become visible.",
+  "explainSay": "It is still expanded. Activity restores the state."
+}

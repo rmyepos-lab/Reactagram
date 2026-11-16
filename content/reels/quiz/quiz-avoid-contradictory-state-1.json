@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-avoid-contradictory-state-1",
+  "topic": "State Structure & Sharing",
+  "concept": "avoid-contradictory-state",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "status",
+    "structure"
+  ],
+  "sourceUrl": "https://react.dev/learn/choosing-the-state-structure#avoid-contradictions-in-state",
+  "question": "What problem can these two state variables cause?",
+  "code": "const [isLoading, setIsLoading] = useState(false);\nconst [isError, setIsError] = useState(false);",
+  "options": [
+    "They can both be true at once",
+    "Booleans cannot be state",
+    "They re-render twice as often"
+  ],
+  "answer": 0,
+  "say": "What problem can these two state variables cause?",
+  "explanation": "If you forget to update them together, both can be true, an impossible state. One status variable avoids that.",
+  "explainSay": "Both can end up true at the same time, an impossible state. Use one status variable instead."
+}

@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "updater-to-remove-dependency",
+  "topic": "Side Effects",
+  "concept": "updater-to-remove-dependency",
+  "format": "pattern",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "updater",
+    "dependencies"
+  ],
+  "sourceUrl": "https://react.dev/learn/removing-effect-dependencies#are-you-reading-some-state-to-calculate-the-next-state",
+  "title": "Use an updater to drop a state dependency",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Every message reconnects?! 💬",
+      "say": "Each new chat message makes the chat reconnect. Look at what the Effect reads."
+    },
+    {
+      "type": "code",
+      "code": "connection.on(\"message\", msg => {\n  setMessages([...messages, msg]);\n});\n// deps: [roomId, messages]",
+      "highlight": [
+        2,
+        4
+      ],
+      "say": "The Effect reads messages, so messages is a dependency. A new message changes messages, which re-syncs the Effect, which reconnects."
+    },
+    {
+      "type": "code",
+      "code": "connection.on(\"message\", msg => {\n  setMessages(msgs => [...msgs, msg]);\n});\n// deps: [roomId]",
+      "highlight": [
+        2,
+        4
+      ],
+      "say": "Pass an updater instead. The Effect no longer reads messages at all, so it is not a dependency anymore."
+    },
+    {
+      "type": "text",
+      "text": "React gives the updater the latest value during the next render.",
+      "say": "React queues the updater and passes it the latest messages during the next render."
+    }
+  ]
+}

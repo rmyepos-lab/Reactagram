@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-reactive-values-2",
+  "topic": "Side Effects",
+  "concept": "reactive-values",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "dependencies",
+    "reactive"
+  ],
+  "sourceUrl": "https://react.dev/learn/lifecycle-of-reactive-effects#effects-react-to-reactive-values",
+  "question": "True or false: a constant declared outside the component doesn't need to be a dependency.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: a constant declared outside the component does not need to be a dependency.",
+  "explanation": "True. It never changes due to a re-render, so it is not reactive. Dependencies only matter if they can change.",
+  "explainSay": "True. It never changes on a re-render, so it is not reactive."
+}

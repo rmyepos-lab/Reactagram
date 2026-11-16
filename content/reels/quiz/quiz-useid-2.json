@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-useid-2",
+  "topic": "Actions & Forms",
+  "concept": "useid",
+  "format": "which-hook",
+  "level": "intermediate",
+  "tags": [
+    "useId",
+    "accessibility",
+    "aria"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useId#generating-unique-ids-for-accessibility-attributes",
+  "question": "You render <PasswordField /> twice and need unique aria-describedby ids. Which Hook?",
+  "options": [
+    "useId",
+    "useRef",
+    "useMemo(() => Math.random())"
+  ],
+  "answer": 0,
+  "say": "You render the password field twice and need unique aria described by ids. Which Hook?",
+  "explanation": "useId generates a unique ID per component instance, safe with server rendering.",
+  "explainSay": "Use id."
+}

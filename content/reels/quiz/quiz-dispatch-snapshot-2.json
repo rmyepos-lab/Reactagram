@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-dispatch-snapshot-2",
+  "topic": "Reducers",
+  "concept": "dispatch-snapshot",
+  "format": "fill-blank",
+  "level": "intermediate",
+  "tags": [
+    "reducers",
+    "dispatch",
+    "snapshot"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useReducer#ive-dispatched-an-action-but-logging-gives-me-the-old-state-value",
+  "question": "Fill the blank to know the next state right after dispatching:",
+  "code": "dispatch(action);\nconst next = ___;",
+  "options": [
+    "state",
+    "reducer(state, action)",
+    "dispatch(action)"
+  ],
+  "answer": 1,
+  "say": "Fill the blank to know the next state right after dispatching.",
+  "explanation": "Call the reducer yourself with the current state and the action. dispatch returns nothing, and state is still the old snapshot.",
+  "explainSay": "Call the reducer yourself with state and the action. Dispatch returns nothing."
+}

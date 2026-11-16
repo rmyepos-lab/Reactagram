@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-conditional-ternary-1",
+  "topic": "Rendering Lists & Conditions",
+  "concept": "conditional-ternary",
+  "format": "fill-blank",
+  "level": "beginner",
+  "tags": [
+    "conditional-rendering",
+    "ternary"
+  ],
+  "sourceUrl": "https://react.dev/learn/conditional-rendering#conditional-ternary-operator--",
+  "question": "Fill the blank to show \"Online\" or \"Offline\":",
+  "code": "<p>{isOnline ___ \"Online\" : \"Offline\"}</p>",
+  "options": [
+    "&&",
+    "?",
+    "||"
+  ],
+  "answer": 1,
+  "say": "Fill the blank so the paragraph shows Online or Offline.",
+  "explanation": "The ternary is condition ? valueIfTrue : valueIfFalse. The ? goes before the true branch.",
+  "explainSay": "A question mark. The ternary reads: condition, question mark, if true, colon, if false."
+}

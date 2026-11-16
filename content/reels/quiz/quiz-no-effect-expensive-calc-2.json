@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-no-effect-expensive-calc-2",
+  "topic": "Side Effects",
+  "concept": "no-effect-expensive-calc",
+  "format": "which-hook",
+  "level": "intermediate",
+  "tags": [
+    "useMemo",
+    "performance",
+    "useEffect"
+  ],
+  "sourceUrl": "https://react.dev/learn/you-might-not-need-an-effect#caching-expensive-calculations",
+  "question": "Which tool caches an expensive calculation between renders?",
+  "options": [
+    "useEffect + useState",
+    "useMemo",
+    "useRef"
+  ],
+  "answer": 1,
+  "say": "Which tool caches an expensive calculation between renders?",
+  "explanation": "useMemo memoizes a pure calculation until its dependencies change. An Effect with state adds an extra render.",
+  "explainSay": "Use memo. It caches the result until the dependencies change."
+}

@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-compiler-directives-3",
+  "topic": "React Compiler",
+  "concept": "compiler-directives",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "compiler",
+    "directives"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-compiler/directives",
+  "question": "True or false: \"use no memo\" is meant to stay in your code as a permanent setting.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false? Use no memo is meant to stay in your code as a permanent setting.",
+  "explanation": "Opt-out directives should be temporary: add it with a TODO, track the issue, fix the underlying problem, then remove the directive.",
+  "explainSay": "False. Opting out should be temporary. Fix the real problem, then remove it."
+}

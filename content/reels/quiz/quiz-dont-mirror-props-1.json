@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-dont-mirror-props-1",
+  "topic": "State Structure & Sharing",
+  "concept": "dont-mirror-props",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "props",
+    "pitfall"
+  ],
+  "sourceUrl": "https://react.dev/learn/choosing-the-state-structure#don-t-mirror-props-in-state",
+  "question": "The parent changes messageColor from \"blue\" to \"red\". What color shows?",
+  "code": "function Message({ messageColor }) {\n  const [color] = useState(messageColor);\n  return <p style={{ color }}>Hi</p>;\n}",
+  "options": [
+    "red",
+    "blue",
+    "black"
+  ],
+  "answer": 1,
+  "say": "The parent changes message color from blue to red. What color shows?",
+  "explanation": "useState only uses its argument on the first render, so color stays \"blue\". Use the prop directly instead.",
+  "explainSay": "Blue. State is only initialized once, so it ignores the new prop."
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-usecallback-1",
+  "topic": "Performance",
+  "concept": "usecallback",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "useCallback",
+    "performance",
+    "memo"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useCallback#skipping-re-rendering-of-components",
+  "question": "True or false: useCallback calls your function during rendering.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: use callback calls your function during rendering.",
+  "explanation": "False. useCallback returns the function itself. Your code runs only when you call it, like on submit.",
+  "explainSay": "False. It returns the function, and you call it later."
+}

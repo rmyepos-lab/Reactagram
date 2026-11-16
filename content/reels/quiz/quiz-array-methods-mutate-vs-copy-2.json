@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-array-methods-mutate-vs-copy-2",
+  "topic": "State",
+  "concept": "array-methods-mutate-vs-copy",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "arrays",
+    "methods"
+  ],
+  "sourceUrl": "https://react.dev/learn/updating-arrays-in-state#making-other-changes-to-an-array",
+  "question": "How do you sort this state array correctly?",
+  "code": "setNames(names.sort());",
+  "options": [
+    "It is already correct",
+    "setNames([...names].sort())",
+    "setNames(names.sort().slice(1))"
+  ],
+  "answer": 1,
+  "say": "How do you sort this state array correctly?",
+  "explanation": "sort mutates the array it is called on. Copy first with [...names], then sort the copy.",
+  "explainSay": "Copy first, then sort. Sort changes the array in place, so call it on a copy."
+}

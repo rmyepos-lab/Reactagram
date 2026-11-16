@@ -1,0 +1,50 @@
+{
+  "kind": "learn",
+  "id": "declarative-ui-states",
+  "topic": "State Structure & Sharing",
+  "concept": "declarative-ui-states",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "declarative",
+    "ui-states"
+  ],
+  "sourceUrl": "https://react.dev/learn/reacting-to-input-with-state#thinking-about-ui-declaratively",
+  "title": "Think in UI states, not steps",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Taxi, not turn-by-turn 🚕",
+      "say": "Imperative UI is like giving a driver every turn. Declarative UI is like a taxi: you say where to go, and the driver gets you there."
+    },
+    {
+      "type": "text",
+      "text": "Imperative: \"enable the button, show the spinner, hide the form\". Miss one step and the UI breaks.",
+      "say": "Imperative code commands every element: enable this, show that, hide the form. In a big page, it is easy to forget one, and the UI breaks."
+    },
+    {
+      "type": "code",
+      "code": "// a form’s visual states\n\"empty\"      // Submit disabled\n\"typing\"     // Submit enabled\n\"submitting\" // spinner, all disabled\n\"success\"    // \"Thank you!\"\n\"error\"      // typing + error text",
+      "highlight": [
+        2,
+        6
+      ],
+      "say": "In React, you first list every visual state the user can see. Empty, typing, submitting, success, and error."
+    },
+    {
+      "type": "code",
+      "code": "if (status === \"success\") {\n  return <h1>Thank you!</h1>;\n}\nreturn (\n  <form>\n    <textarea disabled={\n      status === \"submitting\"} />\n  </form>\n);",
+      "highlight": [
+        1,
+        7
+      ],
+      "say": "Then you describe what each state looks like. Events just set the state, and React works out how to update the screen."
+    },
+    {
+      "type": "text",
+      "text": "Identify states → triggers → useState → remove extras → connect handlers.",
+      "say": "The five steps: identify the visual states, find what triggers changes, store them with use state, remove what is not essential, and connect the event handlers."
+    }
+  ]
+}

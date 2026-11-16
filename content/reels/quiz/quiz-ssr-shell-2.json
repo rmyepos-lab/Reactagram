@@ -1,0 +1,26 @@
+{
+  "kind": "quiz",
+  "id": "quiz-ssr-shell-2",
+  "topic": "Server Rendering",
+  "concept": "ssr-shell",
+  "format": "bug-hunt",
+  "level": "advanced",
+  "tags": [
+    "ssr",
+    "streaming",
+    "suspense"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/server/renderToPipeableStream#specifying-what-goes-into-the-shell",
+  "question": "Users say the page feels slow to appear. What's the problem?",
+  "code": "function Root() {\n  return (\n    <Suspense fallback={<BigSpinner />}>\n      <App />\n    </Suspense>\n  );\n}",
+  "options": [
+    "Suspense can't be used at the root",
+    "BigSpinner must be lazy-loaded",
+    "Streaming is turned off by this boundary",
+    "The shell is only a spinner, with no real layout"
+  ],
+  "answer": 3,
+  "say": "Users say the page feels slow to appear. What's the problem?",
+  "explanation": "With one boundary around the whole app, the shell is just the spinner. A big spinner feels slower than a real layout. Place boundaries so the shell is minimal but complete.",
+  "explainSay": "The whole app is in one boundary, so the shell is just a spinner. Make the shell a skeleton of the real layout."
+}

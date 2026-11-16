@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-virtual-dom-1",
+  "topic": "How React Works",
+  "concept": "virtual-dom",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "internals",
+    "virtual-dom",
+    "elements"
+  ],
+  "sourceUrl": "https://legacy.reactjs.org/docs/faq-internals.html",
+  "question": "True or false: the virtual DOM and the Shadow DOM are the same thing.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: the virtual DOM and the Shadow DOM are the same thing.",
+  "explanation": "False. The Shadow DOM is a browser feature for scoping CSS in web components. The virtual DOM is a pattern implemented in JavaScript.",
+  "explainSay": "False. The Shadow DOM is a browser feature. The virtual DOM is a JavaScript pattern."
+}

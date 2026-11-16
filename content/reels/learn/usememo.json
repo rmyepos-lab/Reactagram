@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "usememo",
+  "topic": "Performance",
+  "concept": "usememo",
+  "format": "special-use",
+  "level": "intermediate",
+  "tags": [
+    "useMemo",
+    "performance",
+    "caching"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useMemo#skipping-expensive-recalculations",
+  "title": "useMemo: measure first, then cache",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Is it really slow? ⏲️",
+      "say": "Use memo caches the result of a calculation between renders. But first, check that the calculation is actually slow."
+    },
+    {
+      "type": "code",
+      "code": "console.time(\"filter array\");\nconst visible = filterTodos(todos, tab);\nconsole.timeEnd(\"filter array\");",
+      "highlight": [
+        1,
+        3
+      ],
+      "say": "Measure it. Unless you loop over thousands of objects, it is probably cheap. Around one millisecond or more might be worth memoizing."
+    },
+    {
+      "type": "code",
+      "code": "const visible = useMemo(\n  () => filterTodos(todos, tab),\n  [todos, tab]\n);",
+      "highlight": [
+        1,
+        3
+      ],
+      "say": "Wrap it in use memo with its dependencies. React re-runs it only when todos or tab change."
+    },
+    {
+      "type": "text",
+      "text": "It won’t speed up the first render. React may also drop the cache: use it only as an optimization.",
+      "say": "It will not make the first render faster. And React may throw the cache away, so only rely on it as an optimization."
+    }
+  ]
+}

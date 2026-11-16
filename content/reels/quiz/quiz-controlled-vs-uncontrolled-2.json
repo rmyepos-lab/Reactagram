@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-controlled-vs-uncontrolled-2",
+  "topic": "State Structure & Sharing",
+  "concept": "controlled-vs-uncontrolled",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "props",
+    "controlled"
+  ],
+  "sourceUrl": "https://react.dev/learn/sharing-state-between-components#controlled-and-uncontrolled-components",
+  "question": "True or false: uncontrolled components are easier to coordinate with each other.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: uncontrolled components are easier to coordinate with each other.",
+  "explanation": "False. They are easier to drop in, but less flexible when you want to coordinate them. Controlled components are the flexible ones.",
+  "explainSay": "False. Uncontrolled ones are easy to use alone, but harder to coordinate."
+}

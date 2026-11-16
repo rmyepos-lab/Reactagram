@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-mutable-values-not-deps-2",
+  "topic": "Side Effects",
+  "concept": "mutable-values-not-deps",
+  "format": "which-hook",
+  "level": "advanced",
+  "tags": [
+    "useEffect",
+    "dependencies",
+    "refs"
+  ],
+  "sourceUrl": "https://react.dev/learn/lifecycle-of-reactive-effects#can-global-or-mutable-values-be-dependencies",
+  "question": "Which Hook should read and subscribe to an external mutable value?",
+  "options": [
+    "useEffect with it in the deps",
+    "useSyncExternalStore",
+    "useRef"
+  ],
+  "answer": 1,
+  "say": "Which Hook should read and subscribe to an external mutable value?",
+  "explanation": "useSyncExternalStore subscribes to an external store and re-renders when it changes.",
+  "explainSay": "Use sync external store."
+}

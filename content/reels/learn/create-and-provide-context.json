@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "create-and-provide-context",
+  "topic": "Context",
+  "concept": "create-and-provide-context",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "context",
+    "createContext",
+    "provider"
+  ],
+  "sourceUrl": "https://react.dev/learn/passing-data-deeply-with-context#step-1-create-the-context",
+  "title": "Create a context and provide a value",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Create, then provide 📡",
+      "say": "Context takes three steps: create it, provide it, and use it. Here are the first two."
+    },
+    {
+      "type": "code",
+      "code": "// LevelContext.js\nimport { createContext } from \"react\";\n\nexport const LevelContext =\n  createContext(1);",
+      "highlight": [
+        4,
+        5
+      ],
+      "say": "Create it with create context, and export it so other files can use it. The only argument is the default value."
+    },
+    {
+      "type": "code",
+      "code": "function Section({ level, children }) {\n  return (\n    <section>\n      <LevelContext value={level}>\n        {children}\n      </LevelContext>\n    </section>\n  );\n}",
+      "highlight": [
+        4
+      ],
+      "say": "Then provide it. Wrap the children in the context, with a value prop. Any component inside that asks for level context gets this level."
+    },
+    {
+      "type": "text",
+      "text": "The prop must be called value.",
+      "say": "Remember: the prop is always called value."
+    }
+  ]
+}

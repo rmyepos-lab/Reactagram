@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "why-reducers",
+  "topic": "Reducers",
+  "concept": "why-reducers",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "reducers",
+    "useReducer",
+    "state"
+  ],
+  "sourceUrl": "https://react.dev/learn/extracting-state-logic-into-a-reducer#consolidate-state-logic-with-a-reducer",
+  "title": "Why move state logic into a reducer",
+  "slides": [
+    {
+      "type": "title",
+      "text": "State logic everywhere? 🍝",
+      "say": "A task app has add, change and delete handlers. Each one calls set tasks with its own logic."
+    },
+    {
+      "type": "code",
+      "code": "function handleAdd(text) {\n  setTasks([...tasks, { id, text }]);\n}\nfunction handleDelete(id) {\n  setTasks(tasks.filter(t =>\n    t.id !== id));\n}\n// ...and more",
+      "highlight": [
+        2,
+        5
+      ],
+      "say": "As the component grows, state logic gets sprinkled across many handlers. It gets hard to see every way the state can change."
+    },
+    {
+      "type": "text",
+      "text": "A reducer puts all that logic in ONE function, outside the component.",
+      "say": "A reducer moves all that logic into one function, outside your component. One easy place to look."
+    },
+    {
+      "type": "text",
+      "text": "3 steps: dispatch actions → write a reducer → useReducer.",
+      "say": "You migrate in three steps. Dispatch actions instead of setting state. Write a reducer function. Then use it with use reducer."
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "make-value-non-reactive",
+  "topic": "Side Effects",
+  "concept": "make-value-non-reactive",
+  "format": "pattern",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "dependencies",
+    "reactive"
+  ],
+  "sourceUrl": "https://react.dev/learn/lifecycle-of-reactive-effects#what-to-do-when-you-dont-want-to-re-synchronize",
+  "title": "Prove a value is not reactive",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Prove it to the linter ✅",
+      "say": "You do not want an Effect to re-sync on a value. You cannot just leave it out. But you can prove it is not reactive."
+    },
+    {
+      "type": "code",
+      "code": "// outside: not reactive\nconst serverUrl = \"https://chat.app\";\nconst roomId = \"general\";\n\nfunction ChatRoom() {\n  useEffect(() => {\n    connect(serverUrl, roomId);\n  }, []); // ✅\n}",
+      "highlight": [
+        2,
+        8
+      ],
+      "say": "If a value never depends on rendering, move it outside the component. It cannot change on a re-render, so it is not a dependency."
+    },
+    {
+      "type": "code",
+      "code": "useEffect(() => {\n  // inside: not reactive\n  const serverUrl = \"https://chat.app\";\n  connect(serverUrl, \"general\");\n}, []); // ✅",
+      "highlight": [
+        3,
+        5
+      ],
+      "say": "Or move it inside the Effect. It is not calculated during rendering, so it is not reactive either."
+    },
+    {
+      "type": "text",
+      "text": "Don’t pick the deps. Change the code until the deps are what you want.",
+      "say": "Either way, you changed the code, and the dependencies followed."
+    }
+  ]
+}

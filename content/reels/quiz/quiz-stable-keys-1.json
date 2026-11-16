@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-stable-keys-1",
+  "topic": "Rendering Lists & Conditions",
+  "concept": "stable-keys",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "lists",
+    "keys",
+    "ids"
+  ],
+  "sourceUrl": "https://react.dev/learn/rendering-lists#where-to-get-your-key",
+  "question": "What happens to text typed in each Note?",
+  "code": "notes.map(n =>\n  <Note key={Math.random()} note={n} />\n)",
+  "options": [
+    "It is kept between renders",
+    "It is lost on every re-render",
+    "React throws an error"
+  ],
+  "answer": 1,
+  "say": "Each note gets a random key during render. What happens to text typed into a note?",
+  "explanation": "Random keys never match between renders, so React recreates every component and DOM node, losing user input.",
+  "explainSay": "It is lost. Random keys never match the previous render, so every note is recreated."
+}

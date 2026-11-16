@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-compiler-and-manual-memo-2",
+  "topic": "React Compiler",
+  "concept": "compiler-and-manual-memo",
+  "format": "which-hook",
+  "level": "intermediate",
+  "tags": [
+    "compiler",
+    "usememo",
+    "useeffect"
+  ],
+  "sourceUrl": "https://react.dev/learn/react-compiler/introduction#what-should-i-do-about-usememo-usecallback-and-reactmemo",
+  "question": "New code, compiler on. You need exact control so an Effect's object dependency keeps its identity. What do the docs suggest?",
+  "options": [
+    "useMemo, as an escape hatch",
+    "useRef for the object",
+    "Remove it from the dependency array"
+  ],
+  "answer": 0,
+  "say": "New code, compiler on. You need exact control so an effect's object dependency keeps its identity. What do the docs suggest?",
+  "explanation": "useMemo and useCallback stay as escape hatches for precise control. A common case is a memoized value used as an Effect dependency, so the Effect doesn't fire repeatedly.",
+  "explainSay": "Use memo, as an escape hatch for precise control over an effect dependency."
+}

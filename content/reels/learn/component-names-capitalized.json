@@ -1,0 +1,46 @@
+{
+  "kind": "learn",
+  "id": "component-names-capitalized",
+  "topic": "Components & JSX",
+  "concept": "component-names-capitalized",
+  "format": "pitfall",
+  "level": "beginner",
+  "tags": [
+    "components",
+    "jsx",
+    "naming"
+  ],
+  "sourceUrl": "https://react.dev/learn/your-first-component#what-the-browser-sees",
+  "title": "Why component names start with a capital",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Lowercase name? It breaks. 🔠",
+      "say": "Name your component in lowercase, and it simply will not work. Here is why."
+    },
+    {
+      "type": "code",
+      "code": "<section>\n  <Profile />\n</section>",
+      "highlight": [
+        1,
+        2
+      ],
+      "text": "Lowercase = HTML tag. Capital = your component.",
+      "say": "React reads the first letter. Section is lowercase, so it is an HTML tag. Profile starts with a capital P, so React looks for your component."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 treated as an HTML tag\nfunction profile() { ... }\n<profile />\n\n// ✅ your component\nfunction Profile() { ... }\n<Profile />",
+      "highlight": [
+        3,
+        7
+      ],
+      "say": "So a function called profile, in lowercase, used as a tag, is treated like an unknown HTML tag. Capitalize it and it works."
+    },
+    {
+      "type": "text",
+      "text": "Rule: component names always begin with a capital letter.",
+      "say": "Takeaway: component names always begin with a capital letter."
+    }
+  ]
+}

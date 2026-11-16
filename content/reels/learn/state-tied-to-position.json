@@ -1,0 +1,57 @@
+{
+  "kind": "learn",
+  "id": "state-tied-to-position",
+  "topic": "State Structure & Sharing",
+  "concept": "state-tied-to-position",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "render-tree",
+    "position"
+  ],
+  "sourceUrl": "https://react.dev/learn/preserving-and-resetting-state#state-is-tied-to-a-position-in-the-tree",
+  "title": "State lives at a position in the tree",
+  "slides": [
+    {
+      "type": "title",
+      "text": "State has an address 📍",
+      "say": "You might think state lives inside your component. It actually lives inside React, tied to a position in the render tree."
+    },
+    {
+      "type": "visual",
+      "say": "Here one Counter tag is rendered at two positions. Each position gets its own state.",
+      "visual": {
+        "kind": "tree",
+        "nodes": [
+          {
+            "id": "app",
+            "label": "App"
+          },
+          {
+            "id": "c1",
+            "label": "Counter",
+            "parent": "app",
+            "note": "score: 3"
+          },
+          {
+            "id": "c2",
+            "label": "Counter",
+            "parent": "app",
+            "note": "score: 0"
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "text": "Stop rendering a component and its state is destroyed. Render it again: it starts fresh.",
+      "say": "Stop rendering the second counter, and its state disappears completely. Render it again, and it starts from zero."
+    },
+    {
+      "type": "text",
+      "text": "React keeps state as long as the same component renders at the same position.",
+      "say": "Rule: React keeps state as long as the component is rendered at its position. Remove it, or render something else there, and the state is gone."
+    }
+  ]
+}

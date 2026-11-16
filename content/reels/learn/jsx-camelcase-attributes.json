@@ -1,0 +1,46 @@
+{
+  "kind": "learn",
+  "id": "jsx-camelcase-attributes",
+  "topic": "Components & JSX",
+  "concept": "jsx-camelcase-attributes",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "jsx",
+    "attributes",
+    "className"
+  ],
+  "sourceUrl": "https://react.dev/learn/writing-markup-with-jsx#3-camelcase-salls-most-of-the-things",
+  "title": "camelCase attributes and className",
+  "slides": [
+    {
+      "type": "title",
+      "text": "class? No: className 🐫",
+      "say": "In JSX, most attributes are camel case. And class becomes className."
+    },
+    {
+      "type": "text",
+      "text": "JSX attributes become keys of JavaScript objects. Keys like these can’t have dashes or be reserved words.",
+      "say": "Why? JSX attributes become keys of JavaScript objects. Variable names cannot contain dashes or be reserved words like class."
+    },
+    {
+      "type": "code",
+      "code": "// HTML\n<img class=\"photo\" />\n<path stroke-width=\"2\" />\n\n// JSX\n<img className=\"photo\" />\n<path strokeWidth={2} />",
+      "highlight": [
+        6,
+        7
+      ],
+      "say": "So class becomes className, and stroke dash width becomes strokeWidth, in camel case."
+    },
+    {
+      "type": "code",
+      "code": "<button\n  aria-label=\"Close\"\n  data-id=\"42\"\n/>",
+      "highlight": [
+        2,
+        3
+      ],
+      "text": "Exception: aria-* and data-* keep their dashes.",
+      "say": "One exception. For historical reasons, aria and data attributes keep their dashes, just like in HTML."
+    }
+  ]
+}

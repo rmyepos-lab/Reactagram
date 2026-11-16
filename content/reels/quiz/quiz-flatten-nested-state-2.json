@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-flatten-nested-state-2",
+  "topic": "State Structure & Sharing",
+  "concept": "flatten-nested-state",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "state",
+    "normalization",
+    "nested"
+  ],
+  "sourceUrl": "https://react.dev/learn/choosing-the-state-structure#avoid-deeply-nested-state",
+  "question": "In flat (\"normalized\") state, how does a place point to its children?",
+  "options": [
+    "It holds the child objects",
+    "It holds an array of child ids",
+    "Children hold a copy of the parent"
+  ],
+  "answer": 1,
+  "say": "In flat, normalized state, how does a place point to its children?",
+  "explanation": "Each place keeps childIds, and every place lives in one object keyed by id, like a database table.",
+  "explainSay": "With an array of child IDs. Every place lives in one table keyed by its ID."
+}

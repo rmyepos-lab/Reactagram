@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-context-closest-provider-2",
+  "topic": "Context",
+  "concept": "context-closest-provider",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "context",
+    "provider",
+    "nesting"
+  ],
+  "sourceUrl": "https://react.dev/learn/passing-data-deeply-with-context#using-and-providing-context-from-the-same-component",
+  "question": "App provides \"dark\" and reads the theme in the same component. Why does it get the default?",
+  "code": "function App() {\n  const theme = useContext(ThemeContext);\n  return (\n    <ThemeContext value=\"dark\">\n      <p>{theme}</p>\n    </ThemeContext>\n  );\n}",
+  "options": [
+    "The provider must be above App",
+    "value must be an object",
+    "useContext must be called after the JSX"
+  ],
+  "answer": 0,
+  "say": "App provides dark and reads the theme in the same component. Why does it get the default?",
+  "explanation": "useContext looks only for providers above the calling component. It ignores providers returned by the same component.",
+  "explainSay": "The provider has to be above App. Use context ignores providers in its own component."
+}

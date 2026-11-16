@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-import-export-components-2",
+  "topic": "Components & JSX",
+  "concept": "import-export-components",
+  "format": "true-false",
+  "level": "beginner",
+  "tags": [
+    "components",
+    "modules",
+    "import",
+    "export"
+  ],
+  "sourceUrl": "https://react.dev/learn/importing-and-exporting-components#default-vs-named-exports",
+  "question": "True or false: one file can have two default exports if they are different components.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: one file can have two default exports, as long as they are different components.",
+  "explanation": "False. A file can have at most one default export, but it can have as many named exports as you like.",
+  "explainSay": "False. Only one default export per file, but as many named exports as you want."
+}

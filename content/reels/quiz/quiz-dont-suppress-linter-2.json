@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-dont-suppress-linter-2",
+  "topic": "Side Effects",
+  "concept": "dont-suppress-linter",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "dependencies",
+    "linter"
+  ],
+  "sourceUrl": "https://react.dev/learn/removing-effect-dependencies#why-is-suppressing-the-dependency-linter-so-dangerous",
+  "question": "True or false: you choose which values go in the dependency list.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: you choose which values go in the dependency list.",
+  "explanation": "False. The list describes the reactive values your Effect's code uses. To change it, change the code.",
+  "explainSay": "False. The list describes your code. Change the code to change the list."
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-controlled-inputs-1",
+  "topic": "Actions & Forms",
+  "concept": "controlled-inputs",
+  "format": "bug-hunt",
+  "level": "beginner",
+  "tags": [
+    "forms",
+    "inputs",
+    "state"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/components/input#controlling-an-input-with-a-state-variable",
+  "question": "Typing does nothing in this input. Why?",
+  "code": "const [text, setText] = useState(\"\");\nreturn <input value={text} />;",
+  "options": [
+    "No onChange updates text",
+    "value must be a number",
+    "useState needs null"
+  ],
+  "answer": 0,
+  "say": "Typing does nothing in this input. Why?",
+  "explanation": "A controlled input needs an onChange that updates its state. Otherwise the value never changes.",
+  "explainSay": "There is no on change to update the state."
+}

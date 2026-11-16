@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-each-render-own-effect-1",
+  "topic": "Side Effects",
+  "concept": "each-render-own-effect",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "useEffect",
+    "rendering",
+    "snapshot"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#each-render-has-its-own-effects",
+  "question": "Render 2 has the same roomId as render 1. What happens to render 2's Effect?",
+  "options": [
+    "It runs after cleanup",
+    "React ignores it: it never runs",
+    "It runs without cleanup"
+  ],
+  "answer": 1,
+  "say": "Render two has the same room id as render one. What happens to render two’s Effect?",
+  "explanation": "All dependencies are the same, so React ignores the Effect from that render. It is never called.",
+  "explainSay": "React ignores it. Same dependencies, so it never runs."
+}

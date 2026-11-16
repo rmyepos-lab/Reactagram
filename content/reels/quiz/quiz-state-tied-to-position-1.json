@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-state-tied-to-position-1",
+  "topic": "State Structure & Sharing",
+  "concept": "state-tied-to-position",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "render-tree",
+    "position"
+  ],
+  "sourceUrl": "https://react.dev/learn/preserving-and-resetting-state#state-is-tied-to-a-position-in-the-tree",
+  "question": "A Counter at score 5 is hidden with {show && <Counter />}, then shown again. Its score?",
+  "options": [
+    "5",
+    "0 (its initial value)",
+    "undefined"
+  ],
+  "answer": 1,
+  "say": "A counter at score five is hidden, then shown again. What is its score?",
+  "explanation": "When React removes a component from the tree, it destroys its state. When it is rendered again, state starts from scratch.",
+  "explainSay": "Zero. Removing it destroyed its state, so it starts fresh."
+}

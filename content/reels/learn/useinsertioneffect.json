@@ -1,0 +1,40 @@
+{
+  "kind": "learn",
+  "id": "useinsertioneffect",
+  "topic": "Side Effects",
+  "concept": "useinsertioneffect",
+  "format": "special-use",
+  "level": "advanced",
+  "tags": [
+    "useInsertionEffect",
+    "css-in-js",
+    "libraries"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useInsertionEffect",
+  "title": "useInsertionEffect: for CSS-in-JS libraries",
+  "slides": [
+    {
+      "type": "title",
+      "text": "A Hook for library authors 🎨",
+      "say": "Use insertion effect exists for one job: CSS in JS libraries injecting style tags."
+    },
+    {
+      "type": "code",
+      "code": "// inside a CSS-in-JS library\nfunction useCSS(rule) {\n  useInsertionEffect(() => {\n    if (!isInserted.has(rule)) {\n      isInserted.add(rule);\n      document.head.appendChild(\n        getStyleForRule(rule));\n    }\n  });\n  return rule;\n}",
+      "highlight": [
+        3
+      ],
+      "say": "It runs before any layout Effects fire, so styles are in place before layout effects read the layout."
+    },
+    {
+      "type": "text",
+      "text": "No state updates inside. Refs aren’t attached yet.",
+      "say": "You cannot update state inside it, and refs are not attached yet when it runs."
+    },
+    {
+      "type": "text",
+      "text": "Not writing a CSS-in-JS library? Use useEffect or useLayoutEffect.",
+      "say": "If you are not building a CSS in JS library, you want use effect or use layout effect instead."
+    }
+  ]
+}

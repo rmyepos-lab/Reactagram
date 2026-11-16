@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-usedeferredvalue-1",
+  "topic": "Concurrent Rendering",
+  "concept": "usedeferredvalue",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "useDeferredValue",
+    "concurrent",
+    "suspense"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useDeferredValue#showing-stale-content-while-fresh-content-is-loading",
+  "question": "You type \"b\" after \"a\". During the first re-render, what are query and deferredQuery?",
+  "options": [
+    "\"ab\" and \"ab\"",
+    "\"ab\" and \"a\"",
+    "\"a\" and \"a\""
+  ],
+  "answer": 1,
+  "say": "You type b after a. During the first re-render, what are query and deferred query?",
+  "explanation": "React first re-renders with the new query but the old deferred value, then updates deferredQuery in the background.",
+  "explainSay": "Query is a b, deferred query is still a."
+}

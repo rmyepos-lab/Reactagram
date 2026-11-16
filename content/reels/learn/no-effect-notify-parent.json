@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "no-effect-notify-parent",
+  "topic": "Side Effects",
+  "concept": "no-effect-notify-parent",
+  "format": "pattern",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "events",
+    "props"
+  ],
+  "sourceUrl": "https://react.dev/learn/you-might-not-need-an-effect#notifying-parent-components-about-state-changes",
+  "title": "Notify the parent in the handler",
+  "slides": [
+    {
+      "type": "title",
+      "text": "onChange, too late ⏰",
+      "say": "A Toggle keeps its own on state and should tell its parent when it changes. Calling on change from an Effect runs too late."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 runs after the screen updates\nuseEffect(() => {\n  onChange(isOn);\n}, [isOn, onChange]);",
+      "highlight": [
+        3
+      ],
+      "say": "Toggle updates, React paints, then the Effect calls on change, and the parent updates in a second render pass."
+    },
+    {
+      "type": "code",
+      "code": "function updateToggle(nextIsOn) {\n  // ✅ both in the same event\n  setIsOn(nextIsOn);\n  onChange(nextIsOn);\n}",
+      "highlight": [
+        3,
+        4
+      ],
+      "say": "Instead, update both in the same event handler. React batches the two updates into one render pass."
+    },
+    {
+      "type": "text",
+      "text": "Or lift the state up entirely and make Toggle controlled.",
+      "say": "You could also remove the state from Toggle completely, and let the parent own it through props."
+    }
+  ]
+}

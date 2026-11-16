@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-avoid-duplicate-state-1",
+  "topic": "State Structure & Sharing",
+  "concept": "avoid-duplicate-state",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "duplication",
+    "ids"
+  ],
+  "sourceUrl": "https://react.dev/learn/choosing-the-state-structure#avoid-duplication-in-state",
+  "question": "You rename the selected item via setItems. What does the \"You picked\" text show?",
+  "code": "const [selected, setSelected] =\n  useState(items[0]);\n// later: setItems(renamed copies)\n<p>You picked {selected.title}</p>",
+  "options": [
+    "The new title",
+    "The old title",
+    "Nothing"
+  ],
+  "answer": 1,
+  "say": "You rename the selected item with set items. What does the you picked text show?",
+  "explanation": "selected is a separate copy that was never updated. Store selectedId and find the item during render instead.",
+  "explainSay": "The old title. The selected object is a duplicate that never changed. Store the ID instead."
+}

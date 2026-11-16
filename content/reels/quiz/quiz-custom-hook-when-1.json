@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-custom-hook-when-1",
+  "topic": "Custom Hooks",
+  "concept": "custom-hook-when",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "custom-hooks",
+    "design",
+    "useEffect"
+  ],
+  "sourceUrl": "https://react.dev/learn/reusing-logic-with-custom-hooks#when-to-use-custom-hooks",
+  "question": "Which custom Hook does the React team advise AGAINST?",
+  "options": [
+    "useChatRoom(options)",
+    "useMount(fn)",
+    "useMediaQuery(query)"
+  ],
+  "answer": 1,
+  "say": "Which custom Hook does the React team advise against?",
+  "explanation": "Avoid \"lifecycle\" Hooks like useMount that wrap the useEffect API. Keep Hooks focused on concrete use cases.",
+  "explainSay": "Use mount. Avoid generic lifecycle wrappers."
+}

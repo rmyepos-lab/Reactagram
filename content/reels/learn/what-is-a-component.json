@@ -1,0 +1,51 @@
+{
+  "kind": "learn",
+  "id": "what-is-a-component",
+  "topic": "Components & JSX",
+  "concept": "what-is-a-component",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "components",
+    "jsx",
+    "basics"
+  ],
+  "sourceUrl": "https://react.dev/learn/your-first-component#defining-a-component",
+  "title": "A component is just a function 🧩",
+  "slides": [
+    {
+      "type": "title",
+      "text": "A component is just a function 🧩",
+      "say": "Here's the secret of React: a component is just a JavaScript function that returns UI."
+    },
+    {
+      "type": "code",
+      "code": "export default function Profile() {\n  return (\n    <img\n      src=\"/katherine.jpg\"\n      alt=\"Katherine Johnson\"\n    />\n  );\n}",
+      "highlight": [
+        1,
+        2
+      ],
+      "text": "Export it, define a function, return markup.",
+      "say": "Three steps. Export the component, define a function with a capital name, and return some markup."
+    },
+    {
+      "type": "text",
+      "text": "The markup is JSX: it looks like HTML, but it is JavaScript under the hood.",
+      "say": "That markup is called JSX. It looks like HTML, but it is actually JavaScript under the hood."
+    },
+    {
+      "type": "code",
+      "code": "return (\n  <div>\n    <Profile />\n  </div>\n);",
+      "highlight": [
+        1
+      ],
+      "text": "Markup on several lines? Wrap it in ( ).",
+      "say": "If your markup doesn't start on the same line as return, wrap it in parentheses. Without them, the lines after return are ignored."
+    },
+    {
+      "type": "text",
+      "text": "Components = reusable UI building blocks you can nest like HTML tags.",
+      "say": "Takeaway: components are reusable building blocks. Write them once, then use them like your own HTML tags."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "kind": "learn",
+  "id": "suspense-fallback",
+  "topic": "Suspense & Data",
+  "concept": "suspense-fallback",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "Suspense",
+    "loading",
+    "fallback"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/Suspense#displaying-a-fallback-while-content-is-loading",
+  "title": "<Suspense>: a fallback while loading",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Loading… the React way ⏳",
+      "say": "Suspense lets you show a fallback, like a spinner, until the code and data of its children are ready."
+    },
+    {
+      "type": "code",
+      "code": "<Suspense fallback={<Loading />}>\n  <Albums />\n</Suspense>",
+      "highlight": [
+        1
+      ],
+      "say": "While Albums suspends, React shows the closest Suspense boundary’s fallback. When the data is ready, it swaps in Albums."
+    },
+    {
+      "type": "text",
+      "text": "What suspends: lazy code, use(promise), Suspense-enabled frameworks, stylesheets with precedence.",
+      "say": "What makes a boundary wait? Lazy loaded code, reading a promise with use, data from a Suspense enabled framework, and some stylesheets."
+    },
+    {
+      "type": "text",
+      "text": "Not detected: fetching inside an Effect or event handler.",
+      "say": "Suspense does not detect data fetched inside an Effect or an event handler."
+    }
+  ]
+}

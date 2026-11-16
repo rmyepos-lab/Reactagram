@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-lazy-code-splitting-1",
+  "topic": "Performance",
+  "concept": "lazy-code-splitting",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "lazy",
+    "suspense",
+    "code-splitting"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/lazy#suspense-for-code-splitting",
+  "question": "The lazy Chart loses its state on every re-render of Dashboard. Why?",
+  "code": "function Dashboard() {\n  const Chart = lazy(() => import(\"./Chart\"));\n  return <Chart />;\n}",
+  "options": [
+    "lazy is declared inside the component",
+    "Chart needs a key",
+    "import() must be awaited"
+  ],
+  "answer": 0,
+  "say": "The lazy Chart loses its state every time Dashboard re-renders. Why?",
+  "explanation": "Declaring lazy inside a component creates a new component each render, resetting state. Declare it at module top level.",
+  "explainSay": "Lazy is declared inside the component. Move it to the top level of the module."
+}

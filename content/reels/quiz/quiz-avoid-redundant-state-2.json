@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-avoid-redundant-state-2",
+  "topic": "State Structure & Sharing",
+  "concept": "avoid-redundant-state",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "derived-values",
+    "structure"
+  ],
+  "sourceUrl": "https://react.dev/learn/choosing-the-state-structure#avoid-redundant-state",
+  "question": "True or false: a value calculated during render, like fullName, updates when its state changes.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: a value calculated during render, like full name, updates when the state it uses changes.",
+  "explanation": "True. Setting state triggers a re-render, and the calculation runs again with the fresh values.",
+  "explainSay": "True. Each re-render recalculates it from the latest state."
+}

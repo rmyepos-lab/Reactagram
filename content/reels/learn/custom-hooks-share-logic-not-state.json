@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "custom-hooks-share-logic-not-state",
+  "topic": "Custom Hooks",
+  "concept": "custom-hooks-share-logic-not-state",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "custom-hooks",
+    "state",
+    "reuse"
+  ],
+  "sourceUrl": "https://react.dev/learn/reusing-logic-with-custom-hooks#custom-hooks-let-you-share-stateful-logic-not-state-itself",
+  "title": "Each Hook call gets its own state",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Same Hook, separate state 👯",
+      "say": "Call a custom Hook twice. Do the two calls share one state? No."
+    },
+    {
+      "type": "code",
+      "code": "function useFormInput(initial) {\n  const [value, setValue] = useState(initial);\n  function handleChange(e) {\n    setValue(e.target.value);\n  }\n  return { value, onChange: handleChange };\n}",
+      "highlight": [
+        2
+      ],
+      "say": "This Hook declares one state variable called value."
+    },
+    {
+      "type": "code",
+      "code": "function Form() {\n  const first = useFormInput(\"Mary\");\n  const last = useFormInput(\"Poppins\");\n  return (\n    <>\n      <input {...first} />\n      <input {...last} />\n    </>\n  );\n}",
+      "highlight": [
+        2,
+        3
+      ],
+      "say": "Form calls it twice. That works exactly like declaring two separate state variables. Each call is completely independent."
+    },
+    {
+      "type": "text",
+      "text": "Need the same state in two components? Lift it up, don’t share a Hook.",
+      "say": "Custom Hooks share stateful logic, not the state itself. To share state, lift it up and pass it down."
+    }
+  ]
+}

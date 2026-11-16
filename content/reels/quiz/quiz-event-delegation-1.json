@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-event-delegation-1",
+  "topic": "How React Works",
+  "concept": "event-delegation",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "internals",
+    "events",
+    "delegation"
+  ],
+  "sourceUrl": "https://legacy.reactjs.org/blog/2020/08/10/react-v17-rc.html#changes-to-event-delegation",
+  "question": "Since React 17, where does React attach most event listeners?",
+  "options": [
+    "On each element with onClick",
+    "On the document",
+    "On the root DOM container"
+  ],
+  "answer": 2,
+  "say": "Since React seventeen, where does React attach most event listeners?",
+  "explanation": "React 17 attaches events to the root DOM container your tree renders into, instead of the document.",
+  "explainSay": "On the root container."
+}

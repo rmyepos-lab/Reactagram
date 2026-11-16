@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "usereducer-basics",
+  "topic": "Reducers",
+  "concept": "usereducer-basics",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "reducers",
+    "useReducer",
+    "dispatch"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useReducer#adding-a-reducer-to-a-component",
+  "title": "useReducer: state, dispatch, reducer",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Meet useReducer ⚙️",
+      "say": "Use reducer is like use state, but the update logic lives in a reducer function."
+    },
+    {
+      "type": "code",
+      "code": "function reducer(state, action) {\n  if (action.type === \"incremented_age\") {\n    return { age: state.age + 1 };\n  }\n  throw Error(\"Unknown action.\");\n}",
+      "highlight": [
+        1,
+        3
+      ],
+      "say": "The reducer takes the current state and an action, and returns the next state. React sets the state to whatever you return."
+    },
+    {
+      "type": "code",
+      "code": "const [state, dispatch] = useReducer(\n  reducer,\n  { age: 42 }\n);\n\n<button onClick={() =>\n  dispatch({ type: \"incremented_age\" })\n}>",
+      "highlight": [
+        1,
+        7
+      ],
+      "say": "Use reducer takes the reducer and the initial state. It returns the current state and a dispatch function. Dispatch an action to update."
+    },
+    {
+      "type": "text",
+      "text": "Handlers say WHAT happened. The reducer decides HOW state changes.",
+      "say": "Now event handlers only say what happened. The reducer decides how the state changes."
+    }
+  ]
+}

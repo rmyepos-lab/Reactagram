@@ -1,0 +1,48 @@
+{
+  "kind": "learn",
+  "id": "jsx-curly-braces",
+  "topic": "Components & JSX",
+  "concept": "jsx-curly-braces",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "jsx",
+    "curly-braces",
+    "expressions"
+  ],
+  "sourceUrl": "https://react.dev/learn/javascript-in-jsx-with-curly-braces#where-to-use-curly-braces",
+  "title": "Curly braces: a window into JavaScript",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Curly braces = JavaScript 🪟",
+      "say": "Curly braces open a window from your markup into JavaScript."
+    },
+    {
+      "type": "code",
+      "code": "const name = \"Gregorio\";\nconst today = new Date();\n\nreturn (\n  <h1>\n    {name}'s list for {formatDate(today)}\n  </h1>\n);",
+      "highlight": [
+        6
+      ],
+      "say": "Inside curly braces you can put any JavaScript expression: a variable, or even a function call like format date."
+    },
+    {
+      "type": "text",
+      "text": "Use them in two places only: as text inside a tag, or as an attribute value right after =.",
+      "say": "But you can only use them in two places. As text inside a tag, or as an attribute value, right after the equals sign."
+    },
+    {
+      "type": "code",
+      "code": "<img src={avatar} />   // ✅ variable\n<img src=\"{avatar}\" /> // 🔴 a string\n<{tag}>Hi</{tag}>      // 🔴 not allowed",
+      "highlight": [
+        1
+      ],
+      "say": "Src equals curly avatar reads the variable. Put quotes around it and you pass the text, curly avatar. And a curly brace as a tag name does not work."
+    },
+    {
+      "type": "text",
+      "text": "Quotes pass a string. Curlies pass JavaScript.",
+      "say": "Takeaway: quotes pass a fixed string. Curly braces pass JavaScript."
+    }
+  ]
+}

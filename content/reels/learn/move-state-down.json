@@ -1,0 +1,43 @@
+{
+  "kind": "learn",
+  "id": "move-state-down",
+  "topic": "Performance",
+  "concept": "move-state-down",
+  "format": "pattern",
+  "level": "intermediate",
+  "tags": [
+    "performance",
+    "state",
+    "architecture"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/memo#should-you-add-memo-everywhere",
+  "title": "Keep state local instead of memoizing",
+  "slides": [
+    {
+      "type": "title",
+      "text": "State too high? 🏔️",
+      "say": "Before reaching for memo, check where your state lives."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 hover state at the top\nfunction App() {\n  const [hovered, setHovered] = useState(null);\n  return <BigTree hovered={hovered}\n    onHover={setHovered} />;\n}",
+      "highlight": [
+        3
+      ],
+      "say": "Here a hover state sits at the top of the app. Every hover re-renders the whole big tree below."
+    },
+    {
+      "type": "code",
+      "code": "// ✅ state lives where it’s used\nfunction Card() {\n  const [hovered, setHovered] = useState(false);\n  // ...\n}",
+      "highlight": [
+        3
+      ],
+      "say": "Move it down into the component that uses it. Now a hover only re-renders that one card."
+    },
+    {
+      "type": "text",
+      "text": "Don’t lift transient state (forms, hover) higher than needed.",
+      "say": "Prefer local state. Do not lift transient state, like forms or hover, higher than necessary, or into a global store."
+    }
+  ]
+}

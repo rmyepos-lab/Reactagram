@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-nested-suspense-2",
+  "topic": "Suspense & Data",
+  "concept": "nested-suspense",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "Suspense",
+    "loading",
+    "ux"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/Suspense#revealing-nested-content-as-it-loads",
+  "question": "True or false: without the inner boundary, Biography would wait for Albums too.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: without the inner boundary, Biography would wait for Albums too.",
+  "explanation": "True. Everything inside one boundary is revealed together, so Biography would wait behind BigSpinner.",
+  "explainSay": "True. One boundary reveals all its content together."
+}

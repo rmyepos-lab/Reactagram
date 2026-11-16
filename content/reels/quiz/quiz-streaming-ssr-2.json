@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-streaming-ssr-2",
+  "topic": "Server Rendering",
+  "concept": "streaming-ssr",
+  "format": "which-hook",
+  "level": "advanced",
+  "tags": [
+    "ssr",
+    "server-rendering",
+    "streaming"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/server/renderToPipeableStream#rendering-a-react-tree-as-html-to-a-nodejs-stream",
+  "question": "Your server runs on an edge runtime with Web Streams, not Node.js. Which API streams the HTML?",
+  "options": [
+    "renderToPipeableStream",
+    "renderToReadableStream",
+    "renderToString"
+  ],
+  "answer": 1,
+  "say": "Your server runs on an edge runtime with web streams, not Node. Which API streams the HTML?",
+  "explanation": "renderToReadableStream is the Web Streams version. renderToPipeableStream is for Node.js streams, and renderToString can't stream at all.",
+  "explainSay": "Render to readable stream. It's the web streams version. The pipeable one is for Node."
+}

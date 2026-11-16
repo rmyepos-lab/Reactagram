@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-filtering-lists-1",
+  "topic": "Rendering Lists & Conditions",
+  "concept": "filtering-lists",
+  "format": "output",
+  "level": "beginner",
+  "tags": [
+    "lists",
+    "filter",
+    "map"
+  ],
+  "sourceUrl": "https://react.dev/learn/rendering-lists#filtering-arrays-of-items",
+  "question": "How many <li> items render?",
+  "code": "const tasks = [\n  { id: 1, done: true },\n  { id: 2, done: false },\n  { id: 3, done: false },\n];\ntasks\n  .filter(t => !t.done)\n  .map(t => <li key={t.id}>{t.id}</li>);",
+  "options": [
+    "1",
+    "2",
+    "3"
+  ],
+  "answer": 1,
+  "say": "Tasks are filtered to the ones that are not done, then mapped. How many list items render?",
+  "explanation": "filter keeps tasks where !t.done is true: ids 2 and 3. map then makes 2 items.",
+  "explainSay": "Two. Only tasks two and three are not done, so two items render."
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-passing-props-1",
+  "topic": "Props",
+  "concept": "passing-props",
+  "format": "output",
+  "level": "beginner",
+  "tags": [
+    "props",
+    "components"
+  ],
+  "sourceUrl": "https://react.dev/learn/passing-props-to-a-component#passing-props-to-a-component",
+  "question": "What does this render?",
+  "code": "function Badge(props) {\n  return <b>{props.label}</b>;\n}\n\n<Badge label=\"New\" color=\"red\" />",
+  "options": [
+    "<b>New</b>",
+    "<b>red</b>",
+    "<b>[object Object]</b>"
+  ],
+  "answer": 0,
+  "say": "Badge reads props dot label. What does this render?",
+  "explanation": "All attributes arrive in one props object. Badge only reads props.label, which is \"New\". The color prop is passed but not used.",
+  "explainSay": "A bold New. Every prop lands in the props object, and Badge only reads the label."
+}

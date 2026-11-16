@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-remove-object-dependencies-2",
+  "topic": "Side Effects",
+  "concept": "remove-object-dependencies",
+  "format": "bug-hunt",
+  "level": "advanced",
+  "tags": [
+    "useEffect",
+    "dependencies",
+    "objects"
+  ],
+  "sourceUrl": "https://react.dev/learn/removing-effect-dependencies#does-some-reactive-value-change-unintentionally",
+  "question": "options depends on roomId. Best fix to stop the extra reconnects?",
+  "options": [
+    "Move options outside the component",
+    "Create options inside the Effect, depend on [roomId]",
+    "Wrap the Effect in useCallback"
+  ],
+  "answer": 1,
+  "say": "Options depends on room id. What is the best fix to stop the extra reconnects?",
+  "explanation": "It uses a reactive value, so it can't move outside. Create it inside the Effect; then only roomId is a dependency.",
+  "explainSay": "Create options inside the Effect, and depend on room id only."
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-stable-deps-can-be-omitted-1",
+  "topic": "Side Effects",
+  "concept": "stable-deps-can-be-omitted",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "dependencies",
+    "refs"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#why-was-the-ref-omitted-from-the-dependency-array",
+  "question": "True or false: including setCount in the dependency array makes the Effect re-run more often.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: including set count in the dependency array makes the Effect re-run more often.",
+  "explanation": "False. set functions have a stable identity, so they never change and never cause a re-run.",
+  "explainSay": "False. Set functions never change, so they never trigger a re-run."
+}

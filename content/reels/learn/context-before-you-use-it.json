@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "context-before-you-use-it",
+  "topic": "Context",
+  "concept": "context-before-you-use-it",
+  "format": "compare",
+  "level": "intermediate",
+  "tags": [
+    "context",
+    "props",
+    "children"
+  ],
+  "sourceUrl": "https://react.dev/learn/passing-data-deeply-with-context#before-you-use-context",
+  "title": "Try props or children before context",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Context is tempting 🍬",
+      "say": "Context is tempting, so it is easy to overuse. Passing props a few levels deep does not mean you need it."
+    },
+    {
+      "type": "text",
+      "text": "1. Start with props. A dozen props through a dozen components is OK: the data flow stays clear.",
+      "say": "First, try plain props. Even a dozen props through a dozen components is fine. It makes it very clear which components use which data."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 Layout only passes posts along\n<Layout posts={posts} />\n\n// ✅ pass JSX as children\n<Layout>\n  <Posts posts={posts} />\n</Layout>",
+      "highlight": [
+        5,
+        6
+      ],
+      "say": "Second, extract components and pass JSX as children. If Layout only forwards posts, let it take children instead. Fewer layers in between."
+    },
+    {
+      "type": "text",
+      "text": "Good fits: theme, current account, routing, managing state far away.",
+      "say": "If neither works, use context. Good fits are theming, the current account, routing, and sharing state with distant components."
+    }
+  ]
+}

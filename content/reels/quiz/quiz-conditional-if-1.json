@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-conditional-if-1",
+  "topic": "Rendering Lists & Conditions",
+  "concept": "conditional-if",
+  "format": "output",
+  "level": "beginner",
+  "tags": [
+    "conditional-rendering",
+    "if"
+  ],
+  "sourceUrl": "https://react.dev/learn/conditional-rendering#conditionally-returning-jsx",
+  "question": "What renders for <Item name=\"Tent\" isPacked={false} />?",
+  "code": "function Item({ name, isPacked }) {\n  if (isPacked) {\n    return <li>{name} ✅</li>;\n  }\n  return <li>{name}</li>;\n}",
+  "options": [
+    "<li>Tent ✅</li>",
+    "<li>Tent</li>",
+    "Nothing"
+  ],
+  "answer": 1,
+  "say": "Item gets name Tent and isPacked false. What renders?",
+  "explanation": "isPacked is false, so the if block is skipped and the last return runs: the name with no check mark.",
+  "explainSay": "Just Tent, with no check mark. The if is skipped, so the last return runs."
+}

@@ -1,0 +1,52 @@
+{
+  "kind": "learn",
+  "id": "streaming-ssr",
+  "topic": "Server Rendering",
+  "concept": "streaming-ssr",
+  "format": "concept",
+  "level": "advanced",
+  "tags": [
+    "ssr",
+    "server-rendering",
+    "streaming"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/server/renderToPipeableStream#rendering-a-react-tree-as-html-to-a-nodejs-stream",
+  "title": "renderToPipeableStream streams HTML",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Stream your HTML on Node.js 🌊",
+      "say": "On a Node server, render to pipeable stream renders your app into a stream of HTML."
+    },
+    {
+      "type": "code",
+      "code": "app.use(\"/\", (request, response) => {\n  const { pipe } =\n    renderToPipeableStream(<App />, {\n      bootstrapScripts: [\"/main.js\"],\n      onShellReady() {\n        response.setHeader(\n          \"content-type\", \"text/html\");\n        pipe(response);\n      },\n    });\n});",
+      "highlight": [
+        4,
+        8
+      ],
+      "say": "Pass your root component and a list of bootstrap scripts. When the shell is ready, set the content type and pipe the stream into the response."
+    },
+    {
+      "type": "code",
+      "code": "export default function App() {\n  return (\n    <html>\n      <head><title>My app</title></head>\n      <body><Router /></body>\n    </html>\n  );\n}",
+      "highlight": [
+        3
+      ],
+      "say": "Your root component returns the whole document, including the html tag. React adds the doctype and your script tags for you."
+    },
+    {
+      "type": "code",
+      "code": "// main.js on the client\nimport { hydrateRoot }\n  from \"react-dom/client\";\nimport App from \"./App.js\";\n\nhydrateRoot(document, <App />);",
+      "highlight": [
+        6
+      ],
+      "say": "In the bootstrap script, hydrate the entire document. That attaches event listeners to the server HTML."
+    },
+    {
+      "type": "text",
+      "text": "Node.js: renderToPipeableStream. Web Streams (Deno, edge): renderToReadableStream.",
+      "say": "One takeaway: on Node, use render to pipeable stream. On Deno or edge runtimes with web streams, use render to readable stream."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-updating-arrays-2",
+  "topic": "State",
+  "concept": "updating-arrays",
+  "format": "bug-hunt",
+  "level": "beginner",
+  "tags": [
+    "state",
+    "arrays",
+    "immutability"
+  ],
+  "sourceUrl": "https://react.dev/learn/updating-arrays-in-state#updating-arrays-without-mutation",
+  "question": "The new item never appears. What is wrong?",
+  "code": "function add(name) {\n  items.push({ id: nextId++, name });\n  setItems(items);\n}",
+  "options": [
+    "push mutates state and passes the same array",
+    "nextId++ is not allowed",
+    "setItems needs a second argument"
+  ],
+  "answer": 0,
+  "say": "The new item never appears. What is wrong?",
+  "explanation": "push changes the existing state array, and setItems gets the same array back, so React skips the update. Use setItems([...items, newItem]).",
+  "explainSay": "Push mutates the state array, and passing the same array back makes React skip the update."
+}

@@ -1,0 +1,37 @@
+{
+  "kind": "learn",
+  "id": "should-you-memoize",
+  "topic": "Performance",
+  "concept": "should-you-memoize",
+  "format": "concept",
+  "level": "advanced",
+  "tags": [
+    "performance",
+    "memo",
+    "best-practices"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/memo#should-you-add-memo-everywhere",
+  "title": "Should you memoize everything?",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Memo everywhere? 🤷",
+      "say": "Should you wrap everything in memo, use memo and use callback? Usually not."
+    },
+    {
+      "type": "text",
+      "text": "Coarse updates (replace a page)? Rarely needed. Granular (drag shapes)? Very helpful.",
+      "say": "If most interactions are coarse, like switching pages, memoization is usually unnecessary. In a drawing editor with granular moves, it can help a lot."
+    },
+    {
+      "type": "text",
+      "text": "Fewer needs: pass JSX as children, keep state local, keep render pure, avoid Effect chains.",
+      "say": "Many needs disappear if you pass JSX as children, keep state as local as possible, keep rendering pure, and avoid Effects that update state."
+    },
+    {
+      "type": "text",
+      "text": "Still laggy? Profile first, then memoize where it helps.",
+      "say": "If an interaction still feels slow, measure with the React DevTools profiler, and memoize where it matters."
+    }
+  ]
+}

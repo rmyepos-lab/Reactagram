@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "hooks-call-order",
+  "topic": "Hooks",
+  "concept": "hooks-call-order",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "hooks",
+    "internals",
+    "useState"
+  ],
+  "sourceUrl": "https://react.dev/learn/state-a-components-memory#how-does-react-know-which-state-to-return",
+  "title": "How useState knows which state is yours",
+  "slides": [
+    {
+      "type": "title",
+      "text": "No names, just order 🔢",
+      "say": "Use state gets no name or ID. So how does React know which state to give back?"
+    },
+    {
+      "type": "code",
+      "code": "const [index, setIndex] = useState(0);\nconst [show, setShow] = useState(false);",
+      "highlight": [
+        1,
+        2
+      ],
+      "say": "React does not parse your code. Hooks rely on a stable call order on every render of the same component."
+    },
+    {
+      "type": "code",
+      "code": "// simplified, not real React\nlet hooks = [];\nlet i = 0; // reset before each render\n\nfunction useState(initial) {\n  let pair = hooks[i];\n  if (!pair) pair = hooks[i] = [initial, …];\n  i++;\n  return pair;\n}",
+      "highlight": [
+        6,
+        8
+      ],
+      "say": "A simplified picture: React holds an array of state pairs per component, and an index set to zero before each render. Each use state call takes the next pair and moves the index."
+    },
+    {
+      "type": "text",
+      "text": "Skip a Hook with an if, and every later Hook gets the wrong slot.",
+      "say": "That is why order matters. Skip one call, and every Hook after it reads someone else’s slot. The lint plugin catches most of these mistakes."
+    }
+  ]
+}

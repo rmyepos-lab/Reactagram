@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "lazy-code-splitting",
+  "topic": "Performance",
+  "concept": "lazy-code-splitting",
+  "format": "special-use",
+  "level": "intermediate",
+  "tags": [
+    "lazy",
+    "suspense",
+    "code-splitting"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/lazy#suspense-for-code-splitting",
+  "title": "lazy: load component code on demand",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Load it when you need it 📦",
+      "say": "Lazy lets you defer loading a component’s code until it renders for the first time."
+    },
+    {
+      "type": "code",
+      "code": "import { lazy, Suspense } from \"react\";\n\nconst MarkdownPreview = lazy(() =>\n  import(\"./MarkdownPreview.js\"));\n\n<Suspense fallback={<Loading />}>\n  <MarkdownPreview />\n</Suspense>",
+      "highlight": [
+        3,
+        6
+      ],
+      "say": "Replace the static import with lazy and a dynamic import. Wrap it in Suspense to show a fallback while the code loads."
+    },
+    {
+      "type": "text",
+      "text": "The module must use a default export. React calls load only once and caches it.",
+      "say": "The lazy module must have a default export. React calls the load function only once and caches the result."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 inside a component: state resets\nfunction Editor() {\n  const Preview = lazy(() => import(\"./Preview\"));\n}\n// ✅ top level of the module\nconst Preview = lazy(() => import(\"./Preview\"));",
+      "highlight": [
+        3,
+        6
+      ],
+      "say": "Always declare lazy components at the top level of your module. Inside a component, all state resets on re-renders."
+    }
+  ]
+}

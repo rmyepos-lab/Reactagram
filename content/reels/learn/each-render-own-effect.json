@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "each-render-own-effect",
+  "topic": "Side Effects",
+  "concept": "each-render-own-effect",
+  "format": "concept",
+  "level": "advanced",
+  "tags": [
+    "useEffect",
+    "rendering",
+    "snapshot"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#each-render-has-its-own-effects",
+  "title": "Each render has its own Effect",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Effects belong to renders 🎞️",
+      "say": "Think of use effect as attaching behavior to one render’s output. Each render has its own Effect."
+    },
+    {
+      "type": "code",
+      "code": "// render 1, roomId = \"general\"\n() => {\n  const c = createConnection(\"general\");\n  c.connect();\n  return () => c.disconnect();\n},\n[\"general\"]",
+      "highlight": [
+        3,
+        7
+      ],
+      "say": "Mentally substitute the values. The first render’s Effect connects to general, with dependencies general."
+    },
+    {
+      "type": "text",
+      "text": "Re-render with [\"general\"] again? React ignores that render’s Effect. It is never called.",
+      "say": "Re-render with the same room? React compares the dependencies, sees they match, and ignores that render’s Effect completely."
+    },
+    {
+      "type": "text",
+      "text": "roomId becomes \"travel\": cleanup from render 1 runs, then render 3’s Effect.",
+      "say": "When room id becomes travel, React runs the cleanup from the last Effect that ran, disconnecting general, then runs the new render’s Effect."
+    }
+  ]
+}

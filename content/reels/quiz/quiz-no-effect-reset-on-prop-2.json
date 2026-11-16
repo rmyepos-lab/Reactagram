@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-no-effect-reset-on-prop-2",
+  "topic": "Side Effects",
+  "concept": "no-effect-reset-on-prop",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "key",
+    "state"
+  ],
+  "sourceUrl": "https://react.dev/learn/you-might-not-need-an-effect#resetting-all-state-when-a-prop-changes",
+  "question": "Resetting state with useEffect(() => setComment(\"\"), [userId]): what is the downside?",
+  "options": [
+    "It never resets",
+    "It renders once with the stale comment first",
+    "It crashes in Strict Mode"
+  ],
+  "answer": 1,
+  "say": "Resetting state with an Effect when user id changes: what is the downside?",
+  "explanation": "The component and its children first render with the stale value, then render again after the Effect. It is inefficient and complicated.",
+  "explainSay": "It renders once with the old comment, then again. A key avoids that."
+}

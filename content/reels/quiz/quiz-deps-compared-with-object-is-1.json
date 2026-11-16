@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-deps-compared-with-object-is-1",
+  "topic": "Side Effects",
+  "concept": "deps-compared-with-object-is",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "dependencies",
+    "Object.is"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#step-2-specify-the-effect-dependencies",
+  "question": "Render 1: a=1, b=\"x\". Render 2: a=1, b=\"y\". Does the Effect re-run after render 2?",
+  "code": "useEffect(() => {\n  sync(a, b);\n}, [a, b]);",
+  "options": [
+    "Yes, because b changed",
+    "No, because a is the same",
+    "Only in Strict Mode"
+  ],
+  "answer": 0,
+  "say": "Render one has a one and b x. Render two has a one and b y. Does the Effect re-run after render two?",
+  "explanation": "React skips only if all dependencies are the same. b changed from \"x\" to \"y\", so the Effect runs again.",
+  "explainSay": "Yes. React only skips when every dependency is the same, and b changed."
+}

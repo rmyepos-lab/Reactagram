@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "effect-animations",
+  "topic": "Side Effects",
+  "concept": "effect-animations",
+  "format": "pattern",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "animation",
+    "cleanup"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#triggering-animations",
+  "title": "Animations: reset them in cleanup",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Fade in, the safe way ✨",
+      "say": "An Effect that animates something in should reset it in the cleanup."
+    },
+    {
+      "type": "code",
+      "code": "useEffect(() => {\n  const node = ref.current;\n  node.style.opacity = 1; // animate in\n  return () => {\n    node.style.opacity = 0; // reset\n  };\n}, []);",
+      "highlight": [
+        3,
+        5
+      ],
+      "say": "Set opacity to one to trigger the animation. In the cleanup, put it back to zero."
+    },
+    {
+      "type": "text",
+      "text": "Dev: 1 → 0 → 1. Looks the same as going straight to 1.",
+      "say": "In development, opacity goes one, zero, one. To the user, it looks the same as setting one once."
+    },
+    {
+      "type": "text",
+      "text": "Animation library? Reset its timeline in cleanup.",
+      "say": "Using an animation library with tweening? Reset its timeline to the start in the cleanup."
+    }
+  ]
+}

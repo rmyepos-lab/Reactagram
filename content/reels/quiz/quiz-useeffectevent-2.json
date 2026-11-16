@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-useeffectevent-2",
+  "topic": "Side Effects",
+  "concept": "useeffectevent",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "useEffectEvent",
+    "useEffect",
+    "dependencies"
+  ],
+  "sourceUrl": "https://react.dev/learn/separating-events-from-effects#declaring-an-effect-event",
+  "question": "True or false: an Effect Event always sees the latest props and state.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: an Effect Event always sees the latest props and state.",
+  "explanation": "True. Its logic is not reactive, but when called it reads the latest committed values.",
+  "explainSay": "True. It is not reactive, but it reads the latest values."
+}

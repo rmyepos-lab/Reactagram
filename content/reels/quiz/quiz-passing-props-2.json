@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-passing-props-2",
+  "topic": "Props",
+  "concept": "passing-props",
+  "format": "true-false",
+  "level": "beginner",
+  "tags": [
+    "props",
+    "components"
+  ],
+  "sourceUrl": "https://react.dev/learn/passing-props-to-a-component#passing-props-to-a-component",
+  "question": "True or false: a component function receives each prop as a separate argument.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: a component function receives each prop as a separate argument.",
+  "explanation": "False. A component accepts a single argument, the props object. You read each prop from it.",
+  "explainSay": "False. A component gets one argument, the props object, which holds all the props."
+}

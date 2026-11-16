@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-extract-custom-hook-2",
+  "topic": "Custom Hooks",
+  "concept": "extract-custom-hook",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "custom-hooks",
+    "reuse"
+  ],
+  "sourceUrl": "https://react.dev/learn/reusing-logic-with-custom-hooks#extracting-your-own-custom-hook-from-a-component",
+  "question": "True or false: a custom Hook can call useState and useEffect inside it.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: a custom Hook can call use state and use effect inside it.",
+  "explanation": "True. Only components and Hooks can call other Hooks, and custom Hooks are built from them.",
+  "explainSay": "True. Custom Hooks are built from other Hooks."
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-same-value-bailout-2",
+  "topic": "State",
+  "concept": "same-value-bailout",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "Object.is",
+    "rendering"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useState#ive-updated-the-state-but-the-screen-doesnt-update",
+  "question": "What happens on screen after this click?",
+  "code": "function handleClick() {\n  user.name = \"Lin\";\n  setUser(user);\n}",
+  "options": [
+    "Shows \"Lin\" right away",
+    "Nothing changes: same object, update ignored",
+    "React throws an error"
+  ],
+  "answer": 1,
+  "say": "What happens on screen after this click?",
+  "explanation": "user is the same object as the current state, so Object.is says nothing changed and React ignores the update.",
+  "explainSay": "Nothing. It is the same object, so React thinks nothing changed and skips it."
+}

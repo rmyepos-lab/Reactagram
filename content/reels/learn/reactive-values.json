@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "reactive-values",
+  "topic": "Side Effects",
+  "concept": "reactive-values",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "dependencies",
+    "reactive"
+  ],
+  "sourceUrl": "https://react.dev/learn/lifecycle-of-reactive-effects#effects-react-to-reactive-values",
+  "title": "Reactive values must be dependencies",
+  "slides": [
+    {
+      "type": "title",
+      "text": "What is \"reactive\"? ⚡",
+      "say": "Which values must go in an Effect’s dependency list? The reactive ones."
+    },
+    {
+      "type": "code",
+      "code": "const serverUrl = \"https://chat.app\";\n\nfunction ChatRoom({ roomId }) {\n  useEffect(() => {\n    connect(serverUrl, roomId);\n  }, [roomId]);\n}",
+      "highlight": [
+        1,
+        6
+      ],
+      "say": "Server URL is outside the component. It never changes on a re-render, so it is not a dependency. Room id is a prop. It can change, so it is."
+    },
+    {
+      "type": "text",
+      "text": "Props, state and every variable in the component body are reactive.",
+      "say": "Props, state, and every value calculated in the component body are reactive. They can change on a re-render."
+    },
+    {
+      "type": "code",
+      "code": "function ChatRoom({ roomId }) {\n  const serverUrl = settings.url;\n  useEffect(() => {\n    connect(serverUrl, roomId);\n  }, [roomId, serverUrl]);\n}",
+      "highlight": [
+        2,
+        5
+      ],
+      "say": "Move server URL inside, computed during render, and it becomes reactive too. Now it must be listed."
+    }
+  ]
+}

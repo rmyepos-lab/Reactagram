@@ -1,0 +1,48 @@
+{
+  "kind": "learn",
+  "id": "render-to-string",
+  "topic": "Server Rendering",
+  "concept": "render-to-string",
+  "format": "pitfall",
+  "level": "advanced",
+  "tags": [
+    "ssr",
+    "server-rendering",
+    "suspense"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/server/renderToString",
+  "title": "renderToString and why it can't stream",
+  "slides": [
+    {
+      "type": "title",
+      "text": "The oldest server API has a catch ⚠️",
+      "say": "Render to string is the simplest way to turn React into HTML. But it has a big limit."
+    },
+    {
+      "type": "code",
+      "code": "import { renderToString }\n  from \"react-dom/server\";\n\nconst html = renderToString(<App />);",
+      "highlight": [
+        4
+      ],
+      "say": "You pass it your app, and it gives back an HTML string right away."
+    },
+    {
+      "type": "text",
+      "text": "It returns immediately, so it can't stream and can't wait for data. If a component suspends, the HTML gets the nearest Suspense fallback.",
+      "say": "Because it returns at once, it can't stream and it can't wait for data. If a component suspends, render to string puts the closest Suspense fallback in the HTML instead."
+    },
+    {
+      "type": "code",
+      "code": "<Suspense fallback={<Spinner />}>\n  <Posts /> {/* suspends */}\n</Suspense>\n\n// renderToString HTML:\n// only the <Spinner />\n// Posts appear after the client loads",
+      "highlight": [
+        6
+      ],
+      "say": "So here the HTML only contains the spinner. The posts don't show up until the client code loads."
+    },
+    {
+      "type": "text",
+      "text": "Prefer renderToPipeableStream on Node.js, or renderToReadableStream with Web Streams. Keep renderToString only where streams aren't supported.",
+      "say": "On Node, prefer render to pipeable stream. With web streams, use render to readable stream. Keep render to string only if your server can't use streams."
+    }
+  ]
+}

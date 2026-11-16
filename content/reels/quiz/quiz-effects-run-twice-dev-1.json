@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-effects-run-twice-dev-1",
+  "topic": "Side Effects",
+  "concept": "effects-run-twice-dev",
+  "format": "output",
+  "level": "beginner",
+  "tags": [
+    "useEffect",
+    "strict-mode",
+    "cleanup"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#how-to-handle-the-effect-firing-twice-in-development",
+  "question": "Development, Strict Mode. The chat mounts once. What is logged?",
+  "code": "useEffect(() => {\n  console.log(\"connect\");\n  return () => console.log(\"disconnect\");\n}, []);",
+  "options": [
+    "connect",
+    "connect, disconnect, connect",
+    "connect, connect"
+  ],
+  "answer": 1,
+  "say": "In development with Strict Mode, the chat mounts once. What is logged?",
+  "explanation": "In development React runs setup, then cleanup, then setup again to check your cleanup. In production you would only see connect.",
+  "explainSay": "Connect, disconnect, connect. React stress tests your cleanup in development."
+}

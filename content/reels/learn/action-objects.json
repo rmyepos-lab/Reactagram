@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "action-objects",
+  "topic": "Reducers",
+  "concept": "action-objects",
+  "format": "pattern",
+  "level": "intermediate",
+  "tags": [
+    "reducers",
+    "actions",
+    "dispatch"
+  ],
+  "sourceUrl": "https://react.dev/learn/extracting-state-logic-into-a-reducer#step-1-move-from-setting-state-to-dispatching-actions",
+  "title": "Actions describe what happened",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Say what the user did 📣",
+      "say": "With a reducer, handlers stop saying what to do. They say what the user just did."
+    },
+    {
+      "type": "code",
+      "code": "function handleDeleteTask(taskId) {\n  dispatch({\n    type: \"deleted\",\n    id: taskId,\n  });\n}",
+      "highlight": [
+        3,
+        4
+      ],
+      "say": "The object you pass to dispatch is an action. By convention, it has a string type describing what happened, plus any extra info."
+    },
+    {
+      "type": "text",
+      "text": "Keep actions minimal. Name the type after what happened: \"added\", \"deleted\".",
+      "say": "Put only the minimal information in it, and name the type after what happened, like added or deleted."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 five actions\ndispatch({ type: \"set_field\", ... });\n// ...x5\n\n// ✅ one interaction, one action\ndispatch({ type: \"reset_form\" });",
+      "highlight": [
+        6
+      ],
+      "say": "One user interaction should be one action, even if many fields change. Reset form beats five set field actions, and your action log stays readable."
+    }
+  ]
+}

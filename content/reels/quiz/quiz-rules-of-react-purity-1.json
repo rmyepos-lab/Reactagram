@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-rules-of-react-purity-1",
+  "topic": "Purity",
+  "concept": "rules-of-react-purity",
+  "format": "bug-hunt",
+  "level": "advanced",
+  "tags": [
+    "purity",
+    "idempotent",
+    "rules-of-react"
+  ],
+  "sourceUrl": "https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent",
+  "question": "Why does this break the rule that components are idempotent?",
+  "code": "function Lucky() {\n  const n = Math.random();\n  return <p>Your number: {n}</p>;\n}",
+  "options": [
+    "Math.random() gives a new result each render",
+    "It has no props",
+    "It returns a <p> instead of a <div>"
+  ],
+  "answer": 0,
+  "say": "Why does this component break the rule that components must be idempotent?",
+  "explanation": "Idempotent means same inputs, same output. Math.random() returns a different value on every call during render.",
+  "explainSay": "Math random gives a different number every render, so the same inputs do not give the same output."
+}

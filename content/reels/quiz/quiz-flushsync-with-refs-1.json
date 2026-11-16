@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-flushsync-with-refs-1",
+  "topic": "Refs",
+  "concept": "flushsync-with-refs",
+  "format": "fill-blank",
+  "level": "advanced",
+  "tags": [
+    "refs",
+    "flushSync",
+    "dom"
+  ],
+  "sourceUrl": "https://react.dev/learn/manipulating-the-dom-with-refs#flushing-state-updates-synchronously-with-flush-sync",
+  "question": "Fill the blank so the new item is in the DOM before scrolling:",
+  "code": "___(() => {\n  setItems([...items, item]);\n});\nlistRef.current.lastChild.scrollIntoView();",
+  "options": [
+    "startTransition",
+    "flushSync",
+    "useEffect"
+  ],
+  "answer": 1,
+  "say": "Fill the blank so the new item is already in the DOM before scrolling.",
+  "explanation": "flushSync makes React update the DOM synchronously right after the wrapped code runs.",
+  "explainSay": "Flush sync. It updates the DOM right away, before the next line runs."
+}

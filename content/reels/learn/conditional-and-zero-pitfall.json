@@ -1,0 +1,46 @@
+{
+  "kind": "learn",
+  "id": "conditional-and-zero-pitfall",
+  "topic": "Rendering Lists & Conditions",
+  "concept": "conditional-and-zero-pitfall",
+  "format": "pitfall",
+  "level": "beginner",
+  "tags": [
+    "conditional-rendering",
+    "logical-and",
+    "pitfall"
+  ],
+  "sourceUrl": "https://react.dev/learn/conditional-rendering#logical-and-operator-",
+  "title": "Why && shows a 0 on screen",
+  "slides": [
+    {
+      "type": "title",
+      "text": "A stray 0 on screen? 0️⃣",
+      "say": "You used and-and to show something conditionally, and a random zero appeared. Here is why."
+    },
+    {
+      "type": "code",
+      "code": "{isPacked && \"✅\"}",
+      "text": "true → render it. false → nothing.",
+      "say": "And-and is short. If the left side is true, render the right side. If it is false, render nothing."
+    },
+    {
+      "type": "code",
+      "code": "// count is 0\n{count && <p>New messages</p>}\n// renders: 0",
+      "highlight": [
+        2,
+        3
+      ],
+      "say": "But if the left side is the number zero, the whole expression becomes zero. And React happily renders that zero."
+    },
+    {
+      "type": "code",
+      "code": "{count > 0 && <p>New messages</p>}",
+      "highlight": [
+        1
+      ],
+      "text": "Don't put numbers on the left of &&.",
+      "say": "The fix: make the left side a real boolean, like count greater than zero."
+    }
+  ]
+}

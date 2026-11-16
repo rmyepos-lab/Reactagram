@@ -1,0 +1,37 @@
+{
+  "kind": "learn",
+  "id": "uselayouteffect-cost",
+  "topic": "Side Effects",
+  "concept": "uselayouteffect-cost",
+  "format": "pitfall",
+  "level": "advanced",
+  "tags": [
+    "useLayoutEffect",
+    "performance",
+    "ssr"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useLayoutEffect#caveats",
+  "title": "useLayoutEffect blocks paint: use it sparingly",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Layout effects cost frames 🐢",
+      "say": "Use layout effect is powerful, but it has a price."
+    },
+    {
+      "type": "text",
+      "text": "Its code and every state update it schedules block the browser from repainting.",
+      "say": "The code inside it, and all state updates it schedules, block the browser from repainting. Overuse it and your app feels slow."
+    },
+    {
+      "type": "text",
+      "text": "Set state inside it? React runs all remaining Effects immediately, including useEffect.",
+      "say": "And if you set state inside it, React runs all remaining Effects right away, including use effect ones."
+    },
+    {
+      "type": "text",
+      "text": "On the server there is no layout. Prefer useEffect when you can.",
+      "say": "It also does nothing useful on the server, where there is no layout. When possible, prefer use effect."
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "kind": "learn",
+  "id": "jsx-is-javascript",
+  "topic": "Components & JSX",
+  "concept": "jsx-is-javascript",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "jsx",
+    "createElement",
+    "compiler"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/createElement#creating-an-element-without-jsx",
+  "title": "JSX is just createElement calls",
+  "slides": [
+    {
+      "type": "title",
+      "text": "JSX is JavaScript in disguise 🥸",
+      "say": "JSX looks like HTML. But it is turned into plain JavaScript before it runs."
+    },
+    {
+      "type": "code",
+      "code": "// JSX\n<h1 className=\"greeting\">\n  Hello\n</h1>\n\n// Without JSX\ncreateElement(\n  \"h1\",\n  { className: \"greeting\" },\n  \"Hello\"\n);",
+      "highlight": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "text": "type, props, children",
+      "say": "This JSX means the same as calling create element with a type, some props, and the children."
+    },
+    {
+      "type": "code",
+      "code": "<Greeting />  // createElement(Greeting)\n<greeting />  // createElement(\"greeting\")",
+      "highlight": [
+        1,
+        2
+      ],
+      "say": "This explains the capital letter rule. A capital tag passes your function. A lowercase tag passes a string, a built-in HTML tag."
+    },
+    {
+      "type": "text",
+      "text": "JSX and React are separate: JSX is syntax, React is a library. JSX just makes tags easier to read.",
+      "say": "JSX is a syntax extension, React is a library. Both styles work. JSX just makes it easy to see which closing tag matches which opening tag."
+    }
+  ]
+}

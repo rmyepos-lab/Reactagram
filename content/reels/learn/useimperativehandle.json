@@ -1,0 +1,40 @@
+{
+  "kind": "learn",
+  "id": "useimperativehandle",
+  "topic": "Refs",
+  "concept": "useimperativehandle",
+  "format": "special-use",
+  "level": "advanced",
+  "tags": [
+    "refs",
+    "useImperativeHandle"
+  ],
+  "sourceUrl": "https://react.dev/learn/manipulating-the-dom-with-refs#exposing-a-subset-of-the-api-with-an-imperative-handle",
+  "title": "useImperativeHandle: expose only what you choose",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Expose a handle, not the node 🎛️",
+      "say": "Passing a ref to an input gives the parent the whole DOM node. It can change styles, anything. Sometimes you want to limit that."
+    },
+    {
+      "type": "code",
+      "code": "function MyInput({ ref }) {\n  const realRef = useRef(null);\n  useImperativeHandle(ref, () => ({\n    focus() {\n      realRef.current.focus();\n    },\n  }));\n  return <input ref={realRef} />;\n}",
+      "highlight": [
+        3,
+        4
+      ],
+      "say": "Use imperative handle tells React to give the parent your own object instead. Here the parent only gets a focus method."
+    },
+    {
+      "type": "text",
+      "text": "Parent’s ref.current = { focus }, not the <input>.",
+      "say": "So the parent’s ref dot current is the handle object, not the input element."
+    },
+    {
+      "type": "text",
+      "text": "Don’t overuse it. If it can be a prop, like isOpen, make it a prop.",
+      "say": "Do not overuse refs. If you can express it as a prop, like is open on a modal, use a prop instead of open and close methods."
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "no-effect-expensive-calc",
+  "topic": "Side Effects",
+  "concept": "no-effect-expensive-calc",
+  "format": "special-use",
+  "level": "intermediate",
+  "tags": [
+    "useMemo",
+    "performance",
+    "useEffect"
+  ],
+  "sourceUrl": "https://react.dev/learn/you-might-not-need-an-effect#caching-expensive-calculations",
+  "title": "Slow calculation? useMemo, not an Effect",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Cache it, don’t sync it 🗄️",
+      "say": "Your filter is slow. Storing its result in state with an Effect is still the wrong fix."
+    },
+    {
+      "type": "code",
+      "code": "const [newTodo, setNewTodo] = useState(\"\");\n// ✅ fine if not slow\nconst visible = getFilteredTodos(todos, filter);",
+      "highlight": [
+        3
+      ],
+      "say": "Calculating in render is usually fine. But typing in new todo re-renders and re-runs the filter, even though todos and filter did not change."
+    },
+    {
+      "type": "code",
+      "code": "const visible = useMemo(\n  () => getFilteredTodos(todos, filter),\n  [todos, filter]\n);",
+      "highlight": [
+        1,
+        3
+      ],
+      "say": "Wrap it in use memo. React remembers the result and only re-runs it when todos or filter change."
+    },
+    {
+      "type": "text",
+      "text": "It runs during render, so only for pure calculations. React Compiler can do this for you.",
+      "say": "The function runs during rendering, so it must be pure. And React Compiler can memoize many of these automatically."
+    }
+  ]
+}

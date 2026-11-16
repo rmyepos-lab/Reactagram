@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-preserve-removed-state-1",
+  "topic": "State Structure & Sharing",
+  "concept": "preserve-removed-state",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "state",
+    "lifting-state",
+    "localStorage"
+  ],
+  "sourceUrl": "https://react.dev/learn/preserving-and-resetting-state#preserving-state-for-removed-components",
+  "question": "What is the most common way to keep a removed chat’s draft?",
+  "options": [
+    "Render all chats and hide them",
+    "Lift drafts up to the parent",
+    "Never remove the Chat component"
+  ],
+  "answer": 1,
+  "say": "What is the most common way to keep a removed chat’s draft?",
+  "explanation": "Lifting state up: the parent holds the pending message for each recipient, so removing the child loses nothing.",
+  "explainSay": "Lift the drafts up to the parent. The child can be removed without losing anything."
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-move-state-down-2",
+  "topic": "Performance",
+  "concept": "move-state-down",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "performance",
+    "state",
+    "architecture"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/memo#should-you-add-memo-everywhere",
+  "question": "True or false: keeping form state in a global store is good for performance.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: keeping form state in a global store is good for performance.",
+  "explanation": "False. The docs advise not keeping transient state like forms or hover at the top of the tree or in a global store.",
+  "explainSay": "False. Keep transient state local."
+}

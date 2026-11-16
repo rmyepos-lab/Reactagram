@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-props-are-read-only-2",
+  "topic": "Props",
+  "concept": "props-are-read-only",
+  "format": "bug-hunt",
+  "level": "beginner",
+  "tags": [
+    "props",
+    "immutability",
+    "state"
+  ],
+  "sourceUrl": "https://react.dev/learn/passing-props-to-a-component#how-props-change-over-time",
+  "question": "A Toggle must switch its label when clicked. What is the right fix?",
+  "code": "function Toggle({ label }) {\n  return (\n    <button onClick={() => {\n      label = \"Off\";\n    }}>{label}</button>\n  );\n}",
+  "options": [
+    "Keep it: assigning label works",
+    "Use props.label = \"Off\"",
+    "Use state instead of changing a prop"
+  ],
+  "answer": 2,
+  "say": "This Toggle should switch its label when clicked. What is the right fix?",
+  "explanation": "Props are immutable. To respond to user input, set state, or ask the parent to pass a new prop.",
+  "explainSay": "Use state. Props are read only, so to respond to a click you set state."
+}

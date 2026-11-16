@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-event-delegation-2",
+  "topic": "How React Works",
+  "concept": "event-delegation",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "internals",
+    "events",
+    "delegation"
+  ],
+  "sourceUrl": "https://legacy.reactjs.org/blog/2020/08/10/react-v17-rc.html#changes-to-event-delegation",
+  "question": "True or false: in React 17+, e.stopPropagation() in React can stop a document listener added with addEventListener.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: in React seventeen and later, stop propagation in React can stop a document listener.",
+  "explanation": "True. Since events are handled at the root, stopping propagation keeps the native event from reaching document.",
+  "explainSay": "True. The event is stopped before it reaches the document."
+}

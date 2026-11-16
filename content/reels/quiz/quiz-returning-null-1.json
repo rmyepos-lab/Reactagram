@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-returning-null-1",
+  "topic": "Rendering Lists & Conditions",
+  "concept": "returning-null",
+  "format": "fill-blank",
+  "level": "beginner",
+  "tags": [
+    "conditional-rendering",
+    "null"
+  ],
+  "sourceUrl": "https://react.dev/learn/conditional-rendering#conditionally-returning-nothing-with-null",
+  "question": "Fill the blank so a hidden Banner renders nothing:",
+  "code": "function Banner({ hidden }) {\n  if (hidden) {\n    return ___;\n  }\n  return <div>Sale!</div>;\n}",
+  "options": [
+    "null",
+    "<></>",
+    "false && null"
+  ],
+  "answer": 0,
+  "say": "Fill the blank so a hidden banner renders nothing.",
+  "explanation": "Returning null tells React to render nothing for this component.",
+  "explainSay": "Null. Returning null renders nothing."
+}

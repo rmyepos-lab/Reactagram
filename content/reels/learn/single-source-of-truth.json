@@ -1,0 +1,36 @@
+{
+  "kind": "learn",
+  "id": "single-source-of-truth",
+  "topic": "State Structure & Sharing",
+  "concept": "single-source-of-truth",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "architecture"
+  ],
+  "sourceUrl": "https://react.dev/learn/sharing-state-between-components#a-single-source-of-truth-for-each-state",
+  "title": "One owner for each piece of state",
+  "slides": [
+    {
+      "type": "title",
+      "text": "One owner per state 👑",
+      "say": "For each piece of state, one specific component owns it. That is a single source of truth."
+    },
+    {
+      "type": "text",
+      "text": "Not one place for ALL state. One owner for EACH piece.",
+      "say": "It does not mean all state lives in one place. Input state can live near the leaves. A current route can live near the top."
+    },
+    {
+      "type": "text",
+      "text": "Don’t duplicate shared state. Lift it up, pass it down.",
+      "say": "When two components need the same state, do not duplicate it. Lift it to the common parent and pass it down."
+    },
+    {
+      "type": "text",
+      "text": "Moving state up or down while you build is normal.",
+      "say": "And it is normal to move state up or down as your app changes. That is part of the process."
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-fragments-1",
+  "topic": "Components & JSX",
+  "concept": "fragments",
+  "format": "output",
+  "level": "beginner",
+  "tags": [
+    "jsx",
+    "fragments"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/Fragment#returning-multiple-elements",
+  "question": "What HTML ends up in the page?",
+  "code": "return (\n  <>\n    <h1>Title</h1>\n    <p>Body</p>\n  </>\n);",
+  "options": [
+    "<fragment><h1>…</h1><p>…</p></fragment>",
+    "<div><h1>…</h1><p>…</p></div>",
+    "<h1>…</h1><p>…</p>"
+  ],
+  "answer": 2,
+  "say": "What HTML ends up in the page for this component?",
+  "explanation": "Fragments have no effect on the resulting DOM. Only the h1 and the p are rendered, with no wrapper.",
+  "explainSay": "Just the h1 and the p. A Fragment adds no element to the page."
+}

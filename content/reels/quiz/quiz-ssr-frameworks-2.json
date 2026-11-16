@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-ssr-frameworks-2",
+  "topic": "Server Rendering",
+  "concept": "ssr-frameworks",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "ssr",
+    "frameworks"
+  ],
+  "sourceUrl": "https://react.dev/learn/creating-a-react-app",
+  "question": "Your framework app is client-only. One route now needs server rendering. What do the docs describe?",
+  "options": [
+    "Rewrite the app with renderToPipeableStream",
+    "Turn on server rendering just for that route",
+    "Switch the whole app to server rendering",
+    "Move that page to a separate app"
+  ],
+  "answer": 1,
+  "say": "Your framework app is client only. One route now needs server rendering. What do the docs describe?",
+  "explanation": "These frameworks let you add server rendering per route, when it makes sense. You can start client-only and opt in on individual routes without rewriting your app.",
+  "explainSay": "Turn it on just for that route. Frameworks let you opt into server rendering route by route."
+}

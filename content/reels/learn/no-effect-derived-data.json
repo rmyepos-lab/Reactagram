@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "no-effect-derived-data",
+  "topic": "Side Effects",
+  "concept": "no-effect-derived-data",
+  "format": "pitfall",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "derived-data",
+    "performance"
+  ],
+  "sourceUrl": "https://react.dev/learn/you-might-not-need-an-effect#updating-state-based-on-props-or-state",
+  "title": "No Effect needed for derived data",
+  "slides": [
+    {
+      "type": "title",
+      "text": "An Effect just to copy data? 🙅",
+      "say": "A very common unnecessary Effect: one that sets state from other state or props."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 extra state + Effect\nconst [visible, setVisible] = useState([]);\nuseEffect(() => {\n  setVisible(filterTodos(todos, tab));\n}, [todos, tab]);",
+      "highlight": [
+        3,
+        4
+      ],
+      "say": "Here the Effect filters todos into another state variable. First React renders with a stale list, then the Effect runs and renders again."
+    },
+    {
+      "type": "code",
+      "code": "// ✅ calculated during render\nconst visible = filterTodos(todos, tab);",
+      "highlight": [
+        2
+      ],
+      "say": "Just calculate it during render. No extra state, no Effect."
+    },
+    {
+      "type": "text",
+      "text": "Faster (no cascade), simpler (less code), safer (nothing to get out of sync).",
+      "say": "It is faster, because there is no extra render. Simpler, with less code. And safer, because nothing can get out of sync."
+    }
+  ]
+}

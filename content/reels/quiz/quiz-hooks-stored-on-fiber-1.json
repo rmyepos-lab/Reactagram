@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-hooks-stored-on-fiber-1",
+  "topic": "How React Works",
+  "concept": "hooks-stored-on-fiber",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "internals",
+    "hooks",
+    "fiber"
+  ],
+  "sourceUrl": "https://react.dev/learn/state-a-components-memory#how-does-react-know-which-state-to-return",
+  "question": "True or false: a state variable is stored inside your component function between renders.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: a state variable is stored inside your component function between renders.",
+  "explanation": "False. The function runs from scratch each render. React holds the state and hands it back in Hook call order.",
+  "explainSay": "False. React holds it and gives it back on each render."
+}

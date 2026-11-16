@@ -1,0 +1,50 @@
+{
+  "kind": "learn",
+  "id": "ssr-shell",
+  "topic": "Server Rendering",
+  "concept": "ssr-shell",
+  "format": "concept",
+  "level": "advanced",
+  "tags": [
+    "ssr",
+    "streaming",
+    "suspense"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/server/renderToPipeableStream#specifying-what-goes-into-the-shell",
+  "title": "The shell: what shows before anything streams",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Meet the shell 🐚",
+      "say": "When you stream HTML, there's a part React must finish first. It's called the shell."
+    },
+    {
+      "type": "code",
+      "code": "<ProfileLayout>\n  <ProfileCover />\n  <Suspense fallback={<BigSpinner />}>\n    <Sidebar />\n    <Suspense\n      fallback={<PostsGlimmer />}>\n      <Posts />\n    </Suspense>\n  </Suspense>\n</ProfileLayout>",
+      "highlight": [
+        1,
+        2,
+        3
+      ],
+      "say": "The shell is everything outside any Suspense boundary. Here that's the layout and the cover, plus the big spinner fallback."
+    },
+    {
+      "type": "text",
+      "text": "The shell is the earliest loading state the user can see. Wrap the whole app in one Suspense, and the shell is just a spinner.",
+      "say": "The shell is the earliest loading state a user may see. If you wrap your entire app in one Suspense boundary, the shell is only a spinner. That feels slower."
+    },
+    {
+      "type": "code",
+      "code": "renderToPipeableStream(<App />, {\n  bootstrapScripts: [\"/main.js\"],\n  onShellReady() {\n    // nested boundaries may\n    // still be loading here\n    pipe(response);\n  },\n});",
+      "highlight": [
+        3
+      ],
+      "say": "On shell ready fires when the whole shell has rendered. That's usually when you start streaming, even though nested boundaries may still be loading."
+    },
+    {
+      "type": "text",
+      "text": "Aim for a shell that's minimal but complete, like a skeleton of the page layout.",
+      "say": "So place your boundaries to make the shell minimal but complete, like a skeleton of the whole page."
+    }
+  ]
+}

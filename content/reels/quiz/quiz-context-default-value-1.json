@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-context-default-value-1",
+  "topic": "Context",
+  "concept": "context-default-value",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "context",
+    "default-value",
+    "pitfall"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useContext#specifying-a-fallback-default-value",
+  "question": "createContext(\"light\") — what does Button read?",
+  "code": "<ThemeContext value={undefined}>\n  <Button />\n</ThemeContext>",
+  "options": [
+    "\"light\"",
+    "undefined",
+    "null"
+  ],
+  "answer": 1,
+  "say": "The context was created with light as the default. What does Button read here?",
+  "explanation": "The default is used only when there is no provider above at all. A provider with value={undefined} gives undefined.",
+  "explainSay": "Undefined. There is a provider above, so the default is not used."
+}

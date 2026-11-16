@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-trigger-render-commit-2",
+  "topic": "How React Works",
+  "concept": "trigger-render-commit",
+  "format": "true-false",
+  "level": "beginner",
+  "tags": [
+    "rendering",
+    "commit",
+    "internals"
+  ],
+  "sourceUrl": "https://react.dev/learn/render-and-commit",
+  "question": "True or false: React changes the DOM during the render step.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: React changes the DOM during the render step.",
+  "explanation": "False. Rendering only calculates what should be on screen. The DOM changes in the commit step.",
+  "explainSay": "False. DOM changes happen in the commit step."
+}

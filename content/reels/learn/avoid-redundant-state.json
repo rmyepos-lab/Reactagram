@@ -1,0 +1,43 @@
+{
+  "kind": "learn",
+  "id": "avoid-redundant-state",
+  "topic": "State Structure & Sharing",
+  "concept": "avoid-redundant-state",
+  "format": "pattern",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "derived-values",
+    "structure"
+  ],
+  "sourceUrl": "https://react.dev/learn/choosing-the-state-structure#avoid-redundant-state",
+  "title": "Don't store what you can calculate",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Calculate it, don’t store it 🧮",
+      "say": "If you can calculate something from props or other state while rendering, it should not be state."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 redundant\nconst [first, setFirst] = useState(\"\");\nconst [last, setLast] = useState(\"\");\nconst [fullName, setFullName] =\n  useState(\"\");",
+      "highlight": [
+        4
+      ],
+      "say": "Full name here is redundant. Every change handler must remember to update it too, or it gets out of sync."
+    },
+    {
+      "type": "code",
+      "code": "const [first, setFirst] = useState(\"\");\nconst [last, setLast] = useState(\"\");\n\n// ✅ calculated during render\nconst fullName = first + \" \" + last;",
+      "highlight": [
+        5
+      ],
+      "say": "Instead, compute it during render. Setting first or last triggers a re-render, and full name is fresh every time."
+    },
+    {
+      "type": "text",
+      "text": "Less state = fewer things to keep in sync.",
+      "say": "Takeaway: less state means fewer things that can get out of sync."
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "updating-arrays",
+  "topic": "State",
+  "concept": "updating-arrays",
+  "format": "pattern",
+  "level": "beginner",
+  "tags": [
+    "state",
+    "arrays",
+    "immutability"
+  ],
+  "sourceUrl": "https://react.dev/learn/updating-arrays-in-state#updating-arrays-without-mutation",
+  "title": "Add, remove, replace: arrays in state",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Arrays: always a new one 🆕",
+      "say": "Arrays in state are read-only too. Every update passes a brand new array to the setter."
+    },
+    {
+      "type": "code",
+      "code": "// add\nsetArtists([...artists, { id, name }]);\n\n// remove\nsetArtists(artists.filter(a =>\n  a.id !== artist.id\n));",
+      "highlight": [
+        2,
+        5
+      ],
+      "say": "To add, spread the old items into a new array and put the new one at the end. To remove, filter out the item you do not want."
+    },
+    {
+      "type": "code",
+      "code": "// replace / change\nsetShapes(shapes.map(s =>\n  s.id === id\n    ? { ...s, y: s.y + 50 }\n    : s\n));",
+      "highlight": [
+        2,
+        4
+      ],
+      "say": "To change items, map. Return a new object for the item that changes, and the same item for the rest."
+    },
+    {
+      "type": "text",
+      "text": "Add: [...arr, x]. Remove: filter. Change: map.",
+      "say": "Takeaway: add with spread, remove with filter, change with map."
+    }
+  ]
+}

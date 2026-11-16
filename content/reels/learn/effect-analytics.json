@@ -1,0 +1,40 @@
+{
+  "kind": "learn",
+  "id": "effect-analytics",
+  "topic": "Side Effects",
+  "concept": "effect-analytics",
+  "format": "special-use",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "analytics",
+    "strict-mode"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#sending-analytics",
+  "title": "Analytics Effects and the dev double log",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Two visits logged?! 📊",
+      "say": "You log a page visit in an Effect, and in development every visit is logged twice."
+    },
+    {
+      "type": "code",
+      "code": "useEffect(() => {\n  logVisit(url); // sends a POST\n}, [url]);",
+      "highlight": [
+        2
+      ],
+      "say": "The docs recommend keeping this code as it is. There is no user visible difference between logging once and twice."
+    },
+    {
+      "type": "text",
+      "text": "Dev logs shouldn’t reach production metrics anyway. Production has no duplicates.",
+      "say": "Your dev machine should not send real analytics anyway, and the component remounts on every file save. In production, there are no duplicate logs."
+    },
+    {
+      "type": "text",
+      "text": "Debugging events? Use a staging (production-mode) build, or opt out of Strict Mode for a while.",
+      "say": "To debug the events, deploy to a staging environment in production mode, or temporarily opt out of Strict Mode."
+    }
+  ]
+}

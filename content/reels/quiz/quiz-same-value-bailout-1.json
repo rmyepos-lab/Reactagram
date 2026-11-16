@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-same-value-bailout-1",
+  "topic": "State",
+  "concept": "same-value-bailout",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "Object.is",
+    "rendering"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useState#ive-updated-the-state-but-the-screen-doesnt-update",
+  "question": "True or false: calling setCount(5) when count is already 5 makes React skip re-rendering.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: calling set count five when count is already five makes React skip the re-render.",
+  "explanation": "True. Object.is(5, 5) is true, so React skips re-rendering the component and its children.",
+  "explainSay": "True. The values are identical, so React skips the re-render."
+}

@@ -1,0 +1,48 @@
+{
+  "kind": "learn",
+  "id": "compiler-and-manual-memo",
+  "topic": "React Compiler",
+  "concept": "compiler-and-manual-memo",
+  "format": "special-use",
+  "level": "intermediate",
+  "tags": [
+    "compiler",
+    "usememo",
+    "performance"
+  ],
+  "sourceUrl": "https://react.dev/learn/react-compiler/introduction#what-should-i-do-about-usememo-usecallback-and-reactmemo",
+  "title": "With the compiler, do you still need useMemo and memo?",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Compiler on. Is use memo dead? 🤔",
+      "say": "With React Compiler on, do you still need use memo and use callback? Mostly not, but there are two cases worth knowing."
+    },
+    {
+      "type": "text",
+      "text": "By default the compiler memoizes based on its own analysis, usually as precisely as you would, or more.",
+      "say": "By default, the compiler memoizes your code based on its own analysis. In most cases it's as precise as what you'd write, or more."
+    },
+    {
+      "type": "code",
+      "code": "// a value used as an Effect dependency\nconst options = useMemo(\n  () => ({ serverUrl, roomId }),\n  [serverUrl, roomId]\n);\nuseEffect(() => {\n  const c = connect(options);\n  return () => c.disconnect();\n}, [options]);",
+      "highlight": [
+        2
+      ],
+      "say": "Case one: precise control. If a memoized value is an effect dependency, use memo can make sure the effect doesn't fire again unless the inputs really change."
+    },
+    {
+      "type": "code",
+      "code": "// NOT memoized: not a component or hook\nfunction processAll(items) { /* ... */ }\n\nfunction Table({ items }) {\n  // memoized, but only inside Table\n  const data = processAll(items);\n}",
+      "highlight": [
+        5
+      ],
+      "say": "Case two: the compiler only memoizes components and hooks, and its cache isn't shared. If many components call a truly expensive function, consider memoizing it outside React."
+    },
+    {
+      "type": "text",
+      "text": "Profile first. Only add manual memoization where you need precise control.",
+      "say": "But profile first, to check it's really expensive. Then add manual memoization only where you need precise control."
+    }
+  ]
+}

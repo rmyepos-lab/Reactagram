@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "filtering-lists",
+  "topic": "Rendering Lists & Conditions",
+  "concept": "filtering-lists",
+  "format": "pattern",
+  "level": "beginner",
+  "tags": [
+    "lists",
+    "filter",
+    "map"
+  ],
+  "sourceUrl": "https://react.dev/learn/rendering-lists#filtering-arrays-of-items",
+  "title": "Filter first, then map",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Only some items? filter() 🧹",
+      "say": "Want to show only some items of an array? Filter first, then map."
+    },
+    {
+      "type": "code",
+      "code": "const chemists = people.filter(p =>\n  p.profession === \"chemist\"\n);",
+      "highlight": [
+        1,
+        2
+      ],
+      "say": "Filter keeps only the items where your test returns true. Here, only the chemists."
+    },
+    {
+      "type": "code",
+      "code": "const listItems = chemists.map(p =>\n  <li key={p.id}>{p.name}</li>\n);\n\nreturn <ul>{listItems}</ul>;",
+      "highlight": [
+        1
+      ],
+      "say": "Then map that smaller array to list items, and render them."
+    },
+    {
+      "type": "text",
+      "text": "filter makes a new array. map turns it into JSX.",
+      "say": "Takeaway: filter picks the items, map turns them into JSX. Both create new arrays."
+    }
+  ]
+}

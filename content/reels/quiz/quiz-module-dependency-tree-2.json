@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-module-dependency-tree-2",
+  "topic": "Components & JSX",
+  "concept": "module-dependency-tree",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "modules",
+    "bundler",
+    "dependency-tree"
+  ],
+  "sourceUrl": "https://react.dev/learn/understanding-your-ui-as-a-tree#the-module-dependency-tree",
+  "question": "Which tool uses the module dependency tree to decide what code ships to users?",
+  "options": [
+    "The bundler",
+    "React DevTools",
+    "The browser's HTML parser"
+  ],
+  "answer": 0,
+  "say": "Which tool uses the module dependency tree to decide what code ships to users?",
+  "explanation": "Bundlers follow the import tree to include every module the app needs in the production bundle.",
+  "explainSay": "The bundler. It follows the imports to decide which modules go into the bundle."
+}

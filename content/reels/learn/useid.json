@@ -1,0 +1,42 @@
+{
+  "kind": "learn",
+  "id": "useid",
+  "topic": "Actions & Forms",
+  "concept": "useid",
+  "format": "special-use",
+  "level": "intermediate",
+  "tags": [
+    "useId",
+    "accessibility",
+    "aria"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useId#generating-unique-ids-for-accessibility-attributes",
+  "title": "useId: unique ids for aria attributes",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Ids that never clash 🆔",
+      "say": "Hard coding an id like password hint breaks when the component appears twice on a page. Use id fixes that."
+    },
+    {
+      "type": "code",
+      "code": "function PasswordField() {\n  const hintId = useId();\n  return (\n    <>\n      <input type=\"password\"\n        aria-describedby={hintId} />\n      <p id={hintId}>Use 18+ characters</p>\n    </>\n  );\n}",
+      "highlight": [
+        2,
+        6,
+        7
+      ],
+      "say": "Call use id at the top level. Pass the generated id to both the aria attribute and the element it points to."
+    },
+    {
+      "type": "text",
+      "text": "Each component instance gets its own id. Works with server rendering if trees match.",
+      "say": "Every instance gets a unique id. With server rendering, it requires the same component tree on server and client."
+    },
+    {
+      "type": "text",
+      "text": "Not for list keys, and not for use() cache keys.",
+      "say": "Do not use it for list keys. Keys should come from your data."
+    }
+  ]
+}

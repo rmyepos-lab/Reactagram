@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-fiber-2",
+  "topic": "How React Works",
+  "concept": "fiber",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "internals",
+    "fiber",
+    "scheduling"
+  ],
+  "sourceUrl": "https://github.com/acdlite/react-fiber-architecture",
+  "question": "True or false: a fiber is a plain JavaScript object describing one component.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: a fiber is a plain JavaScript object describing one component.",
+  "explanation": "True. It holds info about a component, its input and output, like type, key and props.",
+  "explainSay": "True. It is a plain object for one component."
+}

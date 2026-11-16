@@ -1,0 +1,43 @@
+{
+  "kind": "learn",
+  "id": "no-effect-reset-on-prop",
+  "topic": "Side Effects",
+  "concept": "no-effect-reset-on-prop",
+  "format": "pattern",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "key",
+    "state"
+  ],
+  "sourceUrl": "https://react.dev/learn/you-might-not-need-an-effect#resetting-all-state-when-a-prop-changes",
+  "title": "Reset state on prop change: key, not Effect",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Clear the comment box 🧽",
+      "say": "Switch to another user’s profile and the unsent comment stays. You want it cleared."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 resets one render too late\nuseEffect(() => {\n  setComment(\"\");\n}, [userId]);",
+      "highlight": [
+        3
+      ],
+      "say": "Resetting in an Effect renders first with the stale comment, then again. And every nested component with state would need the same Effect."
+    },
+    {
+      "type": "code",
+      "code": "export default function ProfilePage({ userId }) {\n  return <Profile userId={userId} key={userId} />;\n}\n\nfunction Profile({ userId }) {\n  const [comment, setComment] = useState(\"\");\n}",
+      "highlight": [
+        2
+      ],
+      "say": "Instead, split the component and pass user id as a key to the inner one. A new key means a new profile, so all state below resets automatically."
+    },
+    {
+      "type": "text",
+      "text": "Callers still pass userId. The key stays an inner detail.",
+      "say": "Callers of Profile Page just pass user id. Using it as a key is an implementation detail."
+    }
+  ]
+}

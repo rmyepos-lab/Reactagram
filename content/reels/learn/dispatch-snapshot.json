@@ -1,0 +1,43 @@
+{
+  "kind": "learn",
+  "id": "dispatch-snapshot",
+  "topic": "Reducers",
+  "concept": "dispatch-snapshot",
+  "format": "pitfall",
+  "level": "intermediate",
+  "tags": [
+    "reducers",
+    "dispatch",
+    "snapshot"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useReducer#ive-dispatched-an-action-but-logging-gives-me-the-old-state-value",
+  "title": "After dispatch, state is still the old value",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Dispatched… still 42? 🤔",
+      "say": "You dispatch an action, then log the state. It still shows the old value."
+    },
+    {
+      "type": "code",
+      "code": "function handleClick() {\n  console.log(state.age); // 42\n  dispatch({ type: \"incremented_age\" });\n  console.log(state.age); // still 42!\n}",
+      "highlight": [
+        4
+      ],
+      "say": "Dispatch does not change state in the running code. It requests a new render with the new value."
+    },
+    {
+      "type": "text",
+      "text": "State is a snapshot. The variable in this render never changes.",
+      "say": "State behaves like a snapshot. The state variable in this render stays the same, even in a timeout later."
+    },
+    {
+      "type": "code",
+      "code": "const action = { type: \"incremented_age\" };\ndispatch(action);\nconst next = reducer(state, action);\n// next.age is 43",
+      "highlight": [
+        3
+      ],
+      "say": "Need the next value now? Call the reducer yourself with the same state and action."
+    }
+  ]
+}

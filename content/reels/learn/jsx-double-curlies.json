@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "jsx-double-curlies",
+  "topic": "Components & JSX",
+  "concept": "jsx-double-curlies",
+  "format": "special-use",
+  "level": "beginner",
+  "tags": [
+    "jsx",
+    "style",
+    "objects"
+  ],
+  "sourceUrl": "https://react.dev/learn/javascript-in-jsx-with-curly-braces#using-double-curlies-css-and-other-objects-in-jsx",
+  "title": "Double curlies are just an object",
+  "slides": [
+    {
+      "type": "title",
+      "text": "{{ }} is not magic 🎩",
+      "say": "You will see double curly braces in JSX. They are not special syntax."
+    },
+    {
+      "type": "code",
+      "code": "<ul style={{\n  backgroundColor: \"black\",\n  color: \"pink\"\n}}>",
+      "highlight": [
+        1
+      ],
+      "text": "Outer {} = JSX window. Inner {} = an object.",
+      "say": "The outer braces open the JavaScript window. The inner braces are a plain object. Here, an inline style object."
+    },
+    {
+      "type": "code",
+      "code": "const style = {\n  backgroundColor: \"black\",\n  color: \"pink\"\n};\n<ul style={style}>",
+      "highlight": [
+        5
+      ],
+      "say": "Proof: pull the object into a variable, and you only need single braces."
+    },
+    {
+      "type": "text",
+      "text": "Style keys are camelCase: background-color → backgroundColor.",
+      "say": "One more thing. Inline style properties are camel case. Background dash color becomes backgroundColor."
+    }
+  ]
+}

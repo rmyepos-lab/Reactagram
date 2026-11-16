@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-index-as-key-pitfall-1",
+  "topic": "Rendering Lists & Conditions",
+  "concept": "index-as-key-pitfall",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "lists",
+    "keys",
+    "index"
+  ],
+  "sourceUrl": "https://react.dev/learn/rendering-lists#why-does-react-need-keys",
+  "question": "True or false: if you leave out key, React falls back to using the item index.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: if you leave out the key, React falls back to using the item index.",
+  "explanation": "True. With no key, React uses the index, which can cause bugs when items are inserted, removed or reordered.",
+  "explainSay": "True. React uses the index if you give no key, which is exactly why reordering can cause bugs."
+}

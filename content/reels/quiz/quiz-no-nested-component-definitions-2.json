@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-no-nested-component-definitions-2",
+  "topic": "Components & JSX",
+  "concept": "no-nested-component-definitions",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "components",
+    "state",
+    "performance"
+  ],
+  "sourceUrl": "https://react.dev/learn/your-first-component#nesting-and-organizing-components",
+  "question": "True or false: if a child needs data from its parent, define the child inside the parent so it can read it.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: if a child needs data from its parent, define the child inside the parent so it can read the data.",
+  "explanation": "False. Declare every component at the top level and pass the data down with props instead of nesting definitions.",
+  "explainSay": "False. Keep every component at the top level, and pass the data down with props."
+}

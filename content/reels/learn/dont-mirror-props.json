@@ -1,0 +1,48 @@
+{
+  "kind": "learn",
+  "id": "dont-mirror-props",
+  "topic": "State Structure & Sharing",
+  "concept": "dont-mirror-props",
+  "format": "pitfall",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "props",
+    "pitfall"
+  ],
+  "sourceUrl": "https://react.dev/learn/choosing-the-state-structure#don-t-mirror-props-in-state",
+  "title": "Don't copy props into state",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Mirrored props go stale 🪞",
+      "say": "Copying a prop into state looks harmless. It is a classic bug."
+    },
+    {
+      "type": "code",
+      "code": "function Message({ messageColor }) {\n  // 🔴 mirrors the prop\n  const [color, setColor] =\n    useState(messageColor);\n}",
+      "highlight": [
+        3,
+        4
+      ],
+      "say": "State is only initialized on the first render. If the parent later passes red instead of blue, color stays blue."
+    },
+    {
+      "type": "code",
+      "code": "function Message({ messageColor }) {\n  // ✅ always in sync\n  const color = messageColor;\n}",
+      "highlight": [
+        3
+      ],
+      "say": "Use the prop directly. Want a shorter name? Use a constant. It cannot fall out of sync."
+    },
+    {
+      "type": "code",
+      "code": "function Message({ initialColor }) {\n  const [color, setColor] =\n    useState(initialColor);\n}",
+      "highlight": [
+        1
+      ],
+      "text": "Want to ignore updates on purpose? Name it initial… or default…",
+      "say": "Only mirror a prop when you want to ignore its updates. Then name it initial or default, so readers know new values are ignored."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-memoize-context-value-1",
+  "topic": "Context",
+  "concept": "memoize-context-value",
+  "format": "bug-hunt",
+  "level": "advanced",
+  "tags": [
+    "context",
+    "useMemo",
+    "useCallback"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useContext#optimizing-re-renders-when-passing-objects-and-functions",
+  "question": "Every ThemeContext reader re-renders when App re-renders. Why?",
+  "code": "<ThemeContext value={{ theme, toggle }}>\n  <Page />\n</ThemeContext>",
+  "options": [
+    "The value object is new each render",
+    "toggle must be a string",
+    "Readers need memo"
+  ],
+  "answer": 0,
+  "say": "Every ThemeContext reader re-renders whenever App re-renders. Why?",
+  "explanation": "The inline object is a different object every render, so the context value always counts as changed.",
+  "explainSay": "The value object is brand new on every render."
+}

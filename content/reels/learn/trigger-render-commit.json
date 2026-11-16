@@ -1,0 +1,86 @@
+{
+  "kind": "learn",
+  "id": "trigger-render-commit",
+  "topic": "How React Works",
+  "concept": "trigger-render-commit",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "rendering",
+    "commit",
+    "internals"
+  ],
+  "sourceUrl": "https://react.dev/learn/render-and-commit",
+  "title": "Trigger, render, commit: 3 steps",
+  "slides": [
+    {
+      "type": "title",
+      "text": "React is a waiter 🍽️",
+      "say": "Picture your components as cooks, and React as the waiter. Every screen update takes three steps."
+    },
+    {
+      "type": "visual",
+      "say": "Here are the three steps.",
+      "visual": {
+        "kind": "timeline",
+        "events": [
+          {
+            "id": "trigger",
+            "label": "Trigger",
+            "note": "initial render or a state update"
+          },
+          {
+            "id": "render",
+            "label": "Render",
+            "note": "React calls your components"
+          },
+          {
+            "id": "commit",
+            "label": "Commit",
+            "note": "React updates the DOM"
+          },
+          {
+            "id": "paint",
+            "label": "Browser paints",
+            "note": "pixels change on screen"
+          }
+        ]
+      },
+      "steps": [
+        {
+          "say": "Trigger: delivering the order to the kitchen. It is either the initial render, or a state update.",
+          "show": [
+            "trigger"
+          ],
+          "focus": "trigger"
+        },
+        {
+          "say": "Render: preparing the order. React calls your components to work out what should be on screen.",
+          "show": [
+            "render"
+          ],
+          "focus": "render"
+        },
+        {
+          "say": "Commit: placing the dish on the table. React applies the changes to the DOM.",
+          "show": [
+            "commit"
+          ],
+          "focus": "commit"
+        },
+        {
+          "say": "Then the browser paints the updated screen.",
+          "show": [
+            "paint"
+          ],
+          "focus": "paint"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "Render = calculate. Commit = touch the DOM.",
+      "say": "Remember: rendering only calculates. Committing is when the DOM changes."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-suspense-fallback-1",
+  "topic": "Suspense & Data",
+  "concept": "suspense-fallback",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "Suspense",
+    "loading",
+    "fallback"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/Suspense#displaying-a-fallback-while-content-is-loading",
+  "question": "True or false: Suspense shows its fallback while a useEffect fetch is in progress.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: Suspense shows its fallback while a use effect fetch is in progress.",
+  "explanation": "False. Suspense does not detect data fetched inside an Effect or event handler.",
+  "explainSay": "False. Suspense cannot see fetches inside Effects."
+}

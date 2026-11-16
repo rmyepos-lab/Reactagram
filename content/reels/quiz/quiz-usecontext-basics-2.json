@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-usecontext-basics-2",
+  "topic": "Context",
+  "concept": "usecontext-basics",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "context",
+    "useContext",
+    "hooks"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useContext#passing-data-deeply-into-the-tree",
+  "question": "True or false: a component reading context re-renders when the provided value changes.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: a component that reads context re-renders when the provided value changes.",
+  "explanation": "True. React automatically re-renders components that read a context when its value changes.",
+  "explainSay": "True. React re-renders every reader when the value changes."
+}

@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "useeffectevent",
+  "topic": "Side Effects",
+  "concept": "useeffectevent",
+  "format": "special-use",
+  "level": "advanced",
+  "tags": [
+    "useEffectEvent",
+    "useEffect",
+    "dependencies"
+  ],
+  "sourceUrl": "https://react.dev/learn/separating-events-from-effects#declaring-an-effect-event",
+  "title": "useEffectEvent: non-reactive logic in Effects",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Reconnecting on theme change? 🎨",
+      "say": "You show a notification in the current theme when the chat connects. Now theme is a dependency, and switching themes reconnects the chat."
+    },
+    {
+      "type": "code",
+      "code": "useEffect(() => {\n  const c = createConnection(roomId);\n  c.on(\"connected\", () => {\n    showNotification(\"Connected!\", theme);\n  });\n  c.connect();\n  return () => c.disconnect();\n}, [roomId, theme]);",
+      "highlight": [
+        4,
+        8
+      ],
+      "say": "Theme is read inside the Effect, so it must be a dependency. But a new theme should not mean a new connection."
+    },
+    {
+      "type": "code",
+      "code": "const onConnected = useEffectEvent(() => {\n  showNotification(\"Connected!\", theme);\n});\n\nuseEffect(() => {\n  const c = createConnection(roomId);\n  c.on(\"connected\", () => onConnected());\n  c.connect();\n  return () => c.disconnect();\n}, [roomId]);",
+      "highlight": [
+        1,
+        10
+      ],
+      "say": "Move that part into an Effect Event with use effect event. It always sees the latest theme, but it is not reactive. Leave it out of the dependencies."
+    },
+    {
+      "type": "text",
+      "text": "Effect Event = part of the Effect that behaves like an event handler.",
+      "say": "An Effect Event is part of your Effect logic that behaves like an event handler."
+    }
+  ]
+}

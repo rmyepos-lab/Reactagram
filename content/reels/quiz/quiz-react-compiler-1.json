@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-react-compiler-1",
+  "topic": "Performance",
+  "concept": "react-compiler",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "react-compiler",
+    "memoization",
+    "build"
+  ],
+  "sourceUrl": "https://react.dev/learn/react-compiler/introduction",
+  "question": "True or false: React Compiler runs in the browser at runtime.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: React Compiler runs in the browser at runtime.",
+  "explanation": "False. It is a build-time tool that optimizes your code before it ships.",
+  "explainSay": "False. It runs at build time."
+}

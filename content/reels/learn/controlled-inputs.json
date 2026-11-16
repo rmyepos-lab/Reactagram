@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "controlled-inputs",
+  "topic": "Actions & Forms",
+  "concept": "controlled-inputs",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "forms",
+    "inputs",
+    "state"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/components/input#controlling-an-input-with-a-state-variable",
+  "title": "Controlled inputs: value + onChange",
+  "slides": [
+    {
+      "type": "title",
+      "text": "React drives the input 🎮",
+      "say": "A controlled input gets its value from state, so React always decides what it shows."
+    },
+    {
+      "type": "code",
+      "code": "const [firstName, setFirstName] = useState(\"\");\n\n<input\n  value={firstName}\n  onChange={e => setFirstName(e.target.value)}\n/>",
+      "highlight": [
+        4,
+        5
+      ],
+      "say": "Pass value from state, and an on change that updates that state on every keystroke."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 value without onChange: read-only!\n<input value={name} />\n\n// ✅ only an initial value\n<input defaultValue={name} />",
+      "highlight": [
+        2,
+        5
+      ],
+      "say": "Value without on change makes a read only field, and React warns. Only want a starting value? Use default value instead."
+    },
+    {
+      "type": "text",
+      "text": "An input can’t switch between controlled and uncontrolled.",
+      "say": "And an input must stay either controlled or uncontrolled for its whole lifetime."
+    }
+  ]
+}

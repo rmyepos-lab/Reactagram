@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-ref-callback-cleanup-1",
+  "topic": "Refs",
+  "concept": "ref-callback-cleanup",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "refs",
+    "ref-callback",
+    "react-19"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/components/common#ref-callback",
+  "question": "The <div> is removed. The ref callback returned a cleanup. What does React do?",
+  "code": "<div ref={node => {\n  observe(node);\n  return () => unobserve(node);\n}} />",
+  "options": [
+    "Calls the callback with null",
+    "Calls the cleanup function",
+    "Nothing"
+  ],
+  "answer": 1,
+  "say": "The div is removed. The ref callback returned a cleanup function. What does React do?",
+  "explanation": "When the ref is detached, React calls the cleanup function. Only if none is returned does it call the callback with null.",
+  "explainSay": "It calls the cleanup function. The null call only happens when no cleanup is returned."
+}

@@ -1,0 +1,26 @@
+{
+  "kind": "quiz",
+  "id": "quiz-capture-phase-events-1",
+  "topic": "Events",
+  "concept": "capture-phase-events",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "events",
+    "capture",
+    "propagation"
+  ],
+  "sourceUrl": "https://react.dev/learn/responding-to-events#capture-phase-events",
+  "question": "You click the button. Which logs appear, in order?",
+  "code": "<div\n  onClickCapture={() => log(\"cap\")}\n  onClick={() => log(\"div\")}>\n  <button onClick={e => {\n    e.stopPropagation();\n    log(\"btn\");\n  }} />\n</div>",
+  "options": [
+    "btn",
+    "cap, btn",
+    "btn, cap, div",
+    "cap, btn, div"
+  ],
+  "answer": 1,
+  "say": "You click the button. Which logs appear, and in what order?",
+  "explanation": "Capture handlers run first on the way down: cap. Then the button runs: btn. It stops propagation, so the div onClick never runs.",
+  "explainSay": "Cap, then btn. The capture handler runs first, then the button, which stops the event before the div’s onClick."
+}

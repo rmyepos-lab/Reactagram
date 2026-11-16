@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-server-functions-1",
+  "topic": "Server Components",
+  "concept": "server-functions",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "server-functions",
+    "use-server",
+    "rsc"
+  ],
+  "sourceUrl": "https://react.dev/reference/rsc/server-functions#creating-a-server-function-from-a-server-component",
+  "question": "A Client Component calls a Server Function. Where does its code run?",
+  "options": [
+    "In the browser",
+    "On the server, via a request",
+    "In a Web Worker"
+  ],
+  "answer": 1,
+  "say": "A Client Component calls a Server Function. Where does its code run?",
+  "explanation": "The client only holds a reference. Calling it makes React send a request so the server executes it and returns the result.",
+  "explainSay": "On the server. The client sends a request."
+}

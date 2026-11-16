@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-usedebugvalue-1",
+  "topic": "Custom Hooks",
+  "concept": "usedebugvalue",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "useDebugValue",
+    "devtools",
+    "custom-hooks"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useDebugValue",
+  "question": "When does the formatting function in useDebugValue(date, d => d.toDateString()) run?",
+  "options": [
+    "On every render",
+    "Only when the component is inspected in DevTools",
+    "Never in development"
+  ],
+  "answer": 1,
+  "say": "When does the formatting function passed to use debug value run?",
+  "explanation": "DevTools calls the formatting function only when the component is inspected, avoiding work on every render.",
+  "explainSay": "Only when you inspect the component in DevTools."
+}

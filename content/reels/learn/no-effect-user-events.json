@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "no-effect-user-events",
+  "topic": "Side Effects",
+  "concept": "no-effect-user-events",
+  "format": "pitfall",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "events",
+    "bugs"
+  ],
+  "sourceUrl": "https://react.dev/learn/you-might-not-need-an-effect#sharing-logic-between-event-handlers",
+  "title": "User events belong in event handlers",
+  "slides": [
+    {
+      "type": "title",
+      "text": "The notification that won’t stop 🔔",
+      "say": "Two buttons, Buy and Checkout, both add to cart and should show a notification. Putting it in an Effect seems neat. It is a bug."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 event logic in an Effect\nuseEffect(() => {\n  if (product.isInCart) {\n    showNotification(\"Added!\");\n  }\n}, [product]);",
+      "highlight": [
+        3,
+        4
+      ],
+      "say": "If the cart is saved between reloads, refreshing the page shows the notification again. Product is already in the cart on load."
+    },
+    {
+      "type": "code",
+      "code": "// ✅ shared function, called from handlers\nfunction buyProduct() {\n  addToCart(product);\n  showNotification(\"Added!\");\n}\nfunction handleBuyClick() {\n  buyProduct();\n}",
+      "highlight": [
+        2,
+        4
+      ],
+      "say": "Move it into a function and call it from both handlers. The notification now happens because the user pressed a button."
+    },
+    {
+      "type": "text",
+      "text": "Effects are for code that runs because the component was displayed.",
+      "say": "Use Effects only for code that should run because the component was displayed, not because of a click."
+    }
+  ]
+}

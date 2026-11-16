@@ -1,0 +1,40 @@
+{
+  "kind": "learn",
+  "id": "effect-infinite-loop",
+  "topic": "Side Effects",
+  "concept": "effect-infinite-loop",
+  "format": "pitfall",
+  "level": "beginner",
+  "tags": [
+    "useEffect",
+    "state",
+    "infinite-loop"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#step-1-declare-an-effect",
+  "title": "The Effect that feeds itself",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Plugged into itself 🔌",
+      "say": "Setting state inside an Effect with no dependencies is like plugging a power strip into itself."
+    },
+    {
+      "type": "code",
+      "code": "const [count, setCount] = useState(0);\nuseEffect(() => {\n  setCount(count + 1);\n});",
+      "highlight": [
+        3
+      ],
+      "say": "The Effect runs after render and sets state. Setting state triggers a render. That runs the Effect again. Forever."
+    },
+    {
+      "type": "text",
+      "text": "A loop needs two things: the Effect sets state, and that render changes its dependencies.",
+      "say": "Any infinite loop needs two things: the Effect updates some state, and that re-render changes the Effect’s dependencies again."
+    },
+    {
+      "type": "text",
+      "text": "No external system? You probably don’t need the Effect at all.",
+      "say": "Ask why the Effect sets state. Effects are for syncing with external systems. If you are only adjusting state from other state, you might not need an Effect."
+    }
+  ]
+}

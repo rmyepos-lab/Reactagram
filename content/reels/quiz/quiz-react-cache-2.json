@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-react-cache-2",
+  "topic": "Server Components",
+  "concept": "react-cache",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "cache",
+    "rsc",
+    "memoization"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/cache",
+  "question": "True or false: React keeps cache() results across different server requests.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: React keeps cache results across different server requests.",
+  "explanation": "False. React invalidates the cache for all memoized functions on each server request.",
+  "explainSay": "False. The cache resets for every request."
+}

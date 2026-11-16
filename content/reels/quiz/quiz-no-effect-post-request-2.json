@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-no-effect-post-request-2",
+  "topic": "Side Effects",
+  "concept": "no-effect-post-request",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "events",
+    "fetch"
+  ],
+  "sourceUrl": "https://react.dev/learn/you-might-not-need-an-effect#sending-a-post-request",
+  "question": "True or false: a \"form was viewed\" analytics POST belongs in an Effect.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: a form was viewed analytics POST belongs in an Effect.",
+  "explanation": "True. Its reason to run is that the component was displayed, which is exactly what Effects are for.",
+  "explainSay": "True. It runs because the form was displayed."
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-jsx-curly-braces-1",
+  "topic": "Components & JSX",
+  "concept": "jsx-curly-braces",
+  "format": "output",
+  "level": "beginner",
+  "tags": [
+    "jsx",
+    "curly-braces",
+    "expressions"
+  ],
+  "sourceUrl": "https://react.dev/learn/javascript-in-jsx-with-curly-braces#where-to-use-curly-braces",
+  "question": "avatar is \"/me.png\". What does src receive?",
+  "code": "const avatar = \"/me.png\";\nreturn <img src=\"{avatar}\" alt=\"\" />;",
+  "options": [
+    "\"/me.png\"",
+    "The text \"{avatar}\"",
+    "undefined"
+  ],
+  "answer": 1,
+  "say": "Avatar is slash me dot png. What value does src receive here?",
+  "explanation": "Inside quotes, curly braces are just characters. src=\"{avatar}\" passes the string \"{avatar}\". Use src={avatar} to read the variable.",
+  "explainSay": "The literal text, curly avatar. Inside quotes the braces are just characters. Drop the quotes to read the variable."
+}

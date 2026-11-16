@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "effect-event-latest-values",
+  "topic": "Side Effects",
+  "concept": "effect-event-latest-values",
+  "format": "pattern",
+  "level": "advanced",
+  "tags": [
+    "useEffectEvent",
+    "analytics",
+    "dependencies"
+  ],
+  "sourceUrl": "https://react.dev/learn/separating-events-from-effects#reading-latest-props-and-state-with-effect-events",
+  "title": "Effect Events read the latest values",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Log visits, not cart changes 🛒",
+      "say": "You log every page visit with the URL and the number of items in the cart."
+    },
+    {
+      "type": "code",
+      "code": "useEffect(() => {\n  logVisit(url, numberOfItems);\n}, [url, numberOfItems]);",
+      "highlight": [
+        3
+      ],
+      "say": "Now adding an item to the cart logs another visit. But changing the cart does not mean the user visited again."
+    },
+    {
+      "type": "code",
+      "code": "const onVisit = useEffectEvent(visitedUrl => {\n  logVisit(visitedUrl, numberOfItems);\n});\n\nuseEffect(() => {\n  onVisit(url);\n}, [url]);",
+      "highlight": [
+        1,
+        6
+      ],
+      "say": "Split it. The Effect stays reactive to url. The Effect Event reads the latest number of items without reacting to it."
+    },
+    {
+      "type": "text",
+      "text": "Pass url as an argument: each new url is a separate visit.",
+      "say": "Pass url as an argument. It says a different URL is a separate event, and the linter warns if you drop url from the dependencies."
+    }
+  ]
+}

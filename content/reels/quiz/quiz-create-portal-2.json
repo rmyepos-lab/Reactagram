@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-create-portal-2",
+  "topic": "Errors & Escape Hatches",
+  "concept": "create-portal",
+  "format": "fill-blank",
+  "level": "intermediate",
+  "tags": [
+    "createPortal",
+    "dom",
+    "modals"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/createPortal#rendering-a-modal-dialog-with-a-portal",
+  "question": "Fill the blanks to render <Tooltip /> into document.body:",
+  "code": "createPortal(___, ___)",
+  "options": [
+    "<Tooltip />, document.body",
+    "document.body, <Tooltip />",
+    "\"body\", Tooltip"
+  ],
+  "answer": 0,
+  "say": "Fill the blanks to render the Tooltip into document dot body.",
+  "explanation": "The signature is createPortal(children, domNode, key?): the JSX first, then the DOM node.",
+  "explainSay": "The JSX first, then document dot body."
+}

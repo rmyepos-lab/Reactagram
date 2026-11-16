@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "usesyncexternalstore",
+  "topic": "Side Effects",
+  "concept": "usesyncexternalstore",
+  "format": "special-use",
+  "level": "advanced",
+  "tags": [
+    "useSyncExternalStore",
+    "subscriptions",
+    "browser-api"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useSyncExternalStore#subscribing-to-a-browser-api",
+  "title": "useSyncExternalStore: read an outside store",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Data that lives outside React 🌐",
+      "say": "Some values change without React knowing, like navigator dot on line. Read them with use sync external store."
+    },
+    {
+      "type": "code",
+      "code": "function subscribe(callback) {\n  window.addEventListener(\"online\", callback);\n  window.addEventListener(\"offline\", callback);\n  return () => {\n    window.removeEventListener(\"online\", callback);\n    window.removeEventListener(\"offline\", callback);\n  };\n}",
+      "highlight": [
+        2,
+        4
+      ],
+      "say": "Subscribe takes a callback, calls it whenever the store changes, and returns a function that unsubscribes."
+    },
+    {
+      "type": "code",
+      "code": "function getSnapshot() {\n  return navigator.onLine;\n}\n\nfunction StatusBar() {\n  const isOnline = useSyncExternalStore(\n    subscribe, getSnapshot);\n  return <h1>{isOnline ? \"✅\" : \"❌\"}</h1>;\n}",
+      "highlight": [
+        2,
+        6
+      ],
+      "say": "Get snapshot returns the current value. When the callback fires, React calls get snapshot again and re-renders if the value changed."
+    },
+    {
+      "type": "text",
+      "text": "Server rendering? Pass a 3rd argument: getServerSnapshot.",
+      "say": "Rendering on the server? Pass a third function, get server snapshot. Without it, server rendering throws."
+    }
+  ]
+}

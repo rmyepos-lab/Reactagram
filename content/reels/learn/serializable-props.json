@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "serializable-props",
+  "topic": "Server Components",
+  "concept": "serializable-props",
+  "format": "pitfall",
+  "level": "advanced",
+  "tags": [
+    "rsc",
+    "props",
+    "serialization"
+  ],
+  "sourceUrl": "https://react.dev/reference/rsc/use-client#serializable-types",
+  "title": "Server → client props must be serializable",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Can this prop cross over? 🌉",
+      "say": "A Server Component passing props to a Client Component sends them across environments. They must be serializable."
+    },
+    {
+      "type": "text",
+      "text": "✅ strings, numbers, booleans, null, arrays, Map, Set, Date, plain objects, JSX, Promises, Server Functions.",
+      "say": "Allowed: primitives, arrays, maps, sets, dates, plain objects, JSX, promises, and Server Functions."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 not serializable\n<Chart\n  onHover={() => log()}   // plain function\n  model={new ChartModel()} // class instance\n/>",
+      "highlight": [
+        3,
+        4
+      ],
+      "say": "Not allowed: ordinary functions that are not Server Functions, classes, and instances of your own classes."
+    },
+    {
+      "type": "text",
+      "text": "Pass data; let the Client Component create its own handlers.",
+      "say": "So pass plain data down, and let the Client Component create its own event handlers."
+    }
+  ]
+}

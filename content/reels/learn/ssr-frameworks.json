@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "ssr-frameworks",
+  "topic": "Server Rendering",
+  "concept": "ssr-frameworks",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "ssr",
+    "frameworks"
+  ],
+  "sourceUrl": "https://react.dev/learn/creating-a-react-app",
+  "title": "Frameworks handle server rendering for you",
+  "slides": [
+    {
+      "type": "title",
+      "text": "You rarely call the server APIs yourself 🧰",
+      "say": "Render to pipeable stream, hydrate root, pre render. In a real app, you rarely wire these up by hand."
+    },
+    {
+      "type": "text",
+      "text": "For a new React app or website, the docs recommend starting with a framework, like Next.js (App Router) or React Router (v7).",
+      "say": "For a new app or website, the React docs recommend starting with a framework, like Next dot js with the App Router, or React Router version seven."
+    },
+    {
+      "type": "text",
+      "text": "A framework can call the react-dom/server APIs for you, and wires up hydration on the client.",
+      "say": "The framework can call the react dom server APIs for you, and it hydrates the page on the client too."
+    },
+    {
+      "type": "text",
+      "text": "Frameworks don't require a server. They support client rendering, single-page apps and static generation, and can be hosted on a CDN.",
+      "say": "And a framework doesn't force you to run a server. These frameworks support client side rendering, single page apps and static generation, deployed to a CDN or static hosting."
+    },
+    {
+      "type": "text",
+      "text": "Start client-only, then turn on server rendering per route when it makes sense, without a rewrite.",
+      "say": "So you can start with a client only app. Later, you can turn on server rendering for individual routes, without rewriting your app."
+    }
+  ]
+}

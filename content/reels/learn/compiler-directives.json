@@ -1,0 +1,49 @@
+{
+  "kind": "learn",
+  "id": "compiler-directives",
+  "topic": "React Compiler",
+  "concept": "compiler-directives",
+  "format": "special-use",
+  "level": "advanced",
+  "tags": [
+    "compiler",
+    "directives"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-compiler/directives",
+  "title": "\"use memo\" and \"use no memo\" directives",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Two strings that steer the compiler 🎛️",
+      "say": "React Compiler has two directives: special strings that say whether a function gets compiled."
+    },
+    {
+      "type": "code",
+      "code": "function Fast() {\n  \"use memo\"; // opt in\n  return <div>Optimized</div>;\n}\n\nfunction Legacy() {\n  \"use no memo\"; // opt out\n  return <ThirdPartyWidget />;\n}",
+      "highlight": [
+        2,
+        7
+      ],
+      "say": "Use memo opts a function into compilation. Use no memo opts it out. Put the directive first in the function body, or it's ignored."
+    },
+    {
+      "type": "code",
+      "code": "\"use memo\"; // top of file, before imports\nimport { thing } from \"./thing\";\n\nfunction A() { /* compiled */ }\nfunction B() {\n  \"use no memo\"; // overrides the file\n}",
+      "highlight": [
+        1,
+        6
+      ],
+      "say": "At the top of a file, before any imports, a directive applies to every function in it. A function level directive overrides it."
+    },
+    {
+      "type": "text",
+      "text": "In annotation mode, only \"use memo\" functions compile. Elsewhere, directives override the compiler's choice.",
+      "say": "In annotation mode, only functions marked use memo are compiled. In the other modes, directives override what the compiler would decide."
+    },
+    {
+      "type": "text",
+      "text": "Use them sparingly. Treat \"use no memo\" as temporary: add a TODO, fix the cause, remove it.",
+      "say": "Use them sparingly. Use no memo should be temporary. Add a to do note, fix the real problem, then remove it."
+    }
+  ]
+}

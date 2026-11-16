@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-starttransition-1",
+  "topic": "Concurrent Rendering",
+  "concept": "starttransition",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "startTransition",
+    "concurrent"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/startTransition",
+  "question": "Why is setPage here NOT treated as a Transition?",
+  "code": "startTransition(() => {\n  setTimeout(() => {\n    setPage(\"/about\");\n  }, 100);\n});",
+  "options": [
+    "It runs later, after startTransition returned",
+    "setPage needs await",
+    "Strings can't be Transitions"
+  ],
+  "answer": 0,
+  "say": "Why is set page here not treated as a Transition?",
+  "explanation": "Only updates made while the function executes are marked. The setTimeout callback runs later.",
+  "explainSay": "It runs later, after the start transition call already finished."
+}

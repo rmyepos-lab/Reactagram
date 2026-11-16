@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "preserve-removed-state",
+  "topic": "State Structure & Sharing",
+  "concept": "preserve-removed-state",
+  "format": "pattern",
+  "level": "advanced",
+  "tags": [
+    "state",
+    "lifting-state",
+    "localStorage"
+  ],
+  "sourceUrl": "https://react.dev/learn/preserving-and-resetting-state#preserving-state-for-removed-components",
+  "title": "Keep state for a removed component",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Keep the draft alive ✍️",
+      "say": "A chat app: switch from Alice to Bob and back. Alice’s draft is gone. How do you keep it?"
+    },
+    {
+      "type": "code",
+      "code": "// 1. render all, hide with CSS\n{contacts.map(c => (\n  <Chat key={c.id} contact={c}\n    hidden={c.id !== to.id} />\n))}",
+      "highlight": [
+        3,
+        4
+      ],
+      "say": "Option one: render every chat, and hide the others with CSS. Nothing is removed, so state stays. Simple, but slow if the hidden trees are big."
+    },
+    {
+      "type": "code",
+      "code": "// 2. lift drafts up\nconst [drafts, setDrafts] = useState({});\n<Chat\n  draft={drafts[to.id] ?? \"\"}\n  onDraftChange={...} />",
+      "highlight": [
+        2,
+        4
+      ],
+      "say": "Option two, the most common: lift the state up. The parent keeps a draft for each contact, so removing the child does not matter."
+    },
+    {
+      "type": "text",
+      "text": "3. Also save to localStorage, so a draft survives closing the page.",
+      "say": "Option three: use another source too, like local storage, so drafts survive even when the page closes."
+    }
+  ]
+}

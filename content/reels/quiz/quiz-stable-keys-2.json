@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-stable-keys-2",
+  "topic": "Rendering Lists & Conditions",
+  "concept": "stable-keys",
+  "format": "fill-blank",
+  "level": "intermediate",
+  "tags": [
+    "lists",
+    "keys",
+    "ids"
+  ],
+  "sourceUrl": "https://react.dev/learn/rendering-lists#where-to-get-your-key",
+  "question": "Where should a new todo get its id?",
+  "code": "function addTodo(text) {\n  setTodos([...todos, {\n    id: ___,\n    text,\n  }]);\n}",
+  "options": [
+    "crypto.randomUUID()",
+    "todos.indexOf(text)",
+    "Leave it out and use Math.random() in the JSX"
+  ],
+  "answer": 0,
+  "say": "Fill the blank: where should a new todo get its id?",
+  "explanation": "Generate the id once, when the item is created, and store it with the item. Then the key never changes.",
+  "explainSay": "Crypto random UUID, created once when the todo is added, and stored with it."
+}

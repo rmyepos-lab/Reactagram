@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-automatic-batching-1",
+  "topic": "How React Works",
+  "concept": "automatic-batching",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "internals",
+    "batching",
+    "react-18"
+  ],
+  "sourceUrl": "https://react.dev/blog/2022/03/29/react-v18#new-feature-automatic-batching",
+  "question": "React 19. How many re-renders does this cause?",
+  "code": "fetchData().then(() => {\n  setLoading(false);\n  setData(result);\n});",
+  "options": [
+    "0",
+    "1",
+    "2"
+  ],
+  "answer": 1,
+  "say": "In React nineteen, how many re-renders does this cause?",
+  "explanation": "Since React 18, updates inside promises are batched automatically into one re-render.",
+  "explainSay": "One. Both updates are batched."
+}

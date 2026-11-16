@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "ref-as-prop",
+  "topic": "Props",
+  "concept": "ref-as-prop",
+  "format": "special-use",
+  "level": "intermediate",
+  "tags": [
+    "refs",
+    "props",
+    "react-19"
+  ],
+  "sourceUrl": "https://react.dev/blog/2024/12/05/react-19#ref-as-a-prop",
+  "title": "React 19: ref is just a prop",
+  "slides": [
+    {
+      "type": "title",
+      "text": "ref is a prop now 🎁",
+      "say": "Want a parent to reach an input inside your component? In React nineteen, ref is just a regular prop."
+    },
+    {
+      "type": "code",
+      "code": "function MyInput({ placeholder, ref }) {\n  return (\n    <input placeholder={placeholder}\n      ref={ref} />\n  );\n}",
+      "highlight": [
+        1,
+        4
+      ],
+      "say": "Read ref from props like any other prop, and pass it on to the built-in input."
+    },
+    {
+      "type": "code",
+      "code": "function MyForm() {\n  const inputRef = useRef(null);\n  return (\n    <>\n      <MyInput ref={inputRef} />\n      <button onClick={() =>\n        inputRef.current.focus()}>\n        Focus\n      </button>\n    </>\n  );\n}",
+      "highlight": [
+        5,
+        7
+      ],
+      "say": "The parent creates the ref and passes it down. It ends up pointing at the real input, so the parent can focus it."
+    },
+    {
+      "type": "text",
+      "text": "No more forwardRef for new components. It will be deprecated.",
+      "say": "New function components no longer need forward ref. It will be deprecated and removed in a future version."
+    }
+  ]
+}

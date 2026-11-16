@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-lazy-code-splitting-2",
+  "topic": "Performance",
+  "concept": "lazy-code-splitting",
+  "format": "fill-blank",
+  "level": "intermediate",
+  "tags": [
+    "lazy",
+    "suspense",
+    "code-splitting"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/lazy#suspense-for-code-splitting",
+  "question": "Fill the blank to show a spinner while the lazy code loads:",
+  "code": "<___ fallback={<Spinner />}>\n  <MarkdownPreview />\n</___>",
+  "options": [
+    "Suspense",
+    "Fragment",
+    "Profiler"
+  ],
+  "answer": 0,
+  "say": "Fill the blank to show a spinner while the lazy code loads.",
+  "explanation": "A Suspense boundary shows its fallback while the lazy component's code is loading.",
+  "explainSay": "Suspense."
+}

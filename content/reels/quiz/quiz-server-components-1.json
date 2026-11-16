@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-server-components-1",
+  "topic": "Server Components",
+  "concept": "server-components",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "server-components",
+    "rsc",
+    "async"
+  ],
+  "sourceUrl": "https://react.dev/reference/rsc/server-components",
+  "question": "True or false: Server Components are marked with \"use server\".",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: Server Components are marked with use server.",
+  "explanation": "False. There is no directive for Server Components. \"use server\" is for Server Functions.",
+  "explainSay": "False. Use server is for Server Functions."
+}

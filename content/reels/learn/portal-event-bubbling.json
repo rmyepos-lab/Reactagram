@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "portal-event-bubbling",
+  "topic": "Errors & Escape Hatches",
+  "concept": "portal-event-bubbling",
+  "format": "pitfall",
+  "level": "advanced",
+  "tags": [
+    "createPortal",
+    "events",
+    "propagation"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/createPortal#caveats",
+  "title": "Portal events bubble through the React tree",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Surprise clicks 🫧",
+      "say": "A portal’s DOM lives in document dot body. But its events still bubble to its React parents."
+    },
+    {
+      "type": "code",
+      "code": "<div onClick={() => console.log(\"div\")}>\n  {createPortal(\n    <button>Inside portal</button>,\n    document.body\n  )}\n</div>",
+      "highlight": [
+        1,
+        3
+      ],
+      "say": "Click the button. In the DOM it is not inside the div, but the div’s on click still fires."
+    },
+    {
+      "type": "text",
+      "text": "Events follow the React tree, not the DOM tree.",
+      "say": "Events from portals propagate according to the React tree, not the DOM tree."
+    },
+    {
+      "type": "text",
+      "text": "Problem? Stop propagation inside the portal, or move the portal up.",
+      "say": "If that causes trouble, stop propagation inside the portal, or move the portal higher in the React tree."
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "usedeferredvalue",
+  "topic": "Concurrent Rendering",
+  "concept": "usedeferredvalue",
+  "format": "special-use",
+  "level": "intermediate",
+  "tags": [
+    "useDeferredValue",
+    "concurrent",
+    "suspense"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useDeferredValue#showing-stale-content-while-fresh-content-is-loading",
+  "title": "useDeferredValue: keep showing old results",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Old results, not a spinner 🔎",
+      "say": "Use deferred value lets part of your UI lag behind, showing old content while new content loads."
+    },
+    {
+      "type": "code",
+      "code": "const [query, setQuery] = useState(\"\");\nconst deferredQuery = useDeferredValue(query);\n\n<input value={query} onChange={...} />\n<SearchResults query={deferredQuery} />",
+      "highlight": [
+        2,
+        5
+      ],
+      "say": "The input uses query. The results get the deferred query."
+    },
+    {
+      "type": "text",
+      "text": "1) Render with new query, old deferredQuery. 2) In the background, try the new value too.",
+      "say": "Type a letter. React first re-renders with the new query but the old deferred query. Then, in the background, it tries rendering with both updated."
+    },
+    {
+      "type": "code",
+      "code": "<div style={{\n  opacity: query !== deferredQuery ? 0.5 : 1,\n}}>\n  <SearchResults query={deferredQuery} />\n</div>",
+      "highlight": [
+        2
+      ],
+      "say": "If the new results are not ready, you keep seeing the stale list. Dim it when query and deferred query differ, so users know it is updating."
+    }
+  ]
+}

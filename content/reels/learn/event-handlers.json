@@ -1,0 +1,40 @@
+{
+  "kind": "learn",
+  "id": "event-handlers",
+  "topic": "Events",
+  "concept": "event-handlers",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "events",
+    "onClick"
+  ],
+  "sourceUrl": "https://react.dev/learn/responding-to-events#adding-event-handlers",
+  "title": "Adding an event handler",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Make a button do something 👆",
+      "say": "Event handlers are your own functions that React runs when the user clicks, hovers, or types."
+    },
+    {
+      "type": "code",
+      "code": "function Button() {\n  function handleClick() {\n    alert(\"You clicked me!\");\n  }\n  return (\n    <button onClick={handleClick}>\n      Click me\n    </button>\n  );\n}",
+      "highlight": [
+        2,
+        6
+      ],
+      "say": "Three steps. Declare a function inside the component. Put your logic in it. Then pass it to the button as onClick."
+    },
+    {
+      "type": "text",
+      "text": "Defined inside the component, so it can read props and state.",
+      "say": "Because the handler lives inside your component, it can read the props and state of that component."
+    },
+    {
+      "type": "text",
+      "text": "Convention: handle + event name. handleClick, handleMouseEnter.",
+      "say": "By convention, name it handle, followed by the event. Handle click, handle mouse enter."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-context-before-you-use-it-1",
+  "topic": "Context",
+  "concept": "context-before-you-use-it",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "context",
+    "props",
+    "children"
+  ],
+  "sourceUrl": "https://react.dev/learn/passing-data-deeply-with-context#before-you-use-context",
+  "question": "Layout never uses posts, it only passes them to Posts. Best fix before reaching for context?",
+  "code": "<Layout posts={posts} />",
+  "options": [
+    "Put posts in a context",
+    "Make Layout take children: <Layout><Posts posts={posts} /></Layout>",
+    "Store posts in a global variable"
+  ],
+  "answer": 1,
+  "say": "Layout never uses posts. It only passes them to Posts. What is the best fix before reaching for context?",
+  "explanation": "Extract components and pass JSX as children. It removes the pass-through layer without context.",
+  "explainSay": "Let Layout take children, and render Posts inside it. No context needed."
+}

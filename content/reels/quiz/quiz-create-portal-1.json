@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-create-portal-1",
+  "topic": "Errors & Escape Hatches",
+  "concept": "create-portal",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "createPortal",
+    "dom",
+    "modals"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/createPortal#rendering-a-modal-dialog-with-a-portal",
+  "question": "True or false: content in a portal can read context provided by its React parent.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: content inside a portal can read context provided by its React parent.",
+  "explanation": "True. A portal changes only the DOM placement. It still acts as a child in the React tree.",
+  "explainSay": "True. It is still a React child of its parent."
+}

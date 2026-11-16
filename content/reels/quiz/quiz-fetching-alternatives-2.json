@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-fetching-alternatives-2",
+  "topic": "Side Effects",
+  "concept": "fetching-alternatives",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "fetching",
+    "frameworks"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#what-are-good-alternatives-to-data-fetching-in-effects",
+  "question": "True or false: a parent fetching, rendering, then a child fetching can cause a \"network waterfall\".",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: a parent fetching, then rendering, then a child fetching can cause a network waterfall.",
+  "explanation": "True. Requests happen one after another instead of in parallel, which is much slower on slow networks.",
+  "explainSay": "True. The requests run one after another instead of in parallel."
+}

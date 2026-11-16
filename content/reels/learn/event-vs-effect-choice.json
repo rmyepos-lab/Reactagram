@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "event-vs-effect-choice",
+  "topic": "Side Effects",
+  "concept": "event-vs-effect-choice",
+  "format": "compare",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "events",
+    "reactivity"
+  ],
+  "sourceUrl": "https://react.dev/learn/separating-events-from-effects#reactive-values-and-reactive-logic",
+  "title": "Handler or Effect? Is the logic reactive?",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Reactive or not? ⚡",
+      "say": "A chat room must stay connected, and must send a message on click. One is an Effect, one is a handler. Here is the precise reason."
+    },
+    {
+      "type": "code",
+      "code": "function handleSendClick() {\n  sendMessage(message);\n}",
+      "highlight": [
+        2
+      ],
+      "say": "Logic in event handlers is not reactive. Typing changes message, but that does not mean the user wants to send. It only runs on the click."
+    },
+    {
+      "type": "code",
+      "code": "useEffect(() => {\n  const c = createConnection(roomId);\n  c.connect();\n  return () => c.disconnect();\n}, [roomId]);",
+      "highlight": [
+        2,
+        5
+      ],
+      "say": "Logic in Effects is reactive. A new room id does mean the user wants a different room, so it should re-run."
+    },
+    {
+      "type": "text",
+      "text": "Should this re-run when the value changes? Effect. Only on an interaction? Handler.",
+      "say": "So ask: should this code keep up with a changing value? Effect. Should it run only on a specific interaction? Event handler."
+    }
+  ]
+}

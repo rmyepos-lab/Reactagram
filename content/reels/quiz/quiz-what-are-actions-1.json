@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-what-are-actions-1",
+  "topic": "Actions & Forms",
+  "concept": "what-are-actions",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "actions",
+    "react-19",
+    "transitions"
+  ],
+  "sourceUrl": "https://react.dev/blog/2024/12/05/react-19#actions",
+  "question": "True or false: in React 19, startTransition can take an async function.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: in React nineteen, start transition can take an async function.",
+  "explanation": "True. React 19 supports async functions in transitions. By convention these are called Actions.",
+  "explainSay": "True. Those async transition functions are called Actions."
+}

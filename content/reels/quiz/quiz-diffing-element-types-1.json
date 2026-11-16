@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-diffing-element-types-1",
+  "topic": "How React Works",
+  "concept": "diffing-element-types",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "internals",
+    "diffing",
+    "state"
+  ],
+  "sourceUrl": "https://legacy.reactjs.org/docs/reconciliation.html#elements-of-different-types",
+  "question": "The root changes from <div><Counter /></div> to <span><Counter /></span>. What happens to Counter's state?",
+  "options": [
+    "Kept",
+    "Destroyed and recreated",
+    "Merged"
+  ],
+  "answer": 1,
+  "say": "The root changes from a div to a span, both containing Counter. What happens to Counter’s state?",
+  "explanation": "Different root types make React tear down the old tree. Counter is unmounted and a new one is mounted.",
+  "explainSay": "Destroyed. The whole subtree is rebuilt."
+}

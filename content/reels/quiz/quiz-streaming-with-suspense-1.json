@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-streaming-with-suspense-1",
+  "topic": "Server Rendering",
+  "concept": "streaming-with-suspense",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "ssr",
+    "streaming",
+    "suspense"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/server/renderToPipeableStream#streaming-more-content-as-it-loads",
+  "question": "Posts streams in after its fallback was sent. How does its HTML replace the fallback?",
+  "options": [
+    "The browser reloads the page",
+    "An inline <script> sent with the new HTML swaps it in",
+    "The client fetches Posts after hydration",
+    "The server holds the page until Posts is done"
+  ],
+  "answer": 1,
+  "say": "Posts streams in after its fallback was sent. How does its HTML replace the fallback?",
+  "explanation": "React sends the remaining HTML along with an inline script tag that replaces the fallback. This works before React itself loads in the browser.",
+  "explainSay": "React sends the new HTML with a small inline script that swaps it in, even before React loads."
+}

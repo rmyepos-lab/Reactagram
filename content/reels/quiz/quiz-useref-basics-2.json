@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-useref-basics-2",
+  "topic": "Refs",
+  "concept": "useref-basics",
+  "format": "fill-blank",
+  "level": "beginner",
+  "tags": [
+    "refs",
+    "useRef",
+    "basics"
+  ],
+  "sourceUrl": "https://react.dev/learn/referencing-values-with-refs#adding-a-ref-to-your-component",
+  "question": "Fill the blank to read the value stored in the ref:",
+  "code": "const timerRef = useRef(null);\n// later\nclearInterval(timerRef.___);",
+  "options": [
+    "value",
+    "current",
+    "get()"
+  ],
+  "answer": 1,
+  "say": "Fill the blank to read the value stored in this ref.",
+  "explanation": "useRef returns an object with a single property called current, which you read and write.",
+  "explainSay": "Current. It is the only property on a ref."
+}

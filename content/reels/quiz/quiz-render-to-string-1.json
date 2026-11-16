@@ -1,0 +1,26 @@
+{
+  "kind": "quiz",
+  "id": "quiz-render-to-string-1",
+  "topic": "Server Rendering",
+  "concept": "render-to-string",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "ssr",
+    "server-rendering",
+    "suspense"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/server/renderToString",
+  "question": "Comments loads its data with Suspense. What HTML does renderToString produce for this part?",
+  "code": "renderToString(\n  <Suspense fallback={<p>Loading…</p>}>\n    <Comments />\n  </Suspense>\n);",
+  "options": [
+    "The finished comments, after the data loads",
+    "Nothing, the boundary is skipped",
+    "<p>Loading…</p>",
+    "It throws an error"
+  ],
+  "answer": 2,
+  "say": "Comments loads its data with Suspense. What HTML does render to string produce for this part?",
+  "explanation": "renderToString doesn't wait. When Comments suspends, it renders the closest Suspense fallback into the HTML. The comments appear only after the client code loads.",
+  "explainSay": "The loading paragraph. Render to string doesn't wait, so it uses the closest Suspense fallback."
+}

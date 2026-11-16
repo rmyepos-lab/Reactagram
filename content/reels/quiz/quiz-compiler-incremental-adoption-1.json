@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-compiler-incremental-adoption-1",
+  "topic": "React Compiler",
+  "concept": "compiler-incremental-adoption",
+  "format": "which-hook",
+  "level": "advanced",
+  "tags": [
+    "compiler",
+    "adoption"
+  ],
+  "sourceUrl": "https://react.dev/learn/react-compiler/incremental-adoption",
+  "question": "You want to A/B test the compiler on a segment of users at runtime. Which approach fits?",
+  "options": [
+    "Babel overrides by directory",
+    "Runtime gating with a feature flag",
+    "Annotation mode with \"use memo\""
+  ],
+  "answer": 1,
+  "say": "You want to A B test the compiler on a segment of users at runtime. Which approach fits?",
+  "explanation": "Gating wraps compiled code in a runtime check: if the flag function returns true the optimized version runs, otherwise the original. That suits A/B tests and segment rollouts.",
+  "explainSay": "Runtime gating. A feature flag decides at runtime whether the optimized code runs."
+}

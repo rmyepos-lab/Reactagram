@@ -1,0 +1,43 @@
+{
+  "kind": "learn",
+  "id": "effect-non-react-widgets",
+  "topic": "Side Effects",
+  "concept": "effect-non-react-widgets",
+  "format": "pattern",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "widgets",
+    "cleanup"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#controlling-non-react-widgets",
+  "title": "Controlling non-React widgets",
+  "slides": [
+    {
+      "type": "title",
+      "text": "A map that isn’t React 🗺️",
+      "say": "Some widgets are not written in React, like a map with a set zoom level method. Keep it in sync with an Effect."
+    },
+    {
+      "type": "code",
+      "code": "useEffect(() => {\n  const map = mapRef.current;\n  map.setZoomLevel(zoomLevel);\n}, [zoomLevel]);",
+      "highlight": [
+        3
+      ],
+      "say": "No cleanup needed here. Calling set zoom level twice with the same value does nothing, so the dev double run is harmless."
+    },
+    {
+      "type": "code",
+      "code": "useEffect(() => {\n  const dialog = dialogRef.current;\n  dialog.showModal();\n  return () => dialog.close();\n}, []);",
+      "highlight": [
+        4
+      ],
+      "say": "But some APIs throw if called twice, like show modal on a dialog. Then close it in the cleanup."
+    },
+    {
+      "type": "text",
+      "text": "Ask: is calling setup twice harmless? If not, undo it in cleanup.",
+      "say": "Ask yourself: is running setup twice harmless? If not, undo it in the cleanup."
+    }
+  ]
+}

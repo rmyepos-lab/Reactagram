@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-what-is-a-hook-2",
+  "topic": "Hooks",
+  "concept": "what-is-a-hook",
+  "format": "true-false",
+  "level": "beginner",
+  "tags": [
+    "hooks",
+    "basics"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/hooks",
+  "question": "True or false: you can build your own Hooks by combining built-in ones.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: you can build your own Hooks by combining built-in ones.",
+  "explanation": "True. You can use the built-in Hooks or combine them to build your own custom Hooks.",
+  "explainSay": "True. Custom Hooks are built from the built-in ones."
+}

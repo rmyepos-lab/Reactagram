@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "reducers-must-be-pure",
+  "topic": "Reducers",
+  "concept": "reducers-must-be-pure",
+  "format": "pitfall",
+  "level": "intermediate",
+  "tags": [
+    "reducers",
+    "purity",
+    "strict-mode"
+  ],
+  "sourceUrl": "https://react.dev/learn/extracting-state-logic-into-a-reducer#writing-reducers-well",
+  "title": "Reducers must be pure",
+  "slides": [
+    {
+      "type": "title",
+      "text": "No side effects in reducers 🚫",
+      "say": "Reducers run during rendering. So they must be pure."
+    },
+    {
+      "type": "code",
+      "code": "function reducer(tasks, action) {\n  switch (action.type) {\n    case \"added\": {\n      // 🔴 side effect\n      fetch(\"/api/log\");\n      // 🔴 mutation\n      tasks.push(action.task);\n      return tasks;\n    }\n  }\n}",
+      "highlight": [
+        5,
+        7
+      ],
+      "say": "No requests, no timeouts, no side effects. And no mutating the state object or array."
+    },
+    {
+      "type": "code",
+      "code": "case \"added\": {\n  return [...tasks, action.task];\n}",
+      "highlight": [
+        2
+      ],
+      "say": "Return a new array instead. Same inputs, same output."
+    },
+    {
+      "type": "text",
+      "text": "Strict Mode calls your reducer twice in development to catch impurity.",
+      "say": "In Strict Mode, React calls your reducer twice in development, to help catch impure code."
+    }
+  ]
+}

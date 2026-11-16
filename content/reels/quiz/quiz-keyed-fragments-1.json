@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-keyed-fragments-1",
+  "topic": "Components & JSX",
+  "concept": "keyed-fragments",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "fragments",
+    "keys",
+    "lists"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/Fragment#rendering-a-list-of-fragments",
+  "question": "How do you fix the missing key here?",
+  "code": "items.map(item =>\n  <>\n    <dt>{item.term}</dt>\n    <dd>{item.text}</dd>\n  </>\n)",
+  "options": [
+    "Write <key={item.id}> … </>",
+    "Use <Fragment key={item.id}>",
+    "Put key on the <dt> only"
+  ],
+  "answer": 1,
+  "say": "This list is missing a key. How do you fix it?",
+  "explanation": "The <></> syntax cannot take a key. Import Fragment and write <Fragment key={item.id}>. The key belongs on the element returned by map.",
+  "explainSay": "Use the full Fragment component with the key. The short empty tags cannot take a key."
+}

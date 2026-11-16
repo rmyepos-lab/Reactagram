@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-use-promise-2",
+  "topic": "Suspense & Data",
+  "concept": "use-promise",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "use",
+    "Suspense",
+    "caching"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/use#caching-promises-for-client-components",
+  "question": "use() gets the same, already-resolved Promise on a re-render. What happens?",
+  "options": [
+    "It suspends again",
+    "It reads the value synchronously",
+    "It throws an error"
+  ],
+  "answer": 1,
+  "say": "Use gets the same, already resolved promise on a re-render. What happens?",
+  "explanation": "With the same cached Promise, use reads the resolved value synchronously without suspending.",
+  "explainSay": "It reads the value right away, with no suspending."
+}

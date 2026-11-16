@@ -1,0 +1,26 @@
+{
+  "kind": "quiz",
+  "id": "quiz-component-names-capitalized-2",
+  "topic": "Components & JSX",
+  "concept": "component-names-capitalized",
+  "format": "output",
+  "level": "beginner",
+  "tags": [
+    "components",
+    "jsx",
+    "naming"
+  ],
+  "sourceUrl": "https://react.dev/learn/your-first-component#what-the-browser-sees",
+  "question": "In this JSX, which tag does React treat as YOUR component?",
+  "code": "<section>\n  <h1>Scientists</h1>\n  <Profile />\n</section>",
+  "options": [
+    "section",
+    "h1",
+    "Profile",
+    "All three"
+  ],
+  "answer": 2,
+  "say": "In this JSX, which tag does React treat as your own component?",
+  "explanation": "Only Profile starts with a capital letter. section and h1 are lowercase, so React treats them as HTML tags.",
+  "explainSay": "Profile. It starts with a capital letter. Section and h1 are lowercase, so they are plain HTML tags."
+}

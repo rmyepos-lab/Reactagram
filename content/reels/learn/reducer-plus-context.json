@@ -1,0 +1,53 @@
+{
+  "kind": "learn",
+  "id": "reducer-plus-context",
+  "topic": "Context",
+  "concept": "reducer-plus-context",
+  "format": "pattern",
+  "level": "advanced",
+  "tags": [
+    "context",
+    "reducers",
+    "architecture"
+  ],
+  "sourceUrl": "https://react.dev/learn/scaling-up-with-reducer-and-context#combining-a-reducer-with-context",
+  "title": "Scale up with reducer + context",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Reducer + context = 🚀",
+      "say": "Combine a reducer with context, and any component can read and update state from far above."
+    },
+    {
+      "type": "code",
+      "code": "export const TasksContext =\n  createContext(null);\nexport const TasksDispatchContext =\n  createContext(null);",
+      "highlight": [
+        1,
+        3
+      ],
+      "say": "Step one: create two contexts. One for the tasks, one for the dispatch function."
+    },
+    {
+      "type": "code",
+      "code": "const [tasks, dispatch] =\n  useReducer(tasksReducer, initialTasks);\n\n<TasksContext value={tasks}>\n  <TasksDispatchContext value={dispatch}>\n    ...\n  </TasksDispatchContext>\n</TasksContext>",
+      "highlight": [
+        4,
+        5
+      ],
+      "say": "Step two: the top component puts tasks and dispatch into those contexts."
+    },
+    {
+      "type": "code",
+      "code": "function Task({ task }) {\n  const dispatch = useContext(\n    TasksDispatchContext\n  );\n  // dispatch({ type: \"deleted\", id })\n}",
+      "highlight": [
+        2
+      ],
+      "say": "Step three: any component below reads what it needs. No props or handlers passed down, yet the state still lives at the top."
+    },
+    {
+      "type": "text",
+      "text": "Bonus: wrap it in a TasksProvider with custom Hooks like useTasks().",
+      "say": "You can even move it all into one file, with a Tasks Provider component and custom Hooks like use tasks."
+    }
+  ]
+}

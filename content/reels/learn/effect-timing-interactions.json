@@ -1,0 +1,40 @@
+{
+  "kind": "learn",
+  "id": "effect-timing-interactions",
+  "topic": "Side Effects",
+  "concept": "effect-timing-interactions",
+  "format": "special-use",
+  "level": "advanced",
+  "tags": [
+    "useEffect",
+    "timing",
+    "paint"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useEffect#caveats",
+  "title": "When Effects run relative to paint",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Before or after paint? 🎨",
+      "say": "Usually Effects run after the browser paints. But clicks change that."
+    },
+    {
+      "type": "text",
+      "text": "Not caused by an interaction? React generally lets the browser paint first.",
+      "say": "If the Effect was not caused by an interaction, React generally lets the browser paint the screen first, then runs it."
+    },
+    {
+      "type": "text",
+      "text": "Caused by a click? React may run the Effect BEFORE paint, so the event system can see its result.",
+      "say": "If it was caused by an interaction like a click, React may run the Effect before paint, so its result can be observed by the event system."
+    },
+    {
+      "type": "code",
+      "code": "useEffect(() => {\n  // must wait until after paint\n  setTimeout(() => {\n    alert(\"Saved!\");\n  }, 0);\n}, [saved]);",
+      "highlight": [
+        3
+      ],
+      "say": "If work must wait until after paint, like an alert, wrap it in set timeout. And if you must block paint, use use layout effect instead."
+    }
+  ]
+}

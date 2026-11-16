@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-preserve-removed-state-2",
+  "topic": "State Structure & Sharing",
+  "concept": "preserve-removed-state",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "state",
+    "lifting-state",
+    "localStorage"
+  ],
+  "sourceUrl": "https://react.dev/learn/preserving-and-resetting-state#preserving-state-for-removed-components",
+  "question": "True or false: hiding every inactive chat with CSS always stays fast, even for large trees.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: hiding every inactive chat with CSS always stays fast, even for large trees.",
+  "explanation": "False. It works great for simple UIs, but can get very slow if the hidden trees are large with many DOM nodes.",
+  "explainSay": "False. It is fine for simple UIs, but large hidden trees can make it slow."
+}

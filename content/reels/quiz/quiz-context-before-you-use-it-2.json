@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-context-before-you-use-it-2",
+  "topic": "Context",
+  "concept": "context-before-you-use-it",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "context",
+    "props",
+    "children"
+  ],
+  "sourceUrl": "https://react.dev/learn/passing-data-deeply-with-context#before-you-use-context",
+  "question": "True or false: if a prop goes 3 levels deep, you should move it into context.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: if a prop goes three levels deep, you should move it into context.",
+  "explanation": "False. Passing props deep is fine and keeps data flow explicit. Try props and children first, then context.",
+  "explainSay": "False. Props several levels deep are fine. Try props and children first."
+}

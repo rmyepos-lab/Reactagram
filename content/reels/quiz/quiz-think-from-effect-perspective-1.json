@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-think-from-effect-perspective-1",
+  "topic": "Side Effects",
+  "concept": "think-from-effect-perspective",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "mental-model",
+    "synchronization"
+  ],
+  "sourceUrl": "https://react.dev/learn/lifecycle-of-reactive-effects#thinking-from-the-effects-perspective",
+  "question": "True or false: when writing an Effect, you should care whether the component is mounting or updating.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: when writing an Effect, you should care whether the component is mounting or updating.",
+  "explanation": "False. Focus on a single start/stop cycle. It should not matter if the component mounts, updates or unmounts.",
+  "explainSay": "False. Just describe how to start and stop syncing."
+}

@@ -1,0 +1,65 @@
+{
+  "kind": "learn",
+  "id": "uselayouteffect",
+  "topic": "Side Effects",
+  "concept": "uselayouteffect",
+  "format": "special-use",
+  "level": "advanced",
+  "tags": [
+    "useLayoutEffect",
+    "layout",
+    "measure"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useLayoutEffect#measuring-layout-before-the-browser-repaints-the-screen",
+  "title": "useLayoutEffect: measure before paint",
+  "slides": [
+    {
+      "type": "title",
+      "text": "A tooltip that won’t jump 📐",
+      "say": "A tooltip should sit above a button, or below it if there is no room. You need its height before the user sees it."
+    },
+    {
+      "type": "code",
+      "code": "const ref = useRef(null);\nconst [height, setHeight] = useState(0);\n\nuseLayoutEffect(() => {\n  const { height } =\n    ref.current.getBoundingClientRect();\n  setHeight(height);\n}, []);",
+      "highlight": [
+        4,
+        7
+      ],
+      "say": "Use layout effect runs after React updates the DOM, but before the browser repaints. Measure the tooltip, and set state."
+    },
+    {
+      "type": "visual",
+      "say": "Here is the order of events.",
+      "visual": {
+        "kind": "timeline",
+        "events": [
+          {
+            "id": "r1",
+            "label": "Render with height 0",
+            "note": "position may be wrong"
+          },
+          {
+            "id": "measure",
+            "label": "useLayoutEffect measures",
+            "note": "sets the real height"
+          },
+          {
+            "id": "r2",
+            "label": "Render again",
+            "note": "correct position"
+          },
+          {
+            "id": "paint",
+            "label": "Browser paints",
+            "note": "user sees only the final spot"
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "text": "The user never sees the wrong position.",
+      "say": "All of this happens before paint, so the user never sees the tooltip move."
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-destructuring-props-1",
+  "topic": "Props",
+  "concept": "destructuring-props",
+  "format": "bug-hunt",
+  "level": "beginner",
+  "tags": [
+    "props",
+    "destructuring"
+  ],
+  "sourceUrl": "https://react.dev/learn/passing-props-to-a-component#step-2-read-props-inside-the-child-component",
+  "question": "Rendered as <Hello name=\"Ana\" />, this shows the wrong thing. Why?",
+  "code": "function Hello(name) {\n  return <p>Hi {name.toUpperCase()}</p>;\n}",
+  "options": [
+    "name is the whole props object",
+    "toUpperCase only works on numbers",
+    "Props must be read with this.props"
+  ],
+  "answer": 0,
+  "say": "Rendered with name Ana, this component breaks. Why?",
+  "explanation": "Without { } the first argument is the whole props object, not the name string. Write function Hello({ name }).",
+  "explainSay": "Name is actually the whole props object. You forgot the curly braces. Write Hello with curly name."
+}

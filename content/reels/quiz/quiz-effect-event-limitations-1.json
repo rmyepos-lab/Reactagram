@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-effect-event-limitations-1",
+  "topic": "Side Effects",
+  "concept": "effect-event-limitations",
+  "format": "bug-hunt",
+  "level": "advanced",
+  "tags": [
+    "useEffectEvent",
+    "rules"
+  ],
+  "sourceUrl": "https://react.dev/learn/separating-events-from-effects#limitations-of-effect-events",
+  "question": "Which use of the Effect Event onTick breaks the rules?",
+  "options": [
+    "Calling it inside setInterval in an Effect",
+    "Passing it as a prop to <Timer onTick={onTick} />",
+    "Calling it from another Effect Event"
+  ],
+  "answer": 1,
+  "say": "Which use of the Effect Event on tick breaks the rules?",
+  "explanation": "Effect Events must never be passed to other components or Hooks. Call them only from Effects or other Effect Events.",
+  "explainSay": "Passing it as a prop. Effect Events stay next to the Effect that calls them."
+}

@@ -1,0 +1,50 @@
+{
+  "kind": "learn",
+  "id": "passing-props",
+  "topic": "Props",
+  "concept": "passing-props",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "props",
+    "components"
+  ],
+  "sourceUrl": "https://react.dev/learn/passing-props-to-a-component#passing-props-to-a-component",
+  "title": "Props: how parents talk to children",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Props are knobs 🎛️",
+      "say": "Props are how a parent component passes information to a child. Think of them as knobs you can turn."
+    },
+    {
+      "type": "code",
+      "code": "function Profile() {\n  return (\n    <Avatar\n      person={{ name: \"Lin\" }}\n      size={100}\n    />\n  );\n}",
+      "highlight": [
+        4,
+        5
+      ],
+      "text": "Step 1: pass them like attributes.",
+      "say": "Step one. The parent passes props like attributes. Here, a person object and a size."
+    },
+    {
+      "type": "code",
+      "code": "function Avatar(props) {\n  const person = props.person;\n  const size = props.size;\n  // ...\n}",
+      "highlight": [
+        1
+      ],
+      "text": "Step 2: read them from one object.",
+      "say": "Step two. The child receives them. A component function takes a single argument: the props object."
+    },
+    {
+      "type": "text",
+      "text": "Props are the only argument to your component, just like function arguments.",
+      "say": "Props play the same role as function arguments. In fact, they are the only argument your component gets."
+    },
+    {
+      "type": "text",
+      "text": "Change the props in the parent without thinking about how the child uses them.",
+      "say": "Takeaway: props let you think about parent and child separately. Tweak the knobs in the parent, change the logic in the child."
+    }
+  ]
+}

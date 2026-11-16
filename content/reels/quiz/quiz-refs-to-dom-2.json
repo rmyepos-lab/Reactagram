@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-refs-to-dom-2",
+  "topic": "Refs",
+  "concept": "refs-to-dom",
+  "format": "output",
+  "level": "beginner",
+  "tags": [
+    "refs",
+    "dom",
+    "focus"
+  ],
+  "sourceUrl": "https://react.dev/learn/manipulating-the-dom-with-refs#getting-a-ref-to-the-node",
+  "question": "What is inputRef.current during the very first render?",
+  "code": "const inputRef = useRef(null);\nconsole.log(inputRef.current);\nreturn <input ref={inputRef} />;",
+  "options": [
+    "The <input> node",
+    "null",
+    "undefined"
+  ],
+  "answer": 1,
+  "say": "What is input ref dot current during the very first render?",
+  "explanation": "During the first render the DOM node does not exist yet. React sets ref.current during the commit.",
+  "explainSay": "Null. The DOM node is created later, during the commit."
+}

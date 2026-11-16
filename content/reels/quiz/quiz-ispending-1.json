@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-ispending-1",
+  "topic": "Concurrent Rendering",
+  "concept": "ispending",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "useTransition",
+    "isPending",
+    "feedback"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useTransition#displaying-a-pending-visual-state",
+  "question": "While a slow Transition renders in the background, what is isPending?",
+  "options": [
+    "true",
+    "false",
+    "undefined"
+  ],
+  "answer": 0,
+  "say": "While a slow Transition renders in the background, what is is pending?",
+  "explanation": "isPending is true from the first startTransition call until all Actions complete and the final state is shown.",
+  "explainSay": "True, until the final state is shown."
+}

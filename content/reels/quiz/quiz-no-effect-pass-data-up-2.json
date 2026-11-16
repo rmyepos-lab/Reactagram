@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-no-effect-pass-data-up-2",
+  "topic": "Side Effects",
+  "concept": "no-effect-pass-data-up",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "data-flow",
+    "props"
+  ],
+  "sourceUrl": "https://react.dev/learn/you-might-not-need-an-effect#passing-data-to-the-parent",
+  "question": "True or false: in React, data normally flows from parent to child.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: in React, data normally flows from parent to child.",
+  "explanation": "True. Keeping it that way lets you trace wrong data by going up the component chain.",
+  "explainSay": "True. Data flows down, which keeps it easy to trace."
+}

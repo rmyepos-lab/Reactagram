@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "usereducer-init-function",
+  "topic": "Reducers",
+  "concept": "usereducer-init-function",
+  "format": "special-use",
+  "level": "advanced",
+  "tags": [
+    "reducers",
+    "useReducer",
+    "initializer"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useReducer#avoiding-recreating-the-initial-state",
+  "title": "useReducer's third argument: init",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Expensive initial state? 🐢",
+      "say": "React uses the initial state only once. But your code might still compute it every render."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 runs on every render\nuseReducer(\n  reducer,\n  createInitialState(username)\n);",
+      "highlight": [
+        4
+      ],
+      "say": "Here create initial state runs on every render, even though the result is ignored after the first one. Wasteful for big arrays."
+    },
+    {
+      "type": "code",
+      "code": "// ✅ runs once: init(initialArg)\nuseReducer(\n  reducer,\n  username,\n  createInitialState\n);",
+      "highlight": [
+        4,
+        5
+      ],
+      "say": "Pass the function itself as the third argument, and its input as the second. React calls create initial state with username, once."
+    },
+    {
+      "type": "text",
+      "text": "Init needs no input? Pass null as the second argument.",
+      "say": "If your initializer needs no information, pass null as the second argument."
+    }
+  ]
+}

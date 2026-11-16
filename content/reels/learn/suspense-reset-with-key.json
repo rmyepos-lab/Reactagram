@@ -1,0 +1,40 @@
+{
+  "kind": "learn",
+  "id": "suspense-reset-with-key",
+  "topic": "Suspense & Data",
+  "concept": "suspense-reset-with-key",
+  "format": "pattern",
+  "level": "advanced",
+  "tags": [
+    "Suspense",
+    "key",
+    "navigation"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/Suspense#resetting-suspense-boundaries-on-navigation",
+  "title": "Reset a Suspense boundary with a key",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Alice’s bio on Bob’s page? 🔑",
+      "say": "During a Transition, React keeps old content visible. But going from Alice’s profile to Bob’s, you want a fallback, not Alice’s bio."
+    },
+    {
+      "type": "code",
+      "code": "<ProfilePage key={queryParams.id} />",
+      "highlight": [
+        1
+      ],
+      "say": "Give it a key based on the profile id. A different key means different content."
+    },
+    {
+      "type": "text",
+      "text": "New key → React resets the boundary and shows the fallback.",
+      "say": "With a new key, React resets the Suspense boundary during navigation, and shows the fallback instead of the previous user."
+    },
+    {
+      "type": "text",
+      "text": "Put the key on the boundary or any component above it. Good routers do this for you.",
+      "say": "The key can go on the boundary itself or a component above it. Suspense integrated routers should do this automatically."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-getsnapshot-cached-2",
+  "topic": "Side Effects",
+  "concept": "getsnapshot-cached",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "useSyncExternalStore",
+    "snapshot",
+    "bugs"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useSyncExternalStore#im-getting-an-error-the-result-of-getsnapshot-should-be-cached",
+  "question": "True or false: while the store has not changed, getSnapshot must return the same value.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: while the store has not changed, get snapshot must return the same value.",
+  "explanation": "True. Repeated calls must return the same value until the store changes.",
+  "explainSay": "True. Same store, same snapshot."
+}

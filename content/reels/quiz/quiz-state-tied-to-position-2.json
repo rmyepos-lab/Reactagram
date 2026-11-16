@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-state-tied-to-position-2",
+  "topic": "State Structure & Sharing",
+  "concept": "state-tied-to-position",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "render-tree",
+    "position"
+  ],
+  "sourceUrl": "https://react.dev/learn/preserving-and-resetting-state#state-is-tied-to-a-position-in-the-tree",
+  "question": "True or false: state is stored inside the JSX tag itself.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: state is stored inside the JSX tag itself.",
+  "explanation": "False. State is held inside React and associated with the position in the tree where you render that JSX.",
+  "explainSay": "False. React holds the state, and links it to the tag’s position in the tree."
+}

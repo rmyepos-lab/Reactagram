@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-jsx-single-root-1",
+  "topic": "Components & JSX",
+  "concept": "jsx-single-root",
+  "format": "fill-blank",
+  "level": "beginner",
+  "tags": [
+    "jsx",
+    "fragments"
+  ],
+  "sourceUrl": "https://react.dev/learn/writing-markup-with-jsx#1-return-a-single-root-element",
+  "question": "Fill the blanks to group these without adding an extra DOM node:",
+  "code": "return (\n  ___\n    <h1>Todos</h1>\n    <ul>...</ul>\n  ___\n);",
+  "options": [
+    "<div> and </div>",
+    "<> and </>",
+    "( and )"
+  ],
+  "answer": 1,
+  "say": "Fill the blanks to group these two tags without adding an extra element to the page.",
+  "explanation": "A Fragment, written <> and </>, groups elements without leaving anything in the browser HTML tree. A div would add a node.",
+  "explainSay": "Use a Fragment, the empty tags. It groups the elements without adding anything to the HTML. A div would add an extra node."
+}

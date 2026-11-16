@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-no-effect-post-request-1",
+  "topic": "Side Effects",
+  "concept": "no-effect-post-request",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "events",
+    "fetch"
+  ],
+  "sourceUrl": "https://react.dev/learn/you-might-not-need-an-effect#sending-a-post-request",
+  "question": "Where should the /api/register POST go?",
+  "options": [
+    "In a useEffect watching jsonToSubmit",
+    "In the submit event handler",
+    "In the component body during render"
+  ],
+  "answer": 1,
+  "say": "Where should the register POST request go?",
+  "explanation": "It is caused by one interaction, pressing Submit, so it belongs in the event handler.",
+  "explainSay": "In the submit handler. It is caused by the click."
+}

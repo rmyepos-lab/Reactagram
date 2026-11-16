@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-lifting-state-up-2",
+  "topic": "State Structure & Sharing",
+  "concept": "lifting-state-up",
+  "format": "bug-hunt",
+  "level": "beginner",
+  "tags": [
+    "state",
+    "lifting-state",
+    "props"
+  ],
+  "sourceUrl": "https://react.dev/learn/sharing-state-between-components#lifting-state-up-by-example",
+  "question": "Panel gets isActive from Accordion. How can its button make it active?",
+  "code": "function Panel({ isActive, ___ }) {\n  return (\n    <button onClick={___}>Show</button>\n  );\n}",
+  "options": [
+    "Call setIsActive(true) inside Panel",
+    "Receive an onShow prop and call it",
+    "Set isActive = true directly"
+  ],
+  "answer": 1,
+  "say": "Panel gets is active from Accordion. How can its button make it the active panel?",
+  "explanation": "The state lives in Accordion, so it passes an event handler like onShow down. Panel calls it to ask the parent to change state.",
+  "explainSay": "Receive an on show handler from the parent and call it. The parent owns the state."
+}

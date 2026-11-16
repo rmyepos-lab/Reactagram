@@ -1,0 +1,39 @@
+{
+  "kind": "learn",
+  "id": "list-keys",
+  "topic": "Rendering Lists & Conditions",
+  "concept": "list-keys",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "lists",
+    "keys"
+  ],
+  "sourceUrl": "https://react.dev/learn/rendering-lists#keeping-list-items-in-order-with-key",
+  "title": "Why every list item needs a key",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Keys are file names 🗂️",
+      "say": "Rendering a list without keys gives a warning: each child in a list should have a unique key prop. Here is why."
+    },
+    {
+      "type": "text",
+      "text": "Imagine files with no names, only \"first\", \"second\". Delete one and everything shifts.",
+      "say": "Imagine your desktop files had no names. Only first file, second file. Delete one, and every position shifts. Confusing."
+    },
+    {
+      "type": "code",
+      "code": "people.map(person =>\n  <li key={person.id}>\n    {person.name}\n  </li>\n)",
+      "highlight": [
+        2
+      ],
+      "say": "A key is like a file name. A string or number that identifies the item among its siblings, even when the list is reordered."
+    },
+    {
+      "type": "text",
+      "text": "JSX directly inside map() always needs a key, unique among siblings.",
+      "say": "Rule: JSX elements directly inside a map call always need keys. They must be unique among siblings, but can repeat in a different array."
+    }
+  ]
+}

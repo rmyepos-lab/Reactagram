@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-compiler-and-manual-memo-1",
+  "topic": "React Compiler",
+  "concept": "compiler-and-manual-memo",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "compiler",
+    "performance"
+  ],
+  "sourceUrl": "https://react.dev/learn/react-compiler/introduction#what-should-i-do-about-usememo-usecallback-and-reactmemo",
+  "question": "Three components each call heavySort(items) with the same items. With the compiler on, what happens?",
+  "options": [
+    "The result is computed once and shared",
+    "heavySort is never called",
+    "Each component computes it; the cache isn't shared",
+    "The compiler throws a build error"
+  ],
+  "answer": 2,
+  "say": "Three components each call heavy sort with the same items. With the compiler on, what happens?",
+  "explanation": "The compiler's memoization isn't shared across components or hooks, so each one runs heavySort. For a truly expensive shared function, consider memoizing it outside React.",
+  "explainSay": "Each component computes it. The compiler's cache isn't shared between components."
+}

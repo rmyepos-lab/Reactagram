@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-use-client-2",
+  "topic": "Server Components",
+  "concept": "use-client",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "use-client",
+    "rsc",
+    "boundary"
+  ],
+  "sourceUrl": "https://react.dev/reference/rsc/use-client",
+  "question": "True or false: modules imported by a 'use client' file also run on the client.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: modules imported by a use client file also run on the client.",
+  "explanation": "True. It marks the module and its transitive dependencies as client code.",
+  "explainSay": "True. Its dependencies become client code too."
+}

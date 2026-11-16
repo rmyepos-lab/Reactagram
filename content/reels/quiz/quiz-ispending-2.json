@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-ispending-2",
+  "topic": "Concurrent Rendering",
+  "concept": "ispending",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "useTransition",
+    "isPending",
+    "feedback"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useTransition#displaying-a-pending-visual-state",
+  "question": "You need to show a spinner during a Transition. Why isn't standalone startTransition enough?",
+  "options": [
+    "It can't update state",
+    "It doesn't tell you if a Transition is pending",
+    "It only works in class components"
+  ],
+  "answer": 1,
+  "say": "You need to show a spinner during a Transition. Why is the standalone start transition not enough?",
+  "explanation": "Standalone startTransition gives no way to track a pending Transition. useTransition returns isPending.",
+  "explainSay": "It cannot tell you if the Transition is pending. Use the Hook for is pending."
+}

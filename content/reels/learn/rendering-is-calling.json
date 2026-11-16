@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "rendering-is-calling",
+  "topic": "How React Works",
+  "concept": "rendering-is-calling",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "rendering",
+    "components",
+    "internals"
+  ],
+  "sourceUrl": "https://react.dev/learn/render-and-commit#step-2-react-renders-your-components",
+  "title": "Rendering means React calls your component",
+  "slides": [
+    {
+      "type": "title",
+      "text": "\"Rendering\" = a function call 📞",
+      "say": "In React, rendering means one simple thing: React calls your component function."
+    },
+    {
+      "type": "text",
+      "text": "Initial render: React calls the root component. Later: the component whose state changed.",
+      "say": "On the initial render, React calls the root component. For later renders, it calls the component whose state update triggered the render."
+    },
+    {
+      "type": "code",
+      "code": "function Gallery() {\n  return (\n    <section>\n      <Image />\n      <Image />\n    </section>\n  );\n}",
+      "highlight": [
+        4,
+        5
+      ],
+      "say": "It is recursive. If Gallery returns Image, React calls Image next, and so on, until nothing nested is left."
+    },
+    {
+      "type": "text",
+      "text": "First time: create DOM nodes. Re-render: work out what changed. Always pure.",
+      "say": "On the first render, React creates the DOM nodes. On a re-render, it works out which properties changed. Either way, rendering must be a pure calculation."
+    }
+  ]
+}

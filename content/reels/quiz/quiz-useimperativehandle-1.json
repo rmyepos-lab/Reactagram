@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-useimperativehandle-1",
+  "topic": "Refs",
+  "concept": "useimperativehandle",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "refs",
+    "useImperativeHandle"
+  ],
+  "sourceUrl": "https://react.dev/learn/manipulating-the-dom-with-refs#exposing-a-subset-of-the-api-with-an-imperative-handle",
+  "question": "The parent calls inputRef.current.style.color = \"red\". What happens?",
+  "code": "useImperativeHandle(ref, () => ({\n  focus() { realRef.current.focus(); },\n}));",
+  "options": [
+    "The input turns red",
+    "It fails: the handle has no style",
+    "React re-renders the input"
+  ],
+  "answer": 1,
+  "say": "The parent sets input ref dot current dot style dot color to red. What happens?",
+  "explanation": "The parent's ref holds only the custom handle { focus }, not the DOM node, so style is undefined.",
+  "explainSay": "It fails. The parent only has the handle with focus, not the DOM node."
+}

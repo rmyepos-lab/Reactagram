@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-update-priorities-1",
+  "topic": "How React Works",
+  "concept": "update-priorities",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "internals",
+    "transitions",
+    "priority"
+  ],
+  "sourceUrl": "https://react.dev/blog/2022/03/29/react-v18#new-feature-transitions",
+  "question": "A user types into a search box. Which update should be urgent?",
+  "options": [
+    "Showing the typed text in the input",
+    "Rendering 1,000 filtered results",
+    "Both equally"
+  ],
+  "answer": 0,
+  "say": "A user types into a search box. Which update should be urgent?",
+  "explanation": "The input reflects direct interaction and must update immediately. The results can be a transition.",
+  "explainSay": "Showing the typed text. The results can wait."
+}

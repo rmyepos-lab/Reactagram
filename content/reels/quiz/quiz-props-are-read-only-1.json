@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-props-are-read-only-1",
+  "topic": "Props",
+  "concept": "props-are-read-only",
+  "format": "true-false",
+  "level": "beginner",
+  "tags": [
+    "props",
+    "immutability",
+    "state"
+  ],
+  "sourceUrl": "https://react.dev/learn/passing-props-to-a-component#how-props-change-over-time",
+  "question": "True or false: a prop can have a different value on a later render.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: a prop can have a different value on a later render.",
+  "explanation": "True. A parent can pass different props over time. What a child must not do is change the props it received.",
+  "explainSay": "True. The parent can pass new props each render. The child just cannot change them itself."
+}

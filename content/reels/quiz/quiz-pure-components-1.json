@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-pure-components-1",
+  "topic": "Purity",
+  "concept": "pure-components",
+  "format": "true-false",
+  "level": "beginner",
+  "tags": [
+    "purity",
+    "rendering"
+  ],
+  "sourceUrl": "https://react.dev/learn/keeping-components-pure#purity-components-as-formulas",
+  "question": "True or false: a pure component given the same props always returns the same JSX.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: a pure component given the same props always returns the same JSX.",
+  "explanation": "True. Same inputs, same output. A pure component only calculates its JSX from its inputs.",
+  "explainSay": "True. Same inputs, same output. Always."
+}

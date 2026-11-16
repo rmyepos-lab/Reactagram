@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "keyed-fragments",
+  "topic": "Components & JSX",
+  "concept": "keyed-fragments",
+  "format": "pitfall",
+  "level": "intermediate",
+  "tags": [
+    "fragments",
+    "keys",
+    "lists"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/Fragment#rendering-a-list-of-fragments",
+  "title": "Keys on Fragments need the long form",
+  "slides": [
+    {
+      "type": "title",
+      "text": "A Fragment in a list needs a key 🔑",
+      "say": "Mapping a list where each item is a Fragment? Then the Fragment needs a key."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 can't put a key here\nposts.map(post =>\n  <>\n    <h1>{post.title}</h1>\n    <p>{post.body}</p>\n  </>\n)",
+      "highlight": [
+        3
+      ],
+      "say": "The short empty tag syntax cannot take a key. There is nowhere to write it."
+    },
+    {
+      "type": "code",
+      "code": "import { Fragment } from \"react\";\n\nposts.map(post =>\n  <Fragment key={post.id}>\n    <h1>{post.title}</h1>\n    <p>{post.body}</p>\n  </Fragment>\n)",
+      "highlight": [
+        1,
+        4
+      ],
+      "say": "So import Fragment from react, write it out in full, and give it the key."
+    },
+    {
+      "type": "text",
+      "text": "Still no wrapper in the DOM. Just a key React can track.",
+      "say": "You still get no wrapper element in the page. Only a key that React uses to track each item."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-usereducer-basics-2",
+  "topic": "Reducers",
+  "concept": "usereducer-basics",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "reducers",
+    "useReducer",
+    "dispatch"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useReducer#adding-a-reducer-to-a-component",
+  "question": "state is { age: 42 }. After this dispatch, what is the next state?",
+  "code": "function reducer(state, action) {\n  if (action.type === \"incremented_age\") {\n    return { age: state.age + 1 };\n  }\n  return state;\n}\ndispatch({ type: \"incremented_age\" });",
+  "options": [
+    "{ age: 42 }",
+    "{ age: 43 }",
+    "undefined"
+  ],
+  "answer": 1,
+  "say": "State has age forty two. After this dispatch, what is the next state?",
+  "explanation": "The action matches \"incremented_age\", so the reducer returns { age: 43 }, and React stores it.",
+  "explainSay": "Age forty three. The reducer returns a new object with age plus one."
+}

@@ -1,0 +1,40 @@
+{
+  "kind": "learn",
+  "id": "interruptible-rendering",
+  "topic": "How React Works",
+  "concept": "interruptible-rendering",
+  "format": "concept",
+  "level": "advanced",
+  "tags": [
+    "internals",
+    "purity",
+    "concurrent"
+  ],
+  "sourceUrl": "https://react.dev/learn/keeping-components-pure#why-does-react-care-about-purity",
+  "title": "Why interruptible rendering needs purity",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Render can be thrown away ♻️",
+      "say": "With Fiber, React can pause, abort, and restart rendering. That only works if rendering is pure."
+    },
+    {
+      "type": "text",
+      "text": "Data changes mid-render? React can restart without finishing the outdated render.",
+      "say": "If data changes in the middle of rendering a deep tree, React can restart rendering without wasting time to finish the outdated render."
+    },
+    {
+      "type": "code",
+      "code": "function Row({ item }) {\n  // 🔴 side effect during render\n  analytics.track(item.id);\n  return <li>{item.name}</li>;\n}",
+      "highlight": [
+        3
+      ],
+      "say": "If a render can be started, thrown away, and redone, a side effect in render could run several times for one screen update."
+    },
+    {
+      "type": "text",
+      "text": "Pure render = safe to stop at any time. Side effects go in handlers or Effects.",
+      "say": "Purity makes it safe to stop calculating at any time. Keep side effects in event handlers or Effects, which only run for committed renders."
+    }
+  ]
+}

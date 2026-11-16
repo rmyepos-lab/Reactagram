@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-compiler-directives-1",
+  "topic": "React Compiler",
+  "concept": "compiler-directives",
+  "format": "bug-hunt",
+  "level": "advanced",
+  "tags": [
+    "compiler",
+    "directives"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-compiler/directives",
+  "question": "This component is still compiled. Why is the directive ignored?",
+  "code": "function Chart({ data }) {\n  const rows = toRows(data);\n  \"use no memo\";\n  return <Table rows={rows} />;\n}",
+  "options": [
+    "It must be written as a comment",
+    "It isn't the first statement in the function",
+    "Directives only work at module level",
+    "Directives only work on exported components"
+  ],
+  "answer": 1,
+  "say": "This component is still compiled. Why is the directive ignored?",
+  "explanation": "A directive must come at the very beginning of the function body. Placed after another statement, it's ignored. Also check its spelling.",
+  "explainSay": "It's not the first statement. Directives must be at the very start of the function."
+}

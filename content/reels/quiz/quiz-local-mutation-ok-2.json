@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-local-mutation-ok-2",
+  "topic": "Purity",
+  "concept": "local-mutation-ok",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "purity",
+    "mutation"
+  ],
+  "sourceUrl": "https://react.dev/learn/keeping-components-pure#local-mutation-your-components-little-secret",
+  "question": "True or false: pushing into an array you created in the same render keeps the component pure.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: pushing into an array you created in the same render keeps the component pure.",
+  "explanation": "True. Changing variables and objects you just created while rendering is fine. No outside code knows.",
+  "explainSay": "True. That is local mutation. Nothing outside the component can see it."
+}

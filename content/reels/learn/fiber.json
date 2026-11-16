@@ -1,0 +1,37 @@
+{
+  "kind": "learn",
+  "id": "fiber",
+  "topic": "How React Works",
+  "concept": "fiber",
+  "format": "concept",
+  "level": "advanced",
+  "tags": [
+    "internals",
+    "fiber",
+    "scheduling"
+  ],
+  "sourceUrl": "https://github.com/acdlite/react-fiber-architecture",
+  "title": "Fiber: one unit of work per component",
+  "slides": [
+    {
+      "type": "title",
+      "text": "What is a fiber? 🧵",
+      "say": "Fiber is React’s reconciliation engine since React sixteen. Its headline feature is incremental rendering."
+    },
+    {
+      "type": "text",
+      "text": "A fiber = a JS object for one component: its type, key, props, and links to child, sibling and parent.",
+      "say": "A fiber is a plain JavaScript object with information about one component: its type, its key, its props, and pointers to its child, sibling, and parent fibers."
+    },
+    {
+      "type": "text",
+      "text": "Think of it as a \"virtual stack frame\" React can pause, resume, reuse or abort.",
+      "say": "Think of it as a virtual stack frame. Because React manages these frames itself, it can pause work, come back later, reuse it, or throw it away."
+    },
+    {
+      "type": "text",
+      "text": "Up to two fibers per component: current (on screen) and work-in-progress. (Simplified.)",
+      "say": "Each component has at most two fibers: the current one on screen, and a work in progress one. This is a simplified view of internals that may change."
+    }
+  ]
+}

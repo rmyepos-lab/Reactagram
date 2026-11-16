@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-prevent-default-1",
+  "topic": "Events",
+  "concept": "prevent-default",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "events",
+    "forms",
+    "preventDefault"
+  ],
+  "sourceUrl": "https://react.dev/learn/responding-to-events#preventing-default-behavior",
+  "question": "Submitting your form reloads the page. Which call stops that?",
+  "options": [
+    "e.stopPropagation()",
+    "e.preventDefault()",
+    "return false"
+  ],
+  "answer": 1,
+  "say": "Submitting your form reloads the page. Which call stops that?",
+  "explanation": "The reload is the browser's default behavior for submit. e.preventDefault() stops it. stopPropagation only stops parent handlers.",
+  "explainSay": "Prevent default. The reload is the browser’s default action."
+}

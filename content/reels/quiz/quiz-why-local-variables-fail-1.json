@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-why-local-variables-fail-1",
+  "topic": "State",
+  "concept": "why-local-variables-fail",
+  "format": "output",
+  "level": "beginner",
+  "tags": [
+    "state",
+    "variables",
+    "rendering"
+  ],
+  "sourceUrl": "https://react.dev/learn/state-a-components-memory#when-a-regular-variable-isnt-enough",
+  "question": "You click the button 3 times. What does it show?",
+  "code": "function Counter() {\n  let count = 0;\n  return (\n    <button onClick={() => count++}>\n      {count}\n    </button>\n  );\n}",
+  "options": [
+    "0",
+    "3",
+    "1"
+  ],
+  "answer": 0,
+  "say": "You click this button three times. What does it show?",
+  "explanation": "Changing a local variable does not trigger a re-render, and even on a re-render, count would start again at 0.",
+  "explainSay": "Zero. Changing a local variable never triggers a render, and each render would start over at zero anyway."
+}

@@ -1,0 +1,89 @@
+{
+  "kind": "learn",
+  "id": "ssr-basics",
+  "topic": "Server Rendering",
+  "concept": "ssr-basics",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "ssr",
+    "server-rendering",
+    "hydration"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/server",
+  "title": "Server rendering: HTML first, then hydrate",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Show the page before the JavaScript arrives 🚀",
+      "say": "With server rendering, the user sees real HTML before your JavaScript has even loaded. Here is how it works."
+    },
+    {
+      "type": "visual",
+      "text": "The server sends a snapshot. The client brings it to life.",
+      "visual": {
+        "kind": "timeline",
+        "events": [
+          {
+            "id": "server",
+            "label": "Server renders HTML",
+            "note": "react-dom/server APIs"
+          },
+          {
+            "id": "show",
+            "label": "Browser shows the HTML",
+            "note": "visible, not interactive yet"
+          },
+          {
+            "id": "js",
+            "label": "JavaScript loads",
+            "note": "your bundle arrives"
+          },
+          {
+            "id": "hydrate",
+            "label": "hydrateRoot attaches",
+            "note": "now the app is interactive"
+          }
+        ]
+      },
+      "say": "First, the server renders your components to HTML, using the react dom server APIs.",
+      "steps": [
+        {
+          "say": "The browser shows that HTML right away. The user can read it, but buttons don't work yet.",
+          "show": [
+            "show"
+          ],
+          "focus": "show"
+        },
+        {
+          "say": "Meanwhile, your JavaScript bundle downloads.",
+          "show": [
+            "js"
+          ],
+          "focus": "js"
+        },
+        {
+          "say": "Finally, hydrate root attaches React to the HTML, and the page becomes a fully interactive app.",
+          "show": [
+            "hydrate"
+          ],
+          "focus": "hydrate"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "code": "// server: generate the first HTML\nimport { renderToPipeableStream }\n  from \"react-dom/server\";\n\n// client: make it interactive\nimport { hydrateRoot }\n  from \"react-dom/client\";",
+      "highlight": [
+        2,
+        6
+      ],
+      "say": "The server side APIs live in react dom server. On the client, hydrate root from react dom client takes over."
+    },
+    {
+      "type": "text",
+      "text": "Server APIs run only at the top level of your app on the server. Most components never import them, and a framework may call them for you.",
+      "say": "These server APIs only run at the top level of your app, on the server. Most components never import them. Often a framework calls them for you."
+    }
+  ]
+}

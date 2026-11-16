@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-useoptimistic-1",
+  "topic": "Actions & Forms",
+  "concept": "useoptimistic",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "useOptimistic",
+    "actions",
+    "ux"
+  ],
+  "sourceUrl": "https://react.dev/blog/2024/12/05/react-19#new-hook-optimistic-updates",
+  "question": "updateName fails. What does optimisticName show afterwards?",
+  "options": [
+    "The new name forever",
+    "It switches back to currentName",
+    "undefined"
+  ],
+  "answer": 1,
+  "say": "Update name fails. What does optimistic name show afterwards?",
+  "explanation": "When the Action finishes or errors, React automatically switches back to the currentName value.",
+  "explainSay": "It switches back to the current name."
+}

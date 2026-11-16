@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-updating-objects-2",
+  "topic": "State",
+  "concept": "updating-objects",
+  "format": "output",
+  "level": "beginner",
+  "tags": [
+    "state",
+    "objects",
+    "spread"
+  ],
+  "sourceUrl": "https://react.dev/learn/updating-objects-in-state#copying-objects-with-the-spread-syntax",
+  "question": "person is { first: \"Ada\", last: \"Byron\" }. What is the new state?",
+  "code": "setPerson({ first: \"Grace\" });",
+  "options": [
+    "{ first: \"Grace\", last: \"Byron\" }",
+    "{ first: \"Grace\" }",
+    "{ first: \"Ada\", last: \"Byron\" }"
+  ],
+  "answer": 1,
+  "say": "Person has a first and a last name. What is the new state after this call?",
+  "explanation": "useState replaces state with what you pass. It does not merge, so last is gone. Spread ...person to keep it.",
+  "explainSay": "Only first, Grace. The setter replaces the whole object. It does not merge. Spread the old person to keep last."
+}

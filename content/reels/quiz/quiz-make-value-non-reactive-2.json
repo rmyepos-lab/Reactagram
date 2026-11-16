@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-make-value-non-reactive-2",
+  "topic": "Side Effects",
+  "concept": "make-value-non-reactive",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "dependencies",
+    "reactive"
+  ],
+  "sourceUrl": "https://react.dev/learn/lifecycle-of-reactive-effects#what-to-do-when-you-dont-want-to-re-synchronize",
+  "question": "True or false: a constant declared inside the Effect body is reactive.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: a constant declared inside the Effect body is reactive.",
+  "explanation": "False. It is not calculated during rendering, so it is not a reactive value and not a dependency.",
+  "explainSay": "False. It is not calculated during render, so it is not reactive."
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-reactive-values-1",
+  "topic": "Side Effects",
+  "concept": "reactive-values",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "dependencies",
+    "reactive"
+  ],
+  "sourceUrl": "https://react.dev/learn/lifecycle-of-reactive-effects#effects-react-to-reactive-values",
+  "question": "Which value is missing from the dependencies?",
+  "code": "function Chat({ roomId }) {\n  const [url, setUrl] = useState(DEFAULT);\n  useEffect(() => {\n    const c = connect(url, roomId);\n    return () => c.disconnect();\n  }, [roomId]);\n}",
+  "options": [
+    "DEFAULT",
+    "url",
+    "connect"
+  ],
+  "answer": 1,
+  "say": "Which value is missing from this Effect’s dependencies?",
+  "explanation": "url is state, so it is reactive and must be listed. DEFAULT and connect come from outside the component.",
+  "explainSay": "URL. It is state, so it is reactive and must be a dependency."
+}

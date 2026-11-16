@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "starttransition",
+  "topic": "Concurrent Rendering",
+  "concept": "starttransition",
+  "format": "special-use",
+  "level": "intermediate",
+  "tags": [
+    "startTransition",
+    "concurrent"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/startTransition",
+  "title": "startTransition without the Hook",
+  "slides": [
+    {
+      "type": "title",
+      "text": "No Hook? No problem 🔧",
+      "say": "Need a Transition outside a component, like in a data library? Import start transition directly."
+    },
+    {
+      "type": "code",
+      "code": "import { startTransition } from \"react\";\n\nfunction selectTab(next) {\n  startTransition(() => {\n    setTab(next);\n  });\n}",
+      "highlight": [
+        1,
+        4
+      ],
+      "say": "It works like the one from use transition. Updates made during the call are marked as Transitions."
+    },
+    {
+      "type": "code",
+      "code": "startTransition(() => {\n  // 🔴 not a Transition\n  setTimeout(() => {\n    setPage(\"/about\");\n  }, 1000);\n});",
+      "highlight": [
+        3,
+        4
+      ],
+      "say": "The function runs immediately. Updates in a set timeout happen later, so they are not marked as Transitions."
+    },
+    {
+      "type": "text",
+      "text": "No isPending here. Need a spinner? Use useTransition.",
+      "say": "One difference: it gives you no is pending flag. For a pending indicator, use the Hook."
+    }
+  ]
+}

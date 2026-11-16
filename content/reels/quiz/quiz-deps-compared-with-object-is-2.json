@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-deps-compared-with-object-is-2",
+  "topic": "Side Effects",
+  "concept": "deps-compared-with-object-is",
+  "format": "fill-blank",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "dependencies",
+    "Object.is"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#step-2-specify-the-effect-dependencies",
+  "question": "React compares each dependency with its previous value using ___.",
+  "options": [
+    "==",
+    "JSON.stringify",
+    "Object.is"
+  ],
+  "answer": 2,
+  "say": "React compares each dependency with its previous value using what?",
+  "explanation": "React uses Object.is. Primitives compare by value; objects only match if they are the same object.",
+  "explainSay": "Object dot is."
+}

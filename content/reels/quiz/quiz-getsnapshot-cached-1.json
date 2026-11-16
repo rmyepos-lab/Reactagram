@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-getsnapshot-cached-1",
+  "topic": "Side Effects",
+  "concept": "getsnapshot-cached",
+  "format": "bug-hunt",
+  "level": "advanced",
+  "tags": [
+    "useSyncExternalStore",
+    "snapshot",
+    "bugs"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useSyncExternalStore#im-getting-an-error-the-result-of-getsnapshot-should-be-cached",
+  "question": "Why does this cause an infinite loop?",
+  "code": "function getSnapshot() {\n  return [...store.items];\n}",
+  "options": [
+    "It returns a new array on every call",
+    "Arrays cannot be snapshots",
+    "It must be async"
+  ],
+  "answer": 0,
+  "say": "Why does this get snapshot cause an infinite loop?",
+  "explanation": "A new array each call is always different by Object.is, so React keeps re-rendering. Return a cached snapshot.",
+  "explainSay": "It returns a brand new array every call, so React always sees a change."
+}

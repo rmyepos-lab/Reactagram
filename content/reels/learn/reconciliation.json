@@ -1,0 +1,37 @@
+{
+  "kind": "learn",
+  "id": "reconciliation",
+  "topic": "How React Works",
+  "concept": "reconciliation",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "internals",
+    "reconciliation",
+    "diffing"
+  ],
+  "sourceUrl": "https://legacy.reactjs.org/docs/reconciliation.html#motivation",
+  "title": "Reconciliation: comparing old and new trees",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Spot the difference 🔍",
+      "say": "Each update gives React a new tree of elements. It must find the cheapest way to update the screen."
+    },
+    {
+      "type": "text",
+      "text": "Exact tree diffing is O(n³): 1,000 elements ≈ a billion comparisons.",
+      "say": "A perfect diff of two trees is very expensive. For one thousand elements, around a billion comparisons. Far too slow."
+    },
+    {
+      "type": "text",
+      "text": "React uses an O(n) heuristic with 2 assumptions: different types → different trees; keys mark stable children.",
+      "say": "So React uses a fast, linear heuristic, based on two assumptions. Elements of different types produce different trees. And keys hint which children stay the same."
+    },
+    {
+      "type": "text",
+      "text": "It’s an implementation detail: the result is the same as re-rendering everything.",
+      "say": "Reconciliation is an implementation detail. The result is the same as if React re-rendered the whole app. It just applies only the differences."
+    }
+  ]
+}

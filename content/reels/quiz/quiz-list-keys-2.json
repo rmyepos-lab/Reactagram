@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-list-keys-2",
+  "topic": "Rendering Lists & Conditions",
+  "concept": "list-keys",
+  "format": "bug-hunt",
+  "level": "beginner",
+  "tags": [
+    "lists",
+    "keys"
+  ],
+  "sourceUrl": "https://react.dev/learn/rendering-lists#keeping-list-items-in-order-with-key",
+  "question": "React warns about a missing key. Where should the key go?",
+  "code": "users.map(u => (\n  <li>\n    <Avatar user={u} />\n    {u.name}\n  </li>\n))",
+  "options": [
+    "On <Avatar>",
+    "On the <li>",
+    "On the users array"
+  ],
+  "answer": 1,
+  "say": "React warns about a missing key here. Where should the key go?",
+  "explanation": "The key goes on the element returned directly from map, here the <li>, for example key={u.id}.",
+  "explainSay": "On the list item. The key goes on the element returned directly by map."
+}

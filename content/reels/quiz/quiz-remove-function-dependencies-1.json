@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-remove-function-dependencies-1",
+  "topic": "Side Effects",
+  "concept": "remove-function-dependencies",
+  "format": "bug-hunt",
+  "level": "advanced",
+  "tags": [
+    "useEffect",
+    "dependencies",
+    "functions"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useEffect#removing-unnecessary-function-dependencies",
+  "question": "This Effect reconnects on every render. Why?",
+  "code": "function getUrl() {\n  return base + \"/\" + roomId;\n}\nuseEffect(() => {\n  connect(getUrl());\n}, [getUrl]);",
+  "options": [
+    "getUrl is a new function every render",
+    "roomId is missing",
+    "connect is async"
+  ],
+  "answer": 0,
+  "say": "This Effect reconnects on every render. Why?",
+  "explanation": "getUrl is re-created on each render, so Object.is sees a new function. Move it inside the Effect and depend on roomId.",
+  "explainSay": "Get url is a brand new function every render."
+}

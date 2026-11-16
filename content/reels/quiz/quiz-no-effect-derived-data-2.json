@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-no-effect-derived-data-2",
+  "topic": "Side Effects",
+  "concept": "no-effect-derived-data",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "derived-data",
+    "performance"
+  ],
+  "sourceUrl": "https://react.dev/learn/you-might-not-need-an-effect#updating-state-based-on-props-or-state",
+  "question": "True or false: if a value can be computed from props or state, compute it during render.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: if a value can be computed from props or state, compute it during render.",
+  "explanation": "True. Don't put it in state and sync it with an Effect. Calculating during render is faster, simpler and less error-prone.",
+  "explainSay": "True. Calculate it during render instead of syncing it with an Effect."
+}

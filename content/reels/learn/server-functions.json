@@ -1,0 +1,40 @@
+{
+  "kind": "learn",
+  "id": "server-functions",
+  "topic": "Server Components",
+  "concept": "server-functions",
+  "format": "special-use",
+  "level": "advanced",
+  "tags": [
+    "server-functions",
+    "use-server",
+    "rsc"
+  ],
+  "sourceUrl": "https://react.dev/reference/rsc/server-functions#creating-a-server-function-from-a-server-component",
+  "title": "Server Functions with 'use server'",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Call the server like a function 📞",
+      "say": "Server Functions let Client Components call async functions that run on the server."
+    },
+    {
+      "type": "code",
+      "code": "// Server Component\nfunction EmptyNote() {\n  async function createNoteAction() {\n    'use server';\n    await db.notes.create();\n  }\n  return <Button onClick={createNoteAction} />;\n}",
+      "highlight": [
+        4
+      ],
+      "say": "Mark an async function with use server. Here a Server Component defines it and passes it to a Client Component button."
+    },
+    {
+      "type": "text",
+      "text": "The client gets a reference. Calling it sends a request; the server runs it and returns the result.",
+      "say": "The framework passes a reference, not the code. When the button calls it, React sends a request to the server, runs the function, and returns the result."
+    },
+    {
+      "type": "text",
+      "text": "Can also live in a \"use server\" file and be imported by Client Components.",
+      "say": "You can also put Server Functions in a file marked use server, and import them into Client Components. Passed to a form action, they are called Server Actions."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-error-boundaries-2",
+  "topic": "Errors & Escape Hatches",
+  "concept": "error-boundaries",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "error-boundary",
+    "errors",
+    "fallback"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary",
+  "question": "True or false: you can write an Error Boundary as a function component with a Hook.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: you can write an Error Boundary as a function component with a Hook.",
+  "explanation": "False. There is currently no way to write one as a function component. Use a class or a library like react-error-boundary.",
+  "explainSay": "False. It must be a class, or come from a library."
+}

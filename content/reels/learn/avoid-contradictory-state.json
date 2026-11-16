@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "avoid-contradictory-state",
+  "topic": "State Structure & Sharing",
+  "concept": "avoid-contradictory-state",
+  "format": "pattern",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "status",
+    "structure"
+  ],
+  "sourceUrl": "https://react.dev/learn/choosing-the-state-structure#avoid-contradictions-in-state",
+  "title": "One status instead of many booleans",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Sending AND sent? 🤔",
+      "say": "Two booleans can describe a state that should be impossible."
+    },
+    {
+      "type": "code",
+      "code": "const [isSending, setIsSending] =\n  useState(false);\nconst [isSent, setIsSent] =\n  useState(false);",
+      "highlight": [
+        1,
+        3
+      ],
+      "say": "Forget to update both together, and you can end up with is sending and is sent both true. That should never happen."
+    },
+    {
+      "type": "code",
+      "code": "// \"typing\" | \"sending\" | \"sent\"\nconst [status, setStatus] =\n  useState(\"typing\");\n\nconst isSending = status === \"sending\";\nconst isSent = status === \"sent\";",
+      "highlight": [
+        2,
+        5
+      ],
+      "say": "Replace them with one status variable that has three valid values. You can still declare constants for readability. They are not state, so they cannot drift apart."
+    },
+    {
+      "type": "text",
+      "text": "One variable can only hold one value: no impossible states.",
+      "say": "Takeaway: one status variable holds one value at a time, so impossible combinations disappear."
+    }
+  ]
+}

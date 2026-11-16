@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "effect-event-prop-callbacks",
+  "topic": "Side Effects",
+  "concept": "effect-event-prop-callbacks",
+  "format": "pattern",
+  "level": "advanced",
+  "tags": [
+    "useEffectEvent",
+    "props",
+    "callbacks"
+  ],
+  "sourceUrl": "https://react.dev/learn/removing-effect-dependencies#wrapping-an-event-handler-from-the-props",
+  "title": "Wrap prop callbacks in an Effect Event",
+  "slides": [
+    {
+      "type": "title",
+      "text": "A new callback every render 🔁",
+      "say": "Your chat gets an on receive message callback as a prop, and calls it from an Effect."
+    },
+    {
+      "type": "code",
+      "code": "<ChatRoom\n  roomId={roomId}\n  onReceiveMessage={msg => {\n    // ...\n  }}\n/>",
+      "highlight": [
+        3
+      ],
+      "say": "The parent passes an inline function, so it is a different function on every parent render."
+    },
+    {
+      "type": "text",
+      "text": "onReceiveMessage is a dependency → the chat reconnects every parent render.",
+      "say": "Since the callback is a dependency, every parent render re-syncs the Effect and reconnects the chat."
+    },
+    {
+      "type": "code",
+      "code": "const onMessage = useEffectEvent(msg => {\n  onReceiveMessage(msg);\n});\nuseEffect(() => {\n  const c = createConnection();\n  c.on(\"message\", m => onMessage(m));\n  // ...\n}, [roomId]);",
+      "highlight": [
+        1,
+        8
+      ],
+      "say": "Wrap the call in an Effect Event. It always calls the latest callback, and the Effect only depends on room id."
+    }
+  ]
+}

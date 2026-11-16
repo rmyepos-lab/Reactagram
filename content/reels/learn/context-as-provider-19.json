@@ -1,0 +1,43 @@
+{
+  "kind": "learn",
+  "id": "context-as-provider-19",
+  "topic": "Context",
+  "concept": "context-as-provider-19",
+  "format": "special-use",
+  "level": "intermediate",
+  "tags": [
+    "context",
+    "react-19",
+    "provider"
+  ],
+  "sourceUrl": "https://react.dev/blog/2024/12/05/react-19#context-as-a-provider",
+  "title": "React 19: render <Context> as the provider",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Bye .Provider 👋",
+      "say": "React nineteen made context providers shorter."
+    },
+    {
+      "type": "code",
+      "code": "// before React 19\n<ThemeContext.Provider value=\"dark\">\n  {children}\n</ThemeContext.Provider>",
+      "highlight": [
+        2
+      ],
+      "say": "Before, you rendered the context dot Provider component."
+    },
+    {
+      "type": "code",
+      "code": "// React 19\n<ThemeContext value=\"dark\">\n  {children}\n</ThemeContext>",
+      "highlight": [
+        2
+      ],
+      "say": "Now you render the context itself as the provider, with the same value prop."
+    },
+    {
+      "type": "text",
+      "text": "Context.Provider still works, but is legacy and will be deprecated.",
+      "say": "Dot Provider still works, but it is the legacy way, and a future version will deprecate it. A codemod can convert old code."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-deferred-vs-debounce-1",
+  "topic": "Concurrent Rendering",
+  "concept": "deferred-vs-debounce",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "useDeferredValue",
+    "debounce",
+    "performance"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useDeferredValue#how-is-deferring-a-value-different-from-debouncing-and-throttling",
+  "question": "True or false: useDeferredValue needs you to choose a delay in milliseconds.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: use deferred value needs you to choose a delay in milliseconds.",
+  "explanation": "False. It has no fixed delay. It adapts to the user's device.",
+  "explainSay": "False. It adapts to the device, with no fixed delay."
+}

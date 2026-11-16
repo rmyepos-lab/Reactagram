@@ -1,0 +1,40 @@
+{
+  "kind": "learn",
+  "id": "stable-deps-can-be-omitted",
+  "topic": "Side Effects",
+  "concept": "stable-deps-can-be-omitted",
+  "format": "special-use",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "dependencies",
+    "refs"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#why-was-the-ref-omitted-from-the-dependency-array",
+  "title": "Why refs and set functions can be left out",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Where is ref in the deps? 🤔",
+      "say": "This Effect uses both ref and is playing, but only lists is playing. Is that a bug?"
+    },
+    {
+      "type": "code",
+      "code": "const ref = useRef(null);\nuseEffect(() => {\n  if (isPlaying) ref.current.play();\n  else ref.current.pause();\n}, [isPlaying]);",
+      "highlight": [
+        5
+      ],
+      "say": "No. React guarantees the same ref object from the same use ref call on every render. It never changes, so it can never re-run the Effect."
+    },
+    {
+      "type": "text",
+      "text": "set functions from useState are stable too. Listing them is allowed, it just changes nothing.",
+      "say": "Set functions from use state are stable too. You can include them or leave them out. If the linter is happy, it is safe."
+    },
+    {
+      "type": "text",
+      "text": "But a ref passed in as a prop must be listed: the parent could pass a different one.",
+      "say": "One catch: if the ref comes from a parent as a prop, list it. The parent might pass a different ref."
+    }
+  ]
+}

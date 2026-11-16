@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-useactionstate-2",
+  "topic": "Actions & Forms",
+  "concept": "useactionstate",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "useActionState",
+    "actions",
+    "forms"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useActionState",
+  "question": "What is the first argument your reducerAction receives?",
+  "options": [
+    "The FormData",
+    "The previous state",
+    "The event"
+  ],
+  "answer": 1,
+  "say": "What is the first argument your reducer action receives?",
+  "explanation": "It receives the previous state first (initially initialState), followed by the payload passed to dispatchAction.",
+  "explainSay": "The previous state. The payload comes second."
+}

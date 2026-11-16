@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "jsx-single-root",
+  "topic": "Components & JSX",
+  "concept": "jsx-single-root",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "jsx",
+    "fragments"
+  ],
+  "sourceUrl": "https://react.dev/learn/writing-markup-with-jsx#1-return-a-single-root-element",
+  "title": "JSX must return one root element",
+  "slides": [
+    {
+      "type": "title",
+      "text": "One root, please ☝️",
+      "say": "Rule one of JSX: a component returns one single root element."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 two roots\nreturn (\n  <h1>Todos</h1>\n  <ul>...</ul>\n);",
+      "highlight": [
+        3,
+        4
+      ],
+      "say": "This returns two tags side by side, a heading and a list. That is an error."
+    },
+    {
+      "type": "text",
+      "text": "JSX becomes JavaScript objects. A function cannot return two objects without wrapping them.",
+      "say": "Why? JSX is turned into plain JavaScript objects. You cannot return two objects from a function without wrapping them."
+    },
+    {
+      "type": "code",
+      "code": "return (\n  <>\n    <h1>Todos</h1>\n    <ul>...</ul>\n  </>\n);",
+      "highlight": [
+        2,
+        5
+      ],
+      "text": "Wrap in a <div>, or in a Fragment <> </>.",
+      "say": "So wrap them in one parent, like a div. Or use the empty tags, called a Fragment, which leave no trace in the HTML."
+    }
+  ]
+}

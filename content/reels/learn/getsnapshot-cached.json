@@ -1,0 +1,43 @@
+{
+  "kind": "learn",
+  "id": "getsnapshot-cached",
+  "topic": "Side Effects",
+  "concept": "getsnapshot-cached",
+  "format": "pitfall",
+  "level": "advanced",
+  "tags": [
+    "useSyncExternalStore",
+    "snapshot",
+    "bugs"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useSyncExternalStore#im-getting-an-error-the-result-of-getsnapshot-should-be-cached",
+  "title": "getSnapshot must return a cached value",
+  "slides": [
+    {
+      "type": "title",
+      "text": "\"getSnapshot should be cached\" ⚠️",
+      "say": "Seeing the error, the result of get snapshot should be cached? Your snapshot is new every call."
+    },
+    {
+      "type": "code",
+      "code": "function getSnapshot() {\n  // 🔴 new object every call\n  return { todos: myStore.todos };\n}",
+      "highlight": [
+        3
+      ],
+      "say": "React re-renders when the snapshot differs from last time. A new object every call always differs, so you get an infinite loop."
+    },
+    {
+      "type": "code",
+      "code": "function getSnapshot() {\n  // ✅ immutable data, returned as is\n  return myStore.todos;\n}",
+      "highlight": [
+        3
+      ],
+      "say": "If the store holds immutable data, return it directly."
+    },
+    {
+      "type": "text",
+      "text": "Mutable store? Build a new snapshot only when data changed; otherwise return the last one.",
+      "say": "If the store is mutable, create a new snapshot only when the data really changed. Otherwise return the same cached snapshot."
+    }
+  ]
+}

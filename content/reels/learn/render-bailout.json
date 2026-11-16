@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "render-bailout",
+  "topic": "How React Works",
+  "concept": "render-bailout",
+  "format": "concept",
+  "level": "advanced",
+  "tags": [
+    "internals",
+    "performance",
+    "memo"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/memo#skipping-re-rendering-when-props-are-unchanged",
+  "title": "Bailing out: when React skips a subtree",
+  "slides": [
+    {
+      "type": "title",
+      "text": "When React skips work ⏭️",
+      "say": "By default, a re-render re-renders every child. But React can bail out and skip a whole subtree."
+    },
+    {
+      "type": "code",
+      "code": "// 1. same state value\nsetCount(count); // Object.is equal\n\n// 2. memo with equal props\nconst Row = memo(function Row(p) {...});",
+      "highlight": [
+        2,
+        5
+      ],
+      "say": "Bailout one: setting state to an identical value. Bailout two: a memo component whose props are all equal by Object dot is."
+    },
+    {
+      "type": "text",
+      "text": "On a bailout, React skips the component and its children. It may still call the component once first.",
+      "say": "Then React skips re-rendering the component and its children. It may still need to call the component before skipping, which should not affect your code."
+    },
+    {
+      "type": "text",
+      "text": "Context changes still get through to readers.",
+      "say": "One exception: components reading a context still re-render when that context changes, even below a memo."
+    }
+  ]
+}

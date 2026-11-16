@@ -1,0 +1,40 @@
+{
+  "kind": "learn",
+  "id": "conditional-if",
+  "topic": "Rendering Lists & Conditions",
+  "concept": "conditional-if",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "conditional-rendering",
+    "if"
+  ],
+  "sourceUrl": "https://react.dev/learn/conditional-rendering#conditionally-returning-jsx",
+  "title": "Conditional rendering with plain if",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Just use if 🔀",
+      "say": "Conditional rendering in React needs no special syntax. Plain JavaScript if works."
+    },
+    {
+      "type": "code",
+      "code": "function Item({ name, isPacked }) {\n  if (isPacked) {\n    return <li>{name} ✅</li>;\n  }\n  return <li>{name}</li>;\n}",
+      "highlight": [
+        2,
+        3
+      ],
+      "say": "If the item is packed, return early with a check mark. Otherwise, fall through to the plain item."
+    },
+    {
+      "type": "text",
+      "text": "Branching logic lives in JavaScript. JSX just describes each result.",
+      "say": "Your branching logic is just JavaScript: if statements and early returns. JSX only describes what each branch shows."
+    },
+    {
+      "type": "text",
+      "text": "Big differences between branches? Early return with if is easy to read.",
+      "say": "Takeaway: when branches return quite different trees, an early return with if keeps things clear."
+    }
+  ]
+}

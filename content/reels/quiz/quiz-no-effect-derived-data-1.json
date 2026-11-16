@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-no-effect-derived-data-1",
+  "topic": "Side Effects",
+  "concept": "no-effect-derived-data",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "derived-data",
+    "performance"
+  ],
+  "sourceUrl": "https://react.dev/learn/you-might-not-need-an-effect#updating-state-based-on-props-or-state",
+  "question": "What is the problem with this code?",
+  "code": "const [total, setTotal] = useState(0);\nuseEffect(() => {\n  setTotal(price * qty);\n}, [price, qty]);",
+  "options": [
+    "It renders once with a stale total, then again",
+    "useEffect cannot read props",
+    "It needs [] instead"
+  ],
+  "answer": 0,
+  "say": "What is the problem with this code?",
+  "explanation": "The Effect causes an extra render pass with a stale value. Compute const total = price * qty during render instead.",
+  "explainSay": "It renders once with a stale total, then renders again. Just compute the total during render."
+}

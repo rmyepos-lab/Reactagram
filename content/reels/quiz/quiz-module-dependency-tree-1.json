@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-module-dependency-tree-1",
+  "topic": "Components & JSX",
+  "concept": "module-dependency-tree",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "modules",
+    "bundler",
+    "dependency-tree"
+  ],
+  "sourceUrl": "https://react.dev/learn/understanding-your-ui-as-a-tree#the-module-dependency-tree",
+  "question": "True or false: a file that only exports data, like quotes.js, appears in the module dependency tree.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: a file that only exports data, like quotes dot js, appears in the module dependency tree.",
+  "explanation": "True. The dependency tree has every imported module, components or not. The render tree only has components.",
+  "explainSay": "True. Every imported module is in the dependency tree. Only the render tree is limited to components."
+}

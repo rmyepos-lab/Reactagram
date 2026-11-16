@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-pure-components-2",
+  "topic": "Purity",
+  "concept": "pure-components",
+  "format": "output",
+  "level": "beginner",
+  "tags": [
+    "purity",
+    "rendering"
+  ],
+  "sourceUrl": "https://react.dev/learn/keeping-components-pure#purity-components-as-formulas",
+  "question": "Which component is pure?",
+  "options": [
+    "One that reads a prop and returns JSX",
+    "One that changes a global counter while rendering",
+    "One that shows Date.now() it reads during render"
+  ],
+  "answer": 0,
+  "say": "Which of these components is pure?",
+  "explanation": "Only the first returns the same JSX for the same inputs without changing anything outside. Changing globals or reading the clock breaks purity.",
+  "explainSay": "The one that reads a prop and returns JSX. The others change outside state or give different output each time."
+}

@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "suspense-with-lazy",
+  "topic": "Suspense & Data",
+  "concept": "suspense-with-lazy",
+  "format": "pattern",
+  "level": "intermediate",
+  "tags": [
+    "Suspense",
+    "lazy",
+    "code-splitting"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/lazy#suspense-for-code-splitting",
+  "title": "Where to put Suspense around lazy code",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Lazy needs a boundary 🧱",
+      "say": "A lazy component suspends while its code downloads. Something above it must show a fallback."
+    },
+    {
+      "type": "code",
+      "code": "<Suspense fallback={<Loading />}>\n  <h2>Preview</h2>\n  <MarkdownPreview />\n</Suspense>",
+      "highlight": [
+        1,
+        3
+      ],
+      "say": "Wrap the lazy component, or any of its parents, in Suspense. Here the heading and the preview both wait behind one fallback."
+    },
+    {
+      "type": "text",
+      "text": "React doesn’t start loading until the lazy component first renders.",
+      "say": "React does not call the load function until the first time you try to render the component."
+    },
+    {
+      "type": "text",
+      "text": "Load fails? The error goes to the nearest Error Boundary.",
+      "say": "If the import fails, React throws the error to the nearest Error Boundary."
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-trigger-render-commit-1",
+  "topic": "How React Works",
+  "concept": "trigger-render-commit",
+  "format": "output",
+  "level": "beginner",
+  "tags": [
+    "rendering",
+    "commit",
+    "internals"
+  ],
+  "sourceUrl": "https://react.dev/learn/render-and-commit",
+  "question": "Put the steps of a React update in order:",
+  "options": [
+    "Render → Trigger → Commit",
+    "Trigger → Render → Commit",
+    "Commit → Render → Trigger"
+  ],
+  "answer": 1,
+  "say": "Put the steps of a React update in order.",
+  "explanation": "An update is triggered, React renders (calls components), then commits the changes to the DOM.",
+  "explainSay": "Trigger, render, commit."
+}

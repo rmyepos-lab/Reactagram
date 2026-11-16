@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-same-position-preserves-state-1",
+  "topic": "State Structure & Sharing",
+  "concept": "same-position-preserves-state",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "position",
+    "conditional-rendering"
+  ],
+  "sourceUrl": "https://react.dev/learn/preserving-and-resetting-state#same-component-at-the-same-position-preserves-state",
+  "question": "Score is 4. You toggle isFancy. What is the score now?",
+  "code": "<div>\n  {isFancy\n    ? <Counter color=\"gold\" />\n    : <Counter color=\"gray\" />}\n</div>",
+  "options": [
+    "0",
+    "4",
+    "1"
+  ],
+  "answer": 1,
+  "say": "Score is four. You toggle is fancy. What is the score now?",
+  "explanation": "Both branches put a Counter at the same position, so React treats it as the same component and keeps its state.",
+  "explainSay": "Four. It is the same component at the same position, so the state is kept."
+}

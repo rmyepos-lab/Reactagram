@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-mutable-values-not-deps-1",
+  "topic": "Side Effects",
+  "concept": "mutable-values-not-deps",
+  "format": "bug-hunt",
+  "level": "advanced",
+  "tags": [
+    "useEffect",
+    "dependencies",
+    "refs"
+  ],
+  "sourceUrl": "https://react.dev/learn/lifecycle-of-reactive-effects#can-global-or-mutable-values-be-dependencies",
+  "question": "Why doesn't this Effect re-run when inputRef.current changes?",
+  "code": "useEffect(() => {\n  measure(inputRef.current);\n}, [inputRef.current]);",
+  "options": [
+    "Changing ref.current does not re-render",
+    "Refs are always null in Effects",
+    "The array must be empty"
+  ],
+  "answer": 0,
+  "say": "Why does this Effect not re-run when input ref dot current changes?",
+  "explanation": "ref.current is mutable and not reactive. Changing it triggers no re-render, so React never re-checks the dependencies.",
+  "explainSay": "Changing ref dot current does not cause a re-render, so React never re-checks it."
+}

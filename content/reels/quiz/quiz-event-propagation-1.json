@@ -1,0 +1,26 @@
+{
+  "kind": "quiz",
+  "id": "quiz-event-propagation-1",
+  "topic": "Events",
+  "concept": "event-propagation",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "events",
+    "propagation",
+    "bubbling"
+  ],
+  "sourceUrl": "https://react.dev/learn/responding-to-events#event-propagation",
+  "question": "You click the button. What alerts appear, in order?",
+  "code": "<div onClick={() => alert(\"A\")}>\n  <button onClick={() => alert(\"B\")}>\n    Go\n  </button>\n</div>",
+  "options": [
+    "A only",
+    "B only",
+    "B, then A",
+    "A, then B"
+  ],
+  "answer": 2,
+  "say": "You click the button. What alerts appear, and in what order?",
+  "explanation": "The clicked button's handler runs first, then the event bubbles up to the div's onClick.",
+  "explainSay": "B, then A. The button runs first, then the event bubbles up to the div."
+}

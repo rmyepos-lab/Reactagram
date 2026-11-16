@@ -1,0 +1,53 @@
+{
+  "kind": "learn",
+  "id": "hydration-mismatch",
+  "topic": "Server Rendering",
+  "concept": "hydration-mismatch",
+  "format": "special-use",
+  "level": "advanced",
+  "tags": [
+    "ssr",
+    "hydration",
+    "pitfall"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/client/hydrateRoot#handling-different-client-and-server-content",
+  "title": "Hydration mismatches and how to fix them",
+  "slides": [
+    {
+      "type": "title",
+      "text": "When server and client must differ 🔀",
+      "say": "Hydration needs the first client render to match the server. But sometimes they just have to differ. You have two tools."
+    },
+    {
+      "type": "text",
+      "text": "Mismatches are bugs. At best they slow hydration down. At worst, event handlers get attached to the wrong elements.",
+      "say": "First, don't ignore mismatches. React recovers from some, but at worst event handlers get attached to the wrong elements."
+    },
+    {
+      "type": "code",
+      "code": "<h1 suppressHydrationWarning={true}>\n  Date: {new Date().toLocaleDateString()}\n</h1>",
+      "highlight": [
+        1
+      ],
+      "say": "Tool one. If one element's text or attribute unavoidably differs, like a date, add suppress hydration warning to it."
+    },
+    {
+      "type": "text",
+      "text": "It only works one level deep and is an escape hatch. React won't patch the mismatched text.",
+      "say": "It only works one level deep, and React won't patch the text. It's an escape hatch, so don't overuse it."
+    },
+    {
+      "type": "code",
+      "code": "const [isClient, setIsClient] =\n  useState(false);\nuseEffect(() => {\n  setIsClient(true);\n}, []);\nreturn (\n  <h1>{isClient ? \"Client\" : \"Server\"}</h1>\n);",
+      "highlight": [
+        4
+      ],
+      "say": "Tool two, two pass rendering. The first client render matches the server. Then an effect sets is client to true, and React renders again."
+    },
+    {
+      "type": "text",
+      "text": "Two passes mean rendering twice: slower hydration, and a UI that can jump after load.",
+      "say": "The cost: components render twice, so hydration is slower, and the UI can change suddenly after it loads."
+    }
+  ]
+}

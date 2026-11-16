@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-state-update-queue-2",
+  "topic": "State",
+  "concept": "state-update-queue",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "batching",
+    "updater"
+  ],
+  "sourceUrl": "https://react.dev/learn/queueing-a-series-of-state-updates#what-happens-if-you-update-state-after-replacing-it",
+  "question": "What is wrong with this updater?",
+  "code": "setCount(c => {\n  setTotal(t => t + 1);\n  return c + 1;\n});",
+  "options": [
+    "Updaters cannot return numbers",
+    "It sets state inside an updater",
+    "c is always 0"
+  ],
+  "answer": 1,
+  "say": "What is wrong with this updater function?",
+  "explanation": "Updaters run during rendering, so they must be pure and only return the next value. Do not set other state or run side effects inside.",
+  "explainSay": "It sets state inside an updater. Updaters run during rendering, so they must only return the next value."
+}

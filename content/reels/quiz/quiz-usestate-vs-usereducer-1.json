@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-usestate-vs-usereducer-1",
+  "topic": "Reducers",
+  "concept": "usestate-vs-usereducer",
+  "format": "which-hook",
+  "level": "intermediate",
+  "tags": [
+    "reducers",
+    "useState",
+    "useReducer"
+  ],
+  "sourceUrl": "https://react.dev/learn/extracting-state-logic-into-a-reducer#comparing-usestate-and-usereducer",
+  "question": "A component has many handlers updating one state in complex ways, and bugs keep appearing. Which Hook?",
+  "options": [
+    "useState",
+    "useReducer",
+    "useRef"
+  ],
+  "answer": 1,
+  "say": "A component has many handlers that update one state in complex ways, and bugs keep appearing. Which Hook fits?",
+  "explanation": "The docs recommend a reducer when incorrect state updates cause bugs and you want more structure. It centralizes and logs every update.",
+  "explainSay": "Use reducer. It brings structure to complex updates and makes each one easy to trace."
+}

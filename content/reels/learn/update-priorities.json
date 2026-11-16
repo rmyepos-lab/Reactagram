@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "update-priorities",
+  "topic": "How React Works",
+  "concept": "update-priorities",
+  "format": "compare",
+  "level": "advanced",
+  "tags": [
+    "internals",
+    "transitions",
+    "priority"
+  ],
+  "sourceUrl": "https://react.dev/blog/2022/03/29/react-v18#new-feature-transitions",
+  "title": "Urgent vs transition updates",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Not all updates are equal ⚖️",
+      "say": "React sorts updates into two kinds: urgent updates, and transition updates."
+    },
+    {
+      "type": "text",
+      "text": "Urgent: typing, clicking, pressing. Must respond immediately.",
+      "say": "Urgent updates reflect direct interaction, like typing or clicking. They must feel instant, like physical objects."
+    },
+    {
+      "type": "code",
+      "code": "// urgent: show what was typed\nsetInputValue(input);\n\n// transition: show the results\nstartTransition(() => {\n  setSearchQuery(input);\n});",
+      "highlight": [
+        2,
+        6
+      ],
+      "say": "Transition updates move the UI from one view to another. One input can trigger both kinds."
+    },
+    {
+      "type": "text",
+      "text": "Transitions can be interrupted; stale work is thrown away.",
+      "say": "Transition work is interrupted by urgent updates. If the user keeps typing, React throws out the stale render and only renders the latest."
+    }
+  ]
+}

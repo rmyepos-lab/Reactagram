@@ -1,0 +1,74 @@
+{
+  "kind": "learn",
+  "id": "lifting-state-up",
+  "topic": "State Structure & Sharing",
+  "concept": "lifting-state-up",
+  "format": "pattern",
+  "level": "beginner",
+  "tags": [
+    "state",
+    "lifting-state",
+    "props"
+  ],
+  "sourceUrl": "https://react.dev/learn/sharing-state-between-components#lifting-state-up-by-example",
+  "title": "Lift state up to share it",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Only one panel open 🪗",
+      "say": "Two accordion panels each keep their own is active state. Now you want only one open at a time. How?"
+    },
+    {
+      "type": "visual",
+      "say": "Lift the state up to their closest common parent.",
+      "visual": {
+        "kind": "tree",
+        "nodes": [
+          {
+            "id": "acc",
+            "label": "Accordion",
+            "note": "activeIndex"
+          },
+          {
+            "id": "p1",
+            "label": "Panel",
+            "parent": "acc",
+            "note": "isActive, onShow"
+          },
+          {
+            "id": "p2",
+            "label": "Panel",
+            "parent": "acc",
+            "note": "isActive, onShow"
+          }
+        ]
+      },
+      "steps": [
+        {
+          "say": "Each panel now gets is active as a prop, plus an on show handler, from the parent.",
+          "show": [
+            "p1",
+            "p2"
+          ],
+          "focus": "p1"
+        }
+      ],
+      "text": "Remove → pass down → add state to the parent."
+    },
+    {
+      "type": "code",
+      "code": "const [activeIndex, setActiveIndex] =\n  useState(0);\n\n<Panel\n  isActive={activeIndex === 0}\n  onShow={() => setActiveIndex(0)}\n/>",
+      "highlight": [
+        1,
+        5,
+        6
+      ],
+      "say": "The parent stores which panel is active, as a number. It passes is active down, and an event handler so the panel can ask to change it."
+    },
+    {
+      "type": "text",
+      "text": "One index instead of two flags: only one panel can be open.",
+      "say": "Notice the state changed shape too: one index instead of two booleans, so only one panel can ever be open."
+    }
+  ]
+}

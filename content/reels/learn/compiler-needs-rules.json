@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "compiler-needs-rules",
+  "topic": "React Compiler",
+  "concept": "compiler-needs-rules",
+  "format": "pitfall",
+  "level": "advanced",
+  "tags": [
+    "compiler",
+    "rules-of-react"
+  ],
+  "sourceUrl": "https://react.dev/learn/react-compiler/introduction#is-it-safe-to-use",
+  "title": "The compiler relies on the Rules of React",
+  "slides": [
+    {
+      "type": "title",
+      "text": "The compiler trusts you to follow the rules 📏",
+      "say": "React Compiler is stable and used in production. But it makes one big assumption about your code."
+    },
+    {
+      "type": "text",
+      "text": "It's built for code that follows the Rules of React. If it sees code that might break them, it skips optimizing it instead of risking a change in behavior.",
+      "say": "It's designed for code that follows the rules of React. When it spots code that might break them, it safely skips that code instead of changing how your app behaves."
+    },
+    {
+      "type": "text",
+      "text": "The danger: violations it can't detect. Then it compiles code it should have skipped, and you get runtime bugs.",
+      "say": "The real danger is a violation it can't detect. Then it compiles a component it should have skipped, and you get bugs at runtime."
+    },
+    {
+      "type": "code",
+      "code": "const filters = { tag };\nuseEffect(() => {\n  load(filters);\n}, [filters]);\n// relied on filters being a NEW object\n// every render to re-run the Effect",
+      "highlight": [
+        5,
+        6
+      ],
+      "say": "A common cause is code that relies on memoization for correctness. Here the effect only re-runs because filters is a new object each render. After compiling, it may fire differently."
+    },
+    {
+      "type": "text",
+      "text": "Fix the Rules of React violations the ESLint plugin reports. A healthy codebase makes the rollout safe.",
+      "say": "So fix the rules of React violations that the ESLint plugin reports. How safe your rollout is depends on how well your code follows the rules."
+    }
+  ]
+}

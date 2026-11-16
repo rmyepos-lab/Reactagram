@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-declarative-ui-states-2",
+  "topic": "State Structure & Sharing",
+  "concept": "declarative-ui-states",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "declarative",
+    "ui-states"
+  ],
+  "sourceUrl": "https://react.dev/learn/reacting-to-input-with-state#thinking-about-ui-declaratively",
+  "question": "Which is the FIRST step when building a form the React way?",
+  "options": [
+    "Write the event handlers",
+    "List the visual states the user can see",
+    "Add a ref to each input"
+  ],
+  "answer": 1,
+  "say": "What is the first step when building a form the React way?",
+  "explanation": "Step 1 is identifying the visual states (empty, typing, submitting, success, error). Handlers come last.",
+  "explainSay": "List the visual states. Connecting the event handlers is the last step."
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-effect-timing-interactions-2",
+  "topic": "Side Effects",
+  "concept": "effect-timing-interactions",
+  "format": "which-hook",
+  "level": "advanced",
+  "tags": [
+    "useEffect",
+    "timing",
+    "paint"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useEffect#caveats",
+  "question": "Your Effect positions a tooltip, and it visibly flickers. What should you use?",
+  "options": [
+    "useEffect with setTimeout",
+    "useLayoutEffect",
+    "useMemo"
+  ],
+  "answer": 1,
+  "say": "Your Effect positions a tooltip, and it visibly flickers. What should you use?",
+  "explanation": "For visual work where the delay flickers, replace useEffect with useLayoutEffect, which runs before paint.",
+  "explainSay": "Use layout effect. It runs before the browser paints."
+}

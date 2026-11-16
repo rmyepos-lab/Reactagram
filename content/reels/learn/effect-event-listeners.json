@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "effect-event-listeners",
+  "topic": "Side Effects",
+  "concept": "effect-event-listeners",
+  "format": "pattern",
+  "level": "beginner",
+  "tags": [
+    "useEffect",
+    "events",
+    "cleanup"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#subscribing-to-events",
+  "title": "Subscribe in an Effect, unsubscribe in cleanup",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Listening to the window 👂",
+      "say": "Need to listen to a browser event like scroll? Subscribe in an Effect."
+    },
+    {
+      "type": "code",
+      "code": "useEffect(() => {\n  function handleScroll() {\n    console.log(window.scrollY);\n  }\n  window.addEventListener(\"scroll\", handleScroll);\n  return () =>\n    window.removeEventListener(\"scroll\", handleScroll);\n}, []);",
+      "highlight": [
+        5,
+        7
+      ],
+      "say": "Add the listener in the Effect, and remove the same function in the cleanup."
+    },
+    {
+      "type": "text",
+      "text": "Dev: add → remove → add. Only one listener is ever active.",
+      "say": "In development React adds, removes, then adds again. Only one subscription is active at a time, just like production."
+    },
+    {
+      "type": "text",
+      "text": "Subscribed in setup? Unsubscribe in cleanup.",
+      "say": "Rule: whatever you subscribe to in setup, unsubscribe from in cleanup."
+    }
+  ]
+}

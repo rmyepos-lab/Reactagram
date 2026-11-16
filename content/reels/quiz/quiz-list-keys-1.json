@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-list-keys-1",
+  "topic": "Rendering Lists & Conditions",
+  "concept": "list-keys",
+  "format": "true-false",
+  "level": "beginner",
+  "tags": [
+    "lists",
+    "keys"
+  ],
+  "sourceUrl": "https://react.dev/learn/rendering-lists#keeping-list-items-in-order-with-key",
+  "question": "True or false: two different arrays can use the same keys for their items.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: two different arrays can use the same keys for their items.",
+  "explanation": "True. Keys only need to be unique among siblings. The same keys are fine in a different array.",
+  "explainSay": "True. Keys only have to be unique among siblings in the same array."
+}

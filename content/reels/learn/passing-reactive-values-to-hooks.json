@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "passing-reactive-values-to-hooks",
+  "topic": "Custom Hooks",
+  "concept": "passing-reactive-values-to-hooks",
+  "format": "pattern",
+  "level": "intermediate",
+  "tags": [
+    "custom-hooks",
+    "reactive",
+    "useEffect"
+  ],
+  "sourceUrl": "https://react.dev/learn/reusing-logic-with-custom-hooks#passing-reactive-values-between-hooks",
+  "title": "Hooks get fresh values every render",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Chain your Hooks ⛓️",
+      "say": "The code inside custom Hooks re-runs on every render of your component. So it always gets the latest props and state."
+    },
+    {
+      "type": "code",
+      "code": "function ChatRoom({ roomId }) {\n  const [serverUrl, setServerUrl] =\n    useState(\"https://localhost:1234\");\n  useChatRoom({ roomId, serverUrl });\n}",
+      "highlight": [
+        2,
+        4
+      ],
+      "say": "The output of use state feeds into the input of use chat room, like chaining audio effects."
+    },
+    {
+      "type": "code",
+      "code": "function useChatRoom({ serverUrl, roomId }) {\n  useEffect(() => {\n    const c = createConnection({ serverUrl, roomId });\n    c.connect();\n    return () => c.disconnect();\n  }, [roomId, serverUrl]);\n}",
+      "highlight": [
+        6
+      ],
+      "say": "Inside, they are reactive values. When room id or server URL change after a render, the Effect reconnects."
+    },
+    {
+      "type": "text",
+      "text": "Hooks re-run with the component, so they must be pure, like its body.",
+      "say": "Because Hooks run with every render, they must be pure. Think of their code as part of your component’s body."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-context-as-provider-19-2",
+  "topic": "Context",
+  "concept": "context-as-provider-19",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "context",
+    "react-19",
+    "provider"
+  ],
+  "sourceUrl": "https://react.dev/blog/2024/12/05/react-19#context-as-a-provider",
+  "question": "True or false: <ThemeContext.Provider> stops working in React 19.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: ThemeContext dot Provider stops working in React nineteen.",
+  "explanation": "False. It still works as the legacy way. The React team plans to deprecate it in a future version.",
+  "explainSay": "False. It still works, but it is legacy and will be deprecated later."
+}

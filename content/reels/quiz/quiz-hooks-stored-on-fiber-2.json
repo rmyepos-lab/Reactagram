@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-hooks-stored-on-fiber-2",
+  "topic": "How React Works",
+  "concept": "hooks-stored-on-fiber",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "internals",
+    "hooks",
+    "fiber"
+  ],
+  "sourceUrl": "https://react.dev/learn/state-a-components-memory#how-does-react-know-which-state-to-return",
+  "question": "How does React match each useState call to its stored value?",
+  "options": [
+    "By variable name",
+    "By call order within the component",
+    "By a random id"
+  ],
+  "answer": 1,
+  "say": "How does React match each use state call to its stored value?",
+  "explanation": "React keeps a list of Hook data per component and walks it in the order the Hooks are called.",
+  "explainSay": "By call order."
+}

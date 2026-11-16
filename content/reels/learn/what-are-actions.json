@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "what-are-actions",
+  "topic": "Actions & Forms",
+  "concept": "what-are-actions",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "actions",
+    "react-19",
+    "transitions"
+  ],
+  "sourceUrl": "https://react.dev/blog/2024/12/05/react-19#actions",
+  "title": "Actions: async functions in Transitions",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Meet Actions 🎬",
+      "say": "Submitting a form used to mean managing pending state, errors and optimistic updates by hand. React nineteen adds Actions."
+    },
+    {
+      "type": "code",
+      "code": "const [isPending, startTransition] =\n  useTransition();\n\nfunction handleSubmit() {\n  startTransition(async () => {\n    const error = await updateName(name);\n    if (error) { setError(error); return; }\n    redirect(\"/path\");\n  });\n}",
+      "highlight": [
+        5,
+        6
+      ],
+      "say": "You can now pass an async function to start transition. Is pending turns true right away, and back to false when it is done. By convention, these functions are called Actions."
+    },
+    {
+      "type": "text",
+      "text": "Actions give you: pending state, optimistic updates, error handling, and form support.",
+      "say": "Actions handle pending state, work with use optimistic, send errors to Error Boundaries, and plug into forms."
+    },
+    {
+      "type": "text",
+      "text": "The UI stays responsive while data changes.",
+      "say": "And the current UI stays responsive and interactive while the data is changing."
+    }
+  ]
+}

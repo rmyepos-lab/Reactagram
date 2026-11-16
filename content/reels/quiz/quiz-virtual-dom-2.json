@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-virtual-dom-2",
+  "topic": "How React Works",
+  "concept": "virtual-dom",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "internals",
+    "virtual-dom",
+    "elements"
+  ],
+  "sourceUrl": "https://legacy.reactjs.org/docs/faq-internals.html",
+  "question": "In React, the \"virtual DOM\" usually refers to…",
+  "options": [
+    "A hidden copy of the HTML file",
+    "The tree of React elements in memory",
+    "The browser's rendering engine"
+  ],
+  "answer": 1,
+  "say": "In React, the virtual DOM usually refers to what?",
+  "explanation": "It is usually associated with React elements, the objects that describe the UI and are kept in memory.",
+  "explainSay": "The tree of React elements kept in memory."
+}

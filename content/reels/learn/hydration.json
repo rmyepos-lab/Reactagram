@@ -1,0 +1,43 @@
+{
+  "kind": "learn",
+  "id": "hydration",
+  "topic": "How React Works",
+  "concept": "hydration",
+  "format": "concept",
+  "level": "advanced",
+  "tags": [
+    "internals",
+    "ssr",
+    "hydration"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/client/hydrateRoot",
+  "title": "Hydration: attaching React to server HTML",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Bring server HTML to life 💧",
+      "say": "With server rendering, the user first sees plain HTML. Hydration is React attaching to that HTML and making it interactive."
+    },
+    {
+      "type": "code",
+      "code": "import { hydrateRoot } from \"react-dom/client\";\n\nhydrateRoot(\n  document.getElementById(\"root\"),\n  <App />\n);",
+      "highlight": [
+        3
+      ],
+      "say": "Call hydrate root with the DOM node and your app. React attaches to the existing HTML and takes over managing it."
+    },
+    {
+      "type": "text",
+      "text": "Client’s first render must produce the SAME output as the server. Mismatches are bugs.",
+      "say": "The first client render must produce exactly the same output as the server. Treat mismatches as bugs."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 differs between server and client\nconst isClient = typeof window !== \"undefined\";\nreturn <p>{isClient ? \"Client\" : \"Server\"}</p>;",
+      "highlight": [
+        2
+      ],
+      "say": "Common causes: checks like type of window in render, browser only APIs, or extra whitespace around the root HTML."
+    }
+  ]
+}

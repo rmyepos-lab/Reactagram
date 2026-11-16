@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-ref-callbacks-2",
+  "topic": "Refs",
+  "concept": "ref-callbacks",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "refs",
+    "ref-callback",
+    "lists"
+  ],
+  "sourceUrl": "https://react.dev/learn/manipulating-the-dom-with-refs#how-to-manage-a-list-of-refs-using-a-ref-callback",
+  "question": "What does React pass to a ref callback when it attaches the ref?",
+  "code": "<li ref={node => {\n  // what is node?\n}} />",
+  "options": [
+    "The DOM node",
+    "The ref object",
+    "The item key"
+  ],
+  "answer": 0,
+  "say": "What does React pass to a ref callback when it attaches the ref?",
+  "explanation": "React calls your ref callback with the DOM node when it is time to set the ref.",
+  "explainSay": "The DOM node itself."
+}

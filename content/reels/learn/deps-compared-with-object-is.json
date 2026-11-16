@@ -1,0 +1,43 @@
+{
+  "kind": "learn",
+  "id": "deps-compared-with-object-is",
+  "topic": "Side Effects",
+  "concept": "deps-compared-with-object-is",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "dependencies",
+    "Object.is"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#step-2-specify-the-effect-dependencies",
+  "title": "How React compares Effect dependencies",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Same deps? Skip it ⏭️",
+      "say": "After each render, React decides whether to re-run your Effect. Here is the exact rule."
+    },
+    {
+      "type": "code",
+      "code": "useEffect(() => {\n  sync(a, b);\n}, [a, b]);",
+      "highlight": [
+        3
+      ],
+      "say": "React skips the Effect only if all dependencies have exactly the same values as during the previous render."
+    },
+    {
+      "type": "code",
+      "code": "Object.is(3, 3)        // true  → same\nObject.is(\"hi\", \"hi\")  // true  → same\nObject.is({}, {})      // false → changed",
+      "highlight": [
+        3
+      ],
+      "say": "It compares each one with Object dot is. Numbers and strings compare by value. But two objects are only the same if they are the very same object."
+    },
+    {
+      "type": "text",
+      "text": "One changed value is enough to re-run the Effect.",
+      "say": "If even one dependency differs, the Effect runs again."
+    }
+  ]
+}

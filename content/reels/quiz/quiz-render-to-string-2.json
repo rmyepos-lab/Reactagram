@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-render-to-string-2",
+  "topic": "Server Rendering",
+  "concept": "render-to-string",
+  "format": "which-hook",
+  "level": "advanced",
+  "tags": [
+    "ssr",
+    "server-rendering"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/server/renderToString",
+  "question": "Your Node.js server uses renderToString. Which API do the docs recommend instead?",
+  "options": [
+    "renderToPipeableStream",
+    "renderToStaticMarkup",
+    "createRoot",
+    "hydrateRoot"
+  ],
+  "answer": 0,
+  "say": "Your Node server uses render to string. Which API do the docs recommend instead?",
+  "explanation": "On Node.js, use renderToPipeableStream: it can stream content as it loads. renderToStaticMarkup is for non-interactive HTML, and the other two are client APIs.",
+  "explainSay": "Render to pipeable stream. On Node it streams content as it loads."
+}

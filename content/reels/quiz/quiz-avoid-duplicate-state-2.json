@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-avoid-duplicate-state-2",
+  "topic": "State Structure & Sharing",
+  "concept": "avoid-duplicate-state",
+  "format": "fill-blank",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "duplication",
+    "ids"
+  ],
+  "sourceUrl": "https://react.dev/learn/choosing-the-state-structure#avoid-duplication-in-state",
+  "question": "Fill the blank to get the selected item from the id:",
+  "code": "const selected = items.___(i =>\n  i.id === selectedId\n);",
+  "options": [
+    "filter",
+    "find",
+    "map"
+  ],
+  "answer": 1,
+  "say": "Fill the blank to get the selected item from its id.",
+  "explanation": "find returns the first matching item. filter would return an array, and map a transformed array.",
+  "explainSay": "Find. It returns the single matching item."
+}

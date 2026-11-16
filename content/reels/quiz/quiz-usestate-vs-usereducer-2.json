@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-usestate-vs-usereducer-2",
+  "topic": "Reducers",
+  "concept": "usestate-vs-usereducer",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "reducers",
+    "useState",
+    "useReducer"
+  ],
+  "sourceUrl": "https://react.dev/learn/extracting-state-logic-into-a-reducer#comparing-usestate-and-usereducer",
+  "question": "True or false: you cannot use useState and useReducer in the same component.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: you cannot use use state and use reducer in the same component.",
+  "explanation": "False. You can mix and match them freely, even within one component.",
+  "explainSay": "False. You can use both in the same component."
+}

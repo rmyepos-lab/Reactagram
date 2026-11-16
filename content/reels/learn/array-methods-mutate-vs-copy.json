@@ -1,0 +1,47 @@
+{
+  "kind": "learn",
+  "id": "array-methods-mutate-vs-copy",
+  "topic": "State",
+  "concept": "array-methods-mutate-vs-copy",
+  "format": "compare",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "arrays",
+    "methods"
+  ],
+  "sourceUrl": "https://react.dev/learn/updating-arrays-in-state#making-other-changes-to-an-array",
+  "title": "Array methods: mutate vs copy",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Which array methods are safe? 🧪",
+      "say": "Some array methods change the array in place. In React state, you avoid those."
+    },
+    {
+      "type": "code",
+      "code": "// avoid: mutate the array\npush unshift pop shift\nsplice sort reverse\n\n// prefer: return a new array\nconcat  [...arr]\nfilter  slice  map",
+      "highlight": [
+        2,
+        3,
+        6,
+        7
+      ],
+      "say": "Avoid push, unshift, pop, shift, splice, sort and reverse. Prefer concat, spread, filter, slice and map."
+    },
+    {
+      "type": "text",
+      "text": "slice copies. splice (with a p!) mutates.",
+      "say": "Watch the names. Slice copies an array. Splice, with a p, mutates it."
+    },
+    {
+      "type": "code",
+      "code": "const nextList = [...list];\nnextList.reverse();\nsetList(nextList);",
+      "highlight": [
+        1,
+        2
+      ],
+      "say": "Need to sort or reverse? Copy the array first, then call the mutating method on your copy."
+    }
+  ]
+}

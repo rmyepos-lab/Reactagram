@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-usesyncexternalstore-2",
+  "topic": "Side Effects",
+  "concept": "usesyncexternalstore",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "useSyncExternalStore",
+    "subscriptions",
+    "browser-api"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useSyncExternalStore#subscribing-to-a-browser-api",
+  "question": "What must subscribe return?",
+  "options": [
+    "The current value",
+    "A function that unsubscribes",
+    "Nothing"
+  ],
+  "answer": 1,
+  "say": "What must the subscribe function return?",
+  "explanation": "subscribe registers the callback and returns a function that cleans up the subscription.",
+  "explainSay": "A function that unsubscribes."
+}

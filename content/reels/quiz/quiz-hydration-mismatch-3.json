@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-hydration-mismatch-3",
+  "topic": "Server Rendering",
+  "concept": "hydration-mismatch",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "ssr",
+    "hydration"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/client/hydrateRoot#handling-different-client-and-server-content",
+  "question": "True or false: with suppressHydrationWarning, React updates the text to the client's value.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false? With suppress hydration warning, React updates the text to the client's value.",
+  "explanation": "It only silences the warning. React will not attempt to patch mismatched text content. Use two-pass rendering if the client must show something else.",
+  "explainSay": "False. It only silences the warning. React won't patch the text."
+}

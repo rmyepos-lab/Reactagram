@@ -1,0 +1,26 @@
+{
+  "kind": "quiz",
+  "id": "quiz-state-update-queue-1",
+  "topic": "State",
+  "concept": "state-update-queue",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "batching",
+    "updater"
+  ],
+  "sourceUrl": "https://react.dev/learn/queueing-a-series-of-state-updates#what-happens-if-you-update-state-after-replacing-it",
+  "question": "number starts at 0. What is it after one click?",
+  "code": "onClick={() => {\n  setNumber(number + 5);\n  setNumber(n => n + 1);\n  setNumber(42);\n}}",
+  "options": [
+    "6",
+    "42",
+    "48",
+    "5"
+  ],
+  "answer": 1,
+  "say": "Number starts at zero. What is it after one click?",
+  "explanation": "Queue: replace with 5 → 5, n => n + 1 → 6, replace with 42 → 42. A plain value ignores what was queued before.",
+  "explainSay": "Forty two. The last entry replaces whatever came before it in the queue."
+}

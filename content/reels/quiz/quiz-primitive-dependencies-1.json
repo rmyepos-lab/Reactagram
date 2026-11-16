@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-primitive-dependencies-1",
+  "topic": "Side Effects",
+  "concept": "primitive-dependencies",
+  "format": "bug-hunt",
+  "level": "advanced",
+  "tags": [
+    "useEffect",
+    "dependencies",
+    "props"
+  ],
+  "sourceUrl": "https://react.dev/learn/removing-effect-dependencies#read-primitive-values-from-objects",
+  "question": "The parent passes options={{ roomId }} inline. How should ChatRoom's Effect depend on it?",
+  "options": [
+    "[options]",
+    "Read const { roomId } = options and use [roomId]",
+    "Leave the array empty"
+  ],
+  "answer": 1,
+  "say": "The parent passes an inline options object. How should ChatRoom’s Effect depend on it?",
+  "explanation": "The inline object is new each parent render. Destructure the primitive outside the Effect and depend on it.",
+  "explainSay": "Read room id out of options, and depend on that string."
+}

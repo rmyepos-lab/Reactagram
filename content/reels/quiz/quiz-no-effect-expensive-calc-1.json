@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-no-effect-expensive-calc-1",
+  "topic": "Side Effects",
+  "concept": "no-effect-expensive-calc",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "useMemo",
+    "performance",
+    "useEffect"
+  ],
+  "sourceUrl": "https://react.dev/learn/you-might-not-need-an-effect#caching-expensive-calculations",
+  "question": "Only newTodo changes. Does getFilteredTodos run again?",
+  "code": "const visible = useMemo(\n  () => getFilteredTodos(todos, filter),\n  [todos, filter]\n);",
+  "options": [
+    "Yes, on every render",
+    "No, it returns the stored result",
+    "Only in production"
+  ],
+  "answer": 1,
+  "say": "Only new todo changes. Does get filtered todos run again?",
+  "explanation": "todos and filter are the same as last time, so useMemo returns the last stored result.",
+  "explainSay": "No. Its dependencies did not change, so the stored result is reused."
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-memoize-context-value-2",
+  "topic": "Context",
+  "concept": "memoize-context-value",
+  "format": "which-hook",
+  "level": "advanced",
+  "tags": [
+    "context",
+    "useMemo",
+    "useCallback"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useContext#optimizing-re-renders-when-passing-objects-and-functions",
+  "question": "Which Hook caches the { currentUser, login } object passed as the context value?",
+  "options": [
+    "useMemo",
+    "useCallback",
+    "useContext"
+  ],
+  "answer": 0,
+  "say": "Which Hook caches the current user and login object passed as the context value?",
+  "explanation": "useMemo caches the object; useCallback caches the login function inside it.",
+  "explainSay": "Use memo, for the object. Use callback handles the function."
+}

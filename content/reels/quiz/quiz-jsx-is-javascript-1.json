@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-jsx-is-javascript-1",
+  "topic": "Components & JSX",
+  "concept": "jsx-is-javascript",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "jsx",
+    "createElement",
+    "compiler"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/createElement#creating-an-element-without-jsx",
+  "question": "Which call is equivalent to <card /> (lowercase)?",
+  "options": [
+    "createElement(Card)",
+    "createElement(\"card\")",
+    "Card()"
+  ],
+  "answer": 1,
+  "say": "Which call is equivalent to a lowercase card tag?",
+  "explanation": "A lowercase tag becomes createElement with a string, so React treats it as a built-in HTML tag, not your Card component.",
+  "explainSay": "Create element with the string card. Lowercase tags become strings, so React treats them as HTML tags."
+}

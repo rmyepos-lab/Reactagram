@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-effect-animations-2",
+  "topic": "Side Effects",
+  "concept": "effect-animations",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "animation",
+    "cleanup"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#triggering-animations",
+  "question": "Dev, Strict Mode. Which opacity values are set, in order?",
+  "code": "useEffect(() => {\n  n.style.opacity = 1;\n  return () => { n.style.opacity = 0; };\n}, []);",
+  "options": [
+    "1",
+    "1, 0, 1",
+    "0, 1"
+  ],
+  "answer": 1,
+  "say": "In development with Strict Mode, which opacity values are set, in order?",
+  "explanation": "Setup sets 1, cleanup sets 0, setup sets 1 again. The user sees the same result as production.",
+  "explainSay": "One, zero, one. Setup, cleanup, setup."
+}

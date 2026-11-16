@@ -1,0 +1,42 @@
+{
+  "kind": "learn",
+  "id": "no-effect-chains",
+  "topic": "Side Effects",
+  "concept": "no-effect-chains",
+  "format": "pitfall",
+  "level": "advanced",
+  "tags": [
+    "useEffect",
+    "state",
+    "performance"
+  ],
+  "sourceUrl": "https://react.dev/learn/you-might-not-need-an-effect#chains-of-computations",
+  "title": "Avoid chains of Effects that set state",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Effect dominoes 🁫",
+      "say": "A card game where one Effect sets state, which triggers another Effect, which sets more state."
+    },
+    {
+      "type": "code",
+      "code": "useEffect(() => {\n  if (card?.gold) setGold(c => c + 1);\n}, [card]);\nuseEffect(() => {\n  if (gold > 3) setRound(r => r + 1);\n}, [gold]);\nuseEffect(() => {\n  if (round > 5) setIsGameOver(true);\n}, [round]);",
+      "highlight": [
+        2,
+        5,
+        8
+      ],
+      "say": "Each set call causes a render before the next Effect runs. In the worst case, three unnecessary re-renders of the whole tree below."
+    },
+    {
+      "type": "text",
+      "text": "Also fragile: replaying a past move would re-trigger the whole chain.",
+      "say": "It is also fragile. If you add game history and set a past card, the chain fires again and changes your data."
+    },
+    {
+      "type": "text",
+      "text": "Fix: calculate what you can in render; set all next state in the event handler.",
+      "say": "The fix: calculate what you can during render, like is game over, and set all the next state in the event handler, in one go."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-hydration-2",
+  "topic": "How React Works",
+  "concept": "hydration",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "internals",
+    "ssr",
+    "hydration"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/client/hydrateRoot",
+  "question": "The app is client-rendered with no server HTML. Which API should you use?",
+  "options": [
+    "hydrateRoot",
+    "createRoot"
+  ],
+  "answer": 1,
+  "say": "The app is client rendered, with no server HTML. Which API should you use?",
+  "explanation": "hydrateRoot is only for attaching to server-rendered HTML. For a client-only app, use createRoot.",
+  "explainSay": "Create root. Hydrate root is only for server HTML."
+}

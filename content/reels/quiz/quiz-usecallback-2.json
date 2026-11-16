@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-usecallback-2",
+  "topic": "Performance",
+  "concept": "usecallback",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "useCallback",
+    "performance",
+    "memo"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useCallback#skipping-re-rendering-of-components",
+  "question": "theme changes; productId and referrer stay the same. Is handleSubmit a new function?",
+  "code": "const handleSubmit = useCallback(d => {\n  post(productId, referrer, d);\n}, [productId, referrer]);",
+  "options": [
+    "Yes, theme changed",
+    "No, deps are unchanged",
+    "It becomes undefined"
+  ],
+  "answer": 1,
+  "say": "Theme changes, but product id and referrer stay the same. Is handle submit a new function?",
+  "explanation": "useCallback returns the same function while all dependencies are unchanged (by Object.is). theme is not one of them.",
+  "explainSay": "No. Its dependencies did not change, so it is the same function."
+}

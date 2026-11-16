@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "usecallback",
+  "topic": "Performance",
+  "concept": "usecallback",
+  "format": "special-use",
+  "level": "intermediate",
+  "tags": [
+    "useCallback",
+    "performance",
+    "memo"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useCallback#skipping-re-rendering-of-components",
+  "title": "useCallback: keep the same function",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Same function, every render 🎯",
+      "say": "Use callback caches a function definition between re-renders."
+    },
+    {
+      "type": "code",
+      "code": "const handleSubmit = useCallback(details => {\n  post(\"/product/\" + productId + \"/buy\", {\n    referrer, details,\n  });\n}, [productId, referrer]);",
+      "highlight": [
+        1,
+        5
+      ],
+      "say": "Pass the function and its dependencies. While product id and referrer stay the same, you get back the very same function."
+    },
+    {
+      "type": "code",
+      "code": "const ShippingForm = memo(function ShippingForm({ onSubmit }) {\n  // slow to render\n});\n\n<ShippingForm onSubmit={handleSubmit} />",
+      "highlight": [
+        1,
+        5
+      ],
+      "say": "Why? A memo child skips re-rendering only if its props are the same. A new function each render would break that."
+    },
+    {
+      "type": "text",
+      "text": "React doesn’t call your function. It returns it so you call it later.",
+      "say": "Note: React does not call your function. It just hands it back, and you decide when to call it."
+    }
+  ]
+}

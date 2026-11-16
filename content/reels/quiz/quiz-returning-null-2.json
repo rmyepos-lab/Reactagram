@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-returning-null-2",
+  "topic": "Rendering Lists & Conditions",
+  "concept": "returning-null",
+  "format": "true-false",
+  "level": "beginner",
+  "tags": [
+    "conditional-rendering",
+    "null"
+  ],
+  "sourceUrl": "https://react.dev/learn/conditional-rendering#conditionally-returning-nothing-with-null",
+  "question": "True or false: the docs say returning null from a component is very common and preferred.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: the docs say returning null from a component is very common and the preferred way.",
+  "explanation": "False. It works, but it is not common because it can surprise someone reading the parent. Conditionally including the component in the parent is often clearer.",
+  "explainSay": "False. It works, but it can surprise readers. Usually the parent decides whether to include the component."
+}

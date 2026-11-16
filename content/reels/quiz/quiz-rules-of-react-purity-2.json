@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-rules-of-react-purity-2",
+  "topic": "Purity",
+  "concept": "rules-of-react-purity",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "purity",
+    "idempotent",
+    "rules-of-react"
+  ],
+  "sourceUrl": "https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent",
+  "question": "True or false: you must never use new Date() anywhere in a React app.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: you must never use new Date anywhere in a React app.",
+  "explanation": "False. Avoid non-idempotent calls during render only. In an Effect or event handler, new Date() is fine.",
+  "explainSay": "False. Just keep it out of rendering. In an effect or an event handler, it is fine."
+}

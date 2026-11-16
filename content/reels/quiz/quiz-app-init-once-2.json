@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-app-init-once-2",
+  "topic": "Side Effects",
+  "concept": "app-init-once",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "useEffect",
+    "initialization",
+    "strict-mode"
+  ],
+  "sourceUrl": "https://react.dev/learn/you-might-not-need-an-effect#initializing-the-application",
+  "question": "True or false: putting init logic at the top of any component module is a good default.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: putting init logic at the top of any component module is a good default.",
+  "explanation": "False. Module code runs when imported, even if not rendered. Keep app-wide init in App.js or the entry point.",
+  "explainSay": "False. It runs on import. Keep it in the root module or entry point."
+}

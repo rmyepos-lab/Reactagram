@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-usetransition-1",
+  "topic": "Concurrent Rendering",
+  "concept": "usetransition",
+  "format": "which-hook",
+  "level": "intermediate",
+  "tags": [
+    "useTransition",
+    "concurrent",
+    "performance"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useTransition#perform-non-blocking-updates-with-actions",
+  "question": "Switching to a slow tab freezes clicks on other tabs. Which Hook helps?",
+  "options": [
+    "useTransition",
+    "useLayoutEffect",
+    "useRef"
+  ],
+  "answer": 0,
+  "say": "Switching to a slow tab freezes clicks on the other tabs. Which Hook helps?",
+  "explanation": "Wrapping setTab in startTransition makes the update non-blocking, so new clicks are handled immediately.",
+  "explainSay": "Use transition. It makes the tab switch non blocking."
+}

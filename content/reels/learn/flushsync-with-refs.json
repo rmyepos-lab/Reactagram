@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "flushsync-with-refs",
+  "topic": "Refs",
+  "concept": "flushsync-with-refs",
+  "format": "special-use",
+  "level": "advanced",
+  "tags": [
+    "refs",
+    "flushSync",
+    "dom"
+  ],
+  "sourceUrl": "https://react.dev/learn/manipulating-the-dom-with-refs#flushing-state-updates-synchronously-with-flush-sync",
+  "title": "flushSync: update the DOM, then read it",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Scroll lags one item 🐌",
+      "say": "You add a todo, then scroll to the last item. It always scrolls to the one before. Why?"
+    },
+    {
+      "type": "code",
+      "code": "setTodos([...todos, newTodo]);\nlistRef.current.lastChild\n  .scrollIntoView();",
+      "highlight": [
+        1,
+        2
+      ],
+      "say": "State updates are queued. Set todos does not update the DOM right away, so the new item is not there yet when you scroll."
+    },
+    {
+      "type": "code",
+      "code": "import { flushSync } from \"react-dom\";\n\nflushSync(() => {\n  setTodos([...todos, newTodo]);\n});\nlistRef.current.lastChild\n  .scrollIntoView();",
+      "highlight": [
+        3,
+        4
+      ],
+      "say": "Wrap the update in flush sync from react dom. React updates the DOM synchronously right after it, so the new todo is there when you scroll."
+    },
+    {
+      "type": "text",
+      "text": "Rare tool: use it only when you must read the updated DOM right away.",
+      "say": "It is a rare escape hatch. Use it only when you need the updated DOM immediately."
+    }
+  ]
+}

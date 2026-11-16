@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "controlled-vs-uncontrolled",
+  "topic": "State Structure & Sharing",
+  "concept": "controlled-vs-uncontrolled",
+  "format": "compare",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "props",
+    "controlled"
+  ],
+  "sourceUrl": "https://react.dev/learn/sharing-state-between-components#controlled-and-uncontrolled-components",
+  "title": "Controlled vs uncontrolled components",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Who is in control? 🎮",
+      "say": "Controlled or uncontrolled. These words describe who drives a component’s important information."
+    },
+    {
+      "type": "code",
+      "code": "// uncontrolled: own state\nfunction Panel() {\n  const [isActive, setIsActive] =\n    useState(false);\n}\n\n// controlled: driven by props\nfunction Panel({ isActive, onShow }) {}",
+      "highlight": [
+        3,
+        8
+      ],
+      "say": "A panel with its own is active state is uncontrolled: the parent cannot influence it. A panel driven by props is controlled by its parent."
+    },
+    {
+      "type": "text",
+      "text": "Uncontrolled: easy to drop in, hard to coordinate. Controlled: flexible, but the parent must configure it.",
+      "say": "Uncontrolled components are easy to use, but hard to coordinate. Controlled ones are maximally flexible, but the parent must configure them fully."
+    },
+    {
+      "type": "text",
+      "text": "Not strict terms. Most components mix props and state.",
+      "say": "These are not strict technical terms. Most components mix both. You can always refactor later."
+    }
+  ]
+}

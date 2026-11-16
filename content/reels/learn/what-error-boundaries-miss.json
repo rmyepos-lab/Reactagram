@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "what-error-boundaries-miss",
+  "topic": "Errors & Escape Hatches",
+  "concept": "what-error-boundaries-miss",
+  "format": "pitfall",
+  "level": "intermediate",
+  "tags": [
+    "error-boundary",
+    "errors",
+    "events"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary",
+  "title": "Errors Error Boundaries don't catch",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Not every error is caught 🕳️",
+      "say": "Error Boundaries only catch errors during rendering of their children. Some errors slip past."
+    },
+    {
+      "type": "text",
+      "text": "Not caught: event handlers, server rendering, the boundary’s own errors, async code like setTimeout.",
+      "say": "They do not catch errors in event handlers, during server side rendering, in the boundary itself, or in async code like set timeout."
+    },
+    {
+      "type": "code",
+      "code": "function handleClick() {\n  try {\n    save();\n  } catch (e) {\n    setError(e);\n  }\n}",
+      "highlight": [
+        2,
+        4
+      ],
+      "say": "For event handlers, use try and catch, and keep the error in state if you need to show it."
+    },
+    {
+      "type": "text",
+      "text": "Exception: errors inside useTransition’s startTransition ARE caught.",
+      "say": "One exception: errors thrown inside the start transition function from use transition are caught by Error Boundaries."
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "kind": "learn",
+  "id": "rendering-with-map",
+  "topic": "Rendering Lists & Conditions",
+  "concept": "rendering-with-map",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "lists",
+    "map",
+    "arrow-functions"
+  ],
+  "sourceUrl": "https://react.dev/learn/rendering-lists#rendering-data-from-arrays",
+  "title": "Render a list with map()",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Arrays → lists with map 🗺️",
+      "say": "Have an array of data? Turn it into a list of elements with map."
+    },
+    {
+      "type": "code",
+      "code": "const people = [\"Ada\", \"Alan\", \"Grace\"];\n\nconst items = people.map(p =>\n  <li>{p}</li>\n);\n\nreturn <ul>{items}</ul>;",
+      "highlight": [
+        3,
+        4,
+        7
+      ],
+      "say": "Map each name to a list item, then put that array of items inside your list."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 block body, no return\npeople.map(p => {\n  <li>{p}</li>;\n});\n\n// ✅\npeople.map(p => {\n  return <li>{p}</li>;\n});",
+      "highlight": [
+        2,
+        8
+      ],
+      "say": "Watch out. With curly braces after the arrow, you must write return yourself. Forget it, and nothing gets returned."
+    },
+    {
+      "type": "text",
+      "text": "=> <li> returns implicitly. => { needs return.",
+      "say": "Takeaway: arrow then JSX returns automatically. Arrow then a curly brace needs an explicit return."
+    }
+  ]
+}

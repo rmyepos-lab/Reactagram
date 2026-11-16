@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-compiler-needs-rules-2",
+  "topic": "React Compiler",
+  "concept": "compiler-needs-rules",
+  "format": "bug-hunt",
+  "level": "advanced",
+  "tags": [
+    "compiler",
+    "useeffect",
+    "rules-of-react"
+  ],
+  "sourceUrl": "https://react.dev/learn/react-compiler/introduction#is-it-safe-to-use",
+  "question": "After turning on the compiler, an Effect fires a different number of times than before. What's the likely cause?",
+  "options": [
+    "The compiler runs Effects twice in production",
+    "The Effect needs a cleanup function",
+    "The compiler removed the dependency array",
+    "The code relied on object identity (memoization) to work"
+  ],
+  "answer": 3,
+  "say": "After turning on the compiler, an effect fires a different number of times than before. What's the likely cause?",
+  "explanation": "Code that relies on memoization for correctness, like an Effect depending on an object's reference, can behave differently because the compiler may memoize differently than before.",
+  "explainSay": "The code relied on object identity to work. The compiler may memoize differently, so the effect fires differently."
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-action-objects-1",
+  "topic": "Reducers",
+  "concept": "action-objects",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "reducers",
+    "actions",
+    "dispatch"
+  ],
+  "sourceUrl": "https://react.dev/learn/extracting-state-logic-into-a-reducer#step-1-move-from-setting-state-to-dispatching-actions",
+  "question": "The user presses \"Reset\" on a form with 5 fields. Which dispatch fits best?",
+  "options": [
+    "5 × dispatch({ type: \"set_field\" })",
+    "dispatch({ type: \"reset_form\" })",
+    "setState for each field instead"
+  ],
+  "answer": 1,
+  "say": "The user presses reset on a form with five fields. Which dispatch fits best?",
+  "explanation": "Each action should describe a single user interaction, even if it changes lots of data. One reset_form action keeps the log clear.",
+  "explainSay": "One reset form action. Each action should describe one user interaction."
+}

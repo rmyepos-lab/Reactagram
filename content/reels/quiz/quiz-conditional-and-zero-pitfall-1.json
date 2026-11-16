@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-conditional-and-zero-pitfall-1",
+  "topic": "Rendering Lists & Conditions",
+  "concept": "conditional-and-zero-pitfall",
+  "format": "output",
+  "level": "beginner",
+  "tags": [
+    "conditional-rendering",
+    "logical-and",
+    "pitfall"
+  ],
+  "sourceUrl": "https://react.dev/learn/conditional-rendering#logical-and-operator-",
+  "question": "messageCount is 0. What appears on screen?",
+  "code": "<div>\n  {messageCount && <p>New messages</p>}\n</div>",
+  "options": [
+    "Nothing",
+    "New messages",
+    "0"
+  ],
+  "answer": 2,
+  "say": "Message count is zero. What appears on screen?",
+  "explanation": "When the left side is 0, the expression evaluates to 0, and React renders the number 0 rather than nothing.",
+  "explainSay": "A zero. The expression evaluates to zero, and React renders that number."
+}

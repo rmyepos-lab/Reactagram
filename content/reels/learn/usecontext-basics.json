@@ -1,0 +1,40 @@
+{
+  "kind": "learn",
+  "id": "usecontext-basics",
+  "topic": "Context",
+  "concept": "usecontext-basics",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "context",
+    "useContext",
+    "hooks"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useContext#passing-data-deeply-into-the-tree",
+  "title": "Read context with useContext",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Ask for it: useContext 🙋",
+      "say": "A component deep in the tree can read context with use context."
+    },
+    {
+      "type": "code",
+      "code": "import { useContext } from \"react\";\nimport { LevelContext } from \"./LevelContext\";\n\nfunction Heading({ children }) {\n  const level = useContext(LevelContext);\n  // render <h1>…<h6> from level\n}",
+      "highlight": [
+        5
+      ],
+      "say": "Pass the context itself to use context. It returns the value from the closest provider above."
+    },
+    {
+      "type": "text",
+      "text": "It’s a Hook: call it at the top level, not in loops or conditions.",
+      "say": "It is a Hook, like use state. Call it at the top level of your component, not inside loops or conditions."
+    },
+    {
+      "type": "text",
+      "text": "Always up to date: when the provided value changes, readers re-render.",
+      "say": "The value is always up to date. When the provider gets a new value, React re-renders the components that read it."
+    }
+  ]
+}

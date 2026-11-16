@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-use-api-1",
+  "topic": "Hooks",
+  "concept": "use-api",
+  "format": "which-hook",
+  "level": "advanced",
+  "tags": [
+    "use",
+    "context",
+    "promises"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/use",
+  "question": "You need to read a context only inside an if. Which API allows that?",
+  "options": [
+    "useContext",
+    "use",
+    "useEffect"
+  ],
+  "answer": 1,
+  "say": "You need to read a context only inside an if statement. Which API allows that?",
+  "explanation": "Unlike useContext, use can be called within conditionals and loops.",
+  "explainSay": "Use. Unlike use context, it works inside conditions and loops."
+}

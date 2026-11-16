@@ -1,0 +1,50 @@
+{
+  "kind": "learn",
+  "id": "no-nested-component-definitions",
+  "topic": "Components & JSX",
+  "concept": "no-nested-component-definitions",
+  "format": "pitfall",
+  "level": "intermediate",
+  "tags": [
+    "components",
+    "state",
+    "performance"
+  ],
+  "sourceUrl": "https://react.dev/learn/your-first-component#nesting-and-organizing-components",
+  "title": "Never define a component inside another",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Don't nest component definitions 🪆",
+      "say": "Components can render other components. But never define one component inside another."
+    },
+    {
+      "type": "code",
+      "code": "function Gallery() {\n  // 🔴 new function every render\n  function Profile() {\n    // ...\n  }\n  return <Profile />;\n}",
+      "highlight": [
+        3
+      ],
+      "text": "Very slow, and it causes bugs.",
+      "say": "Here Profile is defined inside Gallery. The docs say this is very slow and causes bugs."
+    },
+    {
+      "type": "text",
+      "text": "Each render creates a different Profile function, so React resets all state below it.",
+      "say": "Why? Every render of Gallery creates a different Profile function. React sees a different component in the same spot and resets its state. Typed text just vanishes."
+    },
+    {
+      "type": "code",
+      "code": "function Gallery() {\n  return <Profile name=\"Ada\" />;\n}\n\n// ✅ top level\nfunction Profile({ name }) {\n  // ...\n}",
+      "highlight": [
+        5,
+        6
+      ],
+      "say": "The fix: declare every component at the top level. If the child needs data from the parent, pass it as props."
+    },
+    {
+      "type": "text",
+      "text": "Top-level components + props. Always.",
+      "say": "Takeaway: define components at the top level, and pass data down with props."
+    }
+  ]
+}

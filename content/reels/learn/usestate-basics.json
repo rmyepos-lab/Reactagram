@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "usestate-basics",
+  "topic": "State",
+  "concept": "usestate-basics",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "state",
+    "useState",
+    "hooks"
+  ],
+  "sourceUrl": "https://react.dev/learn/state-a-components-memory#adding-a-state-variable",
+  "title": "useState: a value and a setter",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Meet useState 🧠",
+      "say": "Use state gives your component a memory. Here is how it works."
+    },
+    {
+      "type": "code",
+      "code": "import { useState } from \"react\";\n\nfunction Gallery() {\n  const [index, setIndex] = useState(0);\n  function handleClick() {\n    setIndex(index + 1);\n  }\n  // ...\n}",
+      "highlight": [
+        4,
+        6
+      ],
+      "say": "Call use state with the starting value. It returns exactly two things: the current value, index, and a setter, set index."
+    },
+    {
+      "type": "text",
+      "text": "The setter updates the value AND tells React to render again.",
+      "say": "Calling the setter does both jobs. React keeps the new value, and it renders the component again."
+    },
+    {
+      "type": "text",
+      "text": "Name them [something, setSomething]. Call useState at the top level only.",
+      "say": "Name the pair something and set something. And like every Hook, call it at the top level, never in loops or conditions."
+    }
+  ]
+}

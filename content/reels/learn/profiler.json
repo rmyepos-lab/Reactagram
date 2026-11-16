@@ -1,0 +1,43 @@
+{
+  "kind": "learn",
+  "id": "profiler",
+  "topic": "Performance",
+  "concept": "profiler",
+  "format": "special-use",
+  "level": "advanced",
+  "tags": [
+    "Profiler",
+    "performance",
+    "measuring"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/Profiler",
+  "title": "Measure renders with <Profiler>",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Measure, don’t guess 📏",
+      "say": "The Profiler component measures how long a part of your tree takes to render."
+    },
+    {
+      "type": "code",
+      "code": "<Profiler id=\"Sidebar\" onRender={onRender}>\n  <Sidebar />\n</Profiler>",
+      "highlight": [
+        1
+      ],
+      "say": "Wrap a tree with Profiler, give it an id, and an on render callback."
+    },
+    {
+      "type": "code",
+      "code": "function onRender(id, phase,\n  actualDuration, baseDuration) {\n  // phase: \"mount\" | \"update\" | ...\n}",
+      "highlight": [
+        2
+      ],
+      "say": "React calls on render every time that tree commits. Compare actual duration with base duration, the cost without memoization, to see if memo is working."
+    },
+    {
+      "type": "text",
+      "text": "Adds overhead, so it’s off in production builds by default.",
+      "say": "Profiling adds overhead, so it is disabled in production builds by default."
+    }
+  ]
+}

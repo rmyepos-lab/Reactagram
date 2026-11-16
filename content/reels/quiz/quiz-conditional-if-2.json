@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-conditional-if-2",
+  "topic": "Rendering Lists & Conditions",
+  "concept": "conditional-if",
+  "format": "true-false",
+  "level": "beginner",
+  "tags": [
+    "conditional-rendering",
+    "if"
+  ],
+  "sourceUrl": "https://react.dev/learn/conditional-rendering#conditionally-returning-jsx",
+  "question": "True or false: React needs a special <If> component for conditional rendering.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: React needs a special If component for conditional rendering.",
+  "explanation": "False. You use plain JavaScript: if statements, the ternary operator and &&.",
+  "explainSay": "False. You use plain JavaScript, like if statements, the ternary, and and-and."
+}

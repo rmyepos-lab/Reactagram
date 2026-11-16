@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-memo-breaks-with-new-objects-2",
+  "topic": "Performance",
+  "concept": "memo-breaks-with-new-objects",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "memo",
+    "useMemo",
+    "useCallback"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/memo#minimizing-props-changes",
+  "question": "Which comparison is true?",
+  "options": [
+    "Object.is({}, {})",
+    "Object.is(3, 3)",
+    "Object.is(() => {}, () => {})"
+  ],
+  "answer": 1,
+  "say": "Which of these comparisons is true?",
+  "explanation": "Primitives compare by value. Each {} or arrow function is a distinct object, so those are false.",
+  "explainSay": "Object dot is three, three. New objects and functions are never equal."
+}

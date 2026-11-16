@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-effect-event-prop-callbacks-1",
+  "topic": "Side Effects",
+  "concept": "effect-event-prop-callbacks",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "useEffectEvent",
+    "props",
+    "callbacks"
+  ],
+  "sourceUrl": "https://react.dev/learn/removing-effect-dependencies#wrapping-an-event-handler-from-the-props",
+  "question": "The parent passes an inline onChange and re-renders. The Effect lists [roomId, onChange]. What happens?",
+  "options": [
+    "Nothing",
+    "The Effect re-syncs every parent render",
+    "React warns and skips"
+  ],
+  "answer": 1,
+  "say": "The parent passes an inline on change and re-renders. The Effect lists room id and on change. What happens?",
+  "explanation": "An inline function is new each render, so the dependency changes and the Effect re-synchronizes every time.",
+  "explainSay": "It re-syncs every time, because the inline function is new each render."
+}

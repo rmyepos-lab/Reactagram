@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-ref-callbacks-1",
+  "topic": "Refs",
+  "concept": "ref-callbacks",
+  "format": "bug-hunt",
+  "level": "advanced",
+  "tags": [
+    "refs",
+    "ref-callback",
+    "lists"
+  ],
+  "sourceUrl": "https://react.dev/learn/manipulating-the-dom-with-refs#how-to-manage-a-list-of-refs-using-a-ref-callback",
+  "question": "Why does this fail?",
+  "code": "items.map(item => {\n  const ref = useRef(null);\n  return <li key={item.id} ref={ref} />;\n})",
+  "options": [
+    "useRef is called inside map",
+    "li cannot take a ref",
+    "The key must be on the ref"
+  ],
+  "answer": 0,
+  "say": "Why does this code fail?",
+  "explanation": "Hooks must be called at the top level, not in loops or map(). Use a ref callback that stores nodes in a Map instead.",
+  "explainSay": "Use ref is called inside map. Hooks must be at the top level. Use a ref callback instead."
+}

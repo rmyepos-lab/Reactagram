@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-no-mutating-outside-variables-1",
+  "topic": "Purity",
+  "concept": "no-mutating-outside-variables",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "purity",
+    "mutation",
+    "strict-mode"
+  ],
+  "sourceUrl": "https://react.dev/learn/keeping-components-pure#side-effects-unintended-consequences",
+  "question": "In development with Strict Mode, what do three Cups show?",
+  "code": "let guest = 0;\nfunction Cup() {\n  guest = guest + 1;\n  return <h2>Guest #{guest}</h2>;\n}\n// <Cup /> <Cup /> <Cup />",
+  "options": [
+    "#1, #2, #3",
+    "#2, #4, #6",
+    "#1, #1, #1"
+  ],
+  "answer": 1,
+  "say": "In development with Strict Mode, what do three cups show?",
+  "explanation": "Strict Mode calls each component twice in development. The impure Cup bumps guest twice per render: 2, 4, 6.",
+  "explainSay": "Two, four, six. Strict Mode renders each cup twice, and each call bumps the outside variable."
+}

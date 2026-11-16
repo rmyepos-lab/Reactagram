@@ -1,0 +1,82 @@
+{
+  "kind": "learn",
+  "id": "state-update-queue",
+  "topic": "State",
+  "concept": "state-update-queue",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "batching",
+    "updater"
+  ],
+  "sourceUrl": "https://react.dev/learn/queueing-a-series-of-state-updates#what-happens-if-you-update-state-after-replacing-it",
+  "title": "How React works through the update queue",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Inside the update queue 📥",
+      "say": "When you call a setter, React does not update right away. It adds the update to a queue."
+    },
+    {
+      "type": "code",
+      "code": "// number is 0\nsetNumber(number + 5);\nsetNumber(n => n + 1);",
+      "highlight": [
+        2,
+        3
+      ],
+      "say": "Two kinds of entries. A value, like zero plus five, means replace with five. A function means run this updater."
+    },
+    {
+      "type": "visual",
+      "say": "After the handler finishes, React re-renders and works through the queue in order.",
+      "visual": {
+        "kind": "timeline",
+        "events": [
+          {
+            "id": "replace",
+            "label": "replace with 5",
+            "note": "n is 0 (unused) → 5"
+          },
+          {
+            "id": "updater",
+            "label": "n => n + 1",
+            "note": "n is 5 → 6"
+          },
+          {
+            "id": "result",
+            "label": "useState returns 6"
+          }
+        ]
+      },
+      "steps": [
+        {
+          "say": "Replace with five ignores the old value. The result is five.",
+          "show": [
+            "replace"
+          ],
+          "focus": "replace"
+        },
+        {
+          "say": "The updater gets that five and returns six.",
+          "show": [
+            "updater"
+          ],
+          "focus": "updater"
+        },
+        {
+          "say": "React stores six and returns it from use state.",
+          "show": [
+            "result"
+          ],
+          "focus": "result"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "Updaters run during rendering, so they must be pure. No side effects inside.",
+      "say": "Updater functions run during rendering. So keep them pure: just return the next value."
+    }
+  ]
+}

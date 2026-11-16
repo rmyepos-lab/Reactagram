@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "dont-suppress-linter",
+  "topic": "Side Effects",
+  "concept": "dont-suppress-linter",
+  "format": "pitfall",
+  "level": "intermediate",
+  "tags": [
+    "useEffect",
+    "dependencies",
+    "linter"
+  ],
+  "sourceUrl": "https://react.dev/learn/removing-effect-dependencies#why-is-suppressing-the-dependency-linter-so-dangerous",
+  "title": "Don't silence the dependency linter",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Lying to React 🤥",
+      "say": "The linter wants a dependency you do not like. So you silence it. Here is what happens."
+    },
+    {
+      "type": "code",
+      "code": "function onTick() {\n  setCount(count + increment);\n}\nuseEffect(() => {\n  const id = setInterval(onTick, 1000);\n  return () => clearInterval(id);\n  // eslint-disable-next-line\n}, []);",
+      "highlight": [
+        7,
+        8
+      ],
+      "say": "This timer should add increment every second. The linter was silenced and the list forced to empty."
+    },
+    {
+      "type": "text",
+      "text": "It keeps the first onTick forever: count 0, increment 1. The screen shows 1, always.",
+      "say": "React keeps using the on tick from the first render, where count was zero. So every second it sets one. The counter is stuck at one."
+    },
+    {
+      "type": "text",
+      "text": "Treat the lint error like a compile error. Change the code, not the list.",
+      "say": "Treat the dependency lint error like a compile error. The list describes your code. To change the list, change the code."
+    }
+  ]
+}

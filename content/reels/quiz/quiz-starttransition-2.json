@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-starttransition-2",
+  "topic": "Concurrent Rendering",
+  "concept": "starttransition",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "startTransition",
+    "concurrent"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/startTransition",
+  "question": "True or false: the function passed to startTransition is called immediately.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: the function passed to start transition is called immediately.",
+  "explanation": "True. React calls it right away and marks state updates scheduled during it as Transitions.",
+  "explainSay": "True. React calls it right away."
+}

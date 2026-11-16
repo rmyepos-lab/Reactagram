@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-ssr-shell-3",
+  "topic": "Server Rendering",
+  "concept": "ssr-shell",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "ssr",
+    "streaming"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/server/renderToPipeableStream#specifying-what-goes-into-the-shell",
+  "question": "True or false: when onShellReady fires, every Suspense boundary has finished loading.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false? When on shell ready fires, every Suspense boundary has finished loading.",
+  "explanation": "onShellReady fires once the shell is rendered. Components in nested Suspense boundaries might still be loading data, and stream in later.",
+  "explainSay": "False. It fires when the shell is ready. Nested boundaries may still be loading."
+}

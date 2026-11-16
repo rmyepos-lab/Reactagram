@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-profiler-2",
+  "topic": "Performance",
+  "concept": "profiler",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "Profiler",
+    "performance",
+    "measuring"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/Profiler",
+  "question": "Which onRender value estimates the cost of re-rendering the whole subtree without optimizations?",
+  "options": [
+    "actualDuration",
+    "baseDuration",
+    "commitTime"
+  ],
+  "answer": 1,
+  "say": "Which on render value estimates the cost of re-rendering the whole subtree without optimizations?",
+  "explanation": "baseDuration estimates the worst case. Compare actualDuration against it to see if memoization works.",
+  "explainSay": "Base duration. Compare it with actual duration."
+}

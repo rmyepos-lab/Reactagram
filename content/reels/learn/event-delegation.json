@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "event-delegation",
+  "topic": "How React Works",
+  "concept": "event-delegation",
+  "format": "concept",
+  "level": "advanced",
+  "tags": [
+    "internals",
+    "events",
+    "delegation"
+  ],
+  "sourceUrl": "https://legacy.reactjs.org/blog/2020/08/10/react-v17-rc.html#changes-to-event-delegation",
+  "title": "Event delegation at the root",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Where React really listens 👂",
+      "say": "You write onClick on a button. But React does not attach a listener to that button."
+    },
+    {
+      "type": "text",
+      "text": "React attaches one handler per event type at the top, then \"bubbles\" the event through your components.",
+      "say": "For most events, React attaches one handler per event type at the top, then figures out which components to call. That is event delegation."
+    },
+    {
+      "type": "code",
+      "code": "const rootNode = document.getElementById(\"root\");\n// React 16: document.addEventListener(...)\n// React 17+: rootNode.addEventListener(...)",
+      "highlight": [
+        2,
+        3
+      ],
+      "say": "Up to React sixteen, that top was the document. Since React seventeen, it is the root DOM container your app renders into."
+    },
+    {
+      "type": "text",
+      "text": "So stopPropagation works with other code on the page, and React versions can nest.",
+      "say": "This makes stop propagation behave as expected with non React code on the page, and lets apps on different React versions nest safely."
+    }
+  ]
+}
