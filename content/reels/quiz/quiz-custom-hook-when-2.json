@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-custom-hook-when-2",
+  "topic": "Custom Hooks",
+  "concept": "custom-hook-when",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "custom-hooks",
+    "design",
+    "useEffect"
+  ],
+  "sourceUrl": "https://react.dev/learn/reusing-logic-with-custom-hooks#when-to-use-custom-hooks",
+  "question": "True or false: you should extract a custom Hook for every duplicated line.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: you should extract a custom Hook for every duplicated line.",
+  "explanation": "False. Some duplication is fine. Extract when it makes intent and data flow clearer, often around Effects.",
+  "explainSay": "False. Some duplication is fine."
+}

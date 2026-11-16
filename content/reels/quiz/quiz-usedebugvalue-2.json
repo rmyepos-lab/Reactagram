@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-usedebugvalue-2",
+  "topic": "Custom Hooks",
+  "concept": "usedebugvalue",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "useDebugValue",
+    "devtools",
+    "custom-hooks"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useDebugValue",
+  "question": "True or false: useDebugValue returns the formatted value.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: use debug value returns the formatted value.",
+  "explanation": "False. useDebugValue does not return anything. It only labels the Hook in React DevTools.",
+  "explainSay": "False. It returns nothing."
+}

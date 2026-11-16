@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-passing-reactive-values-to-hooks-1",
+  "topic": "Custom Hooks",
+  "concept": "passing-reactive-values-to-hooks",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "custom-hooks",
+    "reactive",
+    "useEffect"
+  ],
+  "sourceUrl": "https://react.dev/learn/reusing-logic-with-custom-hooks#passing-reactive-values-between-hooks",
+  "question": "True or false: a custom Hook receives the latest props and state on every render.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: a custom Hook receives the latest props and state on every render.",
+  "explanation": "True. Custom Hooks re-run with the component, so the values you pass in are always current.",
+  "explainSay": "True. It re-runs with the component every render."
+}

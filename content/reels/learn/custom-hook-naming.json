@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "custom-hook-naming",
+  "topic": "Custom Hooks",
+  "concept": "custom-hook-naming",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "custom-hooks",
+    "naming",
+    "conventions"
+  ],
+  "sourceUrl": "https://react.dev/learn/reusing-logic-with-custom-hooks#hook-names-always-start-with-use",
+  "title": "Why Hook names start with use",
+  "slides": [
+    {
+      "type": "title",
+      "text": "The use prefix matters 🏷️",
+      "say": "Components start with a capital letter. Hooks start with use, followed by a capital letter."
+    },
+    {
+      "type": "code",
+      "code": "function StatusBar() {\n  const color = getColor();      // no state here\n  const isOnline = useOnlineStatus(); // Hooks inside\n}",
+      "highlight": [
+        2,
+        3
+      ],
+      "say": "The prefix tells readers where state and Effects might hide. Get color cannot hold React state. Use online status probably calls other Hooks."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 a \"Hook\" with no Hooks\nfunction useSorted(items) {\n  return items.slice().sort();\n}\n// ✅ a plain function\nfunction getSorted(items) {\n  return items.slice().sort();\n}",
+      "highlight": [
+        2,
+        6
+      ],
+      "say": "If a function calls no Hooks, do not give it the use prefix. Then it can be called anywhere, even in conditions."
+    },
+    {
+      "type": "text",
+      "text": "Calls a Hook → name it useX. No Hooks → plain name.",
+      "say": "Rule: it calls at least one Hook? Name it use something. No Hooks? A plain name."
+    }
+  ]
+}

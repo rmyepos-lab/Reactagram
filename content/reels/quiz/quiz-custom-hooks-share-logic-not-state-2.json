@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-custom-hooks-share-logic-not-state-2",
+  "topic": "Custom Hooks",
+  "concept": "custom-hooks-share-logic-not-state",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "custom-hooks",
+    "state",
+    "reuse"
+  ],
+  "sourceUrl": "https://react.dev/learn/reusing-logic-with-custom-hooks#custom-hooks-let-you-share-stateful-logic-not-state-itself",
+  "question": "True or false: two components calling useOnlineStatus() share one isOnline state variable.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: two components calling use online status share one is online state variable.",
+  "explanation": "False. They have independent state and Effects. They just sync to the same external value.",
+  "explainSay": "False. Each has its own state. They only agree because they read the same outside value."
+}

@@ -1,0 +1,43 @@
+{
+  "kind": "learn",
+  "id": "usedebugvalue",
+  "topic": "Custom Hooks",
+  "concept": "usedebugvalue",
+  "format": "special-use",
+  "level": "advanced",
+  "tags": [
+    "useDebugValue",
+    "devtools",
+    "custom-hooks"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useDebugValue",
+  "title": "useDebugValue: label a Hook in DevTools",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Name it in DevTools 🔍",
+      "say": "Use debug value adds a readable label to your custom Hook in React DevTools."
+    },
+    {
+      "type": "code",
+      "code": "function useOnlineStatus() {\n  const isOnline = useSyncExternalStore(\n    subscribe, getSnapshot);\n  useDebugValue(isOnline ? \"Online\" : \"Offline\");\n  return isOnline;\n}",
+      "highlight": [
+        4
+      ],
+      "say": "Call it at the top level of your custom Hook. Inspect a component using it, and DevTools shows Online Status: Online."
+    },
+    {
+      "type": "code",
+      "code": "useDebugValue(date, d => d.toDateString());",
+      "highlight": [
+        1
+      ],
+      "say": "Formatting is expensive? Pass a formatting function as the second argument. DevTools only calls it when the component is inspected."
+    },
+    {
+      "type": "text",
+      "text": "Only for custom Hooks. It returns nothing.",
+      "say": "It returns nothing. It is only a hint for DevTools."
+    }
+  ]
+}

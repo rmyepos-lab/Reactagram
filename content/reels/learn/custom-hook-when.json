@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "custom-hook-when",
+  "topic": "Custom Hooks",
+  "concept": "custom-hook-when",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "custom-hooks",
+    "design",
+    "useEffect"
+  ],
+  "sourceUrl": "https://react.dev/learn/reusing-logic-with-custom-hooks#when-to-use-custom-hooks",
+  "title": "When to extract a custom Hook",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Hook it or leave it? 🤔",
+      "say": "You do not need a custom Hook for every bit of duplicate code. Wrapping one use state call is probably unnecessary."
+    },
+    {
+      "type": "text",
+      "text": "Writing an Effect? Consider wrapping it in a custom Hook.",
+      "say": "But whenever you write an Effect, consider wrapping it in a custom Hook. It communicates intent and data flow clearly."
+    },
+    {
+      "type": "code",
+      "code": "const cities = useData(\n  `/api/cities?country=${country}`\n);\nconst areas = useData(\n  city ? `/api/areas?city=${city}` : null\n);",
+      "highlight": [
+        1,
+        4
+      ],
+      "say": "Here two fetching Effects become use data. You feed a URL in, and get data out. With time, most Effects end up in custom Hooks."
+    },
+    {
+      "type": "text",
+      "text": "✅ useData(url), useChatRoom(options). 🔴 useMount(fn), useEffectOnce(fn).",
+      "say": "Keep Hooks focused on concrete use cases, like use data or use chat room. Avoid lifecycle wrappers like use mount or use effect once."
+    }
+  ]
+}

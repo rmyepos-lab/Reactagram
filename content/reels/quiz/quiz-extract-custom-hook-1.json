@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-extract-custom-hook-1",
+  "topic": "Custom Hooks",
+  "concept": "extract-custom-hook",
+  "format": "fill-blank",
+  "level": "intermediate",
+  "tags": [
+    "custom-hooks",
+    "reuse"
+  ],
+  "sourceUrl": "https://react.dev/learn/reusing-logic-with-custom-hooks#extracting-your-own-custom-hook-from-a-component",
+  "question": "Fill the blank to use the extracted Hook in a component:",
+  "code": "function StatusBar() {\n  const isOnline = ___;\n  return <h1>{isOnline ? \"Online\" : \"Offline\"}</h1>;\n}",
+  "options": [
+    "useOnlineStatus()",
+    "new OnlineStatus()",
+    "<OnlineStatus />"
+  ],
+  "answer": 0,
+  "say": "Fill the blank to use the extracted Hook in this component.",
+  "explanation": "A custom Hook is a function. Call it at the top level of the component and use what it returns.",
+  "explainSay": "Call use online status. A custom Hook is just a function you call."
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-passing-reactive-values-to-hooks-2",
+  "topic": "Custom Hooks",
+  "concept": "passing-reactive-values-to-hooks",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "custom-hooks",
+    "reactive",
+    "useEffect"
+  ],
+  "sourceUrl": "https://react.dev/learn/reusing-logic-with-custom-hooks#passing-reactive-values-between-hooks",
+  "question": "Changing serverUrl does not reconnect. What is missing in the Hook?",
+  "code": "function useChatRoom({ roomId, serverUrl }) {\n  useEffect(() => {\n    const c = connect(serverUrl, roomId);\n    return () => c.disconnect();\n  }, [roomId]);\n}",
+  "options": [
+    "serverUrl in the dependencies",
+    "A useState inside the Hook",
+    "A return value"
+  ],
+  "answer": 0,
+  "say": "Changing server URL does not reconnect. What is missing in the Hook?",
+  "explanation": "serverUrl is a reactive value passed in, so the Effect must list it as a dependency.",
+  "explainSay": "Server URL in the dependency list."
+}

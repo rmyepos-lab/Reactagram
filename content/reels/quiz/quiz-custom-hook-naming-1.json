@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-custom-hook-naming-1",
+  "topic": "Custom Hooks",
+  "concept": "custom-hook-naming",
+  "format": "bug-hunt",
+  "level": "beginner",
+  "tags": [
+    "custom-hooks",
+    "naming",
+    "conventions"
+  ],
+  "sourceUrl": "https://react.dev/learn/reusing-logic-with-custom-hooks#hook-names-always-start-with-use",
+  "question": "This function calls no Hooks. What should it be named?",
+  "code": "function useTotal(items) {\n  return items.reduce((s, i) => s + i.price, 0);\n}",
+  "options": [
+    "Keep useTotal",
+    "getTotal",
+    "UseTotal"
+  ],
+  "answer": 1,
+  "say": "This function calls no Hooks. What should it be named?",
+  "explanation": "Functions that do not call Hooks should not use the use prefix. A plain name lets you call it anywhere, even in conditions.",
+  "explainSay": "Get total. No Hooks inside means no use prefix."
+}
