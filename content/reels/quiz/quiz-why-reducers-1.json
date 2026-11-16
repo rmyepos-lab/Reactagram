@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-why-reducers-1",
+  "topic": "Reducers",
+  "concept": "why-reducers",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "reducers",
+    "useReducer",
+    "state"
+  ],
+  "sourceUrl": "https://react.dev/learn/extracting-state-logic-into-a-reducer#consolidate-state-logic-with-a-reducer",
+  "question": "True or false: a reducer is usually defined outside the component.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: a reducer is usually defined outside the component.",
+  "explanation": "True. The point is to move state logic into a single function outside the component, in one easy-to-find place.",
+  "explainSay": "True. The reducer lives outside the component, keeping all state logic in one place."
+}

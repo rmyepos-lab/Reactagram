@@ -1,0 +1,37 @@
+{
+  "kind": "learn",
+  "id": "usestate-vs-usereducer",
+  "topic": "Reducers",
+  "concept": "usestate-vs-usereducer",
+  "format": "compare",
+  "level": "intermediate",
+  "tags": [
+    "reducers",
+    "useState",
+    "useReducer"
+  ],
+  "sourceUrl": "https://react.dev/learn/extracting-state-logic-into-a-reducer#comparing-usestate-and-usereducer",
+  "title": "useState vs useReducer",
+  "slides": [
+    {
+      "type": "title",
+      "text": "useState or useReducer? ⚖️",
+      "say": "Reducers are not always better. Let us compare."
+    },
+    {
+      "type": "text",
+      "text": "Code size: useState is less upfront. A reducer can save code when many handlers update state the same way.",
+      "say": "Code size. Use state needs less code upfront. A reducer can cut code when many handlers update state in a similar way."
+    },
+    {
+      "type": "text",
+      "text": "Debugging + testing: log every action in one place, and test the pure reducer on its own.",
+      "say": "Debugging and testing. With a reducer, you can log every update and why it happened. And the reducer is a pure function you can test in isolation."
+    },
+    {
+      "type": "text",
+      "text": "They are equivalent. Mix both, even in one component.",
+      "say": "They are equivalent, so you can switch back and forth. Mix and match, even in the same component. Reach for a reducer when wrong state updates keep causing bugs."
+    }
+  ]
+}

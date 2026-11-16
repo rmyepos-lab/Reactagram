@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-reducers-must-be-pure-2",
+  "topic": "Reducers",
+  "concept": "reducers-must-be-pure",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "reducers",
+    "purity",
+    "strict-mode"
+  ],
+  "sourceUrl": "https://react.dev/learn/extracting-state-logic-into-a-reducer#writing-reducers-well",
+  "question": "True or false: dispatched actions run the reducer right away, outside rendering.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: dispatched actions run the reducer right away, outside of rendering.",
+  "explanation": "False. Actions are queued until the next render, and the reducer runs during rendering. That is why it must be pure.",
+  "explainSay": "False. Actions are queued, and the reducer runs during the next render."
+}

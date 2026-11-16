@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-why-reducers-2",
+  "topic": "Reducers",
+  "concept": "why-reducers",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "reducers",
+    "useReducer",
+    "state"
+  ],
+  "sourceUrl": "https://react.dev/learn/extracting-state-logic-into-a-reducer#consolidate-state-logic-with-a-reducer",
+  "question": "Reducers are named after which JavaScript operation?",
+  "options": [
+    "Array reduce()",
+    "Reducing code size",
+    "Object.freeze()"
+  ],
+  "answer": 0,
+  "say": "Reducers are named after which JavaScript operation?",
+  "explanation": "Like the function passed to reduce(), a reducer takes the result so far (state) and the current item (action), and returns the next result.",
+  "explainSay": "Array reduce. A reducer takes the state so far and an action, and returns the next state."
+}

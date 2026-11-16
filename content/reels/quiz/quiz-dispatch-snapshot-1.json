@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-dispatch-snapshot-1",
+  "topic": "Reducers",
+  "concept": "dispatch-snapshot",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "reducers",
+    "dispatch",
+    "snapshot"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useReducer#ive-dispatched-an-action-but-logging-gives-me-the-old-state-value",
+  "question": "state.count is 1. What does the log show?",
+  "code": "function handleClick() {\n  dispatch({ type: \"increment\" });\n  setTimeout(() => {\n    console.log(state.count);\n  }, 3000);\n}",
+  "options": [
+    "1",
+    "2",
+    "undefined"
+  ],
+  "answer": 0,
+  "say": "State count is one. What does the log show three seconds later?",
+  "explanation": "The timeout closes over this render's state, a snapshot. dispatch only affects the next render, so it logs 1.",
+  "explainSay": "One. The timeout still sees this render’s snapshot of state."
+}

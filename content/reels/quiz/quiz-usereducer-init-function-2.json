@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-usereducer-init-function-2",
+  "topic": "Reducers",
+  "concept": "usereducer-init-function",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "reducers",
+    "useReducer",
+    "initializer"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useReducer#avoiding-recreating-the-initial-state",
+  "question": "What is the initial state here?",
+  "code": "function init(n) {\n  return { count: n * 2 };\n}\nuseReducer(reducer, 5, init);",
+  "options": [
+    "5",
+    "{ count: 5 }",
+    "{ count: 10 }"
+  ],
+  "answer": 2,
+  "say": "What is the initial state here?",
+  "explanation": "With an init function, the initial state is init(initialArg): init(5) returns { count: 10 }.",
+  "explainSay": "Count ten. React calls init with five, which returns count five times two."
+}

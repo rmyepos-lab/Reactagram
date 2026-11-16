@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-reducers-must-be-pure-1",
+  "topic": "Reducers",
+  "concept": "reducers-must-be-pure",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "reducers",
+    "purity",
+    "strict-mode"
+  ],
+  "sourceUrl": "https://react.dev/learn/extracting-state-logic-into-a-reducer#writing-reducers-well",
+  "question": "What breaks the rules in this reducer?",
+  "code": "function reducer(state, action) {\n  if (action.type === \"saved\") {\n    localStorage.setItem(\"s\", action.text);\n    return { ...state, text: action.text };\n  }\n  return state;\n}",
+  "options": [
+    "Spreading state",
+    "Writing to localStorage",
+    "Returning state at the end"
+  ],
+  "answer": 1,
+  "say": "What breaks the rules in this reducer?",
+  "explanation": "Reducers run during rendering and must be pure. Writing to localStorage is a side effect, so it belongs elsewhere.",
+  "explainSay": "Writing to local storage. That is a side effect, and reducers must be pure."
+}

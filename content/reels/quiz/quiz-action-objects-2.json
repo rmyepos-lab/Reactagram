@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-action-objects-2",
+  "topic": "Reducers",
+  "concept": "action-objects",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "reducers",
+    "actions",
+    "dispatch"
+  ],
+  "sourceUrl": "https://react.dev/learn/extracting-state-logic-into-a-reducer#step-1-move-from-setting-state-to-dispatching-actions",
+  "question": "True or false: an action must be an object with a \"type\" key or React throws.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: an action must be an object with a type key, or React throws an error.",
+  "explanation": "False. An action can have any shape. A string type is just a common convention.",
+  "explainSay": "False. Actions can have any shape. The type field is only a convention."
+}

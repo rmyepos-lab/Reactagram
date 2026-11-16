@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-usereducer-basics-1",
+  "topic": "Reducers",
+  "concept": "usereducer-basics",
+  "format": "fill-blank",
+  "level": "intermediate",
+  "tags": [
+    "reducers",
+    "useReducer",
+    "dispatch"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useReducer#adding-a-reducer-to-a-component",
+  "question": "Fill the blank to update state with a reducer:",
+  "code": "const [state, ___] = useReducer(reducer, { age: 42 });",
+  "options": [
+    "setState",
+    "dispatch",
+    "reduce"
+  ],
+  "answer": 1,
+  "say": "Fill the blank to name the second value returned by use reducer.",
+  "explanation": "useReducer returns [state, dispatch]. You call dispatch with an action to request an update.",
+  "explainSay": "Dispatch. You call it with an action to update the state."
+}
