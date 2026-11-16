@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-jsx-close-all-tags-1",
+  "topic": "Components & JSX",
+  "concept": "jsx-close-all-tags",
+  "format": "bug-hunt",
+  "level": "beginner",
+  "tags": [
+    "jsx",
+    "html"
+  ],
+  "sourceUrl": "https://react.dev/learn/writing-markup-with-jsx#2-close-all-the-tags",
+  "question": "Which line breaks this JSX?",
+  "code": "<ul>\n  <li>Apples</li>\n  <li>Pears</li>\n  <img src=\"pear.png\">\n</ul>",
+  "options": [
+    "Line 2",
+    "Line 3",
+    "Line 4"
+  ],
+  "answer": 2,
+  "say": "Which line breaks this JSX?",
+  "explanation": "Line 4: <img> must be self-closed as <img />. JSX requires every tag to be explicitly closed.",
+  "explainSay": "Line four. The image tag is not closed. In JSX it must be written with a slash at the end."
+}

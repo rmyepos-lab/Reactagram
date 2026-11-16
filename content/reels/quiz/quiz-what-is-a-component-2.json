@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-what-is-a-component-2",
+  "topic": "Components & JSX",
+  "concept": "what-is-a-component",
+  "format": "true-false",
+  "level": "beginner",
+  "tags": [
+    "components",
+    "jsx",
+    "basics"
+  ],
+  "sourceUrl": "https://react.dev/learn/your-first-component#defining-a-component",
+  "question": "True or false: a React component is a JavaScript function that returns markup.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: a React component is a JavaScript function that returns markup.",
+  "explanation": "True. Components are regular JavaScript functions, with a capital name, that return JSX markup.",
+  "explainSay": "True. A component is a regular JavaScript function, with a capital name, that returns markup."
+}

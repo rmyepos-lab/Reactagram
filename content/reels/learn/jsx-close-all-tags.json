@@ -1,0 +1,40 @@
+{
+  "kind": "learn",
+  "id": "jsx-close-all-tags",
+  "topic": "Components & JSX",
+  "concept": "jsx-close-all-tags",
+  "format": "concept",
+  "level": "beginner",
+  "tags": [
+    "jsx",
+    "html"
+  ],
+  "sourceUrl": "https://react.dev/learn/writing-markup-with-jsx#2-close-all-the-tags",
+  "title": "JSX tags must be closed",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Close every tag 🏷️",
+      "say": "HTML lets you leave some tags open. JSX does not."
+    },
+    {
+      "type": "code",
+      "code": "// HTML is fine with this\n<img src=\"cat.jpg\">\n<li>oranges\n\n// JSX needs this\n<img src=\"cat.jpg\" />\n<li>oranges</li>",
+      "highlight": [
+        6,
+        7
+      ],
+      "say": "An image tag needs a slash at the end, to self close. A list item needs its closing tag."
+    },
+    {
+      "type": "text",
+      "text": "Self-closing tags end with /> . Wrapping tags need </tag>.",
+      "say": "So: tags with nothing inside end with slash and angle bracket. Tags that wrap content need a closing tag."
+    },
+    {
+      "type": "text",
+      "text": "Converting HTML? Close every <img>, <br>, <input> and <li>.",
+      "say": "Takeaway: when you paste HTML into JSX, close every tag explicitly."
+    }
+  ]
+}

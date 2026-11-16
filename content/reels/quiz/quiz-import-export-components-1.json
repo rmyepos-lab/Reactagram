@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-import-export-components-1",
+  "topic": "Components & JSX",
+  "concept": "import-export-components",
+  "format": "bug-hunt",
+  "level": "beginner",
+  "tags": [
+    "components",
+    "modules",
+    "import",
+    "export"
+  ],
+  "sourceUrl": "https://react.dev/learn/importing-and-exporting-components#default-vs-named-exports",
+  "question": "Gallery.js has: export function Profile() {...}. Which import works?",
+  "options": [
+    "import Profile from \"./Gallery.js\";",
+    "import { Profile } from \"./Gallery.js\";",
+    "import { Avatar } from \"./Gallery.js\";"
+  ],
+  "answer": 1,
+  "say": "Gallery dot js has a named export called Profile. Which import works?",
+  "explanation": "A named export must be imported with curly braces and the same name. A default-style import would not find it.",
+  "explainSay": "The one with curly braces and the same name, Profile. Named imports must match the exported name."
+}

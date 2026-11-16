@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-jsx-close-all-tags-2",
+  "topic": "Components & JSX",
+  "concept": "jsx-close-all-tags",
+  "format": "true-false",
+  "level": "beginner",
+  "tags": [
+    "jsx",
+    "html"
+  ],
+  "sourceUrl": "https://react.dev/learn/writing-markup-with-jsx#2-close-all-the-tags",
+  "question": "True or false: in JSX you can write a line break as <br>, just like in HTML.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: in JSX you can write a line break tag without closing it, just like in HTML.",
+  "explanation": "False. JSX requires tags to be explicitly closed, so it must be <br />.",
+  "explainSay": "False. JSX needs every tag closed, so the line break must self close with a slash."
+}

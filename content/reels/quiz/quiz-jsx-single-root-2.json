@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-jsx-single-root-2",
+  "topic": "Components & JSX",
+  "concept": "jsx-single-root",
+  "format": "true-false",
+  "level": "beginner",
+  "tags": [
+    "jsx",
+    "fragments"
+  ],
+  "sourceUrl": "https://react.dev/learn/writing-markup-with-jsx#1-return-a-single-root-element",
+  "question": "True or false: JSX needs one root because it compiles to JavaScript objects, and a function returns one value.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: JSX needs a single root because it compiles to JavaScript objects, and a function can only return one value.",
+  "explanation": "True. JSX is transformed into plain objects. You cannot return two objects without wrapping them, so two tags need a parent or a Fragment.",
+  "explainSay": "True. JSX becomes objects, and you cannot return two objects without wrapping them in one parent."
+}

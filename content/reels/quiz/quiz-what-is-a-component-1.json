@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-what-is-a-component-1",
+  "topic": "Components & JSX",
+  "concept": "what-is-a-component",
+  "format": "bug-hunt",
+  "level": "beginner",
+  "tags": [
+    "components",
+    "jsx",
+    "basics"
+  ],
+  "sourceUrl": "https://react.dev/learn/your-first-component#defining-a-component",
+  "question": "What does this component render?",
+  "code": "function Greeting() {\n  return\n    <h1>Hello!</h1>;\n}",
+  "options": [
+    "A Hello heading",
+    "Nothing: the line after return is ignored",
+    "A syntax error message on the page"
+  ],
+  "answer": 1,
+  "say": "Look at the return statement. What does this component render?",
+  "explanation": "Markup that does not start on the return line must be wrapped in ( ). Here return ends on its own line, so the JSX after it is ignored.",
+  "explainSay": "Nothing. The markup isn't on the same line as return and has no parentheses, so the code after return is ignored."
+}

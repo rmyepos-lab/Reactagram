@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-no-nested-component-definitions-1",
+  "topic": "Components & JSX",
+  "concept": "no-nested-component-definitions",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "components",
+    "state",
+    "performance"
+  ],
+  "sourceUrl": "https://react.dev/learn/your-first-component#nesting-and-organizing-components",
+  "question": "Each time Form re-renders, the text typed into the input disappears. Why?",
+  "code": "function Form() {\n  const [n, setN] = useState(0);\n  function Field() {\n    const [text, setText] = useState(\"\");\n    return <input value={text}\n      onChange={e => setText(e.target.value)} />;\n  }\n  return <Field />;\n}",
+  "options": [
+    "useState(\"\") resets on each keystroke",
+    "Field is a new component on every render",
+    "The input needs a key prop"
+  ],
+  "answer": 1,
+  "say": "Each time Form re-renders, the text typed into the input disappears. Why?",
+  "explanation": "Field is defined inside Form, so every render creates a different Field function. React sees a different component in that position and resets its state.",
+  "explainSay": "Field is defined inside Form. Each render makes a brand new Field function, so React treats it as a different component and resets its state."
+}
