@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-reconciliation-1",
+  "topic": "How React Works",
+  "concept": "reconciliation",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "internals",
+    "reconciliation",
+    "diffing"
+  ],
+  "sourceUrl": "https://legacy.reactjs.org/docs/reconciliation.html#motivation",
+  "question": "Which is one of React's two diffing assumptions?",
+  "options": [
+    "Elements of different types produce different trees",
+    "Children never move",
+    "Every element needs an id prop"
+  ],
+  "answer": 0,
+  "say": "Which is one of React’s two diffing assumptions?",
+  "explanation": "The two assumptions: different element types produce different trees, and keys hint which children are stable.",
+  "explainSay": "Elements of different types produce different trees."
+}

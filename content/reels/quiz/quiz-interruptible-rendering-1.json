@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-interruptible-rendering-1",
+  "topic": "How React Works",
+  "concept": "interruptible-rendering",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "internals",
+    "purity",
+    "concurrent"
+  ],
+  "sourceUrl": "https://react.dev/learn/keeping-components-pure#why-does-react-care-about-purity",
+  "question": "True or false: React may start rendering a tree, then throw that work away and restart.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: React may start rendering a tree, then throw that work away and restart.",
+  "explanation": "True. If data changes mid-render, React can restart without finishing the outdated render.",
+  "explainSay": "True. Interruptible rendering can restart work."
+}

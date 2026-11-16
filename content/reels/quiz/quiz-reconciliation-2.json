@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-reconciliation-2",
+  "topic": "How React Works",
+  "concept": "reconciliation",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "internals",
+    "reconciliation",
+    "diffing"
+  ],
+  "sourceUrl": "https://legacy.reactjs.org/docs/reconciliation.html#motivation",
+  "question": "True or false: React finds the mathematically minimal set of changes between two trees.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: React finds the mathematically minimal set of changes between two trees.",
+  "explanation": "False. Exact algorithms are O(n³). React uses a fast O(n) heuristic that works for almost all practical cases.",
+  "explainSay": "False. It uses a fast heuristic instead."
+}

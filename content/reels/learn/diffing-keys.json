@@ -1,0 +1,43 @@
+{
+  "kind": "learn",
+  "id": "diffing-keys",
+  "topic": "How React Works",
+  "concept": "diffing-keys",
+  "format": "concept",
+  "level": "advanced",
+  "tags": [
+    "internals",
+    "diffing",
+    "keys"
+  ],
+  "sourceUrl": "https://legacy.reactjs.org/docs/reconciliation.html#keys",
+  "title": "Diffing rule 2: keys match children",
+  "slides": [
+    {
+      "type": "title",
+      "text": "How keys help the diff 🗝️",
+      "say": "Without keys, React compares children one by one, in order."
+    },
+    {
+      "type": "code",
+      "code": "<ul>                <ul>\n  <li>Duke</li>       <li>Connecticut</li>\n  <li>Villanova</li>  <li>Duke</li>\n</ul>                 <li>Villanova</li>\n                    </ul>",
+      "highlight": [
+        2
+      ],
+      "say": "Add an item at the end? Cheap. Add one at the start? React thinks every item changed, and mutates all of them."
+    },
+    {
+      "type": "code",
+      "code": "<li key=\"2014\">Connecticut</li>\n<li key=\"2015\">Duke</li>\n<li key=\"2016\">Villanova</li>",
+      "highlight": [
+        1
+      ],
+      "say": "With keys, React matches children across renders. It knows 2014 is new, and 2015 and 2016 just moved."
+    },
+    {
+      "type": "text",
+      "text": "Index keys: reorders are slow and state can get mixed up. Random keys recreate everything.",
+      "say": "Index keys make reorders slow and can mix up component state. Unstable keys, like Math random, recreate nodes and lose state."
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-fiber-1",
+  "topic": "How React Works",
+  "concept": "fiber",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "internals",
+    "fiber",
+    "scheduling"
+  ],
+  "sourceUrl": "https://github.com/acdlite/react-fiber-architecture",
+  "question": "What is Fiber's headline feature?",
+  "options": [
+    "Incremental rendering: splitting work into chunks",
+    "A new JSX syntax",
+    "Server-side routing"
+  ],
+  "answer": 0,
+  "say": "What is Fiber’s headline feature?",
+  "explanation": "Fiber's goal is incremental rendering: splitting rendering work into chunks spread over multiple frames.",
+  "explainSay": "Incremental rendering."
+}

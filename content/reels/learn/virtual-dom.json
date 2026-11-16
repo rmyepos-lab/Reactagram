@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "virtual-dom",
+  "topic": "How React Works",
+  "concept": "virtual-dom",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "internals",
+    "virtual-dom",
+    "elements"
+  ],
+  "sourceUrl": "https://legacy.reactjs.org/docs/faq-internals.html",
+  "title": "The 'virtual DOM' is a tree of elements",
+  "slides": [
+    {
+      "type": "title",
+      "text": "What’s the \"virtual DOM\"? 🌲",
+      "say": "You will hear the term virtual DOM a lot. The new react dot dev docs do not use it. Here is what people mean."
+    },
+    {
+      "type": "code",
+      "code": "// JSX\n<h1 className=\"title\">Hi</h1>\n\n// becomes a plain object (simplified)\n{ type: \"h1\",\n  props: { className: \"title\",\n           children: \"Hi\" } }",
+      "highlight": [
+        5,
+        6
+      ],
+      "say": "Your components return React elements: plain JavaScript objects describing the UI. A tree of them lives in memory. That is the popular virtual DOM."
+    },
+    {
+      "type": "text",
+      "text": "React compares the new tree with the old one and syncs the real DOM. That’s reconciliation.",
+      "say": "On each update, React compares the new element tree with the previous one, and syncs the real DOM to match. That process is called reconciliation."
+    },
+    {
+      "type": "text",
+      "text": "Not the Shadow DOM. Internally React also keeps \"fibers\". (Simplified.)",
+      "say": "It is not the Shadow DOM, which is a browser feature. And internally, React also keeps objects called fibers. This is a simplified picture."
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-diffing-keys-1",
+  "topic": "How React Works",
+  "concept": "diffing-keys",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "internals",
+    "diffing",
+    "keys"
+  ],
+  "sourceUrl": "https://legacy.reactjs.org/docs/reconciliation.html#keys",
+  "question": "Without keys, you insert an item at the START of a list. What does React do?",
+  "options": [
+    "Inserts one new node",
+    "Mutates every child",
+    "Reuses nothing and remounts the list"
+  ],
+  "answer": 1,
+  "say": "Without keys, you insert an item at the start of a list. What does React do?",
+  "explanation": "React compares children in order, so every position looks changed and it mutates every child.",
+  "explainSay": "It mutates every child, because each position looks different."
+}

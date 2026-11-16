@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "diffing-element-types",
+  "topic": "How React Works",
+  "concept": "diffing-element-types",
+  "format": "concept",
+  "level": "advanced",
+  "tags": [
+    "internals",
+    "diffing",
+    "state"
+  ],
+  "sourceUrl": "https://legacy.reactjs.org/docs/reconciliation.html#elements-of-different-types",
+  "title": "Diffing rule 1: new type, new subtree",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Different type? Rebuild 🔨",
+      "say": "When React compares two elements of different types, it does not try to diff them at all."
+    },
+    {
+      "type": "code",
+      "code": "// before        // after\n<div>           <span>\n  <Counter />     <Counter />\n</div>          </span>",
+      "highlight": [
+        2
+      ],
+      "say": "Div became span. React tears down the old tree, destroying the old Counter and its state, and builds a new one from scratch."
+    },
+    {
+      "type": "code",
+      "code": "<div className=\"before\" title=\"x\" />\n<div className=\"after\" title=\"x\" />",
+      "highlight": [
+        1,
+        2
+      ],
+      "say": "Same DOM type? React keeps the same DOM node and only updates the changed attribute, here class name."
+    },
+    {
+      "type": "text",
+      "text": "Same component type? The instance stays, so state is kept, and React recurses into children.",
+      "say": "Same component type? The instance stays, its state is kept, and React updates the props and recurses into the children."
+    }
+  ]
+}

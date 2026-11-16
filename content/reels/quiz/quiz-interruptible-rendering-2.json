@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-interruptible-rendering-2",
+  "topic": "How React Works",
+  "concept": "interruptible-rendering",
+  "format": "bug-hunt",
+  "level": "advanced",
+  "tags": [
+    "internals",
+    "purity",
+    "concurrent"
+  ],
+  "sourceUrl": "https://react.dev/learn/keeping-components-pure#why-does-react-care-about-purity",
+  "question": "Why is logging analytics directly in a component body risky?",
+  "options": [
+    "It may run for renders that are never shown",
+    "console is unavailable in render",
+    "It makes JSX invalid"
+  ],
+  "answer": 0,
+  "say": "Why is logging analytics directly in a component body risky?",
+  "explanation": "Render work can be interrupted, discarded and redone, so a side effect in render may run more times than renders shown.",
+  "explainSay": "It may run for renders that are thrown away."
+}

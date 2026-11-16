@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-diffing-element-types-2",
+  "topic": "How React Works",
+  "concept": "diffing-element-types",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "internals",
+    "diffing",
+    "state"
+  ],
+  "sourceUrl": "https://legacy.reactjs.org/docs/reconciliation.html#elements-of-different-types",
+  "question": "style changes from {color:\"red\", fontWeight:\"bold\"} to {color:\"green\", fontWeight:\"bold\"}. What does React update?",
+  "options": [
+    "The whole <div>",
+    "Only the color style",
+    "Both style properties"
+  ],
+  "answer": 1,
+  "say": "The style changes color from red to green, while font weight stays bold. What does React update?",
+  "explanation": "For same-type DOM elements, React keeps the node and only changes the style properties that differ.",
+  "explainSay": "Only the color."
+}
