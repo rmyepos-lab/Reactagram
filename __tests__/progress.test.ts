@@ -5,7 +5,8 @@ import {
   isDue,
   markSeen,
   missedQuestionIds,
-  orderFeed,
+  mixTopics,
+  planLearnFeed,
   postStatus,
   postXp,
   quizAccuracy,
@@ -68,13 +69,97 @@ describe('learn reels', () => {
   });
 });
 
-describe('orderFeed', () => {
-  it('puts the start reel first, then due reviews, unseen, seen', () => {
-    const items = ['a', 'b', 'c', 'd'].map(id => ({ id }));
-    let p = markSeen(EMPTY_PROGRESS, 'a', day(1));
-    p = answerQuiz(p, 'c', false, day(1));
-    const order = orderFeed(items, p, day(2), 'd').map(i => i.id);
-    expect(order).toEqual(['d', 'c', 'b', 'a']);
+describe('learn feed', () => {
+  type Level = 'beginner' | 'intermediate' | 'advanced';
+  const reel = (id: string, topic: string, level: Level = 'beginner') => ({ id, topic, concept: id, level });
+  const ids = (list: { id: string }[]) => list.map(r => r.id);
+  const now = day(10);
+
+  it('re-watching keeps the XP but updates the watch time', () => {
+    let p = markSeen(EMPTY_PROGRESS, 'r', day(1));
+    p = markSeen(p, 'r', day(3));
+    expect(p.xp).toBe(5);
+    expect(p.seenAt.r).toBe(day(3).toISOString());
+  });
+
+  it('puts the start reel first, then unseen, then watched long ago, then watched recently', () => {
+    const items = ['a', 'b', 'c', 'd'].map(id => reel(id, 'T'));
+    let p = markSeen(EMPTY_PROGRESS, 'a', day(8)); // 2 days ago: past the cooldown
+    p = markSeen(p, 'b', now); // just now
+    expect(ids(planLearnFeed(items, p, { now, startId: 'b' }))).toEqual(['b', 'c', 'd', 'a']);
+    expect(ids(planLearnFeed(items, p, { now }))).toEqual(['c', 'd', 'a', 'b']);
+  });
+
+  it('shows the lessons watched longest ago first', () => {
+    const items = ['a', 'b', 'c'].map(id => reel(id, 'T'));
+    let p = markSeen(EMPTY_PROGRESS, 'a', day(5));
+    p = markSeen(p, 'b', day(2));
+    p = markSeen(p, 'c', day(7));
+    expect(ids(planLearnFeed(items, p, { now }))).toEqual(['b', 'a', 'c']);
+  });
+
+  it('counts reels already shown this session as just seen', () => {
+    const items = ['a', 'b', 'c'].map(id => reel(id, 'T'));
+    expect(ids(planLearnFeed(items, EMPTY_PROGRESS, { now, shown: new Set(['a']) }))).toEqual(['b', 'c', 'a']);
+  });
+
+  it('mixes topics: never the same topic twice in a row while another is left', () => {
+    const items = [
+      ...['a1', 'a2', 'a3', 'a4', 'a5', 'a6'].map(id => reel(id, 'A')),
+      ...['b1', 'b2', 'b3'].map(id => reel(id, 'B')),
+      ...['c1', 'c2', 'c3'].map(id => reel(id, 'C')),
+    ];
+    const order = planLearnFeed(items, EMPTY_PROGRESS, { now, seed: 's' });
+    expect(order).toHaveLength(items.length);
+    order.slice(1).forEach((r, i) => expect(r.topic).not.toBe(order[i].topic));
+    // The big topic is spread out, not left for the end.
+    expect(order.slice(0, 6).filter(r => r.topic === 'A').length).toBeGreaterThanOrEqual(2);
+  });
+
+  it('puts prerequisites and easier levels first within a topic', () => {
+    const items = [reel('hard', 'T', 'advanced'), reel('child', 'T'), reel('base', 'T')];
+    const requires = (c: string) => (c === 'child' ? ['base'] : []);
+    expect(ids(planLearnFeed(items, EMPTY_PROGRESS, { now, requires }))).toEqual(['base', 'child', 'hard']);
+  });
+
+  it('never shows a lesson before an unwatched prerequisite, even from another topic', () => {
+    const items = [reel('child', 'T'), reel('other', 'T', 'advanced'), reel('base', 'U')];
+    // "missing" has no lesson, so it never holds anything back.
+    const requires = (c: string) => (c === 'child' ? ['base', 'missing'] : []);
+    for (const seed of ['a', 'b', 'c', 'd']) {
+      const order = ids(planLearnFeed(items, EMPTY_PROGRESS, { now, requires, seed }));
+      expect(order.indexOf('base')).toBeLessThan(order.indexOf('child'));
+    }
+    const watched = markSeen(EMPTY_PROGRESS, 'base', day(1));
+    expect(ids(planLearnFeed(items, watched, { now, requires }))).toEqual(['child', 'other', 'base']);
+  });
+
+  it('gives saved topics a bigger share of the feed', () => {
+    const items = [
+      ...['a1', 'a2', 'a3', 'a4', 'a5', 'a6'].map(id => reel(id, 'A')),
+      ...['b1', 'b2', 'b3', 'b4', 'b5', 'b6'].map(id => reel(id, 'B')),
+      ...['c1', 'c2', 'c3', 'c4', 'c5', 'c6'].map(id => reel(id, 'C')),
+    ];
+    const countB = (savedTopics: string[]) =>
+      planLearnFeed(items, EMPTY_PROGRESS, { now, savedTopics, seed: 's' })
+        .slice(0, 9)
+        .filter(r => r.topic === 'B').length;
+    expect(countB(['B', 'B', 'B'])).toBeGreaterThan(countB([]));
+    expect(countB(['B', 'B', 'B', 'B', 'B', 'B'])).toBe(countB(['B', 'B', 'B'])); // capped
+  });
+
+  it('is the same for the same seed, and every reel appears once', () => {
+    const items = ['a', 'b', 'c', 'd', 'e', 'f'].map((id, i) => reel(id, `T${i % 3}`));
+    const first = planLearnFeed(items, EMPTY_PROGRESS, { now, seed: 'x' });
+    expect(ids(planLearnFeed(items, EMPTY_PROGRESS, { now, seed: 'x' }))).toEqual(ids(first));
+    expect(new Set(ids(first)).size).toBe(items.length);
+  });
+
+  it('mixTopics keeps the order inside each topic', () => {
+    const items = [reel('a1', 'A'), reel('a2', 'A'), reel('b1', 'B'), reel('b2', 'B')];
+    const order = ids(mixTopics(items, () => 1));
+    expect(order.filter(id => id.startsWith('a'))).toEqual(['a1', 'a2']);
+    expect(order.filter(id => id.startsWith('b'))).toEqual(['b1', 'b2']);
   });
 });
 

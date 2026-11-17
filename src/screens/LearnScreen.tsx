@@ -5,9 +5,10 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { LearnReelCard, ReelPager, ReelTabs } from '../components/reels';
 import { AppText, Chip, Icon, IconButton, Screen, Skeleton } from '../components/ui';
 import { AD_RULES, SponsoredReel, interleaveAds, useAdSheet, useAds } from '../features/ads';
-import { learnReels, type LearnReel } from '../features/content';
-import { orderFeed, progress, useReelTimer } from '../features/progress';
+import { conceptRequires, learnReels, reelTopic, type LearnReel } from '../features/content';
+import { planLearnFeed, progress, useReelTimer } from '../features/progress';
 import { settings, useMuted } from '../features/settings';
+import { dayKey } from '../lib/date';
 import { useEndlessFeed } from '../lib/useEndlessFeed';
 import type { TabScreenProps } from '../navigation/types';
 import { reel as palette } from '../theme';
@@ -44,10 +45,23 @@ function LearnFeed({ startId, topic, onOpenQuiz, onClearTopic }: FeedProps) {
   const adSheet = useAdSheet(FEED);
   useReelTimer(focused);
 
-  const nextRound = useCallback((): LearnReel[] => {
-    const pool = topic ? learnReels.filter(r => r.topic === topic) : learnReels;
-    return orderFeed(pool.length > 0 ? pool : learnReels, progress.get(), new Date(), startId);
-  }, [topic, startId]);
+  const nextRound = useCallback(
+    (round: number, shown: ReadonlySet<string>): LearnReel[] => {
+      const pool = topic ? learnReels.filter(r => r.topic === topic) : learnReels;
+      const p = progress.get();
+      const now = new Date();
+      return planLearnFeed(pool.length > 0 ? pool : learnReels, p, {
+        now,
+        // Only the first round opens on the reel the learner tapped.
+        startId: round === 0 ? startId : undefined,
+        shown,
+        requires: conceptRequires,
+        savedTopics: p.saved.flatMap(id => reelTopic(id) ?? []),
+        seed: `${dayKey(now)}|${round}`,
+      });
+    },
+    [topic, startId],
+  );
   const { items, loadMore } = useEndlessFeed(nextRound);
 
   const feed = useMemo(

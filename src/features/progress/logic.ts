@@ -7,6 +7,8 @@ export type Progress = {
   /** Seconds spent in reels on `lastActiveDay`, for the daily goal. */
   secondsToday: number;
   seen: string[];
+  /** reel id -> when the learner last watched it (ISO time), for spacing repeats in the feed. */
+  seenAt: Record<string, string>;
   /** Reels the learner saved, oldest first. */
   saved: string[];
   answered: Record<string, { correct: boolean; at: string }>;
@@ -20,6 +22,7 @@ export const EMPTY_PROGRESS: Progress = {
   lastActiveDay: null,
   secondsToday: 0,
   seen: [],
+  seenAt: {},
   saved: [],
   answered: {},
   review: {},
@@ -44,12 +47,14 @@ export function touchDay(p: Progress, now: Date): Progress {
   };
 }
 
+/** Records a watch. XP only the first time; every watch updates `seenAt`. */
 export function markSeen(p: Progress, id: string, now: Date): Progress {
-  if (p.seen.includes(id)) {
-    return p;
-  }
   const next = touchDay(p, now);
-  return { ...next, seen: [...next.seen, id], xp: next.xp + XP.learn };
+  const seenAt = { ...next.seenAt, [id]: now.toISOString() };
+  if (next.seen.includes(id)) {
+    return { ...next, seenAt };
+  }
+  return { ...next, seen: [...next.seen, id], seenAt, xp: next.xp + XP.learn };
 }
 
 export function addSeconds(p: Progress, seconds: number, now: Date): Progress {
@@ -155,24 +160,191 @@ export function quizAccuracy(p: Progress): number | null {
   return all.filter(a => a.correct).length / all.length;
 }
 
-/** Feed order: the reel the user asked for, then due reviews, then unseen, then seen. */
-export function orderFeed<T extends { id: string }>(
-  items: readonly T[],
-  p: Progress,
-  now: Date,
-  startId?: string,
+/** A watched lesson counts as "just seen" for this long, and goes to the very end of the feed. */
+export const FEED_COOLDOWN_HOURS = 24;
+/** Each saved reel in a topic raises that topic's share of the feed, up to this many times. */
+export const SAVED_TOPIC_BOOST_CAP = 3;
+
+const LEVEL_RANK = { beginner: 0, intermediate: 1, advanced: 2 } as const;
+
+export type FeedReel = {
+  id: string;
+  topic: string;
+  concept: string;
+  level: keyof typeof LEVEL_RANK;
+};
+
+export type FeedOptions = {
+  now: Date;
+  /** Shown first, if it is in the list. */
+  startId?: string;
+  /** Concepts a learner should have seen before this one. */
+  requires?: (concept: string) => readonly string[];
+  /** The topic of each saved reel (duplicates count): saved topics get a bigger share. */
+  savedTopics?: readonly string[];
+  /** Reels already in the feed this session: scrolled past or not, they count as just seen. */
+  shown?: ReadonlySet<string>;
+  /** Breaks ties between topics, so each round starts on a different topic. */
+  seed?: string;
+};
+
+/**
+ * One round of the Learn feed:
+ * 1. the reel the learner asked for;
+ * 2. lessons not watched yet: beginner, then intermediate, then advanced, never before a
+ *    prerequisite that is also waiting;
+ * 3. lessons watched more than FEED_COOLDOWN_HOURS ago, longest ago first;
+ * 4. lessons watched recently, or already shown this session.
+ * Inside each group topics are mixed, never the same topic twice in a row when another is left,
+ * and topics the learner saved reels from come up more often.
+ */
+export function planLearnFeed<T extends FeedReel>(items: readonly T[], p: Progress, opts: FeedOptions): T[] {
+  const { now, startId, requires = () => [], savedTopics = [], shown = new Set(), seed = '' } = opts;
+  const seen = new Set(p.seen);
+  const start = items.find(r => r.id === startId);
+  const rest = items.filter(r => r !== start);
+
+  const depth = conceptDepth(requires);
+
+  const watchedAt = (r: T) => Date.parse(p.seenAt[r.id] ?? '') || 0;
+  const cooldownStart = now.getTime() - FEED_COOLDOWN_HOURS * 3600_000;
+  const isRecent = (r: T) => shown.has(r.id) || (seen.has(r.id) && watchedAt(r) >= cooldownStart);
+  const unseen = rest.filter(r => !seen.has(r.id) && !isRecent(r));
+  const old = rest.filter(r => seen.has(r.id) && !isRecent(r));
+  const recent = rest.filter(isRecent);
+
+  const position = new Map(items.map((r, i) => [r.id, i]));
+  const byOrder = (a: T, b: T) => position.get(a.id)! - position.get(b.id)!;
+  const lessonOrder = (a: T, b: T) =>
+    LEVEL_RANK[a.level] - LEVEL_RANK[b.level] || depth(a.concept) - depth(b.concept) || byOrder(a, b);
+  const oldestFirst = (a: T, b: T) => watchedAt(a) - watchedAt(b) || byOrder(a, b);
+
+  const boost = new Map<string, number>();
+  for (const topic of savedTopics) {
+    boost.set(topic, Math.min((boost.get(topic) ?? 0) + 1, SAVED_TOPIC_BOOST_CAP));
+  }
+  const mix = (group: T[], order: (a: T, b: T) => number) =>
+    mixTopics(group.sort(order), topic => 1 + (boost.get(topic) ?? 0), seed);
+
+  // Concepts the learner has met: watched, or placed earlier in this round.
+  const met = new Set(items.filter(r => seen.has(r.id)).map(r => r.concept));
+  if (start) {
+    met.add(start.concept);
+  }
+  // New lessons go level by level, so a beginner doesn't meet advanced topics early.
+  // Lessons from saved topics move up one level, so they come sooner.
+  const band = (r: T) => Math.max(0, LEVEL_RANK[r.level] - (boost.has(r.topic) ? 1 : 0));
+  const byLevel = [0, 1, 2].flatMap(b =>
+    mix(
+      unseen.filter(r => band(r) === b),
+      lessonOrder,
+    ),
+  );
+  return [
+    ...(start ? [start] : []),
+    ...prerequisitesFirst(byLevel, requires, met),
+    ...mix(old, oldestFirst),
+    ...mix(recent, oldestFirst),
+  ];
+}
+
+/**
+ * Holds a lesson back until every prerequisite that is also in `list` has come before it.
+ * Prerequisites without a lesson in the list never hold anything back. Keeps the order otherwise.
+ */
+function prerequisitesFirst<T extends FeedReel>(
+  list: readonly T[],
+  requires: (concept: string) => readonly string[],
+  met: Set<string>,
 ): T[] {
-  const rank = (item: T) => {
-    if (item.id === startId) {
-      return -1;
+  const inList = new Set(list.map(r => r.concept));
+  const ready = (r: T) => requires(r.concept).every(c => met.has(c) || !inList.has(c));
+  const out: T[] = [];
+  let waiting: T[] = [];
+  const place = (r: T) => {
+    out.push(r);
+    met.add(r.concept);
+  };
+  for (const item of list) {
+    if (!ready(item)) {
+      waiting.push(item);
+      continue;
     }
-    if (isDue(p, item.id, now)) {
+    place(item);
+    // Placing one lesson can free others; keep going until nothing more is ready.
+    let freed = waiting.filter(ready);
+    while (freed.length > 0) {
+      waiting = waiting.filter(r => !freed.includes(r));
+      freed.forEach(place);
+      freed = waiting.filter(ready);
+    }
+  }
+  return [...out, ...waiting];
+}
+
+/** Longest chain of prerequisites below a concept (0 = needs nothing). Cycles count once. */
+function conceptDepth(requires: (concept: string) => readonly string[]) {
+  const memo = new Map<string, number>();
+  const depth = (concept: string, path: Set<string>): number => {
+    const known = memo.get(concept);
+    if (known !== undefined) {
+      return known;
+    }
+    if (path.has(concept)) {
       return 0;
     }
-    return p.seen.includes(item.id) ? 2 : 1;
+    path.add(concept);
+    const d = Math.max(0, ...requires(concept).map(c => depth(c, path) + 1));
+    path.delete(concept);
+    memo.set(concept, d);
+    return d;
   };
-  return items
-    .map((item, index) => ({ item, index, rank: rank(item) }))
-    .sort((a, b) => a.rank - b.rank || a.index - b.index)
-    .map(x => x.item);
+  return (concept: string) => depth(concept, new Set());
 }
+
+/**
+ * Interleaves already-sorted items by topic (smooth weighted round-robin). A topic's share is its
+ * item count times `weight(topic)`, so big topics spread across the whole round instead of
+ * piling up at the end. The same topic never comes twice in a row while another one is left.
+ */
+export function mixTopics<T extends { topic: string }>(
+  sorted: readonly T[],
+  weight: (topic: string) => number,
+  seed = '',
+): T[] {
+  const queues = new Map<string, T[]>();
+  for (const item of sorted) {
+    queues.set(item.topic, [...(queues.get(item.topic) ?? []), item]);
+  }
+  const tieBreak = (topic: string) => hashString(`${seed}|${topic}`);
+  const topicsList = [...queues.keys()].sort((a, b) => tieBreak(a) - tieBreak(b));
+  const share = new Map(topicsList.map(t => [t, queues.get(t)!.length * weight(t)]));
+  const credit = new Map(topicsList.map(t => [t, 0]));
+
+  const out: T[] = [];
+  let last: string | null = null;
+  while (out.length < sorted.length) {
+    const open = topicsList.filter(t => queues.get(t)!.length > 0);
+    const total = open.reduce((sum, t) => sum + share.get(t)!, 0);
+    for (const t of open) {
+      credit.set(t, credit.get(t)! + share.get(t)!);
+    }
+    const choices = open.length > 1 ? open.filter(t => t !== last) : open;
+    const pick = choices.reduce((best, t) => (credit.get(t)! > credit.get(best)! ? t : best));
+    credit.set(pick, credit.get(pick)! - total);
+    out.push(queues.get(pick)!.shift()!);
+    last = pick;
+  }
+  return out;
+}
+
+/* eslint-disable no-bitwise -- a string hash needs bit operations */
+function hashString(text: string): number {
+  let h = 2166136261;
+  for (let i = 0; i < text.length; i++) {
+    h ^= text.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return h >>> 0;
+}
+/* eslint-enable no-bitwise */

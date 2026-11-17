@@ -33,6 +33,16 @@ const conceptTitles = new Map(
 );
 /** The readable name of a curriculum concept. */
 export const conceptTitle = (concept: string): string => conceptTitles.get(concept) ?? concept;
+const conceptPrereqs = new Map(
+  (curriculumJson as Curriculum).topics.flatMap(t => t.concepts.map(c => [c.id, c.requires ?? []] as const)),
+);
+/** Concepts a learner should have seen before this one (from content/curriculum.json). */
+export const conceptRequires = (concept: string): readonly string[] => conceptPrereqs.get(concept) ?? [];
+
+const topicById = new Map([...learnReels, ...quizReels].map(r => [r.id, r.topic] as const));
+/** The topic of any lesson or quiz, by id. */
+export const reelTopic = (id: string): string | undefined => topicById.get(id);
+
 /** The lesson that teaches a concept, if it has been written. */
 export const lessonForConcept = (concept: string): LearnReel | undefined =>
   learnReels.find(r => r.concept === concept);
