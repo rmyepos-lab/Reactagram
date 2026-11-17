@@ -96,7 +96,18 @@ export function recordAnswer(s: QuizSession, id: string, correct: boolean): Quiz
 }
 
 /** Questions still to answer, in play order. */
-export const remainingIds = (s: QuizSession): string[] => s.ids.filter(id => !(id in s.answers));
+/** Short label of a quiz's settings, like "Beginner · Hooks, State" or "Any level · 4 topics". */
+export function configLabel(c: QuizConfig): string {
+  const level =
+    c.levels.length === 0
+      ? 'Any level'
+      : c.levels.map(l => l[0].toUpperCase() + l.slice(1)).join(', ');
+  const topic =
+    c.topics.length === 0 ? 'All topics' : c.topics.length <= 2 ? c.topics.join(', ') : `${c.topics.length} topics`;
+  return `${level} · ${topic}`;
+}
+
+export const remainingIds =(s: QuizSession): string[] => s.ids.filter(id => !(id in s.answers));
 export const isFinished = (s: QuizSession): boolean => remainingIds(s).length === 0;
 export const answeredCount = (s: QuizSession): number => s.ids.length - remainingIds(s).length;
 export const correctCount = (s: QuizSession): number =>

@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { useIsFocused } from '@react-navigation/native';
 import { QuizResults } from '../components/quiz/QuizResults';
@@ -15,8 +15,9 @@ import {
   useAds,
 } from '../features/ads';
 import { quizReels, type QuizReel } from '../features/content';
-import { useReelTimer } from '../features/progress';
+import { missedQuestionIds, progress, useReelTimer } from '../features/progress';
 import {
+  QUIZ_SIZE,
   answeredCount,
   isFinished,
   quizSession,
@@ -37,12 +38,36 @@ type PlayerItem = FeedItem<QuizReel> | typeof END_PAGE;
  * Quiz tab. A quiz is a set of up to 20 different questions:
  * setup (difficulty + concepts) → questions → results. An unfinished quiz can be continued.
  * `startId` (from Home or Explore) opens that single question instead.
+ * `missed` (from Home) plays the missed questions that are back today, apart from the quiz.
  */
 export function QuizScreen({ route, navigation }: TabScreenProps<'Quiz'>) {
   const startId = route.params?.startId;
+  const missed = route.params?.missed === true;
   const { active, lastConfig } = useQuizSession();
   const [playing, setPlaying] = useState(false);
   const openLearn = () => navigation.navigate('Learn');
+
+  // From the Home card: go straight back into the unfinished quiz.
+  const resume = route.params?.resume === true;
+  useEffect(() => {
+    if (resume) {
+      if (active && !isFinished(active)) {
+        setPlaying(true);
+      }
+      navigation.setParams({ resume: undefined });
+    }
+  }, [resume, active, navigation]);
+
+  // Picked once when the run opens: answering moves a question to a later day.
+  const missedQuizzes = useMemo(
+    () =>
+      missed
+        ? missedQuestionIds(progress.get(), new Date(), id => quizById.has(id), QUIZ_SIZE).flatMap(
+            id => quizById.get(id) ?? [],
+          )
+        : [],
+    [missed],
+  );
 
   const single = startId ? quizById.get(startId) : undefined;
   if (single) {
@@ -52,6 +77,19 @@ export function QuizScreen({ route, navigation }: TabScreenProps<'Quiz'>) {
         quizzes={[single]}
         lastLabel="More quizzes"
         onDone={() => navigation.setParams({ startId: undefined })}
+        onOpenLearn={openLearn}
+      />
+    );
+  }
+
+  if (missedQuizzes.length > 0) {
+    return (
+      <QuizPlayer
+        key="missed"
+        quizzes={missedQuizzes}
+        total={missedQuizzes.length}
+        lastLabel="More quizzes"
+        onDone={() => navigation.setParams({ missed: undefined })}
         onOpenLearn={openLearn}
       />
     );

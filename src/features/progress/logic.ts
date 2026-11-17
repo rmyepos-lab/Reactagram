@@ -108,6 +108,24 @@ export function dueCount(p: Progress, now: Date): number {
   return Object.values(p.review).filter(r => r.due <= today).length;
 }
 
+/**
+ * Missed questions that are back today: the ones waiting longest first, at most `limit`.
+ * `exists` leaves out questions no longer in the content.
+ */
+export function missedQuestionIds(
+  p: Progress,
+  now: Date,
+  exists: (id: string) => boolean,
+  limit: number,
+): string[] {
+  const today = dayKey(now);
+  return Object.entries(p.review)
+    .filter(([id, r]) => r.due <= today && exists(id))
+    .sort(([a, ra], [b, rb]) => ra.due.localeCompare(rb.due) || a.localeCompare(b))
+    .slice(0, limit)
+    .map(([id]) => id);
+}
+
 /** Share of answered quizzes whose latest answer was right, 0 to 1 (null if none yet). */
 export function quizAccuracy(p: Progress): number | null {
   const all = Object.values(p.answered);

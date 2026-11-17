@@ -13,6 +13,8 @@ type Props = {
   selected?: boolean;
   leading?: React.ReactNode;
   size?: 'sm' | 'md';
+  /** A number shown after the label, e.g. how many reels a filter holds. */
+  count?: number;
 };
 
 /** Pill label. With `onPress` it becomes a selectable filter chip (48dp tall touch area). */
@@ -24,15 +26,22 @@ export function Chip({
   selected,
   leading,
   size = 'sm',
+  count,
 }: Props) {
   const bg = selected ? colors.ink : background;
   const fg = selected ? colors.surface : color;
+  const textSize = size === 'md' ? 14 : 12.5;
   const body = (
     <View style={[styles.chip, size === 'md' && styles.md, { backgroundColor: bg }]}>
       {leading}
-      <AppText weight="extrabold" size={size === 'md' ? 14 : 12.5} color={fg}>
+      <AppText weight="extrabold" size={textSize} color={fg}>
         {label}
       </AppText>
+      {count !== undefined ? (
+        <AppText weight="semibold" size={textSize} color={fg}>
+          {count}
+        </AppText>
+      ) : null}
     </View>
   );
   if (!onPress) {
@@ -41,7 +50,7 @@ export function Chip({
   return (
     <PressableScale
       onPress={onPress}
-      accessibilityLabel={label}
+      accessibilityLabel={count !== undefined ? `${label}, ${count} reels` : label}
       accessibilityState={{ selected: !!selected }}
       style={styles.touch}
     >

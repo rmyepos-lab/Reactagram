@@ -89,7 +89,7 @@ export function ProfileScreen({ navigation }: TabScreenProps<'Profile'>) {
           <Animated.View entering={FadeInDown.duration(260)} style={styles.review}>
             <Icon name="clock" size={18} color={colors.onTip} />
             <AppText weight="extrabold" size={13.5} color={colors.onTip} style={styles.flex}>
-              {reviews === 1 ? '1 quiz comes' : `${reviews} quizzes come`} back for review
+              {reviews === 1 ? '1 missed question will come' : `${reviews} missed questions will come`} back
             </AppText>
           </Animated.View>
         ) : null}

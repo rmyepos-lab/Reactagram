@@ -4,6 +4,7 @@ import {
   answerQuiz,
   isDue,
   markSeen,
+  missedQuestionIds,
   orderFeed,
   quizAccuracy,
   touchDay,
@@ -72,5 +73,32 @@ describe('orderFeed', () => {
     p = answerQuiz(p, 'c', false, day(1));
     const order = orderFeed(items, p, day(2), 'd').map(i => i.id);
     expect(order).toEqual(['d', 'c', 'b', 'a']);
+  });
+});
+
+describe('missed questions', () => {
+  const all = () => true;
+  const p = {
+    ...EMPTY_PROGRESS,
+    review: {
+      b: { due: '2026-01-03', step: 1 },
+      a: { due: '2026-01-02', step: 0 },
+      later: { due: '2026-01-09', step: 2 },
+      gone: { due: '2026-01-01', step: 0 },
+    },
+  };
+
+  it('returns nothing when no question is back', () => {
+    expect(missedQuestionIds(EMPTY_PROGRESS, day(5), all, 20)).toEqual([]);
+    expect(missedQuestionIds(p, day(1), id => id !== 'gone', 20)).toEqual([]);
+  });
+
+  it('returns the questions back today, longest waiting first, without deleted ones', () => {
+    expect(missedQuestionIds(p, day(5), id => id !== 'gone', 20)).toEqual(['a', 'b']);
+    expect(missedQuestionIds(p, day(9), all, 20)).toEqual(['gone', 'a', 'b', 'later']);
+  });
+
+  it('stops at the limit', () => {
+    expect(missedQuestionIds(p, day(9), all, 2)).toEqual(['gone', 'a']);
   });
 });

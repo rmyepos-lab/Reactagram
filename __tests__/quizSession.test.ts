@@ -4,6 +4,7 @@ import {
   QUIZ_SIZE,
   answeredCount,
   buildQuiz,
+  configLabel,
   correctCount,
   countMatching,
   evaluate,
@@ -165,5 +166,15 @@ describe('evaluate', () => {
     expect(gradeOf(4, 5)).toBe('strong');
     expect(gradeOf(1, 2)).toBe('fair');
     expect(gradeOf(0, 0)).toBe('weak');
+  });
+});
+
+describe('configLabel', () => {
+  it('names the level and the topics, short', () => {
+    expect(configLabel(ANY_QUIZ)).toBe('Any level · All topics');
+    expect(configLabel({ levels: ['beginner'], topics: ['Hooks', 'State'] })).toBe('Beginner · Hooks, State');
+    expect(configLabel({ levels: ['beginner', 'advanced'], topics: ['A', 'B', 'C'] })).toBe(
+      'Beginner, Advanced · 3 topics',
+    );
   });
 });

@@ -7,7 +7,11 @@ export type TabParamList = {
   Explore: undefined;
   /** `startId` opens the feed on that reel; `topic` filters the feed. */
   Learn: { startId?: string; topic?: string } | undefined;
-  Quiz: { startId?: string } | undefined;
+  /**
+   * `startId` plays that one question; `missed` plays the missed questions that are back today;
+   * `resume` goes straight back into the unfinished quiz.
+   */
+  Quiz: { startId?: string; missed?: boolean; resume?: boolean } | undefined;
   Profile: undefined;
 };
 

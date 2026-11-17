@@ -6,7 +6,8 @@ import { colors, fonts, radii, reel as palette } from '../theme';
 import { CodeBlock, LikeButton, shareReel } from './reels';
 import { AppText, IconButton, PressableScale } from './ui';
 
-type Props = { reel: LearnReel | QuizReel; onOpen: () => void };
+/** `onOpen` gets the reel, so one stable function serves every card and `memo` can skip re-renders. */
+type Props = { reel: LearnReel | QuizReel; onOpen: (reel: LearnReel | QuizReel) => void };
 
 /** Home feed post: a preview of a Learn or Quiz reel with like, share and save. */
 export const PostCard = React.memo(function PostCardBase({ reel, onOpen }: Props) {
@@ -38,7 +39,7 @@ export const PostCard = React.memo(function PostCardBase({ reel, onOpen }: Props
       </View>
 
       <PressableScale
-        onPress={onOpen}
+        onPress={() => onOpen(reel)}
         pressedScale={0.98}
         accessibilityLabel={`${isLearn ? 'Watch' : 'Answer'}: ${title}`}
         style={styles.preview}
