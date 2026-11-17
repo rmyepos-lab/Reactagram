@@ -14,11 +14,11 @@
   "code": "function Banner({ hidden }) {\n  if (hidden) {\n    return ___;\n  }\n  return <div>Sale!</div>;\n}",
   "options": [
     "null",
-    "<></>",
-    "false && null"
+    "0",
+    "\"null\""
   ],
   "answer": 0,
   "say": "Fill the blank so a hidden banner renders nothing.",
-  "explanation": "Returning null tells React to render nothing for this component.",
-  "explainSay": "Null. Returning null renders nothing."
+  "explanation": "Returning null tells React to render nothing. 0 would show a 0 on screen, and \"null\" in quotes is just text.",
+  "explainSay": "Null. Returning null renders nothing. A zero or the word null in quotes would show up on screen."
 }

@@ -20,6 +20,6 @@
   ],
   "answer": 1,
   "say": "Counter shows three. You toggle wrap. What does Counter show now?",
-  "explanation": "The parent changed from section to div, so the whole subtree, Counter and its state, was destroyed and recreated.",
+  "explanation": "The parent switched between div and section, so the whole subtree, Counter and its state, was destroyed and recreated.",
   "explainSay": "Zero. The wrapper type changed, so everything below it was recreated with fresh state."
 }

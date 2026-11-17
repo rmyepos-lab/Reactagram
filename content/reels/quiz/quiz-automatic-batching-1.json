@@ -12,7 +12,7 @@
   ],
   "sourceUrl": "https://react.dev/blog/2022/03/29/react-v18#new-feature-automatic-batching",
   "question": "React 19. How many re-renders does this cause?",
-  "code": "fetchData().then(() => {\n  setLoading(false);\n  setData(result);\n});",
+  "code": "fetchData().then(result => {\n  setLoading(false);\n  setData(result);\n});",
   "options": [
     "0",
     "1",

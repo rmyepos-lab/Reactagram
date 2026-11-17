@@ -10,7 +10,7 @@
     "destructuring"
   ],
   "sourceUrl": "https://react.dev/learn/passing-props-to-a-component#step-2-read-props-inside-the-child-component",
-  "question": "Rendered as <Hello name=\"Ana\" />, this shows the wrong thing. Why?",
+  "question": "Rendered as <Hello name=\"Ana\" />, this crashes. Why?",
   "code": "function Hello(name) {\n  return <p>Hi {name.toUpperCase()}</p>;\n}",
   "options": [
     "name is the whole props object",

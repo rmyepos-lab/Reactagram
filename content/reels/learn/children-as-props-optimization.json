@@ -20,18 +20,18 @@
     },
     {
       "type": "code",
-      "code": "// 🔴 wrapper renders the slow child itself\nfunction Panel() {\n  const [open, setOpen] = useState(true);\n  return <div>{open && <SlowList />}</div>;\n}",
+      "code": "// 🔴 wrapper renders the slow child itself\nfunction Panel() {\n  const [dark, setDark] = useState(false);\n  return (\n    <div className={dark ? \"dark\" : \"\"}>\n      <SlowList />\n    </div>\n  );\n}",
       "highlight": [
-        4
+        6
       ],
       "say": "Here Panel creates SlowList itself. Every toggle of Panel’s state re-renders SlowList."
     },
     {
       "type": "code",
-      "code": "function Panel({ children }) {\n  const [open, setOpen] = useState(true);\n  return <div>{open && children}</div>;\n}\n\n<Panel><SlowList /></Panel>",
+      "code": "function Panel({ children }) {\n  const [dark, setDark] = useState(false);\n  return (\n    <div className={dark ? \"dark\" : \"\"}>\n      {children}\n    </div>\n  );\n}\n\n<Panel><SlowList /></Panel>",
       "highlight": [
         1,
-        6
+        10
       ],
       "say": "Now the parent creates SlowList and passes it as children. When Panel updates its own state, React knows the children did not change, so they do not re-render."
     },

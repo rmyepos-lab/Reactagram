@@ -20,7 +20,7 @@
     },
     {
       "type": "text",
-      "text": "JSX attributes become keys of JavaScript objects. Keys like these can’t have dashes or be reserved words.",
+      "text": "JSX attributes become keys of JavaScript objects, often read into variables. Variable names can’t have dashes or be reserved words.",
       "say": "Why? JSX attributes become keys of JavaScript objects. Variable names cannot contain dashes or be reserved words like class."
     },
     {

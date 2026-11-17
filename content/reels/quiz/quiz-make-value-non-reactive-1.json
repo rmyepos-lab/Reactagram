@@ -16,10 +16,10 @@
   "options": [
     "const serverUrl = \"…\"; (outside the component)",
     "const [serverUrl] = useState(\"…\");",
-    "const serverUrl = useRef(\"…\");"
+    "const serverUrl = \"…\"; (inside the component body)"
   ],
   "answer": 0,
   "say": "Server URL never changes. Where can you declare it so it is not a dependency?",
-  "explanation": "A constant outside the component cannot change on re-render, so it isn't reactive. State would be reactive.",
+  "explanation": "A constant outside the component cannot change on re-render, so it isn't reactive. State, or any value declared in the component body, is reactive.",
   "explainSay": "As a constant outside the component."
 }
