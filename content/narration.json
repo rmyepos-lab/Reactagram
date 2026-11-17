@@ -1,6 +1,27 @@
 {
  "voice": "af_heart",
  "reels": {
+  "act-in-tests": {
+   "file": "af_heart/act-in-tests-871a910320.mp3",
+   "lines": {
+    "5c9daaedab13dc00": [
+     0,
+     7424
+    ],
+    "4ecb5d5fbbb4069e": [
+     7774,
+     16691
+    ],
+    "22525a92c0932881": [
+     17041,
+     23335
+    ],
+    "fe79d16e56702f57": [
+     23685,
+     32175
+    ]
+   }
+  },
   "action-objects": {
    "file": "af_heart/action-objects-157e5ebe88.mp3",
    "lines": {
@@ -106,6 +127,27 @@
     ]
    }
   },
+  "async-ui-tests": {
+   "file": "af_heart/async-ui-tests-eb570b5a29.mp3",
+   "lines": {
+    "bff6c8255cdb043e": [
+     0,
+     5739
+    ],
+    "f8044007fa2315bd": [
+     6089,
+     13555
+    ],
+    "67211bd208091cce": [
+     13905,
+     19111
+    ],
+    "7fff4e624b827e15": [
+     19461,
+     26735
+    ]
+   }
+  },
   "automatic-batching": {
    "file": "af_heart/automatic-batching-69910c3506.mp3",
    "lines": {
@@ -187,6 +229,27 @@
     "7f5681de46847cc2": [
      19290,
      22533
+    ]
+   }
+  },
+  "cache-signal": {
+   "file": "af_heart/cache-signal-24e300de42.mp3",
+   "lines": {
+    "e365aa6c39c14a1d": [
+     0,
+     6933
+    ],
+    "9757b780f78bcae0": [
+     7283,
+     16265
+    ],
+    "87774f7cdaa07692": [
+     16615,
+     22183
+    ],
+    "f772407c26025b58": [
+     22533,
+     34330
     ]
    }
   },
@@ -404,6 +467,27 @@
     "e10faa2898c717d2": [
      24005,
      27610
+    ]
+   }
+  },
+  "composition-vs-inheritance": {
+   "file": "af_heart/composition-vs-inheritance-76bf2a2df5.mp3",
+   "lines": {
+    "5fd2f94a93af04ad": [
+     0,
+     6720
+    ],
+    "7eb134d478d24bf5": [
+     7070,
+     14494
+    ],
+    "e1e4f6163676f629": [
+     14844,
+     22012
+    ],
+    "ad597eefd121f451": [
+     22362,
+     32495
     ]
    }
   },
@@ -940,6 +1024,27 @@
     ]
    }
   },
+  "document-metadata": {
+   "file": "af_heart/document-metadata-7bef5614a3.mp3",
+   "lines": {
+    "37f9587c775b0d60": [
+     0,
+     4928
+    ],
+    "46ae1487358bb1ad": [
+     5278,
+     11742
+    ],
+    "55432cc2666ffbc7": [
+     12092,
+     21372
+    ],
+    "3f416cd2693d068d": [
+     21722,
+     31407
+    ]
+   }
+  },
   "dont-fight-react-dom": {
    "file": "af_heart/dont-fight-react-dom-fc69d8f4d5.mp3",
    "lines": {
@@ -1417,6 +1522,31 @@
     ]
    }
   },
+  "element-vs-component": {
+   "file": "af_heart/element-vs-component-3197e545a9.mp3",
+   "lines": {
+    "d7a8bd54f69bd362": [
+     0,
+     6251
+    ],
+    "93a24ab82fbc0ba7": [
+     6601,
+     10697
+    ],
+    "7e7e762ed8cd0ec9": [
+     11047,
+     19132
+    ],
+    "5baf29282acdc105": [
+     19482,
+     28634
+    ],
+    "6263c0d5686a4d6d": [
+     28984,
+     36877
+    ]
+   }
+  },
   "error-boundaries": {
    "file": "af_heart/error-boundaries-ed25d53c08.mp3",
    "lines": {
@@ -1694,6 +1824,27 @@
     ]
    }
   },
+  "fragment-refs": {
+   "file": "af_heart/fragment-refs-2efb12a252.mp3",
+   "lines": {
+    "f1f57212c9a36865": [
+     0,
+     9515
+    ],
+    "d4483db231e1a6d0": [
+     9865,
+     16627
+    ],
+    "32c747651168233c": [
+     16977,
+     27431
+    ],
+    "9782ea80e2a03345": [
+     27781,
+     33541
+    ]
+   }
+  },
   "fragments": {
    "file": "af_heart/fragments-5a64554a19.mp3",
    "lines": {
@@ -1712,6 +1863,27 @@
     "74941fdfdcbb1c0e": [
      15770,
      20741
+    ]
+   }
+  },
+  "get-query-find": {
+   "file": "af_heart/get-query-find-ac889c4be4.mp3",
+   "lines": {
+    "bdb0471ed7b93bb8": [
+     0,
+     4117
+    ],
+    "0dd76bee0a93a6db": [
+     4467,
+     12553
+    ],
+    "4436fb6bbb83b6c9": [
+     12903,
+     19153
+    ],
+    "9e73da8a877962c1": [
+     19503,
+     27034
     ]
    }
   },
@@ -1754,6 +1926,31 @@
     "ba027f97a2521eeb": [
      16751,
      24325
+    ]
+   }
+  },
+  "higher-order-components": {
+   "file": "af_heart/higher-order-components-01a5aa5766.mp3",
+   "lines": {
+    "04309cfe5814cd9a": [
+     0,
+     5909
+    ],
+    "9b7fdb693db4fd33": [
+     6259,
+     16841
+    ],
+    "75c67f7244f86f24": [
+     17191,
+     26257
+    ],
+    "45168bb6d24b9c1b": [
+     26607,
+     32410
+    ],
+    "8eaead1a8295befe": [
+     32760,
+     39075
     ]
    }
   },
@@ -2692,6 +2889,31 @@
     ]
    }
   },
+  "performance-tracks": {
+   "file": "af_heart/performance-tracks-6b399b63ea.mp3",
+   "lines": {
+    "7b9c1111a971b81f": [
+     0,
+     7083
+    ],
+    "8a87e0c66f68a5ae": [
+     7433,
+     18761
+    ],
+    "a7092a4b6d21e136": [
+     19111,
+     27708
+    ],
+    "0422db5ef2fa9f75": [
+     28058,
+     35439
+    ],
+    "894f3743bd33b064": [
+     35789,
+     44707
+    ]
+   }
+  },
   "portal-event-bubbling": {
    "file": "af_heart/portal-event-bubbling-4819f5a963.mp3",
    "lines": {
@@ -2889,6 +3111,57 @@
     ]
    }
   },
+  "query-priority": {
+   "file": "af_heart/query-priority-a4fac45d2f.mp3",
+   "lines": {
+    "f5f8abd6c1ea2fe7": [
+     0,
+     4821
+    ],
+    "75d37f599e038680": [
+     5171,
+     13513
+    ],
+    "aaa91029c5327991": [
+     13863,
+     22929
+    ],
+    "1f58c8f78c18d428": [
+     23279,
+     28357
+    ],
+    "561992c79d1fba3d": [
+     28707,
+     37197
+    ]
+   }
+  },
+  "quiz-act-in-tests-1": {
+   "file": "af_heart/quiz-act-in-tests-1-7c79dfe819.mp3",
+   "lines": {
+    "8a3a4f604abe0567": [
+     0,
+     2688
+    ],
+    "b81411f3f1bcc338": [
+     3038,
+     6217
+    ]
+   }
+  },
+  "quiz-act-in-tests-2": {
+   "file": "af_heart/quiz-act-in-tests-2-3e9d2bbc01.mp3",
+   "lines": {
+    "5502a0c19b2f8e2b": [
+     0,
+     5931
+    ],
+    "62ac60c1c161dce0": [
+     6281,
+     10825
+    ]
+   }
+  },
   "quiz-action-objects-1": {
    "file": "af_heart/quiz-action-objects-1-d6836a3ab9.mp3",
    "lines": {
@@ -3019,6 +3292,32 @@
     ]
    }
   },
+  "quiz-async-ui-tests-1": {
+   "file": "af_heart/quiz-async-ui-tests-1-10383dbdb8.mp3",
+   "lines": {
+    "ccae7ef89b66fb2d": [
+     0,
+     4459
+    ],
+    "92b0b4918e82f52d": [
+     4809,
+     10313
+    ]
+   }
+  },
+  "quiz-async-ui-tests-2": {
+   "file": "af_heart/quiz-async-ui-tests-2-6f8ed94021.mp3",
+   "lines": {
+    "06c073571e10e06d": [
+     0,
+     3499
+    ],
+    "47339e153b6fb31b": [
+     3849,
+     9673
+    ]
+   }
+  },
   "quiz-automatic-batching-1": {
    "file": "af_heart/quiz-automatic-batching-1-fce6198b0b.mp3",
    "lines": {
@@ -3120,6 +3419,32 @@
     "a1429ff721f12c62": [
      7113,
      10355
+    ]
+   }
+  },
+  "quiz-cache-signal-1": {
+   "file": "af_heart/quiz-cache-signal-1-dc81044ed9.mp3",
+   "lines": {
+    "9944de9733039ca2": [
+     0,
+     4096
+    ],
+    "4c3e65af64933306": [
+     4446,
+     9737
+    ]
+   }
+  },
+  "quiz-cache-signal-2": {
+   "file": "af_heart/quiz-cache-signal-2-5524967ba3.mp3",
+   "lines": {
+    "ee474e1b26ddc9e8": [
+     0,
+     3307
+    ],
+    "6304b9d0fcd60dbc": [
+     3657,
+     10014
     ]
    }
   },
@@ -3367,6 +3692,32 @@
     "f004ad53d8a83870": [
      4446,
      11571
+    ]
+   }
+  },
+  "quiz-composition-vs-inheritance-1": {
+   "file": "af_heart/quiz-composition-vs-inheritance-1-a8df695bfc.mp3",
+   "lines": {
+    "98506537f9cf8f9f": [
+     0,
+     3712
+    ],
+    "443813779d523553": [
+     4062,
+     10611
+    ]
+   }
+  },
+  "quiz-composition-vs-inheritance-2": {
+   "file": "af_heart/quiz-composition-vs-inheritance-2-6f00a2f71b.mp3",
+   "lines": {
+    "9dca1fb9074f8ecf": [
+     0,
+     5867
+    ],
+    "ee380e6fca142fc6": [
+     6217,
+     13001
     ]
    }
   },
@@ -3695,6 +4046,19 @@
     ]
    }
   },
+  "quiz-custom-hook-naming-2": {
+   "file": "af_heart/quiz-custom-hook-naming-2-e3856f951f.mp3",
+   "lines": {
+    "a945d71ecd10196d": [
+     0,
+     6443
+    ],
+    "59bcd2aac297a07e": [
+     6793,
+     13150
+    ]
+   }
+  },
   "quiz-custom-hook-when-1": {
    "file": "af_heart/quiz-custom-hook-when-1-19f2eaabb5.mp3",
    "lines": {
@@ -4004,6 +4368,32 @@
     "96404cbea4926125": [
      3593,
      8009
+    ]
+   }
+  },
+  "quiz-document-metadata-1": {
+   "file": "af_heart/quiz-document-metadata-1-eddf581b77.mp3",
+   "lines": {
+    "728e627a7d794d49": [
+     0,
+     2219
+    ],
+    "003618054d125583": [
+     2569,
+     8414
+    ]
+   }
+  },
+  "quiz-document-metadata-2": {
+   "file": "af_heart/quiz-document-metadata-2-ecdd6ba2a6.mp3",
+   "lines": {
+    "5c888593f226df73": [
+     0,
+     6251
+    ],
+    "0a47bd71acf453c7": [
+     6601,
+     11891
     ]
    }
   },
@@ -4384,6 +4774,19 @@
     ]
    }
   },
+  "quiz-effect-infinite-loop-2": {
+   "file": "af_heart/quiz-effect-infinite-loop-2-1ef17ebe11.mp3",
+   "lines": {
+    "25714a561055eeb4": [
+     0,
+     2603
+    ],
+    "ad04dc89a8af94fe": [
+     2953,
+     11145
+    ]
+   }
+  },
   "quiz-effect-lifecycle-1": {
    "file": "af_heart/quiz-effect-lifecycle-1-dff86a984c.mp3",
    "lines": {
@@ -4524,6 +4927,45 @@
     "46eff6bfb4e32066": [
      4254,
      8542
+    ]
+   }
+  },
+  "quiz-effects-run-twice-dev-2": {
+   "file": "af_heart/quiz-effects-run-twice-dev-2-8589680555.mp3",
+   "lines": {
+    "d17afac54fac9664": [
+     0,
+     3755
+    ],
+    "78aae242ffac522c": [
+     4105,
+     11785
+    ]
+   }
+  },
+  "quiz-element-vs-component-1": {
+   "file": "af_heart/quiz-element-vs-component-1-deec406d38.mp3",
+   "lines": {
+    "fbc4d43b7af4f899": [
+     0,
+     5931
+    ],
+    "4693e8ea0c78ba32": [
+     6281,
+     12915
+    ]
+   }
+  },
+  "quiz-element-vs-component-2": {
+   "file": "af_heart/quiz-element-vs-component-2-f9e0a53419.mp3",
+   "lines": {
+    "380bb5fb4ae68e4d": [
+     0,
+     1109
+    ],
+    "34cb2dcd3d3b2883": [
+     1459,
+     8755
     ]
    }
   },
@@ -4865,6 +5307,32 @@
     ]
    }
   },
+  "quiz-fragment-refs-1": {
+   "file": "af_heart/quiz-fragment-refs-1-b5bba8367a.mp3",
+   "lines": {
+    "467b7b3a2d02a236": [
+     0,
+     4715
+    ],
+    "c3f5be62d3c8b93f": [
+     5065,
+     12467
+    ]
+   }
+  },
+  "quiz-fragment-refs-2": {
+   "file": "af_heart/quiz-fragment-refs-2-076c3ad8bd.mp3",
+   "lines": {
+    "c2b0a02a384d2cd8": [
+     0,
+     4971
+    ],
+    "e1e2b08a11b622cd": [
+     5321,
+     10185
+    ]
+   }
+  },
   "quiz-fragments-1": {
    "file": "af_heart/quiz-fragments-1-17f332488a.mp3",
    "lines": {
@@ -4888,6 +5356,32 @@
     "2b80c642fddd71ea": [
      4830,
      8009
+    ]
+   }
+  },
+  "quiz-get-query-find-1": {
+   "file": "af_heart/quiz-get-query-find-1-7e6882e1e0.mp3",
+   "lines": {
+    "53e5bd3ebefc0c40": [
+     0,
+     4331
+    ],
+    "74b59ecc112904bc": [
+     4681,
+     9523
+    ]
+   }
+  },
+  "quiz-get-query-find-2": {
+   "file": "af_heart/quiz-get-query-find-2-13c62a0086.mp3",
+   "lines": {
+    "5789d320fefdf511": [
+     0,
+     3605
+    ],
+    "d82fc3aceeffb0cf": [
+     3955,
+     9993
     ]
    }
   },
@@ -4940,6 +5434,32 @@
     "518de76f318e0d6e": [
      2462,
      6771
+    ]
+   }
+  },
+  "quiz-higher-order-components-1": {
+   "file": "af_heart/quiz-higher-order-components-1-a38aa91ce9.mp3",
+   "lines": {
+    "9e303f8a191ae00a": [
+     0,
+     3371
+    ],
+    "4752041b77efe0e8": [
+     3721,
+     11785
+    ]
+   }
+  },
+  "quiz-higher-order-components-2": {
+   "file": "af_heart/quiz-higher-order-components-2-e151a6c039.mp3",
+   "lines": {
+    "ba32c9a1ca04772c": [
+     0,
+     5440
+    ],
+    "b6115d31cc509094": [
+     5790,
+     11742
     ]
    }
   },
@@ -5382,6 +5902,19 @@
     "8da7771ef8346ad0": [
      6153,
      12723
+    ]
+   }
+  },
+  "quiz-lazy-initial-state-2": {
+   "file": "af_heart/quiz-lazy-initial-state-2-66d5e79570.mp3",
+   "lines": {
+    "ab1a88d9cd589971": [
+     0,
+     3605
+    ],
+    "c8b238eea975cb08": [
+     3955,
+     12361
     ]
    }
   },
@@ -6061,6 +6594,32 @@
     ]
    }
   },
+  "quiz-performance-tracks-1": {
+   "file": "af_heart/quiz-performance-tracks-1-3be7ceb195.mp3",
+   "lines": {
+    "3fa6c71f041cb0b0": [
+     0,
+     5525
+    ],
+    "de0992c66c231a7c": [
+     5875,
+     12083
+    ]
+   }
+  },
+  "quiz-performance-tracks-2": {
+   "file": "af_heart/quiz-performance-tracks-2-814cf122c7.mp3",
+   "lines": {
+    "be7f95779355f528": [
+     0,
+     5461
+    ],
+    "878b37128abd14a0": [
+     5811,
+     12446
+    ]
+   }
+  },
   "quiz-portal-event-bubbling-1": {
    "file": "af_heart/quiz-portal-event-bubbling-1-348ecee2cd.mp3",
    "lines": {
@@ -6292,6 +6851,32 @@
     "652a0b067eaaa7bd": [
      2185,
      9331
+    ]
+   }
+  },
+  "quiz-query-priority-1": {
+   "file": "af_heart/quiz-query-priority-1-e37f75ad6f.mp3",
+   "lines": {
+    "1d923277da3886ac": [
+     0,
+     4032
+    ],
+    "1515eccaa70eb55d": [
+     4382,
+     10227
+    ]
+   }
+  },
+  "quiz-query-priority-2": {
+   "file": "af_heart/quiz-query-priority-2-62e2b9dcd1.mp3",
+   "lines": {
+    "7ac0f5655a4ac40d": [
+     0,
+     6528
+    ],
+    "4d033a010b072592": [
+     6878,
+     11998
     ]
    }
   },
@@ -6633,6 +7218,32 @@
     ]
    }
   },
+  "quiz-render-and-screen-1": {
+   "file": "af_heart/quiz-render-and-screen-1-f5cc4e97c9.mp3",
+   "lines": {
+    "d1f62e7f1892e531": [
+     0,
+     2901
+    ],
+    "82ac20c11bdcd90f": [
+     3251,
+     7369
+    ]
+   }
+  },
+  "quiz-render-and-screen-2": {
+   "file": "af_heart/quiz-render-and-screen-2-36f4317e31.mp3",
+   "lines": {
+    "637b7b7c379a59d9": [
+     0,
+     4757
+    ],
+    "82b2a8a017b3c70b": [
+     5107,
+     9118
+    ]
+   }
+  },
   "quiz-render-bailout-1": {
    "file": "af_heart/quiz-render-bailout-1-4b94aa6df3.mp3",
    "lines": {
@@ -6656,6 +7267,32 @@
     "5b5e65a32991f8d2": [
      6622,
      9118
+    ]
+   }
+  },
+  "quiz-render-props-1": {
+   "file": "af_heart/quiz-render-props-1-82ff0284fc.mp3",
+   "lines": {
+    "40addad6752f5bef": [
+     0,
+     3861
+    ],
+    "abb6e3da3393d9e1": [
+     4211,
+     9822
+    ]
+   }
+  },
+  "quiz-render-props-2": {
+   "file": "af_heart/quiz-render-props-2-89787e257f.mp3",
+   "lines": {
+    "fd876efe6176d20d": [
+     0,
+     4480
+    ],
+    "b348f95820215e9c": [
+     4830,
+     9609
     ]
    }
   },
@@ -6750,6 +7387,19 @@
     ]
    }
   },
+  "quiz-reset-state-with-key-2": {
+   "file": "af_heart/quiz-reset-state-with-key-2-3a9b3e83ee.mp3",
+   "lines": {
+    "af23a10f3fb4a60d": [
+     0,
+     3883
+    ],
+    "8c50a8c8aa069a3f": [
+     4233,
+     9929
+    ]
+   }
+  },
   "quiz-returning-null-1": {
    "file": "af_heart/quiz-returning-null-1-6b4495d564.mp3",
    "lines": {
@@ -6786,6 +7436,19 @@
     "d7510abc08d83ffd": [
      2206,
      7219
+    ]
+   }
+  },
+  "quiz-rules-of-hooks-2": {
+   "file": "af_heart/quiz-rules-of-hooks-2-c0b7f81b0a.mp3",
+   "lines": {
+    "842946677a6066eb": [
+     0,
+     5888
+    ],
+    "4ce05b273b58234f": [
+     6238,
+     12809
     ]
    }
   },
@@ -7582,6 +8245,58 @@
     ]
    }
   },
+  "quiz-test-like-a-user-1": {
+   "file": "af_heart/quiz-test-like-a-user-1-8205b20c14.mp3",
+   "lines": {
+    "40da67d53dc728f2": [
+     0,
+     5653
+    ],
+    "9fd967225dd2d60c": [
+     6003,
+     10547
+    ]
+   }
+  },
+  "quiz-test-like-a-user-2": {
+   "file": "af_heart/quiz-test-like-a-user-2-2ba54b92ec.mp3",
+   "lines": {
+    "bb9c2c1f2f242a06": [
+     0,
+     6421
+    ],
+    "8c775a664538414b": [
+     6771,
+     11678
+    ]
+   }
+  },
+  "quiz-testing-custom-hooks-1": {
+   "file": "af_heart/quiz-testing-custom-hooks-1-e5221e2d95.mp3",
+   "lines": {
+    "1a389295a2f943bc": [
+     0,
+     5291
+    ],
+    "19ec58e012933b1b": [
+     5641,
+     13065
+    ]
+   }
+  },
+  "quiz-testing-custom-hooks-2": {
+   "file": "af_heart/quiz-testing-custom-hooks-2-dfc0b9bb6a.mp3",
+   "lines": {
+    "94558970569de28a": [
+     0,
+     2880
+    ],
+    "d1c108232b3abfbf": [
+     3230,
+     7774
+    ]
+   }
+  },
   "quiz-think-from-effect-perspective-1": {
    "file": "af_heart/quiz-think-from-effect-perspective-1-48dd3c0ccb.mp3",
    "lines": {
@@ -7660,6 +8375,214 @@
     ]
    }
   },
+  "quiz-typing-children-1": {
+   "file": "af_heart/quiz-typing-children-1-e0639ee81b.mp3",
+   "lines": {
+    "9283b89ae246984b": [
+     0,
+     4949
+    ],
+    "3bb9e1b0582a9a18": [
+     5299,
+     12275
+    ]
+   }
+  },
+  "quiz-typing-children-2": {
+   "file": "af_heart/quiz-typing-children-2-2760a1cd5b.mp3",
+   "lines": {
+    "e2b35821cea35219": [
+     0,
+     6037
+    ],
+    "2638919e7f6be48d": [
+     6387,
+     11081
+    ]
+   }
+  },
+  "quiz-typing-dom-events-1": {
+   "file": "af_heart/quiz-typing-dom-events-1-6ee2d1719f.mp3",
+   "lines": {
+    "a586b66b171a4ec4": [
+     0,
+     2859
+    ],
+    "e4e57b48fe8bc9c0": [
+     3209,
+     9374
+    ]
+   }
+  },
+  "quiz-typing-dom-events-2": {
+   "file": "af_heart/quiz-typing-dom-events-2-e8ce8b861b.mp3",
+   "lines": {
+    "58b51ad6066aba28": [
+     0,
+     5419
+    ],
+    "698872a74891d1c1": [
+     5769,
+     9779
+    ]
+   }
+  },
+  "quiz-typing-props-1": {
+   "file": "af_heart/quiz-typing-props-1-ba69fe6164.mp3",
+   "lines": {
+    "c41bb3a0f4c333be": [
+     0,
+     3179
+    ],
+    "d3f2a7d10bf26a84": [
+     3529,
+     8307
+    ]
+   }
+  },
+  "quiz-typing-props-2": {
+   "file": "af_heart/quiz-typing-props-2-b0dde8852b.mp3",
+   "lines": {
+    "cd298486222c65e4": [
+     0,
+     2176
+    ],
+    "76aeaa8f8c1793cb": [
+     2526,
+     6643
+    ]
+   }
+  },
+  "quiz-typing-style-prop-1": {
+   "file": "af_heart/quiz-typing-style-prop-1-747478df98.mp3",
+   "lines": {
+    "36e59d89b15d4946": [
+     0,
+     4245
+    ],
+    "37c3ab4f46ec792a": [
+     4595,
+     10867
+    ]
+   }
+  },
+  "quiz-typing-style-prop-2": {
+   "file": "af_heart/quiz-typing-style-prop-2-0be5ef34fc.mp3",
+   "lines": {
+    "ba57903f07d2beed": [
+     0,
+     4693
+    ],
+    "1712fa94c12fd0a2": [
+     5043,
+     10505
+    ]
+   }
+  },
+  "quiz-typing-usecontext-1": {
+   "file": "af_heart/quiz-typing-usecontext-1-d6b3efcd1b.mp3",
+   "lines": {
+    "61c2d16c7a639fa4": [
+     0,
+     1515
+    ],
+    "38a7164335797385": [
+     1865,
+     6985
+    ]
+   }
+  },
+  "quiz-typing-usecontext-2": {
+   "file": "af_heart/quiz-typing-usecontext-2-60a46cf8f6.mp3",
+   "lines": {
+    "c1be093210d0b43f": [
+     0,
+     4629
+    ],
+    "8bd44e6dd02d61c2": [
+     4979,
+     9907
+    ]
+   }
+  },
+  "quiz-typing-usememo-usecallback-1": {
+   "file": "af_heart/quiz-typing-usememo-usecallback-1-26a791ff6e.mp3",
+   "lines": {
+    "41e4d722c52eb1e3": [
+     0,
+     4928
+    ],
+    "5547f17f0b5181ad": [
+     5278,
+     10398
+    ]
+   }
+  },
+  "quiz-typing-usememo-usecallback-2": {
+   "file": "af_heart/quiz-typing-usememo-usecallback-2-5be34beed1.mp3",
+   "lines": {
+    "903208b093d5da1c": [
+     0,
+     3264
+    ],
+    "b1835a5802ed5d8e": [
+     3614,
+     8990
+    ]
+   }
+  },
+  "quiz-typing-usereducer-1": {
+   "file": "af_heart/quiz-typing-usereducer-1-4f45f0d63c.mp3",
+   "lines": {
+    "6fc15229c1850e7d": [
+     0,
+     3712
+    ],
+    "5faae91576bded30": [
+     4062,
+     9097
+    ]
+   }
+  },
+  "quiz-typing-usereducer-2": {
+   "file": "af_heart/quiz-typing-usereducer-2-c2ee04834e.mp3",
+   "lines": {
+    "10d3080f5099e69d": [
+     0,
+     2283
+    ],
+    "e1f7ba6e324457fb": [
+     2633,
+     7646
+    ]
+   }
+  },
+  "quiz-typing-usestate-1": {
+   "file": "af_heart/quiz-typing-usestate-1-0b4b1ef775.mp3",
+   "lines": {
+    "b19a800d2c189002": [
+     0,
+     2197
+    ],
+    "13c8df3a23387967": [
+     2547,
+     7347
+    ]
+   }
+  },
+  "quiz-typing-usestate-2": {
+   "file": "af_heart/quiz-typing-usestate-2-635d85520a.mp3",
+   "lines": {
+    "47b31afdc4fa61cc": [
+     0,
+     3328
+    ],
+    "8ca8b1410bbab249": [
+     3678,
+     7283
+    ]
+   }
+  },
   "quiz-ui-as-a-tree-1": {
    "file": "af_heart/quiz-ui-as-a-tree-1-672c20b055.mp3",
    "lines": {
@@ -7722,6 +8645,19 @@
     "c9a3da5cee5eaf57": [
      5406,
      12467
+    ]
+   }
+  },
+  "quiz-updater-function-2": {
+   "file": "af_heart/quiz-updater-function-2-9cc66cc7ec.mp3",
+   "lines": {
+    "055eaca6ceff2b2a": [
+     0,
+     3157
+    ],
+    "4818720607cd0149": [
+     3507,
+     9267
     ]
    }
   },
@@ -8258,6 +9194,19 @@
     ]
    }
   },
+  "quiz-usememo-2": {
+   "file": "af_heart/quiz-usememo-2-6ba953c383.mp3",
+   "lines": {
+    "018c389698c06e33": [
+     0,
+     5291
+    ],
+    "7bbbb439447aa0ee": [
+     5641,
+     13897
+    ]
+   }
+  },
   "quiz-usememo-vs-usecallback-1": {
    "file": "af_heart/quiz-usememo-vs-usecallback-1-9cd75ab428.mp3",
    "lines": {
@@ -8307,6 +9256,32 @@
     "c844bef0a2677dee": [
      4254,
      5534
+    ]
+   }
+  },
+  "quiz-user-event-1": {
+   "file": "af_heart/quiz-user-event-1-b162846df0.mp3",
+   "lines": {
+    "50ebc0e67f3962c5": [
+     0,
+     3989
+    ],
+    "31a78a3d0ad02bb1": [
+     4339,
+     10718
+    ]
+   }
+  },
+  "quiz-user-event-2": {
+   "file": "af_heart/quiz-user-event-2-e733cf2cd9.mp3",
+   "lines": {
+    "59eea2bc11bc3ae9": [
+     0,
+     5739
+    ],
+    "28bd7b4281662660": [
+     6089,
+     11913
     ]
    }
   },
@@ -8489,6 +9464,32 @@
     "47f30b96ec4661f9": [
      6195,
      10270
+    ]
+   }
+  },
+  "quiz-view-transition-1": {
+   "file": "af_heart/quiz-view-transition-1-ee617b8d0b.mp3",
+   "lines": {
+    "775db5e594667f50": [
+     0,
+     3627
+    ],
+    "319aa2f999397fe1": [
+     3977,
+     11699
+    ]
+   }
+  },
+  "quiz-view-transition-2": {
+   "file": "af_heart/quiz-view-transition-2-2fc74d9d20.mp3",
+   "lines": {
+    "7bf6ca27fe282eef": [
+     0,
+     6379
+    ],
+    "26fc2bfdb7fd4637": [
+     6729,
+     12702
     ]
    }
   },
@@ -9007,6 +10008,27 @@
     ]
    }
   },
+  "render-and-screen": {
+   "file": "af_heart/render-and-screen-4dc7427687.mp3",
+   "lines": {
+    "85b8fc49ada9ad37": [
+     0,
+     6101
+    ],
+    "5b00f9b0ca212825": [
+     6451,
+     13897
+    ],
+    "1927ecd375645a0b": [
+     14247,
+     21265
+    ],
+    "130748834c0c493b": [
+     21615,
+     29274
+    ]
+   }
+  },
   "render-bailout": {
    "file": "af_heart/render-bailout-1acfcb23d7.mp3",
    "lines": {
@@ -9025,6 +10047,31 @@
     "eb7e48b170de825c": [
      23599,
      30319
+    ]
+   }
+  },
+  "render-props": {
+   "file": "af_heart/render-props-dd8746fcf0.mp3",
+   "lines": {
+    "7fd435a301d7e1cb": [
+     0,
+     5269
+    ],
+    "2b284f8ebc1d316f": [
+     5619,
+     13150
+    ],
+    "8626bb2a30088d8c": [
+     13500,
+     18812
+    ],
+    "02a49998264aafec": [
+     19162,
+     24495
+    ],
+    "678d1c398b359982": [
+     24845,
+     33549
     ]
    }
   },
@@ -9848,6 +10895,52 @@
     ]
    }
   },
+  "test-like-a-user": {
+   "file": "af_heart/test-like-a-user-715d3a37d1.mp3",
+   "lines": {
+    "9262d6b7eeccdc27": [
+     0,
+     6613
+    ],
+    "a26165707bc7e500": [
+     6963,
+     13577
+    ],
+    "5490e32fed90f52b": [
+     13927,
+     23228
+    ],
+    "82478b0b4f9c1116": [
+     23578,
+     30725
+    ]
+   }
+  },
+  "testing-custom-hooks": {
+   "file": "af_heart/testing-custom-hooks-0db3fe8551.mp3",
+   "lines": {
+    "dca0701a3cc5598c": [
+     0,
+     5739
+    ],
+    "09ed5d658dd36959": [
+     6089,
+     12446
+    ],
+    "0ca51b020f95ee62": [
+     12796,
+     19452
+    ],
+    "86778552215956ab": [
+     19802,
+     26181
+    ],
+    "08de4476c4e76f3d": [
+     26531,
+     34040
+    ]
+   }
+  },
   "think-from-effect-perspective": {
    "file": "af_heart/think-from-effect-perspective-bedf7c9472.mp3",
    "lines": {
@@ -9916,6 +11009,174 @@
     "c4e326c5b9d78644": [
      26804,
      31668
+    ]
+   }
+  },
+  "typing-children": {
+   "file": "af_heart/typing-children-e0c53b16f4.mp3",
+   "lines": {
+    "2ad9838a0dc9ccc0": [
+     0,
+     6123
+    ],
+    "7a5b9bc681d6fd10": [
+     6473,
+     15369
+    ],
+    "b7128b2f281a0753": [
+     15719,
+     21863
+    ],
+    "88049dffcc9fe3b7": [
+     22213,
+     30021
+    ]
+   }
+  },
+  "typing-dom-events": {
+   "file": "af_heart/typing-dom-events-9518e87702.mp3",
+   "lines": {
+    "cf2b1fd452961850": [
+     0,
+     6229
+    ],
+    "366851ffa4913a70": [
+     6579,
+     12062
+    ],
+    "a1e9d7d587cae682": [
+     12412,
+     17937
+    ],
+    "7c2c582beeb7f897": [
+     18287,
+     26778
+    ]
+   }
+  },
+  "typing-props": {
+   "file": "af_heart/typing-props-cbf23655f3.mp3",
+   "lines": {
+    "7b1d413417276150": [
+     0,
+     6656
+    ],
+    "cdb6b9ea6d351e6e": [
+     7006,
+     12595
+    ],
+    "8422f4103632cc57": [
+     12945,
+     20583
+    ],
+    "bc4d5c1822309992": [
+     20933,
+     28911
+    ]
+   }
+  },
+  "typing-style-prop": {
+   "file": "af_heart/typing-style-prop-f6d65e2bd5.mp3",
+   "lines": {
+    "814362cae4b690cb": [
+     0,
+     5355
+    ],
+    "a5423a8fba16b044": [
+     5705,
+     12254
+    ],
+    "0eebd0eea79890ed": [
+     12604,
+     19281
+    ]
+   }
+  },
+  "typing-usecontext": {
+   "file": "af_heart/typing-usecontext-7506341797.mp3",
+   "lines": {
+    "a0a4bd555978904b": [
+     0,
+     6784
+    ],
+    "b45086aff1d990fa": [
+     7134,
+     11230
+    ],
+    "08e5297abd1c35cb": [
+     11580,
+     16039
+    ],
+    "ad1d0eb0a80d1aee": [
+     16389,
+     25071
+    ]
+   }
+  },
+  "typing-usememo-usecallback": {
+   "file": "af_heart/typing-usememo-usecallback-5bcef80bf8.mp3",
+   "lines": {
+    "a5483fd56202325d": [
+     0,
+     5056
+    ],
+    "23b79c50f266e7ec": [
+     5406,
+     11998
+    ],
+    "f37c4d3bf8d8471d": [
+     12348,
+     16935
+    ],
+    "9eec0a51f4c52661": [
+     17285,
+     23685
+    ],
+    "b4e47bb6663b48c1": [
+     24035,
+     29475
+    ]
+   }
+  },
+  "typing-usereducer": {
+   "file": "af_heart/typing-usereducer-eeb4e2da0f.mp3",
+   "lines": {
+    "4bd9a0bae6a25cb2": [
+     0,
+     4331
+    ],
+    "45f95fa52a256c0a": [
+     4681,
+     11678
+    ],
+    "0c389543f3f1a293": [
+     12028,
+     18471
+    ],
+    "840a4510169d2a59": [
+     18821,
+     22767
+    ]
+   }
+  },
+  "typing-usestate": {
+   "file": "af_heart/typing-usestate-4d72bf3f00.mp3",
+   "lines": {
+    "e45c702f823cc78d": [
+     0,
+     5632
+    ],
+    "5bb3bad9bd80336d": [
+     5982,
+     10313
+    ],
+    "9334be66efb5d841": [
+     10663,
+     19217
+    ],
+    "a9f033070758079e": [
+     19567,
+     27503
     ]
    }
   },
@@ -10485,6 +11746,27 @@
     ]
    }
   },
+  "user-event": {
+   "file": "af_heart/user-event-918d4c58c5.mp3",
+   "lines": {
+    "830d76ead1a604b0": [
+     0,
+     7275
+    ],
+    "c88d543198b86d44": [
+     7625,
+     12766
+    ],
+    "101324fe37115875": [
+     13116,
+     23719
+    ],
+    "6c73c97dd4a67135": [
+     24069,
+     30938
+    ]
+   }
+  },
   "usereducer-basics": {
    "file": "af_heart/usereducer-basics-1a843cf74d.mp3",
    "lines": {
@@ -10633,6 +11915,27 @@
     "ecf035e653b622b8": [
      27077,
      30511
+    ]
+   }
+  },
+  "view-transition": {
+   "file": "af_heart/view-transition-6608f2e63f.mp3",
+   "lines": {
+    "8d04b6249d662820": [
+     0,
+     8747
+    ],
+    "fb36f19db4e767a7": [
+     9097,
+     15539
+    ],
+    "8b9a8b9de8e2deb7": [
+     15889,
+     27345
+    ],
+    "c531e2a0886838c8": [
+     27695,
+     41711
     ]
    }
   },
