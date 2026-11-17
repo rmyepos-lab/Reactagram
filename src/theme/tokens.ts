@@ -50,6 +50,8 @@ export const reel = {
   codeHighlight: 'rgba(136,192,208,0.14)',
   text: '#ECEFF4',
   textSoft: '#DDE1E7',
+  /** Caption letters not typed yet. Not 'transparent': Android reads a zero color as "inherit". */
+  untyped: 'rgba(23,25,28,0.01)',
   muted: '#A9B0BA',
   dim: '#8A929E',
   accent: '#5DB4D2',

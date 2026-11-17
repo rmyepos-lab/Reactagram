@@ -65,7 +65,7 @@ export function HomeScreen({ navigation }: TabScreenProps<'Home'>) {
   const header = (
     <View style={styles.top}>
       <Animated.View entering={FadeInDown.duration(320)} style={styles.goal}>
-        <Mascot size={80} />
+        <Mascot size={80} wave={false} />
         <View style={styles.goalBody}>
           <View style={styles.goalHead}>
             <AppText accessibilityRole="header" weight="black" size={18}>
