@@ -64,14 +64,13 @@ export function QuizSetup({ unfinished, initial, onStart, onContinue }: Props) {
   const exact = countMatching(quizReels, config);
   const size = Math.min(QUIZ_SIZE, countMatching(quizReels, { levels: [], topics: picked }));
 
-  let summary = 'No questions for this choice yet.';
-  if (size > 0) {
-    const noun = size === 1 ? 'question' : 'questions';
-    summary =
-      exact < size
-        ? `${size} ${noun}: ${exact} at this difficulty, the rest from the nearest levels.`
-        : `${size} ${noun}, none repeated.`;
-  }
+  // Said only when it matters: nothing to play, or easier/harder questions mixed in.
+  const summary =
+    size === 0
+      ? 'No questions for this choice yet.'
+      : exact < size
+        ? 'A few questions come from nearby levels.'
+        : null;
 
   return (
     <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
@@ -145,9 +144,11 @@ export function QuizSetup({ unfinished, initial, onStart, onContinue }: Props) {
       </View>
 
       <View style={styles.block}>
-        <AppText size={14} color={colors.textVariant} accessibilityLiveRegion="polite">
-          {summary}
-        </AppText>
+        {summary ? (
+          <AppText size={14} color={colors.textVariant} accessibilityLiveRegion="polite">
+            {summary}
+          </AppText>
+        ) : null}
         <LedgeButton
           label={unfinished ? 'Start a new quiz' : 'Start quiz'}
           onPress={() => onStart(config)}

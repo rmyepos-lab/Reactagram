@@ -4,7 +4,7 @@ export type Level = 'beginner' | 'intermediate' | 'advanced';
 export const LEVELS: readonly Level[] = ['beginner', 'intermediate', 'advanced'];
 
 /** A quiz never has more questions than this, and never the same question twice. */
-export const QUIZ_SIZE = 20;
+export const QUIZ_SIZE = 10;
 
 /** What the learner picked on the setup screen. An empty list means "all". */
 export type QuizConfig = { levels: Level[]; topics: string[] };

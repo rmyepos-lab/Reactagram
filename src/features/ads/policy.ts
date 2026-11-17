@@ -4,10 +4,8 @@ export const AD_RULES = {
   homeEvery: 6,
   /** Learn: 1 sponsored reel after every 7 reels. */
   learnEvery: 7,
-  /** Quiz: an ad slot after every 6 quizzes... */
+  /** Quiz: an ad slot after every 6 quizzes. */
   quizBlock: 6,
-  /** ...skipped when at least 5 of those 6 were right (Smart Skip). */
-  quizSkipAt: 5,
 } as const;
 
 export type AdSlot = { kind: 'ad'; id: string };
@@ -15,7 +13,7 @@ export type FeedItem<T> = { kind: 'content'; id: string; item: T } | AdSlot;
 
 /**
  * Puts an ad slot after every `every` content items.
- * `keep` lets the caller drop single slots (hidden, failed to load, or earned by Smart Skip).
+ * `keep` lets the caller drop single slots (hidden, or failed to load).
  */
 export function interleaveAds<T>(
   items: readonly { key: string; item: T }[],
@@ -36,9 +34,4 @@ export function interleaveAds<T>(
     }
   });
   return out;
-}
-
-/** Smart Skip: true when the block's results earn skipping the ad that follows it. */
-export function earnsSmartSkip(blockResults: readonly (boolean | undefined)[]): boolean {
-  return blockResults.filter(r => r === true).length >= AD_RULES.quizSkipAt;
 }

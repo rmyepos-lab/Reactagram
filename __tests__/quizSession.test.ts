@@ -30,7 +30,7 @@ const many = (n: number, topic = 'State', level: Level = 'beginner') =>
 const noShuffle = () => 0.999;
 
 describe('buildQuiz', () => {
-  it('never has more than 20 questions and never repeats one', () => {
+  it('never has more than QUIZ_SIZE questions and never repeats one', () => {
     const ids = buildQuiz(many(50), ANY_QUIZ, EMPTY_PROGRESS, day(1));
     expect(ids).toHaveLength(QUIZ_SIZE);
     expect(new Set(ids).size).toBe(QUIZ_SIZE);
@@ -76,10 +76,10 @@ describe('buildQuiz', () => {
     for (const i of [25, 26, 27, 28]) {
       expect(ids).toContain(pool[i].id); // never answered
     }
-    // 15 seats left for answered ones: all of day 1, 2 and 3, none of day 5.
+    // 5 seats left for answered ones: all 5 of day 1 (the oldest), none later.
     const seenDays = ids.map(id => pool.findIndex(x => x.id === id)).filter(i => i < 25).map(i => 1 + (i % 5));
-    expect(seenDays).toHaveLength(15);
-    expect(Math.max(...seenDays)).toBe(3);
+    expect(seenDays).toHaveLength(5);
+    expect(Math.max(...seenDays)).toBe(1);
   });
 
   it('does not put two questions of one concept back to back when it can avoid it', () => {

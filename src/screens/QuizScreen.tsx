@@ -3,13 +3,12 @@ import { StyleSheet, View } from 'react-native';
 import { useIsFocused } from '@react-navigation/native';
 import { QuizResults } from '../components/quiz/QuizResults';
 import { QuizSetup } from '../components/quiz/QuizSetup';
-import { QuizReelCard, ReelPager, ReelTabs, SmartSkipChip, type ReelPagerHandle } from '../components/reels';
+import { QuizReelCard, ReelPager, ReelTabs, type ReelPagerHandle } from '../components/reels';
 import { AppText, Icon, IconButton, ProgressBar, Screen } from '../components/ui';
 import {
   AD_RULES,
   SponsoredReel,
   type FeedItem,
-  earnsSmartSkip,
   interleaveAds,
   useAdSheet,
   useAds,
@@ -29,13 +28,12 @@ import type { TabScreenProps } from '../navigation/types';
 import { colors, space } from '../theme';
 
 const FEED = 'quiz';
-const slotIdOf = (block: number) => `ad-${block}`;
 const quizById = new Map(quizReels.map(q => [q.id, q]));
 const END_PAGE = { kind: 'end', id: 'end' } as const;
 type PlayerItem = FeedItem<QuizReel> | typeof END_PAGE;
 
 /**
- * Quiz tab. A quiz is a set of up to 20 different questions:
+ * Quiz tab. A quiz is a set of up to 10 different questions:
  * setup (difficulty + concepts) → questions → results. An unfinished quiz can be continued.
  * `startId` (from Home or Explore) opens that single question instead.
  * `missed` (from Home) plays the missed questions that are back today, apart from the quiz.
@@ -166,24 +164,10 @@ function QuizPlayer({ quizzes, done = 0, total, lastLabel, onDone, onExit, onOpe
   const [results, setResults] = useState<Record<string, boolean>>({});
   /** The option picked for each question, so a card that scrolled away comes back answered. */
   const picks = useRef<Record<string, number>>({});
-  /** Ad slots the learner earned skipping, and slots already shown (those stay). */
-  const [earned, setEarned] = useState<ReadonlySet<string>>(new Set());
-  const reached = useRef(new Set<string>());
-  const [activeKey, setActiveKey] = useState<string | null>(null);
-
-  const blockResults = (block: number, all: Record<string, boolean>) =>
-    items.slice(block * AD_RULES.quizBlock, (block + 1) * AD_RULES.quizBlock).map(({ key }) => all[key]);
-
   const onAnswered = (key: string, correct: boolean, picked: number) => {
     picks.current[key] = picked;
     quizSession.answer(key, correct);
-    const next = { ...results, [key]: correct };
-    setResults(next);
-    const block = Math.floor(items.findIndex(i => i.key === key) / AD_RULES.quizBlock);
-    const slotId = slotIdOf(block);
-    if (earnsSmartSkip(blockResults(block, next)) && !reached.current.has(slotId)) {
-      setEarned(prev => new Set(prev).add(slotId));
-    }
+    setResults(prev => ({ ...prev, [key]: correct }));
   };
 
   const feed = useMemo(
@@ -194,9 +178,9 @@ function QuizPlayer({ quizzes, done = 0, total, lastLabel, onDone, onExit, onOpe
         ads.enabled,
         // No ad after the very last question: the results come next.
         (slot, id) =>
-          (slot + 1) * AD_RULES.quizBlock < items.length && !ads.isRemoved(FEED, id) && !earned.has(id),
+          (slot + 1) * AD_RULES.quizBlock < items.length && !ads.isRemoved(FEED, id),
       ),
-    [items, ads, earned],
+    [items, ads],
   );
 
   /**
@@ -209,17 +193,11 @@ function QuizPlayer({ quizzes, done = 0, total, lastLabel, onDone, onExit, onOpe
     return stop === -1 ? [...feed, END_PAGE] : feed.slice(0, stop + 1);
   }, [feed, results]);
 
-  const activeIndex = Math.max(0, items.findIndex(i => i.key === activeKey));
-  const activeBlock = Math.floor(activeIndex / AD_RULES.quizBlock);
-
   return (
     <Screen>
       <View style={styles.header}>
         <ReelTabs active="Quiz" theme="light" onChange={onOpenLearn} />
         <View style={styles.headerEnd}>
-          {ads.enabled && items.length >= AD_RULES.quizBlock ? (
-            <SmartSkipChip results={blockResults(activeBlock, results)} />
-          ) : null}
           <IconButton
             icon={muted ? 'mute' : 'volume'}
             label={muted ? 'Turn sound on' : 'Turn sound off'}
@@ -248,10 +226,6 @@ function QuizPlayer({ quizzes, done = 0, total, lastLabel, onDone, onExit, onOpe
         onActiveChange={item => {
           if (item.kind === 'end') {
             onDone();
-          } else if (item.kind === 'ad') {
-            reached.current.add(item.id);
-          } else {
-            setActiveKey(item.id);
           }
         }}
         renderReel={(item, { active }) =>

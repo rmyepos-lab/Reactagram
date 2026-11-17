@@ -8,7 +8,7 @@ Hookd is an Android app that teaches React in about 10 minutes a day with Instag
 - Tabs: Home, Explore, Learn, Quiz, Profile.
 - **Learn reels:** an endless vertical feed of narrated lessons.
 - **Quiz reels:** one question per screen, the answers, an Explanation section, then a Next button.
-- **A quiz** is a set of at most 20 questions, never the same one twice. Before it starts, the learner picks the difficulty and the concepts (topics). An unfinished quiz can be continued later. It ends on a results screen. These screens are not in the design boards: they follow the existing style.
+- **A quiz** is a set of at most 10 questions, never the same one twice. Before it starts, the learner picks the difficulty and the concepts (topics). An unfinished quiz can be continued later. It ends on a results screen. These screens are not in the design boards: they follow the existing style.
 - **Content:** JSON files in `content/reels/learn` and `content/reels/quiz`, checked by the zod schema in `src/features/content/schema.ts`. The content is generated offline by a scheduled Claude Code session (`/new-reels`), never by the app at runtime.
   - `content/curriculum.json` lists every concept to teach, by topic. Each reel points at one concept. `npm run coverage` lists the gaps.
   - One Learn reel per concept and at most 3 Quiz reels per concept. Repetition must stay low: no near-duplicate reels.
@@ -71,7 +71,7 @@ Hookd is an Android app that teaches React in about 10 minutes a day with Instag
   - It sits inside the stream: full screen, muted, skipped with one swipe.
   - The ••• menu offers Hide this ad, Why am I seeing this, and "Have a Pro key? Activate it". It never promotes buying Pro.
 - **Ads, Home feed:** 1 sponsored post every 6 posts.
-- **Ads, Quiz (Smart Skip):** inside a quiz, an ad slot comes after every 6 questions, and it's skipped when at least 5 of those 6 were answered correctly. No ad between the last question and the results.
+- **Ads, Quiz:** inside a quiz, an ad slot comes after every 6 questions. No ad between the last question and the results.
 - **Never show:** interstitials, app-open ads, rewarded ads, banners over lessons, or ads next to quiz answers.
 - **Free plan:** Learn reels never end, and the learner can start as many quizzes as they like. There's no daily limit.
 - **Pro:** removes every ad. The Pro status is cached on the phone and re-validated from time to time.
