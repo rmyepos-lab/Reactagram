@@ -173,7 +173,7 @@ export function HomeScreen({ navigation }: TabScreenProps<'Home'>) {
                 Today's goal
               </AppText>
               <AppText weight="extrabold" size={14} color={colors.onPrimaryContainer}>
-                {Math.min(minutes, DAILY_GOAL_MINUTES)} of {DAILY_GOAL_MINUTES} min
+                {DAILY_GOAL_MINUTES} min
               </AppText>
             </View>
             <ProgressBar

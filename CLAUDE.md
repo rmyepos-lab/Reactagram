@@ -4,7 +4,7 @@ Claude Code reads this file at the start of every session.
 
 ## 1. What we are building
 
-Hookd is an Android app that teaches React in about 10 minutes a day with Instagram-style reels.
+Hookd is an Android app that teaches React in about 15 minutes a day with Instagram-style reels.
 - Tabs: Home, Explore, Learn, Quiz, Profile.
 - **Learn reels:** an endless vertical feed of narrated lessons.
 - **Quiz reels:** one question per screen, the answers, an Explanation section, then a Next button.
