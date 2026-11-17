@@ -8,6 +8,7 @@ import { HomeScreen } from '../screens/HomeScreen';
 import { LearnScreen } from '../screens/LearnScreen';
 import { ProfileScreen } from '../screens/ProfileScreen';
 import { QuizScreen } from '../screens/QuizScreen';
+import { SavedScreen } from '../screens/SavedScreen';
 import { colors } from '../theme';
 import { TabBar } from './TabBar';
 import type { RootStackParamList, TabParamList } from './types';
@@ -39,6 +40,7 @@ export function RootNavigator() {
     >
       <Stack.Screen name="Tabs" component={Tabs} />
       <Stack.Screen name="Contact" component={ContactScreen} options={{ animation: 'slide_from_right' }} />
+      <Stack.Screen name="Saved" component={SavedScreen} options={{ animation: 'slide_from_right' }} />
       <Stack.Screen name="Admin" component={AdminScreen} options={{ animation: 'slide_from_bottom' }} />
     </Stack.Navigator>
   );

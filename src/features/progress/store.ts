@@ -10,7 +10,6 @@ export const progress = {
   get: store.get,
   markSeen: (id: string) => store.set(p => logic.markSeen(p, id, new Date())),
   addSeconds: (seconds: number) => store.set(p => logic.addSeconds(p, seconds, new Date())),
-  toggleLike: (id: string) => store.set(p => logic.toggleLike(p, id)),
   toggleSave: (id: string) => store.set(p => logic.toggleSave(p, id)),
   answer: (id: string, correct: boolean) =>
     store.set(p => logic.answerQuiz(p, id, correct, new Date())),

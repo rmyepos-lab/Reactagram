@@ -6,6 +6,8 @@ import {
   markSeen,
   missedQuestionIds,
   orderFeed,
+  postStatus,
+  postXp,
   quizAccuracy,
   touchDay,
 } from '../src/features/progress/logic';
@@ -100,5 +102,31 @@ describe('missed questions', () => {
 
   it('stops at the limit', () => {
     expect(missedQuestionIds(p, day(9), all, 2)).toEqual(['gone', 'a']);
+  });
+});
+
+describe('post status', () => {
+  const lesson = { id: 'l1', kind: 'learn' as const };
+  const quiz = { id: 'q1', kind: 'quiz' as const };
+
+  it('marks lessons new until watched', () => {
+    expect(postStatus(EMPTY_PROGRESS, lesson, day(1))).toBe('new');
+    expect(postStatus(markSeen(EMPTY_PROGRESS, 'l1', day(1)), lesson, day(1))).toBe('watched');
+  });
+
+  it('follows the last answer of a question, and its review day', () => {
+    expect(postStatus(EMPTY_PROGRESS, quiz, day(1))).toBe('new');
+    expect(postStatus(answerQuiz(EMPTY_PROGRESS, 'q1', true, day(1)), quiz, day(1))).toBe('right');
+    const wrong = answerQuiz(EMPTY_PROGRESS, 'q1', false, day(1));
+    expect(postStatus(wrong, quiz, day(1))).toBe('missed');
+    expect(postStatus(wrong, quiz, day(2))).toBe('back');
+  });
+
+  it('shows XP only for new posts and questions back today', () => {
+    expect(postXp('learn', 'new')).toBe(5);
+    expect(postXp('quiz', 'new')).toBe(10);
+    expect(postXp('quiz', 'back')).toBe(5);
+    expect(postXp('learn', 'watched')).toBeNull();
+    expect(postXp('quiz', 'missed')).toBeNull();
   });
 });

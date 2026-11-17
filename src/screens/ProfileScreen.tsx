@@ -116,6 +116,11 @@ export function ProfileScreen({ navigation }: TabScreenProps<'Profile'>) {
         <ProCard />
 
         <View style={styles.rows}>
+          <ListRow
+            icon="bookmark"
+            label={p.saved.length > 0 ? `Saved (${p.saved.length})` : 'Saved'}
+            onPress={() => navigation.navigate('Saved')}
+          />
           {helpUrl ? (
             <ListRow
               icon="help"

@@ -18,6 +18,8 @@ export type TabParamList = {
 export type RootStackParamList = {
   Tabs: NavigatorScreenParams<TabParamList> | undefined;
   Contact: undefined;
+  /** Lessons and quizzes the learner saved. */
+  Saved: undefined;
   /** Hidden: opened by tapping the version line in Profile seven times. */
   Admin: undefined;
 };

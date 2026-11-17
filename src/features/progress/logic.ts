@@ -7,7 +7,7 @@ export type Progress = {
   /** Seconds spent in reels on `lastActiveDay`, for the daily goal. */
   secondsToday: number;
   seen: string[];
-  liked: string[];
+  /** Reels the learner saved, oldest first. */
   saved: string[];
   answered: Record<string, { correct: boolean; at: string }>;
   /** quiz id -> day it comes back, and which review step it is on. */
@@ -20,7 +20,6 @@ export const EMPTY_PROGRESS: Progress = {
   lastActiveDay: null,
   secondsToday: 0,
   seen: [],
-  liked: [],
   saved: [],
   answered: {},
   review: {},
@@ -61,10 +60,6 @@ export function addSeconds(p: Progress, seconds: number, now: Date): Progress {
 const toggle = (list: string[], id: string) =>
   list.includes(id) ? list.filter(x => x !== id) : [...list, id];
 
-export const toggleLike = (p: Progress, id: string): Progress => ({
-  ...p,
-  liked: toggle(p.liked, id),
-});
 export const toggleSave = (p: Progress, id: string): Progress => ({
   ...p,
   saved: toggle(p.saved, id),
@@ -95,6 +90,31 @@ export function answerQuiz(p: Progress, id: string, correct: boolean, now: Date)
     seen: base.seen.includes(id) ? base.seen : [...base.seen, id],
     xp: base.xp + gained,
   };
+}
+
+/**
+ * Where the learner stands with one post: `new`, `watched` (lesson), `right` (last answer right),
+ * `missed` (last answer wrong, not back yet) or `back` (a missed question back for review today).
+ */
+export type PostStatus = 'new' | 'watched' | 'right' | 'missed' | 'back';
+
+export function postStatus(p: Progress, post: { id: string; kind: 'learn' | 'quiz' }, now: Date): PostStatus {
+  if (post.kind === 'learn') {
+    return p.seen.includes(post.id) ? 'watched' : 'new';
+  }
+  if (isDue(p, post.id, now)) {
+    return 'back';
+  }
+  const last = p.answered[post.id];
+  return !last ? 'new' : last.correct ? 'right' : 'missed';
+}
+
+/** XP a post can still earn, shown only where it's worth going for: new posts and questions back today. */
+export function postXp(kind: 'learn' | 'quiz', status: PostStatus): number | null {
+  if (status === 'new') {
+    return kind === 'learn' ? XP.learn : XP.quizFirstTry;
+  }
+  return status === 'back' ? XP.quizReview : null;
 }
 
 export function isDue(p: Progress, id: string, now: Date): boolean {
