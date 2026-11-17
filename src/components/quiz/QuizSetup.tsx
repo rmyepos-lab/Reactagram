@@ -20,6 +20,18 @@ const LEVEL_LABEL: Record<Level, string> = {
 };
 /** Only topics that have at least one question. */
 const QUIZ_TOPICS = topics.filter(t => quizReels.some(q => q.topic === t));
+/** How many questions each concept chip holds at the picked difficulty ("All" first). */
+const topicCounts = (levels: Level[]) => ({
+  all: countMatching(quizReels, { levels, topics: [] }),
+  byTopic: Object.fromEntries(
+    QUIZ_TOPICS.map(t => [t, countMatching(quizReels, { levels, topics: [t] })]),
+  ) as Record<string, number>,
+});
+/** Concepts with no question at the difficulty are hidden, so they can't stay picked. */
+const shownOnly = (picked: string[], levels: Level[]) => {
+  const { byTopic } = topicCounts(levels);
+  return picked.filter(t => byTopic[t] > 0);
+};
 
 const toggle = <T,>(list: T[], value: T) =>
   list.includes(value) ? list.filter(x => x !== value) : [...list, value];
@@ -36,10 +48,19 @@ type Props = {
 export function QuizSetup({ unfinished, initial, onStart, onContinue }: Props) {
   const [levels, setLevels] = useState<Level[]>(initial.levels);
   const [picked, setPicked] = useState<string[]>(() =>
-    initial.topics.filter(t => QUIZ_TOPICS.includes(t)),
+    shownOnly(
+      initial.topics.filter(t => QUIZ_TOPICS.includes(t)),
+      initial.levels,
+    ),
   );
+  // A concept hidden by the new difficulty is unpicked too.
+  const pickLevels = (next: Level[]) => {
+    setLevels(next);
+    setPicked(prev => shownOnly(prev, next));
+  };
 
   const config = useMemo<QuizConfig>(() => ({ levels, topics: picked }), [levels, picked]);
+  const counts = useMemo(() => topicCounts(levels), [levels]);
   const exact = countMatching(quizReels, config);
   const size = Math.min(QUIZ_SIZE, countMatching(quizReels, { levels: [], topics: picked }));
 
@@ -85,14 +106,14 @@ export function QuizSetup({ unfinished, initial, onStart, onContinue }: Props) {
           Difficulty
         </AppText>
         <View style={styles.chips}>
-          <Chip label="Any" size="md" selected={levels.length === 0} onPress={() => setLevels([])} />
+          <Chip label="Any" size="md" selected={levels.length === 0} onPress={() => pickLevels([])} />
           {LEVELS.map(l => (
             <Chip
               key={l}
               label={LEVEL_LABEL[l]}
               size="md"
               selected={levels.includes(l)}
-              onPress={() => setLevels(prev => toggle(prev, l))}
+              onPress={() => pickLevels(toggle(levels, l))}
             />
           ))}
         </View>
@@ -103,12 +124,19 @@ export function QuizSetup({ unfinished, initial, onStart, onContinue }: Props) {
           Concepts
         </AppText>
         <View style={styles.chips}>
-          <Chip label="All" size="md" selected={picked.length === 0} onPress={() => setPicked([])} />
-          {QUIZ_TOPICS.map(t => (
+          <Chip
+            label="All"
+            size="md"
+            count={counts.all}
+            selected={picked.length === 0}
+            onPress={() => setPicked([])}
+          />
+          {QUIZ_TOPICS.filter(t => counts.byTopic[t] > 0).map(t => (
             <Chip
               key={t}
               label={t}
               size="md"
+              count={counts.byTopic[t]}
               selected={picked.includes(t)}
               onPress={() => setPicked(prev => toggle(prev, t))}
             />
