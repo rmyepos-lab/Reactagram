@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-performance-tracks-1",
+  "topic": "Performance",
+  "concept": "performance-tracks",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "performance",
+    "devtools",
+    "transitions"
+  ],
+  "sourceUrl": "https://react.dev/reference/dev-tools/react-performance-tracks",
+  "question": "True or false: a render started by startTransition shows up in the Blocking subtrack.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: a render started by start transition shows up in the Blocking subtrack.",
+  "explanation": "False. Transition work appears in the Transition subtrack. Blocking is for urgent, synchronous updates, often from user input.",
+  "explainSay": "False. It goes in the Transition subtrack. Blocking is for urgent updates, like typing or clicking."
+}

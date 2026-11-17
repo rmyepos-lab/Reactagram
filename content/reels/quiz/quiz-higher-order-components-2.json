@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-higher-order-components-2",
+  "topic": "Custom Hooks",
+  "concept": "higher-order-components",
+  "format": "which-hook",
+  "level": "intermediate",
+  "tags": [
+    "hoc",
+    "custom-hooks"
+  ],
+  "sourceUrl": "https://legacy.reactjs.org/docs/higher-order-components.html",
+  "question": "Old code wraps 20 components in withWindowWidth(). What replaces it in modern React?",
+  "options": [
+    "A base class with a width field",
+    "A custom Hook like useWindowWidth()",
+    "useImperativeHandle",
+    "A global variable updated on resize"
+  ],
+  "answer": 1,
+  "say": "Old code wraps twenty components in with window width. What replaces it in modern React?",
+  "explanation": "A custom Hook shares the same logic without wrapping: each component calls useWindowWidth() and gets its own state. No extra layer in the tree.",
+  "explainSay": "A custom Hook, like use window width. Each component calls it directly, with no wrapper around it."
+}

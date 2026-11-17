@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "render-and-screen",
+  "topic": "Testing",
+  "concept": "render-and-screen",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "testing",
+    "testing-library",
+    "render"
+  ],
+  "sourceUrl": "https://testing-library.com/docs/queries/about#screen",
+  "title": "render() and screen: your component on a test page",
+  "slides": [
+    {
+      "type": "title",
+      "text": "render + screen 🖥️",
+      "say": "Every React Testing Library test starts the same way: put the component on a page, then look at it."
+    },
+    {
+      "type": "code",
+      "code": "import { render, screen }\n  from '@testing-library/react';\n\ntest('greets the user', () => {\n  render(<Greeting name=\"Ada\" />);\n  screen.getByText('Hello, Ada');\n});",
+      "highlight": [
+        5,
+        6
+      ],
+      "say": "Render mounts your component into a div that's added to the document body. Screen then gives you queries over the whole body."
+    },
+    {
+      "type": "text",
+      "text": "screen is the recommended way to query. No need to keep the container around.",
+      "say": "The docs recommend screen. Every query is already bound to the document body, so you don't pass a container around."
+    },
+    {
+      "type": "text",
+      "text": "With Jest, the tree is cleaned up after each test automatically.",
+      "say": "And with test runners like Jest, React Testing Library unmounts everything after each test, so tests don't leak into each other."
+    }
+  ]
+}

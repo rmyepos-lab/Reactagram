@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-document-metadata-1",
+  "topic": "Components & JSX",
+  "concept": "document-metadata",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "title",
+    "metadata"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/components/title",
+  "question": "This title causes an error. Why?",
+  "code": "function Results({ page }) {\n  return (\n    <title>Results page {page}</title>\n  );\n}",
+  "options": [
+    "<title> must be inside <head>",
+    "Its children are two values, not one string",
+    "page must be converted with String()",
+    "Only the root component may render <title>"
+  ],
+  "answer": 1,
+  "say": "This title causes an error. Why?",
+  "explanation": "Text plus {page} gives <title> two children. It needs a single string: <title>{`Results page ${page}`}</title>. React moves it into <head> for you.",
+  "explainSay": "The children are two values: the text and page. Build one string with a template literal instead."
+}

@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "test-like-a-user",
+  "topic": "Testing",
+  "concept": "test-like-a-user",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "testing",
+    "testing-library",
+    "principles"
+  ],
+  "sourceUrl": "https://testing-library.com/docs/guiding-principles",
+  "title": "Test what users see, not how it's built",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Test like a user 🧪",
+      "say": "Here's the idea behind React Testing Library: the more your tests look like real use, the more you can trust them."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 Checks internals\nexpect(state.count).toBe(1);\n\n// ✅ Checks what the user sees\nawait user.click(\n  screen.getByRole('button')\n);\nscreen.getByText('Count: 1');",
+      "highlight": [
+        5,
+        8
+      ],
+      "say": "Don't reach into state or private functions. Click the button like a user would, then check the text on the screen."
+    },
+    {
+      "type": "text",
+      "text": "Rename a variable or swap useState for useReducer: a good test still passes.",
+      "say": "The payoff: refactor the inside, rename variables, swap use state for use reducer, and your tests still pass, because the user sees the same thing."
+    },
+    {
+      "type": "text",
+      "text": "Work with DOM nodes, not component instances. If a test breaks, it should be because users would notice.",
+      "say": "So work with what's on the page, not component internals. When a test fails, it should be for a reason a user would notice."
+    }
+  ]
+}

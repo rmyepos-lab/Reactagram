@@ -1,0 +1,53 @@
+{
+  "kind": "learn",
+  "id": "higher-order-components",
+  "topic": "Custom Hooks",
+  "concept": "higher-order-components",
+  "format": "compare",
+  "level": "intermediate",
+  "tags": [
+    "hoc",
+    "patterns",
+    "custom-hooks"
+  ],
+  "sourceUrl": "https://legacy.reactjs.org/docs/higher-order-components.html",
+  "title": "Higher-order components: wrap a component to add props",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Higher-order components 🎁",
+      "say": "Before Hooks, React code shared logic with higher-order components. You'll still meet them in older code."
+    },
+    {
+      "type": "code",
+      "code": "function withUser(Comp) {\n  return function WithUser(props) {\n    const user = useUser();\n    return (\n      <Comp {...props} user={user} />\n    );\n  };\n}\n\nconst Profile2 = withUser(Profile);",
+      "highlight": [
+        1,
+        2,
+        5
+      ],
+      "say": "A higher-order component is a function that takes a component and returns a new one. This one renders the original and adds a user prop. It passes every other prop through."
+    },
+    {
+      "type": "code",
+      "code": "function Page() {\n  // 🔴 New component type every render\n  const P = withUser(Profile);\n  return <P />;\n}",
+      "highlight": [
+        3
+      ],
+      "say": "Never call it inside a component. Each render makes a brand new component type, so React remounts it and its state is lost. Wrap once, outside."
+    },
+    {
+      "type": "code",
+      "code": "function Profile() {\n  const user = useUser();\n  return <h1>{user.name}</h1>;\n}",
+      "highlight": [
+        2
+      ],
+      "say": "Today, a custom Hook does the same job with less wrapping. The component just calls use user."
+    },
+    {
+      "type": "text",
+      "text": "HOCs are rare in modern React. Prefer custom Hooks; recognize HOCs in older libraries.",
+      "say": "So prefer custom Hooks for new code, and recognize higher-order components when a library hands you one."
+    }
+  ]
+}

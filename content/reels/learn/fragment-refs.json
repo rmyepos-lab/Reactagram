@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "fragment-refs",
+  "topic": "Refs",
+  "concept": "fragment-refs",
+  "format": "special-use",
+  "level": "advanced",
+  "tags": [
+    "refs",
+    "fragment",
+    "react-19-3"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/Fragment#fragmentinstance",
+  "title": "Fragment refs: handle a group without a wrapper div",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Refs on Fragments 🔗",
+      "say": "Sometimes you want one listener or one observer for a group of elements, without adding a wrapper div. React 19.3 lets a Fragment take a ref."
+    },
+    {
+      "type": "code",
+      "code": "const ref = useRef(null);\n\nuseEffect(() => {\n  const group = ref.current;\n  group.addEventListener('click', f);\n  return () => group\n    .removeEventListener('click', f);\n}, []);\n\n<Fragment ref={ref}>\n  <button>A</button>\n  <button>B</button>\n</Fragment>",
+      "highlight": [
+        5,
+        10
+      ],
+      "say": "The ref gets a Fragment instance. Add a listener once, and it applies to every button inside. Remove it in cleanup."
+    },
+    {
+      "type": "text",
+      "text": "Events and observers target the first-level DOM children. focus() searches deeper for the first focusable one.",
+      "say": "Listeners and observers target the top level DOM children only. Focus is different: it searches deeper and focuses the first element that can take focus."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 Short syntax can't take a ref\n<> ... </>\n\n// ✅ Import Fragment\n<Fragment ref={ref}> ... </Fragment>",
+      "highlight": [
+        5
+      ],
+      "say": "One rule. The empty tag shorthand can't take a ref or a key. Import Fragment and write it out."
+    }
+  ]
+}

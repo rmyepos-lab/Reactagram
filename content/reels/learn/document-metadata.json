@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "document-metadata",
+  "topic": "Components & JSX",
+  "concept": "document-metadata",
+  "format": "special-use",
+  "level": "intermediate",
+  "tags": [
+    "title",
+    "metadata",
+    "react-dom"
+  ],
+  "sourceUrl": "https://react.dev/reference/react-dom/components/title",
+  "title": "Set the page title from any component",
+  "slides": [
+    {
+      "type": "title",
+      "text": "<title> anywhere 🏷️",
+      "say": "In React 19 you can set the page title right inside the component that knows it."
+    },
+    {
+      "type": "code",
+      "code": "function BlogPost({ post }) {\n  return (\n    <article>\n      <title>{post.title}</title>\n      <h1>{post.title}</h1>\n    </article>\n  );\n}",
+      "highlight": [
+        4
+      ],
+      "say": "Render a title tag anywhere in your tree. React moves its DOM element into the document head for you."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 Two children: not one string\n<title>Results {page}</title>\n\n// ✅ One string\n<title>{`Results ${page}`}</title>",
+      "highlight": [
+        2,
+        5
+      ],
+      "say": "One catch. The title's children must be a single string. Text plus curly braces makes two children, and that's an error. Use a template literal instead."
+    },
+    {
+      "type": "text",
+      "text": "Render only one <title> at a time. Inside an <svg>, <title> is not moved: it labels the graphic.",
+      "say": "Render only one title at a time, or browsers may pick any of them. And inside an S V G, a title stays put. There it describes the graphic."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-typing-dom-events-2",
+  "topic": "TypeScript",
+  "concept": "typing-dom-events",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "typescript",
+    "events",
+    "inference"
+  ],
+  "sourceUrl": "https://react.dev/learn/typescript#typing-dom-events",
+  "question": "True or false: in onChange={e => setName(e.currentTarget.value)}, you must type e yourself.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: in an inline on change arrow function, you must type the event yourself.",
+  "explanation": "False. When the handler is written inline, TypeScript infers the event type from the onChange prop. You only annotate extracted handlers.",
+  "explainSay": "False. Inline handlers get their event type inferred from the prop."
+}

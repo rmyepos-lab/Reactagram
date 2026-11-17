@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-fragment-refs-1",
+  "topic": "Refs",
+  "concept": "fragment-refs",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "refs",
+    "fragment"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/Fragment#fragmentinstance",
+  "question": "Wrapper renders its children. Which divs get the listener from ref.current.addEventListener?",
+  "code": "<Fragment ref={ref}>\n  <div id=\"A\" />\n  <Wrapper>\n    <div id=\"B\">\n      <div id=\"C\" />\n    </div>\n  </Wrapper>\n  <div id=\"D\" />\n</Fragment>",
+  "options": [
+    "A and D only",
+    "A, B and D",
+    "A, B, C and D",
+    "None: a Fragment has no DOM"
+  ],
+  "answer": 1,
+  "say": "Wrapper renders its children. Which divs get the listener added through the Fragment ref?",
+  "explanation": "A Fragment ref targets first-level DOM children. React looks through components like Wrapper, so B counts, but C is nested inside a DOM node and is skipped.",
+  "explainSay": "A, B and D. React looks through components like Wrapper, but it doesn't go inside DOM nodes, so C is skipped."
+}

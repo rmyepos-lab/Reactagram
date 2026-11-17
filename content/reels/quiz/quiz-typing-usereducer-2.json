@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-typing-usereducer-2",
+  "topic": "TypeScript",
+  "concept": "typing-usereducer",
+  "format": "fill-blank",
+  "level": "intermediate",
+  "tags": [
+    "typescript",
+    "usereducer"
+  ],
+  "sourceUrl": "https://react.dev/learn/typescript#typing-usereducer",
+  "question": "Fill the blank in the reducer's signature:",
+  "code": "function reducer(\n  state: State,\n  action: ___\n): State {\n  // ...\n}",
+  "options": [
+    "CounterAction",
+    "State",
+    "string",
+    "Dispatch"
+  ],
+  "answer": 0,
+  "say": "Fill the blank in the reducer's signature.",
+  "explanation": "The action parameter takes the action union, CounterAction. The reducer returns State, and useReducer infers its types from these.",
+  "explainSay": "Counter Action, the union of every action. The reducer returns the State type."
+}

@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-composition-vs-inheritance-2",
+  "topic": "Props",
+  "concept": "composition-vs-inheritance",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "composition",
+    "inheritance"
+  ],
+  "sourceUrl": "https://legacy.reactjs.org/docs/composition-vs-inheritance.html",
+  "question": "True or false: to make a special Dialog, React recommends a class that extends Dialog.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: to make a special Dialog, React recommends a class that extends Dialog.",
+  "explanation": "False. Render <Dialog> and configure it with props, like title and message. Props and composition cover what inheritance would do, more explicitly.",
+  "explainSay": "False. Render Dialog and pass it props. Composition covers what inheritance would do, and it's more explicit."
+}

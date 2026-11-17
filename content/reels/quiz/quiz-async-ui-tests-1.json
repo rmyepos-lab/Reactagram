@@ -1,0 +1,26 @@
+{
+  "kind": "quiz",
+  "id": "quiz-async-ui-tests-1",
+  "topic": "Testing",
+  "concept": "async-ui-tests",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "testing",
+    "async",
+    "findby"
+  ],
+  "sourceUrl": "https://testing-library.com/docs/dom-testing-library/api-async",
+  "question": "UserCard loads the name from the network. This test fails. What's the fix?",
+  "code": "render(<UserCard id={1} />);\nscreen.getByText('Ada');",
+  "options": [
+    "Use queryByText('Ada')",
+    "Wrap render in setTimeout",
+    "Use await screen.findByText('Ada')",
+    "Call render twice"
+  ],
+  "answer": 2,
+  "say": "User card loads the name from the network. This test fails. What's the fix?",
+  "explanation": "The name isn't on screen yet when getByText runs. findBy retries until it appears (1000ms by default). queryBy would just return null.",
+  "explainSay": "Await find by text. It keeps checking until the name appears, instead of looking only once."
+}

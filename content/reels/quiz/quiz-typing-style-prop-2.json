@@ -1,0 +1,26 @@
+{
+  "kind": "quiz",
+  "id": "quiz-typing-style-prop-2",
+  "topic": "TypeScript",
+  "concept": "typing-style-prop",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "typescript",
+    "style",
+    "typos"
+  ],
+  "sourceUrl": "https://react.dev/learn/typescript#typing-style-props",
+  "question": "Box's style prop is React.CSSProperties. What happens with this line?",
+  "code": "<Box style={{ colour: 'red' }} />",
+  "options": [
+    "TypeScript flags colour as unknown",
+    "It works: any key is allowed",
+    "React renames colour to color",
+    "The app crashes at runtime"
+  ],
+  "answer": 0,
+  "say": "Box's style prop is React CSS Properties. What happens with this line?",
+  "explanation": "colour isn't a CSS property, so TypeScript reports it. Without the type, the typo would silently do nothing.",
+  "explainSay": "TypeScript flags colour as unknown. Without the type, that typo would quietly do nothing."
+}

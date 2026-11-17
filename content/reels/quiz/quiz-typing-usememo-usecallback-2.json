@@ -1,0 +1,26 @@
+{
+  "kind": "quiz",
+  "id": "quiz-typing-usememo-usecallback-2",
+  "topic": "TypeScript",
+  "concept": "typing-usememo-usecallback",
+  "format": "fill-blank",
+  "level": "intermediate",
+  "tags": [
+    "typescript",
+    "usecallback",
+    "events"
+  ],
+  "sourceUrl": "https://react.dev/learn/typescript#typing-usecallback",
+  "question": "Fill the blank so event is typed as an input change event:",
+  "code": "const onChange = useCallback<\n  React.___<HTMLInputElement>\n>((event) => {\n  setValue(event.currentTarget.value);\n}, []);",
+  "options": [
+    "ChangeEvent",
+    "ChangeEventHandler",
+    "EventHandler",
+    "MouseEventHandler"
+  ],
+  "answer": 1,
+  "say": "Fill the blank so event is typed as an input change event.",
+  "explanation": "useCallback takes the type of the whole function. ChangeEventHandler<HTMLInputElement> is a handler type; ChangeEvent is only the event object.",
+  "explainSay": "Change Event Handler. Use callback needs the type of the whole function, not just the event."
+}

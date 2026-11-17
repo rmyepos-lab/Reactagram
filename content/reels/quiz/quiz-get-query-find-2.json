@@ -1,0 +1,26 @@
+{
+  "kind": "quiz",
+  "id": "quiz-get-query-find-2",
+  "topic": "Testing",
+  "concept": "get-query-find",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "testing",
+    "queries",
+    "absence"
+  ],
+  "sourceUrl": "https://testing-library.com/docs/queries/about#types-of-queries",
+  "question": "This test should pass when no error is shown, but it fails. Why?",
+  "code": "render(<Form />);\nexpect(\n  screen.getByText('Error')\n).toBeNull();",
+  "options": [
+    "toBeNull needs await",
+    "getByText throws before expect can check",
+    "render must be awaited",
+    "getByText returns undefined, not null"
+  ],
+  "answer": 1,
+  "say": "This test should pass when no error is shown, but it fails. Why?",
+  "explanation": "getBy throws as soon as nothing matches, so expect never runs. Use queryByText, which returns null, to assert that something is absent.",
+  "explainSay": "Get by text throws when nothing matches, so the expect never runs. Use query by text instead."
+}

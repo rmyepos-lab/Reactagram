@@ -1,0 +1,49 @@
+{
+  "kind": "learn",
+  "id": "query-priority",
+  "topic": "Testing",
+  "concept": "query-priority",
+  "format": "pattern",
+  "level": "intermediate",
+  "tags": [
+    "testing",
+    "queries",
+    "accessibility"
+  ],
+  "sourceUrl": "https://testing-library.com/docs/queries/about#priority",
+  "title": "Which query? Start with getByRole",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Query priority 🥇",
+      "say": "Testing Library has lots of queries. The docs rank them, and the winner is clear."
+    },
+    {
+      "type": "code",
+      "code": "screen.getByRole('button', {\n  name: /save/i,\n});",
+      "highlight": [
+        1,
+        2
+      ],
+      "say": "Get by role should be your first choice for almost everything. It finds elements the way assistive technology does: a button with the name save."
+    },
+    {
+      "type": "text",
+      "text": "Order: Role → LabelText → PlaceholderText → Text → DisplayValue → AltText → Title → TestId",
+      "say": "After role comes label text, then placeholder text, text, and display value. Then alt text and title. Test I D is the last resort."
+    },
+    {
+      "type": "code",
+      "code": "// For inputs, prefer the label\nscreen.getByLabelText('Email');\n\n// A placeholder is not a label\nscreen.getByPlaceholderText('you@');",
+      "highlight": [
+        2
+      ],
+      "say": "For form fields, use the label. A placeholder is not a substitute for a label."
+    },
+    {
+      "type": "text",
+      "text": "Bonus: if getByRole can't find it, real users may not either.",
+      "say": "And here's a bonus. If get by role can't find your element, screen reader users may struggle too. The test just found an accessibility bug."
+    }
+  ]
+}

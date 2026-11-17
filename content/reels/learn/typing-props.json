@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "typing-props",
+  "topic": "TypeScript",
+  "concept": "typing-props",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "typescript",
+    "props"
+  ],
+  "sourceUrl": "https://react.dev/learn/typescript#typescript-with-react-components",
+  "title": "Typing props: describe the object your component takes",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Typed props 🏷️",
+      "say": "With TypeScript, your editor can tell you a prop is missing before you even run the app. It starts with typing props."
+    },
+    {
+      "type": "code",
+      "code": "function MyButton(\n  { title }: { title: string }\n) {\n  return <button>{title}</button>;\n}",
+      "highlight": [
+        2
+      ],
+      "say": "Props are one object, so you type that object. For a small component, write the type inline."
+    },
+    {
+      "type": "code",
+      "code": "interface MyButtonProps {\n  /** Text inside the button */\n  title: string;\n  disabled?: boolean;\n}\n\nfunction MyButton({\n  title,\n  disabled,\n}: MyButtonProps) {\n  // ...\n}",
+      "highlight": [
+        1,
+        4,
+        10
+      ],
+      "say": "As it grows, move it to an interface or a type. A question mark makes a prop optional. Comments show up in your editor's hints."
+    },
+    {
+      "type": "text",
+      "text": "Use .tsx for files with JSX. Now <MyButton /> without title is flagged before you run anything.",
+      "say": "Remember: files with JSX need the dot T S X extension. Now, forgetting title gets flagged right in your editor."
+    }
+  ]
+}

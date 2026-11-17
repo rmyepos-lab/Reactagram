@@ -1,0 +1,39 @@
+{
+  "kind": "learn",
+  "id": "typing-style-prop",
+  "topic": "TypeScript",
+  "concept": "typing-style-prop",
+  "format": "special-use",
+  "level": "intermediate",
+  "tags": [
+    "typescript",
+    "style",
+    "css"
+  ],
+  "sourceUrl": "https://react.dev/learn/typescript#typing-style-props",
+  "title": "Typing a style prop with React.CSSProperties",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Typed styles 🎨",
+      "say": "Passing a style object through your own component? Give it a real type, not just object."
+    },
+    {
+      "type": "code",
+      "code": "interface BoxProps {\n  style: React.CSSProperties;\n}\n\nfunction Box({ style }: BoxProps) {\n  return <div style={style} />;\n}",
+      "highlight": [
+        2
+      ],
+      "say": "React dot CSS Properties describes every CSS property React accepts in a style object."
+    },
+    {
+      "type": "code",
+      "code": "<Box style={{ color: 'red' }} /> // ✅\n<Box style={{ colour: 'red' }} />\n// 🔴 not a CSS property",
+      "highlight": [
+        2,
+        3
+      ],
+      "say": "You get autocomplete for property names, and typos like colour with a U are caught before they silently do nothing."
+    }
+  ]
+}

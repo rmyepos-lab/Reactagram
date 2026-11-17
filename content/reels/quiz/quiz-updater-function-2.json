@@ -1,0 +1,26 @@
+{
+  "kind": "quiz",
+  "id": "quiz-updater-function-2",
+  "topic": "State",
+  "concept": "updater-function",
+  "format": "output",
+  "level": "beginner",
+  "tags": [
+    "state",
+    "updater-function",
+    "batching"
+  ],
+  "sourceUrl": "https://react.dev/learn/queueing-a-series-of-state-updates",
+  "question": "count is 1. After one click, what does the screen show?",
+  "code": "function handleClick() {\n  setCount(count + 1);\n  setCount(c => c * 2);\n}",
+  "options": [
+    "2",
+    "3",
+    "4",
+    "1"
+  ],
+  "answer": 2,
+  "say": "count is 1. After one click, what does the screen show?",
+  "explanation": "The queue runs in order: count + 1 replaces the value with 2, then the updater gets that queued 2 and doubles it to 4.",
+  "explainSay": "Four. The first call queues the value two. The updater then receives that queued two and doubles it."
+}

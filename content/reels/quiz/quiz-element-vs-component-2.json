@@ -1,0 +1,26 @@
+{
+  "kind": "quiz",
+  "id": "quiz-element-vs-component-2",
+  "topic": "Components & JSX",
+  "concept": "element-vs-component",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "jsx",
+    "elements",
+    "createelement"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/createElement#what-is-a-react-element-exactly",
+  "question": "What does this log?",
+  "code": "function Greeting({ name }) {\n  return <h1>Hi, {name}</h1>;\n}\n\nconst el = <Greeting name=\"Taylor\" />;\nconsole.log(el.type === Greeting);",
+  "options": [
+    "false, type is the string 'Greeting'",
+    "true",
+    "false, type is an h1 element",
+    "It throws: el is not an object"
+  ],
+  "answer": 1,
+  "say": "What does this log?",
+  "explanation": "An element's type is exactly what you rendered: here, the Greeting function itself. Lowercase tags like <h1> get a string type instead.",
+  "explainSay": "True. The element's type is the Greeting function itself. Only lowercase tags, like h1, get a string type."
+}

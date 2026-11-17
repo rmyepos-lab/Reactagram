@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-render-and-screen-2",
+  "topic": "Testing",
+  "concept": "render-and-screen",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "testing",
+    "cleanup"
+  ],
+  "sourceUrl": "https://testing-library.com/docs/queries/about#screen",
+  "question": "True or false: with Jest, you must call cleanup() after every test yourself.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: with Jest, you must call cleanup after every test yourself.",
+  "explanation": "False. When the test runner provides a global afterEach, like Jest does, React Testing Library cleans up automatically.",
+  "explainSay": "False. With Jest, cleanup happens automatically after each test."
+}

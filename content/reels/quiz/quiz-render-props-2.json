@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-render-props-2",
+  "topic": "Custom Hooks",
+  "concept": "render-props",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "render-props",
+    "children"
+  ],
+  "sourceUrl": "https://legacy.reactjs.org/docs/render-props.html",
+  "question": "True or false: a render prop only works if the prop is named render.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: a render prop only works if the prop is named render.",
+  "explanation": "False. Any prop that holds a function returning UI is a render prop: renderItem, renderRow, even children.",
+  "explainSay": "False. Any prop holding a function that returns UI counts, even children."
+}

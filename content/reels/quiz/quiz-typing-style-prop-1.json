@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-typing-style-prop-1",
+  "topic": "TypeScript",
+  "concept": "typing-style-prop",
+  "format": "fill-blank",
+  "level": "intermediate",
+  "tags": [
+    "typescript",
+    "style"
+  ],
+  "sourceUrl": "https://react.dev/learn/typescript#typing-style-props",
+  "question": "Fill the blank with the type react.dev recommends for a style prop:",
+  "code": "interface CardProps {\n  style: ___;\n}",
+  "options": [
+    "string",
+    "CSSStyleDeclaration",
+    "object",
+    "React.CSSProperties"
+  ],
+  "answer": 3,
+  "say": "Fill the blank with the type react dot dev recommends for a style prop.",
+  "explanation": "React.CSSProperties describes all possible CSS properties in a style object, so you get checks and autocomplete. object accepts anything.",
+  "explainSay": "React dot CSS Properties. It knows every CSS property, so you get checks and autocomplete."
+}

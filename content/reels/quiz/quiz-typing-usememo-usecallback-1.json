@@ -1,0 +1,26 @@
+{
+  "kind": "quiz",
+  "id": "quiz-typing-usememo-usecallback-1",
+  "topic": "TypeScript",
+  "concept": "typing-usememo-usecallback",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "typescript",
+    "usememo",
+    "inference"
+  ],
+  "sourceUrl": "https://react.dev/learn/typescript#typing-usecallback",
+  "question": "filterTodos returns Todo[]. What type does TypeScript give visible?",
+  "code": "const visible = useMemo(\n  () => filterTodos(todos, tab),\n  [todos, tab]\n);",
+  "options": [
+    "any",
+    "unknown",
+    "Todo[]",
+    "() => Todo[]"
+  ],
+  "answer": 2,
+  "say": "filter todos returns an array of Todo. What type does TypeScript give visible?",
+  "explanation": "useMemo returns what its function returns, so visible is inferred as Todo[]. It's the value, not the function.",
+  "explainSay": "An array of Todo. Use memo returns the computed value, and its type is inferred."
+}

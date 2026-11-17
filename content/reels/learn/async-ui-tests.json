@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "async-ui-tests",
+  "topic": "Testing",
+  "concept": "async-ui-tests",
+  "format": "pattern",
+  "level": "intermediate",
+  "tags": [
+    "testing",
+    "async",
+    "waitfor"
+  ],
+  "sourceUrl": "https://testing-library.com/docs/dom-testing-library/api-async",
+  "title": "Waiting for async UI: findBy and waitFor",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Wait for it ⏳",
+      "say": "Your component fetches data, then shows it. If the test looks right away, the data isn't there yet."
+    },
+    {
+      "type": "code",
+      "code": "render(<UserCard id={1} />);\n\n// 🔴 Not loaded yet: throws\nscreen.getByText('Ada');\n\n// ✅ Waits for it to appear\nawait screen.findByText('Ada');",
+      "highlight": [
+        4,
+        7
+      ],
+      "say": "Use find by. It's get by plus waiting: it keeps checking until the element appears, or gives up after one second by default."
+    },
+    {
+      "type": "code",
+      "code": "await waitFor(() =>\n  expect(save).toHaveBeenCalledTimes(1)\n);",
+      "highlight": [
+        1
+      ],
+      "say": "For anything else, use wait for. It runs your callback again and again until it stops throwing."
+    },
+    {
+      "type": "text",
+      "text": "waitFor retries only when the callback THROWS. Returning false doesn't make it wait.",
+      "say": "Careful: wait for retries only when the callback throws. Returning false counts as success, so put an expect inside."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "kind": "quiz",
+  "id": "quiz-user-event-1",
+  "topic": "Testing",
+  "concept": "user-event",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "testing",
+    "user-event",
+    "async"
+  ],
+  "sourceUrl": "https://testing-library.com/docs/user-event/intro",
+  "question": "This test is flaky: sometimes 'Saved' isn't found. What's wrong?",
+  "code": "test('saves', async () => {\n  const user = userEvent.setup();\n  render(<Editor />);\n  user.click(\n    screen.getByRole('button')\n  );\n  screen.getByText('Saved');\n});",
+  "options": [
+    "setup() must run after render",
+    "user.click must be awaited",
+    "getByRole needs a name option",
+    "test must not be async"
+  ],
+  "answer": 1,
+  "say": "This test is flaky. Sometimes saved isn't found. What's wrong?",
+  "explanation": "user-event actions return Promises. Without await, the test reads the screen before the click has finished.",
+  "explainSay": "The click isn't awaited. User event actions return promises, so the test checks the screen too early."
+}

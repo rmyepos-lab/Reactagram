@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-get-query-find-1",
+  "topic": "Testing",
+  "concept": "get-query-find",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "testing",
+    "queries"
+  ],
+  "sourceUrl": "https://testing-library.com/docs/queries/about#types-of-queries",
+  "question": "No element contains the text 'Error'. What does screen.queryByText('Error') return?",
+  "options": [
+    "It throws an error",
+    "null",
+    "An empty array",
+    "A Promise"
+  ],
+  "answer": 1,
+  "say": "No element contains the text, error. What does query by text return?",
+  "explanation": "queryBy returns null when nothing matches, which makes it the right tool for checking that something is absent. getBy would throw.",
+  "explainSay": "Null. Query by returns null when nothing matches. Get by would throw instead."
+}

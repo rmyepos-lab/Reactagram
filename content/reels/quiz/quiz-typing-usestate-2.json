@@ -1,0 +1,26 @@
+{
+  "kind": "quiz",
+  "id": "quiz-typing-usestate-2",
+  "topic": "TypeScript",
+  "concept": "typing-usestate",
+  "format": "fill-blank",
+  "level": "intermediate",
+  "tags": [
+    "typescript",
+    "usestate",
+    "union"
+  ],
+  "sourceUrl": "https://react.dev/learn/typescript#typing-usestate",
+  "question": "Fill the blank so status can only be one of the three values:",
+  "code": "type Status =\n  'idle' | 'loading' | 'error';\n\nconst [status, setStatus] =\n  useState<___>('idle');",
+  "options": [
+    "string",
+    "'idle'",
+    "Status",
+    "any"
+  ],
+  "answer": 2,
+  "say": "Fill the blank so status can only be one of the three values.",
+  "explanation": "useState<Status> limits the state to the union. string would allow any text, and 'idle' would forbid the other two values.",
+  "explainSay": "Status. The type argument limits the state to those three strings."
+}

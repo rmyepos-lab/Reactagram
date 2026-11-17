@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-typing-dom-events-1",
+  "topic": "TypeScript",
+  "concept": "typing-dom-events",
+  "format": "fill-blank",
+  "level": "intermediate",
+  "tags": [
+    "typescript",
+    "events"
+  ],
+  "sourceUrl": "https://react.dev/learn/typescript#typing-dom-events",
+  "question": "Fill the blank to type this extracted input handler:",
+  "code": "function handleChange(event: ___) {\n  setName(event.currentTarget.value);\n}\n\n<input onChange={handleChange} />",
+  "options": [
+    "Event",
+    "React.MouseEvent<HTMLInputElement>",
+    "React.ChangeEvent<HTMLInputElement>",
+    "string"
+  ],
+  "answer": 2,
+  "say": "Fill the blank to type this extracted input handler.",
+  "explanation": "onChange on an <input> passes a React.ChangeEvent<HTMLInputElement>. The DOM Event type isn't React's event, and MouseEvent is for clicks.",
+  "explainSay": "React dot Change Event, of HTML input element. That's what on change passes for an input."
+}

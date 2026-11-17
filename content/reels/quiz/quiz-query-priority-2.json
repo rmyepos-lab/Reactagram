@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-query-priority-2",
+  "topic": "Testing",
+  "concept": "query-priority",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "testing",
+    "queries",
+    "forms"
+  ],
+  "sourceUrl": "https://testing-library.com/docs/queries/about#priority",
+  "question": "True or false: for an email input, getByPlaceholderText ranks higher than getByLabelText.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: for an email input, get by placeholder text ranks higher than get by label text.",
+  "explanation": "False. getByLabelText comes right after getByRole. The docs say a placeholder is not a substitute for a label.",
+  "explainSay": "False. Label text ranks higher. A placeholder is not a substitute for a label."
+}

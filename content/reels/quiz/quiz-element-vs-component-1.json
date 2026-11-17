@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-element-vs-component-1",
+  "topic": "Components & JSX",
+  "concept": "element-vs-component",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "jsx",
+    "elements"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/createElement#what-is-a-react-element-exactly",
+  "question": "True or false: writing const el = <Greeting /> runs the Greeting function right away.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: writing const el equals, Greeting tag, runs the Greeting function right away.",
+  "explanation": "False. JSX only creates an element, a plain object describing what to render. React calls Greeting later, when it renders that element.",
+  "explainSay": "False. JSX only builds a description object. React calls Greeting later, when it actually renders."
+}

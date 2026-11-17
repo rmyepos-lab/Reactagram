@@ -1,0 +1,26 @@
+{
+  "kind": "quiz",
+  "id": "quiz-performance-tracks-2",
+  "topic": "Performance",
+  "concept": "performance-tracks",
+  "format": "fill-blank",
+  "level": "advanced",
+  "tags": [
+    "performance",
+    "profiling",
+    "builds"
+  ],
+  "sourceUrl": "https://react.dev/reference/dev-tools/react-performance-tracks",
+  "question": "Tracks are off in production builds. Fill the blank to get Scheduler tracks in a production-like build:",
+  "code": "import { createRoot } from\n  'react-dom/___';",
+  "options": [
+    "devtools",
+    "profiling",
+    "client",
+    "server"
+  ],
+  "answer": 1,
+  "say": "Tracks are off in production builds. Fill the blank to get Scheduler tracks in a production like build.",
+  "explanation": "The profiling build, react-dom/profiling, keeps the instrumentation. The docs suggest aliasing react-dom/client to it at build time.",
+  "explainSay": "Profiling. The react dom profiling build keeps the tracks. You usually alias react dom client to it."
+}

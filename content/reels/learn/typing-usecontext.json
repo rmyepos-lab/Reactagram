@@ -1,0 +1,47 @@
+{
+  "kind": "learn",
+  "id": "typing-usecontext",
+  "topic": "TypeScript",
+  "concept": "typing-usecontext",
+  "format": "pattern",
+  "level": "intermediate",
+  "tags": [
+    "typescript",
+    "context",
+    "custom-hooks"
+  ],
+  "sourceUrl": "https://react.dev/learn/typescript#typing-usecontext",
+  "title": "Typing context with no good default",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Typed context 🌐",
+      "say": "If your context has a sensible default, TypeScript infers its type. The tricky case is when there's no default."
+    },
+    {
+      "type": "code",
+      "code": "type Theme = 'light' | 'dark';\nconst ThemeContext =\n  createContext<Theme>('light');",
+      "highlight": [
+        3
+      ],
+      "say": "With a real default, like light, the type comes straight from create context."
+    },
+    {
+      "type": "code",
+      "code": "const UserContext =\n  createContext<User | null>(null);",
+      "highlight": [
+        2
+      ],
+      "say": "No sensible default? Use null, and say so in the type: user, or null."
+    },
+    {
+      "type": "code",
+      "code": "function useUser() {\n  const user = useContext(UserContext);\n  if (!user) {\n    throw new Error(\n      'useUser needs a Provider'\n    );\n  }\n  return user; // User\n}",
+      "highlight": [
+        3,
+        8
+      ],
+      "say": "Then wrap it in a custom Hook that checks for null and throws. After the check, the Hook returns a plain user, so no consumer has to deal with null."
+    }
+  ]
+}

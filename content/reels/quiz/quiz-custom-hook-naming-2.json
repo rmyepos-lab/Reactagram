@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-custom-hook-naming-2",
+  "topic": "Custom Hooks",
+  "concept": "custom-hook-naming",
+  "format": "true-false",
+  "level": "beginner",
+  "tags": [
+    "custom-hooks",
+    "naming",
+    "linter"
+  ],
+  "sourceUrl": "https://react.dev/learn/reusing-logic-with-custom-hooks",
+  "question": "True or false: React checks at runtime that every function calling a Hook has a name starting with use.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: React checks at runtime that every function calling a Hook has a name that starts with use.",
+  "explanation": "False. The use prefix is a convention. It tells you and the linter that the function may call Hooks, so the linter can check the Rules of Hooks inside it.",
+  "explainSay": "False. React doesn't check names. The use prefix is a convention that lets you and the linter spot Hooks."
+}

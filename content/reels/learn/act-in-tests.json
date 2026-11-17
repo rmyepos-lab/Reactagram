@@ -1,0 +1,41 @@
+{
+  "kind": "learn",
+  "id": "act-in-tests",
+  "topic": "Testing",
+  "concept": "act-in-tests",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "testing",
+    "act",
+    "react-dom"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/act",
+  "title": "act(): let React finish before you check",
+  "slides": [
+    {
+      "type": "title",
+      "text": "What is act()? 🎬",
+      "say": "React doesn't update the DOM the instant you set state. In tests, act makes sure the updates are applied before you check."
+    },
+    {
+      "type": "code",
+      "code": "await act(async () => {\n  root.render(<Counter />);\n});\n\nawait act(async () => {\n  button.dispatchEvent(\n    new MouseEvent('click', {\n      bubbles: true,\n    })\n  );\n});",
+      "highlight": [
+        1,
+        5
+      ],
+      "say": "Wrap renders and interactions in await act, with an async function. React applies every queued update, then your assertions see the real result."
+    },
+    {
+      "type": "text",
+      "text": "Use the async form. The sync act() doesn't work in every case and will be removed.",
+      "say": "Use the awaited async version. The sync version doesn't work in every case, and React plans to remove it."
+    },
+    {
+      "type": "text",
+      "text": "React Testing Library wraps render and its helpers in act() for you.",
+      "say": "Good news: React Testing Library already wraps render and its helpers in act, and sets up the test environment. You rarely call it yourself."
+    }
+  ]
+}

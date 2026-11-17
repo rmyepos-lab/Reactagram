@@ -1,0 +1,54 @@
+{
+  "kind": "learn",
+  "id": "testing-custom-hooks",
+  "topic": "Testing",
+  "concept": "testing-custom-hooks",
+  "format": "special-use",
+  "level": "intermediate",
+  "tags": [
+    "testing",
+    "custom-hooks",
+    "renderhook"
+  ],
+  "sourceUrl": "https://testing-library.com/docs/react-testing-library/api#renderhook",
+  "title": "Test a custom Hook with renderHook",
+  "slides": [
+    {
+      "type": "title",
+      "text": "renderHook 🪝",
+      "say": "Hooks only run inside components. So how do you test a custom Hook by itself? Render hook."
+    },
+    {
+      "type": "code",
+      "code": "const { result } = renderHook(\n  () => useCounter(5)\n);\n\nresult.current.count; // 5",
+      "highlight": [
+        1,
+        5
+      ],
+      "say": "Render hook calls your Hook inside a tiny test component. Result dot current holds what the Hook returned."
+    },
+    {
+      "type": "code",
+      "code": "await act(async () => {\n  result.current.increment();\n});\n\nresult.current.count; // 6",
+      "highlight": [
+        2,
+        5
+      ],
+      "say": "Update it inside act. Then read result dot current again. It always holds the latest committed value."
+    },
+    {
+      "type": "code",
+      "code": "const { result, rerender } =\n  renderHook(({ id }) => useUser(id), {\n    initialProps: { id: 1 },\n  });\n\nrerender({ id: 2 });",
+      "highlight": [
+        3,
+        6
+      ],
+      "say": "Need props? Pass initial props, and call rerender with new ones. A wrapper option can add providers too."
+    },
+    {
+      "type": "text",
+      "text": "If a Hook only serves one component, test that component instead.",
+      "say": "One tip. If a Hook is only used by one component, testing that component through the screen is usually the better test."
+    }
+  ]
+}

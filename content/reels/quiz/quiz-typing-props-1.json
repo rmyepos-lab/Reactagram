@@ -1,0 +1,26 @@
+{
+  "kind": "quiz",
+  "id": "quiz-typing-props-1",
+  "topic": "TypeScript",
+  "concept": "typing-props",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "typescript",
+    "props",
+    "optional"
+  ],
+  "sourceUrl": "https://react.dev/learn/typescript#typescript-with-react-components",
+  "question": "TypeScript flags the usage on the last line. Why?",
+  "code": "interface Props {\n  title: string;\n  disabled: boolean;\n}\nfunction MyButton(p: Props) {\n  return <button>{p.title}</button>;\n}\n\n<MyButton title=\"Save\" />",
+  "options": [
+    "title must be a number",
+    "disabled is required but missing",
+    "Props must be a type, not an interface",
+    "Components can't be typed with interfaces"
+  ],
+  "answer": 1,
+  "say": "TypeScript flags the usage on the last line. Why?",
+  "explanation": "disabled has no ?, so it is required. Either pass disabled, or write disabled?: boolean to make it optional.",
+  "explainSay": "Disabled is required and wasn't passed. Add a question mark to make it optional."
+}

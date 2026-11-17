@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-typing-props-2",
+  "topic": "TypeScript",
+  "concept": "typing-props",
+  "format": "fill-blank",
+  "level": "intermediate",
+  "tags": [
+    "typescript",
+    "props"
+  ],
+  "sourceUrl": "https://react.dev/learn/typescript#typescript-with-react-components",
+  "question": "Fill the blank to type the props inline:",
+  "code": "function Greeting(\n  { name }: ___\n) {\n  return <h1>Hi, {name}</h1>;\n}",
+  "options": [
+    "string",
+    "{ name: string }",
+    "Greeting",
+    "Props[]"
+  ],
+  "answer": 1,
+  "say": "Fill the blank to type the props inline.",
+  "explanation": "A component receives one props object, so the type describes that object: { name: string }. Typing it as string would describe the whole props as a string.",
+  "explainSay": "An object type with name as a string. Props are always one object."
+}

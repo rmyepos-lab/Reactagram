@@ -1,0 +1,48 @@
+{
+  "kind": "learn",
+  "id": "typing-usestate",
+  "topic": "TypeScript",
+  "concept": "typing-usestate",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "typescript",
+    "usestate",
+    "state"
+  ],
+  "sourceUrl": "https://react.dev/learn/typescript#typing-usestate",
+  "title": "Typing useState: let it infer, or name a union",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Typed state 📦",
+      "say": "Most of the time, use state needs no type at all. TypeScript reads it from the initial value."
+    },
+    {
+      "type": "code",
+      "code": "// Inferred as boolean\nconst [on, setOn] = useState(false);\n\nsetOn('yes'); // 🔴 not a boolean",
+      "highlight": [
+        2,
+        4
+      ],
+      "say": "Start with false, and the state is a boolean. Setting it to a string is an error."
+    },
+    {
+      "type": "code",
+      "code": "type Status =\n  'idle' | 'loading' | 'error';\n\nconst [status, setStatus] =\n  useState<Status>('idle');",
+      "highlight": [
+        5
+      ],
+      "say": "Be explicit when the initial value is too narrow a hint. Here, a union of allowed strings. Without it, TypeScript would just infer string."
+    },
+    {
+      "type": "code",
+      "code": "type RequestState =\n  | { status: 'idle' }\n  | { status: 'success'; data: Data }\n  | { status: 'error'; error: Error };",
+      "highlight": [
+        3,
+        4
+      ],
+      "say": "Even better, group related values into one union of objects. Data only exists on success, and error only on error."
+    }
+  ]
+}

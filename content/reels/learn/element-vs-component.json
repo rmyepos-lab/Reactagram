@@ -1,0 +1,50 @@
+{
+  "kind": "learn",
+  "id": "element-vs-component",
+  "topic": "Components & JSX",
+  "concept": "element-vs-component",
+  "format": "compare",
+  "level": "intermediate",
+  "tags": [
+    "jsx",
+    "elements",
+    "components"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/createElement#what-is-a-react-element-exactly",
+  "title": "Element vs component: a description, not a call",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Element or component? 🧱",
+      "say": "Component and element sound like the same thing. They're not, and the difference explains a lot about React."
+    },
+    {
+      "type": "code",
+      "code": "function Greeting({ name }) {\n  return <h1>Hi, {name}</h1>;\n}",
+      "highlight": [
+        1
+      ],
+      "say": "A component is a function you write. It takes props and returns UI."
+    },
+    {
+      "type": "code",
+      "code": "const el = <Greeting name=\"Taylor\" />;\n\n// Slightly simplified:\n{\n  type: Greeting,\n  props: { name: 'Taylor' },\n  key: null,\n}",
+      "highlight": [
+        1,
+        5,
+        6
+      ],
+      "say": "An element is what JSX creates: a small plain object. Its type is the Greeting function, and its props are the props you wrote."
+    },
+    {
+      "type": "text",
+      "text": "Creating an element does NOT call Greeting and creates no DOM. It's an instruction React reads later.",
+      "say": "Here's the key part. Creating the element doesn't run Greeting, and it doesn't touch the page. It's just an instruction that React reads later, when it renders."
+    },
+    {
+      "type": "text",
+      "text": "Elements are cheap and immutable: create them freely, never edit them.",
+      "say": "Elements are cheap, so don't try to avoid creating them. And treat them as read only. React even freezes them in development."
+    }
+  ]
+}

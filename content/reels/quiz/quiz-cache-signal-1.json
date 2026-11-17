@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-cache-signal-1",
+  "topic": "Server Components",
+  "concept": "cache-signal",
+  "format": "output",
+  "level": "advanced",
+  "tags": [
+    "server-components",
+    "cache"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/cacheSignal",
+  "question": "Today, what does cacheSignal() return when called in a Client Component?",
+  "options": [
+    "An AbortSignal",
+    "undefined",
+    "null",
+    "It throws an error"
+  ],
+  "answer": 2,
+  "say": "Today, what does cache signal return when it's called in a Client Component?",
+  "explanation": "It's for Server Components. In Client Components it currently always returns null, though the docs warn not to rely on that forever.",
+  "explainSay": "Null. It's meant for Server Components, and in Client Components it currently returns null."
+}

@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "view-transition",
+  "topic": "Concurrent Rendering",
+  "concept": "view-transition",
+  "format": "special-use",
+  "level": "advanced",
+  "tags": [
+    "view-transition",
+    "animation",
+    "transitions",
+    "react-19-3"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/ViewTransition",
+  "title": "<ViewTransition>: animate what a Transition changes",
+  "slides": [
+    {
+      "type": "title",
+      "text": "<ViewTransition> ✨",
+      "say": "React 19.3 adds View Transition, a component that animates parts of your UI using the browser's view transition feature."
+    },
+    {
+      "type": "code",
+      "code": "import { ViewTransition } from 'react';\n\n{show && (\n  <ViewTransition>\n    <Panel />\n  </ViewTransition>\n)}",
+      "highlight": [
+        4
+      ],
+      "say": "Wrap the part that should animate. By default you get a smooth cross fade when it enters, leaves, or changes."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 Plain update: no animation\nsetShow(true);\n\n// ✅ Inside a Transition: animates\nstartTransition(() => {\n  setShow(true);\n});",
+      "highlight": [
+        5,
+        6
+      ],
+      "say": "Here's the rule that trips people up. A plain set state is urgent and doesn't animate. Updates inside start transition do, and so do Suspense reveals and use deferred value."
+    },
+    {
+      "type": "text",
+      "text": "enter, exit, update, share. For enter/exit, put it before any DOM node. Respect prefers-reduced-motion yourself.",
+      "say": "It animates on enter, exit, update, and shared elements. For enter and exit, it must come before any DOM node. And React doesn't turn animations off for reduced motion, so add that media query yourself."
+    }
+  ]
+}

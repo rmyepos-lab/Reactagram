@@ -1,0 +1,26 @@
+{
+  "kind": "quiz",
+  "id": "quiz-typing-usestate-1",
+  "topic": "TypeScript",
+  "concept": "typing-usestate",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "typescript",
+    "usestate",
+    "inference"
+  ],
+  "sourceUrl": "https://react.dev/learn/typescript#typing-usestate",
+  "question": "What does TypeScript say about the last line?",
+  "code": "const [count, setCount] = useState(0);\n\nsetCount('5');",
+  "options": [
+    "Nothing: state can hold anything",
+    "Error: '5' is not a number",
+    "Nothing: '5' is converted to 5",
+    "Error: useState needs a type argument"
+  ],
+  "answer": 1,
+  "say": "What does TypeScript say about the last line?",
+  "explanation": "useState(0) infers count as number, so setCount accepts only numbers (or an updater returning one). The string is rejected.",
+  "explainSay": "An error. The state was inferred as a number from zero, so a string isn't allowed."
+}

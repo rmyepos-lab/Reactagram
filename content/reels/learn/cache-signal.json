@@ -1,0 +1,43 @@
+{
+  "kind": "learn",
+  "id": "cache-signal",
+  "topic": "Server Components",
+  "concept": "cache-signal",
+  "format": "special-use",
+  "level": "advanced",
+  "tags": [
+    "server-components",
+    "cache",
+    "abort"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/cacheSignal",
+  "title": "cacheSignal: cancel server work nobody will use",
+  "slides": [
+    {
+      "type": "title",
+      "text": "cacheSignal 🛑",
+      "say": "A Server Component starts a slow fetch, but the render is aborted. Why keep waiting? Cache signal lets you cancel it."
+    },
+    {
+      "type": "code",
+      "code": "import { cache, cacheSignal }\n  from 'react';\nconst getData = cache(fetch);\n\nasync function Post({ url }) {\n  const res = await getData(url, {\n    signal: cacheSignal(),\n  });\n  // ...\n}",
+      "highlight": [
+        7
+      ],
+      "say": "During a render, cache signal returns an abort signal. Pass it to fetch. When React's render is over, the signal aborts, and the request stops."
+    },
+    {
+      "type": "text",
+      "text": "It aborts when rendering finishes: completed, aborted, or failed.",
+      "say": "Rendering counts as finished in three cases: it completed, it was aborted, or it failed."
+    },
+    {
+      "type": "code",
+      "code": "// 🔴 Called outside rendering:\n// cacheSignal() returns null here\nconst res = fetch(url, {\n  signal: cacheSignal(),\n});",
+      "highlight": [
+        2
+      ],
+      "say": "Call it during render. At module level, outside rendering, it returns null, so nothing gets cancelled. It's for Server Components, and today it always returns null in Client Components."
+    }
+  ]
+}

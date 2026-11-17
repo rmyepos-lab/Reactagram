@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-test-like-a-user-1",
+  "topic": "Testing",
+  "concept": "test-like-a-user",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "testing",
+    "principles"
+  ],
+  "sourceUrl": "https://testing-library.com/docs/guiding-principles",
+  "question": "True or false: a good component test should fail when you rename an internal state variable.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: a good component test should fail when you rename an internal state variable.",
+  "explanation": "False. Users can't see variable names. Tests that check the screen survive refactors and only fail when behavior changes.",
+  "explainSay": "False. Users never see variable names, so a rename shouldn't break a good test."
+}

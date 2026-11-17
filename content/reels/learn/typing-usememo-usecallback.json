@@ -1,0 +1,52 @@
+{
+  "kind": "learn",
+  "id": "typing-usememo-usecallback",
+  "topic": "TypeScript",
+  "concept": "typing-usememo-usecallback",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "typescript",
+    "usememo",
+    "usecallback"
+  ],
+  "sourceUrl": "https://react.dev/learn/typescript#typing-usecallback",
+  "title": "Typing useMemo and useCallback",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Typed memo Hooks 🧠",
+      "say": "Use memo and use callback mostly type themselves. There's one spot where you need to help."
+    },
+    {
+      "type": "code",
+      "code": "// visible: whatever filterTodos returns\nconst visible = useMemo(\n  () => filterTodos(todos, tab),\n  [todos, tab]\n);",
+      "highlight": [
+        1,
+        3
+      ],
+      "say": "Use memo's type comes from what your function returns. If filter todos returns todos, so does visible."
+    },
+    {
+      "type": "code",
+      "code": "// Strict mode: type the parameter\nconst onPick = useCallback(\n  (id: string) => setPicked(id),\n  []\n);",
+      "highlight": [
+        3
+      ],
+      "say": "Use callback can't guess its parameters. In strict mode, add a type to each one."
+    },
+    {
+      "type": "code",
+      "code": "const onChange = useCallback<\n  React.ChangeEventHandler<\n    HTMLInputElement\n  >\n>((event) => {\n  setValue(event.currentTarget.value);\n}, []);",
+      "highlight": [
+        2
+      ],
+      "say": "For event handlers, pass a handler type like React dot Change Event Handler. Then event is typed for you."
+    },
+    {
+      "type": "text",
+      "text": "With React Compiler, you'll write far fewer of these by hand.",
+      "say": "And remember, with React Compiler you'll need much less manual memoizing in the first place."
+    }
+  ]
+}

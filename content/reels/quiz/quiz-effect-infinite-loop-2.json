@@ -1,0 +1,26 @@
+{
+  "kind": "quiz",
+  "id": "quiz-effect-infinite-loop-2",
+  "topic": "Side Effects",
+  "concept": "effect-infinite-loop",
+  "format": "output",
+  "level": "beginner",
+  "tags": [
+    "effects",
+    "dependencies",
+    "infinite-loop"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects#step-1-declare-an-effect",
+  "question": "What happens to count after the component mounts?",
+  "code": "const [count, setCount] = useState(0);\nuseEffect(() => {\n  setCount(count + 1);\n}, [count]);",
+  "options": [
+    "It goes to 1, then stops",
+    "It stays 0: [count] blocks the update",
+    "It goes to 2, then stops",
+    "It keeps climbing: each change re-runs the Effect"
+  ],
+  "answer": 3,
+  "say": "What happens to count after the component mounts?",
+  "explanation": "The Effect sets count, count is a dependency, so the Effect runs again after the re-render and sets it again. Listing the dependency doesn't stop the loop.",
+  "explainSay": "It keeps climbing. Each new count re-runs the Effect, which sets a new count. The dependency array feeds the loop instead of stopping it."
+}

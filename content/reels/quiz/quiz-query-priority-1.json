@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-query-priority-1",
+  "topic": "Testing",
+  "concept": "query-priority",
+  "format": "which-hook",
+  "level": "intermediate",
+  "tags": [
+    "testing",
+    "queries"
+  ],
+  "sourceUrl": "https://testing-library.com/docs/queries/about#priority",
+  "question": "Which query does Testing Library recommend for finding a Save button?",
+  "options": [
+    "getByTestId('save-btn')",
+    "container.querySelector('.save')",
+    "getByText('Save')",
+    "getByRole('button', { name: /save/i })"
+  ],
+  "answer": 3,
+  "say": "Which query does Testing Library recommend for finding a Save button?",
+  "explanation": "getByRole is the top choice: it matches how users and assistive tech find the button. Test IDs are a last resort, and CSS selectors aren't queries users can see.",
+  "explainSay": "Get by role, with the name save. It's the top priority because it finds the button the way users do."
+}

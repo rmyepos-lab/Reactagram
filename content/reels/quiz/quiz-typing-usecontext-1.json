@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-typing-usecontext-1",
+  "topic": "TypeScript",
+  "concept": "typing-usecontext",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "typescript",
+    "context"
+  ],
+  "sourceUrl": "https://react.dev/learn/typescript#typing-usecontext",
+  "question": "What is the type of user here?",
+  "code": "const UserContext =\n  createContext<User | null>(null);\n\nconst user = useContext(UserContext);",
+  "options": [
+    "User",
+    "User | null",
+    "null",
+    "any"
+  ],
+  "answer": 1,
+  "say": "What is the type of user here?",
+  "explanation": "useContext returns the context's type, User | null, because a component outside any Provider gets the null default. A checking Hook can narrow it to User.",
+  "explainSay": "User or null. Outside a Provider you'd get the null default, so the type keeps null."
+}

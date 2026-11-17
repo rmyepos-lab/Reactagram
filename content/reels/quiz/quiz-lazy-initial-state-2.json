@@ -1,0 +1,26 @@
+{
+  "kind": "quiz",
+  "id": "quiz-lazy-initial-state-2",
+  "topic": "State",
+  "concept": "lazy-initial-state",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "usestate",
+    "performance"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useState",
+  "question": "createInitialTodos is slow. What is wasteful here?",
+  "code": "function TodoList() {\n  const [todos, setTodos] = useState(\n    createInitialTodos()\n  );\n  // ...\n}",
+  "options": [
+    "It returns a new array, so todos never updates",
+    "It runs on every render, but only the first result is used",
+    "It makes React re-render twice",
+    "Nothing, React calls it only once"
+  ],
+  "answer": 1,
+  "say": "create initial todos is slow. What is wasteful in this code?",
+  "explanation": "createInitialTodos() is called on every render, and React ignores the result after the first one. Pass the function itself: useState(createInitialTodos).",
+  "explainSay": "It runs on every render, but React only uses the first result. Pass the function itself, without calling it, so React runs it once."
+}

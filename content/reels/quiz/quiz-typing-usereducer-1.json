@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-typing-usereducer-1",
+  "topic": "TypeScript",
+  "concept": "typing-usereducer",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "typescript",
+    "usereducer",
+    "dispatch"
+  ],
+  "sourceUrl": "https://react.dev/learn/typescript#typing-usereducer",
+  "question": "With the CounterAction union below, which dispatch does TypeScript reject?",
+  "code": "type CounterAction =\n  | { type: 'reset' }\n  | { type: 'setCount'; value: number };",
+  "options": [
+    "dispatch({ type: 'reset' })",
+    "dispatch({ type: 'setCount', value: 3 })",
+    "dispatch({ type: 'setCount' })"
+  ],
+  "answer": 2,
+  "say": "With this action union, which dispatch does TypeScript reject?",
+  "explanation": "The setCount action must carry a value. The union checks each action's shape, so the missing field is caught at compile time.",
+  "explainSay": "The set count action without a value. The union says set count always carries a number."
+}

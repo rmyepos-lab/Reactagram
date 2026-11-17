@@ -1,0 +1,26 @@
+{
+  "kind": "quiz",
+  "id": "quiz-usememo-2",
+  "topic": "Performance",
+  "concept": "usememo",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "performance",
+    "usememo",
+    "caching"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/useMemo",
+  "question": "Only theme changes; todos and tab stay the same. Does filterTodos run again?",
+  "code": "const visible = useMemo(\n  () => filterTodos(todos, tab),\n  [todos, tab]\n);",
+  "options": [
+    "Yes, every render calls it",
+    "Yes, the component re-rendered",
+    "No, React reuses the cached result",
+    "No, useMemo never runs it again"
+  ],
+  "answer": 2,
+  "say": "Only theme changes. Todos and tab stay the same. Does filter todos run again?",
+  "explanation": "The dependencies didn't change, so useMemo returns the result it cached last time. It runs again only when todos or tab change.",
+  "explainSay": "No. The dependencies are the same, so use memo hands back the cached result. It recalculates only when todos or tab change."
+}

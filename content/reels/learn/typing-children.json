@@ -1,0 +1,43 @@
+{
+  "kind": "learn",
+  "id": "typing-children",
+  "topic": "TypeScript",
+  "concept": "typing-children",
+  "format": "compare",
+  "level": "intermediate",
+  "tags": [
+    "typescript",
+    "children"
+  ],
+  "sourceUrl": "https://react.dev/learn/typescript#typing-children",
+  "title": "Typing children: ReactNode or ReactElement?",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Typing children 👶",
+      "say": "Children can be text, numbers, elements, or nothing at all. Two types cover them, and they're not the same."
+    },
+    {
+      "type": "code",
+      "code": "interface CardProps {\n  title: string;\n  children: React.ReactNode;\n}",
+      "highlight": [
+        3
+      ],
+      "say": "React dot React Node is the broad one: everything you can put between JSX tags, including strings and numbers. It's the usual choice."
+    },
+    {
+      "type": "code",
+      "code": "interface SlotProps {\n  children: React.ReactElement;\n}\n\n<Slot><Icon /></Slot> // ✅\n<Slot>Hello</Slot>    // 🔴",
+      "highlight": [
+        2,
+        6
+      ],
+      "say": "React Element is narrower: only JSX elements. A plain string like hello is rejected."
+    },
+    {
+      "type": "text",
+      "text": "Limit: TypeScript can't say “only <li> children”. Any JSX element passes the check.",
+      "say": "One limit. TypeScript can't require a specific kind of element, like only list items. Any JSX element passes."
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "kind": "learn",
+  "id": "composition-vs-inheritance",
+  "topic": "Props",
+  "concept": "composition-vs-inheritance",
+  "format": "pattern",
+  "level": "intermediate",
+  "tags": [
+    "props",
+    "composition",
+    "children"
+  ],
+  "sourceUrl": "https://legacy.reactjs.org/docs/composition-vs-inheritance.html",
+  "title": "Composition over inheritance: fill slots, don't extend",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Compose, don't extend 🧩",
+      "say": "Coming from classes, you might want a base component that others extend. React has a simpler tool: composition."
+    },
+    {
+      "type": "code",
+      "code": "function SplitPane({ left, right }) {\n  return (\n    <div className=\"split\">\n      <div>{left}</div>\n      <div>{right}</div>\n    </div>\n  );\n}\n\n<SplitPane\n  left={<Contacts />}\n  right={<Chat />}\n/>",
+      "highlight": [
+        1,
+        11,
+        12
+      ],
+      "say": "Need more than one hole? Use named props. JSX is just a value, so you can pass whole components as left and right."
+    },
+    {
+      "type": "code",
+      "code": "function WelcomeDialog() {\n  return (\n    <Dialog\n      title=\"Welcome\"\n      message=\"Glad you're here!\"\n    />\n  );\n}",
+      "highlight": [
+        3,
+        4,
+        5
+      ],
+      "say": "Need a special version? Don't subclass Dialog. Render it and configure it with props. That's called specialization."
+    },
+    {
+      "type": "text",
+      "text": "Sharing non-UI logic? Put it in a plain module or a custom Hook, and import it.",
+      "say": "And for logic that isn't UI, put it in a plain module or a custom Hook, and import it. The React team found no case where component inheritance was the better choice."
+    }
+  ]
+}

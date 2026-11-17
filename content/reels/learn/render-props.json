@@ -1,0 +1,53 @@
+{
+  "kind": "learn",
+  "id": "render-props",
+  "topic": "Custom Hooks",
+  "concept": "render-props",
+  "format": "pattern",
+  "level": "intermediate",
+  "tags": [
+    "render-props",
+    "patterns",
+    "composition"
+  ],
+  "sourceUrl": "https://legacy.reactjs.org/docs/render-props.html",
+  "title": "Render props: let the parent decide what to draw",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Render props 🎨",
+      "say": "What if a component knows the data, but the parent should decide how it looks? That's a render prop."
+    },
+    {
+      "type": "code",
+      "code": "function List({ items, renderItem }) {\n  return (\n    <ul>\n      {items.map(item => (\n        <li key={item.id}>\n          {renderItem(item)}\n        </li>\n      ))}\n    </ul>\n  );\n}",
+      "highlight": [
+        1,
+        6
+      ],
+      "say": "A render prop is a function prop that returns UI. List loops over the items, and calls render item to draw each one."
+    },
+    {
+      "type": "code",
+      "code": "<List\n  items={products}\n  renderItem={p => (\n    <b>{p.name}</b>\n  )}\n/>",
+      "highlight": [
+        3,
+        4
+      ],
+      "say": "The parent passes that function. Same List, but each screen can draw the items its own way."
+    },
+    {
+      "type": "code",
+      "code": "<Mouse>\n  {pos => <p>{pos.x}, {pos.y}</p>}\n</Mouse>",
+      "highlight": [
+        2
+      ],
+      "say": "The name doesn't matter. Some libraries use children as the function, like this mouse tracker."
+    },
+    {
+      "type": "text",
+      "text": "For sharing stateful logic, custom Hooks replaced most render props. They still shine for custom item rendering.",
+      "say": "For sharing stateful logic, custom Hooks have replaced most render props. But for letting a parent customize how items look, they're still handy."
+    }
+  ]
+}

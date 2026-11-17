@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-render-and-screen-1",
+  "topic": "Testing",
+  "concept": "render-and-screen",
+  "format": "fill-blank",
+  "level": "intermediate",
+  "tags": [
+    "testing",
+    "screen"
+  ],
+  "sourceUrl": "https://testing-library.com/docs/queries/about#screen",
+  "question": "Fill the blank to query the whole page after rendering:",
+  "code": "import { render, screen }\n  from '@testing-library/react';\n\nrender(<Greeting name=\"Ada\" />);\n___.getByText('Hello, Ada');",
+  "options": [
+    "document",
+    "screen",
+    "render",
+    "container"
+  ],
+  "answer": 1,
+  "say": "Fill the blank to query the whole page after rendering.",
+  "explanation": "screen has every query bound to document.body, and the docs recommend it. document has no getByText method.",
+  "explainSay": "Screen. It has every query ready, bound to the whole document body."
+}

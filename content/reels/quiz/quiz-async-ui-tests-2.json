@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-async-ui-tests-2",
+  "topic": "Testing",
+  "concept": "async-ui-tests",
+  "format": "output",
+  "level": "intermediate",
+  "tags": [
+    "testing",
+    "waitfor"
+  ],
+  "sourceUrl": "https://testing-library.com/docs/dom-testing-library/api-async",
+  "question": "count is 0 and never changes. What does this line do?",
+  "code": "await waitFor(() => count > 0);",
+  "options": [
+    "Resolves right away: false doesn't throw",
+    "Retries, then fails after the timeout",
+    "Throws immediately",
+    "Waits forever"
+  ],
+  "answer": 0,
+  "say": "count is zero and never changes. What does this line do?",
+  "explanation": "waitFor retries only when the callback throws. Returning false is not an error, so it resolves at once. Use expect(count).toBeGreaterThan(0) inside instead.",
+  "explainSay": "It resolves right away. False isn't an error, and wait for only retries when the callback throws."
+}

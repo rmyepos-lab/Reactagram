@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-act-in-tests-2",
+  "topic": "Testing",
+  "concept": "act-in-tests",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "testing",
+    "act",
+    "testing-library"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/act",
+  "question": "True or false: with React Testing Library, you must wrap every render() call in act() yourself.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: with React Testing Library, you must wrap every render call in act yourself.",
+  "explanation": "False. Its render and helpers are already wrapped in act(), and it sets IS_REACT_ACT_ENVIRONMENT for you.",
+  "explainSay": "False. React Testing Library already wraps render and its helpers in act."
+}

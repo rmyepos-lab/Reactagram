@@ -1,0 +1,26 @@
+{
+  "kind": "quiz",
+  "id": "quiz-higher-order-components-1",
+  "topic": "Custom Hooks",
+  "concept": "higher-order-components",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "hoc",
+    "state",
+    "remount"
+  ],
+  "sourceUrl": "https://legacy.reactjs.org/docs/higher-order-components.html",
+  "question": "Profile loses its state on every Page render. Why?",
+  "code": "function Page() {\n  const Fancy = withUser(Profile);\n  return <Fancy />;\n}",
+  "options": [
+    "withUser must be called with new",
+    "A new component type is made each render, so Profile remounts",
+    "Fancy must start with use",
+    "The HOC forgot to pass a key"
+  ],
+  "answer": 1,
+  "say": "Profile loses its state on every Page render. Why?",
+  "explanation": "withUser returns a new function each time it runs. React sees a different component type every render, so it unmounts the old tree and mounts a fresh one. Wrap once, outside Page.",
+  "explainSay": "Each render creates a brand new component type, so React remounts it and its state is lost. Call the wrapper once, outside the component."
+}

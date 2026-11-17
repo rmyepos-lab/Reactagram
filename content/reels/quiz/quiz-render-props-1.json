@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-render-props-1",
+  "topic": "Custom Hooks",
+  "concept": "render-props",
+  "format": "fill-blank",
+  "level": "intermediate",
+  "tags": [
+    "render-props",
+    "lists"
+  ],
+  "sourceUrl": "https://legacy.reactjs.org/docs/render-props.html",
+  "question": "Fill the blank so each row is drawn by the renderRow function prop:",
+  "code": "function Table({ rows, renderRow }) {\n  return (\n    <ul>\n      {rows.map(row => (\n        <li key={row.id}>\n          {___}\n        </li>\n      ))}\n    </ul>\n  );\n}",
+  "options": [
+    "<renderRow row={row} />",
+    "renderRow",
+    "renderRow(row)",
+    "row.renderRow()"
+  ],
+  "answer": 2,
+  "say": "Fill the blank so each row is drawn by the render row function prop.",
+  "explanation": "A render prop is a plain function: call it with the data and render what it returns. A lowercase JSX tag would be treated as an HTML tag, and {renderRow} alone renders nothing.",
+  "explainSay": "Render row, called with row. It's a plain function, so you call it and render whatever it returns."
+}

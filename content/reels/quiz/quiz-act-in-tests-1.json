@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-act-in-tests-1",
+  "topic": "Testing",
+  "concept": "act-in-tests",
+  "format": "fill-blank",
+  "level": "intermediate",
+  "tags": [
+    "testing",
+    "act"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/act",
+  "question": "Fill the blank the way the React docs recommend:",
+  "code": "___ act(async () => {\n  root.render(<Counter />);\n});",
+  "options": [
+    "await",
+    "return",
+    "new",
+    "void"
+  ],
+  "answer": 0,
+  "say": "Fill the blank the way the React docs recommend.",
+  "explanation": "The docs recommend await act(async () => ...). The sync form doesn't work in all cases and will be deprecated and removed.",
+  "explainSay": "Await. Always use the awaited, async form of act."
+}

@@ -1,0 +1,45 @@
+{
+  "kind": "learn",
+  "id": "typing-dom-events",
+  "topic": "TypeScript",
+  "concept": "typing-dom-events",
+  "format": "concept",
+  "level": "intermediate",
+  "tags": [
+    "typescript",
+    "events",
+    "forms"
+  ],
+  "sourceUrl": "https://react.dev/learn/typescript#typing-dom-events",
+  "title": "Typing event handlers you pull out of JSX",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Typed events ⚡",
+      "say": "Inline handlers are typed for free. Move the handler into its own function, and you need to name the event type."
+    },
+    {
+      "type": "code",
+      "code": "<input\n  value={value}\n  onChange={e =>\n    setValue(e.currentTarget.value)\n  }\n/>",
+      "highlight": [
+        3,
+        4
+      ],
+      "say": "Inline, TypeScript already knows e is a change event on an input. No annotation needed."
+    },
+    {
+      "type": "code",
+      "code": "function handleChange(\n  event: React.ChangeEvent<\n    HTMLInputElement\n  >\n) {\n  setValue(event.currentTarget.value);\n}",
+      "highlight": [
+        2,
+        3
+      ],
+      "say": "Extracted, type it yourself: React dot Change Event, of HTML input element."
+    },
+    {
+      "type": "text",
+      "text": "Not sure of the type? Hover the prop in your editor. Fallback: React.SyntheticEvent.",
+      "say": "Not sure which one? Hover the on change prop in your editor and it tells you. For rare events, React dot Synthetic Event is the base type."
+    }
+  ]
+}

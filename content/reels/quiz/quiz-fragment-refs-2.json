@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-fragment-refs-2",
+  "topic": "Refs",
+  "concept": "fragment-refs",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "refs",
+    "fragment"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/Fragment#fragmentinstance",
+  "question": "True or false: the short <></> syntax can take a ref, just like <Fragment>.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: the short empty tag syntax can take a ref, just like Fragment.",
+  "explanation": "False. The <></> shorthand takes no props, so no ref and no key. Import Fragment from react and write <Fragment ref={ref}>.",
+  "explainSay": "False. The shorthand can't take a ref or a key. Import Fragment and write it out."
+}

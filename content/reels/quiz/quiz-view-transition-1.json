@@ -1,0 +1,25 @@
+{
+  "kind": "quiz",
+  "id": "quiz-view-transition-1",
+  "topic": "Concurrent Rendering",
+  "concept": "view-transition",
+  "format": "bug-hunt",
+  "level": "advanced",
+  "tags": [
+    "view-transition",
+    "transitions"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/ViewTransition",
+  "question": "Panel appears instantly, with no animation. What's missing?",
+  "code": "function toggle() {\n  setShow(s => !s);\n}\n\n{show && (\n  <ViewTransition>\n    <Panel />\n  </ViewTransition>\n)}",
+  "options": [
+    "A name prop on ViewTransition",
+    "A key on Panel",
+    "A call to document.startViewTransition",
+    "Wrapping the update in startTransition"
+  ],
+  "answer": 3,
+  "say": "Panel appears instantly, with no animation. What's missing?",
+  "explanation": "A plain setState is urgent and never activates <ViewTransition>. Wrap it in startTransition. React calls the browser's startViewTransition for you, so don't call it yourself.",
+  "explainSay": "The update must run inside start transition. Plain set state doesn't animate, and React calls the browser API for you."
+}

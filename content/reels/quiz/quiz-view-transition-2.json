@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-view-transition-2",
+  "topic": "Concurrent Rendering",
+  "concept": "view-transition",
+  "format": "true-false",
+  "level": "advanced",
+  "tags": [
+    "view-transition",
+    "accessibility"
+  ],
+  "sourceUrl": "https://react.dev/reference/react/ViewTransition",
+  "question": "True or false: React turns off ViewTransition animations for users who prefer reduced motion.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: React turns off View Transition animations for users who prefer reduced motion.",
+  "explanation": "False. React doesn't do it for you. The docs recommend always adding a prefers-reduced-motion media query to your view transition CSS.",
+  "explainSay": "False. React leaves that to you. Add a prefers reduced motion media query to your CSS."
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-rules-of-hooks-2",
+  "topic": "Hooks",
+  "concept": "rules-of-hooks",
+  "format": "true-false",
+  "level": "beginner",
+  "tags": [
+    "hooks",
+    "rules-of-hooks",
+    "early-return"
+  ],
+  "sourceUrl": "https://react.dev/reference/rules/rules-of-hooks",
+  "question": "True or false: calling useState after an early return is fine if that return rarely runs.",
+  "code": "function Profile({ user }) {\n  if (!user) return null;\n  const [tab, setTab] = useState(0);\n  // ...\n}",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: calling use state after an early return is fine, if that return rarely runs.",
+  "explanation": "False. When the early return runs, the Hook is skipped, so Hooks are called in a different order. Call every Hook at the top level, before any early return.",
+  "explainSay": "False. Even a rare early return changes how many Hooks run. Put every Hook at the top, before any return."
+}

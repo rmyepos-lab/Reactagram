@@ -1,0 +1,26 @@
+{
+  "kind": "quiz",
+  "id": "quiz-reset-state-with-key-2",
+  "topic": "State Structure & Sharing",
+  "concept": "reset-state-with-key",
+  "format": "fill-blank",
+  "level": "intermediate",
+  "tags": [
+    "state",
+    "key",
+    "reset"
+  ],
+  "sourceUrl": "https://react.dev/learn/preserving-and-resetting-state",
+  "question": "Fill the blank so the typed draft resets when you pick another contact:",
+  "code": "<Chat\n  ___={contact.id}\n  contact={contact}\n/>",
+  "options": [
+    "key",
+    "id",
+    "ref",
+    "reset"
+  ],
+  "answer": 0,
+  "say": "Fill the blank so the typed draft resets when you pick another contact.",
+  "explanation": "A different key makes React treat Chat as a new component, so it remounts with fresh state. id and reset are just ordinary props.",
+  "explainSay": "Key. When the key changes, React throws away the old Chat and its state, and mounts a fresh one."
+}

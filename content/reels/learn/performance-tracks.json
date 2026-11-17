@@ -1,0 +1,46 @@
+{
+  "kind": "learn",
+  "id": "performance-tracks",
+  "topic": "Performance",
+  "concept": "performance-tracks",
+  "format": "special-use",
+  "level": "advanced",
+  "tags": [
+    "performance",
+    "devtools",
+    "profiling"
+  ],
+  "sourceUrl": "https://react.dev/reference/dev-tools/react-performance-tracks",
+  "title": "React Performance Tracks: see React's work on the timeline",
+  "slides": [
+    {
+      "type": "title",
+      "text": "Performance Tracks 📊",
+      "say": "Record a trace in your browser's Performance panel, and React adds its own tracks next to network and JavaScript work."
+    },
+    {
+      "type": "text",
+      "text": "Scheduler track: Blocking, Transition, Suspense, Idle. Each render shows Update, Render, Commit, Remaining Effects.",
+      "say": "The Scheduler track splits work by priority: blocking, transition, suspense, and idle. Each render shows its phases: what triggered it, render, commit, and the remaining effects."
+    },
+    {
+      "type": "text",
+      "text": "Components track: a flamegraph of renders and effects, with Mount and Unmount labels. In dev, click to see changed props.",
+      "say": "The Components track is a flamegraph of which components rendered, and how long they took. In development, click an entry to see which props changed."
+    },
+    {
+      "type": "text",
+      "text": "Watch for “Cascading update”: an update during render made React throw work away and start again.",
+      "say": "Look out for cascading updates. That's an update scheduled during a render, which makes React drop finished work and start over."
+    },
+    {
+      "type": "code",
+      "code": "// Off in production builds by default.\n// Profiling build: alias\n//   react-dom/client\n//   → react-dom/profiling",
+      "highlight": [
+        3,
+        4
+      ],
+      "say": "The tracks are on in development, and off in production because they add overhead. For a production-like trace, use the profiling build of react dom."
+    }
+  ]
+}

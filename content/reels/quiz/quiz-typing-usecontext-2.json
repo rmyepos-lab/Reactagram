@@ -1,0 +1,24 @@
+{
+  "kind": "quiz",
+  "id": "quiz-typing-usecontext-2",
+  "topic": "TypeScript",
+  "concept": "typing-usecontext",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "typescript",
+    "context",
+    "custom-hooks"
+  ],
+  "sourceUrl": "https://react.dev/learn/typescript#typing-usecontext",
+  "question": "True or false: components that call this Hook get a plain User, without | null.",
+  "code": "function useUser() {\n  const user = useContext(UserContext);\n  if (!user) {\n    throw new Error('No Provider');\n  }\n  return user;\n}",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 0,
+  "say": "True or false: components that call this Hook get a plain User, without null.",
+  "explanation": "True. After the if (!user) throw, TypeScript narrows user to User, so the Hook's return type has no null.",
+  "explainSay": "True. The check throws on null, so TypeScript knows only a User can be returned."
+}

@@ -17,7 +17,9 @@
         { "id": "fragments", "title": "Fragments: group without a wrapper", "level": "beginner", "source": "https://react.dev/reference/react/Fragment", "requires": ["jsx-single-root"] },
         { "id": "keyed-fragments", "title": "Keyed fragments in lists", "level": "intermediate", "source": "https://react.dev/reference/react/Fragment", "requires": ["fragments", "list-keys"] },
         { "id": "ui-as-a-tree", "title": "Your UI as a render tree", "level": "beginner", "source": "https://react.dev/learn/understanding-your-ui-as-a-tree" },
-        { "id": "module-dependency-tree", "title": "The module dependency tree and bundles", "level": "intermediate", "source": "https://react.dev/learn/understanding-your-ui-as-a-tree" }
+        { "id": "module-dependency-tree", "title": "The module dependency tree and bundles", "level": "intermediate", "source": "https://react.dev/learn/understanding-your-ui-as-a-tree" },
+        { "id": "element-vs-component", "title": "Element vs component: JSX describes, it doesn't render", "level": "intermediate", "source": "https://react.dev/reference/react/createElement#what-is-a-react-element-exactly", "requires": ["what-is-a-component", "jsx-is-javascript"] },
+        { "id": "document-metadata", "title": "Render <title> and <meta> from any component", "level": "intermediate", "source": "https://react.dev/reference/react-dom/components/title", "requires": ["what-is-a-component"] }
       ]
     },
     {
@@ -30,7 +32,8 @@
         { "id": "spread-props", "title": "Forwarding props with spread syntax", "level": "intermediate", "source": "https://react.dev/learn/passing-props-to-a-component", "requires": ["passing-props"] },
         { "id": "children-prop", "title": "The children prop", "level": "beginner", "source": "https://react.dev/learn/passing-props-to-a-component", "requires": ["passing-props"] },
         { "id": "props-are-read-only", "title": "Props are read-only snapshots", "level": "beginner", "source": "https://react.dev/learn/passing-props-to-a-component", "requires": ["passing-props"] },
-        { "id": "ref-as-prop", "title": "React 19: ref is a regular prop", "level": "intermediate", "source": "https://react.dev/blog/2024/12/05/react-19", "requires": ["refs-to-dom"] }
+        { "id": "ref-as-prop", "title": "React 19: ref is a regular prop", "level": "intermediate", "source": "https://react.dev/blog/2024/12/05/react-19", "requires": ["refs-to-dom"] },
+        { "id": "composition-vs-inheritance", "title": "Composition over inheritance", "level": "intermediate", "source": "https://legacy.reactjs.org/docs/composition-vs-inheritance.html", "requires": ["children-prop"] }
       ]
     },
     {
@@ -162,7 +165,8 @@
         { "id": "ref-callback-cleanup", "title": "React 19: cleanup functions for ref callbacks", "level": "advanced", "source": "https://react.dev/reference/react-dom/components/common#ref-callback", "requires": ["ref-callbacks"] },
         { "id": "useimperativehandle", "title": "useImperativeHandle: expose a custom handle", "level": "advanced", "source": "https://react.dev/reference/react/useImperativeHandle", "requires": ["ref-as-prop"] },
         { "id": "flushsync-with-refs", "title": "flushSync: update the DOM before reading it", "level": "advanced", "source": "https://react.dev/learn/manipulating-the-dom-with-refs", "requires": ["refs-to-dom"] },
-        { "id": "dont-fight-react-dom", "title": "Avoid changing DOM nodes React manages", "level": "intermediate", "source": "https://react.dev/learn/manipulating-the-dom-with-refs", "requires": ["refs-to-dom"] }
+        { "id": "dont-fight-react-dom", "title": "Avoid changing DOM nodes React manages", "level": "intermediate", "source": "https://react.dev/learn/manipulating-the-dom-with-refs", "requires": ["refs-to-dom"] },
+        { "id": "fragment-refs", "title": "Fragment refs: reach a group of DOM nodes (React 19.3)", "level": "advanced", "source": "https://react.dev/reference/react/Fragment#fragmentinstance", "requires": ["refs-to-dom", "fragments"] }
       ]
     },
     {
@@ -232,7 +236,9 @@
         { "id": "custom-hooks-share-logic-not-state", "title": "Custom Hooks share logic, not state", "level": "intermediate", "source": "https://react.dev/learn/reusing-logic-with-custom-hooks", "requires": ["extract-custom-hook"] },
         { "id": "passing-reactive-values-to-hooks", "title": "Passing reactive values between Hooks", "level": "advanced", "source": "https://react.dev/learn/reusing-logic-with-custom-hooks", "requires": ["extract-custom-hook", "reactive-values"] },
         { "id": "custom-hook-when", "title": "When to extract a custom Hook", "level": "intermediate", "source": "https://react.dev/learn/reusing-logic-with-custom-hooks", "requires": ["extract-custom-hook"] },
-        { "id": "usedebugvalue", "title": "useDebugValue: labels in React DevTools", "level": "advanced", "source": "https://react.dev/reference/react/useDebugValue", "requires": ["extract-custom-hook"] }
+        { "id": "usedebugvalue", "title": "useDebugValue: labels in React DevTools", "level": "advanced", "source": "https://react.dev/reference/react/useDebugValue", "requires": ["extract-custom-hook"] },
+        { "id": "higher-order-components", "title": "Higher-order components, and why Hooks replaced them", "level": "intermediate", "source": "https://legacy.reactjs.org/docs/higher-order-components.html", "requires": ["extract-custom-hook"] },
+        { "id": "render-props", "title": "Render props: a function prop that returns UI", "level": "intermediate", "source": "https://legacy.reactjs.org/docs/render-props.html", "requires": ["children-prop", "extract-custom-hook"] }
       ]
     },
     {
@@ -250,7 +256,8 @@
         { "id": "children-as-props-optimization", "title": "Pass JSX as children to avoid re-renders", "level": "advanced", "source": "https://react.dev/reference/react/memo", "requires": ["children-prop", "when-components-rerender"] },
         { "id": "react-compiler", "title": "React Compiler: automatic memoization", "level": "intermediate", "source": "https://react.dev/learn/react-compiler", "requires": ["usememo", "memo-component"] },
         { "id": "profiler", "title": "Measuring renders with <Profiler>", "level": "advanced", "source": "https://react.dev/reference/react/Profiler", "requires": ["when-components-rerender"] },
-        { "id": "lazy-code-splitting", "title": "lazy: load component code on demand", "level": "intermediate", "source": "https://react.dev/reference/react/lazy", "requires": ["what-is-a-component"] }
+        { "id": "lazy-code-splitting", "title": "lazy: load component code on demand", "level": "intermediate", "source": "https://react.dev/reference/react/lazy", "requires": ["what-is-a-component"] },
+        { "id": "performance-tracks", "title": "React Performance Tracks in the browser profiler", "level": "advanced", "source": "https://react.dev/reference/dev-tools/react-performance-tracks", "requires": ["profiler"] }
       ]
     },
     {
@@ -263,7 +270,8 @@
         { "id": "transitions-not-for-inputs", "title": "Why text inputs can't be transitions", "level": "advanced", "source": "https://react.dev/reference/react/useTransition", "requires": ["usetransition", "controlled-vs-uncontrolled"] },
         { "id": "usedeferredvalue", "title": "useDeferredValue: show stale content while updating", "level": "advanced", "source": "https://react.dev/reference/react/useDeferredValue", "requires": ["usetransition"] },
         { "id": "deferred-vs-debounce", "title": "useDeferredValue vs debouncing", "level": "advanced", "source": "https://react.dev/reference/react/useDeferredValue", "requires": ["usedeferredvalue"] },
-        { "id": "activity-component", "title": "<Activity>: hide UI and keep its state", "level": "advanced", "source": "https://react.dev/reference/react/Activity", "requires": ["preserve-removed-state"] }
+        { "id": "activity-component", "title": "<Activity>: hide UI and keep its state", "level": "advanced", "source": "https://react.dev/reference/react/Activity", "requires": ["preserve-removed-state"] },
+        { "id": "view-transition", "title": "<ViewTransition>: animate updates inside Transitions (React 19.3)", "level": "advanced", "source": "https://react.dev/reference/react/ViewTransition", "requires": ["starttransition"] }
       ]
     },
     {
@@ -310,7 +318,8 @@
         { "id": "use-client", "title": "'use client' marks the client boundary", "level": "advanced", "source": "https://react.dev/reference/rsc/use-client", "requires": ["server-components"] },
         { "id": "server-functions", "title": "Server Functions with 'use server'", "level": "advanced", "source": "https://react.dev/reference/rsc/server-functions", "requires": ["server-components", "form-action-prop"] },
         { "id": "serializable-props", "title": "Props from server to client must be serializable", "level": "advanced", "source": "https://react.dev/reference/rsc/use-client", "requires": ["use-client"] },
-        { "id": "react-cache", "title": "cache: share data work in a server request", "level": "advanced", "source": "https://react.dev/reference/react/cache", "requires": ["server-components"] }
+        { "id": "react-cache", "title": "cache: share data work in a server request", "level": "advanced", "source": "https://react.dev/reference/react/cache", "requires": ["server-components"] },
+        { "id": "cache-signal", "title": "cacheSignal: abort work when the render ends", "level": "advanced", "source": "https://react.dev/reference/react/cacheSignal", "requires": ["react-cache", "server-components"] }
       ]
     },
     {
@@ -357,6 +366,34 @@
         { "id": "compiler-needs-rules", "title": "The compiler relies on the Rules of React", "level": "advanced", "source": "https://react.dev/learn/react-compiler/introduction#is-it-safe-to-use", "requires": ["react-compiler", "rules-of-react-purity"] },
         { "id": "compiler-directives", "title": "\"use memo\" and \"use no memo\" directives", "level": "advanced", "source": "https://react.dev/reference/react-compiler/directives", "requires": ["react-compiler"] },
         { "id": "compiler-incremental-adoption", "title": "Adopting the compiler step by step", "level": "advanced", "source": "https://react.dev/learn/react-compiler/incremental-adoption", "requires": ["react-compiler"] }
+      ]
+    },
+    {
+      "name": "Testing",
+      "track": "core",
+      "concepts": [
+        { "id": "test-like-a-user", "title": "Test what the user sees, not implementation details", "level": "intermediate", "source": "https://testing-library.com/docs/guiding-principles", "requires": ["what-is-a-component"] },
+        { "id": "render-and-screen", "title": "render() and screen: put a component on a test page", "level": "intermediate", "source": "https://testing-library.com/docs/queries/about#screen", "requires": ["test-like-a-user"] },
+        { "id": "query-priority", "title": "Query priority: getByRole first", "level": "intermediate", "source": "https://testing-library.com/docs/queries/about#priority", "requires": ["render-and-screen"] },
+        { "id": "get-query-find", "title": "getBy, queryBy, findBy: which one when", "level": "intermediate", "source": "https://testing-library.com/docs/queries/about#types-of-queries", "requires": ["render-and-screen"] },
+        { "id": "user-event", "title": "user-event: simulate real interactions", "level": "intermediate", "source": "https://testing-library.com/docs/user-event/intro", "requires": ["render-and-screen", "event-handlers"] },
+        { "id": "async-ui-tests", "title": "Waiting for async UI: findBy and waitFor", "level": "intermediate", "source": "https://testing-library.com/docs/dom-testing-library/api-async", "requires": ["get-query-find"] },
+        { "id": "act-in-tests", "title": "act(): apply React updates before you assert", "level": "intermediate", "source": "https://react.dev/reference/react/act", "requires": ["render-and-screen", "trigger-render-commit"] },
+        { "id": "testing-custom-hooks", "title": "Testing a custom Hook with renderHook", "level": "intermediate", "source": "https://testing-library.com/docs/react-testing-library/api#renderhook", "requires": ["extract-custom-hook", "render-and-screen"] }
+      ]
+    },
+    {
+      "name": "TypeScript",
+      "track": "core",
+      "concepts": [
+        { "id": "typing-props", "title": "Typing props with a type or interface", "level": "intermediate", "source": "https://react.dev/learn/typescript#typescript-with-react-components", "requires": ["passing-props"] },
+        { "id": "typing-children", "title": "Typing children: ReactNode vs ReactElement", "level": "intermediate", "source": "https://react.dev/learn/typescript#typing-children", "requires": ["typing-props", "children-prop"] },
+        { "id": "typing-style-prop", "title": "Typing the style prop with CSSProperties", "level": "intermediate", "source": "https://react.dev/learn/typescript#typing-style-props", "requires": ["typing-props"] },
+        { "id": "typing-usestate", "title": "Typing useState: inference and union types", "level": "intermediate", "source": "https://react.dev/learn/typescript#typing-usestate", "requires": ["typing-props", "usestate-basics"] },
+        { "id": "typing-usereducer", "title": "Typing useReducer: State and an action union", "level": "intermediate", "source": "https://react.dev/learn/typescript#typing-usereducer", "requires": ["typing-usestate", "usereducer-basics"] },
+        { "id": "typing-usecontext", "title": "Typing useContext: null default and a checking Hook", "level": "intermediate", "source": "https://react.dev/learn/typescript#typing-usecontext", "requires": ["typing-usestate", "usecontext-basics"] },
+        { "id": "typing-dom-events", "title": "Typing event handlers: React.ChangeEvent and friends", "level": "intermediate", "source": "https://react.dev/learn/typescript#typing-dom-events", "requires": ["typing-props", "event-handlers"] },
+        { "id": "typing-usememo-usecallback", "title": "Typing useMemo and useCallback", "level": "intermediate", "source": "https://react.dev/learn/typescript#typing-usecallback", "requires": ["typing-dom-events", "usecallback"] }
       ]
     }
   ]

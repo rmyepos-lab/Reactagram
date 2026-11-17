@@ -1,0 +1,44 @@
+{
+  "kind": "learn",
+  "id": "get-query-find",
+  "topic": "Testing",
+  "concept": "get-query-find",
+  "format": "compare",
+  "level": "intermediate",
+  "tags": [
+    "testing",
+    "queries"
+  ],
+  "sourceUrl": "https://testing-library.com/docs/queries/about#types-of-queries",
+  "title": "getBy, queryBy, findBy: pick by what you expect",
+  "slides": [
+    {
+      "type": "title",
+      "text": "get, query, find 🔍",
+      "say": "Every query comes in three flavors. Pick by what you expect to happen."
+    },
+    {
+      "type": "code",
+      "code": "// Must be there now: throws if not\nscreen.getByText('Saved');\n\n// May be missing: returns null\nscreen.queryByText('Error');\n\n// Appears later: returns a Promise\nawait screen.findByText('Done');",
+      "highlight": [
+        2,
+        5,
+        8
+      ],
+      "say": "Get by throws if nothing matches. Query by returns null instead. Find by returns a promise that waits for the element to appear."
+    },
+    {
+      "type": "code",
+      "code": "expect(\n  screen.queryByText('Error')\n).toBeNull();",
+      "highlight": [
+        2
+      ],
+      "say": "So to check that something is NOT there, use query by. Get by would throw before your expect even runs."
+    },
+    {
+      "type": "text",
+      "text": "All three throw if MORE than one element matches. Use getAllBy / queryAllBy / findAllBy for lists.",
+      "say": "One more rule. All three throw if more than one element matches. For lists, use the all versions, which return arrays."
+    }
+  ]
+}

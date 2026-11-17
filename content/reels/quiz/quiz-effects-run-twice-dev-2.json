@@ -1,0 +1,26 @@
+{
+  "kind": "quiz",
+  "id": "quiz-effects-run-twice-dev-2",
+  "topic": "Side Effects",
+  "concept": "effects-run-twice-dev",
+  "format": "bug-hunt",
+  "level": "beginner",
+  "tags": [
+    "effects",
+    "strict-mode",
+    "cleanup"
+  ],
+  "sourceUrl": "https://react.dev/learn/synchronizing-with-effects",
+  "question": "In development this opens two connections. What is the right fix?",
+  "code": "useEffect(() => {\n  const conn = createConnection();\n  conn.connect();\n}, []);",
+  "options": [
+    "Use a ref so the Effect runs only once",
+    "Remove Strict Mode from the app",
+    "Return () => conn.disconnect()",
+    "Move connect() into the render body"
+  ],
+  "answer": 2,
+  "say": "In development, this opens two connections. What is the right fix?",
+  "explanation": "The double run exposes a missing cleanup. With cleanup, React disconnects before connecting again, so only one connection stays open. Hiding the double run with a ref hides the bug.",
+  "explainSay": "Return a cleanup that disconnects. The extra run in development only shows that cleanup is missing. Don't hide it with a ref."
+}

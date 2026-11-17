@@ -1,0 +1,26 @@
+{
+  "kind": "quiz",
+  "id": "quiz-testing-custom-hooks-2",
+  "topic": "Testing",
+  "concept": "testing-custom-hooks",
+  "format": "fill-blank",
+  "level": "intermediate",
+  "tags": [
+    "testing",
+    "renderhook",
+    "props"
+  ],
+  "sourceUrl": "https://testing-library.com/docs/react-testing-library/api#renderhook",
+  "question": "Fill the blank so the Hook first runs with id 1:",
+  "code": "const { rerender } = renderHook(\n  ({ id }) => useUser(id),\n  { ___: { id: 1 } }\n);\nrerender({ id: 2 });",
+  "options": [
+    "props",
+    "defaultProps",
+    "wrapper",
+    "initialProps"
+  ],
+  "answer": 3,
+  "say": "Fill the blank so the Hook first runs with id 1.",
+  "explanation": "initialProps are passed to the callback on the first render. rerender({ id: 2 }) then runs it again with new props. wrapper is for providers.",
+  "explainSay": "Initial props. They're used on the first render, and rerender passes new ones."
+}

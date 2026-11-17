@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-user-event-2",
+  "topic": "Testing",
+  "concept": "user-event",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "testing",
+    "user-event",
+    "fireevent"
+  ],
+  "sourceUrl": "https://testing-library.com/docs/user-event/intro",
+  "question": "True or false: user.type() into a disabled text box still changes its value.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: user dot type, into a disabled text box, still changes its value.",
+  "explanation": "False. user-event checks interactability like a real user: it won't type into a disabled box or click a hidden element. fireEvent would just dispatch the event.",
+  "explainSay": "False. User event acts like a real person, and nobody can type into a disabled box."
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "quiz",
+  "id": "quiz-typing-children-1",
+  "topic": "TypeScript",
+  "concept": "typing-children",
+  "format": "bug-hunt",
+  "level": "intermediate",
+  "tags": [
+    "typescript",
+    "children"
+  ],
+  "sourceUrl": "https://react.dev/learn/typescript#typing-children",
+  "question": "Modal types children as React.ReactElement. Which usage does TypeScript reject?",
+  "options": [
+    "<Modal><p>Hi</p></Modal>",
+    "<Modal>Hello</Modal>",
+    "<Modal><Icon /></Modal>"
+  ],
+  "answer": 1,
+  "say": "Modal types children as React Element. Which usage does TypeScript reject?",
+  "explanation": "ReactElement accepts only JSX elements, not primitives like strings. Use React.ReactNode if text should be allowed too.",
+  "explainSay": "The one with plain text. React Element only accepts JSX elements. Use React Node to allow text."
+}

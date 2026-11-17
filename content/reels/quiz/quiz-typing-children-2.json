@@ -1,0 +1,22 @@
+{
+  "kind": "quiz",
+  "id": "quiz-typing-children-2",
+  "topic": "TypeScript",
+  "concept": "typing-children",
+  "format": "true-false",
+  "level": "intermediate",
+  "tags": [
+    "typescript",
+    "children"
+  ],
+  "sourceUrl": "https://react.dev/learn/typescript#typing-children",
+  "question": "True or false: you can type a List's children so TypeScript accepts only <li> elements.",
+  "options": [
+    "True",
+    "False"
+  ],
+  "answer": 1,
+  "say": "True or false: you can type a List's children so TypeScript accepts only list item elements.",
+  "explanation": "False. TypeScript can't express that children are a specific kind of JSX element. Any element satisfies ReactElement.",
+  "explainSay": "False. The type system can't tell one JSX element type from another here."
+}
